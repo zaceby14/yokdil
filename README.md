@@ -5,7 +5,7 @@
 ## Ne var?
 - **Bugün:** kalan gün, haftanın hedefi, günlük görevler (45 dk), *Yoğun gün* (15 dk), seri.
 - **Okuma:** hazır parçalar + kendi metnin (More to Read / Ikigai). Kelimeye dokun → karta ekle. Uzun bas ya da *Öbek* ile birden çok kelime seç.
-- **Kartlar:** aralıklı tekrar (Tekrar / Zor / İyi / Kolay), manuel kart, liste.
+- **Kartlar:** aralıklı tekrar (Tekrar / Zor / İyi / Kolay), manuel kart, liste. *Kelime tara* ile bildiklerini ele; *Boşluk doldurma* oyunu. Yanlış cevaptaki kelimeler otomatik karta eklenir.
 - **Sorular:** Gramer (günlük set, hata kutusu, kural notları), Alıştırma (tüm soru tipleri), Çıkmış (kendi paketin), Dersler.
 - **Eksikler:** doğruluk grafikleri, unutulan kelimeler, 8 haftalık ısı haritası, deneme sonuçları (puan = doğru × 1,25).
 

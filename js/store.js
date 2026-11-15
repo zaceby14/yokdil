@@ -6,7 +6,7 @@ let state = {};
 const subs = new Set();
 let saveT = null;
 
-export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8 };
+export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8, autoAdd: true, readHl: true, vocabGoal: 2000 };
 
 export function load() {
   try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { state = {}; }

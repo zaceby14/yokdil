@@ -3,6 +3,7 @@ import * as store from '../store.js';
 import { h, add, uid, dayKey, toast, shuffle, typeName, TYPES } from '../util.js';
 import { getPack, savePack, clearPack, exam as getExam, groupOf } from '../pack.js';
 import { answer } from '../mistakes.js';
+import { fromWrong } from '../autocard.js';
 import { runQuiz } from '../quiz.js';
 import { xItem } from '../qbank.js';
 import { tappable } from '../tappable.js';
@@ -140,6 +141,7 @@ function examMode(root, e) {
     finished = true; clearInterval(iv);
     const sections = {};
     let right = 0;
+    const autos = [];
     for (const q of qs) {
       const k = SECTION_OF[q.type] || 'diger';
       const s = sections[k] ||= { d: 0, y: 0, b: 0, n: 0 };
@@ -147,9 +149,14 @@ function examMode(root, e) {
       const a = pr.answers[q.n];
       if (a == null) { s.b++; continue; }
       const ok = a === q.answer;
-      if (ok) { s.d++; right++; } else s.y++;
+      if (ok) { s.d++; right++; } else {
+        s.y++;
+        autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '' } }, a, { quiet: true }).catch(() => 0));
+      }
       answer(`${e.id}:${q.n}`, ok, { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' });
     }
+    // Yanlış kelime şıklarından otomatik kart (tek toast)
+    Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
     const score = +(right * 1.25).toFixed(2);
     store.put('mocks', { id: uid('m'), date: dayKey(), name: e.title || e.id, sections, src: 'cikmis', examId: e.id, score });
     pr = { ...pr, done: true, finishedAt: Date.now(), score, sections, attempts: (pr.attempts || 0) + 1 };

@@ -3,6 +3,7 @@ import * as store from './store.js';
 import { words } from './data.js';
 import { endOfToday, dayKey, DAY } from './util.js';
 import { newLimit, bumpDay, dayRec, tick } from './plan.js';
+import { isGraduated, weeklyChecks, counts, STUDY_STATES } from './vocab.js';
 
 const MIN = 60000;
 export const GRADES = ['again', 'hard', 'good', 'easy'];
@@ -26,7 +27,8 @@ export function schedule(card, grade, now = Date.now()) {
     else { ease += 0.15; interval = Math.max(interval + 2, Math.round(interval * ease * 1.3)); }
   }
   if (due == null) due = startOfDay(now) + interval * DAY + 4 * 3600000; // ilgili günün sabahı
-  return { state, ease: +ease.toFixed(2), interval, lapses, reps: reps + 1, due, lastReview: now };
+  const hist = [...(Array.isArray(card.hist) ? card.hist : []), grade[0]].slice(-5); // son notlar (mezuniyet için)
+  return { state, ease: +ease.toFixed(2), interval, lapses, reps: reps + 1, due, lastReview: now, hist };
 }
 
 function startOfDay(t) { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); }
@@ -39,10 +41,13 @@ export function previewLabel(card, grade) {
   return s.interval + ' g';
 }
 
+// Bekleyen kartlar: öğrenilenler hariç; öğrenilenlerden haftalık kontrol (≤5) + oyunda yanlış çekilenler
 export function dueCards() {
   const end = endOfToday();
-  return store.all('cards').filter(c => c.state && c.state !== 'new' && c.due <= end)
-    .sort((a, b) => a.due - b.due);
+  const out = store.all('cards').filter(c => STUDY_STATES.includes(c.state) && c.due <= end && (!isGraduated(c) || c.pulled));
+  const have = new Set(out.map(c => c.id));
+  for (const c of weeklyChecks()) if (!have.has(c.id)) out.push({ ...c, check: true });
+  return out.sort((a, b) => a.due - b.due);
 }
 
 export function dueCount() { return dueCards().length; }
@@ -54,7 +59,7 @@ export async function newQueue() {
   const left = Math.max(0, (await newLimit()) - (r.newDone || 0));
   if (!left) return [];
   const personal = store.all('cards').filter(c => (c.state || 'new') === 'new')
-    .sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+    .sort((a, b) => newOrder(a) - newOrder(b));
   const q = personal.slice(0, left).map(c => ({ card: c }));
   if (q.length < left) {
     const have = new Set(Object.values(store.snapshot().cards).map(c => c.wid).filter(Boolean));
@@ -66,6 +71,9 @@ export async function newQueue() {
   return q;
 }
 
+// Yeni kuyruk sırası: "front" (tarama/hata ile eklenen) en önde
+export const newOrder = c => c.front ? c.front - 1e13 : (c.createdAt || 0);
+
 export function cardFromWord(w) {
   return {
     id: 'w:' + w.id, wid: w.id, word: w.word, pos: w.pos, tr: w.tr, syn: w.syn || [], coll: w.coll || '',
@@ -76,6 +84,7 @@ export function cardFromWord(w) {
 export function review(card, grade) {
   const wasNew = (card.state || 'new') === 'new';
   const next = { ...card, ...schedule(card, grade) };
+  delete next.pulled; delete next.check;
   store.put('cards', next);
   bumpDay('reviews');
   if (wasNew) {
@@ -86,16 +95,7 @@ export function review(card, grade) {
   return next;
 }
 
-export function stats() {
-  const c = store.all('cards');
-  const by = { new: 0, learning: 0, mature: 0 };
-  for (const x of c) {
-    const s = x.state || 'new';
-    if (s === 'new') by.new++;
-    else if (s === 'review' && x.interval >= 21) by.mature++;
-    else by.learning++;
-  }
-  return by;
-}
+// {new, learning, mature, known, grad, knowTotal}
+export function stats() { return counts(); }
 
 export const todayKey = dayKey;

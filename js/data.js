@@ -26,6 +26,22 @@ export const seedUser = () => loadData('seed-user', { cards: [], weakTopics: [],
 export const program = () => loadData('program', { start: '2026-11-16', exam: '2027-02-28', apply: ['2027-01-12', '2027-01-20'], weeks: [] });
 
 export const lessons = () => loadData('lessons', []);
+export const forms = () => loadData('forms', {});
+
+// Kelimenin örnekleri ve diğer halleri (forms.json + words.json), basit kök eşleştirme
+export async function enrich(word) {
+  const w = (word || '').trim().toLowerCase();
+  if (!w) return null;
+  const [fm, idx] = await Promise.all([forms(), wordIndex()]);
+  const cands = [w];
+  for (const [re, rep] of [[/ies$/, 'y'], [/es$/, ''], [/s$/, ''], [/ied$/, 'y'], [/ed$/, ''], [/ed$/, 'e'], [/ing$/, ''], [/ing$/, 'e'], [/ly$/, '']])
+    if (re.test(w)) cands.push(w.replace(re, rep));
+  for (const k of cands) {
+    const f = fm[k], c = idx.get(k);
+    if (f || c) return { key: k, ...(f || {}), core: c || null };
+  }
+  return null;
+}
 
 export function loadAll() {
   return Promise.all([words(), grammar(), passages(), drills(), seedUser(), program(), lessons()]);

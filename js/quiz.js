@@ -1,11 +1,13 @@
 // Çoktan seçmeli soru oturumu (gramer, alıştırma, hata kutusu, okuma)
 import { h, add } from './util.js';
+import { fromWrong } from './autocard.js';
 
 const L = 'ABCDE';
 
 // items: [{key, stem, q, options, answer, explain, tip, label}]
 // onAnswer(item, correct) ; onEnd({right, total})
-export function runQuiz(root, items, { onAnswer, onEnd, title, extra } = {}) {
+// auto:false → yanlışta otomatik kart ekleme
+export function runQuiz(root, items, { onAnswer, onEnd, title, extra, auto = true } = {}) {
   let i = 0, right = 0;
   const show = () => {
     root.innerHTML = '';
@@ -34,6 +36,7 @@ export function runQuiz(root, items, { onAnswer, onEnd, title, extra } = {}) {
         const x = extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && exp.append(n));
         next.classList.remove('hidden');
         onAnswer?.(it, ok);
+        if (!ok && auto) fromWrong(it, k).catch(e => console.warn(e));
         next.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
     }, h('span.ol', L[k]), h('span', o)));

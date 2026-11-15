@@ -24,6 +24,8 @@ export default async function render(root) {
   const seg = (opts, cur, on) => h('div.seg', opts.map(([v, l]) => h('button' + (cur === v ? '.active' : ''), { onclick: () => on(v) }, l)));
   const limit = h('input.num', { type: 'number', min: 0, max: 60, placeholder: String(w.newWords ?? 15), value: s.newLimit ?? '' });
   limit.onchange = () => { store.setSetting('newLimit', limit.value === '' ? null : Math.max(0, +limit.value)); toast('Kaydedildi'); };
+  const goal = h('input.num', { type: 'number', min: 100, max: 10000, step: 100, value: s.vocabGoal || 2000 });
+  goal.onchange = () => { store.setSetting('vocabGoal', Math.max(100, +goal.value || 2000)); toast('Kaydedildi'); };
   const gc = h('input.num', { type: 'number', min: 3, max: 20, value: s.grammarCount });
   gc.onchange = () => { store.setSetting('grammarCount', Math.min(20, Math.max(3, +gc.value || 8))); toast('Kaydedildi'); };
 
@@ -58,6 +60,9 @@ export default async function render(root) {
       h('h3', 'Çalışma'),
       h('div.field', h('span', 'Günlük yeni kelime'), limit), h('p.small.muted', `Boş = programdan (${w.newWords ?? 15}).`),
       h('div.field', h('span', 'Günlük gramer sorusu'), gc),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),
+      h('div.field', h('span', 'Kelime hedefi'), goal),
       h('label.switch', h('input', { type: 'checkbox', checked: !!s.showDialog, onchange: e => store.setSetting('showDialog', e.target.checked) }), h('span', 'Diyalog sorularını göster (YDS)'))
     ),
     h('section.card',

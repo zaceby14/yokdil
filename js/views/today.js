@@ -1,6 +1,7 @@
 // Bugün: geri sayım, hafta/faz, görevler, yoğun gün, seri
 import * as store from '../store.js';
-import { h, dayKey, fmtDate, diffDays } from '../util.js';
+import { h, dayKey, fmtDate, diffDays, addDays } from '../util.js';
+import { isStudied } from '../vocab.js';
 import { week, daysToExam, dayRec, tick, updateDay, taskList, streak, weekdayHint, newLimit } from '../plan.js';
 import { dueCount } from '../srs.js';
 import { dueMistakes } from '../mistakes.js';
@@ -15,7 +16,7 @@ export default async function render(root) {
     const errs = dueMistakes().length;
     const nl = r.busy ? 0 : await newLimit();
     const gN = r.busy ? 3 : store.settings().grammarCount;
-    if (!due && (r.reviews || 0) >= 0 && !r.tasks?.kart && store.all('cards').some(c => c.state && c.state !== 'new')) tick('kart');
+    if (!due && (r.reviews || 0) >= 0 && !r.tasks?.kart && store.all('cards').some(isStudied)) tick('kart');
     const rr = dayRec();
     const T = {
       kart: { label: 'Kart tekrarı', sub: due ? `${due} kart` : 'Bekleyen yok', go: '#/kartlar' },
@@ -29,6 +30,9 @@ export default async function render(root) {
     const apply = w.prog.apply || [];
     const toApply = apply[0] ? diffDays(today, apply[0]) : 99;
     const applyOn = apply[1] && toApply <= 7 && today <= apply[1];
+    // Faz geçişi: yeni fazın ilk 3 günü kısa bildirim
+    const prevW = (w.prog.weeks || []).find(x => x.n === w.n - 1);
+    const phaseNew = !w.beforeStart && prevW && prevW.phase !== w.phase && diffDays(addDays(w.prog.start, (w.n - 1) * 7), today) < 3;
     root.innerHTML = '';
     root.append(
       h('div.hero',
@@ -38,6 +42,7 @@ export default async function render(root) {
           w.goal ? h('div.small.muted', w.goal) : null,
           h('div.streak', 'Seri: ', h('b', streak()), ' gün'))
       ),
+      phaseNew ? h('div.banner.phase', `Yeni faz: ${w.phase} · günde ${w.newWords ?? '-'} yeni kelime`) : null,
       applyOn ? h('a.banner', { href: 'https://ais.osym.gov.tr', target: '_blank', rel: 'noopener' }, `Başvuru: ${fmtDate(apply[0])}–${fmtDate(apply[1])} · ÖSYM AİS`) : null,
       ...(w.prog.notes || []).filter(n => n.date === today).map(n => h('div.banner', `${fmtDate(n.date)}: ${n.text}`)),
       weekdayHint() ? h('div.note', w.weekend || weekdayHint()) : null,
@@ -55,6 +60,7 @@ export default async function render(root) {
           h('a.task', { href: T[k].go }, h('b', T[k].label), h('span.small.muted', T[k].sub)),
           mins[ti] ? h('span.small.muted', mins[ti] + ' dk') : null, h('span.chev', '›'));
       })),
+      !rr.busy ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiklerini 20\'şer ele')) : null,
       w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).join(', ') || 'karışık'))) : null,
       w.phase === 'Deneme' ? h('a.card.link', { href: '#/cikmis' },
         h('b', 'Tam deneme (180 dk)'), h('span.small.muted', ' Çıkmış sorular')) : null,

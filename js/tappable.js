@@ -2,6 +2,8 @@
 import * as store from './store.js';
 import { h, uid, lemmas, toast } from './util.js';
 import { local, online } from './lookup.js';
+import { enrich, wordIndex } from './data.js';
+import { coreHits, unknownHit } from './vocab.js';
 
 // Metni parçala: paragraf > cümle > token
 export function tokenize(text) {
@@ -22,7 +24,8 @@ export function tokenize(text) {
   return { tokens, sentences, paras };
 }
 
-// opts: { source, page, note, cls } → { el, setPhrase(bool), markSaved() }
+// opts: { source, page, note, cls, hl } → { el, setPhrase(bool), markSaved(), newCore() }
+// hl: çekirdek listede olup bilmediğin kelimeler altı noktalı
 export function tappable(text, opts = {}) {
   const { tokens, sentences, paras } = tokenize(text);
   let phraseMode = false, selStart = null, lpTimer = null, lpFired = false, startXY = null;
@@ -97,11 +100,19 @@ export function tappable(text, opts = {}) {
     const ctxIn = h('textarea', { rows: 3 }); ctxIn.value = ctx;
     const info = h('div.small.muted');
     const sugg = h('div.chips');
+    const forms = h('div.small.formsline');
+    enrich(base).then(en => {
+      if (!en) return;
+      const parts = [];
+      if (en.verb) parts.push(en.verb + (en.irregular ? ' (düzensiz)' : ''));
+      for (const f of en.family || []) parts.push(`${f.w} (${f.pos})`);
+      if (parts.length) forms.append(h('b', 'Halleri: '), parts.join(' · '));
+    });
     if (card) info.append(h('span.chip.ok', 'Kartta var'), ' ');
     if (entry) info.append(h('span.chip', 'Çekirdek liste'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Eşdizim: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
     sheet.append(
       h('div.sheet-head', wIn, h('button.icon-x', { 'aria-label': 'kapat', onclick: () => sheet._close() }, '×')),
-      info, sugg,
+      info, forms, sugg,
       h('label', 'Türkçe anlam', trIn),
       h('label', 'Eş anlamlılar', synIn),
       h('label', 'Bağlam', ctxIn),
@@ -138,10 +149,21 @@ export function tappable(text, opts = {}) {
     }
   }
 
-  body._mark = markSaved;
-  markSaved();
+  async function markUnknown() {
+    if (!opts.hl) return;
+    const hits = coreHits(tokens, await wordIndex());
+    body.querySelectorAll('.unk').forEach(e => e.classList.remove('unk'));
+    for (const x of hits) if (unknownHit(x)) for (const t of x.tokens) elAt(t.i)?.classList.add('unk');
+  }
+  // Metindeki, kartı olmayan çekirdek kelimeler (parça sonu özeti)
+  async function newCore() {
+    return coreHits(tokens, await wordIndex()).filter(x => !x.card).map(x => ({ ...x, ctx: sentences[x.tokens[0].s] }));
+  }
+
+  body._mark = () => { markSaved(); markUnknown(); };
+  body._mark();
   return {
-    el: body, markSaved,
+    el: body, markSaved, newCore,
     setPhrase(on) { phraseMode = on; selStart = null; clearSel(); }
   };
 }

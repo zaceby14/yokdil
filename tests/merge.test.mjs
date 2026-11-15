@@ -78,4 +78,87 @@ t('Hata kutusu: yanlış → 1 g; 2 ardışık doğru → çözüldü', () => {
   const c1 = nextMistake(w, true, '2026-11-21'); assert.equal(c1.due, '2026-11-28'); // 7 gün
 });
 
+
+// --- v3: mezuniyet, biliyorum, otomatik kart, boşluk oyunu, okuma önerisi
+const V = await import('../js/vocab.js');
+const A = await import('../js/autocard.js');
+const G = await import('../js/views/gap.js');
+const R = await import('../js/views/reading.js');
+
+t('Mezuniyet: aralık ≥ 45 g ve son 3 tekrarda "Tekrar" yok', () => {
+  assert.equal(V.isGraduated({ state: 'review', interval: 45, hist: ['g', 'g', 'e'] }), true);
+  assert.equal(V.isGraduated({ state: 'review', interval: 44, hist: ['g', 'g', 'g'] }), false);
+  assert.equal(V.isGraduated({ state: 'review', interval: 60, hist: ['a', 'g', 'g', 'g'] }), true);
+  assert.equal(V.isGraduated({ state: 'review', interval: 60, hist: ['g', 'a', 'g'] }), false);
+  assert.equal(V.isGraduated({ state: 'review', interval: 60, hist: ['g', 'g'] }), false);
+  assert.equal(V.isGraduated({ state: 'relearn', interval: 60, hist: ['g', 'g', 'g'] }), false);
+  assert.equal(V.isGraduated({ state: 'review', interval: 50 }), true); // eski kayıt (hist yok)
+  assert.equal(V.level({ state: 'known' }), 'known');
+  assert.equal(V.level({ state: 'review', interval: 25, hist: ['g', 'g', 'g'] }), 'mature');
+  assert.equal(V.level({ state: 'review', interval: 50, hist: ['g', 'g', 'g'] }), 'grad');
+});
+
+t('Mezuniyet: Tekrar ile geri döner; schedule hist tutar', () => {
+  const now = Date.now();
+  let c = { state: 'review', interval: 50, ease: 2.5, hist: ['g', 'g', 'g'] };
+  assert.ok(V.isGraduated(c));
+  c = { ...c, ...schedule(c, 'again', now) };
+  assert.equal(c.state, 'relearn'); assert.deepEqual(c.hist.slice(-1), ['a']);
+  assert.equal(V.isGraduated(c), false);
+  assert.equal(schedule({ state: 'new', hist: ['a', 'a', 'a', 'a', 'a'] }, 'good', now).hist.length, 5);
+});
+
+t('Haftalık kontrol: en fazla 5, bu hafta tekrar edilen hariç, haftaya göre sabit', () => {
+  const wk = '2026-11-16';
+  const ws = new Date(2026, 10, 16).getTime();
+  const cards = Array.from({ length: 12 }, (_, i) => ({ id: 'c' + i, state: 'review', interval: 60, hist: ['g', 'g', 'g'], lastReview: ws - 1000 }));
+  cards.push({ id: 'done', state: 'review', interval: 60, hist: ['g', 'g', 'g'], lastReview: ws + 1000 });
+  cards.push({ id: 'young', state: 'review', interval: 10, hist: ['g', 'g', 'g'], lastReview: 0 });
+  const p = V.pickChecks(cards, wk);
+  assert.equal(p.length, 5);
+  assert.ok(!p.includes('done') && !p.includes('young'));
+  assert.deepEqual(V.pickChecks(cards, wk), p);
+  assert.equal(V.weekStart('2026-11-19'), '2026-11-16');
+  assert.equal(V.weekStart('2026-11-22'), '2026-11-16');
+});
+
+t('Sayaç: bildiğin = known + öğrenildi + olgun', () => {
+  const c = V.counts([{ state: 'known' }, { state: 'known' }, { state: 'review', interval: 50, hist: ['g', 'g', 'g'] },
+    { state: 'review', interval: 30 }, { state: 'learning' }, { state: 'new' }, {}]);
+  assert.equal(c.knowTotal, 4); assert.equal(c.new, 2); assert.equal(c.learning, 1);
+});
+
+t('Otomatik kart: aday şık, kelime ağırlıklı soru, bağlam', () => {
+  assert.equal(A.candidate('efficacy'), 'efficacy');
+  assert.equal(A.candidate('the'), null);
+  assert.equal(A.candidate('has been developed'), null);
+  assert.equal(A.candidate('in terms of', x => x === 'in terms of'), 'in terms of');
+  assert.equal(A.candidate('a long sentence with many words'), null);
+  assert.ok(A.wordy({ options: ['efficacy', 'scarcity', 'ambiguity', 'uniformity', 'hostility'], info: { topic: 'kelime' } }));
+  assert.ok(!A.wordy({ options: ['The study was long and hard to read.', 'b c d e', 'x', 'y', 'z'], info: { dtype: 'cumle-tamamlama' } }));
+  assert.equal(A.fillContext({ q: 'Trials test the ---- of a drug.', options: ['a', 'efficacy'], answer: 1 }), 'Trials test the efficacy of a drug.');
+  assert.equal(A.fillContext({ q: '(2)', stem: 'Steel is strong (1) light. It is protected (2) rust. End.', options: ['from'], answer: 0 }), 'It is protected from rust.');
+});
+
+t('Boşluk oyunu: tam kelime boşaltılır', () => {
+  assert.equal(G.blankOut('The efficacy of the drug was low.', 'efficacy'), 'The ---- of the drug was low.');
+  assert.equal(G.blankOut('Efficacy matters.', 'efficacy'), '---- matters.');
+  assert.equal(G.blankOut('The efficacious drug.', 'efficacy'), null);
+});
+
+t('Okuma önerisi: hız + doğruluğa göre seviye', () => {
+  assert.equal(R.suggestLevel([]).level, 1);
+  assert.equal(R.suggestLevel([{ at: 1, level: 1, wpm: 130, right: 3, total: 3 }]).level, 2);
+  assert.equal(R.suggestLevel([{ at: 1, level: 2, wpm: 80, right: 1, total: 3 }]).level, 1);
+  assert.equal(R.suggestLevel([{ at: 1, level: 3, wpm: 200, right: 3, total: 3 }]).level, 3);
+  assert.equal(R.suggestLevel([{ at: 1, level: 2, wpm: 90, right: 2, total: 3 }]).level, 2);
+});
+
+t('Birleştirme: known durumu ve yeni alanlar updatedAt ile korunur', () => {
+  const a = { cards: { x: { id: 'x', state: 'known', knownAt: 5, updatedAt: 10 } } };
+  const b = { cards: { x: { id: 'x', state: 'new', front: 3, updatedAt: 8 } }, progress: { 'gradcheck:2026-11-16': { id: 'gradcheck:2026-11-16', ids: ['x'], updatedAt: 2 } } };
+  const m = mergeState(a, b);
+  assert.equal(m.cards.x.state, 'known'); assert.ok(m.progress['gradcheck:2026-11-16']);
+});
+
 console.log(`\n${n} test geçti`);

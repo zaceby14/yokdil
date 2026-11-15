@@ -229,3 +229,44 @@ table.mock input { width: 3.8rem; margin: 2px 0; padding: 6px; text-align: cente
 .tbl th { background: var(--surface2); }
 details.card summary { cursor: pointer; min-height: 32px; }
 .centerx{justify-content:center}
+
+/* Kart arka yüzü: diğer halleri + örnekler */
+.extra { text-align: left; margin-top: 12px; border-top: 1px solid var(--line, rgba(127,127,127,.25)); padding-top: 10px; }
+.xh { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 10px 0 4px; }
+.vforms { font-weight: 600; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.chip.warn { background: #f3d9a4; color: #6b4700; }
+.fam { display: grid; gap: 4px; }
+.famrow { display: grid; grid-template-columns: auto auto 1fr; gap: 8px; align-items: baseline; }
+.exrow { margin: 6px 0; }
+.exrow .ex mark { background: var(--hl); color: var(--text); font-style: normal; padding: 0 2px; border-radius: 3px; }
+.preview .card { margin-top: 8px; }
+.formsline { margin: 4px 0; }
+
+/* v3: tarama, biliyorum, boşluk oyunu, okuma vurgusu, kelime hedefi */
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+.row2 .btn { margin: 0; min-height: 64px; text-align: center; line-height: 1.25; }
+.btn.know { color: var(--muted); font-weight: 500; }
+.flashcard, .scan-card { user-select: none; -webkit-user-select: none; transition: transform .15s; }
+.flashcard.sw-r, .scan-card.sw-r { box-shadow: inset 0 0 0 3px var(--good); }
+.flashcard.sw-l, .scan-card.sw-l { box-shadow: inset 0 0 0 3px var(--bad); }
+.scan-card { text-align: center; padding: 28px 14px; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.scan-tr { font-size: 1.15rem; font-weight: 600; color: var(--accent); }
+.scan-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: sticky; bottom: calc(var(--tab-h) + 8px); }
+@media (min-width: 900px) { .scan-btns { bottom: 8px; } }
+.scan-btns .btn { min-height: 64px; color: #fff; border: 0; }
+.scan-btns .no { background: var(--bad); } .scan-btns .yes { background: var(--good); }
+.reader .w.unk { text-decoration: underline dotted var(--mid); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.chip.pick { border: 1px solid var(--line); background: var(--surface); }
+.chip.pick.on { background: var(--accent-soft); border-color: var(--accent); }
+.newwords .chips { gap: 4px; }
+.goalbar { position: relative; height: 12px; border-radius: 6px; background: var(--surface2); margin: 8px 0 6px; }
+.goalbar i { display: block; height: 100%; border-radius: 6px; background: var(--accent); }
+.goal-line { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1px; background: var(--text); border-radius: 2px; }
+.vocab .big { font-size: 2rem; }
+.list.compact li .undo { flex: 0 0 auto; }
+.banner.phase { background: var(--accent-soft); color: var(--accent); }
+.suggest b { display: block; }
+.speed { margin: 6px 0; }
+/* Not çubuğu metnin üstüne binmesin: zemin + gölge, kartın sonunda boşluk */
+.grades { background: var(--bg); padding: 8px 0 4px; box-shadow: 0 -10px 14px -6px var(--bg); z-index: 2; }
+.card:has(.back:not(.hidden)) { margin-bottom: 12px; }

@@ -3,7 +3,7 @@ import json, sys, os
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('BASE', 'http://localhost:8765/')
-SHOTS = '/home/claude/shots'
+SHOTS = '/home/claude/shots/v2'
 os.makedirs(SHOTS, exist_ok=True)
 ROUTES = ['bugun', 'okuma', 'kartlar', 'kartlar/liste', 'kartlar/ekle', 'gramer', 'alistirma', 'cikmis', 'dersler', 'eksikler', 'ayarlar']
 errors = []
@@ -272,6 +272,251 @@ with sync_playwright() as p:
     data = json.load(open(dl.value.path()))
     check('cards' in data['data'], 'dışa aktarma JSON')
     page.screenshot(path=f'{SHOTS}/akis-ayarlar-koyu.png', full_page=True)
+    ctx.close()
+
+    # ================= v3 akışları (temiz bağlam) =================
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
+    page = ctx.new_page(); attach(page, 'v3')
+    page.on('dialog', lambda d: d.accept())
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
+    def st():
+        page.wait_for_timeout(300)
+        return page.evaluate("JSON.parse(localStorage.getItem('yokdil.v1')||'{}')")
+    def ev(js): return page.evaluate(js)
+    def drag(sel, dx):
+        bb = page.locator(sel).bounding_box()
+        x, y = bb['x'] + bb['width'] / 2, bb['y'] + bb['height'] / 2
+        page.mouse.move(x, y); page.mouse.down()
+        for k in range(1, 9): page.mouse.move(x + dx * k / 8, y + 2)
+        page.mouse.up(); page.wait_for_timeout(250)
+    check(page.locator('a[href="#/kartlar/tara"]').count() >= 1, 'Bugün: "Kelime tara" girişi')
+    page.screenshot(path=f'{SHOTS}/v3-bugun.png', full_page=True)
+
+    # 1) "Biliyorum, gösterme"
+    page.goto(BASE + '#/kartlar/calis'); page.wait_for_timeout(600)
+    left0 = page.locator('.flash .small.muted').first.inner_text().split(' ')[0]
+    w0 = page.locator('.fword').inner_text()
+    check(page.locator('button:has-text("Biliyorum, gösterme")').count() == 1, 'yeni kartta "Biliyorum, gösterme"')
+    page.screenshot(path=f'{SHOTS}/v3-kart-biliyorum.png')
+    page.click('button:has-text("Biliyorum, gösterme")'); page.wait_for_timeout(500)
+    s = st()
+    kc = [c for c in s['cards'].values() if c.get('word') == w0]
+    check(kc and kc[0]['state'] == 'known', f'"{w0}" known oldu')
+    day = next(iter(s.get('days', {}).values()), {})
+    check(not day.get('newDone'), 'biliyorum günlük yeni kotasını yemedi')
+    left1 = page.locator('.flash .small.muted').first.inner_text().split(' ')[0]
+    check(left0 == left1 and page.locator('.fword').inner_text() != w0, f'yerine sıradaki kelime geldi ({left0} → {left1})')
+    check(not any(c['id'] == kc[0]['id'] for c in ev("import('./js/srs.js').then(m => m.dueCards())")), 'known kart tekrar kuyruğunda değil')
+    # Tek el akışı: karta dokun → göster, sağa kaydır → İyi
+    wcur = page.locator('.fword').inner_text()
+    page.locator('.flashcard .fword').click(); page.wait_for_timeout(200)
+    check(page.locator('.grades:not(.hidden)').count() == 1, 'karta dokununca arka yüz açıldı')
+    drag('.flashcard', 160)
+    s = st()
+    cc = [c for c in s['cards'].values() if c.get('word') == wcur]
+    check(cc and cc[0].get('reps') == 1 and cc[0]['state'] == 'review' and cc[0].get('hist') == ['g'], f'sağa kaydırma = İyi ({wcur})')
+    # Klavye: boşluk + 1 (Tekrar)
+    page.keyboard.press(' '); page.wait_for_timeout(100); page.keyboard.press('1'); page.wait_for_timeout(300)
+    check(any(c.get('hist') == ['a'] for c in st()['cards'].values()), 'klavye: boşluk + 1 = Tekrar')
+
+    # Liste: Bildiklerim filtresi + geri al
+    page.goto(BASE + '#/kartlar/liste'); page.wait_for_timeout(400)
+    page.locator('main select').nth(1).select_option('known'); page.wait_for_timeout(200)
+    check(page.locator('main ul.list li').count() == 1 and w0 in page.inner_text('main ul.list'), 'Bildiklerim filtresi')
+    page.screenshot(path=f'{SHOTS}/v3-liste-bildiklerim.png', full_page=True)
+    page.click('main ul.list button:has-text("Geri al")'); page.wait_for_timeout(300)
+    kc = [c for c in st()['cards'].values() if c.get('word') == w0]
+    check(kc[0]['state'] == 'new' and kc[0].get('front'), 'geri al → yeni kuyruğun önü')
+
+    # 2) Hızlı tarama
+    page.goto(BASE + '#/kartlar'); page.wait_for_timeout(400)
+    check(page.locator('a[href="#/kartlar/tara"]').count() == 1, 'Kartlar: "Kelime tara" girişi')
+    page.screenshot(path=f'{SHOTS}/v3-kartlar-ana.png', full_page=True)
+    page.goto(BASE + '#/kartlar/tara'); page.wait_for_timeout(500)
+    check(page.locator('.scan-card').count() == 1 and '1 / 20' in page.inner_text('.scan-card'), 'tarama: 20\'lik grup')
+    check(page.locator('.scan-tr.hidden').count() == 1, 'anlam gizli')
+    page.click('button:has-text("Anlamı gör")')
+    page.screenshot(path=f'{SHOTS}/v3-tarama.png')
+    scanned = []
+    for act in ['y', 'y', 'n', 'y', 'n']:
+        scanned.append((page.locator('.scan-card .fword').inner_text(), act))
+        page.click('.scan-btns .yes' if act == 'y' else '.scan-btns .no'); page.wait_for_timeout(120)
+    scanned.append((page.locator('.scan-card .fword').inner_text(), 'y')); drag('.scan-card', 170)
+    scanned.append((page.locator('.scan-card .fword').inner_text(), 'n')); drag('.scan-card', -170)
+    check('8 / 20' in page.inner_text('.scan-card'), 'kaydırma ile tarama (sağ/sol)')
+    page.click('button:has-text("Geri al")'); page.wait_for_timeout(200)
+    check('7 / 20' in page.inner_text('.scan-card'), 'tarama: geri al')
+    scanned.pop()
+    s = st()
+    byw = {c.get('word'): c for c in s['cards'].values()}
+    okk = all((byw.get(w, {}).get('state') == ('known' if a == 'y' else 'new')) for w, a in scanned)
+    check(okk, f'tarama sonuçları kaydedildi ({len(scanned)})')
+    q = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.card ? x.card.word : x.word.word))")
+    nos = [w for w, a in scanned if a == 'n']
+    check(q[:len(nos) + 1][1:] == nos or q[:len(nos)] == nos or set(nos) <= set(q[:len(nos) + 1]), f'bilmiyorum → yeni kuyruğun önünde: {q[:4]}')
+    for k in range(14):
+        page.click('.scan-btns .yes'); page.wait_for_timeout(60)
+    check('20 kelime daha' in page.inner_text('main'), 'tarama grup sonu özeti')
+    page.screenshot(path=f'{SHOTS}/v3-tarama-sonu.png', full_page=True)
+
+    # 3) Mezuniyet: 7 öğrenilmiş kart → haftada en fazla 5 kontrol; bu hafta tekrar edilen gelmez
+    ev("""import('./js/store.js').then(m => { const now = Date.now();
+      for (let i = 0; i < 7; i++) m.put('cards', { id: 'gt' + i, word: 'gradword' + i, tr: 'x', state: 'review', interval: 60, ease: 2.5,
+        hist: ['g','g','g'], due: now - 86400000, lastReview: now - 40 * 86400000, reps: 6 });
+      m.put('cards', { id: 'gtr', word: 'gradrecent', tr: 'x', state: 'review', interval: 60, hist: ['g','g','g'], due: now - 1000, lastReview: now });
+      m.put('cards', { id: 'gmat', word: 'matureword', tr: 'x', state: 'review', interval: 30, hist: ['g','g','g'], due: now - 1000, lastReview: now - 30 * 86400000 }); })""")
+    page.reload(); page.wait_for_timeout(600)
+    due = ev("import('./js/srs.js').then(m => m.dueCards().map(c => c.id))")
+    gt = [d for d in due if d.startswith('gt')]
+    check(len([d for d in gt if d != 'gtr']) == 5 and 'gtr' not in due, f'öğrenilmiş kartlardan haftalık 5 kontrol ({len(gt)})')
+    check('gmat' in due, 'olgun (öğrenilmemiş) kart normal kuyrukta')
+    page.goto(BASE + '#/eksikler'); page.wait_for_timeout(500)
+    txt = page.inner_text('main')
+    check('bildiğin kelime' in txt and '/ 2000' in txt and page.locator('.goal-line').count() == 1, 'Eksikler: bildiğin kelime + hedef çizgisi')
+    page.screenshot(path=f'{SHOTS}/v3-eksikler-kelime.png', full_page=True)
+
+    # 4a) Yanlış cevap → otomatik kart
+    before = len(st()['cards'])
+    page.goto(BASE + '#/gramer/konu/kelime'); page.wait_for_timeout(500)
+    item = None
+    for i in range(8):
+        if page.locator('.opt').count() == 0: break
+        page.locator('.opt').nth(4 if i % 2 else 3).click(); page.wait_for_timeout(150)
+        if page.locator('.opt.wrong').count():
+            item = True; break
+        page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(100)
+    page.wait_for_timeout(400)
+    check(item and 'kelime karta eklendi' in (page.locator('#toast').inner_text() or ''), f'toast: {page.locator("#toast").inner_text() if page.locator("#toast").count() else "-"}')
+    page.screenshot(path=f'{SHOTS}/v3-otomatik-kart.png')
+    s = st()
+    hc = [c for c in s['cards'].values() if 'hata' in (c.get('tags') or [])]
+    right = [c for c in hc if c.get('ctx')]
+    check(len(hc) >= 1 and len(s['cards']) > before, f'yanlıştan kart eklendi ({[c["word"] for c in hc]})')
+    if right:
+        check(right[0]['word'].lower() in right[0]['ctx'].lower() and '----' not in right[0]['ctx'], f'bağlam: doğru kelime boşlukta: {right[0]["ctx"]}')
+    else:  # doğru şıkkın kartı zaten vardı → sadece yanlış şık eklenir
+        check(any('doğrusu' in (c.get('note') or '') for c in hc), 'yanlış şık kartı (doğru şık zaten kartta)')
+    # Ayardan kapat → eklenmez
+    ev("import('./js/store.js').then(m => m.setSetting('autoAdd', false))")
+    n1 = len(st()['cards'])
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(200)
+    page.goto(BASE + '#/gramer/konu/kelime'); page.wait_for_timeout(400)
+    for i in range(8):
+        if page.locator('.opt').count() == 0: break
+        page.locator('.opt').nth(2).click(); page.wait_for_timeout(100)
+        if page.locator('.opt.wrong').count(): break
+        page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(80)
+    page.wait_for_timeout(400)
+    check(len(st()['cards']) == n1, 'ayar kapalıyken otomatik kart yok')
+    ev("import('./js/store.js').then(m => m.setSetting('autoAdd', true))")
+    # Anlam eksik rozeti
+    ev("import('./js/store.js').then(m => m.put('cards', { id: 'cnox', word: 'zzunknownword', tr: '', state: 'new', source: 'Hata', tags: ['hata'], createdAt: Date.now() }))")
+    page.goto(BASE + '#/kartlar/liste'); page.wait_for_timeout(300)
+    page.locator('main select').nth(1).select_option('eksik'); page.wait_for_timeout(200)
+    check(page.locator('main ul.list .chip:has-text("anlam eksik")').count() >= 1, '"anlam eksik" rozeti + filtre')
+
+    # 4b) Okumada vurgulama + parça sonu
+    page.goto(BASE + '#/okuma'); page.wait_for_timeout(400)
+    check(page.locator('.suggest').count() == 1, 'okuma: önerilen parça kartı')
+    page.locator('main ul.list a[href^="#/okuma/p/"]').first.click(); page.wait_for_timeout(800)
+    unk = page.locator('.reader .w.unk').count()
+    check(unk > 0, f'bilinmeyen çekirdek kelimeler işaretli ({unk})')
+    # Bilinen (known) kelime işaretlenmez
+    first_unk = page.locator('.reader .w.unk').first.inner_text()
+    page.screenshot(path=f'{SHOTS}/v3-okuma-vurgu.png')
+    page.wait_for_timeout(23000)  # gerçekçi hız (≤600 k/dk) için
+    page.click('button:has-text("Soruları çöz")'); page.wait_for_timeout(200)
+    for i in range(6):
+        if page.locator('.opt:not([disabled])').count() == 0: break
+        page.locator('.opt').nth(0).click(); page.wait_for_timeout(120)
+        page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(150)
+    page.wait_for_timeout(500)
+    txt = page.inner_text('main')
+    check('yeni kelime vardı' in txt, 'parça sonu: "Bu parçada X yeni kelime vardı"')
+    check('kelime/dk' in txt, 'okuma hızı gösterildi')
+    rec = [r for r in st()['progress'].values() if r.get('kind') == 'read']
+    check(rec and rec[0]['wpm'] > 0 and rec[0]['total'] >= 1, f'okuma kaydı: {rec[0]["wpm"] if rec else None} k/dk, {rec[0]["right"] if rec else ""}/{rec[0]["total"] if rec else ""}')
+    page.locator('.newwords .chip.pick').first.click()
+    page.screenshot(path=f'{SHOTS}/v3-okuma-sonu.png', full_page=True)
+    n2 = len(st()['cards'])
+    page.click('button:has-text("Seçilenleri ekle (1)")'); page.wait_for_timeout(300)
+    s = st()
+    check(len(s['cards']) == n2 + 1 and any(c.get('source') == 'Okuma' and c.get('ctx') and c.get('front') for c in s['cards'].values()), 'parça sonu: seçilen kelime karta eklendi')
+    # Ayar: vurgu kapalı
+    ev("import('./js/store.js').then(m => m.setSetting('readHl', false))")
+    page.reload(); page.wait_for_timeout(700)
+    check(page.locator('.reader .w.unk').count() == 0, 'ayarla vurgu kapanıyor')
+    ev("import('./js/store.js').then(m => m.setSetting('readHl', true))")
+    page.goto(BASE + '#/eksikler'); page.wait_for_timeout(400)
+    check('kelime/dk ortalama' in page.inner_text('main'), 'Eksikler: okuma hızı')
+
+    # 5) Boşluk doldurma oyunu
+    page.goto(BASE + '#/kartlar/bosluk'); page.wait_for_timeout(400)
+    pool = ev("import('./js/views/gap.js').then(m => m.gapPool().length)")
+    if pool < 20:
+        check('açılır' in page.inner_text('main'), f'20 kart altında kilitli ({pool})')
+        ev("""fetch('data/words.json').then(r => r.json()).then(ws => import('./js/store.js').then(m => {
+          let n = 0; const now = Date.now();
+          for (const w of ws) { if (n >= 30) break; if (/\\s/.test(w.word) || !w.ex || !new RegExp('\\\\b' + w.word + '\\\\b', 'i').test(w.ex)) continue;
+            if (m.get('cards', 'w:' + w.id)) continue;
+            m.put('cards', { id: 'w:' + w.id, wid: w.id, word: w.word, tr: w.tr, pos: w.pos, ex: w.ex, state: 'review', interval: 4, ease: 2.5, reps: 2, due: now + 3 * 86400000, lastReview: now - 86400000, hist: ['g','g'] }); n++; }
+        }))""")
+        page.wait_for_timeout(400)
+    page.goto(BASE + '#/kartlar'); page.wait_for_timeout(300)
+    check(page.locator('a[href="#/kartlar/bosluk"]').count() == 1, 'Kartlar: boşluk doldurma açık (≥20 kart)')
+    DUEJS = "Object.values(JSON.parse(localStorage.getItem('yokdil.v1')).cards).filter(c => ['learning','relearn','review'].includes(c.state) && c.due <= Date.now() + 1000).length"
+    page.wait_for_timeout(400)
+    due_before = ev(DUEJS)
+    page.goto(BASE + '#/kartlar/bosluk'); page.wait_for_timeout(800)
+    check(page.locator('.opt').count() == 5 and '----' in page.inner_text('.q'), 'boşluk oyunu: 5 şık, ---- cümle')
+    page.screenshot(path=f'{SHOTS}/v3-bosluk.png')
+    wrongId = None
+    for i in range(10):
+        if page.locator('.opt').count() == 0: break
+        qtext = page.inner_text('.q')
+        page.locator('.opt').nth(0).click(); page.wait_for_timeout(120)
+        if page.locator('.opt.wrong').count():
+            wrongId = True; break
+        page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(100)
+    page.wait_for_timeout(300)
+    page.screenshot(path=f'{SHOTS}/v3-bosluk-yanlis.png')
+    s = st()
+    due_after = ev(DUEJS)
+    check(wrongId and due_after == due_before + 1, f'boşluk yanlışı → kart bugüne çekildi ({due_before} → {due_after})')
+    check(not any(m.startswith('gap:') for m in s.get('mistakes', {})), 'boşluk oyunu gramer hata kutusunu kirletmiyor')
+    ctx.close()
+
+    # forms.json: kart arka yüzü (extra) + okuma panelinde "Halleri:"
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
+    page = ctx.new_page(); attach(page, 'forms')
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
+    fw = page.evaluate("""fetch('data/forms.json').then(r => r.ok ? r.json() : {}).then(f => import('./js/store.js').then(m => {
+      const k = Object.keys(f).find(k => !k.includes(' ') && f[k].family && f[k].family.length && f[k].ex && f[k].ex.length);
+      if (!k) return null;
+      m.put('cards', { id: 'cf', word: k, tr: 'deneme', state: 'review', interval: 2, ease: 2.5, reps: 1, due: Date.now() - 1000, hist: ['g'] });
+      return k; }))""")
+    if fw:
+        page.wait_for_timeout(300)
+        page.goto(BASE + '#/kartlar/calis'); page.wait_for_timeout(700)
+        check(page.locator('.fword').inner_text() == fw, f'forms kartı ilk sırada ({fw})')
+        page.click('button:has-text("Göster")'); page.wait_for_timeout(300)
+        check(page.locator('.back .extra .exrow').count() >= 1 and 'örnek cümleler' in page.inner_text('.back').lower(), 'kart arkası: örnek cümleler (forms.json)')
+        check(page.locator('.back .extra .famrow').count() >= 1, 'kart arkası: diğer halleri')
+        page.screenshot(path=f'{SHOTS}/kart-arka-ornek.png', full_page=True)
+        page.goto(BASE + '#/okuma'); page.wait_for_timeout(300)
+        page.goto(BASE + '#/okuma/p/p001'); page.wait_for_timeout(700)
+        got = ''
+        ws = page.locator('.reader .w.unk')
+        for i in range(min(15, ws.count())):
+            ws.nth(i).click(); page.wait_for_timeout(500)
+            got = page.locator('.sheet .formsline').inner_text()
+            if 'Halleri' in got: break
+        check('Halleri:' in got, f'okuma paneli: "{got[:50]}"')
+        page.screenshot(path=f'{SHOTS}/okuma-panel-halleri.png')
+    else:
+        check(False, 'forms.json yok')
     ctx.close()
 
     # Service worker kaydı (ayrı bağlam)

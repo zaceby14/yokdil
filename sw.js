@@ -1,11 +1,13 @@
 // Service worker: uygulama kabuğu önbellekte, data/ ağ öncelikli
-const VER = 'yokdil-v1';
+const VER = 'yokdil-v3';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/app.js', 'js/util.js', 'js/merge.js', 'js/store.js', 'js/data.js', 'js/plan.js', 'js/srs.js', 'js/mistakes.js',
   'js/sync.js', 'js/lookup.js', 'js/quiz.js', 'js/charts.js', 'js/qbank.js', 'js/theme.js', 'js/tappable.js', 'js/md.js', 'js/pack.js',
+  'js/vocab.js', 'js/autocard.js', 'js/swipe.js',
   'js/views/today.js', 'js/views/reading.js', 'js/views/cards.js', 'js/views/grammar.js', 'js/views/drills.js',
-  'js/views/panel.js', 'js/views/settings.js', 'js/views/hub.js', 'js/views/exams.js', 'js/views/lessons.js'
+  'js/views/panel.js', 'js/views/settings.js', 'js/views/hub.js', 'js/views/exams.js', 'js/views/lessons.js',
+  'js/views/scan.js', 'js/views/gap.js'
 ];
 
 self.addEventListener('install', e => {

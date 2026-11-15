@@ -4,6 +4,20 @@ import { h, dayKey, uid, toast, topicName, typeName, TOPICS, fmtDate } from '../
 import { stats } from '../srs.js';
 import { seedUser } from '../data.js';
 import { hbars, heatmap, line, stacked } from '../charts.js';
+import { daysToExam } from '../plan.js';
+
+// Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
+function vocabBox(st, goal, left) {
+  const scale = Math.max(goal * 1.15, st.knowTotal);
+  const need = Math.max(0, goal - st.knowTotal);
+  return h('div.vocab',
+    h('div.row.between', h('div', h('span.big', st.knowTotal), h('span.muted', ` / ${goal} bildiğin kelime`)),
+      h('a.btn.small', { href: '#/kartlar/tara' }, 'Tara')),
+    h('div.goalbar', h('i', { style: `width:${(st.knowTotal / scale * 100).toFixed(1)}%` }),
+      h('span.goal-line', { style: `left:${(goal / scale * 100).toFixed(1)}%`, title: 'hedef' })),
+    h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature}`),
+    need && left > 0 ? h('div.small', `Hedefe günde ≈ ${Math.ceil(need / left)} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
+}
 
 export const MOCK = [
   ['bosluk', 'Cümlede boşluk', 20], ['cloze', 'Cloze test', 10], ['tamamlama', 'Cümle tamamlama', 11],
@@ -76,7 +90,8 @@ export default async function render(root) {
     h('h2', 'Eksiklerim'),
     sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.')))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
       h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.')))))),
-    sec('Kelimeler', h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    readLine(),
     sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) })),
     sec('Soru tipi doğruluğu', typeBox(rows)),
     sec('En çok unutulan', lapsed.length ? h('ul.list.compact', lapsed.map(c => h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×'))))) : h('p.muted.small', 'Henüz yok')),
@@ -148,4 +163,13 @@ function form(box) {
           toast('Kaydedildi'); drawMocks(box);
         }
       }, 'Kaydet')));
+}
+
+// Okuma hızı + doğruluk özeti
+function readLine() {
+  const r = store.all('progress').filter(x => x.kind === 'read' && x.wpm);
+  if (!r.length) return null;
+  const wpm = Math.round(r.reduce((a, x) => a + x.wpm, 0) / r.length);
+  const q = r.filter(x => x.total), acc = q.length ? q.reduce((a, x) => a + x.right, 0) / q.reduce((a, x) => a + x.total, 0) : null;
+  return sec('Okuma', h('p', h('b', wpm), ' kelime/dk ortalama', acc != null ? ` · doğruluk %${Math.round(acc * 100)}` : '', h('span.small.muted', ` (${r.length} okuma)`)));
 }
