@@ -6,7 +6,7 @@ import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
 import { answer, dueMistakes, openMistakes } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
 import { gItem, resolve } from '../qbank.js';
-import { soruTabs, lessonLink } from './hub.js';
+import { soruTabs, lessonLink, emptyData } from './hub.js';
 
 export default async function render(root, [mode, arg]) {
   if (mode === 'gunluk') return daily(root);
@@ -50,9 +50,9 @@ async function daily(root) {
   if (r.busy) items = items.slice(0, 3);
   const box = h('div');
   root.append(back(), box);
-  if (!items.length) { box.append(h('p.muted', 'Soru yok')); return; }
+  if (!items.length) { box.append(emptyData()); return; }
   runQuiz(box, items, {
-    title: 'Günlük', extra: lessonLink,
+    title: 'Günlük', extra: lessonLink, sid: 'gunluk:' + dayKey(), name: 'Günlük gramer', source: 'Gramer',
     onAnswer: (it, ok) => answer(it.key, ok, it.info),
     onEnd: (_, el) => { tick('gramer'); el.append(h('a.btn.wide', { href: '#/bugun' }, 'Bugün')); }
   });
@@ -63,15 +63,15 @@ async function box(root) {
   const el = h('div');
   root.append(back(), h('h2', 'Hata kutusu'), el);
   if (!items.length) { el.append(h('p.muted', 'Bugün tekrar edilecek hata yok.')); return; }
-  runQuiz(el, shuffle(items), { title: 'Hata', extra: lessonLink, onAnswer: (it, ok) => answer(it.key, ok, it.info) });
+  runQuiz(el, shuffle(items), { title: 'Hata', extra: lessonLink, sid: 'hata:' + dayKey(), name: 'Hata kutusu', onAnswer: (it, ok) => answer(it.key, ok, it.info) });
 }
 
 async function byTopic(root, topic) {
   const qs = (await grammar()).filter(q => q.topic === topic);
   const el = h('div');
   root.append(back(), h('h2', topicName(topic)), el);
-  if (!qs.length) { el.append(h('p.muted', 'Bu konuda soru yok')); return; }
-  runQuiz(el, shuffle(qs).slice(0, 8).map(gItem), { extra: lessonLink, onAnswer: (it, ok) => answer(it.key, ok, it.info) });
+  if (!qs.length) { el.append((await grammar()).length ? h('p.muted', 'Bu konuda soru yok') : emptyData()); return; }
+  runQuiz(el, shuffle(qs).slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', onAnswer: (it, ok) => answer(it.key, ok, it.info) });
 }
 
 async function home(root) {
@@ -86,6 +86,7 @@ async function home(root) {
   root.append(
     soruTabs('gramer'),
     h('h2', 'Gramer'),
+    qs.length ? null : emptyData(),
     h('div.chips', h('span.muted.small', `Hafta ${w.n}: `), (w.grammar || []).map(t => h('span.chip.ok', topicName(t)))),
     h('a.btn.primary.wide.big-btn', { href: '#/gramer/gunluk' }, r.tasks?.gramer ? 'Günlük set ✓ (tekrar)' : `Günlük set · ${r.busy ? 3 : store.settings().grammarCount} soru`),
     h('a.btn.wide', { href: '#/gramer/hata' }, `Hata kutusu · bugün ${due} / açık ${open}`),
@@ -105,7 +106,7 @@ function notes() {
   const wrap = h('section');
   const draw = () => {
     wrap.innerHTML = '';
-    const ns = store.all('notes').sort((a, b) => (a.topic || '').localeCompare(b.topic || '') || (a.createdAt || 0) - (b.createdAt || 0));
+    const ns = store.all('notes').filter(n => n.kind !== 'quick').sort((a, b) => (a.topic || '').localeCompare(b.topic || '') || (a.createdAt || 0) - (b.createdAt || 0));
     const topic = h('select', h('option', { value: '' }, 'Konu (ops.)'), Object.entries(TOPICS).map(([k, v]) => h('option', { value: k }, v)));
     const text = h('textarea', { rows: 2, placeholder: 'Yeni kural notu' });
     wrap.append(

@@ -1,7 +1,7 @@
 // Boşluk doldurma: kendi öğrendiğin kartlardan YÖKDİL "cümlede boşluk" formatı (5 şık)
 import * as store from '../store.js';
 import { words, wordIndex, enrich } from '../data.js';
-import { h, shuffle } from '../util.js';
+import { h, shuffle, dayKey } from '../util.js';
 import { runQuiz } from '../quiz.js';
 import { isStudied, isGraduated } from '../vocab.js';
 
@@ -58,7 +58,7 @@ export function gapResult(cardId, ok) {
   if (ok) return;
   const c = store.get('cards', cardId);
   if (!c) return;
-  store.put('cards', { ...c, due: Math.min(c.due || Date.now(), Date.now()), ...(isGraduated(c) ? { pulled: true } : {}) });
+  store.put('cards', { ...c, due: Math.min(c.due || Date.now(), Date.now()), wrongDay: dayKey(), ...(isGraduated(c) ? { pulled: true } : {}) });
 }
 
 export default async function gap(root, tabs) {
@@ -73,7 +73,7 @@ export default async function gap(root, tabs) {
   root.append(box);
   if (!items.length) { box.append(h('p.muted', 'Örnek cümlesi olan kart bulunamadı.')); return; }
   runQuiz(box, items, {
-    title: 'Boşluk', auto: false,
+    title: 'Boşluk', auto: false, sid: 'bosluk:' + dayKey(), inline: true, name: 'Boşluk doldurma', source: 'Kartlarım',
     onAnswer: (it, ok) => gapResult(it.cardId, ok),
     onEnd: (_, el) => el.append(h('a.btn.wide', { href: '#/kartlar/bosluk', onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Yeni tur'))
   });

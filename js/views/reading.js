@@ -7,6 +7,9 @@ import { answer } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
 import { bumpDay, tick } from '../plan.js';
 import { cardFromWord } from '../srs.js';
+import { setCtx } from '../ctx.js';
+import { saveNote, quickNotes } from '../notes.js';
+import { emptyData } from './hub.js';
 
 // Okuma hızı + doğruluk → önerilen seviye (saf)
 export function suggestLevel(recs, maxL = 3) {
@@ -54,7 +57,7 @@ async function list(root) {
     h('h3', 'Hazır parçalar'),
     ps.length ? h('ul.list', ps.map(p => h('li' + (done.has(p.id) ? '.done' : ''), h('a', { href: '#/okuma/p/' + p.id },
       h('b', (done.has(p.id) ? '✓ ' : '') + p.title),
-      h('span.small.muted', `${p.topic || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : h('p.muted', 'Parça yok')
+      h('span.small.muted', `${p.topic || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : emptyData('Okuma parçaları')
   );
 }
 
@@ -95,7 +98,27 @@ function reader(root, doc) {
     const r = bumpDay('readSec', pending); pending = 0;
     if ((r.readSec || 0) >= 15 * 60 && !r.tasks?.okuma) tick('okuma');
   }
-  const tp = tappable(doc.text, { source: doc.mine ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false });
+  setCtx({ type: 'okuma', key: 'okuma:' + doc.id, id: doc.id, label: 'Okuma · ' + doc.title });
+  // Aktif okuma: her paragraf sonunda katlanabilir "ana fikir" kutusu → notlara düşer
+  const active = store.settings().activeRead !== false;
+  const mainIdea = i => {
+    const key = `okuma:${doc.id}#p${i}`;
+    const prev = quickNotes().find(n => n.ctx?.key === key);
+    const ta = h('textarea', { rows: 2, placeholder: 'Bu paragrafın ana fikri ne? (1 cümle, Türkçe olabilir)' });
+    ta.value = prev?.text || '';
+    let id = prev?.id;
+    const st = h('span.small.muted', prev ? 'kaydedildi' : '');
+    const save = () => {
+      if (!ta.value.trim()) return;
+      id = saveNote(ta.value, { type: 'okuma', key, id: doc.id, para: i, label: `${doc.title} · paragraf ${i + 1}`, route: location.hash }, id).id;
+      st.textContent = 'kaydedildi';
+    };
+    ta.addEventListener('change', save);
+    return h('details.idea' + (prev ? '.has' : ''), h('summary', prev ? '✓ Ana fikir' : 'Ana fikir?'),
+      ta, h('div.row', h('button.btn.small', { onclick: save }, 'Kaydet'), st));
+  };
+  const tp = tappable(doc.text, { source: doc.mine ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
+    afterPara: active ? i => mainIdea(i) : null });
   const nWords = doc.passage?.words || (String(doc.text).match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) || []).length;
   const rid = 'read:' + doc.id;
   let readDone = false;
@@ -130,7 +153,9 @@ function reader(root, doc) {
       onclick: e => {
         e.target.remove();
         stopReading();
-        runQuiz(qbox, doc.questions.map((q, k) => ({ ...q, key: `${doc.id}#${k}` })), {
+        runQuiz(qbox, doc.questions.map((q, k) => ({ ...q, key: `${doc.id}#${k}`, info: { kind: 'okuma', dtype: 'paragraf', topic: doc.passage?.topic || '' } })), {
+          sid: 'okuma:' + doc.id, name: 'Okuma · ' + doc.title, source: 'Okuma', inline: !!doc.mine,
+          resolve: async key => { const k = +key.split('#').pop(); const q = doc.questions[k]; return q ? { ...q, key, info: { kind: 'okuma', dtype: 'paragraf' } } : null; },
           onAnswer: (it, ok) => answer(it.key, ok, { kind: 'okuma', topic: doc.passage?.topic || '', dtype: 'okuma' }),
           onEnd: ({ right, total }) => {
             flush(); tick('okuma');
@@ -142,6 +167,8 @@ function reader(root, doc) {
       }
     }, 'Soruları çöz'), qbox) : null;
 
+  // Yarım kalan soru oturumu varsa sorular kendiliğinden açılır
+  if (doc.questions?.length && store.get('sessions', 'okuma:' + doc.id)) setTimeout(() => qsec?.querySelector('button')?.click());
   root.append(
     h('div.readbar', h('a.btn.small', { href: '#/okuma' }, '‹'), h('b.grow.ellipsis', doc.title), timerEl, phraseBtn),
     doc.mine ? h('div.small.muted', `${doc.source || ''}${doc.page ? ' · s. ' + doc.page : ''} · `,

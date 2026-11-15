@@ -73,7 +73,8 @@ export default async function render(root) {
     .sort((a, b) => a.value - b.value);
   const lapsed = store.all('cards').filter(c => c.lapses > 0).sort((a, b) => b.lapses - a.lapses).slice(0, 8);
   const days = Object.fromEntries(store.all('days').map(d => [d.id, d]));
-  const act = k => { const d = days[k]; return d ? (d.reviews || 0) + (d.answered || 0) + Math.round((d.readSec || 0) / 60) : 0; };
+  const act = k => { const d = days[k]; return d ? (d.reviews || 0) + (d.answered || 0) + Math.round((d.readSec || 0) / 60) + (d.focusMin || 0) : 0; };
+  const focusWeek = Object.values(days).filter(d => d.id >= dayKey(new Date(Date.now() - 6 * 86400000))).reduce((a, d) => a + (d.focusMin || 0), 0);
   const mocks = store.all('mocks').sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 
   // En zayıf 3 alan
@@ -95,7 +96,8 @@ export default async function render(root) {
     sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) })),
     sec('Soru tipi doğruluğu', typeBox(rows)),
     sec('En çok unutulan', lapsed.length ? h('ul.list.compact', lapsed.map(c => h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×'))))) : h('p.muted.small', 'Henüz yok')),
-    sec('Son 8 hafta', h('div.center', { html: heatmap(act) })),
+    sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Odak: son 7 günde ${focusWeek} dk`)),
+    h('a.card.link', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ` ${store.all('notes').filter(n => n.kind === 'quick' && !n.done).length} açık not`)),
     sec('Deneme sonuçları', mockBox)
   );
   drawMocks(mockBox);

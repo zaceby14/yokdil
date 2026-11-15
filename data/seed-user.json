@@ -2,22 +2,23 @@
  "cards": [
   {
    "word": "frequently",
-   "tr": "sık sık, genellikle",
+   "tr": "sık sık, çoğu zaman",
    "syn": [
+    "often",
     "commonly",
-    "generally"
+    "regularly"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; anlam düzeltildi: sık sık, genellikle → sık sık, çoğu zaman (Claude); eş anlam düzeltildi: commonly, generally → often, commonly, regularly (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
    "word": "throughout",
-   "tr": "tüm, boyunca",
+   "tr": "boyunca; -in her yerinde",
    "syn": [
     "all over",
     "across"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: tüm, boyunca → boyunca; -in her yerinde (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -36,23 +37,22 @@
    "word": "virtually",
    "tr": "neredeyse, hemen hemen",
    "syn": [
-    "approximately",
     "nearly",
-    "almost"
+    "almost",
+    "practically"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: approximately, nearly, almost → nearly, almost, practically (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
    "word": "even so",
    "tr": "yine de, buna rağmen",
    "syn": [
-    "but",
     "yet",
     "nonetheless",
     "nevertheless"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: but, yet, nonetheless, nevertheless → yet, nonetheless, nevertheless (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -83,10 +83,9 @@
    "syn": [
     "actually",
     "in fact",
-    "as a matter of fact",
-    "as such"
+    "as a matter of fact"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: actually, in fact, as a matter of fact, as such → actually, in fact, as a matter of fact (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -104,9 +103,10 @@
    "tr": "dayanmak, varlığını sürdürmek",
    "syn": [
     "survive",
-    "exist"
+    "last",
+    "persist"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: survive, exist → survive, last, persist (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -114,9 +114,10 @@
    "tr": "farkındalık, bilinç",
    "syn": [
     "knowledge",
-    "apprehension"
+    "consciousness",
+    "recognition"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: knowledge, apprehension → knowledge, consciousness, recognition (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -155,20 +156,21 @@
    "tr": "tartışılmaz, su götürmez",
    "syn": [
     "irrefutable",
-    "accurate",
+    "indisputable",
     "certain"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: irrefutable, accurate, certain → irrefutable, indisputable, certain (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
    "word": "associated with",
    "tr": "ile ilişkili, bağlantılı",
    "syn": [
-    "affiliated with",
-    "refer to"
+    "linked to",
+    "connected with",
+    "related to"
    ],
-   "note": "anlam Claude tarafından eklendi",
+   "note": "anlam Claude tarafından eklendi; eş anlam düzeltildi: affiliated with, refer to → linked to, connected with, related to (Claude)",
    "source": "Notlarım 30.03.2026"
   },
   {
@@ -193,22 +195,22 @@
   },
   {
    "word": "treat",
-   "tr": "tedavi etmek",
+   "tr": "tedavi etmek; (ısıl/kimyasal) işlem uygulamak; ele almak, davranmak",
    "syn": [
     "cure",
     "medicate"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: tedavi etmek → tedavi etmek; (ısıl/kimyasal) işlem uygulamak; ele almak, davranmak (Claude)",
    "source": "Notlarım 04.04.2026"
   },
   {
    "word": "fatten",
-   "tr": "yağlandırmak, şişmanlatmak",
+   "tr": "şişmanlatmak, semirtmek; şişmanlamak",
    "syn": [
     "plump out",
     "fill out"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: yağlandırmak, şişmanlatmak → şişmanlatmak, semirtmek; şişmanlamak (Claude)",
    "source": "Notlarım 04.04.2026"
   },
   {
@@ -233,13 +235,13 @@
   },
   {
    "word": "appropriate",
-   "tr": "uygun, düzgün",
+   "tr": "uygun, yerinde",
    "syn": [
-    "convenient",
-    "decent",
-    "proper"
+    "suitable",
+    "proper",
+    "fitting"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: uygun, düzgün → uygun, yerinde (Claude); eş anlam düzeltildi: convenient, decent, proper → suitable, proper, fitting (Claude)",
    "source": "Notlarım 04.04.2026"
   },
   {
@@ -247,9 +249,10 @@
    "tr": "kasıtsız olarak, istemeden",
    "syn": [
     "unknowingly",
-    "recklessly"
+    "unintentionally",
+    "accidentally"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: unknowingly, recklessly → unknowingly, unintentionally, accidentally (Claude)",
    "source": "Notlarım 04.04.2026"
   },
   {
@@ -260,10 +263,9 @@
     "bring on",
     "give rise to",
     "result in",
-    "trigger",
-    "contribute to"
+    "trigger"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: bring about, bring on, give rise to, result in, trigger, contribute to → bring about, bring on, give rise to, result in, trigger (Claude)",
    "source": "Notlarım 04.04.2026"
   },
   {
@@ -473,23 +475,24 @@
   },
   {
    "word": "precipitate",
-   "tr": "hızlandırmak, zemin hazırlamak",
+   "tr": "hızlandırmak, aniden tetiklemek; (kimya) çökelmek, çöktürmek",
    "syn": [
     "speed up",
     "hasten",
     "accelerate"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: hızlandırmak, zemin hazırlamak → hızlandırmak, aniden tetiklemek; (kimya) çökelmek, çöktürmek (Claude)",
    "source": "Notlarım 11.04.2026"
   },
   {
    "word": "rear",
-   "tr": "kaldırmak, şahlanmak; yetiştirmek",
+   "tr": "yetiştirmek, büyütmek; (at) şahlanmak; kaldırmak",
    "syn": [
-    "rise up",
-    "erect"
+    "raise",
+    "bring up",
+    "breed"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: kaldırmak, şahlanmak; yetiştirmek → yetiştirmek, büyütmek; (at) şahlanmak; kaldırmak (Claude); eş anlam düzeltildi: rise up, erect → raise, bring up, breed (Claude)",
    "source": "Notlarım 11.04.2026"
   },
   {
@@ -538,22 +541,22 @@
    "tr": "karmaşa, kargaşa",
    "syn": [
     "upheaval",
-    "riot",
-    "uprising",
-    "rebellion"
+    "chaos",
+    "unrest",
+    "confusion"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: upheaval, riot, uprising, rebellion → upheaval, chaos, unrest, confusion (Claude)",
    "source": "Notlarım 12.04.2026"
   },
   {
    "word": "drastic",
-   "tr": "sert, katı, şiddetli",
+   "tr": "köklü, radikal, sert",
    "syn": [
-    "tough",
-    "severe",
-    "potent"
+    "radical",
+    "extreme",
+    "severe"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: sert, katı, şiddetli → köklü, radikal, sert (Claude); eş anlam düzeltildi: tough, severe, potent → radical, extreme, severe (Claude)",
    "source": "Notlarım 12.04.2026"
   },
   {
@@ -677,10 +680,10 @@
    "tr": "elde etmek, (ürün) toplamak",
    "syn": [
     "gain",
-    "take advantage of",
-    "utilize"
+    "obtain",
+    "harvest"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: gain, take advantage of, utilize → gain, obtain, harvest (Claude)",
    "source": "Notlarım 19.04.2026"
   },
   {
@@ -855,9 +858,10 @@
    "tr": "ikna edici",
    "syn": [
     "persuasive",
-    "influential"
+    "compelling",
+    "cogent"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: persuasive, influential → persuasive, compelling, cogent (Claude)",
    "source": "Notlarım 25.04.2026"
   },
   {
@@ -921,10 +925,10 @@
    "word": "unconsciously",
    "tr": "bilinçsizce",
    "syn": [
-    "insensibly",
-    "unknowingly"
+    "unknowingly",
+    "involuntarily"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: insensibly, unknowingly → unknowingly, involuntarily (Claude)",
    "source": "Notlarım 26.04.2026"
   },
   {
@@ -1101,13 +1105,13 @@
   },
   {
    "word": "decline",
-   "tr": "azalma, yok olma",
+   "tr": "azalma, düşüş, gerileme",
    "syn": [
-    "degeneration",
-    "loss",
-    "weakening"
+    "decrease",
+    "fall",
+    "deterioration"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: azalma, yok olma → azalma, düşüş, gerileme (Claude); eş anlam düzeltildi: degeneration, loss, weakening → decrease, fall, deterioration (Claude)",
    "source": "Notlarım 02.05.2026"
   },
   {
@@ -1124,11 +1128,11 @@
    "word": "validate",
    "tr": "onaylamak, doğrulamak",
    "syn": [
-    "formalize",
     "confirm",
-    "verify"
+    "verify",
+    "corroborate"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: formalize, confirm, verify → confirm, verify, corroborate (Claude)",
    "source": "Notlarım 05.05.2026"
   },
   {
@@ -1231,13 +1235,13 @@
   },
   {
    "word": "conduct",
-   "tr": "yapmak, yürütmek; yürütmek; davranış, idare",
+   "tr": "yürütmek, yapmak; (ısı/elektrik) iletmek; davranış, idare",
    "syn": [
     "carry out",
     "perform",
     "behaviour"
    ],
-   "note": "eş anlam Claude tarafından eklendi; ayrıca: Notlarım tablo",
+   "note": "eş anlam Claude tarafından eklendi; ayrıca: Notlarım tablo; anlam düzeltildi: yapmak, yürütmek; yürütmek; davranış, idare → yürütmek, yapmak; (ısı/elektrik) iletmek; davranış, idare (Claude)",
    "source": "Notlarım 20.07.2026"
   },
   {
@@ -1255,11 +1259,11 @@
    "word": "composed",
    "tr": "oluşmuş, meydana getirilmiş; sakin",
    "syn": [
-    "consisted of",
+    "made up of",
     "constituted",
     "calm"
    ],
-   "note": "",
+   "note": "eş anlam düzeltildi: consisted of, constituted, calm → made up of, constituted, calm (Claude)",
    "source": "Notlarım tablo"
   },
   {
@@ -1350,13 +1354,14 @@
   },
   {
    "word": "revolution",
-   "tr": "devrim, köklü değişim",
+   "tr": "devrim, köklü değişim; (eksen/yörünge etrafında) dönüş, devir",
    "syn": [
     "major change",
     "transformation",
-    "uprising"
+    "uprising",
+    "rotation"
    ],
-   "note": "",
+   "note": "anlam düzeltildi: devrim, köklü değişim → devrim, köklü değişim; (eksen/yörünge etrafında) dönüş, devir (Claude); eş anlam düzeltildi: major change, transformation, uprising → major change, transformation, uprising, rotation (Claude)",
    "source": "Notlarım tablo"
   },
   {

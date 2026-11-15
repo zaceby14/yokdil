@@ -1043,14 +1043,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "it contains at least 10.5 percent chromium",
+     "it contains at least 10.5 percent chromium in its composition",
      "it is therefore used widely in kitchens",
-     "its surface forms a protective oxide film",
-     "engineers prefer it for outdoor structures",
-     "it can still suffer pitting in chloride-rich environments"
+     "its surface forms a thin oxide film that protects it",
+     "engineers prefer it for outdoor railings",
+     "it can still pit where chloride is abundant"
     ],
     "answer": 4,
-    "explain": "Although (+) dayanıklı → ikinci kısım (−) olmalı: yine de oyuklanma olabilir. Diğerleri aynı yönde (+).",
+    "explain": "Although (+) dayanıklı → ikinci kısım (−) olmalı: yine de klorürlü ortamda oyuklanabilir. Diğerleri aynı yönde (+) bilgi verir.",
     "tip": "Zıtlık bağlacı: kutbu ters çevir."
    }
   ],
@@ -1066,13 +1066,13 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "the engineers will inspect the part next year",
-     "the material is usually stronger in compression",
-     "the bolt has never been tightened",
-     "fatigue cracks rarely start at sharp corners",
+     "the material is stronger in compression",
+     "the bolt had never been tightened",
+     "fatigue cracks rarely start at corners",
      "the final fracture surface showed clear beach marks"
     ],
     "answer": 4,
-    "explain": "Neden (yavaş büyüme, past perfect) → sonuç (geçmiş, kırık yüzeyde izler). Tuzak: 'will inspect' zaman uyumsuz.",
+    "explain": "Neden (yavaş büyüme, past perfect) → geçmiş zamanlı sonuç: kırık yüzeyinde belirgin 'beach marks'. 'will inspect' zaman uyumsuz; diğerleri genel/ilgisiz bilgi, sonuç değil.",
     "tip": "Past perfect + because → ana cümle past."
    }
   ],
@@ -1087,14 +1087,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "because it is produced with renewable electricity at low cost",
-     "so it is the cheapest fuel on the market",
-     "as long as natural gas is no longer used",
-     "even though the cost of renewable electricity has fallen sharply",
-     "which releases large amounts of carbon dioxide"
+     "because it is produced with renewable electricity at very low cost",
+     "so it has become the cheapest fuel available on the market",
+     "as long as natural gas is no longer used to produce any hydrogen",
+     "even though renewable electricity has become far cheaper",
+     "which releases large amounts of carbon dioxide when burned"
     ],
     "answer": 3,
-    "explain": "Pahalı ↔ yenilenebilir elektrik ucuzladı: zıtlık. 'because ... at low cost' mantıksız.",
+    "explain": "Pahalı ↔ yenilenebilir elektrik ucuzladı: zıtlık (even though). 'because ... very low cost' ve 'so ... cheapest' ilk kısımla çelişir; yeşil hidrojen yanınca CO2 salmaz.",
     "tip": "even though = -e rağmen."
    }
   ],
@@ -1109,9 +1109,9 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "the sky looked blue because of scattering",
-     "sunlight will be scattered by gas molecules",
-     "the daytime sky would look black rather than blue",
+     "the sky looked blue during the day because of scattering",
+     "sunlight will be scattered in all directions by gas molecules",
+     "the sky would appear black even during the day",
      "blue light had been absorbed by oxygen",
      "the sky has appeared violet since ancient times"
     ],
@@ -1131,14 +1131,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "because they are active all the time",
+     "because they remain fully active all the time, even without water",
      "so they never enter cryptobiosis",
-     "whereas active tardigrades are much more easily killed",
+     "whereas active ones are killed far more easily",
      "unless their metabolism almost stops",
-     "although they never lose any water"
+     "although they never lose any water from their bodies when dry"
     ],
     "answer": 2,
-    "explain": "Kuru hâlde dayanıklı ↔ aktifken kırılgan: whereas karşılaştırması. 'although they never lose any water' metne ters (kuruyunca suyun neredeyse tamamını kaybederler); 'unless' koşulu tersine çevirir.",
+    "explain": "Kuru hâlde dayanıklı ↔ aktifken kırılgan: whereas karşılaştırması. 'never lose any water' gerçeğe ters (kuruyunca suyun neredeyse tamamını kaybederler); 'unless' koşulu tersine çevirir; 'fully active' ve 'never ... cryptobiosis' kuru hâlde hayatta kalmayla çelişir.",
     "tip": "whereas: iki durumu kıyasla."
    }
   ],
@@ -1153,14 +1153,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "the corals will recover their algae quickly",
-     "the reef had been completely healthy",
+     "the corals will quickly recover their algae",
+     "the reef had been healthy for decades",
      "corals produced more calcium carbonate",
-     "many bleached corals are likely to die",
-     "bleaching was caused by cold water"
+     "many of the bleached corals are expected to die",
+     "the bleaching was caused by cold water"
     ],
     "answer": 3,
-    "explain": "Unless = if not: sıcaklık düzelmezse → mercanlar ölebilir. Zaman: geniş/gelecek.",
+    "explain": "Unless = if not: sıcaklık düzelmezse → ağarmış mercanların çoğu ölebilir. Zaman: gelecek. 'quickly recover' kutbu ters; diğerleri geçmiş zaman/yanlış bilgi.",
     "tip": "Unless = if...not; kutbu dikkatle eşleştir."
    }
   ],
@@ -1175,14 +1175,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "scientists were unable to study the Moon at all",
-     "scientists have been able to compare lunar and terrestrial rocks directly",
-     "the Moon will form from a giant impact",
-     "the Moon had no iron core before the missions",
+     "scientists were unable to study the Moon",
+     "researchers have compared Moon rocks with Earth rocks",
+     "the Moon will form from a giant impact with a young planet",
+     "the Moon had no iron core before the missions took place",
      "astronauts land on the Moon every year"
     ],
     "answer": 1,
-    "explain": "Since + geçmiş olay → ana cümle present perfect (have been able).",
+    "explain": "Since + geçmiş olay → ana cümle present perfect (have compared). Diğerleri zaman uyumsuz (were, will form, had, land) veya mantıksız.",
     "tip": "since + V2 → have V3."
    }
   ],
@@ -1198,13 +1198,13 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "once he had rolled a sheet of paper into a tube",
-     "unless he used a hollow cylinder",
-     "while patients will be lying in bed",
+     "unless he used a hollow paper cylinder",
+     "while his patients will be lying in bed",
      "so that sound travels poorly through solids",
      "even though he has placed his ear on the chest"
     ],
     "answer": 0,
-    "explain": "Ana cümle past; 'once he had rolled' past perfect sırası doğru. Diğerleri zaman/mantık hatalı.",
+    "explain": "Ana cümle past; 'once he had rolled' past perfect sırası doğru. 'will be lying', 'has placed' zaman uyumsuz; 'unless' kutbu ters; 'so that ... poorly' mantıksız.",
     "tip": "Önce olan eylem: had V3."
    }
   ],
@@ -1219,14 +1219,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "although simulations allow fast and cheap training",
-     "because real robots never break",
-     "so that they can attempt millions of trials without being damaged",
-     "unless they are expensive to build",
-     "as if they had been designed by computers"
+     "although simulations allow fast and cheap training of robots",
+     "because real robots never break down during physical tests",
+     "so that they can try millions of times without harm",
+     "unless they are too expensive to build and test in real life",
+     "as if they had been designed entirely by other computers"
     ],
     "answer": 2,
-    "explain": "Amaç: simülasyonda zarar görmeden çok deneme. 'although ... fast and cheap' zıtlık değil.",
+    "explain": "Amaç: simülasyonda zarar görmeden çok sayıda deneme (so that + can). 'although' zıtlık kurar ama arada zıtlık yok; 'never break down' yanlış; 'unless' mantığı ters.",
     "tip": "so that + can = amaç."
    }
   ],
@@ -1241,14 +1241,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "therefore, it has no environmental effects",
-     "for example, plants cannot use atmospheric nitrogen",
-     "similarly, it supports half of humanity",
-     "in other words, it was invented in 1909",
-     "however, it also consumes a significant share of the world's energy"
+     "therefore, it has no harmful effects on the environment at all",
+     "for example, plants cannot use nitrogen from the atmosphere",
+     "as a result, it now needs almost no energy to operate",
+     "in other words, it was invented by two chemists in 1909",
+     "however, it also uses a large part of global energy"
     ],
     "answer": 4,
-    "explain": "Olumlu etki → olumsuz yön: however. 'similarly' aynı fikri tekrar ediyor, mantıksız.",
+    "explain": "Olumlu etki (gıda artışı) → olumsuz yön: however. 'therefore ... no harmful effects' ve 'as a result ... no energy' mantıksız; 'for example' ve 'in other words' önceki fikri örneklemiyor/açıklamıyor.",
     "tip": "Noktalı virgül sonrası bağlaç: ilişkiyi belirle."
    }
   ],
@@ -1266,7 +1266,7 @@
      "the cracks will not start so easily",
      "the cracks might not have started so easily",
      "the aircraft broke up in flight",
-     "fatigue had been concentrated near the openings",
+     "fatigue had been concentrated there",
      "the investigators find no beach marks"
     ],
     "answer": 1,
@@ -1288,7 +1288,7 @@
      "nevertheless, they may be ideal for stationary storage",
      "as a result, they are the best choice for long-range cars",
      "for instance, sodium is lighter than lithium",
-     "in addition, they store more energy",
+     "in addition, they store more energy than lithium-ion cells",
      "that is, they are more expensive"
     ],
     "answer": 0,
@@ -1307,14 +1307,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "but it also damages roads and buildings built on frozen ground",
-     "and therefore it never affects infrastructure",
-     "although it releases carbon dioxide",
-     "so it is called a positive feedback",
-     "but microbes are inactive in cold soil"
+     "but it also harms roads and houses on frozen soil",
+     "and therefore it never affects roads or other infrastructure",
+     "although it releases carbon dioxide and methane into the air",
+     "so it is called a positive feedback by climate scientists",
+     "but microbes remain inactive in cold and frozen soil"
     ],
     "answer": 0,
-    "explain": "Not only ... but also yapısı; ikinci kısım ek bir zarar.",
+    "explain": "Not only ... but (also) yapısı; ikinci kısım ek bir zarar (yollar ve binalar). 'and therefore', 'although', 'so' yapıya uymaz; mikroplarla ilgili seçenek ek zarar bildirmez ve 'also' eksik.",
     "tip": "not only (devrik) → but (also)."
    }
   ],
@@ -1329,14 +1329,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "so they know the time of every earthquake",
-     "because early warning systems give a minute's notice",
-     "but they can estimate long-term probabilities for active faults",
-     "and they can therefore warn people days in advance",
-     "since faults never move"
+     "so they already know the exact time of every earthquake",
+     "because warning systems give a minute's notice",
+     "but they can estimate long-term risk on active faults",
+     "and they can therefore warn people several days in advance",
+     "since faults never move at all"
     ],
     "answer": 2,
-    "explain": "Yapamaz (−) ↔ yapabilir (+): but. 'days in advance' çelişki.",
+    "explain": "Kesin tahmin edemez (−) ↔ uzun vadeli risk tahmini yapabilir (+): but. 'exact time' ve 'several days in advance' ilk kısımla çelişir; uyarı sistemi bir neden değil; faylar hareket eder.",
     "tip": "Olumsuz → olumlu: but/yet."
    }
   ],
@@ -1351,14 +1351,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "because they must be cooled to very low temperatures",
-     "although they require expensive cooling",
-     "so that they have zero resistance",
-     "unless electrons form pairs",
-     "even though they need extreme cooling"
+     "since they need to be kept extremely cold",
+     "although they require expensive and complex cooling systems",
+     "so that they can carry current with zero resistance",
+     "unless electrons inside them form pairs at low temperature",
+     "even though they need to be cooled to extreme temperatures"
     ],
     "answer": 0,
-    "explain": "Kullanılmama nedeni: soğutma gereksinimi. 'although/even though' kutbu yanlış.",
+    "explain": "Kullanılmama nedeni: aşırı soğutma gereksinimi (since = çünkü). 'although / even though' kutbu yanlış (soğutma bir engeldir, zıtlık değil); 'so that' amaç bildirir, 'unless' koşulu anlamsız.",
     "tip": "Olumsuz sonuç + neden = because."
    }
   ],
@@ -1373,11 +1373,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "until the virus had not mutated",
+     "until the virus had not mutated into a different variant",
      "as soon as the genetic sequence of the virus was published",
-     "although the genetic sequence is unknown",
-     "because the vaccines must be stored cold",
-     "so that the virus would be grown in eggs"
+     "although the genetic sequence of the virus was still unknown",
+     "because the finished vaccines must be stored at low temperatures",
+     "so that the virus would be grown in chicken eggs instead"
     ],
     "answer": 1,
     "explain": "Tasarım dizinin yayımlanmasının hemen ardından: as soon as + past.",
@@ -1395,14 +1395,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "Bessemer will announce his process",
-     "Bessemer steel had already been produced for about two decades",
-     "steel has been very cheap since then",
-     "the converter disappears from modern plants",
-     "phosphorus is removed easily"
+     "Bessemer will announce his new process to the public",
+     "Bessemer steel had been made for some twenty years",
+     "steel has been very cheap in most countries since then",
+     "the converter disappears from most modern steel plants",
+     "phosphorus is removed easily from the molten iron"
     ],
     "answer": 1,
-    "explain": "By the time + past → past perfect.",
+    "explain": "By the time + past → past perfect (had been made). Diğer seçeneklerde zaman uyumsuz (will, has been, geniş zaman).",
     "tip": "By the time + V2 → had V3."
    }
   ],
@@ -1417,14 +1417,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "after it has become hot",
+     "after it has become hot enough",
      "until it reaches its operating temperature",
      "because it contains platinum",
      "so that emissions are reduced",
-     "while the engine runs at full speed for hours"
+     "while the engine runs at full speed"
     ],
     "answer": 1,
-    "explain": "Isınana kadar kötü çalışır. 'after it has become hot' tersi.",
+    "explain": "Isınana kadar kötü çalışır (until). 'after it has become hot' tersi; platin içermesi kötü çalışmanın nedeni değil; 'so that' amaç bildirir.",
     "tip": "until = -e kadar."
    }
   ],
@@ -1439,11 +1439,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "consequently, they predict extreme events best",
+     "consequently, they predict extreme events better than any model",
      "they may, however, struggle with rare extreme events",
-     "they therefore require huge supercomputers",
-     "for this reason, they solve physical equations",
-     "likewise, they need hours of computing time"
+     "they therefore require huge supercomputers to run",
+     "for this reason, they solve all the physical equations exactly",
+     "likewise, they need many hours of computing time"
     ],
     "answer": 1,
     "explain": "Hızlı (+) → nadir olaylarda zayıf (−): however.",
@@ -1461,14 +1461,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "it never makes any mistakes",
-     "the outcome still depends on how the cell repairs the cut",
-     "it had cut the wrong place",
-     "the cell's repair system is not involved",
-     "it is therefore completely safe"
+     "it never makes any mistakes in the genome of the cell",
+     "the result still relies on the cell's repair process",
+     "it had cut the wrong place in the DNA of the patient",
+     "the cell's own repair system is not involved at all",
+     "it is therefore completely safe for use in all patients"
     ],
     "answer": 1,
-    "explain": "Even if = -se bile → beklenmedik sonuç/kısıt. 'therefore safe' even if ile çelişir.",
+    "explain": "Even if = -se bile → yine de bir kısıt: sonuç hücrenin onarım sürecine bağlı. 'therefore ... safe' ve 'never makes any mistakes' even if yapısıyla çelişir; 'had cut' zaman uyumsuz.",
     "tip": "even if: varsayım + yine de."
    }
   ],
@@ -1483,11 +1483,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "the planet is brighter than its star",
-     "it has no atmosphere",
-     "the star has no spots",
+     "the planet is brighter than the star it orbits",
+     "it has no atmosphere and no clouds or moons",
+     "the star it orbits has no spots on its surface",
      "its orbit is aligned with our line of sight",
-     "it orbits very far from any star"
+     "it orbits very far away from any star system"
     ],
     "answer": 3,
     "explain": "Yalnızca yörünge görüş hattıyla hizalıysa geçiş görünür.",
@@ -1505,14 +1505,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "it heats the fuel to millions of degrees",
-     "lasers consume more energy than they produce",
+     "it needs no energy input to start the reaction",
+     "it never requires the fuel to be compressed at all",
      "tokamaks rely on magnetic fields to hold the plasma",
-     "the fuel pellet is tiny",
-     "it was reported in 2022"
+     "the tiny fuel pellet is made of two hydrogen isotopes",
+     "the first net energy gain was reported in late 2022"
     ],
     "answer": 2,
-    "explain": "While burada karşılaştırma: lazer ↔ manyetik alan. Diğerleri aynı yöntemi anlatıyor.",
+    "explain": "While burada karşılaştırma: lazer ↔ manyetik alan (tokamak). Diğerleri aynı yöntemi anlatıyor, ilk kısımla çelişiyor ya da ilgisiz bilgi veriyor.",
     "tip": "while/whereas: iki farklı özneyi kıyasla."
    }
   ],
@@ -1527,14 +1527,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "even though they absorb no hydrogen",
+     "even though they absorb no hydrogen during plating",
      "because baking makes them more brittle",
-     "unless hydrogen has escaped",
+     "in case the absorbed hydrogen makes them too ductile",
      "so that any absorbed hydrogen can diffuse out",
      "as long as they will crack"
     ],
     "answer": 3,
-    "explain": "Amaç: emilen hidrojenin çıkması. Diğerleri mantık hatalı.",
+    "explain": "Amaç: emilen hidrojenin dışarı yayınması (so that). Kaplamada hidrojen emilir; pişirme gevrekliği artırmaz, azaltır; hidrojen sünekliği değil gevrekliği artırır.",
     "tip": "Amaç sorusu: so that / in order to."
    }
   ],
@@ -1571,11 +1571,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "therefore, they accepted his theory at once",
-     "similarly, they rejected the fossils",
+     "therefore, they accepted his theory at once without doubt",
+     "similarly, they rejected the fossil evidence he presented",
      "rather, they objected to the mechanism he proposed",
-     "for example, they discovered magnetic stripes",
-     "as a result, he became a geologist"
+     "for example, they discovered magnetic stripes on the seafloor",
+     "as a result, he decided to become a professional geologist"
     ],
     "answer": 2,
     "explain": "Olumsuz ifade → 'rather' ile asıl itiraz: mekanizma.",
@@ -1593,14 +1593,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "although it is faster than MRI",
-     "unless it is quick",
-     "so that MRI takes longer",
-     "even though speed is important",
-     "because it is much faster than MRI"
+     "although it is much faster than MRI",
+     "unless the scan can be done quickly",
+     "so that MRI scans take even longer",
+     "even though speed is very important",
+     "since it takes far less time than MRI"
     ],
     "answer": 4,
-    "explain": "Tercih nedeni: hız. 'although faster' kutbu yanlış.",
+    "explain": "Tercih nedeni: hız (since = çünkü). 'although / even though' kutbu yanlış; 'so that' amaç bildirir, 'unless' mantığı ters.",
     "tip": "Neden mi zıtlık mı? Kutbu kontrol et."
    }
   ],
@@ -1615,14 +1615,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "although it moves faster in steel",
-     "so that astronauts use radios",
-     "unless it is very loud",
-     "while light needs a medium",
-     "since there are no particles to carry the vibrations"
+     "although it moves much faster in steel than in air",
+     "so that astronauts have to use radios to talk",
+     "unless it is very loud or very high-pitched",
+     "while light also needs a medium to travel through",
+     "as there is no medium to pass the vibrations on"
     ],
     "answer": 4,
-    "explain": "Nedeni: titreşimi taşıyacak parçacık yok. 'while light needs a medium' yanlış bilgi.",
+    "explain": "Nedeni: titreşimi iletecek ortam (parçacık) yok. Işığın ortama ihtiyaç duyduğu bilgisi yanlış; 'so that' amaç, 'unless' koşul bildirir, mantıksız.",
     "tip": "since = çünkü."
    }
   ],
@@ -1637,14 +1637,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "in order to restore the ductility lost through work hardening",
-     "because it becomes softer during rolling",
-     "although its ductility has been fully preserved",
-     "so that it becomes even harder",
-     "with a view to harden it"
+     "to recover ductility lost in work hardening",
+     "because the strip becomes softer during cold rolling",
+     "although its ductility has been fully preserved in rolling",
+     "so that it becomes even harder and less ductile",
+     "with a view to harden it before further processing"
     ],
     "answer": 0,
-    "explain": "Amaç: süneklik geri kazanmak. 'with a view to harden' hatalı (with a view to + Ving).",
+    "explain": "Amaç: pekleşmeyle kaybolan sünekliği geri kazanmak (to + V1). Haddelemede şerit sertleşir, yumuşamaz; 'with a view to harden' dil bilgisi hatalı (with a view to + Ving).",
     "tip": "with a view to + Ving!"
    }
   ],
@@ -1659,14 +1659,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "although winds are weaker higher up",
-     "because winds are stronger and steadier at greater heights",
-     "so that blades become heavier",
-     "unless the wind is steady",
-     "even if winds are stronger at the top"
+     "although winds are usually weaker higher above the ground",
+     "as the wind is stronger and more regular higher up",
+     "so that the blades become heavier and turn more slowly",
+     "unless the wind is steady close to the ground surface",
+     "even if winds are stronger at the top of the tower"
     ],
     "answer": 1,
-    "explain": "Neden: yukarıda rüzgâr güçlü ve düzenli.",
+    "explain": "Neden: yukarıda rüzgâr daha güçlü ve düzenli (as = çünkü). 'weaker higher above' bilgi hatası; 'even if' kutbu yanlış; 'unless' ve 'so that' mantıksız.",
     "tip": "because + cümle."
    }
   ],
@@ -1681,11 +1681,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "that they break down quickly in nature",
-     "whose bonds are weak",
-     "although they are found almost everywhere",
+     "that they break down quickly in nature and in the body",
+     "whose chemical bonds are very weak and easy to break",
+     "although they are found almost everywhere in the world",
      "which shows how widespread these chemicals have become",
-     "so they are rarely found in the environment"
+     "so they are rarely found in the environment or in water"
     ],
     "answer": 3,
     "explain": "', which' tüm cümleyi niteler: ne kadar yaygın olduklarını gösterir. 'that' virgülden sonra olmaz.",
@@ -1703,11 +1703,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "although overuse causes resistance",
+     "although overuse is the main cause of bacterial resistance",
      "as overuse encourages the spread of resistant bacteria",
-     "so that resistant strains become dominant",
-     "unless bacteria multiply quickly",
-     "whereas resistance is helpful"
+     "so that resistant strains can become dominant more quickly",
+     "unless bacteria multiply quickly inside the human body",
+     "whereas resistance is helpful for patients and doctors"
     ],
     "answer": 1,
     "explain": "Tavsiyenin nedeni: aşırı kullanım direnç yayar. 'as' = çünkü.",
@@ -1725,7 +1725,7 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "because they always check their sources",
+     "because they always check sources",
      "even though they sound confident",
      "so that answers are reliable",
      "unless they are wrong",
@@ -1747,11 +1747,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "their outer stars orbit at constant speeds",
-     "dark matter will be detected underground",
-     "Rubin had measured the speeds",
+     "their outer stars orbit the centre at constant speeds",
+     "dark matter will be detected in underground laboratories",
+     "Rubin had measured the speeds of the outer stars",
      "their outer stars would have orbited much more slowly",
-     "Neptune moves faster than Mercury"
+     "Neptune moves faster around the Sun than Mercury does"
     ],
     "answer": 3,
     "explain": "Devrik Type 3 (Had ... been) → would have V3.",
@@ -1769,14 +1769,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "before it will be opened to traffic",
-     "since it has been opened",
-     "although wind tunnels are standard today",
-     "so that designers test models",
+     "before it will be opened to traffic by the city",
+     "since it has been opened to traffic for many years",
+     "although wind tunnel tests are standard today",
+     "so as to encourage designers to use wind tunnels",
      "only four months after it had been opened to traffic"
     ],
     "answer": 4,
-    "explain": "after + past perfect: önce açıldı, sonra çöktü.",
+    "explain": "after + past perfect: önce açıldı, sonra çöktü. 'will be opened' ve 'has been opened' zaman uyumsuz; 'so as to' köprünün çökmesine amaç yüklüyor, mantıksız.",
     "tip": "Sıralama: önceki olay had V3."
    }
   ],
@@ -1791,11 +1791,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "so he built the first engine in 1712",
-     "because Newcomen improved it",
-     "and therefore it remained wasteful",
+     "so he built the very first engine in 1712",
+     "because Newcomen had improved it before him",
+     "and therefore it remained wasteful for decades",
      "but he made it far more efficient",
-     "unless he added a condenser"
+     "unless he added a separate condenser to it"
     ],
     "answer": 3,
     "explain": "İcat etmedi (−) ↔ verimli yaptı (+): but.",
@@ -1813,14 +1813,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "despite providing them with food",
+     "despite providing them with food and shelter",
      "instead of feeding them",
-     "unless it gives them shelter",
-     "by providing them with food and shelter",
-     "although giving food"
+     "unless it gives them shelter and safe nesting",
+     "by offering them food and places to nest",
+     "although giving them food"
     ],
     "answer": 3,
-    "explain": "Nasıl? by + Ving = yöntem.",
+    "explain": "Nasıl? by + Ving = yöntem (yiyecek ve yuva yeri sunarak). 'despite' ve 'although' zıtlık kurar; 'instead of' ve 'unless' mantığı ters.",
     "tip": "by + Ving = -erek."
    }
   ],
@@ -1835,14 +1835,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "however, its eruptions are always gentle",
-     "for instance, Hawaii has runny magma",
-     "otherwise, gas escapes easily",
-     "in contrast, it contains more silica",
+     "however, its eruptions are always gentle and quiet",
+     "for instance, runny magma traps even more gas",
+     "in other words, it releases its gas very easily",
+     "in contrast, it contains more silica than runny magma",
      "consequently, its eruptions tend to be more explosive"
     ],
     "answer": 4,
-    "explain": "Gaz hapsi → patlayıcı: sonuç (consequently).",
+    "explain": "Gazı hapsetme → patlayıcı püskürme: sonuç (consequently). 'however ... gentle' mantığa ters; 'in other words' cümleyi tersine çeviriyor; 'in contrast' zıtlık kurmuyor; 'for instance' ile verilen örnek iddiayla çelişiyor.",
     "tip": "Sebep-sonuç: consequently/therefore."
    }
   ],
@@ -1858,9 +1858,9 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "a qubit can exist in a superposition of both states",
-     "a bit is used in classical computers",
-     "it requires very low temperatures",
-     "qubits are cooled near absolute zero",
+     "a bit is used in all classical computers today",
+     "it requires very low temperatures to work properly",
+     "qubits are cooled to near absolute zero in labs",
      "errors are unavoidable in classical computers"
     ],
     "answer": 0,
@@ -1879,11 +1879,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "when the stethoscope will become useful",
-     "which the stethoscope was invented",
-     "that the stethoscope became a truly valuable diagnostic tool",
-     "because the stethoscope had been forgotten",
-     "so that paper tubes were abandoned"
+     "when the stethoscope will become useful for doctors",
+     "which the stethoscope was invented by Laennec",
+     "that the stethoscope became really useful in diagnosis",
+     "because the stethoscope had been forgotten by doctors",
+     "so that paper tubes were abandoned by most physicians"
     ],
     "answer": 2,
     "explain": "It was not until X that Y: ancak X'ten sonra Y oldu.",
@@ -1901,14 +1901,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "because it is dense and adheres firmly",
-     "although it is loose and flaky",
+     "because it is dense and adheres firmly to the surface",
+     "although it is loose, porous and flakes off easily",
      "unless corrosion continues",
      "whereas the steel is not exposed",
-     "so corrosion can continue until the part becomes too weak"
+     "so corrosion goes on until the part is too weak"
     ],
     "answer": 4,
-    "explain": "Koruma yok → sonuç: korozyon sürer. 'because dense' metne ve mantığa ters.",
+    "explain": "Koruma yok → sonuç: korozyon sürer (so). Pas yoğun ve sıkı tutunan değil, gevşek ve pul puldur; 'although' kutbu ters (gevşek olması korumamanın nedenidir); 'unless' ve 'whereas' mantıksız.",
     "tip": "so = bu yüzden."
    }
   ],
@@ -1924,9 +1924,9 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "like solar panels, which work only during the day",
-     "although they never stop working",
-     "because the Sun shines at night",
-     "so that solar power is constant",
+     "although they never stop working at any time",
+     "because the Sun keeps shining during the night",
+     "so that solar power becomes constant and stable",
      "unlike solar panels, which depend on sunlight"
     ],
     "answer": 4,
@@ -1947,7 +1947,7 @@
     "options": [
      "after plants have absorbed it",
      "although plants absorb it directly",
-     "before plants can absorb it",
+     "before plants are able to take it up",
      "unless plants need it",
      "because plants can use it as a gas"
     ],
@@ -1967,14 +1967,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "so that they are always passed to grandchildren",
-     "although they are never erased",
-     "because they are copied when cells divide",
-     "which makes inheritance across many generations difficult in mammals",
-     "that proves inheritance over many generations"
+     "so that they are always passed on to grandchildren",
+     "although they are never erased during development",
+     "because they are copied each time a cell divides",
+     "which makes their transfer to later generations rare",
+     "that proves inheritance over many generations is common"
     ],
     "answer": 3,
-    "explain": "Silinme → kuşaklar arası aktarım zor. ', which' cümleyi niteler.",
+    "explain": "Silinme → sonraki kuşaklara aktarım nadir. ', which' cümleyi niteler. 'that' virgülden sonra kullanılmaz; 'always passed on' ve 'never erased' silinmeyle çelişir.",
     "tip": "Sonuç bildiren ', which'."
    }
   ],
@@ -1990,13 +1990,13 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "even though parts always arrive in the same position",
-     "unless parts arrive in the same position",
-     "as long as parts arrive in the same position every time",
-     "so that objects vary in shape",
-     "because the environment keeps changing"
+     "unless the parts arrive in exactly the same position",
+     "provided that each part arrives in the same position",
+     "so that the objects can vary greatly in shape and size",
+     "because the environment around them keeps changing"
     ],
     "answer": 2,
-    "explain": "Koşul: parçalar aynı konumda geldiği sürece. 'unless' kutbu ters.",
+    "explain": "Koşul: her parça aynı konumda geldiği sürece (provided that). 'unless' kutbu ters; 'even though' zıtlık kurar ama zıtlık yok; değişen ortam iyi performansın nedeni değil.",
     "tip": "as long as = -dığı sürece."
    }
   ],
@@ -2011,11 +2011,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "and it would therefore stop acidification",
-     "because it lowers carbon dioxide levels",
-     "so oceans would absorb less carbon dioxide",
+     "and it would therefore stop ocean acidification too",
+     "because it lowers the level of carbon dioxide in air",
+     "so the oceans would absorb less carbon dioxide",
      "but it would do nothing to stop ocean acidification",
-     "since acidification is caused by heat"
+     "since acidification is caused by heat, not CO2"
     ],
     "answer": 3,
     "explain": "Ama CO2 azalmadığı için asitlenme sürer: zıtlık + would uyumu.",
@@ -2033,14 +2033,14 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "after the shaking has ended",
-     "unless the earthquake has started",
-     "although P-waves travel fast",
-     "because S-waves arrive first",
+     "after the shaking has ended in those cities",
+     "unless the earthquake has already started",
+     "although P-waves travel faster than S-waves",
+     "because S-waves always arrive before P-waves",
      "before the strongest shaking reaches them"
     ],
     "answer": 4,
-    "explain": "Güçlü sarsıntı gelmeden önce uyarı. 'S-waves arrive first' yanlış.",
+    "explain": "Güçlü sarsıntı ulaşmadan önce uyarı (before). S dalgaları P dalgalarından önce gelmez; 'after' ve 'unless' mantığı ters; 'although' zıtlık kurmuyor.",
     "tip": "Zaman bağlacı mantığı."
    }
   ],
@@ -2055,11 +2055,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "astronomers usually wait for several transits before confirming it",
-     "astronomers accept it as a discovery immediately",
+     "astronomers normally await repeated transits to confirm it",
+     "astronomers accept it as a discovery immediately and publish it",
      "the planet's orbit is aligned with our line of sight",
-     "it reveals the planet's size",
-     "telescopes record the dip"
+     "it also reveals the planet's size and its orbital period",
+     "telescopes record the dip in brightness very precisely"
     ],
     "answer": 0,
     "explain": "Tek düşüş planete işaret eder (+) ↔ ama doğrulama için beklenir: zıtlık.",
@@ -2078,10 +2078,10 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "although the process left phosphorus in the metal",
-     "so it was used for all railways at once",
+     "so it was used for all the railways at once",
      "as the process failed to remove phosphorus",
      "unless phosphorus remained",
-     "which made the steel tougher"
+     "which made the steel much tougher and stronger"
     ],
     "answer": 2,
     "explain": "Gevrekliğin nedeni: fosfor giderilemedi.",
@@ -2100,10 +2100,10 @@
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
      "instead, it uses magnetic fields and radio waves",
-     "therefore, it uses X-rays",
-     "for example, it relies on radiation",
-     "otherwise, it would be faster",
-     "similarly, CT uses no radiation"
+     "therefore, it uses X-rays to produce its images",
+     "for example, it relies on gamma radiation instead",
+     "otherwise, it would be faster than CT scanning",
+     "similarly, CT uses no radiation of any kind"
     ],
     "answer": 0,
     "explain": "Olumsuz → yerine ne kullandığı: instead.",
@@ -2121,11 +2121,11 @@
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "that even small variations in tension can cause strip breaks",
+     "that even slight tension changes may break the strip",
      "because the strip is rolled at room temperature",
-     "which variations are small",
-     "although strip breaks never occur",
-     "so as to reduce tension"
+     "which variations in tension are always small",
+     "although strip breaks never occur in these mills",
+     "so as to reduce tension in the strip between stands"
     ],
     "answer": 0,
     "explain": "Devrik so ... that: So high are the speeds that ... (öyle yüksek ki).",
@@ -2803,14 +2803,14 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Steel is an alloy of iron and carbon that has been produced for thousands of years.",
-     "However, welding is rarely used in modern construction.",
-     "These inspections are therefore unnecessary for most structures.",
-     "Small defects such as pores or incomplete fusion may be trapped inside the weld metal.",
-     "Aluminium, by contrast, is much lighter than steel."
+     "Steel is an alloy of iron and carbon that people have produced for thousands of years.",
+     "However, welding is now rarely used for joining parts in modern steel construction.",
+     "These inspections are therefore considered unnecessary for most ordinary steel structures.",
+     "Tiny flaws like pores or lack of fusion can remain hidden inside the weld.",
+     "Aluminium, by contrast, is much lighter than steel and is often joined with rivets."
     ],
     "answer": 3,
-    "explain": "'In addition' ile ikinci bir zayıflık nedeni ekleniyor → boşluk ilk nedeni vermeli (kusurlar). Tuzak: 'These inspections' henüz anılmadı.",
+    "explain": "'In addition' ikinci bir zayıflık nedeni ekliyor → boşluk ilk nedeni vermeli (gözenek, eksik ergime gibi gizli kusurlar). Tuzak: 'These inspections' henüz anılmadı; kaynağın az kullanıldığı ve alüminyum bilgisi akışa uymaz.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -2825,11 +2825,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Petrol cars were invented in the late nineteenth century.",
-     "As a result, they are completely free of any environmental impact.",
-     "Many drivers enjoy the quiet ride of electric cars.",
-     "Their total environmental impact, however, depends on how the electricity that charges them is generated.",
-     "Charging stations are usually located near shopping centres."
+     "Petrol cars were first invented and sold in Germany in the late nineteenth century.",
+     "As a result, they are completely free of any impact on the environment or climate.",
+     "Many drivers enjoy the quiet and smooth ride that electric cars offer in cities.",
+     "How clean they really are, however, depends on the source of their electricity.",
+     "Charging stations are usually located near shopping centres and on motorways."
     ],
     "answer": 3,
     "explain": "Sonraki cümle elektriğin kaynağına göre emisyon farkını anlatıyor → boşluk bu konuyu açmalı. Tuzak: 'completely free' sonrası ile çelişir.",
@@ -2847,11 +2847,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Steam turbines must be cooled with large amounts of water.",
-     "Almost all the electricity we use is generated by a phenomenon discovered by Michael Faraday in 1831.",
-     "Magnets lose their strength when they are heated strongly.",
-     "This is why wind turbines are so tall.",
-     "Copper is the most common metal used in wiring."
+     "Steam turbines must be cooled with large amounts of water from rivers or the sea.",
+     "Nearly all of our electricity comes from an effect that Faraday discovered in 1831.",
+     "Magnets lose much of their strength when they are heated to high temperatures.",
+     "This is why wind turbines are usually built so tall and placed far from towns.",
+     "Copper is the most common metal used in electrical wiring in homes and offices."
     ],
     "answer": 1,
     "explain": "Boşluk başta → konu cümlesi: indüksiyon/Faraday. Diğerleri ayrıntı ya da kopuk ('This is why' bağlamsız).",
@@ -2869,11 +2869,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Insects have six legs and three body segments.",
-     "Plants therefore never grow when insects are present.",
-     "As a result, toxic plants are always larger than non-toxic ones.",
-     "For this reason, many species produce large amounts of toxins only after they have been attacked.",
-     "Some flowers attract bees with bright colours."
+     "Insects have six legs and three body segments, and most of them can fly.",
+     "Plants therefore stop growing completely whenever insects are present nearby.",
+     "As a result, toxic plants are always much larger than plants without any toxins.",
+     "Many species thus make large amounts of toxins only once they are attacked.",
+     "Some flowers attract bees and butterflies with bright colours and sweet nectar."
     ],
     "answer": 3,
     "explain": "Maliyet → çözüm: sadece saldırıdan sonra üretmek; sonraki cümle bu mekanizmayı açıklıyor.",
@@ -2891,11 +2891,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Rural areas, in contrast, have more asphalt than cities.",
-     "Moreover, the lack of vegetation means that less water evaporates to cool the air.",
-     "Therefore, cities are always colder at night.",
-     "Many people move to cities to find work.",
-     "These trees grow faster in cold climates."
+     "Rural areas, in contrast, are covered with more asphalt and concrete than cities.",
+     "Moreover, with few plants around, less water evaporates to cool the air.",
+     "Therefore, cities are always colder than the countryside during the night.",
+     "Many people move from villages to large cities in order to find better jobs.",
+     "These trees grow faster in cold climates than in warm and humid regions."
     ],
     "answer": 1,
     "explain": "İkinci neden ekleniyor (Moreover); sonra çözüm önerileri. Tuzak: 'These trees' ağaçtan önce bahsedilmedi.",
@@ -2913,11 +2913,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Because it has almost no atmosphere, it cannot keep the heat it receives.",
-     "Mercury was named after the Roman messenger god.",
-     "Venus is the brightest planet in the night sky.",
-     "Therefore, Mercury is the hottest planet in the solar system.",
-     "Many spacecraft have visited Mars."
+     "Having almost no atmosphere, it cannot hold on to the heat it receives.",
+     "Mercury was named after the Roman messenger god because it moves so fast.",
+     "Venus is the brightest planet in the night sky and is often seen at dawn.",
+     "Therefore, Mercury is the hottest of all the planets in the solar system.",
+     "Many spacecraft have visited Mars to study its surface and its thin air."
     ],
     "answer": 0,
     "explain": "Merkür neden en sıcak değil? Atmosfer yok. Sonraki cümle Venüs'le kıyas. Tuzak: 'Therefore ... hottest' çelişki.",
@@ -2935,11 +2935,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Earthquakes are measured using seismometers.",
-     "Many mountain roads have been built in the last century.",
-     "Landslides, however, never occur after rain.",
-     "Volcanoes are often found near plate boundaries.",
-     "Rainfall is particularly dangerous because water adds weight to the soil and weakens it."
+     "Earthquakes are measured with sensitive instruments called seismometers.",
+     "Many mountain roads have been built across steep slopes in the last century.",
+     "Landslides, however, almost never occur after periods of heavy rain.",
+     "Volcanoes are often found near plate boundaries where the crust is thin.",
+     "Rain is especially risky, since water makes the soil heavier and weaker."
     ],
     "answer": 4,
     "explain": "Sonraki cümle suya doymuş yamacı anlatıyor → boşluk yağmuru seçmeli.",
@@ -2957,11 +2957,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Their performance, however, is not equally good for all groups of people.",
-     "Many smartphones can be unlocked with a fingerprint.",
-     "Therefore, they never make mistakes.",
-     "The first digital camera was built in 1975.",
-     "These critics have developed better cameras."
+     "They do not, however, perform equally well for every group of people.",
+     "Many smartphones can now be unlocked with a fingerprint instead of a face.",
+     "Therefore, they never make any mistakes when identifying people's faces.",
+     "The first digital camera was built by an engineer at Kodak in 1975.",
+     "These critics have developed better cameras for use by the police."
     ],
     "answer": 0,
     "explain": "Doğruluk (+) → ama herkes için eşit değil (−); sonraki cümle bu eşitsizliğin kanıtı.",
@@ -2979,11 +2979,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Blood is pumped by the heart through arteries and veins.",
-     "Low blood pressure is always more dangerous than high blood pressure.",
-     "Most patients feel severe pain when their blood pressure rises.",
-     "Measurements should therefore be avoided.",
-     "High blood pressure usually causes no symptoms, yet it greatly increases the risk of heart attack and stroke."
+     "Blood is pumped by the heart through a network of arteries and veins.",
+     "Low blood pressure is always far more dangerous than high blood pressure.",
+     "Most patients feel severe pain as soon as their blood pressure starts to rise.",
+     "Measurements should therefore be avoided by people with heart problems.",
+     "High blood pressure rarely causes symptoms but sharply raises the risk of stroke."
     ],
     "answer": 4,
     "explain": "'silent killer' için belirtisiz ama tehlikeli olmalı. Tuzak: 'severe pain' sessizlikle çelişir.",
@@ -3001,14 +3001,14 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Railways in Britain had begun operating several decades earlier.",
-     "Steam locomotives burned coal or wood.",
-     "However, it reduced travel speed considerably.",
-     "Today, most long journeys are made by air.",
-     "It linked the existing eastern network with the Pacific coast for the first time."
+     "Railways in Britain had already begun operating several decades earlier.",
+     "Steam locomotives of that period burned either coal or wood as their fuel.",
+     "However, it greatly reduced the speed of travel across the whole country.",
+     "Today, most long journeys across the United States are made by air.",
+     "It joined the eastern rail network to the Pacific coast for the first time."
     ],
     "answer": 4,
-    "explain": "Başlangıçtaki olgunun önemini açıklayan köprü cümle: doğu ağı Pasifik'e ilk kez bağlandı. Tuzak: 'reduced travel speed' çelişir.",
+    "explain": "Başlangıçtaki olgunun önemini açıklayan köprü cümle: doğu ağı Pasifik kıyısına ilk kez bağlandı. Tuzak: 'reduced the speed of travel' sonraki cümleyle (bir haftaya inen yolculuk) çelişir.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -3024,13 +3024,13 @@
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
      "Iron is the fourth most common element in the Earth's crust.",
-     "The process is greatly accelerated in the presence of salt.",
-     "Oxygen makes up about 21 percent of the atmosphere.",
-     "Cars should therefore never be driven in winter.",
-     "Rust, however, protects iron from further corrosion."
+     "The presence of salt speeds this process up considerably.",
+     "Oxygen makes up about 21 percent of the air that we breathe.",
+     "Cars should therefore never be driven on roads during winter.",
+     "Rust, however, protects iron completely from further corrosion."
     ],
     "answer": 1,
-    "explain": "Sonraki 'This is why ... salt' → boşluk tuzun hızlandırıcı etkisini vermeli. Tuzak: 'Rust protects' yanlış.",
+    "explain": "Sonraki 'This is why ... salt' → boşluk tuzun hızlandırıcı etkisini vermeli. Tuzak: pasın demiri koruduğu bilgisi yanlış; diğerleri konu dışı ya da mantıksız.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -3045,11 +3045,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Titanium was named after the Titans of Greek mythology.",
-     "Their widespread use, however, is limited by their high cost.",
-     "As a result, titanium is the cheapest structural metal.",
-     "Medical implants must be sterilised before surgery.",
-     "These methods have made titanium completely free."
+     "Titanium was named after the Titans, the giants of Greek mythology.",
+     "Their wider use, however, is held back by their high price.",
+     "As a result, titanium has become the cheapest structural metal today.",
+     "Medical implants must always be sterilised carefully before surgery.",
+     "These methods have already made titanium almost free to produce."
     ],
     "answer": 1,
     "explain": "Avantajlar (+) → kısıt (yüksek maliyet); sonraki cümle maliyet nedenlerini açıklıyor.",
@@ -3067,14 +3067,14 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Therefore, every country has decided to build new plants.",
-     "Coal plants, in contrast, emit no carbon dioxide.",
-     "Uranium is a metal found in many rocks.",
-     "Nevertheless, the technology remains controversial in many countries.",
-     "These accidents never had any effects on public opinion."
+     "Therefore, every country in the world has decided to build new plants.",
+     "Coal plants, in contrast, emit no carbon dioxide while they operate.",
+     "Uranium is a heavy metal found in small amounts in many rocks.",
+     "Even so, nuclear power is still the subject of much public debate.",
+     "These accidents never had any effect on public opinion about energy."
     ],
     "answer": 3,
-    "explain": "Avantaj → 'Nevertheless ... controversial' → sonraki 'most serious concerns' bunu açıyor.",
+    "explain": "Avantaj → 'Even so' ile hâlâ tartışmalı olduğu → sonraki 'most serious concerns' bunu açıyor. Tuzak: 'These accidents' henüz anılmadı; 'every country' ve kömürün CO2 salmadığı bilgisi yanlış.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -3089,11 +3089,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Ordinary bulbs have been replaced by LEDs in many homes.",
-     "Lasers were invented after the Second World War.",
-     "Their light has a single wavelength and its waves are coherent, meaning that their peaks line up.",
-     "However, laser light cannot be focused.",
-     "Eye surgery is a common operation among older people."
+     "Ordinary bulbs have been replaced by LEDs in many homes and offices.",
+     "Lasers were first invented in the years after the Second World War.",
+     "Their light has a single wavelength and is coherent, so its peaks line up.",
+     "However, laser light cannot be focused as easily as ordinary light.",
+     "Eye surgery is a common operation among older people in many countries."
     ],
     "answer": 2,
     "explain": "Sonraki 'Because all the waves are in step' → boşluk koheransı tanımlamalı.",
@@ -3111,11 +3111,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Some animals sleep standing up.",
-     "Scientists have found that many important processes take place while we sleep.",
-     "Coffee is one of the most popular drinks in the world.",
-     "Therefore, people should sleep less than six hours.",
-     "Dreams usually occur in the early evening."
+     "Some animals, such as horses, are able to sleep while standing up.",
+     "Research shows that many vital processes happen while we are asleep.",
+     "Coffee is one of the most popular drinks in the world, especially at work.",
+     "Therefore, people should try to sleep less than six hours every night.",
+     "Dreams usually occur in the early evening, before deep sleep begins."
     ],
     "answer": 1,
     "explain": "'for example' → boşluk genel bir iddia olmalı: uykuda önemli süreçler olur.",
@@ -3133,11 +3133,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Lakes in North America were formed by glaciers.",
-     "Free from their natural predators, some of them multiply rapidly and cause serious ecological and economic damage.",
-     "Most introduced species are completely harmless and beneficial.",
-     "Ships are the cheapest way to transport goods.",
-     "These pipes are made of steel."
+     "Lakes in North America were formed by glaciers at the end of the ice age.",
+     "Without natural predators, some multiply fast and do serious harm.",
+     "Most introduced species are completely harmless and even beneficial.",
+     "Ships are the cheapest way to transport large amounts of goods overseas.",
+     "These pipes are made of steel and must be replaced every few years."
     ],
     "answer": 1,
     "explain": "'for instance' ile zarar örneği geliyor → boşluk genel zarar iddiası. Tuzak: 'harmless' örnekle çelişir.",
@@ -3155,11 +3155,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Light travels at about 300,000 kilometres per second.",
-     "Therefore, astronomers have stopped studying them.",
-     "Astronomers can, however, detect them through their effects on nearby matter.",
-     "Stars like the Sun will eventually become black holes.",
-     "These X-rays are harmless to astronauts."
+     "Light travels at about 300,000 kilometres per second in empty space.",
+     "Therefore, astronomers have completely stopped trying to study them.",
+     "However, they can be detected indirectly by their effect on nearby matter.",
+     "Stars like the Sun will eventually collapse and become black holes.",
+     "These X-rays are harmless to astronauts working on the space station."
     ],
     "answer": 2,
     "explain": "Doğrudan gözlenemez (−) → dolaylı tespit (+); sonraki cümle örnek. Tuzak: Güneş kara delik olmaz (yanlış bilgi).",
@@ -3177,11 +3177,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Their very different properties come from the way the atoms are arranged.",
-     "Diamonds are mined mainly in Africa and Russia.",
-     "Graphite is therefore harder than diamond.",
-     "Pencils were invented in the sixteenth century.",
-     "These sheets are found only in diamonds."
+     "Their properties differ because their atoms are arranged differently.",
+     "Diamonds are mined mainly in Africa, Russia and parts of Australia.",
+     "Graphite is therefore harder than diamond and is used in cutting tools.",
+     "Pencils containing graphite were first made in the sixteenth century.",
+     "These sheets are found only in diamonds and never in other minerals."
     ],
     "answer": 0,
     "explain": "Sonraki iki cümle atom dizilişi farkını anlatıyor → boşluk bunu tanıtmalı.",
@@ -3199,11 +3199,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Computers became widely available in homes in the 1980s.",
-     "Modern systems therefore follow hand-written rules.",
-     "These patterns were written by hand.",
-     "Chatbots are used mainly in hospitals.",
-     "Such systems were predictable but failed as soon as users went beyond the expected inputs."
+     "Computers became widely available in ordinary homes during the 1980s.",
+     "Modern systems therefore also follow hand-written rules of this kind.",
+     "These patterns were written by hand by teams of skilled programmers.",
+     "Chatbots are used mainly in hospitals to help doctors with their diagnoses.",
+     "They were predictable but failed once users left the expected inputs."
     ],
     "answer": 4,
     "explain": "Eski sistemin artı/eksisi → 'Modern systems, by contrast' kıyası. Tuzak: 'hand-written' modern sistem için yanlış.",
@@ -3221,11 +3221,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "They do this by exposing the body to a harmless part or version of the pathogen.",
-     "Many vaccines are injected into the upper arm.",
-     "The first hospitals were built in ancient times.",
-     "However, vaccinated people always become seriously ill.",
-     "These hospitals are very expensive."
+     "They achieve this by showing the body a harmless piece or form of the germ.",
+     "Many vaccines are injected into the muscle of the upper arm by a nurse.",
+     "The first hospitals were built in ancient times in Egypt and Greece.",
+     "However, vaccinated people always become seriously ill after infection.",
+     "These hospitals are very expensive to build and difficult to run."
     ],
     "answer": 0,
     "explain": "Nasıl çalıştığını açıklayan köprü cümle; sonraki 'later' bunu izler.",
@@ -3243,11 +3243,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Panama is a country in Central America.",
-     "However, it made sea voyages much longer.",
+     "Panama is a small country located in Central America.",
+     "However, it made most sea voyages considerably longer.",
      "The canal was dug entirely by hand in a single year.",
-     "It shortened many sea voyages by thousands of kilometres.",
-     "Many tourists visit Central America in winter."
+     "It cut thousands of kilometres from many sea journeys.",
+     "Many tourists visit Central America during the cold northern winter."
     ],
     "answer": 3,
     "explain": "Kanalın etkisi: yolculuğu kısalttı; sonraki cümle bunun açıklaması.",
@@ -3265,11 +3265,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Temperature is measured in degrees Celsius or kelvin.",
-     "However, temperature has no effect on molecular motion.",
-     "This is because heating increases the average speed of the molecules.",
-     "Some reactions release heat, while others absorb it.",
-     "These bonds can never be broken."
+     "Temperature is usually measured in degrees Celsius or in kelvin.",
+     "However, temperature has no effect at all on the motion of molecules.",
+     "This is because heating makes the molecules move faster on average.",
+     "Some reactions release heat, while others absorb it from outside.",
+     "These bonds are so strong that they can never be broken by heat."
     ],
     "answer": 2,
     "explain": "Sonraki 'Faster molecules' → boşluk ısınmanın molekül hızını artırdığını söylemeli.",
@@ -3287,14 +3287,14 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Silver is more expensive than gold.",
-     "Copper, however, conducts electricity very poorly.",
-     "Electrical wiring was invented ten thousand years ago.",
-     "These pipes are made of plastic.",
-     "Its softness made it easy to hammer into tools and ornaments in ancient times."
+     "Silver is more expensive than gold and is therefore rarely used in industry.",
+     "Copper, however, conducts electricity very poorly compared with iron.",
+     "Electrical wiring was invented about ten thousand years ago in Asia.",
+     "These pipes are made of plastic because it does not corrode at all.",
+     "Being soft, it was easily hammered into tools and jewellery long ago."
     ],
     "answer": 4,
-    "explain": "Kronolojik akış: antik kullanım → 'Today' modern kullanım. Tuzak: 'conducts poorly' çelişki.",
+    "explain": "Kronolojik akış: antik kullanım → 'Today' modern kullanım. Tuzak: 'conducts electricity very poorly' sonraki cümleyle çelişir; 'These pipes' henüz anılmadı.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -3309,11 +3309,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Wind farms are often built offshore.",
-     "Solar panels work best in cloudy weather.",
-     "Tides are driven by the gravitational pull of the Moon and the Sun, whose movements are known precisely.",
-     "Tides are completely random and cannot be forecast.",
-     "These sites are very common along every coast."
+     "Wind farms are often built offshore, where the wind is stronger.",
+     "Solar panels work best in cloudy weather and during the dark winter months.",
+     "Tides follow the pull of the Moon and Sun, whose motions are well known.",
+     "Tides are completely random and cannot be forecast with any accuracy.",
+     "These sites are very common along almost every coast in the world."
     ],
     "answer": 2,
     "explain": "'therefore' → öngörülebilirliğin nedeni gelmeli: Ay ve Güneş'in hareketi biliniyor.",
@@ -3331,14 +3331,14 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Ice is used to keep food fresh.",
-     "Fish can breathe air for long periods.",
-     "Lakes therefore freeze from the bottom up.",
-     "In most substances, the solid form is denser than the liquid.",
-     "These fish live only in warm water."
+     "Ice is often used to keep food and drinks fresh and cold.",
+     "Fish can breathe air for long periods when lakes are frozen.",
+     "Lakes therefore freeze from the bottom up during cold winters.",
+     "Unlike most solids, ice is less dense than its liquid.",
+     "These fish live only in warm water near the surface of lakes."
     ],
     "answer": 3,
-    "explain": "'unusual' iddiasını açıklayan karşılaştırma: çoğu maddede katı daha yoğun.",
+    "explain": "'unusual' iddiasını açıklayan karşılaştırma: çoğu katının aksine buz, sıvısından daha az yoğundur; sonraki 'This happens because' bunun nedenini veriyor.",
     "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
    }
   ],
@@ -3354,10 +3354,10 @@
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
      "Bacteria were first observed under a microscope in the seventeenth century.",
-     "However, bacteria never share genes with other species.",
-     "Most bacteria are harmful to humans.",
-     "This disease affects only animals.",
-     "They may, for example, pass small rings of DNA called plasmids directly from one cell to another."
+     "However, bacteria never share their genes with members of other species.",
+     "Most bacteria are harmful to humans and cause serious infectious diseases.",
+     "This disease affects only animals and has never been found in humans.",
+     "For example, they can pass small DNA rings called plasmids between cells."
     ],
     "answer": 4,
     "explain": "'This process, known as...' → boşluk somut süreci anlatmalı (plazmit aktarımı).",
@@ -3375,11 +3375,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Trees take up water from the soil and release it through their leaves.",
-     "Forests are home to many species of birds.",
-     "Paper is made from wood.",
-     "Therefore, forests reduce the amount of moisture in the air.",
-     "These birds migrate south in winter."
+     "Trees draw water from the soil and give it off through their leaves.",
+     "Forests are home to many species of birds, insects and mammals.",
+     "Paper is made from wood that is cut in large forests every year.",
+     "Therefore, forests reduce the amount of moisture in the air above them.",
+     "These birds migrate south every winter to find food and warmth."
     ],
     "answer": 0,
     "explain": "Sonraki 'This moisture' → boşluk nemi tanıtmalı: yapraklardan su salınımı.",
@@ -3397,11 +3397,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "The station was built with the help of several countries.",
-     "Astronauts must exercise for about two hours a day.",
-     "This means that it travels from daylight into darkness many times within twenty-four hours.",
-     "However, it orbits the Earth only once a month.",
-     "These countries all use the same time zone."
+     "The station was built with the help of several different countries.",
+     "Astronauts on board must exercise for about two hours every day.",
+     "So it passes from daylight into darkness many times a day.",
+     "However, it orbits the Earth only once a month at a great height.",
+     "These countries all use the same time zone for their space work."
     ],
     "answer": 2,
     "explain": "'therefore ... sixteen sunrises' → boşluk ara açıklama: gece-gündüz çok kez geçiş.",
@@ -3419,11 +3419,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "The old, cold crust in plate interiors transmits seismic waves efficiently, so shaking can be felt over very large areas.",
-     "Most volcanoes are located at plate boundaries.",
-     "Plate boundaries are always found in the middle of oceans.",
-     "Therefore, they never cause any damage.",
-     "These boundaries are moving apart."
+     "The old, cold crust there carries seismic waves well, so shaking spreads widely.",
+     "Most volcanoes are located at plate boundaries rather than in plate interiors.",
+     "Plate boundaries are always found in the middle of the oceans, far from land.",
+     "Therefore, these earthquakes never cause any damage to buildings or people.",
+     "These boundaries are moving apart by a few centimetres every year."
     ],
     "answer": 0,
     "explain": "'In addition' ikinci bir neden ekliyor → boşluk yıkıcılığın ilk nedenini vermeli.",
@@ -3441,11 +3441,11 @@
    {
     "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
     "options": [
-     "Vacuum cleaners were invented in the early twentieth century.",
-     "However, they cannot detect any obstacles.",
-     "They use sensors to detect walls, furniture and stairs so that they do not crash or fall.",
-     "Many people prefer carpets to wooden floors.",
-     "These stations are very heavy."
+     "Vacuum cleaners were first invented in the early twentieth century in Britain.",
+     "However, they cannot detect any obstacles such as walls or furniture.",
+     "Sensors help them notice walls, furniture and stairs so they do not crash.",
+     "Many people prefer soft carpets to wooden floors in their bedrooms.",
+     "These stations are very heavy and must be fixed to the floor."
     ],
     "answer": 2,
     "explain": "'Some models also' → önce temel bir özellik verilmeli: sensörlerle engel algılama.",
@@ -3465,12 +3465,12 @@
     "options": [
      "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olduğu için klorür bakımından zengin ortamlarda oyuklanmaya maruz kalabilir.",
      "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olsa da klorür bakımından zengin ortamlarda oyuklanmaya maruz kalabilir.",
-     "Paslanmaz çelik klorür bakımından zengin ortamlarda oyuklanmaya maruz kalsa da korozyonun bütün türlerine karşı dirençlidir.",
-     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olmasına rağmen klorürlü ortamlarda oyuklanmaya hiç maruz kalmaz.",
-     "Klorür bakımından zengin ortamlar, paslanmaz çeliğin korozyona karşı direncini her zaman tamamen ortadan kaldırır."
+     "Paslanmaz çelik korozyonun bütün türlerine karşı dirençli olsa da klorür bakımından zengin ortamlarda oyuklanmaya maruz kalabilir.",
+     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olduğundan klorür bakımından zengin ortamlarda oyuklanmaya hiç maruz kalmaz.",
+     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olsa da klorür bakımından fakir ortamlarda oyuklanmaya maruz kalabilir."
     ],
     "answer": 1,
-    "explain": "Although = -se de/-masına rağmen; 'most forms' = çoğu türü; 'can suffer' = maruz kalabilir. Tuzaklar: 'için' (bağlaç kayması), 'bütün' (most≠all), 'hiç' (olumsuzluk).",
+    "explain": "Although = -se de; 'most forms' = çoğu türü; 'rich in chloride' = klorür bakımından zengin; 'can suffer' = maruz kalabilir. Tuzaklar: 'için' (bağlaç kayması), 'bütün' (most≠all), 'hiç maruz kalmaz' (olumsuzluk), 'fakir' (zengin'in tersi).",
     "tip": "Önce ana bağlacı eşleştir, sonra niceleyici (most/all)."
    }
   ],
@@ -3485,14 +3485,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Yeşil hidrojen, yenilenebilir elektrik üretmek için kullanılır.",
-     "Yenilenebilir elektrik üreten hidrojene yeşil hidrojen denmiştir.",
-     "Hidrojen yenilenebilir elektrikten üretildiğinde yeşil olmaz.",
+     "Yenilenebilir elektrik üreten hidrojene yeşil hidrojen denir.",
+     "Fosil yakıtlardan üretilen hidrojene yeşil hidrojen denir.",
+     "Yenilenebilir elektrikten üretilen hidrojene gri hidrojen denir.",
      "Yenilenebilir elektrikten üretilen hidrojene yeşil hidrojen denir.",
-     "Yenilenebilir elektrik, yeşil hidrojen olarak adlandırılır."
+     "Yeşil hidrojenden üretilen elektriğe yenilenebilir elektrik denir."
     ],
     "answer": 3,
-    "explain": "'produced from' edilgen sıfat-fiil: 'üretilen'. Tuzak: 'üreten' etken (özne kayması).",
+    "explain": "'produced from' edilgen sıfat-fiil: 'üretilen'. Tuzaklar: 'üreten' etken (özne kayması), 'fosil yakıtlardan' (kaynak yanlış), 'gri' (yanlış ad), kavramların yer değiştirmesi.",
     "tip": "V3 sıfat → '-ilen/-ılan'."
    }
   ],
@@ -3507,14 +3507,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Işığın dalga boyu kısa olduğu için atmosferdeki gaz molekülleri onu saçamaz.",
-     "Atmosferdeki gaz molekülleri ne kadar çoksa ışık o kadar kısa dalga boyuna sahip olur.",
-     "Işığın dalga boyu ne kadar uzunsa atmosferde o kadar güçlü saçılır.",
-     "Gaz molekülleri, kısa dalga boylu ışığı atmosferden tamamen uzaklaştırır.",
+     "Işığın dalga boyu ne kadar uzunsa atmosferdeki gaz molekülleri tarafından o kadar güçlü saçılır.",
+     "Işığın dalga boyu ne kadar kısaysa atmosferdeki gaz molekülleri tarafından o kadar zayıf saçılır.",
+     "Işığın dalga boyu kısa olduğu için atmosferdeki gaz molekülleri tarafından hiç saçılmaz.",
+     "Atmosferdeki gaz molekülleri ne kadar çoksa ışığın dalga boyu o kadar kısalır.",
      "Işığın dalga boyu ne kadar kısaysa atmosferdeki gaz molekülleri tarafından o kadar güçlü saçılır."
     ],
     "answer": 4,
-    "explain": "The ...-er, the ...-er = ne kadar ...sa o kadar. Tuzak: 'uzun' (kutup ters), özne değişimi.",
+    "explain": "The ...-er, the ...-er = ne kadar ...sa o kadar. Tuzaklar: 'uzunsa' ve 'zayıf' (kutup ters), 'olduğu için ... hiç saçılmaz' (yapı ve olumsuzluk), özne değişimi.",
     "tip": "Karşılaştırmalı yapıyı birebir eşle."
    }
   ],
@@ -3529,14 +3529,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Bilim insanları, genleri hassas biçimde düzenlemek için bakteriyel bir savunma sistemini nasıl kullanacaklarını ancak 2010'larda öğrendiler.",
-     "Bilim insanları 2010'lardan beri genleri düzenlemek için bakterileri savunma sistemi olarak kullanmaktadır.",
-     "2010'lara kadar bilim insanları bakteriyel savunma sistemini genleri düzenlemek için sıklıkla kullandılar.",
-     "Bilim insanları, bakterilerin genlerini hassas biçimde düzenleyen savunma sistemini 2010'lardan önce keşfetmişti.",
-     "Bakteriyel savunma sistemi, 2010'larda bilim insanlarının genlerini düzenlemeye başladı."
+     "Bilim insanları genleri hassas biçimde düzenlemek için bakteriyel bir savunma sistemini kullanmayı ancak 2010'larda öğrendi.",
+     "Bilim insanları genleri hassas biçimde düzenlemek için bakteriyel bir savunma sistemini 2010'lardan çok önce kullanmayı öğrenmişti.",
+     "Bilim insanları genleri hassas biçimde düzenlemek için bakteriyel bir savunma sistemini 2010'lara kadar sıklıkla kullandılar.",
+     "Bilim insanları bakterilerin genleri hassas biçimde düzenlemek için savunma sistemini nasıl kullandığını ancak 2010'larda öğrendi.",
+     "Bakteriyel bir savunma sistemi, bilim insanlarının genlerini hassas biçimde düzenlemeyi ancak 2010'larda öğrendi."
     ],
     "answer": 0,
-    "explain": "It was not until X that Y = Y ancak X'te oldu. Tuzaklar: 'beri' (since), 'kadar ... kullandılar' (anlam ters), özne kayması.",
+    "explain": "It was not until X that Y = Y ancak X'te oldu. Tuzaklar: 'çok önce ... öğrenmişti' ve 'kadar ... kullandılar' (anlam ters), sistemi bakterilerin kullanması ve sistemin 'öğrenmesi' (özne kayması).",
     "tip": "not until = ancak ... -de/-dıktan sonra."
    }
   ],
@@ -3551,14 +3551,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Okyanus sıcaklıkları birkaç hafta yüksek kaldığı için mercanlar dokularındaki algleri dışarı atmıştır.",
+     "Okyanus sıcaklıkları birkaç hafta boyunca yüksek kaldığı için mercanlar dokularında yaşayan algleri dışarı atmıştır.",
      "Okyanus sıcaklıkları birkaç hafta boyunca yüksek kalırsa mercanlar dokularında yaşayan algleri dışarı atabilir.",
-     "Mercanlar dokularında yaşayan algleri dışarı atarsa okyanus sıcaklıkları birkaç hafta yüksek kalabilir.",
-     "Okyanus sıcaklıkları birkaç hafta yüksek kalsa bile mercanlar algleri asla dışarı atmaz.",
-     "Okyanus sıcaklıkları yükseldiğinde algler mercanların dokularında birkaç hafta yaşayabilir."
+     "Mercanlar dokularında yaşayan algleri dışarı atarsa okyanus sıcaklıkları birkaç hafta boyunca yüksek kalabilir.",
+     "Okyanus sıcaklıkları birkaç hafta boyunca yüksek kalsa bile mercanlar dokularında yaşayan algleri asla dışarı atmaz.",
+     "Okyanus sıcaklıkları birkaç hafta boyunca düşük kalırsa mercanlar dokularında yaşayan algleri dışarı atabilir."
     ],
     "answer": 1,
-    "explain": "If = -se/-sa; may = -ebilir. Tuzaklar: 'için' (neden), koşul-sonuç yer değişimi, 'bile'.",
+    "explain": "If = -se/-sa; may = -ebilir; remain high = yüksek kalmak. Tuzaklar: 'kaldığı için ... atmıştır' (neden + zaman), koşul-sonuç yer değişimi, 'bile ... asla' (olumsuzluk), 'düşük' (kutup ters).",
     "tip": "Koşul hangi yarıda? Yerini koru."
    }
   ],
@@ -3573,14 +3573,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Ötegezegenlerin çoğu hem doğrudan gözlemle hem de yıldızlar üzerindeki etkileriyle tespit edilmiştir.",
-     "Ev sahibi yıldızlar, ötegezegenlerin çoğunu doğrudan gözlemle tespit etmiştir.",
-     "Ötegezegenlerin çoğu doğrudan gözlemle değil, ev sahibi yıldızları üzerinde oluşturdukları etkiler aracılığıyla tespit edilmiştir.",
-     "Ötegezegenlerin hepsi, yıldızları üzerinde etki oluşturmadıkları için doğrudan gözlemlenmiştir.",
-     "Ötegezegenlerin çoğu doğrudan gözlemlenecek ve yıldızlar üzerindeki etkileri ölçülecektir."
+     "Ötegezegenlerin çoğu hem doğrudan gözlemle hem de ev sahibi yıldızları üzerinde oluşturdukları etkilerle tespit edilmiştir.",
+     "Ötegezegenlerin çoğu ev sahibi yıldızları üzerindeki etkileriyle değil, doğrudan gözlem aracılığıyla tespit edilmiştir.",
+     "Ötegezegenlerin çoğu doğrudan gözlemle değil, ev sahibi yıldızlarına yaptıkları etkiler sayesinde saptanmıştır.",
+     "Ötegezegenlerin hepsi doğrudan gözlemle değil, ev sahibi yıldızları üzerinde oluşturdukları etkilerle tespit edilmiştir.",
+     "Ötegezegenlerin çoğu doğrudan gözlemle değil, ev sahibi yıldızları üzerinde oluşturacakları etkilerle tespit edilecektir."
     ],
     "answer": 2,
-    "explain": "not X but Y = X ile değil Y ile. Tuzaklar: 'hem...hem' (both), 'hepsi', gelecek zaman.",
+    "explain": "not X but Y = X ile değil Y ile. Tuzaklar: 'hem...hem' (both), yer değiştirmiş not...but, 'hepsi' (most≠all), gelecek zaman.",
     "tip": "Yapıyı birebir eşle: not...but."
    }
   ],
@@ -3595,14 +3595,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Laennec 1816'da stetoskobu icat etmeden önce hiçbir hastayı muayene etmemişti.",
-     "Laennec, stetoskobu icat ettikten sonra hastaları muayene etmekte zorlandı.",
-     "Laennec 1816'dan beri hastaları stetoskopla muayene etmektedir.",
+     "Laennec, 1816'da stetoskobu icat ettikten sonra bir hastayı muayene etmekte zorlandı.",
+     "Laennec, bir hastayı muayene etmekte zorlanmadan önce 1816'da stetoskobu icat etti.",
+     "Laennec, 1816'dan beri hastaları muayene ederken stetoskobu icat ediyor.",
      "Laennec, bir hastayı muayene etmekte zorlandıktan sonra 1816'da stetoskobu icat etti.",
-     "Bir hasta, Laennec'in stetoskobu icat etmesine 1816'da yardım etti."
+     "Bir hasta, Laennec'i muayene etmekte zorlandıktan sonra 1816'da stetoskobu icat etti."
     ],
     "answer": 3,
-    "explain": "after + had V3: önce zorlandı, sonra icat etti. Tuzak: sıra tersine çevrilmiş, 'beri'.",
+    "explain": "after + had V3: önce zorlandı, sonra icat etti. Tuzaklar: olay sırası tersine çevrilmiş ('ettikten sonra', 'zorlanmadan önce'), 'beri', özne-nesne değişimi.",
     "tip": "Olay sırasını kontrol et."
    }
   ],
@@ -3617,14 +3617,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterse de simülasyonlar kusursuzdur.",
-     "Gerçek dünyada eğitilen robotlar simülasyonlarda kötü performans gösterir.",
-     "Hiçbir simülasyon kusursuz olmadığı hâlde robotlar gerçek dünyada her zaman iyi performans gösterir.",
-     "Simülasyon kusursuz olmadığında robotlar gerçek dünyada eğitilmelidir.",
-     "Hiçbir simülasyon kusursuz olmadığından, simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterebilir."
+     "Simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterebilse de simülasyonların hepsi kusursuzdur.",
+     "Hiçbir simülasyon kusursuz olmadığından, gerçek dünyada eğitilen robotlar simülasyonlarda kötü performans gösterebilir.",
+     "Hiçbir simülasyon kusursuz olmadığı hâlde simülasyonlarda eğitilen robotlar gerçek dünyada her zaman iyi performans gösterir.",
+     "Bazı simülasyonlar kusursuz olduğundan, simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterebilir.",
+     "Hiçbir simülasyon mükemmel olmadığından, simülasyonda eğitilen robotlar gerçek dünyada kötü performans gösterebilir."
     ],
     "answer": 4,
-    "explain": "because = -dığından; may = -ebilir. Tuzaklar: 'gösterse de' (zıtlık), yer değişimi, 'her zaman'.",
+    "explain": "because = -dığından; may = -ebilir; no simulation = hiçbir simülasyon. Tuzaklar: 'gösterebilse de' (zıtlık), ortamların yer değiştirmesi, 'her zaman iyi' (kutup), 'bazı ... kusursuz' (nicelik).",
     "tip": "Neden-sonuç ilişkisini koru."
    }
   ],
@@ -3639,14 +3639,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Katalizörler, süreç içinde tüketilmeden kimyasal tepkimeleri hızlandırır.",
-     "Katalizörler, kimyasal tepkimeleri hızlandırdıkları için süreç içinde tüketilir.",
-     "Kimyasal tepkimeler, katalizörleri tüketmeden hızlanamaz.",
-     "Katalizörler süreç içinde tüketildikçe tepkimeler yavaşlar.",
-     "Katalizörler tepkimeleri hızlandırmasa da süreçte tüketilmez."
+     "Katalizörler kimyasal tepkimeleri, süreçte tüketilmeden hızlandırır.",
+     "Katalizörler, süreç içinde tüketilerek kimyasal tepkimeleri hızlandırır.",
+     "Katalizörler, süreç içinde tüketilmeden kimyasal tepkimeleri yavaşlatır.",
+     "Kimyasal tepkimeler, süreç içinde tüketilmeden katalizörleri hızlandırır.",
+     "Katalizörler, süreç içinde tüketildikleri için kimyasal tepkimeleri hızlandırır."
     ],
     "answer": 0,
-    "explain": "without being consumed = tüketilmeden (edilgen + olumsuz). Tuzaklar: olumsuzluk kaybı, neden ekleme.",
+    "explain": "without being consumed = tüketilmeden (edilgen + olumsuz). Tuzaklar: 'tüketilerek' ve 'tüketildikleri için' (olumsuzluk kaybı), 'yavaşlatır' (kutup), özne-nesne değişimi.",
     "tip": "without + Ving = -meden."
    }
   ],
@@ -3661,14 +3661,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Bilim insanları depremleri önceden tahmin edemese de bir fayın birkaç on yıl içinde büyük bir deprem üretme olasılığını hesaplayabilir.",
+     "Bilim insanları depremleri öngöremese de bir fayın birkaç on yıl içinde büyük bir deprem üretme olasılığını hesaplayabilir.",
      "Bilim insanları depremleri önceden tahmin edebildiği için bir fayın birkaç on yıl içinde büyük deprem üreteceğini kesin olarak bilir.",
-     "Bilim insanları bir fayın büyük deprem üretme olasılığını hesaplayamadığı için depremleri tahmin edemez.",
-     "Bilim insanları depremleri tahmin edemediğinden faylar birkaç on yılda bir büyük deprem üretir.",
-     "Bilim insanları birkaç on yıl içinde depremleri önceden tahmin edebilecek olsa da olasılık hesaplayamaz."
+     "Bilim insanları depremleri önceden tahmin edemediği için bir fayın birkaç on yıl içinde büyük deprem üretme olasılığını da hesaplayamaz.",
+     "Bilim insanları depremleri önceden tahmin edebilse de bir fayın birkaç on yıl içinde büyük bir deprem üretme olasılığını hesaplayamaz.",
+     "Bilim insanları depremleri önceden tahmin edemese de bir fayın birkaç gün içinde büyük bir deprem üretme olasılığını hesaplayabilir."
     ],
     "answer": 0,
-    "explain": "Even though = -se de; 'probability' = olasılık (kesinlik değil). Tuzaklar: olumsuzluk ve bağlaç kayması.",
+    "explain": "Even though = -se de; 'predict' = öngörmek; 'probability' = olasılık (kesinlik değil); 'within a few decades' = birkaç on yıl içinde. Tuzaklar: 'edebildiği için ... kesin olarak bilir', 'edemediği için ... hesaplayamaz', kutupların ters çevrilmesi, 'birkaç gün'.",
     "tip": "Olumsuz + olumlu kutuplarını sırayla eşle."
    }
   ],
@@ -3683,14 +3683,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Süper iletken bir halka, yıllarca güç kaynağı olmadan akım başlatabilir.",
-     "Süper iletken bir halkada akım ancak güç kaynağı ile yıllarca akabilir.",
-     "Süper iletken bir halkada başlatılan akım birkaç yıl sonra durmak zorundadır.",
-     "Güç kaynağı olmadan başlatılan akım süper iletken halkayı yıllarca ısıtır.",
-     "Süper iletken bir halkada başlatılan akım, herhangi bir güç kaynağı olmadan yıllarca akabilir."
+     "Süper iletken bir halkada başlatılan akım, ancak bir güç kaynağı bağlıyken yıllarca akabilir.",
+     "Süper iletken bir halka, herhangi bir güç kaynağı olmadan yıllarca akım başlatabilir.",
+     "Süper iletken bir halkada başlatılan akım, güç kaynağı olmadan en fazla birkaç gün akabilir.",
+     "Herhangi bir güç kaynağı olmadan başlatılan akım, süper iletken halkayı yıllarca ısıtabilir.",
+     "Süper iletken bir halkada başlatılan akım, hiçbir güç kaynağı olmadan yıllarca akabilir."
     ],
     "answer": 4,
-    "explain": "Özne 'a current started in...' = başlatılan akım; without = olmadan. Tuzaklar: özne kayması, 'ancak ... ile'.",
+    "explain": "Özne 'a current started in...' = başlatılan akım; without any = hiçbir ... olmadan. Tuzaklar: 'ancak ... bağlıyken' (anlam ters), halkanın akım başlatması (özne kayması), 'en fazla birkaç gün' (süre), ısıtma (anlam kayması).",
     "tip": "Öznenin uzun isim öbeğini doğru kur."
    }
   ],
@@ -3705,14 +3705,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Bessemer'in yöntemi tanıtılmadan önce çelik o kadar pahalıydı ki esas olarak alet ve silah yapımında kullanılıyordu.",
+     "Bessemer'in yöntemi tanıtılmadan önce çelik o kadar pahalıydı ki çoğunlukla alet ve silah yapımında kullanılırdı.",
      "Bessemer'in yöntemi tanıtıldıktan sonra çelik o kadar ucuzladı ki alet ve silah yapımında kullanılmaya başlandı.",
-     "Bessemer'in yönteminden önce çelik alet ve silah yapımında kullanıldığı için pahalıydı.",
-     "Bessemer'in yöntemi, çeliği esas olarak alet ve silah yapımında kullanmak için tanıtıldı.",
-     "Bessemer yöntemini tanıtmadan önce çelik aletler ve silahlar çok pahalı değildi."
+     "Bessemer'in yöntemi tanıtılmadan önce çelik, alet ve silah yapımında kullanıldığı için çok pahalıydı.",
+     "Bessemer'in yöntemi tanıtılmadan önce çelik o kadar ucuzdu ki esas olarak alet ve silah yapımında kullanılıyordu.",
+     "Bessemer'in yöntemi tanıtılmadan önce çelik o kadar pahalıydı ki alet ve silah yapımında hiç kullanılmıyordu."
     ],
     "answer": 0,
-    "explain": "so ... that = o kadar ... ki; before = -meden önce. Tuzaklar: before/after, neden-sonuç tersine.",
+    "explain": "so ... that = o kadar ... ki; before = -meden önce; mainly = çoğunlukla. Tuzaklar: 'tanıtıldıktan sonra' (before/after), neden-sonuç tersine, 'ucuzdu' (kutup), 'hiç kullanılmıyordu' (olumsuzluk).",
     "tip": "so...that sonuç yapısını koru."
    }
   ],
@@ -3727,14 +3727,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "mRNA aşıları hızla güncellendiği için genetik talimatların değiştirilmesine gerek yoktur.",
-     "Yalnızca genetik talimatların değiştirilmesi gerektiğinden mRNA aşıları hızla güncellenebilir.",
-     "mRNA aşılarının güncellenmesi, genetik talimatlar değiştirilse bile yavaştır.",
+     "mRNA aşıları hızla güncellenebildiğinden yalnızca genetik talimatların değiştirilmesi gerekir.",
+     "Sadece genetik talimatların değişmesi gerektiğinden mRNA aşıları hızla güncellenebilir.",
+     "Yalnızca genetik talimatların değiştirilmesi gerekse de mRNA aşıları hızla güncellenemez.",
      "Genetik talimatların tamamının değiştirilmesi gerektiğinden mRNA aşıları yavaş güncellenir.",
-     "mRNA aşıları, yalnızca genetik talimatlar değiştirildiğinde kullanılabilir."
+     "Yalnızca genetik talimatların değiştirilmesi gerektiğinden mRNA aşıları hızla üretilmelidir."
     ],
     "answer": 1,
-    "explain": "as = -dığından (neden); only = yalnızca; can be updated = güncellenebilir.",
+    "explain": "as = -dığından (neden); only = sadece; can be updated = güncellenebilir. Tuzaklar: neden-sonuç tersine, 'gerekse de ... güncellenemez' (zıtlık + olumsuzluk), 'tamamının ... yavaş', 'üretilmelidir' (fiil ve kip değişimi).",
     "tip": "as'in anlamı: çünkü / -dikçe / gibi — bağlama bak."
    }
   ],
@@ -3749,14 +3749,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Emisyonlar azaltılırsa, çözülen donmuş toprak daha fazla sera gazı salacak ve ısınma hızlanacaktır.",
-     "Emisyonlar azaltılmadığı için donmuş toprak çözülmüş ve ısınma yavaşlamıştır.",
-     "Isınma hızlanmazsa donmuş toprak daha az sera gazı salacak ve emisyonlar azalacaktır.",
+     "Emisyonlar azaltılırsa, çözülen donmuş toprak daha fazla sera gazı salacak, bu da ısınmayı hızlandıracaktır.",
+     "Emisyonlar azaltılmadığı için çözülen donmuş toprak daha fazla sera gazı salmış ve ısınma hızlanmıştır.",
+     "Emisyonlar azaltılmazsa, çözülen donmuş toprak daha az sera gazı salacak, bu da ısınmayı yavaşlatacaktır.",
      "Emisyonlar azaltılmazsa, çözülen donmuş toprak daha fazla sera gazı salacak, bu da ısınmayı hızlandıracaktır.",
-     "Donmuş toprak çözülse bile emisyonlar azaltılırsa ısınma hızlanmayacaktır."
+     "Isınma hızlanmazsa, çözülen donmuş toprak daha fazla sera gazı salacak, bu da emisyonları azaltacaktır."
     ],
     "answer": 3,
-    "explain": "Unless = -mezse; ', which' = bu da. Tuzaklar: 'azaltılırsa' (olumsuzluk kaybı), geçmiş zaman.",
+    "explain": "Unless = -mezse; ', which' = bu da. Tuzaklar: 'azaltılırsa' (olumsuzluk kaybı), 'azaltılmadığı için ... salmış' (neden + geçmiş zaman), 'daha az ... yavaşlatacaktır' (kutup), koşulun yer değiştirmesi.",
     "tip": "Unless = if not; olumsuzluğu koru."
    }
   ],
@@ -3771,14 +3771,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Yalnızca görünür madde mevcut olduğu için sarmal gökadaların dış yıldızları çok daha yavaş dolanmıştır.",
-     "Görünür madde mevcut olmasaydı, dış yıldızlar çok daha hızlı dolanacaktı.",
-     "Yalnızca görünür madde mevcut olsaydı, sarmal gökadaların dış kısımlarındaki yıldızlar çok daha yavaş dolanırdı.",
-     "Sarmal gökadaların dış yıldızları yavaş dolandığında yalnızca görünür madde mevcut olur.",
-     "Yalnızca görünür madde, sarmal gökadaların dış yıldızlarını daha yavaş dolandırmıştır."
+     "Yalnızca görünür madde mevcut olduğu için sarmal gökadaların dış kısımlarındaki yıldızlar çok daha yavaş dolanmıştır.",
+     "Görünür madde hiç mevcut olmasaydı, sarmal gökadaların dış kısımlarındaki yıldızlar çok daha hızlı dolanırdı.",
+     "Yalnızca görünür madde bulunsaydı, sarmal gökadaların dış kısımlarındaki yıldızlar çok daha yavaş dolanırdı.",
+     "Sarmal gökadaların dış kısımlarındaki yıldızlar çok daha yavaş dolansaydı, yalnızca görünür madde mevcut olurdu.",
+     "Yalnızca görünür madde mevcut olsaydı, sarmal gökadaların iç kısımlarındaki yıldızlar çok daha hızlı dolanırdı."
     ],
     "answer": 2,
-    "explain": "Devrik Type 3 koşul (gerçek dışı geçmiş) = '-saydı ... -irdi'. Tuzaklar: 'olduğu için' gerçek kabul, olumsuzluk.",
+    "explain": "Devrik Type 3 koşul (gerçek dışı geçmiş) = '-saydı ... -irdi'. Tuzaklar: 'olduğu için' (gerçek kabul), 'hiç ... olmasaydı ... hızlı' (olumsuzluk + kutup), koşul-sonuç yer değişimi, 'iç kısımlarındaki ... hızlı'.",
     "tip": "Had + S + V3 = If S had V3."
    }
   ],
@@ -3793,14 +3793,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Bir çeliğin dayanımı yüksek olduğu sürece hidrojen gevrekleşmesine karşı dayanıklıdır.",
-     "Hidrojen gevrekleşmesi ne kadar artarsa çeliğin dayanımı o kadar yükselir.",
+     "Bir çeliğin dayanımı ne kadar düşükse hidrojen gevrekleşmesine o kadar yatkın olma eğilimindedir.",
+     "Bir çeliğin hidrojen gevrekleşmesine yatkınlığı ne kadar artarsa dayanımı o kadar yükselme eğilimindedir.",
      "Bir çeliğin dayanımı ne kadar yüksekse hidrojen gevrekleşmesine o kadar yatkın olma eğilimindedir.",
-     "Bir çeliğin dayanımı ne kadar yüksekse hidrojen gevrekleşmesine o kadar dirençli olur.",
-     "Yüksek dayanımlı çelikler hidrojen gevrekleşmesine hiçbir zaman yatkın değildir."
+     "Bir çeliğin dayanımı ne kadar yüksekse hidrojen gevrekleşmesine o kadar dirençli olma eğilimindedir.",
+     "Bir çeliğin dayanımı yüksek olduğu sürece hidrojen gevrekleşmesine hiçbir zaman yatkın olmaz."
     ],
     "answer": 2,
-    "explain": "the ...-er, the more susceptible = ne kadar ... o kadar yatkın. 'tends to' = eğilimindedir. Tuzaklar: kutup ters, neden-sonuç yer değişimi.",
+    "explain": "the ...-er, the more susceptible = ne kadar ... o kadar yatkın; 'tends to' = eğilimindedir. Tuzaklar: 'düşükse' ve 'dirençli' (kutup ters), neden-sonuç yer değişimi, 'hiçbir zaman' (olumsuzluk).",
     "tip": "Hedge kelimelerini (tend to, may) atma."
    }
   ],
@@ -3816,13 +3816,13 @@
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
      "Sodyum iyon piller daha ucuz olmasına rağmen düşük sıcaklıklarda lityum iyon pillerden daha kötü performans gösterir.",
-     "Sodyum iyon piller ne daha ucuzdur ne de düşük sıcaklıklarda daha iyi performans gösterir.",
-     "Lityum iyon piller hem daha ucuzdur hem de düşük sıcaklıklarda daha iyi çalışır.",
-     "Sodyum iyon piller yalnızca daha ucuz olmakla kalmaz, düşük sıcaklıklarda lityum iyon pillerden daha iyi performans da gösterir.",
-     "Sodyum iyon piller düşük sıcaklıklarda daha iyi çalıştıkları için daha ucuzdur."
+     "Sodyum iyon piller ne daha ucuzdur ne de düşük sıcaklıklarda lityum iyon pillerden daha iyi performans gösterir.",
+     "Lityum iyon piller yalnızca daha ucuz olmakla kalmaz, düşük sıcaklıklarda sodyum iyon pillerden daha iyi de çalışır.",
+     "Sodyum iyon piller sadece daha ucuz olmakla kalmaz, düşük sıcaklıklarda lityum iyon pillerden daha iyi de çalışır.",
+     "Sodyum iyon piller düşük sıcaklıklarda lityum iyon pillerden daha iyi çalıştıkları için daha ucuzdur."
     ],
     "answer": 3,
-    "explain": "Not only ... but also = yalnızca ... değil, ... da. Tuzaklar: neither...nor, özne değişimi, neden ekleme.",
+    "explain": "Not only ... but also = sadece ... değil, ... de. Tuzaklar: 'rağmen ... kötü' (zıtlık + kutup), neither...nor, pil türlerinin yer değiştirmesi, neden ekleme.",
     "tip": "Çift bağlaçların eşini ara."
    }
   ],
@@ -3837,14 +3837,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Nehirler, zararlı alg patlamalarına karşı gübre olarak kullanılabilir.",
+     "Fazla gübre nehirlere karışabilir ve orada zararlı alg patlamalarını önleyebilir.",
      "Fazla gübre nehirlere karışabilir ve orada zararlı alg patlamalarına neden olabilir.",
-     "Zararlı alg patlamaları nehirlerdeki gübre miktarını azaltır.",
-     "Fazla gübre nehirlere karışmadığı sürece alg patlamaları oluşur.",
-     "Fazla gübre nehirlere karıştığında alg patlamalarını her zaman önler."
+     "Zararlı alg patlamaları nehirlere karışabilir ve orada fazla gübre birikmesine yol açabilir.",
+     "Fazla gübre nehirlere karışmadığı sürece orada zararlı alg patlamalarına neden olabilir.",
+     "Fazla gübre nehirlere karıştığında orada her zaman zararlı alg patlamalarına neden olur."
     ],
     "answer": 1,
-    "explain": "where = orada (yer); can/may = -ebilir. Tuzaklar: anlam tersine, 'her zaman'.",
+    "explain": "where = orada (yer); can/may = -ebilir. Tuzaklar: 'önleyebilir' (anlam ters), özne-nesne değişimi, 'karışmadığı sürece' (koşul ters), 'her zaman' (modal kaybı).",
     "tip": "Modal derecesini koru (may ≠ always)."
    }
   ],
@@ -3859,14 +3859,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Makine öğrenmesi tahminleri yaklaşık bir dakikada üretildiği için artık geleneksel modellere ihtiyaç duymamaktadır.",
-     "Geleneksel modeller, makine öğrenmesi tahminlerinin yardımıyla yaklaşık bir dakikada veri üretebilir.",
-     "Makine öğrenmesi tahminleri hâlâ yaklaşık bir dakikada geleneksel modeller üretmektedir.",
-     "Yaklaşık bir dakikada üretilen veriler, makine öğrenmesi modellerini geleneksel hâle getirmiştir.",
-     "Yaklaşık bir dakikada üretilebilen makine öğrenmesi tahminleri hâlâ geleneksel modellerin yardımıyla oluşturulan verilere dayanmaktadır."
+     "Yaklaşık bir dakikada üretilebilen makine öğrenmesi tahminleri artık geleneksel modellerin yardımıyla elde edilen verilere dayanmaz.",
+     "Yaklaşık bir dakikada üretilebilen geleneksel modeller, hâlâ makine öğrenmesi tahminlerinin yardımıyla elde edilen verilere dayanır.",
+     "Makine öğrenmesi tahminleri yaklaşık bir dakikada üretilebildiği için geleneksel modellerin yardımıyla elde edilen verilere dayanır.",
+     "Yaklaşık bir saatte üretilebilen makine öğrenmesi tahminleri, hâlâ geleneksel modellerin yardımıyla elde edilen verilere dayanır.",
+     "Yaklaşık bir dakikada üretilebilen makine öğrenmesi tahminleri, hâlâ geleneksel modellerin yardımıyla elde edilen verilere dayanır."
     ],
     "answer": 4,
-    "explain": "Virgüllü which = 'üretilebilen' sıfat; still = hâlâ; depend on = dayanmak. Tuzaklar: 'artık ihtiyaç duymamak' (still kaybı), özne değişimi.",
+    "explain": "Virgüllü which = 'üretilebilen' sıfat; still = hâlâ; depend on = dayanmak. Tuzaklar: 'artık ... dayanmaz' (still kaybı + olumsuzluk), özne değişimi, eklenmiş neden-sonuç, 'bir saatte'.",
     "tip": "Ana yüklem ve özneyi önce bul."
    }
   ],
@@ -3881,14 +3881,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Su ayıları aşırı koşullarda vücutlarındaki suyu hiç kaybetmeden yaşar.",
-     "Su ayıları vücutlarındaki suyun tamamını kaybettiklerinde ölür.",
-     "Aşırı koşullar, su ayılarının vücutlarına daha fazla su girmesini sağlar.",
+     "Su ayıları, vücutlarındaki suyun hiçbirini kaybetmeden aşırı koşullarda hayatta kalabilir.",
+     "Su ayıları, vücutlarındaki suyun neredeyse tamamını kaybettiklerinde aşırı koşullarda ölür.",
+     "Su ayıları, vücutlarındaki suyun yalnızca küçük bir kısmını kaybederek aşırı koşullarda hayatta kalabilir.",
      "Su ayıları, vücutlarındaki suyun neredeyse tamamını kaybederek aşırı koşullarda hayatta kalabilir.",
-     "Su ayıları aşırı koşullarda hayatta kalamadığı için suyunu kaybeder."
+     "Su ayıları, aşırı koşullarda hayatta kalamadıkları için vücutlarındaki suyun neredeyse tamamını kaybeder."
     ],
     "answer": 3,
-    "explain": "by + Ving = -erek; almost all = neredeyse tamamı.",
+    "explain": "by + Ving = -erek; almost all = neredeyse tamamı. Tuzaklar: 'hiçbirini' ve 'küçük bir kısmını' (nicelik), 'ölür' (anlam ters), neden-sonuç tersine.",
     "tip": "by Ving = yöntem: -erek/-arak."
    }
   ],
@@ -3903,14 +3903,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rezonans nedeniyle çöktüğü açıklamasını artık eksik bulmaktadır.",
-     "Mühendisler artık Tacoma Narrows Köprüsü'nün rezonans nedeniyle çökmediğini kesin olarak kanıtlamıştır.",
-     "Tacoma Narrows Köprüsü, mühendislerin eksik açıklamaları nedeniyle çökmüştür.",
-     "Mühendisler, köprünün çöküşünü açıklamak için rezonansın tek ve eksiksiz neden olduğunu düşünmektedir.",
-     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rüzgâr nedeniyle çökmeyeceğini önceden biliyordu."
+     "Mühendisler, Tacoma Narrows Köprüsü'nün sırf rezonans yüzünden çöktüğü açıklamasını artık eksik buluyor.",
+     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rezonans nedeniyle çöktüğü açıklamasını artık eksiksiz bulmaktadır.",
+     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rezonans nedeniyle çökmediğini artık kesin olarak kanıtlamıştır.",
+     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rüzgâr nedeniyle çöktüğü açıklamasını önceden de eksik bulmuştu.",
+     "Tacoma Narrows Köprüsü, mühendislerin rezonansla ilgili eksik açıklamaları nedeniyle çökmüştür."
     ],
     "answer": 0,
-    "explain": "regard X as incomplete = X'i eksik saymak; simply = yalnızca. Tuzaklar: 'çökmediğini kanıtlamış' (aşırı), 'eksiksiz' (ters).",
+    "explain": "regard X as incomplete = X'i eksik saymak; simply = sırf/yalnızca; now = artık. Tuzaklar: 'eksiksiz' (ters), 'çökmediğini ... kanıtlamıştır' (aşırı iddia), 'önceden de' (zaman), köprünün açıklama yüzünden çökmesi (neden-sonuç karışıklığı).",
     "tip": "regard/consider X as Y yapısını yakala."
    }
   ],
@@ -3925,14 +3925,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Soğuk haddelenmiş şerit, haddeleme sırasında sünekliğini kaybetmemek için hiç tavlanmaz.",
-     "Tavlanan şerit, haddeleme sırasında daha fazla süneklik kaybeder.",
-     "Soğuk haddelenmiş şerit, haddeleme sırasında kaybedilen sünekliği geri kazandırmak için genellikle tavlanır.",
-     "Soğuk haddeleme, şeridin tavlanması sırasında kaybedilen sünekliği geri kazandırır.",
-     "Soğuk haddelenmiş şerit genellikle sünek olduğu için tavlanır."
+     "Soğuk haddelenmiş şerit, haddeleme sırasında sünekliğini kaybetmemek için genellikle hiç tavlanmaz.",
+     "Soğuk haddelenmiş şerit, tavlama sırasında kaybedilen sünekliği geri kazanmak için genellikle haddelenir.",
+     "Soğuk haddelenmiş şerit, haddelemede yitirilen sünekliği geri kazanmak için genellikle tavlanır.",
+     "Soğuk haddelenmiş şerit, haddeleme sırasında kazandığı sertliği artırmak için genellikle tavlanır.",
+     "Soğuk haddelenmiş şerit, haddeleme sırasında süneklik kaybetmediği için genellikle tavlanır."
     ],
     "answer": 2,
-    "explain": "to + V1 (amaç) = -mek için; 'lost during rolling' = haddeleme sırasında kaybedilen.",
+    "explain": "to + V1 (amaç) = -mek için; 'lost during rolling' = haddelemede yitirilen. Tuzaklar: 'hiç tavlanmaz' (olumsuzluk), tavlama-haddeleme yer değişimi, 'sertliği artırmak' (amaç ters), 'kaybetmediği için' (neden + olumsuzluk).",
     "tip": "Amaç yapısı: to/in order to = -mek için."
    }
   ],
@@ -3947,14 +3947,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Besin için arılara bağımlı olan ürünlerin hepsi tozlaşır.",
-     "Arılar, besin için bağımlı olduğumuz ürünlerin çoğunu tozlaştırır.",
-     "Arılar, bizim yetiştirdiğimiz ürünlerle beslenir.",
-     "Ürünlerin çoğu arıları tozlaştırır.",
-     "Arılar, besin için bize bağımlıdır."
+     "Arılar, besin için bağımlı olduğumuz ürünlerin hepsini tozlaştırır.",
+     "Arılar, besin için bağımlı olduğumuz ürünlerin birçoğunu tozlaştırır.",
+     "Arılar, besin için bize bağımlı olan ürünlerin birçoğunu tozlaştırır.",
+     "Besin için bağımlı olduğumuz ürünlerin birçoğu arıları tozlaştırır.",
+     "Arılar, besin için bağımlı olduğumuz ürünlerin azını tozlaştırır."
     ],
     "answer": 1,
-    "explain": "many of = çoğu; 'that we depend on' = bağımlı olduğumuz. Tuzaklar: özne-nesne değişimi, 'hepsi'.",
+    "explain": "many of = birçoğu (most of = çoğu); 'that we depend on' = bağımlı olduğumuz. Tuzaklar: 'hepsini' ve 'azını' (nicelik), ilgi cümlesinde özne değişimi ('bize bağımlı olan'), özne-nesne değişimi.",
     "tip": "İlgi cümlesini isme bağla."
    }
   ],
@@ -3969,14 +3969,14 @@
    {
     "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
     "options": [
-     "Wegener'i eleştirenler hem gözlemlerine hem de önerdiği mekanizmaya itiraz ettiler.",
-     "Wegener'i eleştirenler, önerdiği mekanizmayı kabul edip gözlemlerine itiraz ettiler.",
+     "Wegener'i eleştirenler, hem gözlemlerine hem de kıtaların kayması için önerdiği mekanizmaya itiraz ettiler.",
+     "Wegener'i eleştirenler, önerdiği mekanizmaya değil, kıtaların kayması konusundaki gözlemlerine itiraz ettiler.",
      "Wegener'i eleştirenler, onun gözlemlerine değil, kıtaların kayması için önerdiği mekanizmaya itiraz ettiler.",
-     "Wegener, eleştirmenlerin kıtaların kayması için önerdiği mekanizmaya itiraz etti.",
-     "Wegener'i eleştirenler, gözlemleri olmadığı için mekanizmasını reddettiler."
+     "Wegener, eleştirmenlerinin gözlemlerine değil, kıtaların kayması için önerdikleri mekanizmaya itiraz etti.",
+     "Wegener'i eleştirenler, onun gözlemlerine değil, kıtaların kayması için önerdiği mekanizmaya itiraz etmediler."
     ],
     "answer": 2,
-    "explain": "not X but Y = X'e değil Y'ye. Tuzaklar: both, ters dağılım, özne kayması.",
+    "explain": "not X but Y = X'e değil Y'ye. Tuzaklar: both, yer değiştirmiş not...but, özne kayması, 'etmediler' (olumsuzluk).",
     "tip": "not...but eşleşmesi."
    }
   ],
@@ -3991,14 +3991,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "The thin oxide layer formed by chromium cannot repair itself unless the surface is scratched.",
-     "When chromium is added, the surface is scratched and the oxide layer becomes thinner.",
-     "The thin oxide layer formed by the addition of chromium can repair itself when the surface is scratched.",
-     "The addition of chromium repairs the thin oxide layer before the surface is scratched.",
-     "Although the surface is scratched, the oxide layer formed by chromium has repaired itself."
+     "The thin oxide layer formed by adding chromium cannot repair itself unless the surface is scratched.",
+     "The thin oxide layer formed by adding chromium becomes thinner each time the surface is scratched.",
+     "Formed by adding chromium, the thin oxide layer can repair itself when the surface is scratched.",
+     "The thin oxide layer formed by adding chromium can repair itself before the surface is scratched.",
+     "Although the surface is scratched, the oxide layer formed by adding chromium has repaired itself."
     ],
     "answer": 2,
-    "explain": "'oluşan' = formed (V3); '-dığında' = when; '-ebilir' = can. Tuzaklar: unless/olumsuzluk, before, although + present perfect.",
+    "explain": "'oluşan' = formed (V3); '-dığında' = when; '-ebilir' = can. Tuzaklar: unless/olumsuzluk, 'becomes thinner' (anlam kayması), before, although + present perfect.",
     "tip": "Önce yüklemi bul: onarabilir = can repair."
    }
   ],
@@ -4013,14 +4013,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Wind turbines are mounted on tall towers, although the wind is weaker there.",
-     "Tall towers make the wind stronger and steadier for turbines.",
-     "Wind turbines were mounted on tall towers because the wind had been steady.",
+     "Wind turbines are mounted on tall towers, although the wind is weaker and less steady there.",
+     "Wind turbines are mounted on short towers, where the wind is stronger and steadier.",
+     "Wind turbines were mounted on tall towers because the wind had been stronger and steadier.",
      "Wind turbines are mounted on tall towers, where the wind is stronger and steadier.",
-     "Where the wind is stronger, turbines are mounted on short towers."
+     "Tall towers are mounted on wind turbines, where the wind is stronger and steadier."
     ],
     "answer": 3,
-    "explain": "'-dığı yüksek kuleler' = towers where...; edilgen geniş zaman 'are mounted'. Tuzaklar: although, geçmiş zaman, anlam tersine.",
+    "explain": "'-dığı yüksek kuleler' = towers where...; edilgen geniş zaman 'are mounted'. Tuzaklar: although, 'short' (kutup), geçmiş zaman, özne-nesne değişimi.",
     "tip": "Yer bildiren ilgi cümlesi: where."
    }
   ],
@@ -4036,13 +4036,13 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Sound travels much faster in gases than in solids because the particles in gases are closer together.",
-     "Although the particles in solids are closer together, sound travels faster in gases.",
-     "The particles in solids move faster than sound because they are close together.",
+     "Although the particles in solids are closer together, sound travels much faster in gases than in solids.",
+     "Sound travels much faster in solids than in gases although the particles in solids are farther apart.",
      "Sound travels much faster in solids than in gases because the particles in solids are closer together.",
-     "Sound travelled faster in solids so that the particles could come closer together."
+     "Sound travelled much faster in solids so that the particles in solids could come closer together."
     ],
     "answer": 3,
-    "explain": "Karşılaştırma yönü: katı > gaz; çünkü = because. Tuzaklar: kıyas ters, although, so that.",
+    "explain": "Karşılaştırma yönü: katı > gaz; çünkü = because. Tuzaklar: kıyas ters, although, 'farther apart' (bilgi ters), so that.",
     "tip": "Karşılaştırmanın yönünü kontrol et."
    }
   ],
@@ -4057,14 +4057,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "It is known that bacteria can transfer genetic material only to their offspring, not to their neighbours.",
+     "It is known that bacteria can transfer genetic material only to their offspring, not to unrelated neighbours.",
      "It is known that bacteria can transfer genetic material not only to their offspring but also to unrelated neighbours.",
-     "Bacteria are known to transfer genetic material neither to their offspring nor to their neighbours.",
-     "It was known that unrelated neighbours transferred their genetic material to bacteria.",
-     "Bacteria can transfer genetic material to their offspring unless their neighbours are related."
+     "It is known that bacteria can transfer genetic material neither to their offspring nor to unrelated neighbours.",
+     "It is known that unrelated neighbours can transfer genetic material not only to bacteria but also to offspring.",
+     "It was once believed that bacteria could transfer genetic material not only to offspring but also to neighbours."
     ],
     "answer": 1,
-    "explain": "'yalnızca ... değil ... da' = not only ... but also; 'bilinmektedir' = It is known that. Tuzaklar: only (anlam daralması), neither/nor, özne kayması.",
+    "explain": "'yalnızca ... değil ... da' = not only ... but also; 'bilinmektedir' = It is known that. Tuzaklar: only (anlam daralması), neither/nor, özne kayması, 'was once believed' (zaman ve fiil değişimi).",
     "tip": "Çift bağlacı birebir eşle."
    }
   ],
@@ -4079,14 +4079,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Planting trees and using darker materials have increased the urban heat island effect.",
-     "The urban heat island effect can help trees to grow and materials to become lighter.",
-     "Unless trees are planted, lighter materials will reduce the urban heat island effect.",
-     "Planting trees is more helpful than using lighter materials to reduce the effect.",
+     "Planting trees and using darker-coloured materials can help to increase the urban heat island effect.",
+     "Planting trees and using lighter-coloured materials have no effect at all on the urban heat island.",
+     "Unless trees are planted, using lighter-coloured materials will reduce the urban heat island effect.",
+     "Planting trees is far more helpful than using lighter materials to reduce the urban heat island effect.",
      "Planting trees and using lighter-coloured materials can help to reduce the urban heat island effect."
     ],
     "answer": 4,
-    "explain": "Gerund özne: Planting ... and using ...; '-ebilir' = can. Tuzaklar: darker, present perfect, özne-nesne değişimi, ekstra karşılaştırma.",
+    "explain": "Gerund özne: Planting ... and using ...; '-ebilir' = can. Tuzaklar: darker/increase (kutup), 'no effect at all' (olumsuzluk), unless, ekstra karşılaştırma.",
     "tip": "Fazladan bilgi ekleyen şıkkı ele."
    }
   ],
@@ -4101,14 +4101,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "A comet's tail always points towards the Sun because it pushes the solar wind.",
-     "A comet's tail always points away from the Sun because it is pushed by the solar wind.",
-     "Although the solar wind pushes it, a comet's tail sometimes points away from the Sun.",
-     "The solar wind always points away from the Sun so that it can push a comet's tail.",
-     "A comet's tail pointed away from the Sun after the solar wind had pushed it."
+     "A comet's tail always points towards the Sun because it is pushed by the solar wind.",
+     "A comet's tail always faces away from the Sun as the solar wind pushes it.",
+     "Although the solar wind pushes it, a comet's tail always points away from the Sun.",
+     "A comet's tail always points away from the Sun because it pushes the solar wind.",
+     "A comet's tail pointed away from the Sun only after the solar wind had pushed it."
     ],
     "answer": 1,
-    "explain": "'tarafından itildiği için' = because it is pushed by (edilgen + neden). Tuzaklar: towards, aktif çatı, although, geçmiş zaman.",
+    "explain": "'tarafından itildiği için' = as/because the solar wind pushes it (neden). Tuzaklar: towards, özne-nesne değişimi ('it pushes the solar wind'), although, geçmiş zaman + only after.",
     "tip": "Edilgen çatıyı (tarafından) kaçırma."
    }
   ],
@@ -4125,12 +4125,12 @@
     "options": [
      "Doctors usually prefer MRI to CT in emergencies because of its speed.",
      "Doctors usually prefer CT to MRI in emergencies because of its speed.",
-     "Doctors rarely use CT in emergencies in spite of its speed.",
-     "In emergencies, CT is preferred to MRI only if it is slower.",
+     "Doctors rarely use CT in emergencies in spite of its greater speed.",
+     "In emergencies, doctors prefer CT to MRI only when it is slower.",
      "Doctors preferred CT to MRI in emergencies so that it would be faster."
     ],
     "answer": 1,
-    "explain": "prefer A to B = A'yı B'ye tercih etmek; nedeniyle = because of. Tuzaklar: tercih ters, in spite of, so that.",
+    "explain": "prefer A to B = A'yı B'ye tercih etmek; nedeniyle = because of. Tuzaklar: tercih ters, in spite of, 'only when it is slower', so that.",
     "tip": "prefer A to B yönüne dikkat."
    }
   ],
@@ -4146,13 +4146,13 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Language models can produce statements that sound uncertain but are true.",
-     "Since they sound confident, the statements of language models are true.",
-     "Language models produced confident statements because they were false.",
+     "Since they sound confident, the statements of language models are always true.",
+     "Language models produced confident statements because those statements were false.",
      "Language models can produce statements that sound confident but are false.",
-     "Statements that are false cannot be produced by language models."
+     "Language models cannot produce statements that sound confident but are false."
     ],
     "answer": 3,
-    "explain": "'görünen ancak yanlış olan ifadeler' = statements that sound ... but are false. Tuzaklar: kutup ters, neden ekleme, olumsuzluk.",
+    "explain": "'görünen ancak yanlış olan ifadeler' = statements that sound ... but are false. Tuzaklar: kutup ters, neden ekleme, geçmiş zaman, olumsuzluk (cannot).",
     "tip": "İlgi cümlesi içindeki zıtlığı koru."
    }
   ],
@@ -4169,12 +4169,12 @@
     "options": [
      "Because the Haber-Bosch process has greatly increased food production, it consumes very little of the world's energy.",
      "The Haber-Bosch process will increase food production unless it consumes a significant share of the world's energy.",
-     "Although the Haber-Bosch process has greatly increased food production, it consumes a significant share of the world's energy.",
-     "Although the Haber-Bosch process consumed a significant share of energy, it had not increased food production.",
-     "The Haber-Bosch process has increased the world's energy as much as food production."
+     "While the Haber-Bosch process has greatly boosted food production, it uses a large part of the world's energy.",
+     "Although the Haber-Bosch process consumed a significant share of the world's energy, it had not increased food production.",
+     "The Haber-Bosch process has increased the world's energy supply as greatly as it has increased food production."
     ],
     "answer": 2,
-    "explain": "'-miş olsa da' = Although + present perfect; tüketmektedir = consumes. Tuzaklar: because, unless, zaman ve kutup değişimi.",
+    "explain": "'-miş olsa da' = Although/While + present perfect; tüketmektedir = uses/consumes. Tuzaklar: because, unless, zaman ve kutup değişimi, anlam kayması (energy supply).",
     "tip": "Bağlaç + zaman ikilisini birlikte eşle."
    }
   ],
@@ -4190,10 +4190,10 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Places very close to the epicentre of an earthquake always receive the longest warning.",
-     "Places far from the epicentre may receive no warning at all.",
-     "Places very close to the epicentre must have received a warning.",
+     "Places far from the epicentre of an earthquake may receive no warning at all.",
+     "Places very close to the epicentre of an earthquake must have received a warning.",
      "Places very close to the epicentre of an earthquake may receive no warning at all.",
-     "The epicentre of an earthquake may be very close to places with warnings."
+     "The epicentre of an earthquake may be very close to places that receive warnings."
     ],
     "answer": 3,
     "explain": "'almayabilir' = may receive no ...; 'çok yakın' = very close. Tuzaklar: far, must have, always.",
@@ -4212,13 +4212,13 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Watt's separate condenser greatly increased fuel consumption by allowing the cylinder to cool down.",
-     "Because the cylinder stayed hot all the time, Watt invented a separate condenser.",
-     "Watt's separate condenser greatly reduced fuel consumption by allowing the cylinder to stay hot all the time.",
-     "Watt's separate condenser has reduced fuel consumption although the cylinder never stays hot.",
-     "The cylinder allowed Watt's condenser to stay hot and reduce fuel consumption."
+     "Because the cylinder stayed hot all the time, Watt invented a separate condenser to cut fuel use.",
+     "By keeping the cylinder hot at all times, Watt's separate condenser cut fuel consumption sharply.",
+     "Watt's separate condenser has greatly reduced fuel consumption although the cylinder never stays hot.",
+     "The cylinder allowed Watt's separate condenser to stay hot all the time and to reduce fuel consumption."
     ],
     "answer": 2,
-    "explain": "'-sağlayarak' = by allowing; geçmiş zaman 'reduced'. Tuzaklar: increased, neden-sonuç tersine, özne değişimi.",
+    "explain": "'-sağlayarak' = by keeping/allowing; geçmiş zaman 'cut'. Tuzaklar: increased, neden-sonuç tersine, present perfect + although, özne değişimi.",
     "tip": "-erek = by + Ving."
    }
   ],
@@ -4233,14 +4233,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Qubits are so fragile that even the slightest unwanted interaction with the environment can cause them to lose their information.",
-     "Qubits are so strong that no interaction with the environment can cause them to lose their information.",
-     "Although qubits are fragile, interactions with the environment help them to keep their information.",
-     "Qubits lose their information so that they can interact with the environment.",
-     "The environment is so fragile that qubits can easily destroy it."
+     "Qubits are so fragile that even the smallest unwanted contact with their surroundings can make them lose their information.",
+     "Qubits are so robust that not even the strongest interaction with the environment can cause them to lose their information.",
+     "Although qubits are fragile, even the slightest interaction with the environment helps them to keep their information.",
+     "Qubits lose their information so that they can interact with the environment in the slightest unwanted way.",
+     "The environment is so fragile that even the slightest unwanted interaction with qubits can make it lose information."
     ],
     "answer": 0,
-    "explain": "so ... that = o kadar ... ki; 'bile' = even; 'yol açabilir' = can cause. Tuzaklar: kutup ters, so that (amaç), özne değişimi.",
+    "explain": "so ... that = o kadar ... ki; 'bile' = even; 'yol açabilir' = can make/cause. Tuzaklar: kutup ters (robust), although + 'helps', so that (amaç), özne değişimi.",
     "tip": "so + adj + that = sonuç."
    }
   ],
@@ -4255,14 +4255,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Vaccines cause the illness itself so that the immune system can recognise it.",
+     "Vaccines cause the illness itself so that the immune system can learn to recognise the disease.",
      "Vaccines train the immune system to recognise a disease without causing the illness itself.",
-     "The immune system trains vaccines to recognise a disease.",
-     "Vaccines trained the immune system after causing the illness.",
-     "Without vaccines, the immune system cannot recognise any disease."
+     "The immune system trains vaccines to recognise a disease without causing the illness itself.",
+     "Vaccines trained the immune system to recognise a disease only after causing the illness itself.",
+     "Vaccines train the immune system to recognise a disease by causing the illness itself."
     ],
     "answer": 1,
-    "explain": "'yol açmadan' = without causing; 'tanıması için' = to recognise. Tuzaklar: olumsuzluk kaybı, özne-nesne değişimi, after.",
+    "explain": "'yol açmadan' = without causing; 'tanıması için' = to recognise. Tuzaklar: 'cause the illness itself' / 'by causing' (olumsuzluk kaybı), özne-nesne değişimi, geçmiş zaman + only after.",
     "tip": "-meden = without + Ving."
    }
   ],
@@ -4278,13 +4278,13 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Corals cannot recover after bleaching even if the temperature returns to normal; therefore, large areas of reef die.",
-     "If large areas of reef die, the temperature returns to normal quickly and corals recover.",
-     "Corals recovered after bleaching because the temperature had returned to normal; however, reefs died.",
-     "Corals can recover before bleaching unless the temperature returns to normal.",
-     "Corals can recover after bleaching if the temperature returns to normal quickly; otherwise, large areas of reef may die."
+     "If large areas of reef die, the temperature will return to normal quickly and corals will recover from bleaching.",
+     "Corals recovered after bleaching because the temperature had returned to normal quickly; however, large reefs died.",
+     "Corals can recover before bleaching unless the temperature returns to normal quickly; otherwise, reefs may grow.",
+     "Corals can recover after bleaching if the temperature quickly returns to normal; if not, large reef areas may die."
     ],
     "answer": 4,
-    "explain": "if = -se; otherwise = aksi takdirde; can/may. Tuzaklar: olumsuzluk, koşul tersine, geçmiş zaman, before/unless.",
+    "explain": "if = -se; otherwise / if not = aksi takdirde; can/may. Tuzaklar: olumsuzluk ('cannot ... even if'), koşul tersine, geçmiş zaman, before/unless.",
     "tip": "otherwise = aksi takdirde."
    }
   ],
@@ -4299,14 +4299,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Astronomers usually accept a discovery before they observe several transits.",
-     "After accepting a discovery, astronomers confirm it with the same method.",
-     "Astronomers usually wait to observe several transits and to confirm them with another method before they accept a discovery.",
-     "Astronomers never wait for another method because a single transit is enough.",
-     "A discovery is accepted by astronomers only if no transits are observed."
+     "Astronomers usually accept a discovery before they observe several transits and confirm it with another method.",
+     "Astronomers usually accept a discovery first and only then confirm it by observing several transits with the same method.",
+     "Astronomers usually wait to observe several transits and to confirm the result with another method before they accept a discovery.",
+     "Astronomers never wait to observe several transits or to use another method, because a single transit is enough.",
+     "Astronomers usually wait to observe a single transit and to confirm it with the same method before they accept a discovery."
     ],
     "answer": 2,
-    "explain": "before = -meden önce; another method = başka bir yöntem. Tuzaklar: sıra değişimi, same method, never.",
+    "explain": "before = -meden önce; several transits = birkaç geçiş; another method = başka bir yöntem. Tuzaklar: sıra değişimi, 'same method', 'never', 'a single transit' (nicelik).",
     "tip": "Zaman sırası: before/after."
    }
   ],
@@ -4322,13 +4322,13 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Although hydrogen embrittlement often appears with a delay, a bolt never fractures after it has been tightened.",
-     "A bolt is tightened weeks after hydrogen embrittlement appears so that it does not fracture.",
-     "Since a bolt fractures weeks later, hydrogen embrittlement is always immediate.",
+     "A bolt is usually tightened weeks after hydrogen embrittlement appears so that it does not fracture later.",
+     "Since hydrogen embrittlement always appears immediately, a bolt can only fracture at the moment it is tightened.",
      "Since hydrogen embrittlement often appears with a delay, a bolt may fracture even weeks after it has been tightened.",
-     "Hydrogen embrittlement may appear even weeks before a bolt is tightened."
+     "Since hydrogen embrittlement often appears with a delay, a bolt may fracture even weeks before it has been tightened."
     ],
     "answer": 3,
-    "explain": "'-dığından' = since (neden); 'sıkıldıktan sonra' = after it has been tightened; 'kırılabilir' = may fracture. Tuzaklar: although/never, sıra tersine.",
+    "explain": "'-dığından' = since (neden); 'sıkıldıktan sonra' = after it has been tightened; 'kırılabilir' = may fracture. Tuzaklar: although/never, sıra tersine ('weeks after ... appears', 'before'), 'always ... immediately'.",
     "tip": "Neden bağlacı + edilgen yan cümle."
    }
   ],
@@ -4345,12 +4345,12 @@
     "options": [
      "Green hydrogen will be most valuable in sectors that are difficult to electrify directly.",
      "Green hydrogen will be least valuable in sectors that are difficult to electrify directly.",
-     "Sectors that are easy to electrify will need green hydrogen most.",
-     "Green hydrogen has been used to electrify all sectors directly.",
-     "Because green hydrogen is valuable, all sectors are difficult to electrify."
+     "Green hydrogen will be most valuable in sectors that are easy to electrify directly.",
+     "Green hydrogen has been most valuable in sectors that are difficult to electrify directly.",
+     "Because green hydrogen is so valuable, all sectors will be difficult to electrify directly."
     ],
     "answer": 0,
-    "explain": "'zor olan sektörler' = sectors that are difficult to...; 'en değerli olacaktır' = will be most valuable. Tuzaklar: least, easy, present perfect.",
+    "explain": "'zor olan sektörler' = sectors that are difficult to...; 'en değerli olacaktır' = will be most valuable. Tuzaklar: least, easy, present perfect (has been), uydurma neden-sonuç.",
     "tip": "Üstünlük derecesi: most ↔ least."
    }
   ],
@@ -4365,8 +4365,8 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Water has a low boiling point although its molecules are held together by hydrogen bonds.",
-     "Hydrogen bonds have a high boiling point because they hold water together.",
+     "Water has a low boiling point although its molecules are held together by strong hydrogen bonds.",
+     "Hydrogen bonds have a high boiling point because they hold the molecules of water together.",
      "Water molecules held hydrogen bonds together so that the boiling point would rise.",
      "Water boils at a high temperature unless hydrogen bonds hold its molecules together.",
      "Water has a high boiling point because its molecules are held together by hydrogen bonds."
@@ -4387,14 +4387,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Although real robots are fast and never break, researchers train them first in simulations.",
-     "Researchers prefer real robots to simulations because simulations are slow and can break.",
-     "Computer simulations train researchers first because robots are slow.",
-     "Since researchers trained robots in simulations, the robots became slow and broke.",
+     "Although real robots are fast and never break, researchers prefer to train them first in computer simulations.",
+     "Since computer simulations are slow and can break, researchers prefer to train robots first in real life.",
+     "Since real robots are slow and can break, computer simulations prefer to train researchers first.",
+     "Since researchers trained robots in simulations first, the real robots became slow and broke down.",
      "Since real robots are slow and can break, researchers prefer to train them first in computer simulations."
     ],
     "answer": 4,
-    "explain": "'-dığından' = since; 'eğitmeyi tercih eder' = prefer to train. Tuzaklar: although, tercih ters, özne değişimi, neden-sonuç tersine.",
+    "explain": "'-dığından' = since; 'eğitmeyi tercih eder' = prefer to train. Tuzaklar: although, ortamların yer değiştirmesi, özne değişimi, neden-sonuç tersine.",
     "tip": "Neden yan cümlesinin iki parçasını da kontrol et."
    }
   ],
@@ -4409,14 +4409,14 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "Some plants produce defensive chemicals in large amounts only after they have been attacked, in order to save energy.",
+     "To save energy, some plants make large amounts of defensive chemicals only after being attacked.",
      "Some plants produce defensive chemicals in large amounts before they are attacked, in order to waste energy.",
-     "Some plants are attacked only after they have produced defensive chemicals.",
-     "All plants save energy by never producing defensive chemicals.",
-     "Some plants produced defensive chemicals so that insects would attack them."
+     "Some plants are attacked in large numbers only after they have produced defensive chemicals to save energy.",
+     "All plants save energy by never producing defensive chemicals in large amounts, even after they are attacked.",
+     "Some plants produced large amounts of defensive chemicals so that insects would attack them and save energy."
     ],
     "answer": 0,
-    "explain": "'ancak ... -dıktan sonra' = only after; 'tasarruf yapmak için' = in order to save. Tuzaklar: before, sıra tersine, all/never.",
+    "explain": "'ancak ... -dıktan sonra' = only after; 'tasarruf yapmak için' = to save. Tuzaklar: before/waste, sıra tersine, all/never, geçmiş zaman + so that.",
     "tip": "only after = ancak ...-den sonra."
    }
   ],
@@ -4431,11 +4431,11 @@
    {
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
-     "The idea of continental drift led to the discovery of magnetic stripes on the ocean floor.",
+     "The idea of continental drift eventually led to the discovery of magnetic stripes on the ocean floor.",
      "The discovery of magnetic stripes on the ocean floor led to the eventual acceptance of the idea of continental drift.",
-     "The discovery of magnetic stripes on the ocean floor led to the rejection of continental drift.",
-     "Magnetic stripes on the ocean floor have been accepted since continents drifted.",
-     "The acceptance of continental drift has led to magnetic stripes on the ocean floor."
+     "The discovery of magnetic stripes on the ocean floor led to the eventual rejection of the idea of continental drift.",
+     "Magnetic stripes on the ocean floor have been accepted since the idea of continental drift was discovered.",
+     "The eventual acceptance of the idea of continental drift led to magnetic stripes forming on the ocean floor."
     ],
     "answer": 1,
     "explain": "'-e yol açtı' = led to + N. Tuzaklar: neden-sonuç tersine, rejection, since.",
@@ -4454,10 +4454,10 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "The Tacoma Narrows Bridge was opened to traffic only four months after it collapsed.",
-     "The Tacoma Narrows Bridge has collapsed for four months since it opened.",
+     "The Tacoma Narrows Bridge has been collapsing for only four months since it was opened to traffic.",
      "The Tacoma Narrows Bridge collapsed only four months after it had been opened to traffic.",
-     "The Tacoma Narrows Bridge collapsed four months before it was opened to traffic.",
-     "The Tacoma Narrows Bridge had been opened to traffic for only four days."
+     "The Tacoma Narrows Bridge collapsed only four months before it was opened to traffic.",
+     "The Tacoma Narrows Bridge collapsed only four days after it had been opened to traffic."
     ],
     "answer": 2,
     "explain": "'açıldıktan ... sonra' = after it had been opened; 'yalnızca dört ay' = only four months. Tuzaklar: sıra, since, before, days.",
@@ -4476,10 +4476,10 @@
     "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
     "options": [
      "Laennec spent years linking the sounds he heard to the diseases he later found in patients.",
-     "Laennec spent years finding diseases so that he could stop hearing sounds.",
-     "The diseases Laennec found in patients produced the sounds he later invented.",
-     "Laennec has spent only a few days linking sounds to diseases.",
-     "Laennec linked diseases to patients before he heard any sounds."
+     "Laennec spent years finding diseases in patients so that he could stop hearing the sounds.",
+     "The diseases Laennec later found in patients spent years producing the sounds he heard.",
+     "Laennec spent only a few days linking the sounds he heard to the diseases he found.",
+     "Laennec linked the diseases he found in patients to sounds before he had heard any of them."
     ],
     "answer": 0,
     "explain": "spend time + Ving = -erek zaman harcamak; 'later found' = daha sonra bulduğu. Tuzaklar: so that, özne değişimi, süre, sıra.",
@@ -4499,9 +4499,9 @@
     "options": [
      "The oceans absorb roughly a quarter of the carbon dioxide released by human activities.",
      "The oceans release roughly a quarter of the carbon dioxide absorbed by human activities.",
-     "Human activities absorb roughly a quarter of the oceans' carbon dioxide.",
+     "Human activities absorb roughly a quarter of the carbon dioxide released by the oceans.",
      "The oceans absorb roughly three quarters of the carbon dioxide released by humans.",
-     "The oceans absorbed all of the carbon dioxide released by human activities."
+     "The oceans absorbed all of the carbon dioxide that was released by human activities."
     ],
     "answer": 0,
     "explain": "'saldığı karbondioksit' = carbon dioxide released by; 'yaklaşık dörtte biri' = roughly a quarter. Tuzaklar: fiil yönü, özne, oran.",
@@ -4520,13 +4520,13 @@
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
      "Because high-strength steels are vulnerable to hydrogen embrittlement, they allow lighter designs.",
-     "High-strength steels are both lighter and completely resistant to hydrogen embrittlement.",
-     "Lighter designs make steels more vulnerable to hydrogen embrittlement unless they are high-strength.",
-     "High-strength steels are no longer used in light designs owing to hydrogen embrittlement.",
-     "High-strength steels make lighter designs possible, but they are generally more susceptible to hydrogen embrittlement."
+     "High-strength steels allow lighter designs and are completely resistant to hydrogen embrittlement.",
+     "Lighter designs tend to make steels more vulnerable to hydrogen embrittlement unless they are high-strength.",
+     "High-strength steels are no longer used in lighter designs owing to their vulnerability to hydrogen embrittlement.",
+     "High-strength steels permit lighter designs, yet they are usually more prone to hydrogen embrittlement."
     ],
     "answer": 4,
-    "explain": "Although (zıtlık) ↔ but; 'tend to be' ↔ 'generally'. Tuzak: because (neden), 'completely resistant' (kutup).",
+    "explain": "Although (zıtlık) ↔ yet; 'tend to be' ↔ 'usually'; vulnerable ↔ prone. Tuzaklar: because (neden), 'completely resistant' (kutup), unless (özne/koşul karışıklığı), 'no longer used' (metinde yok).",
     "tip": "Ana bağlacın anlamını eşleştir: although = but."
    }
   ],
@@ -4541,14 +4541,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Green hydrogen is now cheaper than grey hydrogen.",
-     "Green and grey hydrogen cost exactly the same.",
+     "Green hydrogen has now become cheaper than grey hydrogen.",
+     "Green and grey hydrogen now cost exactly the same amount.",
      "Grey hydrogen will soon be more expensive than green hydrogen.",
-     "Grey hydrogen is still cheaper than green hydrogen.",
-     "Green hydrogen used to be cheaper than grey hydrogen."
+     "Grey hydrogen still costs less than green hydrogen.",
+     "Green hydrogen used to be cheaper than grey hydrogen in the past."
     ],
     "answer": 3,
-    "explain": "A, B'den pahalı = B, A'dan ucuz; remains = still.",
+    "explain": "A, B'den pahalı = B, A'dan ucuz; remains = still. Tuzaklar: 'now become cheaper' ve 'used to be cheaper' (kutup/zaman), 'exactly the same', 'will soon' (gelecek).",
     "tip": "Karşılaştırmayı ters çevirerek kontrol et."
    }
   ],
@@ -4565,12 +4565,12 @@
     "options": [
      "Superconductivity is widely used because it requires extreme cooling.",
      "Extreme cooling has made superconductivity cheap and common.",
-     "The need for extreme cooling is what prevents superconductivity from being used much more widely.",
-     "Superconductivity will never be used, even with cooling.",
-     "If superconductivity were used more widely, it would need less cooling."
+     "It is the need for extreme cooling that keeps superconductivity from wider use.",
+     "Superconductivity will never be widely used, even if extreme cooling is not required.",
+     "If superconductivity were used more widely, it would require far less extreme cooling."
     ],
     "answer": 2,
-    "explain": "Type 2 koşul: soğutma gerekmeseydi yaygın olurdu = soğutma yaygınlaşmayı engelliyor.",
+    "explain": "Type 2 koşul: soğutma gerekmeseydi çok daha yaygın olurdu = soğutma gereği yaygınlaşmayı engelliyor. Tuzaklar: because (neden ters), 'cheap', 'never', koşul-sonuç yer değişimi.",
     "tip": "Gerçek dışı koşul = gerçekte tersi var."
    }
   ],
@@ -4585,14 +4585,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Researchers designed their own guide RNA after CRISPR had been used to edit every gene.",
-     "Only after researchers designed their own guide RNA could CRISPR be used to edit almost any gene.",
-     "CRISPR could edit almost any gene before researchers designed guide RNA.",
-     "Researchers never needed guide RNA to use CRISPR.",
-     "Since CRISPR edits all genes, guide RNA was not designed."
+     "Researchers designed their own guide RNA only after CRISPR had already been used to edit almost every gene.",
+     "CRISPR became usable on almost any gene only after scientists designed their own guide RNA.",
+     "CRISPR could already be used to edit almost any gene before researchers designed their own guide RNA.",
+     "Researchers never needed guide RNA to use CRISPR on any gene.",
+     "Since CRISPR edits almost any gene, guide RNA was never designed."
     ],
     "answer": 1,
-    "explain": "not until ... that = only after (devrik). Tuzak: sıra tersine, 'before'.",
+    "explain": "not until ... that = only after. Tuzaklar: sıra tersine, 'before', 'never needed', uydurma neden-sonuç.",
     "tip": "not until = only after."
    }
   ],
@@ -4607,14 +4607,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Bleached corals will die even if ocean temperatures fall quickly.",
-     "If ocean temperatures fall quickly, bleached corals will probably die.",
-     "Bleached corals will probably die if ocean temperatures do not fall quickly.",
-     "Ocean temperatures will fall quickly unless corals die.",
-     "Bleached corals never die when temperatures remain high."
+     "Bleached corals are likely to die even if ocean temperatures fall quickly.",
+     "If ocean temperatures fall quickly, bleached corals are likely to die.",
+     "If the oceans do not cool down quickly, bleached corals will probably die.",
+     "Ocean temperatures are likely to fall quickly unless bleached corals die.",
+     "Bleached corals are unlikely to die when ocean temperatures remain high."
     ],
     "answer": 2,
-    "explain": "Unless = if ... not; likely to = probably.",
+    "explain": "Unless = if ... not; likely to = probably. Tuzaklar: 'even if', koşulun olumsuzluğunun kaybı, koşul-sonuç yer değişimi, 'unlikely' (kutup).",
     "tip": "unless → if not çevirisini yap."
    }
   ],
@@ -4630,13 +4630,13 @@
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
      "Because the giant impact hypothesis explains everything, no questions remain.",
-     "While the giant impact hypothesis accounts for many observations, it has not answered all the questions yet.",
+     "Although the giant impact idea accounts for much of the evidence, some questions remain open.",
      "The giant impact hypothesis explains few observations and answers no questions.",
-     "Since some questions remain, the giant impact hypothesis has been rejected.",
-     "The giant impact hypothesis leaves questions unanswered so that it can explain observations."
+     "Since it leaves some questions unanswered, the giant impact hypothesis has been rejected by most scientists.",
+     "The giant impact hypothesis leaves some questions unanswered so that it can explain more observations."
     ],
     "answer": 1,
-    "explain": "Much as = although/while. 'leaves questions unanswered' = has not answered all.",
+    "explain": "Much as = although/while. 'leaves some questions unanswered' = some questions remain open. Tuzaklar: 'explains everything, no questions remain', 'few observations', 'rejected', so that.",
     "tip": "Much as = Although (sık çıkan)."
    }
   ],
@@ -4651,14 +4651,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Doctors prefer MRI in emergencies since it is faster than CT.",
-     "Since CT is faster, doctors prefer it to MRI in emergencies.",
-     "Despite being slower, CT is chosen in emergencies.",
-     "Doctors choose CT in emergencies whereas MRI is faster.",
-     "In emergencies, doctors use both CT and MRI because of their speed."
+     "Doctors choose MRI rather than CT in emergencies because it is faster.",
+     "CT is preferred to MRI in emergencies because it is quicker.",
+     "Despite being slower than MRI, CT is chosen by doctors in emergencies.",
+     "Doctors choose CT in emergencies, whereas MRI is faster and more useful.",
+     "In emergencies, doctors use both CT and MRI on account of their speed."
     ],
     "answer": 1,
-    "explain": "on account of = because of; rather than = yerine (tercih).",
+    "explain": "on account of = because of; rather than = yerine (tercih). Tuzaklar: tercih ters, 'despite ... slower', 'whereas MRI is faster', 'both'.",
     "tip": "on account of / owing to / due to = because of."
    }
   ],
@@ -4673,14 +4673,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "As soon as the model was trained, it produced a ten-day forecast in about a minute.",
-     "The model was trained for ten days before producing a forecast.",
-     "The model produced a forecast long before it had been trained.",
-     "It took the model a long time to produce a forecast after training.",
-     "The model had not been trained when it produced a ten-day forecast."
+     "The moment the model was trained, it produced a ten-day forecast in roughly a minute.",
+     "The model was trained for ten days before it produced a forecast in about a minute.",
+     "The model produced a ten-day forecast long before it had been trained.",
+     "It took the model a long time after training to produce a ten-day forecast.",
+     "The model had not yet been trained when it produced a ten-day forecast in a minute."
     ],
     "answer": 0,
-    "explain": "No sooner ... than = as soon as.",
+    "explain": "No sooner ... than = as soon as / the moment. Tuzaklar: süre ve sıra tersine, 'a long time', 'had not yet been trained'.",
     "tip": "No sooner had ... than = ...-er ...-mez."
    }
   ],
@@ -4695,14 +4695,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Catalytic converters work best when cold, so emissions are lowest after starting.",
-     "Many emissions occur after the converter warms up because it works poorly.",
-     "Although converters work poorly when cold, few emissions occur after starting.",
-     "Because catalytic converters are ineffective until they warm up, a large share of emissions occurs soon after starting.",
-     "Catalytic converters are cooled after starting in order to reduce emissions."
+     "Catalytic converters work best when they are cold, so emissions are lowest just after starting.",
+     "Many emissions occur only after the converter warms up, because it then works poorly.",
+     "Although converters work poorly when cold, very few emissions occur in the first minutes after starting.",
+     "Since catalytic converters barely work until warm, much pollution is released just after starting.",
+     "Catalytic converters are cooled in the first minutes after starting in order to reduce emissions."
     ],
     "answer": 3,
-    "explain": "so ... that = sonuç; neden-sonuç ilişkisi korunmalı.",
+    "explain": "so ... that = sonuç; neden-sonuç korunmalı: soğukken zayıf çalışma → ilk dakikalarda çok emisyon. Tuzaklar: 'work best when they are cold', ısınma sonrası emisyon, although + 'very few', soğutma (uydurma).",
     "tip": "so...that → because ... / therefore."
    }
   ],
@@ -4717,14 +4717,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Scientists can predict exactly when earthquakes will occur.",
+     "Scientists are able to predict exactly when earthquakes will occur.",
      "Earthquakes occur only when scientists predict them.",
-     "It is not possible for scientists to say in advance when earthquakes will happen.",
-     "Scientists are unwilling to predict earthquakes.",
+     "Scientists cannot tell in advance when earthquakes will happen.",
+     "Scientists are unwilling to predict when earthquakes will occur.",
      "Scientists predicted every earthquake in the past."
     ],
     "answer": 2,
-    "explain": "unable = not possible (yetersizlik). Tuzak: unwilling = istememek (farklı anlam).",
+    "explain": "unable = cannot (yetersizlik). Tuzak: unwilling = istememek (farklı anlam); 'able ... exactly' kutup ters; geçmişte her depremi tahmin etmek yanlış.",
     "tip": "unable ≠ unwilling."
    }
   ],
@@ -4739,14 +4739,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Bessemer's process removed phosphorus, so early steel was not brittle.",
-     "Early Bessemer steel was brittle although phosphorus had been removed.",
+     "Bessemer's process removed phosphorus, so early Bessemer steel was not very brittle.",
+     "Early Bessemer steel was brittle although the process had removed the phosphorus.",
      "Phosphorus made early Bessemer steel less brittle.",
-     "Bessemer's process will remove phosphorus to make steel brittle.",
-     "Early Bessemer steel was brittle partly because the process failed to remove phosphorus."
+     "Bessemer's process will remove phosphorus in order to make the steel more brittle.",
+     "The early steel was brittle because Bessemer's process left phosphorus in it."
     ],
     "answer": 4,
-    "explain": "Devrik Type 3: gerçekte fosfor giderilmedi → çelik gevrekti.",
+    "explain": "Devrik Type 3: gerçekte fosfor giderilmedi → çelik gevrekti. Tuzaklar: fosforun giderildiği varsayımı, although, 'less brittle' (kutup), gelecek zaman + amaç.",
     "tip": "Type 3 koşul = geçmişte tersi oldu."
    }
   ],
@@ -4783,14 +4783,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Active tardigrades can never be killed.",
+     "Active tardigrades can never be killed by anything.",
      "Tardigrades are active only when they are indestructible.",
-     "Dried tardigrades can be killed easily.",
-     "Tardigrades are never active.",
-     "Active tardigrades can be killed."
+     "Only dried tardigrades can be killed or destroyed.",
+     "Tardigrades are never active, so they cannot be destroyed.",
+     "When active, tardigrades can be killed or destroyed."
     ],
     "answer": 4,
-    "explain": "not indestructible = öldürülebilir.",
+    "explain": "not indestructible = yok edilebilir / öldürülebilir. Tuzaklar: 'never be killed' (kutup), koşul ters, 'only dried' (kapsam kayması), 'never active'.",
     "tip": "Çift olumsuzluğu çöz: not + in- = olabilir."
    }
   ],
@@ -4805,14 +4805,14 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Arctic plants will certainly absorb more carbon than permafrost releases.",
-     "Thawing permafrost releases carbon because Arctic plants grow faster.",
-     "Arctic plants will stop permafrost from thawing.",
-     "The extra carbon absorbed by Arctic plants will probably not be enough to balance the carbon released as permafrost thaws.",
-     "The carbon released by permafrost will make Arctic plants die."
+     "Arctic plants will certainly absorb more carbon than thawing permafrost releases as the region warms.",
+     "Thawing permafrost releases more carbon because plants in a warmer Arctic grow much faster.",
+     "Plant growth in a warmer Arctic is likely to stop the permafrost from thawing and releasing carbon.",
+     "Arctic plants will probably not absorb enough carbon to make up for what thawing permafrost releases.",
+     "The carbon released by thawing permafrost is likely to make most plants in the Arctic die."
     ],
     "answer": 3,
-    "explain": "unlikely to = muhtemelen ... değil; offset = balance/compensate.",
+    "explain": "unlikely to = muhtemelen ... değil; offset = make up for / dengelemek. Tuzaklar: 'certainly' (kesinlik + kutup), uydurma neden-sonuç, 'stop ... thawing', bitkilerin ölmesi.",
     "tip": "Hedge: unlikely = probably not."
    }
   ],
@@ -4827,11 +4827,11 @@
    {
     "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
     "options": [
-     "Chromium oxide protects the metal underneath, whereas rust does not.",
-     "Both rust and chromium oxide protect the metal beneath them.",
-     "Neither rust nor chromium oxide protects the metal.",
-     "Rust protects the metal better than chromium oxide does.",
-     "Chromium oxide does not protect the metal, but rust does."
+     "Chromium oxide shields the underlying metal, whereas rust does not.",
+     "Both rust and chromium oxide protect the metal that lies beneath them.",
+     "Neither rust nor chromium oxide protects the metal that lies beneath it.",
+     "Rust protects the metal beneath it better than chromium oxide does.",
+     "Chromium oxide does not protect the metal beneath it, but rust does."
     ],
     "answer": 0,
     "explain": "unlike = whereas ile karşıtlık; koruyan kromoksit.",

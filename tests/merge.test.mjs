@@ -61,7 +61,7 @@ t('SRS ilk aralıklar: 10 dk, 1 g, 3 g', () => {
   assert.equal(schedule({ state: 'new' }, 'good', now).interval, 1);
   assert.equal(schedule({ state: 'new' }, 'easy', now).interval, 3);
   const r = schedule({ state: 'review', interval: 3, ease: 2.5 }, 'again', now);
-  assert.equal(r.state, 'relearn'); assert.equal(r.lapses, 1); assert.equal(r.ease, 2.3);
+  assert.equal(r.state, 'relearn'); assert.equal(r.lapses, 1); assert.equal(r.ease, 2.3); assert.equal(r.ladder, 0);
   assert.equal(schedule({ state: 'review', interval: 1, ease: 2.5 }, 'good', now).interval, 3);
 });
 
@@ -159,6 +159,124 @@ t('Birleştirme: known durumu ve yeni alanlar updatedAt ile korunur', () => {
   const b = { cards: { x: { id: 'x', state: 'new', front: 3, updatedAt: 8 } }, progress: { 'gradcheck:2026-11-16': { id: 'gradcheck:2026-11-16', ids: ['x'], updatedAt: 2 } } };
   const m = mergeState(a, b);
   assert.equal(m.cards.x.state, 'known'); assert.ok(m.progress['gradcheck:2026-11-16']);
+});
+
+// --- v4: merdiven, Zor, hafıza egzersizleri, notlar, odak, içerik güncelleme, oturum koleksiyonu
+const S = await import('../js/srs.js');
+const DAYMS = 86400000;
+const dayOff = (c, now) => Math.round((new Date(c.due).setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / DAYMS);
+
+t('Merdiven: Tekrar → 10 dk, sonra 1-3-7-14 gün, sonra normal büyüme', () => {
+  const now = new Date(2026, 10, 16, 20, 0).getTime();
+  for (const start of [{ state: 'new' }, { state: 'learning' }, { state: 'review', interval: 30, ease: 2.5 }]) {
+    let c = { ...start, ...schedule(start, 'again', now) };
+    assert.equal(c.ladder, 0); assert.equal(c.due - now, 600000);
+    const seen = [];
+    for (let k = 0; k < 4; k++) { c = { ...c, ...schedule(c, 'good', now) }; seen.push(c.interval); assert.equal(dayOff(c, now), c.interval); }
+    assert.deepEqual(seen, [1, 3, 7, 14]);
+    assert.equal(c.ladder, null);
+    c = { ...c, ...schedule(c, 'good', now) };
+    assert.ok(c.interval > 14 && c.ladder == null, 'merdiven sonrası ease büyümesi');
+  }
+});
+
+t('Merdiven: Kolay basamak atlamaz; merdivende Tekrar başa döner; Zor aynı basamak', () => {
+  const now = Date.now();
+  let c = { state: 'review', interval: 20, ease: 2.5, ...schedule({ state: 'review', interval: 20, ease: 2.5 }, 'again', now) };
+  c = { ...c, ...schedule(c, 'easy', now) }; assert.equal(c.interval, 1); assert.equal(c.ladder, 1);
+  c = { ...c, ...schedule(c, 'good', now) }; assert.equal(c.interval, 3);
+  c = { ...c, ...schedule(c, 'hard', now) }; assert.equal(c.interval, 3); assert.equal(c.ladder, 2);
+  c = { ...c, ...schedule(c, 'again', now) }; assert.equal(c.ladder, 0); assert.equal(c.state, 'relearn');
+  c = { ...c, ...schedule(c, 'good', now) }; assert.equal(c.interval, 1);
+  // Eski "relearn" kaydı (ladder yok): yarıya indirme yok, merdiven başı
+  const old = schedule({ state: 'relearn', interval: 40, ease: 2.3 }, 'good', now);
+  assert.equal(old.interval, 1); assert.equal(old.ladder, 1);
+  assert.ok(S.inLadder({ ladder: 2 }) && S.inLadder({ state: 'relearn' }) && !S.inLadder({ state: 'review' }));
+});
+
+t('Zor (yeni/öğrenme): ertesi gün, 10 dk değil', () => {
+  const now = new Date(2026, 10, 16, 9, 0).getTime();
+  for (const st of ['new', 'learning']) {
+    const c = schedule({ state: st }, 'hard', now);
+    assert.equal(c.interval, 1); assert.equal(dayOff(c, now), 1); assert.equal(c.ladder, null);
+  }
+});
+
+const M = await import('../js/memory.js');
+t('Yazarak hatırla: küçük yazım toleransı', () => {
+  assert.ok(M.typoOk('Efficacy', 'efficacy'));
+  assert.ok(M.typoOk(' eficacy ', 'efficacy'));
+  assert.ok(M.typoOk('consequnces', 'consequences'));
+  assert.ok(!M.typoOk('effect', 'efficacy'));
+  assert.ok(!M.typoOk('fan', 'fat'));
+  assert.ok(!M.typoOk('', 'x'));
+  assert.ok(M.typoOk('in terms of', 'in  terms of'));
+});
+
+t('Eş anlam ve kelime ailesi soruları', () => {
+  const card = { id: 'c1', word: 'utilize', syn: ['make use of', 'employ'], tr: 'kullanmak' };
+  const others = [{ word: 'reduce', syn: ['decrease'] }, { word: 'obtain', syn: ['acquire'] }, { word: 'assess', syn: ['evaluate'] }, { word: 'enhance', syn: ['improve'] }, { word: 'hinder', syn: ['impede'] }];
+  const it = M.synItem(card, others);
+  assert.equal(it.options.length, 5); assert.ok(['make use of', 'employ'].includes(it.options[it.answer]));
+  assert.ok(!it.options.some((o, i) => i !== it.answer && card.syn.includes(o)));
+  assert.equal(M.synItem({ id: 'x', word: 'a', syn: [] }, others), null);
+  const fm = { analyse: { family: [{ w: 'analysis', pos: 'n' }, { w: 'analytical', pos: 'adj' }, { w: 'analytically', pos: 'adv' }], ex: [{ en: 'A detailed analysis of the samples was done.', tr: '' }] } };
+  const f = M.familyItem({ id: 'c2', word: 'analyse', pos: 'v' }, fm);
+  assert.equal(f.q, 'A detailed ---- of the samples was done.'); assert.equal(f.options[f.answer], 'analysis'); assert.equal(f.options.length, 4);
+  assert.equal(M.familyItem({ id: 'c3', word: 'none' }, fm), null);
+  assert.equal(M.blank('Rates lead to change.', 'lead'), 'Rates ---- to change.');
+});
+
+const N = await import('../js/notes.js');
+t('Notlar: "kelime - anlam" satırları ve kelime adayları', () => {
+  assert.deepEqual(N.parseLines('efficacy - etkinlik\nscarcity: kıtlık\nin terms of = açısından'),
+    [{ word: 'efficacy', tr: 'etkinlik' }, { word: 'scarcity', tr: 'kıtlık' }, { word: 'in terms of', tr: 'açısından' }]);
+  assert.equal(N.parseLines('which vs that farkını tekrar et\nefficacy - etkinlik'), null);
+  assert.equal(N.parseLines(''), null);
+  assert.deepEqual(N.noteWords('The efficacy of the method; efficacy again, ve hydrolysis'), ['efficacy', 'method', 'again', 'hydrolysis']);
+});
+
+const F = await import('../js/focus.js');
+t('Odak: çalışma dakikaları ve mola geçişi', () => {
+  const L = { work: 25, brk: 5 }, t0 = 1_000_000_000_000, MIN = 60000;
+  let { s, credit } = F.advance({ phase: 'work', startedAt: t0, endsAt: t0 + 25 * MIN, credited: 0 }, t0 + 10.5 * MIN, L);
+  assert.equal(credit, 10); assert.equal(s.phase, 'work');
+  ({ s, credit } = F.advance(s, t0 + 26 * MIN, L));
+  assert.equal(credit, 15); assert.equal(s.phase, 'break'); assert.equal(s.endsAt, t0 + 30 * MIN);
+  ({ s, credit } = F.advance(s, t0 + 31 * MIN, L)); assert.equal(s.phase, 'idle'); assert.equal(credit, 0);
+  // Uygulama kapalıyken bitmiş blok: tamamı yazılır, mola geçmişse boşta
+  ({ s, credit } = F.advance({ phase: 'work', startedAt: t0, endsAt: t0 + 25 * MIN, credited: 3 }, t0 + 5 * 3600000, L));
+  assert.equal(credit, 22); assert.equal(s.phase, 'idle');
+});
+
+const C = await import('../js/contentrev.js');
+t('İçerik güncelleme: düzenlenmemiş seed/çekirdek kartlar tazelenir, SRS alanlarına dokunulmaz', () => {
+  const srs = { state: 'review', due: 123, interval: 9, ease: 2.1, hist: ['g'], ladder: 2, reps: 4 };
+  const cards = [
+    { id: 's:utilize', word: 'utilize', tr: 'eski', syn: ['x'], note: '', ...srs },
+    { id: 's:hence', word: 'hence', tr: 'benim anlamım', syn: [], userEdited: true, ...srs },
+    { id: 'w:w1', wid: 'w1', word: 'efficacy', tr: 'eski', syn: [], coll: '', ex: '', pos: 'n', tags: [], ...srs },
+    { id: 'w:w2', wid: 'w2', word: 'yield', tr: 'verim', syn: ['output'], coll: '', ex: 'e', pos: 'n', tags: ['fen'], ...srs },
+    { id: 'c9', word: 'random', tr: 'r', ...srs }
+  ];
+  const seed = [{ word: 'utilize', tr: 'kullanmak', syn: ['make use of'] }, { word: 'hence', tr: 'bu nedenle', syn: [] }];
+  const core = [{ id: 'w1', word: 'efficacy', tr: 'etkinlik', syn: ['effectiveness'], coll: 'the efficacy of', ex: 'ex', pos: 'n', tags: ['fen'] },
+    { id: 'w2', word: 'yield', tr: 'verim', syn: ['output'], coll: '', ex: 'e', pos: 'n', tags: ['fen'] }];
+  const p = C.plan(cards, seed, core);
+  assert.deepEqual(p.map(x => x.id), ['s:utilize', 'w:w1']);
+  assert.deepEqual(p[0].fields, { tr: 'kullanmak', syn: ['make use of'] });
+  assert.equal(p[1].fields.tr, 'etkinlik'); assert.equal(p[1].fields.coll, 'the efficacy of');
+  for (const x of p) for (const k of Object.keys(srs)) assert.ok(!(k in x.fields));
+  assert.equal(C.seedId({ word: 'In terms of' }), 's:in-terms-of');
+  assert.deepEqual(C.plan(cards.map(c => ({ ...c, ...(p.find(x => x.id === c.id)?.fields || {}) })), seed, core), []); // idempotent
+});
+
+t('Birleştirme: sessions ve hızlı notlar koleksiyonu', () => {
+  const a = { sessions: { 'gunluk:2026-11-16': { id: 'gunluk:2026-11-16', i: 3, picks: { 0: 1 }, updatedAt: 5 } }, notes: { q1: { id: 'q1', kind: 'quick', text: 'a', updatedAt: 3 } } };
+  const b = { sessions: { 'gunluk:2026-11-16': { id: 'gunluk:2026-11-16', deleted: true, updatedAt: 9 } }, notes: { q1: { id: 'q1', kind: 'quick', text: 'b', done: true, updatedAt: 4 } } };
+  const m = mergeState(a, b);
+  assert.equal(m.sessions['gunluk:2026-11-16'].deleted, true); assert.equal(m.notes.q1.text, 'b');
+  assert.ok(mergeState({}, {}).sessions);
 });
 
 console.log(`\n${n} test geçti`);

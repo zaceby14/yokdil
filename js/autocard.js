@@ -3,7 +3,9 @@ import * as store from './store.js';
 import { uid, toast, lemmas } from './util.js';
 import { wordIndex, enrich } from './data.js';
 import { online } from './lookup.js';
-import { STOP } from './vocab.js';
+import { STOP as STOP0 } from './vocab.js';
+// Gramer şıklarında çıkan işlev kelimeleri karta eklenmesin
+const STOP = new Set([...STOP0, ...'either neither both whether such own other others another itself themselves himself herself whom whose whatever whichever whoever whenever wherever yet still even ever never been being having having done doing'.split(' ')]);
 
 
 const BLANK = /-{2,}|_{3,}|…{1,}|\.{4,}/;

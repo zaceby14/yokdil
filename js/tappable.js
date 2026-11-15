@@ -4,6 +4,7 @@ import { h, uid, lemmas, toast } from './util.js';
 import { local, online } from './lookup.js';
 import { enrich, wordIndex } from './data.js';
 import { coreHits, unknownHit } from './vocab.js';
+import { speak, canSpeak } from './speak.js';
 
 // Metni parçala: paragraf > cümle > token
 export function tokenize(text) {
@@ -24,17 +25,24 @@ export function tokenize(text) {
   return { tokens, sentences, paras };
 }
 
-// opts: { source, page, note, cls, hl } → { el, setPhrase(bool), markSaved(), newCore() }
+// opts: { source, page, note, cls, hl, inline, tapOpens, ctx, afterPara } → { el, setPhrase(bool), markSaved(), newCore() }
 // hl: çekirdek listede olup bilmediğin kelimeler altı noktalı
+// inline: <span> içinde (şık metni). tapOpens:false → kısa dokunuş üst öğeye (şık seçimi) gider, UZUN bas = kelime paneli
+// ctx: bağlam cümlesi yerine kullanılacak metin (fonksiyon(cümle) ya da metin)
+// afterPara(i): her paragrafın ardına eklenecek öğe (aktif okuma kutusu)
 export function tappable(text, opts = {}) {
   const { tokens, sentences, paras } = tokenize(text);
+  const tapOpens = opts.tapOpens !== false;
   let phraseMode = false, selStart = null, lpTimer = null, lpFired = false, startXY = null;
-  const body = h('div.reader' + (opts.cls ? '.' + opts.cls : ''), { lang: 'en' });
-  for (const pt of paras) {
-    const p = h('p');
+  const body = h((opts.inline ? 'span' : 'div') + '.reader' + (opts.inline ? '.inline' : '') + (opts.cls ? '.' + opts.cls : ''), { lang: 'en' });
+  paras.forEach((pt, pi) => {
+    const p = h(opts.inline ? 'span' : 'p');
     for (const t of pt) p.append(t.w ? h('span.w', { 'data-i': t.i }, t.t) : t.t);
     body.append(p);
-  }
+    const extra = opts.afterPara?.(pi, pt.map(t => t.t).join(''));
+    if (extra) body.append(extra);
+  });
+  const ctxOf = sent => typeof opts.ctx === 'function' ? (opts.ctx(sent) || sent) : (opts.ctx || sent);
   const elAt = i => body.querySelector(`.w[data-i="${i}"]`);
   const clearSel = () => body.querySelectorAll('.sel').forEach(e => e.classList.remove('sel'));
 
@@ -59,8 +67,10 @@ export function tappable(text, opts = {}) {
     lpFired = false; startXY = [e.clientX, e.clientY];
     clearTimeout(lpTimer);
     lpTimer = setTimeout(() => {
-      lpFired = true; selStart = +el.dataset.i; clearSel(); el.classList.add('sel');
-      navigator.vibrate?.(20); toast('Bitiş kelimesine dokun');
+      lpFired = true; lpBlock = true; clearSel(); el.classList.add('sel');
+      navigator.vibrate?.(20);
+      if (!tapOpens || opts.inline) { const i = +el.dataset.i; openPanel(tokens[i].t, ctxOf(sentences[tokens[i].s]), false); return; }
+      selStart = +el.dataset.i; toast('Bitiş kelimesine dokun');
     }, 450);
   });
   body.addEventListener('pointermove', e => {
@@ -69,7 +79,9 @@ export function tappable(text, opts = {}) {
   ['pointerup', 'pointercancel'].forEach(ev => body.addEventListener(ev, () => clearTimeout(lpTimer)));
   body.addEventListener('click', e => {
     const el = e.target.closest('.w'); if (!el) return;
-    if (lpFired) { lpFired = false; return; }
+    if (lpFired) { lpFired = false; e.preventDefault(); e.stopPropagation(); return; }
+    if (!tapOpens && !body.closest('.answered')) return; // şık seçimi (üst öğe)
+    e.stopPropagation();
     const i = +el.dataset.i;
     if (selStart != null) {
       const [a, b] = [Math.min(selStart, i), Math.max(selStart, i)];
@@ -77,12 +89,12 @@ export function tappable(text, opts = {}) {
       const sel = tokens.slice(a, b + 1);
       sel.filter(t => t.w).forEach(t => elAt(t.i).classList.add('sel'));
       const phrase = sel.map(t => t.t).join('').replace(/\s+/g, ' ').replace(/[^\w\s'’-]+$/, '').trim();
-      openPanel(phrase, sentences[tokens[a].s], true);
+      openPanel(phrase, ctxOf(sentences[tokens[a].s]), true);
       return;
     }
     if (phraseMode) { selStart = i; clearSel(); el.classList.add('sel'); return; }
     clearSel(); el.classList.add('sel');
-    openPanel(tokens[i].t, sentences[tokens[i].s], false);
+    openPanel(tokens[i].t, ctxOf(sentences[tokens[i].s]), false);
   });
 
   // Alt panel (tek paylaşılan)
@@ -111,7 +123,9 @@ export function tappable(text, opts = {}) {
     if (card) info.append(h('span.chip.ok', 'Kartta var'), ' ');
     if (entry) info.append(h('span.chip', 'Çekirdek liste'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Eşdizim: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
     sheet.append(
-      h('div.sheet-head', wIn, h('button.icon-x', { 'aria-label': 'kapat', onclick: () => sheet._close() }, '×')),
+      h('div.sheet-head', wIn,
+        canSpeak() ? h('button.icon-btn.say', { 'aria-label': 'dinle', onclick: () => speak(wIn.value) }, SPK()) : null,
+        h('button.icon-x', { 'aria-label': 'kapat', onclick: () => sheet._close() }, '×')),
       info, forms, sugg,
       h('label', 'Türkçe anlam', trIn),
       h('label', 'Eş anlamlılar', synIn),
@@ -132,7 +146,8 @@ export function tappable(text, opts = {}) {
       const syn = synIn.value.split(',').map(s => s.trim()).filter(Boolean);
       const existing = card || store.all('cards').find(c => (c.word || '').toLowerCase() === w.toLowerCase());
       if (existing) {
-        store.put('cards', { ...existing, tr: trIn.value.trim(), syn, ctx: ctxIn.value.trim() });
+        const edited = trIn.value.trim() !== (existing.tr || '') || syn.join(',') !== (existing.syn || []).join(',');
+        store.put('cards', { ...existing, tr: trIn.value.trim(), syn, ctx: ctxIn.value.trim(), ...(edited ? { userEdited: true } : {}) });
         toast('Güncellendi');
       } else {
         const wid = entry && entry.word.toLowerCase() === w.toLowerCase() ? entry.id : null;
@@ -140,7 +155,8 @@ export function tappable(text, opts = {}) {
           id: wid ? 'w:' + wid : uid('c'), wid, word: w, tr: trIn.value.trim(), syn, ctx: ctxIn.value.trim(),
           coll: entry?.coll || '', ex: entry?.ex || '', pos: entry?.pos || '', tags: entry?.tags || [],
           source: opts.source || 'Okuma', page: opts.page || '', note: opts.note || '',
-          state: 'new', createdAt: Date.now()
+          state: 'new', createdAt: Date.now(),
+          ...(wid && (trIn.value.trim() !== (entry.tr || '') || syn.join(',') !== (entry.syn || []).join(',')) ? { userEdited: true } : {})
         });
         toast('Karta eklendi');
       }
@@ -167,6 +183,16 @@ export function tappable(text, opts = {}) {
     setPhrase(on) { phraseMode = on; selStart = null; clearSel(); }
   };
 }
+
+// Uzun basmadan sonra gelen tıklama (parmak/fare biraz kaymış olsa da) şıkkı seçmesin
+let lpBlock = false;
+if (typeof document !== 'undefined') {
+  document.addEventListener('pointerdown', () => { lpBlock = false; }, true);
+  document.addEventListener('click', e => { if (lpBlock) { lpBlock = false; e.preventDefault(); e.stopPropagation(); } }, true);
+}
+
+// Hoparlör ikonu
+export const SPK = () => h('span', { html: '<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>' });
 
 function getSheet() {
   let s = document.getElementById('wordSheet');

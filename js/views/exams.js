@@ -8,6 +8,10 @@ import { runQuiz } from '../quiz.js';
 import { xItem } from '../qbank.js';
 import { tappable } from '../tappable.js';
 import { soruTabs, lessonLink } from './hub.js';
+import { getToken } from '../sync.js';
+import { fetchPrivate, status as pstat, resetMeta } from '../private.js';
+import { setCtx } from '../ctx.js';
+import { openLesson } from '../side.js';
 
 const OSYM = 'https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html';
 // Soru tipi → deneme bölümü
@@ -35,7 +39,7 @@ function uploader(onDone) {
     } catch (e) { toast('Paket okunamadı: ' + (e.message || '')); }
     f.value = '';
   };
-  return [f, h('button.btn.primary.wide', { onclick: () => f.click() }, 'Paketi yükle')];
+  return [f, h('button.btn.wide', { onclick: () => f.click() }, 'Dosyadan yükle')];
 }
 
 async function home(root) {
@@ -43,11 +47,17 @@ async function home(root) {
   const redraw = () => { root.innerHTML = ''; home(root); };
   root.append(soruTabs('cikmis'), h('h2', 'Çıkmış sorular'));
   if (!pack?.exams?.length) {
-    root.append(
-      h('div.card',
-        h('p', 'Sorular telifli olduğu için sitede yok. Kendi paketini (JSON) yükle; yalnızca bu cihazda saklanır.'),
-        h('p.small', h('a', { href: OSYM, target: '_blank', rel: 'noopener' }, 'ÖSYM çıkmış sorular (resmi sayfa)'))),
-      ...uploader(redraw));
+    if (!getToken()) {
+      root.append(
+        h('div.card.row.between', h('span', 'Soruları görmek için Ayarlar\'dan GitHub anahtarını gir'), h('a.btn.primary', { href: '#/ayarlar' }, 'Ayarlar')),
+        h('details.small', h('summary', 'Dosyadan yükle'), ...uploader(redraw),
+          h('p.small', h('a', { href: OSYM, target: '_blank', rel: 'noopener' }, 'ÖSYM çıkmış sorular (resmi sayfa)'))));
+      return;
+    }
+    const msg = h('div.card', pstat.state === 'error' ? h('span.bad-t', 'İndirilemedi: ' + pstat.msg) : 'Sorular indiriliyor…');
+    root.append(msg, h('button.btn.wide', { onclick: () => { msg.textContent = 'Sorular indiriliyor…'; fetchPrivate({ force: true }).then(redraw); } }, 'Tekrar dene'),
+      h('details.small', h('summary', 'Dosyadan yükle'), ...uploader(redraw)));
+    if (pstat.state !== 'loading' && pstat.state !== 'error') fetchPrivate({ force: true }).then(r => { if (root.isConnected) redraw(); });
     return;
   }
   const types = {};
@@ -65,9 +75,10 @@ async function home(root) {
     h('h3', 'Tipe göre çalış'),
     h('ul.list.compact', Object.keys(TYPES).filter(t => types[t]).map(t =>
       h('li', h('a', { href: '#/cikmis/tip/' + t }, h('b', typeName(t)), h('span.small.muted', `${types[t]} soru`))))),
-    h('p.small.muted', 'Paket yalnızca bu cihazda; senkrona sadece cevapların gider.'),
-    ...uploader(redraw),
-    h('button.btn.danger.wide', { onclick: async () => { if (confirm('Paket bu cihazdan silinsin mi?')) { await clearPack(); redraw(); } } }, 'Paketi sil')
+    h('p.small.muted', 'Sorular yalnızca bu cihazda; senkrona sadece cevapların gider.'),
+    getToken() ? h('button.btn.wide', { onclick: async e => { e.currentTarget.disabled = true; const r = await fetchPrivate({ force: true }); toast(r.error ? 'Hata: ' + r.error : 'Sorular güncellendi'); redraw(); } }, 'Soruları güncelle') : null,
+    h('details.small', h('summary', 'Dosya / sil'), ...uploader(redraw),
+      h('button.btn.danger.wide', { onclick: async () => { if (confirm('Sorular bu cihazdan silinsin mi?')) { await clearPack(); resetMeta(); redraw(); } } }, 'Soruları sil'))
   );
 }
 
@@ -76,13 +87,20 @@ function examMode(root, e) {
   const qs = visibleQs(e);
   const pid = 'exam:' + e.id;
   let pr = store.get('progress', pid);
-  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), done: false, attempts: pr?.attempts || 0 };
-  const save = () => { pr = store.put('progress', pr); };
-  save();
+  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), elapsed: 0, done: false, attempts: pr?.attempts || 0 };
   const total = (e.durationMin || 180) * 60;
+  // Kalan süre: yalnızca sınav ekranı açıkken akar (eski kayıt: başlangıçtan bu yana, en fazla total-60 sn)
+  if (pr.elapsed == null) pr.elapsed = Math.min(total - 60, Math.floor((Date.now() - pr.startedAt) / 1000));
+  const save = (silent = false) => { pr = store.put('progress', pr, { silent }); };
+  save();
   const timer = h('span.timer');
+  let lastT = Date.now(), sinceSave = 0;
   const tick = () => {
-    const left = Math.max(0, total - Math.floor((Date.now() - pr.startedAt) / 1000));
+    const now = Date.now();
+    if (document.visibilityState === 'visible') { const d = Math.round((now - lastT) / 1000); pr.elapsed += Math.min(d, 5); sinceSave += d; }
+    lastT = now;
+    if (sinceSave >= 15) { sinceSave = 0; save(true); }
+    const left = Math.max(0, total - pr.elapsed);
     timer.textContent = `${Math.floor(left / 3600)}:${String(Math.floor(left / 60) % 60).padStart(2, '0')}:${String(left % 60).padStart(2, '0')}`;
     timer.classList.toggle('bad-t', left < 600);
     if (!left) finish(true);
@@ -111,18 +129,21 @@ function examMode(root, e) {
     if (!q) return;
     const g = groupOf(e, q);
     const src = { source: e.title || 'Çıkmış', note: `Soru ${q.n}` };
-    const long = q.type !== 'ceviri-tr-en' && String(q.q || '').length > 140;
+    setCtx({ type: 'soru', key: `${e.id}:${q.n}`, label: `${e.title || e.id} · Soru ${q.n}` });
+    const trq = q.type === 'ceviri-tr-en', tro = q.type === 'ceviri-en-tr';
     add(main,
       h('div.qhead', h('span.muted', `Soru ${q.n} · ${pr.cur + 1}/${qs.length}`),
-        h('span', q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, h('span.chip', typeName(q.type)))),
+        h('span.qtools', q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, h('span.chip', typeName(q.type)),
+          h('button.chip.lesson-btn', { type: 'button', onclick: () => openLesson(q.topic || '') }, 'Ders'))),
       g?.text ? h('div.stem.tap', tappable(g.text, src).el) : null,
-      long ? h('div.q.tap', tappable(q.q, src).el) : h('div.q', q.q),
+      trq ? h('div.q', q.q) : h('div.q.tap', tappable(q.q, src).el),
       h('div.opts', q.options.map((o, k) => h('button.opt' + (pr.answers[q.n] === k ? '.chosen' : ''), {
+        type: 'button',
         onclick: () => {
           if (pr.answers[q.n] === k) delete pr.answers[q.n]; else pr.answers[q.n] = k;
           save(); draw(); drawGrid();
         }
-      }, h('span.ol', 'ABCDE'[k]), h('span', o)))),
+      }, h('span.ol', 'ABCDE'[k]), tro ? h('span', o) : h('span.otext', tappable(String(o), { ...src, inline: true, tapOpens: false, ctx: () => (trq || String(q.q || '').length > 400 ? '' : q.q) }).el)))),
       h('div.row',
         h('button.btn', { disabled: pr.cur === 0, onclick: () => { pr.cur--; save(); draw(); drawGrid(); } }, '‹ Önceki'),
         h('button.btn.grow' + (pr.flags[q.n] ? '.primary' : ''), { onclick: () => { pr.flags[q.n] = !pr.flags[q.n]; if (!pr.flags[q.n]) delete pr.flags[q.n]; save(); draw(); drawGrid(); } }, pr.flags[q.n] ? 'İşaretli' : 'İşaretle'),
@@ -160,12 +181,12 @@ function examMode(root, e) {
     const score = +(right * 1.25).toFixed(2);
     store.put('mocks', { id: uid('m'), date: dayKey(), name: e.title || e.id, sections, src: 'cikmis', examId: e.id, score });
     pr = { ...pr, done: true, finishedAt: Date.now(), score, sections, attempts: (pr.attempts || 0) + 1 };
-    save();
+    pr = store.put('progress', pr);
     location.hash = '#/cikmis/sonuc/' + encodeURIComponent(e.id);
   }
 
   tick(); draw();
-  return () => clearInterval(iv);
+  return () => { clearInterval(iv); if (!finished) { tick(); store.put('progress', pr); } };
 }
 
 function result(root, e) {
@@ -202,5 +223,5 @@ async function typeMode(root, type) {
   const el = h('div');
   root.append(h('a.btn.small', { href: '#/cikmis' }, '‹ Çıkmış'), h('h2', typeName(type)), el);
   if (!order.length) { el.append(h('p.muted', 'Bu tipte soru yok')); return; }
-  runQuiz(el, order, { extra: lessonLink, onAnswer: (it, ok) => answer(it.key, ok, it.info) });
+  runQuiz(el, order, { extra: lessonLink, sid: 'cikmis-tip:' + type, name: 'Çıkmış · ' + typeName(type), source: 'Çıkmış', onAnswer: (it, ok) => answer(it.key, ok, it.info) });
 }

@@ -5,6 +5,9 @@ import { h, toast, fmtTime, dayKey } from '../util.js';
 import { applyTheme } from '../theme.js';
 import { usedSample } from '../data.js';
 import { week } from '../plan.js';
+import { fetchPrivate, meta as pmeta, status as pstat } from '../private.js';
+
+const TOKEN_URL = 'https://github.com/settings/tokens/new?scopes=gist,repo&description=yokdil';
 
 export default async function render(root) {
   const s = store.settings();
@@ -21,6 +24,15 @@ export default async function render(root) {
   drawStat(sync.status);
   const off = sync.onStatus(drawStat);
 
+  const pinfo = h('div.small');
+  const drawP = () => {
+    const m = pmeta();
+    pinfo.className = 'small ' + (pstat.state === 'error' ? 'bad-t' : 'muted');
+    pinfo.textContent = pstat.state === 'loading' ? 'Sorular indiriliyor…' : pstat.state === 'error' ? 'Sorular: ' + pstat.msg
+      : m.at ? `Sorular: ${m.n ?? '?'} sınav · ${fmtTime(m.at)}` : (sync.getToken() ? 'Sorular henüz indirilmedi' : 'Gizli sorular için anahtar gir');
+  };
+  drawP();
+  const offP = (await import('../private.js')).onStatus(drawP);
   const seg = (opts, cur, on) => h('div.seg', opts.map(([v, l]) => h('button' + (cur === v ? '.active' : ''), { onclick: () => on(v) }, l)));
   const limit = h('input.num', { type: 'number', min: 0, max: 60, placeholder: String(w.newWords ?? 15), value: s.newLimit ?? '' });
   limit.onchange = () => { store.setSetting('newLimit', limit.value === '' ? null : Math.max(0, +limit.value)); toast('Kaydedildi'); };
@@ -41,15 +53,18 @@ export default async function render(root) {
   root.append(
     h('h2', 'Ayarlar'),
     h('section.card',
-      h('h3', 'Senkron (GitHub Gist)'),
-      h('p.small', '1) ', h('a', { href: 'https://github.com/settings/tokens/new?scopes=gist&description=yokdil', target: '_blank', rel: 'noopener' }, 'Token oluştur'), ' (sadece gist) → 2) buraya yapıştır → Kaydet.'),
+      h('h3', 'GitHub anahtarı'),
+      h('p.small', 'Tek anahtar iki iş görür: senkron + gizli sorular.'),
+      h('ol.small.steps', h('li', h('a', { href: TOKEN_URL, target: '_blank', rel: 'noopener' }, 'Anahtar oluştur'), ' (classic; "gist" + "repo" işaretli gelir)'),
+        h('li', 'Buraya yapıştır → Kaydet')),
       tok,
       h('div.row',
-        h('button.btn.primary.grow', { onclick: () => { sync.setToken(tok.value); if (tok.value.trim()) sync.syncNow(); toast('Kaydedildi'); } }, 'Kaydet'),
+        h('button.btn.primary.grow', { onclick: () => { sync.setToken(tok.value); if (tok.value.trim()) { sync.syncNow(); fetchPrivate({ force: true }).then(drawP); } toast('Kaydedildi'); } }, 'Kaydet'),
         h('button.btn', { onclick: () => sync.syncNow() }, 'Şimdi senkronla'),
         sync.getToken() ? h('button.btn', { onclick: () => { sync.setToken(''); tok.value = ''; } }, 'Kapat') : null),
       stat,
-      h('p.small.muted', 'Token yalnızca bu cihazda saklanır. Her cihaza bir kez gir.')
+      h('div.row.between', pinfo, sync.getToken() ? h('button.btn.small', { onclick: async e => { e.currentTarget.disabled = true; const r = await fetchPrivate({ force: true }); toast(r.error ? 'Hata: ' + r.error : r.changed ? 'Sorular güncellendi' : 'Sorular güncel'); drawP(); e.target.disabled = false; } }, 'Soruları güncelle') : null),
+      h('p.small.muted', 'Anahtar yalnızca bu cihazda saklanır. Soru metinleri senkrona girmez.')
     ),
     h('section.card',
       h('h3', 'Görünüm'),
@@ -63,7 +78,14 @@ export default async function render(root) {
       h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),
       h('div.field', h('span', 'Kelime hedefi'), goal),
-      h('label.switch', h('input', { type: 'checkbox', checked: !!s.showDialog, onchange: e => store.setSetting('showDialog', e.target.checked) }), h('span', 'Diyalog sorularını göster (YDS)'))
+      h('label.switch', h('input', { type: 'checkbox', checked: !!s.showDialog, onchange: e => store.setSetting('showDialog', e.target.checked) }), h('span', 'Diyalog sorularını göster (YDS)')),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.activeRead !== false, onchange: e => store.setSetting('activeRead', e.target.checked) }), h('span', 'Okumada "ana fikir" kutuları'))
+    ),
+    h('section.card',
+      h('h3', 'Odak'),
+      h('div.field', h('span', 'Çalışma (dk)'), num('focusWork', 25, 5, 90)),
+      h('div.field', h('span', 'Mola (dk)'), num('focusBreak', 5, 1, 30)),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.eveTip !== false, onchange: e => store.setSetting('eveTip', e.target.checked) }), h('span', 'Akşam (17:00 sonrası) uyku ipucu'))
     ),
     h('section.card',
       h('h3', 'Veri'),
@@ -80,8 +102,13 @@ export default async function render(root) {
       usedSample.size ? h('p.small.bad-t', 'Örnek veri kullanılıyor: ' + [...usedSample].join(', ')) : null
     )
   );
-  function render2() { off(); root.innerHTML = ''; render(root); }
-  return off;
+  function render2() { off(); offP(); root.innerHTML = ''; render(root); }
+  function num(k, def, min, max) {
+    const i = h('input.num', { type: 'number', min, max, value: s[k] || def });
+    i.onchange = () => { store.setSetting(k, Math.min(max, Math.max(min, +i.value || def))); toast('Kaydedildi'); };
+    return i;
+  }
+  return () => { off(); offP(); };
 }
 
 function exportJSON() {

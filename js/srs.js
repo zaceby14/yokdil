@@ -9,27 +9,42 @@ const MIN = 60000;
 export const GRADES = ['again', 'hard', 'good', 'easy'];
 export const GRADE_TR = { again: 'Tekrar', hard: 'Zor', good: 'İyi', easy: 'Kolay' };
 
+// Merdiven: "Tekrar" alan kart 10 dk sonra, sonra bildikçe 1-3-7-14 gün sonra kesin gelir
+export const LADDER = [1, 3, 7, 14];
+
 // Saf hesap: kart + not → yeni alanlar
 export function schedule(card, grade, now = Date.now()) {
-  let { state = 'new', ease = 2.5, interval = 0, lapses = 0, reps = 0 } = card;
+  let { state = 'new', ease = 2.5, interval = 0, lapses = 0, reps = 0, ladder = null } = card;
+  if (ladder == null && state === 'relearn') ladder = 0; // eski kayıt: relearn → merdiven başı
   let due;
-  if (state === 'new' || state === 'learning') {
-    if (grade === 'again' || grade === 'hard') { state = 'learning'; interval = 0; due = now + 10 * MIN; }
+  if (grade === 'again') {
+    // Her durumda merdiven başa: 10 dk sonra aynı oturumda
+    if (state === 'review' || state === 'relearn') { if (state === 'review') lapses++; ease = Math.max(1.3, ease - (state === 'review' ? 0.2 : 0)); state = 'relearn'; }
+    else state = 'learning';
+    ladder = 0; interval = 0; due = now + 10 * MIN;
+  } else if (ladder != null) {
+    // Merdivende: İyi/Kolay bir basamak çıkar (atlama yok), Zor aynı basamakta kalır
+    const step = grade === 'hard' ? Math.max(0, ladder - 1) : ladder;
+    interval = LADDER[Math.min(step, LADDER.length - 1)];
+    ladder = grade === 'hard' ? Math.max(1, ladder) : ladder + 1;
+    state = 'review';
+    if (ladder >= LADDER.length && grade !== 'hard') ladder = null; // merdiven bitti → normal büyüme
+  } else if (state === 'new' || state === 'learning') {
+    if (grade === 'hard') { state = 'review'; interval = 1; } // ertesi gün (oturumda bir kez daha gösterilir)
     else if (grade === 'good') { state = 'review'; interval = 1; }
     else { state = 'review'; interval = 3; ease += 0.15; }
-  } else if (state === 'relearn') {
-    if (grade === 'again' || grade === 'hard') { due = now + 10 * MIN; }
-    else { state = 'review'; interval = Math.max(1, Math.round(interval * (grade === 'easy' ? 0.7 : 0.5))); }
   } else { // review
-    if (grade === 'again') { lapses++; state = 'relearn'; ease = Math.max(1.3, ease - 0.2); due = now + 10 * MIN; }
-    else if (grade === 'hard') { ease = Math.max(1.3, ease - 0.15); interval = Math.max(interval + 1, Math.round(interval * 1.2)); }
+    if (grade === 'hard') { ease = Math.max(1.3, ease - 0.15); interval = Math.max(interval + 1, Math.round(interval * 1.2)); }
     else if (grade === 'good') { interval = Math.max(interval + 1, Math.round(interval * ease)); }
     else { ease += 0.15; interval = Math.max(interval + 2, Math.round(interval * ease * 1.3)); }
   }
   if (due == null) due = startOfDay(now) + interval * DAY + 4 * 3600000; // ilgili günün sabahı
   const hist = [...(Array.isArray(card.hist) ? card.hist : []), grade[0]].slice(-5); // son notlar (mezuniyet için)
-  return { state, ease: +ease.toFixed(2), interval, lapses, reps: reps + 1, due, lastReview: now, hist };
+  return { state, ease: +ease.toFixed(2), interval, lapses, reps: reps + 1, due, lastReview: now, hist, ladder };
 }
+
+// Merdivendeki kart mı?
+export const inLadder = c => c?.ladder != null || c?.state === 'relearn';
 
 function startOfDay(t) { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); }
 
@@ -85,6 +100,7 @@ export function review(card, grade) {
   const wasNew = (card.state || 'new') === 'new';
   const next = { ...card, ...schedule(card, grade) };
   delete next.pulled; delete next.check;
+  if (next.ladder == null) delete next.ladder;
   store.put('cards', next);
   bumpDay('reviews');
   if (wasNew) {

@@ -39,12 +39,14 @@ export function validate(p) {
   return p;
 }
 
-// Yeni paketi mevcutla birleştir (aynı sınav id → yenisi)
-export async function savePack(p) {
+// Yeni paketi mevcutla birleştir (aynı sınav id → yenisi).
+// src='gizli': gizli repodan gelen paket; önceki gizli sınavların yerini alır, elle yüklenenler kalır.
+export async function savePack(p, src = 'dosya') {
   validate(p);
   const cur = (await getPack()) || { version: 1, exams: [] };
-  const map = new Map(cur.exams.map(e => [e.id, e]));
-  for (const e of p.exams) map.set(e.id, e);
+  const keep = src === 'gizli' ? cur.exams.filter(e => e._src !== 'gizli') : cur.exams;
+  const map = new Map(keep.map(e => [e.id, e]));
+  for (const e of p.exams) map.set(e.id, { ...e, _src: src });
   const next = { version: p.version || 1, exams: [...map.values()], savedAt: Date.now() };
   await tx('readwrite', s => s.put(next, KEY));
   cache = next;

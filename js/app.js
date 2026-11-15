@@ -4,6 +4,7 @@ import * as sync from './sync.js';
 import { loadAll, seedUser, usedSample } from './data.js';
 import { h } from './util.js';
 import { applyTheme } from './theme.js';
+import { migrateContent } from './contentrev.js';
 import today from './views/today.js';
 import reading from './views/reading.js';
 import cards from './views/cards.js';
@@ -13,9 +14,14 @@ import panel from './views/panel.js';
 import settings from './views/settings.js';
 import exams from './views/exams.js';
 import lessons from './views/lessons.js';
+import notes from './views/notes.js';
+import { setCtx } from './ctx.js';
+import { initNotes } from './notes.js';
+import { initFocus, eveTip } from './focus.js';
+import { dailyFetch } from './private.js';
 
-const routes = { bugun: today, okuma: reading, kartlar: cards, gramer: grammar, alistirma: drills, eksikler: panel, ayarlar: settings, cikmis: exams, dersler: lessons };
-const TAB = { gramer: 'sorular', alistirma: 'sorular', cikmis: 'sorular', dersler: 'sorular' };
+const routes = { bugun: today, okuma: reading, kartlar: cards, gramer: grammar, alistirma: drills, eksikler: panel, ayarlar: settings, cikmis: exams, dersler: lessons, notlar: notes };
+const TAB = { gramer: 'sorular', alistirma: 'sorular', cikmis: 'sorular' };
 const view = document.getElementById('view');
 let cleanup = null, current = '';
 
@@ -52,6 +58,8 @@ async function route() {
   if (!routes[name] && location.hash !== '#/bugun') { history.replaceState(null, '', '#/bugun'); }
   try { cleanup?.(); } catch {}
   cleanup = null; current = r;
+  setCtx(null);
+  document.body.dataset.route = [r, ...rest].join('-');
   setActive(r);
   view.innerHTML = '';
   const root = h('div.page');
@@ -75,6 +83,7 @@ async function main() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
   await loadAll();
   await seed();
+  await migrateContent().catch(e => console.warn('içerik güncelleme', e));
   sync.onStatus(syncDot);
   sync.init();
   syncDot(sync.status);
@@ -82,10 +91,43 @@ async function main() {
     if (info.merged && ['bugun', 'eksikler', 'ayarlar'].includes(current)) route();
   });
   addEventListener('hashchange', route);
+  initNotes();
+  initFocus();
+  keyboardWatch();
   route();
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
+  eveTip();
+  // Gizli soru paketi: günde en fazla bir kez (token varsa)
+  dailyFetch().then(r => { if (r?.changed && current === 'cikmis') route(); }).catch(() => {});
+  registerSW();
+}
+
+// Klavye açıkken alt çubuk ve Not düğmesi içeriği kapatmasın
+function keyboardWatch() {
+  const isField = el => el && (el.tagName === 'TEXTAREA' || el.isContentEditable ||
+    (el.tagName === 'INPUT' && !['checkbox', 'radio', 'button', 'submit', 'file', 'range'].includes(el.type)));
+  document.addEventListener('focusin', e => { if (isField(e.target)) document.body.classList.add('kb'); });
+  document.addEventListener('focusout', () => setTimeout(() => { if (!isField(document.activeElement)) document.body.classList.remove('kb'); }, 50));
+}
+
+// Service worker: yeni sürüm hazır olunca bant göster, dokununca skipWaiting + yenile
+function registerSW() {
+  if (!('serviceWorker' in navigator) || location.protocol === 'file:') return;
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (reloading) location.reload(); });
+  const band = w => {
+    if (document.getElementById('updBand')) return;
+    const b = h('div.updband', { id: 'updBand' }, h('span.grow', 'Yeni sürüm hazır'),
+      h('button.btn.small.primary', { onclick: () => { reloading = true; w.postMessage({ type: 'skip' }); setTimeout(() => location.reload(), 1500); } }, 'Yenile'));
+    document.body.append(b);
+  };
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    if (reg.waiting && navigator.serviceWorker.controller) band(reg.waiting);
+    reg.addEventListener('updatefound', () => {
+      const w = reg.installing;
+      w?.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) band(w); });
+    });
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+  }).catch(() => {});
 }
 
 main();

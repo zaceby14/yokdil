@@ -469,8 +469,7 @@
   "pos": "conj",
   "tr": "-ip -mediği",
   "syn": [
-   "if",
-   "whether or not"
+   "if"
   ],
   "coll": "whether or not; whether ... or",
   "ex": "Researchers tested whether the drug was safe.",
@@ -541,8 +540,8 @@
   "tr": "öte yandan",
   "syn": [
    "in contrast",
-   "conversely",
-   "whereas"
+   "by contrast",
+   "conversely"
   ],
   "coll": "on the one hand ... on the other hand",
   "ex": "Solar power is clean; on the other hand, it is intermittent.",
@@ -625,8 +624,7 @@
   "tr": "-e bakmaksızın",
   "syn": [
    "irrespective of",
-   "despite",
-   "notwithstanding"
+   "without regard to"
   ],
   "coll": "regardless of + isim",
   "ex": "The device works regardless of the weather.",
@@ -664,7 +662,7 @@
    "besides"
   ],
   "coll": "A as well as B",
-  "ex": "The fluid carries heat as well as pressure.",
+  "ex": "The fluid carries heat as well as dissolved gases.",
   "freq": 3,
   "tags": [
    "baglac",
@@ -893,7 +891,7 @@
    "about"
   ],
   "coll": "approximately + sayı",
-  "ex": "The core is approximately 5,000 °C.",
+  "ex": "The temperature of the core is approximately 5,000 °C.",
   "freq": 3,
   "tags": [
    "fen"
@@ -1146,7 +1144,7 @@
   "syn": [
    "exactly",
    "accurately",
-   "literally"
+   "correctly"
   ],
   "coll": "precisely measured",
   "ex": "The laser measures distance precisely.",
@@ -1459,7 +1457,7 @@
   "id": "w0084",
   "word": "deal with",
   "pos": "phr",
-  "tr": "ilgilenmek, ele almak",
+  "tr": "ele almak, ilgilenmek; başa çıkmak",
   "syn": [
    "handle",
    "cope with",
@@ -1579,7 +1577,7 @@
   "tr": "ile etkileşmek",
   "syn": [
    "react with",
-   "affect"
+   "engage with"
   ],
   "coll": "interact with + isim",
   "ex": "Light interacts with matter in many ways.",
@@ -2427,7 +2425,7 @@
   "id": "w0140",
   "word": "replace",
   "pos": "v",
-  "tr": "yerini almak, değiştirmek",
+  "tr": "yerini almak; yerine koymak, değiştirmek",
   "syn": [
    "substitute",
    "supersede",
@@ -2444,7 +2442,7 @@
   "id": "w0141",
   "word": "expose",
   "pos": "v",
-  "tr": "maruz bırakmak",
+  "tr": "maruz bırakmak; açığa çıkarmak",
   "syn": [
    "subject",
    "lay open"
@@ -2693,8 +2691,8 @@
   "tr": "kanıt",
   "syn": [
    "proof",
-   "data",
-   "indication"
+   "indication",
+   "sign"
   ],
   "coll": "evidence of/for / evidence that",
   "ex": "There is strong evidence for climate change.",
@@ -2815,8 +2813,8 @@
   "tr": "seviye, düzey",
   "syn": [
    "degree",
-   "rate",
-   "extent"
+   "extent",
+   "standard"
   ],
   "coll": "at a level of / at high levels",
   "ex": "CO2 is at its highest level for centuries.",
@@ -2847,10 +2845,7 @@
   "word": "temperature",
   "pos": "n",
   "tr": "sıcaklık",
-  "syn": [
-   "heat",
-   "degree"
-  ],
+  "syn": [],
   "coll": "at a temperature of / at high temperatures",
   "ex": "Water boils at a temperature of 100 °C.",
   "freq": 3,
@@ -2864,9 +2859,9 @@
   "pos": "n",
   "tr": "basınç; baskı",
   "syn": [
-   "force",
    "stress",
-   "load"
+   "strain",
+   "burden"
   ],
   "coll": "at a pressure of / under pressure",
   "ex": "The gas is stored under high pressure.",
@@ -3110,11 +3105,11 @@
   "id": "w0179",
   "word": "efficient",
   "pos": "adj",
-  "tr": "verimli",
+  "tr": "verimli, etkin",
   "syn": [
-   "effective",
    "productive",
-   "economical"
+   "economical",
+   "cost-effective"
   ],
   "coll": "energy-efficient",
   "ex": "LED lamps are more efficient than bulbs.",
@@ -3129,9 +3124,9 @@
   "pos": "adj",
   "tr": "etkili",
   "syn": [
-   "efficient",
    "successful",
-   "potent"
+   "potent",
+   "efficacious"
   ],
   "coll": "effective in/against",
   "ex": "The vaccine is effective against the flu.",
@@ -3197,7 +3192,7 @@
   "id": "w0184",
   "word": "capable",
   "pos": "adj",
-  "tr": "yetenekli, muktedir",
+  "tr": "-ebilen, yetenekli, muktedir",
   "syn": [
    "able",
    "competent",
@@ -3375,8 +3370,8 @@
   "tr": "tutarlı",
   "syn": [
    "compatible",
-   "steady",
-   "in line with"
+   "coherent",
+   "steady"
   ],
   "coll": "consistent with",
   "ex": "The results are consistent with theory.",
@@ -4011,8 +4006,8 @@
   "tr": "bileşik",
   "syn": [
    "substance",
-   "mixture",
-   "composite"
+   "chemical",
+   "combination"
   ],
   "coll": "a chemical compound",
   "ex": "Water is a compound of hydrogen and oxygen.",
@@ -4274,11 +4269,11 @@
   "id": "w0246",
   "word": "phenomenon",
   "pos": "n",
-  "tr": "olay, olgu",
+  "tr": "olgu, olay, fenomen",
   "syn": [
    "occurrence",
    "event",
-   "fact"
+   "manifestation"
   ],
   "coll": "a natural phenomenon (çoğ. phenomena)",
   "ex": "Lightning is a natural phenomenon.",
@@ -4327,7 +4322,7 @@
   "id": "w0249",
   "word": "aspect",
   "pos": "n",
-  "tr": "yön, açı",
+  "tr": "yön, boyut, husus",
   "syn": [
    "feature",
    "facet",
@@ -4991,9 +4986,9 @@
   "pos": "v",
   "tr": "karşılaştırmak",
   "syn": [
-   "contrast",
    "liken",
-   "match"
+   "juxtapose",
+   "set against"
   ],
   "coll": "compare A with/to B / compared with",
   "ex": "Compared with copper, silver conducts better.",
@@ -5343,8 +5338,8 @@
   "pos": "conj",
   "tr": "-se bile",
   "syn": [
-   "even though",
-   "regardless of whether"
+   "regardless of whether",
+   "whether or not"
   ],
   "coll": "even if + cümle",
   "ex": "Even if the pump fails, the backup will start.",
@@ -5432,8 +5427,9 @@
   "pos": "adv",
   "tr": "tam tersine",
   "syn": [
-   "conversely",
-   "quite the opposite"
+   "quite the opposite",
+   "rather",
+   "far from it"
   ],
   "coll": "on the contrary,",
   "ex": "The drug did not harm cells; on the contrary, it protected them.",
@@ -5839,11 +5835,11 @@
   "id": "w0335",
   "word": "in case",
   "pos": "conj",
-  "tr": "-e karşı, olur da diye",
+  "tr": "-ebilir diye, olur ki diye (ihtimaline karşı)",
   "syn": [
    "lest",
    "in the event that",
-   "if"
+   "just in case"
   ],
   "coll": "in case + cümle / in case of + isim",
   "ex": "Keep a spare battery in case the power fails.",
@@ -6292,7 +6288,7 @@
   "id": "w0361",
   "word": "across",
   "pos": "prep",
-  "tr": "boyunca, karşıdan karşıya",
+  "tr": "boyunca, genelinde; bir uçtan öbür uca",
   "syn": [
    "throughout",
    "over",
@@ -6439,7 +6435,7 @@
    "for"
   ],
   "coll": "in favour of + isim/Ving",
-  "ex": "Data are in favour of the new model.",
+  "ex": "Most experts are in favour of the new model.",
   "freq": 2,
   "tags": [
    "baglac",
@@ -6504,8 +6500,7 @@
   "pos": "conj",
   "tr": "ne ... ne de",
   "syn": [
-   "not ... either ... or",
-   "none of"
+   "not ... either ... or"
   ],
   "coll": "neither A nor B (olumlu fiil)",
   "ex": "Neither heat nor light affected the sample.",
@@ -7185,7 +7180,7 @@
   "id": "w0413",
   "word": "suffer from",
   "pos": "phr",
-  "tr": "-den mustarip olmak",
+  "tr": "-den muzdarip olmak, -den çekmek",
   "syn": [
    "be affected by",
    "experience"
@@ -7202,7 +7197,7 @@
   "id": "w0414",
   "word": "respond to",
   "pos": "phr",
-  "tr": "-e tepki vermek",
+  "tr": "-e tepki vermek, -e yanıt vermek",
   "syn": [
    "react to",
    "reply to"
@@ -7270,7 +7265,7 @@
   "id": "w0418",
   "word": "be capable of",
   "pos": "phr",
-  "tr": "-e muktedir olmak",
+  "tr": "-ebilmek, -e muktedir olmak",
   "syn": [
    "be able to",
    "be competent at"
@@ -7812,11 +7807,11 @@
   "id": "w0449",
   "word": "dissolve",
   "pos": "v",
-  "tr": "çözünmek, çözmek",
+  "tr": "çözünmek, çözmek; dağılmak; feshetmek",
   "syn": [
-   "melt",
-   "liquefy",
-   "disperse"
+   "break up",
+   "disperse",
+   "disintegrate"
   ],
   "coll": "dissolve in water",
   "ex": "Sugar dissolves in water.",
@@ -7845,9 +7840,10 @@
   "id": "w0451",
   "word": "condense",
   "pos": "v",
-  "tr": "yoğunlaşmak",
+  "tr": "yoğuşmak, yoğunlaşmak; yoğunlaştırmak, özetlemek",
   "syn": [
    "liquefy",
+   "concentrate",
    "compress"
   ],
   "coll": "condense into",
@@ -7861,7 +7857,7 @@
   "id": "w0452",
   "word": "contract",
   "pos": "v",
-  "tr": "büzülmek",
+  "tr": "büzülmek, daralmak; (hastalık) kapmak",
   "syn": [
    "shrink",
    "tighten",
@@ -8882,7 +8878,7 @@
   "id": "w0511",
   "word": "deny",
   "pos": "v",
-  "tr": "inkar etmek, reddetmek",
+  "tr": "inkâr etmek, yalanlamak; reddetmek",
   "syn": [
    "reject",
    "refute",
@@ -8922,7 +8918,7 @@
   "syn": [
    "effectiveness",
    "potency",
-   "efficiency"
+   "success"
   ],
   "coll": "the efficacy of a drug/treatment",
   "ex": "Trials tested the efficacy of the new vaccine.",
@@ -8954,7 +8950,7 @@
   "id": "w0515",
   "word": "precision",
   "pos": "n",
-  "tr": "hassasiyet",
+  "tr": "kesinlik, hassasiyet",
   "syn": [
    "accuracy",
    "exactness",
@@ -9303,11 +9299,11 @@
   "id": "w0535",
   "word": "mass",
   "pos": "n",
-  "tr": "kütle",
+  "tr": "kütle; yığın, kitle",
   "syn": [
-   "weight",
    "bulk",
-   "quantity"
+   "quantity",
+   "amount"
   ],
   "coll": "the mass of",
   "ex": "The mass of an electron is tiny.",
@@ -9354,11 +9350,11 @@
   "id": "w0538",
   "word": "stress",
   "pos": "n",
-  "tr": "gerilme; stres",
+  "tr": "gerilme, gerilim; stres; vurgu",
   "syn": [
-   "strain",
    "tension",
-   "pressure"
+   "pressure",
+   "burden"
   ],
   "coll": "under stress",
   "ex": "The bolt failed under stress.",
@@ -9375,7 +9371,7 @@
   "syn": [
    "deformation",
    "tension",
-   "stress"
+   "pressure"
   ],
   "coll": "strain on",
   "ex": "The load put strain on the cable.",
@@ -9422,11 +9418,11 @@
   "id": "w0542",
   "word": "corrosion",
   "pos": "n",
-  "tr": "korozyon, aşınma",
+  "tr": "korozyon, paslanma, (kimyasal) aşınma",
   "syn": [
    "rust",
-   "erosion",
-   "oxidation"
+   "oxidation",
+   "deterioration"
   ],
   "coll": "resistance to corrosion",
   "ex": "Paint protects steel from corrosion.",
@@ -9442,7 +9438,7 @@
   "tr": "erozyon, aşınma",
   "syn": [
    "wearing away",
-   "corrosion",
+   "abrasion",
    "deterioration"
   ],
   "coll": "soil erosion",
@@ -9575,7 +9571,7 @@
   "id": "w0551",
   "word": "yield",
   "pos": "n",
-  "tr": "verim, ürün",
+  "tr": "verim, ürün (miktarı); getiri",
   "syn": [
    "output",
    "crop",
@@ -9594,7 +9590,6 @@
   "pos": "n",
   "tr": "verimlilik",
   "syn": [
-   "effectiveness",
    "productivity",
    "economy"
   ],
@@ -9958,7 +9953,7 @@
   "id": "w0573",
   "word": "implication",
   "pos": "n",
-  "tr": "sonuç, anlam, etki",
+  "tr": "olası sonuç, etki; ima, çıkarım",
   "syn": [
    "consequence",
    "significance",
@@ -10049,7 +10044,7 @@
   "syn": [
    "blend",
    "combination",
-   "compound"
+   "amalgam"
   ],
   "coll": "a mixture of",
   "ex": "Air is a mixture of gases.",
@@ -11707,7 +11702,7 @@
   "syn": [
    "barely",
    "scarcely",
-   "rarely"
+   "only just"
   ],
   "coll": "hardly any / hardly ever",
   "ex": "There is hardly any oxygen at that height.",
@@ -12264,11 +12259,11 @@
   "id": "w0707",
   "word": "gravity",
   "pos": "n",
-  "tr": "yerçekimi",
+  "tr": "yerçekimi, kütleçekimi; ciddiyet",
   "syn": [
    "gravitation",
-   "attraction",
-   "weight"
+   "gravitational force",
+   "seriousness"
   ],
   "coll": "the force of gravity",
   "ex": "Gravity keeps the Moon in orbit.",
@@ -12499,7 +12494,7 @@
    "bequeath"
   ],
   "coll": "hand down to",
-  "ex": "The technique was handed down for centuries.",
+  "ex": "The technique was handed down from generation to generation.",
   "freq": 1,
   "tags": [
    "phrasal"
@@ -13193,7 +13188,7 @@
   "id": "w0761",
   "word": "simulate",
   "pos": "v",
-  "tr": "benzetim yapmak",
+  "tr": "benzetimini yapmak, simüle etmek; taklit etmek",
   "syn": [
    "imitate",
    "model",
@@ -13403,7 +13398,7 @@
   "id": "w0773",
   "word": "erode",
   "pos": "v",
-  "tr": "aşındırmak",
+  "tr": "aşındırmak, aşınmak; zayıflatmak",
   "syn": [
    "wear away",
    "corrode",
@@ -14288,9 +14283,9 @@
   "pos": "n",
   "tr": "eksen",
   "syn": [
-   "axle",
-   "line",
-   "pivot"
+   "centre line",
+   "pivot",
+   "line"
   ],
   "coll": "on its axis",
   "ex": "The planet spins on its axis.",

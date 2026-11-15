@@ -3,9 +3,9 @@ import json, sys, os
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('BASE', 'http://localhost:8765/')
-SHOTS = '/home/claude/shots/v2'
+SHOTS = '/home/claude/shots/v4'
 os.makedirs(SHOTS, exist_ok=True)
-ROUTES = ['bugun', 'okuma', 'kartlar', 'kartlar/liste', 'kartlar/ekle', 'gramer', 'alistirma', 'cikmis', 'dersler', 'eksikler', 'ayarlar']
+ROUTES = ['bugun', 'okuma', 'kartlar', 'kartlar/liste', 'kartlar/ekle', 'gramer', 'alistirma', 'cikmis', 'dersler', 'eksikler', 'ayarlar', 'notlar', 'kartlar/yaz', 'kartlar/hafiza']
 errors = []
 fails = []
 
@@ -402,6 +402,7 @@ with sync_playwright() as p:
     n1 = len(st()['cards'])
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(200)
     page.goto(BASE + '#/gramer/konu/kelime'); page.wait_for_timeout(400)
+    if page.locator('button:has-text("Baştan başla")').count(): page.click('button:has-text("Baştan başla")'); page.wait_for_timeout(200)
     for i in range(8):
         if page.locator('.opt').count() == 0: break
         page.locator('.opt').nth(2).click(); page.wait_for_timeout(100)
@@ -517,6 +518,315 @@ with sync_playwright() as p:
         page.screenshot(path=f'{SHOTS}/okuma-panel-halleri.png')
     else:
         check(False, 'forms.json yok')
+    ctx.close()
+
+    # ================= v4 akışları =================
+    PACK = '/home/claude/private/cikmis-paket.json'
+    PACK_BODY = open(PACK, 'rb').read()
+    API = 'https://api.github.com/repos/zaceby14/yokdil-ozel/contents/paket.json'
+    gh_calls = []
+    def gh_route(route):
+        req = route.request
+        cors = {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Authorization, Accept, If-None-Match',
+                'Access-Control-Expose-Headers': 'ETag'}
+        if req.method == 'OPTIONS':
+            return route.fulfill(status=204, headers=cors)
+        hd = req.headers
+        gh_calls.append({'auth': hd.get('authorization', ''), 'accept': hd.get('accept', ''), 'inm': hd.get('if-none-match', '')})
+        if hd.get('if-none-match') == '"v1"':
+            return route.fulfill(status=304, headers={**cors, 'ETag': '"v1"'})
+        route.fulfill(status=200, body=PACK_BODY, headers={**cors, 'ETag': '"v1"', 'Content-Type': 'application/vnd.github.raw+json'})
+
+    def v4ctx(vp, mobile, tag, hour=None):
+        c = b.new_context(viewport=vp, is_mobile=mobile, has_touch=mobile, service_workers='block')
+        c.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
+        c.route(API, gh_route)
+        if hour is not None:
+            c.add_init_script(f"Date.prototype.getHours = function () {{ return {hour}; }};")
+        pg = c.new_page(); attach(pg, tag)
+        pg.on('dialog', lambda d: d.accept())
+        return c, pg
+
+    ctx, page = v4ctx({'width': 390, 'height': 844}, True, 'v4-mobil', hour=10)
+    def st():
+        page.wait_for_timeout(250)
+        return page.evaluate("JSON.parse(localStorage.getItem('yokdil.v1')||'{}')")
+    def ev(js): return page.evaluate(js)
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(700)
+
+    # 2) Menü: alt çubuk 5 öğe, Dersler ayrı, Eksikler üst ikonda ve Bugün'de
+    vis_tabs = page.locator('nav.tabs a:visible')
+    check(vis_tabs.count() == 5 and [vis_tabs.nth(i).inner_text() for i in range(5)] == ['Bugün', 'Okuma', 'Kartlar', 'Sorular', 'Dersler'], 'mobil alt çubuk: Bugün · Okuma · Kartlar · Sorular · Dersler')
+    check(page.locator('header a[href="#/eksikler"]:visible').count() == 1 and page.locator('main a[href="#/eksikler"]').count() >= 1, 'Eksikler: üst ikon + Bugün ekranı')
+    page.click('nav.tabs a[href="#/dersler"]'); page.wait_for_timeout(300)
+    check(page.locator('nav.tabs a.active span').inner_text() == 'Dersler', 'Dersler sekmesi aktif')
+    page.screenshot(path=f'{SHOTS}/m-dersler.png', full_page=True)
+
+    # 1) Gizli sorular: token yok → tek satır + düğme
+    page.goto(BASE + '#/cikmis'); page.wait_for_timeout(400)
+    check("Ayarlar'dan GitHub anahtarını gir" in page.inner_text('main') and page.locator('main a[href="#/ayarlar"]').count() == 1, 'token yok: "Soruları görmek için…" satırı + düğme')
+    page.screenshot(path=f'{SHOTS}/m-cikmis-tokensiz.png', full_page=True)
+    page.click('main a[href="#/ayarlar"]'); page.wait_for_timeout(300)
+    check(page.locator('a[href*="scopes=gist,repo"]').count() == 1 and 'Tek anahtar iki iş görür' in page.inner_text('main'), 'Ayarlar: tek anahtar rehberi (gist+repo)')
+    page.fill('input[type=password]', 'ghp_testtoken123')
+    page.click('button:has-text("Kaydet")'); page.wait_for_timeout(2500)
+    check(len(gh_calls) >= 1 and gh_calls[0]['auth'] == 'Bearer ghp_testtoken123' and gh_calls[0]['accept'] == 'application/vnd.github.raw+json', f'GitHub isteği: Bearer + raw accept ({gh_calls[:1]})')
+    NEX = len(json.loads(PACK_BODY)['exams'])
+    check(f'{NEX} sınav' in page.inner_text('main'), f'Ayarlar: "{NEX} sınav" indirildi')
+    page.screenshot(path=f'{SHOTS}/m-ayarlar-anahtar.png', full_page=True)
+    page.goto(BASE + '#/cikmis'); page.wait_for_timeout(800)
+    check('2019-YÖKDİL Fen' in page.inner_text('main'), 'Çıkmış: gizli paketten sınavlar listede')
+    page.screenshot(path=f'{SHOTS}/m-cikmis-gizli.png', full_page=True)
+    n0 = len(gh_calls)
+    page.click('button:has-text("Soruları güncelle")'); page.wait_for_timeout(1200)
+    check(len(gh_calls) == n0 + 1, 'Soruları güncelle: yeni istek')
+    # Açılışta günde bir: yeniden yüklemede istek yok
+    page.reload(); page.wait_for_timeout(900)
+    check(len(gh_calls) == n0 + 1, 'açılışta aynı gün ikinci indirme yok')
+    ev("(() => { const m = JSON.parse(localStorage.getItem('yokdil.privMeta')); m.day = '2000-01-01'; localStorage.setItem('yokdil.privMeta', JSON.stringify(m)); })()")
+    page.reload(); page.wait_for_timeout(1200)
+    check(len(gh_calls) == n0 + 2 and gh_calls[-1]['inm'] == '"v1"', 'ertesi gün: If-None-Match ile kontrol (304)')
+    raw = ev("localStorage.getItem('yokdil.v1')")
+    check('intensive cultivation' not in raw, 'gizli soru metni localStorage/senkronda yok')
+
+    # 3) Ders paneli: soru oturumundan ayrılmadan açılır, geri tuşu paneli kapatır
+    page.goto(BASE + '#/gramer/gunluk'); page.wait_for_timeout(600)
+    page.locator('.opt').nth(0).click(); page.wait_for_timeout(150)
+    page.click('button:has-text("Sonraki")'); page.wait_for_timeout(150)
+    q_before = page.inner_text('.qhead .muted')
+    url_before = page.url
+    page.click('.qhead .lesson-btn'); page.wait_for_timeout(500)
+    check(page.locator('#sidePanel:not(.hidden)').count() == 1 and page.url == url_before, 'Ders paneli açıldı, sayfa değişmedi')
+    page.screenshot(path=f'{SHOTS}/m-ders-panel.png')
+    page.go_back(); page.wait_for_timeout(400)
+    check(page.locator('#sidePanel.hidden').count() == 1 and page.url == url_before and page.inner_text('.qhead .muted') == q_before, f'geri tuşu: panel kapandı, aynı soru ({q_before})')
+    page.click('.qhead .lesson-btn'); page.wait_for_timeout(300)
+    page.click('#sidePanel .icon-x'); page.wait_for_timeout(300)
+    check(page.url == url_before and page.locator('.opt').count() >= 2, '× ile kapat: aynı soruya dönüldü')
+    # Yanlış cevapta "Konuyu aç" de paneli açar
+    for k in range(5):
+        page.locator('.opt').nth(k).click(); page.wait_for_timeout(120)
+        if page.locator('.opt.wrong').count() or page.locator('.opt.right').count(): break
+    page.wait_for_timeout(300)
+    if page.locator('.lesson-link').count():
+        page.click('.lesson-link'); page.wait_for_timeout(300)
+        check(page.locator('#sidePanel:not(.hidden)').count() == 1 and page.url == url_before, '"Konuyu aç" panelde, test gitmedi')
+        page.click('#sidePanel .icon-x'); page.wait_for_timeout(200)
+
+    # 3) Oturum kaydı: başka sekmeye git, dön → Kaldığın yerden devam et
+    s = st()
+    sess = [x for x in s.get('sessions', {}).values() if not x.get('deleted')]
+    check(any(x['id'].startswith('gunluk:') and x['i'] >= 1 for x in sess), 'oturum ilerlemesi kaydedildi (sessions)')
+    page.click('nav.tabs a[href="#/okuma"]'); page.wait_for_timeout(300)
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(400)
+    check(page.locator('a.banner.resume').count() >= 1, 'Bugün: "Yarım kaldı → Devam" bandı')
+    page.click('a.banner.resume'); page.wait_for_timeout(400)
+    check(page.locator('button:has-text("Devam et")').count() == 1 and 'Kaldığın yerden' in page.inner_text('main'), '"Kaldığın yerden devam et" kartı')
+    page.screenshot(path=f'{SHOTS}/m-devam.png')
+    page.click('button:has-text("Devam et")'); page.wait_for_timeout(400)
+    check(page.inner_text('.qhead .muted') == q_before and page.locator('.opt.right').count() == 1, f'aynı soru, verilen cevap korunmuş ({page.inner_text(".qhead .muted")})')
+    # Tarayıcı geri/ileri: oturum bozulmaz
+    page.go_back(); page.wait_for_timeout(300); page.go_forward(); page.wait_for_timeout(500)
+    if page.locator('button:has-text("Devam et")').count(): page.click('button:has-text("Devam et")'); page.wait_for_timeout(300)
+    check(page.inner_text('.qhead .muted') == q_before, 'geri/ileri sonrası aynı soru')
+
+    # 4) Hızlı not: oturumu bozmadan, bağlam = soru kimliği
+    page.click('button:has-text("Sonraki")'); page.wait_for_timeout(200)
+    qkey_label = page.inner_text('.qhead .muted')
+    page.click('#noteFab'); page.wait_for_timeout(300)
+    check(page.locator('#noteSheet:not(.hidden) textarea').count() == 1, 'Not paneli açıldı')
+    check(ev("document.body.classList.contains('kb')"), 'klavye açık: body.kb')
+    check(not page.locator('nav.tabs').is_visible(), 'klavye açıkken alt çubuk gizli')
+    page.fill('#noteSheet textarea', 'whereas - oysa\nnevertheless - yine de')
+    page.screenshot(path=f'{SHOTS}/m-not-panel.png')
+    page.click('#noteSheet button:has-text("Kaydet")'); page.wait_for_timeout(300)
+    check(page.inner_text('.qhead .muted') == qkey_label and page.locator('.opt').count() >= 2, 'not sonrası aynı soru (oturum bozulmadı)')
+    s = st()
+    qn = [n for n in s['notes'].values() if n.get('kind') == 'quick' and not n.get('deleted')]
+    check(len(qn) == 1 and qn[0]['ctx']['type'] == 'soru' and qn[0]['ctx']['key'] and 'Günlük' in qn[0]['ctx']['label'], f'not bağlamı: {qn[0]["ctx"] if qn else None}')
+    # Notlar ekranı: karta çevir (toplu), tamamlandı, düzenle, ara
+    page.goto(BASE + '#/notlar'); page.wait_for_timeout(400)
+    check(page.locator('.qnote').count() == 1, 'Notlar ekranında listelendi')
+    nc = len(st()['cards'])
+    page.click('.qnote button:has-text("Karta çevir")'); page.wait_for_timeout(200)
+    page.click('.qnote button:has-text("Hepsini karta ekle (2)")'); page.wait_for_timeout(600)
+    s = st()
+    check(len(s['cards']) == nc + 2 and any(c.get('word') == 'whereas' and c.get('tr') == 'oysa' for c in s['cards'].values()), 'toplu karta çevir: 2 kart (kelime - anlam)')
+    page.click('.qnote button:has-text("Düzenle")'); page.fill('.qnote textarea', 'The hydrolysis step is slow'); page.click('.qnote button:has-text("Kaydet")'); page.wait_for_timeout(200)
+    page.click('.qnote button:has-text("Karta çevir")'); page.wait_for_timeout(200)
+    page.click('.qnote .chip.pick:has-text("hydrolysis")'); page.click('.qnote button:has-text("Seçilenleri karta ekle (1)")'); page.wait_for_timeout(500)
+    check(any(c.get('word') == 'hydrolysis' for c in st()['cards'].values()), 'kelime seçip karta çevir')
+    page.click('.qnote button:has-text("Tamamlandı")'); page.wait_for_timeout(200)
+    check(page.locator('.qnote').count() == 0 and any(n.get('done') for n in st()['notes'].values() if n.get('kind') == 'quick'), 'Tamamlandı → Açık listesinden çıktı')
+    page.click('.seg button:has-text("Hepsi")'); page.fill('input[type=search]', 'hydro'); page.wait_for_timeout(200)
+    check(page.locator('.qnote').count() == 1, 'notlarda ara')
+    page.screenshot(path=f'{SHOTS}/m-notlar.png', full_page=True)
+
+    # 5) Soru ekranında kelimeye dokun → panel; şık satırı = seç; şıktaki kelimeye uzun bas = panel
+    page.goto(BASE + '#/gramer/konu/kelime'); page.wait_for_timeout(500)
+    if page.locator('button:has-text("Baştan başla")').count(): page.click('button:has-text("Baştan başla")'); page.wait_for_timeout(200)
+    page.locator('.q .w').nth(1).click(); page.wait_for_timeout(600)
+    check(page.locator('#wordSheet:not(.hidden)').count() == 1, 'soru kökünde kelimeye dokun → kelime paneli')
+    check(page.locator('.opt.right, .opt.wrong').count() == 0, 'dokunmak cevap seçmedi')
+    page.click('#wordSheet .icon-x'); page.wait_for_timeout(150)
+    bb = page.locator('.opt .w').first.bounding_box()
+    page.mouse.move(bb['x'] + 3, bb['y'] + 4); page.mouse.down(); page.wait_for_timeout(650); page.mouse.up(); page.wait_for_timeout(500)
+    check(page.locator('#wordSheet:not(.hidden)').count() == 1 and page.locator('.opt.right, .opt.wrong').count() == 0, 'şıkta uzun bas → kelime paneli, cevap seçilmedi')
+    page.screenshot(path=f'{SHOTS}/m-soru-kelime.png')
+    page.click('#wordSheet .icon-x'); page.wait_for_timeout(150)
+    page.locator('.opt').nth(0).locator('.ol').click(); page.wait_for_timeout(300)
+    check(page.locator('.opt.right').count() == 1, 'şık harfine dokun → seçildi')
+    page.locator('.q .w').nth(1).click(); page.wait_for_timeout(600)
+    ctxv = page.locator('#wordSheet textarea').input_value()
+    check('----' not in ctxv and len(ctxv) > 10, f'cevaptan sonra bağlam boşluk doldurulmuş: "{ctxv[:60]}"')
+    page.locator('.opt .w').first.click(); page.wait_for_timeout(500)
+    check(page.locator('#wordSheet:not(.hidden)').count() == 1, 'cevaptan sonra şıktaki kelimeye dokun → panel')
+    page.click('#wordSheet .icon-x')
+
+    # 6) Merdiven: "Tekrar" → ladder; çift dokunuş tek kayıt
+    ev("""import('./js/store.js').then(m => { const now = Date.now();
+      m.put('cards', { id: 'lad1', word: 'scarcity', tr: 'kıtlık', syn: ['shortage', 'lack'], ex: 'The scarcity of water limits growth.', state: 'review', interval: 10, ease: 2.5, reps: 3, due: now - 1000, hist: ['g','g','g'] });
+      for (const [i, w] of ['abundant','robust','feasible','viable','inherent'].entries()) m.put('cards', { id: 'lr' + i, word: w, tr: 'x' + i, syn: [['plentiful'],['sturdy'],['practicable'],['workable'],['intrinsic']][i], state: 'review', interval: 3, ease: 2.5, reps: 2, due: now + 2 * 86400000, hist: ['g'] }); })""")
+    page.goto(BASE + '#/kartlar/calis'); page.wait_for_timeout(600)
+    for k in range(40):
+        if page.locator('.fword').count() == 0: break
+        if page.locator('.fword').inner_text().startswith('scarcity'): break
+        page.click('button:has-text("Göster")'); page.click('.g-good'); page.wait_for_timeout(60)
+    check(page.locator('.fword .say').count() in (0, 1), 'kart ön yüzü: hoparlör ikonu (destek varsa)')
+    page.click('button:has-text("Göster")'); page.wait_for_timeout(100)
+    page.locator('.g-again').dblclick(); page.wait_for_timeout(300)
+    c = st()['cards']['lad1']
+    check(c.get('ladder') == 0 and c.get('reps') == 4, f'Tekrar → merdiven (ladder=0), çift dokunuş tek kayıt (reps {c.get("reps")})')
+    page.screenshot(path=f'{SHOTS}/m-kart-merdiven.png')
+
+    # 6) Alıştırmalar: yazarak, eş anlam, kelime ailesi, hafıza turu
+    page.goto(BASE + '#/kartlar'); page.wait_for_timeout(500)
+    check('Alıştırmalar' in page.inner_text('main') and page.locator('a[href="#/kartlar/yaz"]').count() == 1, 'Kartlar: Alıştırmalar bölümü')
+    page.screenshot(path=f'{SHOTS}/m-kartlar-alistirmalar.png', full_page=True)
+    page.goto(BASE + '#/kartlar/yaz'); page.wait_for_timeout(600)
+    check(page.locator('.typein').count() == 1, 'yazarak hatırla: giriş kutusu')
+    page.click('button:has-text("İpucu")')
+    check(len(page.locator('.typein').input_value()) == 1, 'ipucu: ilk harf')
+    page.screenshot(path=f'{SHOTS}/m-yazarak.png')
+    tr_shown = page.inner_text('.typecard .ftr')
+    cards_now = st()['cards']
+    target = next((c for c in cards_now.values() if c.get('tr') == tr_shown and not c.get('deleted')), None)
+    page.fill('.typein', 'zzzz'); page.click('button:has-text("Kontrol")'); page.wait_for_timeout(300)
+    c2 = st()['cards'].get(target['id']) if target else None
+    check(page.locator('.typein.wrong').count() == 1 and c2 and c2.get('wrongDay') and c2['due'] <= ev('Date.now()'), 'yanlış yazım → kart bugüne (wrongDay)')
+    page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(300)
+    if page.locator('.typecard').count():
+        tr2 = page.inner_text('.typecard .ftr')
+        t2 = next((c for c in st()['cards'].values() if c.get('tr') == tr2), None)
+        if t2:
+            w = t2['word']; typo = w[:-1] + ('x' if w[-1] != 'x' else 'y') if len(w) >= 5 else w
+            page.fill('.typein', typo); page.press('.typein', 'Enter'); page.wait_for_timeout(200)
+            check(page.locator('.typein.right').count() == 1, f'küçük yazım hatası kabul ({typo} ~ {w})')
+    page.goto(BASE + '#/kartlar/es'); page.wait_for_timeout(600)
+    check(page.locator('.opt').count() == 5 and 'Anlamca en yakın' in page.inner_text('.q'), 'eş anlam: 5 şık')
+    page.screenshot(path=f'{SHOTS}/m-es-anlam.png')
+    page.goto(BASE + '#/kartlar/aile'); page.wait_for_timeout(600)
+    txt = page.inner_text('main')
+    check(page.locator('.opt').count() >= 3 or 'aile' in txt.lower(), 'kelime ailesi: soru ya da boş durum mesajı')
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(500)
+    check('Hafıza turu' in page.inner_text('main'), 'Bugün: Hafıza turu görevi')
+    page.click('a[href="#/kartlar/hafiza"]'); page.wait_for_timeout(700)
+    check(page.locator('.typein, .opt').count() >= 1, 'hafıza turu açıldı')
+    page.screenshot(path=f'{SHOTS}/m-hafiza-turu.png')
+
+    # 7) Aktif okuma: paragraf sonu ana fikir kutusu → nota düşer
+    page.goto(BASE + '#/okuma/p/p001'); page.wait_for_timeout(700)
+    ideas = page.locator('.reader details.idea')
+    check(ideas.count() >= 2, f'her paragraf sonunda "Ana fikir?" ({ideas.count()})')
+    ideas.first.locator('summary').click()
+    ideas.first.locator('textarea').fill('Malzeme ısınınca genleşir.')
+    ideas.first.locator('button:has-text("Kaydet")').click(); page.wait_for_timeout(300)
+    check(any(n.get('ctx', {}).get('para') == 0 and n.get('text') == 'Malzeme ısınınca genleşir.' for n in st()['notes'].values() if n.get('kind') == 'quick'), 'ana fikir notlara düştü (paragraf bağlamı)')
+    page.click('#noteFab'); page.wait_for_timeout(200)
+    check('Okuma' in page.inner_text('#noteSheet'), 'okumada not bağlamı: parça')
+    page.click('#noteSheet .icon-x')
+    page.screenshot(path=f'{SHOTS}/m-aktif-okuma.png', full_page=True)
+
+    # 7) Odak oturumu → mola ekranı, dakikalar gün kaydına
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(400)
+    page.click('button.focus-start'); page.wait_for_timeout(400)
+    check(page.locator('#focusPill:not(.hidden)').count() == 1 and 'Odak' in page.inner_text('#focusPill'), 'odak sayacı başladı')
+    ev("(() => { const s = JSON.parse(localStorage.getItem('yokdil.focus')); s.startedAt -= 26 * 60000; s.endsAt -= 26 * 60000; localStorage.setItem('yokdil.focus', JSON.stringify(s)); })()")
+    page.reload(); page.wait_for_timeout(1500)
+    check(page.locator('.breakscreen').count() == 1 and page.locator('.brk-tip').inner_text() != '', 'mola ekranı + öneri')
+    page.screenshot(path=f'{SHOTS}/m-mola.png')
+    d = [x for x in st()['days'].values() if x.get('focusMin')]
+    check(d and d[0]['focusMin'] == 25, f'odak dakikaları gün kaydında ({d[0]["focusMin"] if d else 0})')
+    page.click('.breakscreen button:has-text("Bitir")'); page.wait_for_timeout(300)
+    check(page.locator('.breakscreen').count() == 0, 'mola bitir')
+    page.goto(BASE + '#/eksikler'); page.wait_for_timeout(400)
+    check('Odak: son 7 günde 25 dk' in page.inner_text('main'), 'Eksikler: odak dakikaları')
+
+    # Boş veri: dersler/gramer yüklenemezse kısa mesaj
+    ctx.route('**/data/lessons.json', lambda r: r.abort())
+    ctx.route('**/data/dev-sample/lessons.json', lambda r: r.abort())
+    page.reload(); page.wait_for_timeout(600)
+    page.goto(BASE + '#/dersler'); page.wait_for_timeout(500)
+    check('yüklenemedi' in page.inner_text('main') and page.locator('main button:has-text("Yenile")').count() == 1, 'boş Dersler: ne yapacağını söyleyen mesaj')
+    ctx.close()
+
+    # İçerik güncelleme migration: düzenlenmemiş çekirdek kart tazelenir, SRS korunur
+    ctx, page = v4ctx({'width': 390, 'height': 844}, True, 'v4-migr', hour=10)
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
+    w0 = page.evaluate("fetch('data/words.json').then(r => r.json()).then(ws => ws[0])")
+    page.evaluate(f"""import('./js/store.js').then(m => {{
+      m.put('cards', {{ id: 'w:{w0['id']}', wid: '{w0['id']}', word: {json.dumps(w0['word'])}, tr: 'ESKI', syn: [], state: 'review', interval: 7, due: 4242, ease: 2.2, hist: ['g'] }});
+      m.put('cards', {{ id: 'w:keep', wid: '{w0['id']}x', word: 'keepme', tr: 'benim', userEdited: true, state: 'new' }});
+      localStorage.removeItem('yokdil.dataRev'); }})""")
+    page.wait_for_timeout(400); page.reload(); page.wait_for_timeout(900)
+    s = page.evaluate("JSON.parse(localStorage.getItem('yokdil.v1'))")
+    c = s['cards']['w:' + w0['id']]
+    check(c['tr'] == w0['tr'] and c['due'] == 4242 and c['interval'] == 7 and c['ease'] == 2.2, f'migration: anlam tazelendi ({c["tr"]}), SRS korundu')
+    check(s['cards']['w:keep']['tr'] == 'benim', 'migration: elle düzenlenen karta dokunulmadı')
+    ctx.close()
+
+    # Akşam ipucu (17:00 sonrası, günde bir) + masaüstü yan panel ve menü
+    ctx, page = v4ctx({'width': 1280, 'height': 860}, False, 'v4-masaustu', hour=19)
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(800)
+    check(page.locator('.evetip').count() == 1 and 'kahve' in page.inner_text('.evetip'), 'akşam ipucu gösterildi')
+    page.screenshot(path=f'{SHOTS}/d-bugun-aksam.png')
+    page.reload(); page.wait_for_timeout(700)
+    check(page.locator('.evetip').count() == 0, 'akşam ipucu günde bir kez')
+    side = [page.locator('nav.tabs a:visible').nth(i).inner_text() for i in range(page.locator('nav.tabs a:visible').count())]
+    check(side == ['Bugün', 'Okuma', 'Kartlar', 'Sorular', 'Dersler', 'Eksikler', 'Notlar'], f'masaüstü yan menü: {side}')
+    page.goto(BASE + '#/alistirma/bosluk'); page.wait_for_timeout(700)
+    page.click('.qhead .lesson-btn'); page.wait_for_timeout(500)
+    pb = page.locator('#sidePanel').bounding_box(); ob = page.locator('.opts').bounding_box()
+    check(pb and ob and ob['x'] + ob['width'] <= pb['x'] + 1, 'masaüstü: ders sağ panelde, sorular solda açık')
+    page.locator('.opt').nth(0).click(); page.wait_for_timeout(200)
+    check(page.locator('#sidePanel:not(.hidden)').count() == 1 and page.locator('.opt.right').count() == 1, 'panel açıkken soru cevaplanabiliyor')
+    page.screenshot(path=f'{SHOTS}/d-ders-yan-panel.png')
+    for r in ['bugun', 'kartlar', 'notlar', 'cikmis', 'dersler', 'okuma/p/p001', 'eksikler']:
+        page.goto(BASE + '#/' + r); page.wait_for_timeout(450)
+        page.screenshot(path=f'{SHOTS}/d-{r.replace("/", "_")}.png', full_page=True)
+    # Çıkmış sınav: kalan süre kaydedilir, şıkta uzun bas = kelime paneli
+    page.evaluate("localStorage.setItem('yokdil.token', 'ghp_x')")
+    page.goto(BASE + '#/ayarlar'); page.wait_for_timeout(300)
+    page.click('button:has-text("Soruları güncelle")'); page.wait_for_timeout(2000)
+    page.goto(BASE + '#/cikmis/sinav/yokdil-fen-2019'); page.wait_for_timeout(2600)
+    bb = page.locator('.opt .w').first.bounding_box()
+    page.mouse.move(bb['x'] + 3, bb['y'] + 4); page.mouse.down(); page.wait_for_timeout(650); page.mouse.up(); page.wait_for_timeout(400)
+    check(page.locator('#wordSheet:not(.hidden)').count() == 1 and page.locator('.opt.chosen').count() == 0, 'deneme: şıkta uzun bas → panel, seçim yok')
+    page.click('#wordSheet .icon-x')
+    page.locator('.opt').nth(0).click(); page.wait_for_timeout(200)
+    page.screenshot(path=f'{SHOTS}/d-cikmis-sinav.png')
+    page.goto(BASE + '#/bugun'); page.wait_for_timeout(300)
+    pr = page.evaluate("JSON.parse(localStorage.getItem('yokdil.v1')).progress['exam:yokdil-fen-2019']")
+    check(pr and pr.get('elapsed', 0) >= 1 and pr['answers'].get('1') == 0, f'deneme: geçen süre ve cevap kaydedildi ({pr.get("elapsed") if pr else None} sn)')
+    page.goto(BASE + '#/cikmis/sinav/yokdil-fen-2019'); page.wait_for_timeout(500)
+    check(page.locator('.opt.chosen').count() == 1, 'denemeye dönünce cevap duruyor')
+    ctx.close()
+
+    # Mobil ekran görüntüleri (390x844)
+    ctx, page = v4ctx({'width': 390, 'height': 844}, True, 'v4-shots', hour=10)
+    for r in ['bugun', 'kartlar', 'dersler', 'notlar', 'gramer/gunluk', 'okuma/p/p001']:
+        page.goto(BASE + '#/' + r); page.wait_for_timeout(450)
+        page.screenshot(path=f'{SHOTS}/m-{r.replace("/", "_")}.png', full_page=True)
     ctx.close()
 
     # Service worker kaydı (ayrı bağlam)

@@ -8,6 +8,11 @@ import scan from './scan.js';
 import gap, { gapPool, GAP_MIN } from './gap.js';
 import { tick } from '../plan.js';
 import { enrich } from '../data.js';
+import memory, { EX, counts as exCounts } from './memory.js';
+import { speak, canSpeak } from '../speak.js';
+import { SPK } from '../tappable.js';
+import { inLadder } from '../srs.js';
+import { setCtx } from '../ctx.js';
 
 const SRC = ['Ikigai', 'More to Read', 'Diğer'];
 const POS_TR = { n: 'isim', v: 'fiil', adj: 'sıfat', adv: 'zarf', conj: 'bağlaç', prep: 'edat', phr: 'öbek' };
@@ -26,6 +31,7 @@ export default async function render(root, [mode, id]) {
   if (mode === 'calis') return session(root);
   if (mode === 'tara') return scan(root, tabs(''));
   if (mode === 'bosluk') return gap(root, tabs(''));
+  if (EX[mode]) return memory(root, mode, tabs(''));
   return home(root, mode === 'yeni');
 }
 
@@ -35,6 +41,10 @@ async function home(root, autostart) {
   const nq = (await newQueue()).length;
   const st = stats();
   const gp = gapPool().length;
+  const ec = await exCounts();
+  const exBtn = (k, sub) => ec[k] ? h('a.btn.wide', { href: '#/kartlar/' + k }, h('span', h('b', EX[k]), h('br'), h('span.small.muted', sub)))
+    : h('span.btn.wide.disabled', h('span', h('b', EX[k]), h('br'), h('span.small.muted', 'kart çalıştıkça açılır')));
+  const ladder = store.all('cards').filter(inLadder).length;
   root.append(tabs(''),
     h('div.stats3', h('div', h('b', due), h('span', 'tekrar')), h('div', h('b', nq), h('span', 'yeni (bugün)')),
       h('div', h('b', store.all('cards').length), h('span', 'toplam'))),
@@ -43,7 +53,10 @@ async function home(root, autostart) {
     h('div.row2',
       h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini ele'))),
       gp >= GAP_MIN ? h('a.btn.wide', { href: '#/kartlar/bosluk' }, h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', 'kendi kartlarınla')))
-        : h('span.btn.wide.disabled', h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', `${gp}/${GAP_MIN} kartta açılır`))))
+        : h('span.btn.wide.disabled', h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', `${gp}/${GAP_MIN} kartta açılır`)))),
+    h('h3', 'Alıştırmalar', ladder ? h('span.small.muted', ` · merdivende ${ladder} kart`) : null),
+    h('div.row2', exBtn('yaz', 'anlamdan kelimeyi yaz'), exBtn('es', 'eş anlamlısını bul'), exBtn('aile', 'doğru biçimi seç'), exBtn('hafiza', 'merdiven + bugünkü yanlışlar')),
+    h('a.card.link.small', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ' hızlı notlar, karta çevir'))
   );
 }
 
@@ -88,13 +101,16 @@ async function session(root) {
     const item = queue.shift();
     let card = item.card;
     if (!card) { card = cardFromWord(item.word); }
-    enrich(card.word).then(en => paint(card, en));
+    enrich(card.word).then(en => paint(card, en, !!item.practice));
   };
-  const paint = (card, en) => {
+  const paint = (card, en, practice) => {
+    setCtx({ type: 'kart', key: 'kart:' + card.id, label: 'Kart · ' + card.word });
     const rev = reverseOn && card.state === 'review' && (card.reps || 0) % 2 === 1;
     const front = h('div.flash',
       h('div.small.muted', `${queue.length + 1} kaldı · ${stateTr(card)}`),
-      rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word),
+      rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word,
+        canSpeak() ? h('button.icon-btn.say', { type: 'button', 'aria-label': 'dinle', onclick: e => { e.stopPropagation(); speak(card.word); } }, SPK()) : null),
+      inLadder(card) ? h('span.chip.small.warn', 'merdiven') : null,
       (card.ctx || en?.ex?.[0]?.en) ? h('div.ctx', { lang: 'en', html: rev ? esc(card.ctx || en.ex[0].en).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(card.ctx || en.ex[0].en, card.word) }) : null
     );
     const back = h('div.back.hidden',
@@ -106,27 +122,33 @@ async function session(root) {
       card.note ? h('div.small', card.note) : null,
       h('div.small.muted', [card.source, card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · '))
     );
+    let graded = false;
     const grade = g => {
+      if (graded) return; graded = true; // çift dokunuş = tek kayıt
+      if (practice && g !== 'again') { show(); return; } // "Zor" sonrası oturum içi ek gösterim: takvimi değiştirmez
       if (!store.get('cards', card.id)) store.put('cards', card);
-      const next = review(store.get('cards', card.id) || card, g);
+      const prev = store.get('cards', card.id) || card;
+      const wasLearning = ['new', 'learning'].includes(prev.state || 'new') && !inLadder(prev);
+      const next = review(prev, g);
       done++;
       if (next.due < Date.now() + 20 * 60000) queue.push({ card: next });
+      else if (g === 'hard' && wasLearning) queue.splice(Math.min(3, queue.length), 0, { card: next, practice: true });
       show();
     };
-    const grades = h('div.grades.hidden', GRADES.map(g => h('button.g-' + g, { onclick: () => grade(g) },
-      h('b', GRADE_TR[g]), h('span', previewLabel(card, g)))));
+    const grades = h('div.grades.hidden', (practice ? ['again', 'good'] : GRADES).map(g => h('button.g-' + g, { onclick: () => grade(g) },
+      h('b', practice && g === 'good' ? 'Tamam' : GRADE_TR[g]), h('span', practice && g === 'good' ? 'yarın' : previewLabel(card, g)))));
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
     const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
     const reveal = h('button.btn.primary.wide.big-btn', { onclick: doReveal }, 'Göster');
     const knowBtn = isNew ? h('button.btn.wide.know', { onclick: () => knowIt(card) }, 'Biliyorum, gösterme') : null;
     const hint = h('p.small.muted.center.hidden', '← Tekrar · kaydır · İyi →');
-    const box = h('div.card.flashcard', card.check ? h('span.chip.small.ok', 'haftalık kontrol') : null, front, back);
+    const box = h('div.card.flashcard', card.check ? h('span.chip.small.ok', 'haftalık kontrol') : null, practice ? h('span.chip.small', 'bir kez daha') : null, front, back);
     // Tek el: karta dokun = göster; açıkken sağa = İyi, sola = Tekrar
     unsw = swipe(box, { tap: doReveal, right: () => open && grade('good'), left: () => open && grade('again') });
     keyH = e => {
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doReveal(); }
-      else if (open && '1234'.includes(e.key)) grade(GRADES[+e.key - 1]);
+      else if (open && '1234'.includes(e.key)) grade(practice ? (e.key === '1' ? 'again' : 'good') : GRADES[+e.key - 1]);
       else if (!open && isNew && (e.key === 'k' || e.key === 'K')) knowIt(card);
     };
     root.append(box, reveal, knowBtn, grades, hint);
@@ -230,14 +252,17 @@ function form(root, c) {
     c?.ctx ? h('div.ctx.small', { lang: 'en' }, c.ctx) : null,
     preview,
     h('button.btn.primary.wide', {
-      onclick: () => {
+      onclick: e => {
+        const b = e.currentTarget; if (b.dataset.busy) return; b.dataset.busy = 1; setTimeout(() => delete b.dataset.busy, 600);
         const w = word.value.trim(); if (!w) return toast('Kelime boş');
         const dup = !c && store.all('cards').find(x => (x.word || '').toLowerCase() === w.toLowerCase());
         if (dup) { toast('Bu kelime zaten var'); location.hash = '#/kartlar/duzenle/' + encodeURIComponent(dup.id); return; }
         store.put('cards', {
           ...(c || { id: uid('c'), state: 'new', createdAt: Date.now() }),
           word: w, tr: tr.value.trim(), syn: syn.value.split(',').map(s => s.trim()).filter(Boolean),
-          coll: coll.value.trim(), note: note.value.trim(), source: src.value, page: page.value.trim()
+          coll: coll.value.trim(), note: note.value.trim(), source: src.value, page: page.value.trim(),
+          ...(c && (c.userEdited || tr.value.trim() !== (c.tr || '') || syn.value.split(',').map(s => s.trim()).filter(Boolean).join(',') !== (c.syn || []).join(',')
+            || note.value.trim() !== (c.note || '') || coll.value.trim() !== (c.coll || '')) ? { userEdited: true } : {})
         });
         toast(c ? 'Kaydedildi' : 'Eklendi');
         if (c) location.hash = '#/kartlar/liste'; else { word.value = tr.value = syn.value = coll.value = note.value = ''; word.focus(); }

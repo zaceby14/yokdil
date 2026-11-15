@@ -6,7 +6,7 @@ import { week } from '../plan.js';
 import { answer, dueMistakes } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
 import { dItem, gItem, pItem } from '../qbank.js';
-import { soruTabs, lessonLink } from './hub.js';
+import { soruTabs, lessonLink, emptyData } from './hub.js';
 
 // Tip → tüm öğe anahtarları
 async function bank() {
@@ -30,6 +30,7 @@ export default async function render(root, [type]) {
   root.append(
     soruTabs('alistirma'),
     h('h2', 'Alıştırma'),
+    Object.keys(b).length ? null : emptyData(),
     due ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata kutusu · ${due} bekliyor`) : null,
     h('ul.list', Object.entries(TYPES).filter(([k]) => k !== 'diyalog').map(([k, v]) => {
       const items = b[k] || [];
@@ -63,9 +64,9 @@ function session(root, type, items, seen) {
   }
   const el = h('div');
   root.append(h('a.btn.small', { href: '#/alistirma' }, '‹ Alıştırma'), h('h2', TYPES[type] || type), el);
-  if (!pick.length) { el.append(h('p.muted', 'Soru yok')); return; }
+  if (!pick.length) { el.append(emptyData()); return; }
   runQuiz(el, pick.map(i => i.make()), {
-    extra: lessonLink,
+    extra: lessonLink, sid: 'alistirma:' + type, name: TYPES[type] || type, source: 'Alıştırma',
     onAnswer: (it, ok) => answer(it.key, ok, it.info),
     onEnd: (_, box) => box.append(h('a.btn.wide', { href: '#/alistirma/' + type, onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Devam'))
   });
