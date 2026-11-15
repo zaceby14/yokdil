@@ -1,0 +1,172 @@
+[
+ {
+  "id": "g0001",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the technique is relatively new, its basic idea dates back to the 1950s.",
+  "options": [
+   "Because",
+   "Although",
+   "Unless",
+   "Once",
+   "So that"
+  ],
+  "answer": 1,
+  "explain": "Yeni ↔ eski zıtlığı: Although.",
+  "tip": "Zıtlık kutbu ara."
+ },
+ {
+  "id": "g0002",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Some metals expand greatly when heated, ---- others hardly change in size.",
+  "options": [
+   "whereas",
+   "because",
+   "so that",
+   "unless",
+   "as if"
+  ],
+  "answer": 0,
+  "explain": "İki grup karşılaştırılıyor: whereas.",
+  "tip": "İki taraf zıtsa whereas/while."
+ },
+ {
+  "id": "g0003",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Engineers added a cooling unit ---- prevent the motor from overheating.",
+  "options": [
+   "so as",
+   "in order to",
+   "due to",
+   "because of",
+   "with a view"
+  ],
+  "answer": 1,
+  "explain": "Amaç + fiil yalın: in order to.",
+  "tip": "to V gelirse in order to."
+ },
+ {
+  "id": "g0004",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The team changed the design with a view to ---- the weight of the frame.",
+  "options": [
+   "reduce",
+   "reduced",
+   "reducing",
+   "be reduced",
+   "have reduced"
+  ],
+  "answer": 2,
+  "explain": "with a view to + Ving.",
+  "tip": "to edat ise Ving gelir."
+ },
+ {
+  "id": "g0005",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Water boils ---- a lower temperature at high altitudes.",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "by",
+   "with"
+  ],
+  "answer": 2,
+  "explain": "at a temperature/rate/level.",
+  "tip": "Sıcaklık, hız, seviye: at."
+ },
+ {
+  "id": "g0006",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Poor maintenance can lead ---- serious failures in the system.",
+  "options": [
+   "for",
+   "to",
+   "with",
+   "on",
+   "from"
+  ],
+  "answer": 1,
+  "explain": "lead to + isim.",
+  "tip": "lead to kalıbı."
+ },
+ {
+  "id": "g0007",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The sample, ---- was stored at -20 °C, showed no change.",
+  "options": [
+   "that",
+   "what",
+   "which",
+   "whom",
+   "where"
+  ],
+  "answer": 2,
+  "explain": "Virgülden sonra that olmaz: which.",
+  "tip": "Virgül varsa that eleme."
+ },
+ {
+  "id": "g0008",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Building a new line would mean ---- the old furnace for two months.",
+  "options": [
+   "to stop",
+   "stopping",
+   "stop",
+   "stopped",
+   "to be stopped"
+  ],
+  "answer": 1,
+  "explain": "mean + Ving = gerektirmek.",
+  "tip": "mean to V = niyet etmek."
+ },
+ {
+  "id": "g0009",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the pump nor the valve was responsible for the leak.",
+  "options": [
+   "Either",
+   "Both",
+   "Neither",
+   "Not only",
+   "Whether"
+  ],
+  "answer": 2,
+  "explain": "nor ile Neither eşleşir.",
+  "tip": "nor görürsen neither."
+ },
+ {
+  "id": "g0010",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The results ---- in a leading journal next month.",
+  "options": [
+   "publish",
+   "will be published",
+   "have published",
+   "are publishing",
+   "published"
+  ],
+  "answer": 1,
+  "explain": "Gelecek + edilgen.",
+  "tip": "Özne eylemi yapmıyorsa passive."
+ }
+]

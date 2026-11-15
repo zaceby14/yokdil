@@ -1,0 +1,160 @@
+[
+ {
+  "id": "w0001",
+  "word": "efficacy",
+  "pos": "n",
+  "tr": "etkinlik, etki gücü",
+  "syn": [
+   "effectiveness",
+   "potency"
+  ],
+  "coll": "the efficacy of a treatment",
+  "ex": "Trials tested the efficacy of the new vaccine.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0002",
+  "word": "yield",
+  "pos": "v",
+  "tr": "vermek, üretmek; sonuç vermek",
+  "syn": [
+   "produce",
+   "generate"
+  ],
+  "coll": "yield results",
+  "ex": "The new method yielded more accurate data.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0003",
+  "word": "abundant",
+  "pos": "adj",
+  "tr": "bol, çok miktarda",
+  "syn": [
+   "plentiful",
+   "ample"
+  ],
+  "coll": "abundant resources",
+  "ex": "Iron is abundant in the Earth's crust.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0004",
+  "word": "deteriorate",
+  "pos": "v",
+  "tr": "kötüleşmek, bozulmak",
+  "syn": [
+   "worsen",
+   "decline"
+  ],
+  "coll": "deteriorate rapidly",
+  "ex": "Steel deteriorates quickly in salty air.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0005",
+  "word": "emit",
+  "pos": "v",
+  "tr": "yaymak, salmak",
+  "syn": [
+   "release",
+   "give off"
+  ],
+  "coll": "emit radiation/gas",
+  "ex": "Old engines emit more carbon dioxide.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0006",
+  "word": "subsequent",
+  "pos": "adj",
+  "tr": "sonraki, takip eden",
+  "syn": [
+   "following",
+   "later"
+  ],
+  "coll": "subsequent studies",
+  "ex": "Subsequent tests confirmed the result.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0007",
+  "word": "inevitable",
+  "pos": "adj",
+  "tr": "kaçınılmaz",
+  "syn": [
+   "unavoidable"
+  ],
+  "coll": "almost inevitable",
+  "ex": "Some heat loss is inevitable in any engine.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0008",
+  "word": "lead to",
+  "pos": "phr",
+  "tr": "yol açmak",
+  "syn": [
+   "result in",
+   "cause"
+  ],
+  "coll": "lead to + noun",
+  "ex": "High pressure can lead to cracks in the pipe.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0009",
+  "word": "thereby",
+  "pos": "adv",
+  "tr": "böylece, bu suretle",
+  "syn": [
+   "thus",
+   "hence"
+  ],
+  "coll": "thereby reducing",
+  "ex": "The coating blocks oxygen, thereby reducing rust.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w0010",
+  "word": "whereas",
+  "pos": "conj",
+  "tr": "oysa, -iken",
+  "syn": [
+   "while"
+  ],
+  "coll": "",
+  "ex": "Copper conducts heat well, whereas glass does not.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ }
+]

@@ -1,0 +1,1589 @@
+{
+ "cards": [
+  {
+   "word": "frequently",
+   "tr": "sık sık, genellikle",
+   "syn": [
+    "commonly",
+    "generally"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "throughout",
+   "tr": "tüm, boyunca",
+   "syn": [
+    "all over",
+    "across"
+   ],
+   "note": "",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "furthermore",
+   "tr": "ayrıca, üstelik",
+   "syn": [
+    "in addition",
+    "besides",
+    "moreover",
+    "additionally"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "virtually",
+   "tr": "neredeyse, hemen hemen",
+   "syn": [
+    "approximately",
+    "nearly",
+    "almost"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "even so",
+   "tr": "yine de, buna rağmen",
+   "syn": [
+    "but",
+    "yet",
+    "nonetheless",
+    "nevertheless"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "humble",
+   "tr": "alçakgönüllü, mütevazı",
+   "syn": [
+    "modest",
+    "ordinary"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "disguise",
+   "tr": "gizlemek, kılık değiştirmek",
+   "syn": [
+    "hide",
+    "veil",
+    "cover up",
+    "conceal"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "indeed",
+   "tr": "gerçekten, aslında",
+   "syn": [
+    "actually",
+    "in fact",
+    "as a matter of fact",
+    "as such"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "find worthwhile",
+   "tr": "değerli bulmak, takdir etmek",
+   "syn": [
+    "value",
+    "appreciate"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "endure",
+   "tr": "dayanmak, varlığını sürdürmek",
+   "syn": [
+    "survive",
+    "exist"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "awareness",
+   "tr": "farkındalık, bilinç",
+   "syn": [
+    "knowledge",
+    "apprehension"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "seek",
+   "tr": "aramak, peşinde olmak",
+   "syn": [
+    "look for",
+    "search for"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "inject",
+   "tr": "aşılamak, enjekte etmek",
+   "syn": [
+    "insert",
+    "put in",
+    "introduce"
+   ],
+   "note": "",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "ethos",
+   "tr": "zihniyet, ahlaki anlayış",
+   "syn": [
+    "ideology",
+    "mentality"
+   ],
+   "note": "",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "incontrovertible",
+   "tr": "tartışılmaz, su götürmez",
+   "syn": [
+    "irrefutable",
+    "accurate",
+    "certain"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "associated with",
+   "tr": "ile ilişkili, bağlantılı",
+   "syn": [
+    "affiliated with",
+    "refer to"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "influence",
+   "tr": "etki; etkilemek",
+   "syn": [
+    "impact",
+    "effect"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 30.03.2026"
+  },
+  {
+   "word": "utilize",
+   "tr": "kullanmak",
+   "syn": [
+    "make use of",
+    "take advantage of"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "treat",
+   "tr": "tedavi etmek",
+   "syn": [
+    "cure",
+    "medicate"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "fatten",
+   "tr": "yağlandırmak, şişmanlatmak",
+   "syn": [
+    "plump out",
+    "fill out"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "prevent",
+   "tr": "engellemek, önlemek",
+   "syn": [
+    "hamper",
+    "hinder"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "though",
+   "tr": "-e rağmen",
+   "syn": [
+    "even though",
+    "although"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "appropriate",
+   "tr": "uygun, düzgün",
+   "syn": [
+    "convenient",
+    "decent",
+    "proper"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "inadvertently",
+   "tr": "kasıtsız olarak, istemeden",
+   "syn": [
+    "unknowingly",
+    "recklessly"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "lead to",
+   "tr": "-e yol açmak",
+   "syn": [
+    "bring about",
+    "bring on",
+    "give rise to",
+    "result in",
+    "trigger",
+    "contribute to"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "scatter",
+   "tr": "yaymak, saçmak; yayılma",
+   "syn": [
+    "disperse",
+    "spread"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "disaster",
+   "tr": "felaket",
+   "syn": [
+    "calamity",
+    "catastrophe"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "treatment",
+   "tr": "tedavi",
+   "syn": [
+    "medication",
+    "therapy"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "happen to",
+   "tr": "tesadüfen meydana gelmek",
+   "syn": [
+    "occur",
+    "take place by chance"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "resist",
+   "tr": "direnç göstermek",
+   "syn": [
+    "defy",
+    "oppose"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "literally",
+   "tr": "tam olarak, kelimenin tam anlamıyla",
+   "syn": [
+    "precisely",
+    "exactly"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "eventually",
+   "tr": "sonunda",
+   "syn": [
+    "at last",
+    "in the end"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "cease",
+   "tr": "durdurmak, sona ermek",
+   "syn": [
+    "end",
+    "terminate"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "enforce",
+   "tr": "uygulamak, yürürlüğe koymak",
+   "syn": [
+    "implement",
+    "impose"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "husbandry",
+   "tr": "çiftçilik, tarım (hayvancılık)",
+   "syn": [
+    "agriculture",
+    "farming"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "offset",
+   "tr": "dengelemek, telafi etmek",
+   "syn": [
+    "compensate",
+    "cancel out"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "initial",
+   "tr": "ilk, başta olan",
+   "syn": [
+    "first",
+    "original"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "massive",
+   "tr": "devasa, büyük miktar",
+   "syn": [
+    "huge",
+    "enormous",
+    "vast"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "sum",
+   "tr": "miktar, toplam",
+   "syn": [
+    "amount",
+    "total"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "struggling",
+   "tr": "çabalayan, mücadele eden",
+   "syn": [
+    "striving",
+    "endeavouring"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "explicit",
+   "tr": "açık, net",
+   "syn": [
+    "clear",
+    "distinct",
+    "precise"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "attempt",
+   "tr": "teşebbüs, girişim",
+   "syn": [
+    "effort",
+    "endeavour"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "prosperity",
+   "tr": "zenginlik, refah",
+   "syn": [
+    "affluence",
+    "wealth",
+    "fortune"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "implement",
+   "tr": "uygulamak",
+   "syn": [
+    "carry out",
+    "perform",
+    "execute"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "capitulate",
+   "tr": "teslim olmak, silahları bırakmak",
+   "syn": [
+    "give up",
+    "yield",
+    "surrender"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "precipitate",
+   "tr": "hızlandırmak, zemin hazırlamak",
+   "syn": [
+    "speed up",
+    "hasten",
+    "accelerate"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "rear",
+   "tr": "kaldırmak, şahlanmak; yetiştirmek",
+   "syn": [
+    "rise up",
+    "erect"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "treasury",
+   "tr": "hazine",
+   "syn": [
+    "resource",
+    "fund"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "agricultural",
+   "tr": "tarımsal",
+   "syn": [
+    "related to farming",
+    "farming"
+   ],
+   "note": "",
+   "source": "Notlarım 11.04.2026"
+  },
+  {
+   "word": "go bankrupt",
+   "tr": "iflas etmek",
+   "syn": [
+    "go out of business",
+    "fail"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "lay off",
+   "tr": "işten çıkarmak",
+   "syn": [
+    "make redundant",
+    "sack",
+    "fire"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "turmoil",
+   "tr": "karmaşa, kargaşa",
+   "syn": [
+    "upheaval",
+    "riot",
+    "uprising",
+    "rebellion"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "drastic",
+   "tr": "sert, katı, şiddetli",
+   "syn": [
+    "tough",
+    "severe",
+    "potent"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "interruption",
+   "tr": "kesinti",
+   "syn": [
+    "disruption",
+    "interference",
+    "disturbance"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "vital",
+   "tr": "hayati, çok önemli",
+   "syn": [
+    "key",
+    "crucial",
+    "critical",
+    "significant"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "finite",
+   "tr": "sınırlı",
+   "syn": [
+    "limited",
+    "bounded",
+    "restricted"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "sparse",
+   "tr": "az, seyrek",
+   "syn": [
+    "few",
+    "meagre",
+    "scarce"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "means",
+   "tr": "araç, yol",
+   "syn": [
+    "tool",
+    "instrument",
+    "way",
+    "medium"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "credit",
+   "tr": "inanmak; atfetmek",
+   "syn": [
+    "believe",
+    "trust",
+    "ascribe",
+    "attribute"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "trial",
+   "tr": "deneme, test",
+   "syn": [
+    "testing",
+    "experiment",
+    "attempt",
+    "endeavour"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "fund",
+   "tr": "finanse etmek, desteklemek",
+   "syn": [
+    "finance",
+    "back",
+    "support",
+    "pay for"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "preliminary",
+   "tr": "ön, başlangıç niteliğinde",
+   "syn": [
+    "first",
+    "initial",
+    "introductory"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "maintain",
+   "tr": "savunmak, ileri sürmek; sürdürmek",
+   "syn": [
+    "defend",
+    "assert",
+    "stand by",
+    "advocate"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "reap",
+   "tr": "elde etmek, (ürün) toplamak",
+   "syn": [
+    "gain",
+    "take advantage of",
+    "utilize"
+   ],
+   "note": "",
+   "source": "Notlarım 19.04.2026"
+  },
+  {
+   "word": "deception",
+   "tr": "aldatma, kandırma",
+   "syn": [
+    "duplicity",
+    "deceit",
+    "fraud",
+    "cheating"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "slight",
+   "tr": "küçük, hafif",
+   "syn": [
+    "small",
+    "little",
+    "minor"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "through",
+   "tr": "aracılığıyla",
+   "syn": [
+    "via",
+    "by",
+    "by means of"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "infrequent",
+   "tr": "nadir, sık olmayan",
+   "syn": [
+    "occasional",
+    "rare",
+    "uncommon"
+   ],
+   "note": "not: notta 'sometimes, at times' yazıyordu; bunlar 'ara sıra' anlamında, eş anlam düzeltildi",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "cue",
+   "tr": "ipucu, sinyal",
+   "syn": [
+    "prompt",
+    "hint",
+    "signal",
+    "sign"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "attribute",
+   "tr": "nitelik, vasıf (isim)",
+   "syn": [
+    "quality",
+    "property",
+    "feature"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "consequence",
+   "tr": "sonuç",
+   "syn": [
+    "effect",
+    "outcome",
+    "result"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "concern",
+   "tr": "kaygı, endişe; ilgi; endişe, mesele; ilgilendirmek",
+   "syn": [
+    "anxiety",
+    "worry",
+    "distress",
+    "issue",
+    "relate to"
+   ],
+   "note": "ayrıca: Notlarım tablo",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "exert",
+   "tr": "(güç/etki) göstermek, kullanmak",
+   "syn": [
+    "use",
+    "utilize",
+    "put to use"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "suppress",
+   "tr": "bastırmak",
+   "syn": [
+    "put down",
+    "inhibit",
+    "keep under control"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "detectable",
+   "tr": "fark edilir, algılanabilir",
+   "syn": [
+    "noticeable",
+    "perceptible"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "rehearsed",
+   "tr": "provası yapılmış",
+   "syn": [
+    "practised",
+    "exercised",
+    "repeated"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "impression",
+   "tr": "izlenim; etki",
+   "syn": [
+    "impact",
+    "effect",
+    "influence"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "demanding",
+   "tr": "zorlu, yorucu",
+   "syn": [
+    "difficult",
+    "hard"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "construct",
+   "tr": "inşa etmek, oluşturmak",
+   "syn": [
+    "build",
+    "erect",
+    "set up"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "convincing",
+   "tr": "ikna edici",
+   "syn": [
+    "persuasive",
+    "influential"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "give off",
+   "tr": "yaymak, salmak",
+   "syn": [
+    "emit",
+    "release",
+    "send out"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "perceive",
+   "tr": "algılamak",
+   "syn": [
+    "make out",
+    "discern",
+    "apprehend",
+    "notice"
+   ],
+   "note": "",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "establish",
+   "tr": "kurmak; kanıtlamak, ortaya koymak",
+   "syn": [
+    "set up",
+    "found",
+    "prove"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 25.04.2026"
+  },
+  {
+   "word": "essential",
+   "tr": "gerekli, temel",
+   "syn": [
+    "necessary",
+    "requisite",
+    "required"
+   ],
+   "note": "",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "carry out",
+   "tr": "yapmak, yerine getirmek",
+   "syn": [
+    "accomplish",
+    "execute",
+    "implement",
+    "fulfil"
+   ],
+   "note": "",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "unconsciously",
+   "tr": "bilinçsizce",
+   "syn": [
+    "insensibly",
+    "unknowingly"
+   ],
+   "note": "",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "bright",
+   "tr": "parlak",
+   "syn": [
+    "light",
+    "shining"
+   ],
+   "note": "",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "determine",
+   "tr": "belirlemek, saptamak",
+   "syn": [
+    "establish",
+    "identify",
+    "ascertain"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "refer to",
+   "tr": "atıfta bulunmak; anlamına gelmek",
+   "syn": [
+    "mention",
+    "denote",
+    "allude to"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "response",
+   "tr": "tepki, yanıt",
+   "syn": [
+    "reaction",
+    "reply",
+    "answer"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "represent",
+   "tr": "temsil etmek; oluşturmak",
+   "syn": [
+    "stand for",
+    "symbolise",
+    "constitute"
+   ],
+   "note": "anlam Claude tarafından eklendi",
+   "source": "Notlarım 26.04.2026"
+  },
+  {
+   "word": "relatively",
+   "tr": "nispeten, oldukça (relative: akraba / göreli)",
+   "syn": [
+    "comparatively",
+    "fairly",
+    "rather"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 29.04.2026"
+  },
+  {
+   "word": "estimate",
+   "tr": "tahmin etmek",
+   "syn": [
+    "gauge",
+    "approximate",
+    "guess",
+    "predict"
+   ],
+   "note": "",
+   "source": "Notlarım 29.04.2026"
+  },
+  {
+   "word": "expenditure",
+   "tr": "harcama",
+   "syn": [
+    "outlay",
+    "spending",
+    "payment",
+    "expense"
+   ],
+   "note": "",
+   "source": "Notlarım 29.04.2026"
+  },
+  {
+   "word": "make use of",
+   "tr": "-den faydalanmak",
+   "syn": [
+    "utilize",
+    "take advantage of"
+   ],
+   "note": "",
+   "source": "Notlarım 29.04.2026"
+  },
+  {
+   "word": "aspect",
+   "tr": "yön, açı",
+   "syn": [
+    "feature",
+    "facet",
+    "dimension"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 29.04.2026"
+  },
+  {
+   "word": "emphasize",
+   "tr": "vurgulamak",
+   "syn": [
+    "highlight",
+    "stress"
+   ],
+   "note": "",
+   "source": "Notlarım 01.05.2026"
+  },
+  {
+   "word": "assert",
+   "tr": "iddia etmek",
+   "syn": [
+    "claim",
+    "put forward"
+   ],
+   "note": "",
+   "source": "Notlarım 01.05.2026"
+  },
+  {
+   "word": "former",
+   "tr": "önceki, eski",
+   "syn": [
+    "previous",
+    "earlier",
+    "prior"
+   ],
+   "note": "",
+   "source": "Notlarım 01.05.2026"
+  },
+  {
+   "word": "remain",
+   "tr": "kalmak",
+   "syn": [
+    "stay",
+    "continue"
+   ],
+   "note": "",
+   "source": "Notlarım 01.05.2026"
+  },
+  {
+   "word": "implication",
+   "tr": "sonuç, anlam, ima",
+   "syn": [
+    "connection",
+    "result",
+    "consequence"
+   ],
+   "note": "",
+   "source": "Notlarım 01.05.2026"
+  },
+  {
+   "word": "diversity",
+   "tr": "çeşitlilik",
+   "syn": [
+    "variety",
+    "range"
+   ],
+   "note": "",
+   "source": "Notlarım 02.05.2026"
+  },
+  {
+   "word": "decline",
+   "tr": "azalma, yok olma",
+   "syn": [
+    "degeneration",
+    "loss",
+    "weakening"
+   ],
+   "note": "",
+   "source": "Notlarım 02.05.2026"
+  },
+  {
+   "word": "extinction",
+   "tr": "soyun tükenmesi",
+   "syn": [
+    "extermination",
+    "dying out"
+   ],
+   "note": "",
+   "source": "Notlarım 02.05.2026"
+  },
+  {
+   "word": "validate",
+   "tr": "onaylamak, doğrulamak",
+   "syn": [
+    "formalize",
+    "confirm",
+    "verify"
+   ],
+   "note": "",
+   "source": "Notlarım 05.05.2026"
+  },
+  {
+   "word": "acknowledge",
+   "tr": "kabul etmek, itiraf etmek",
+   "syn": [
+    "admit",
+    "confess",
+    "allow"
+   ],
+   "note": "",
+   "source": "Notlarım 05.05.2026"
+  },
+  {
+   "word": "claim",
+   "tr": "iddia etmek",
+   "syn": [
+    "assert",
+    "declare"
+   ],
+   "note": "",
+   "source": "Notlarım 05.05.2026"
+  },
+  {
+   "word": "abolish",
+   "tr": "kaldırmak, son vermek",
+   "syn": [
+    "eliminate",
+    "get rid of",
+    "put an end to",
+    "terminate"
+   ],
+   "note": "",
+   "source": "Notlarım 05.05.2026"
+  },
+  {
+   "word": "applicable",
+   "tr": "uygulanabilir, uygun",
+   "syn": [
+    "suitable",
+    "suited",
+    "proper",
+    "appropriate"
+   ],
+   "note": "",
+   "source": "Notlarım 05.05.2026"
+  },
+  {
+   "word": "inevitably",
+   "tr": "kaçınılmaz olarak",
+   "syn": [
+    "unavoidably",
+    "necessarily"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 19.07.2026"
+  },
+  {
+   "word": "external",
+   "tr": "harici, dış",
+   "syn": [
+    "outer",
+    "outside",
+    "exterior"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 19.07.2026"
+  },
+  {
+   "word": "negligence",
+   "tr": "ihmal",
+   "syn": [
+    "carelessness",
+    "neglect"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 19.07.2026"
+  },
+  {
+   "word": "generate",
+   "tr": "üretmek",
+   "syn": [
+    "produce",
+    "create",
+    "yield"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 20.07.2026"
+  },
+  {
+   "word": "come up with",
+   "tr": "bulmak, ortaya atmak",
+   "syn": [
+    "devise",
+    "propose",
+    "think of"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 20.07.2026"
+  },
+  {
+   "word": "conduct",
+   "tr": "yapmak, yürütmek; yürütmek; davranış, idare",
+   "syn": [
+    "carry out",
+    "perform",
+    "behaviour"
+   ],
+   "note": "eş anlam Claude tarafından eklendi; ayrıca: Notlarım tablo",
+   "source": "Notlarım 20.07.2026"
+  },
+  {
+   "word": "release",
+   "tr": "salmak, yaymak",
+   "syn": [
+    "emit",
+    "give off",
+    "discharge"
+   ],
+   "note": "eş anlam Claude tarafından eklendi",
+   "source": "Notlarım 20.07.2026"
+  },
+  {
+   "word": "composed",
+   "tr": "oluşmuş, meydana getirilmiş; sakin",
+   "syn": [
+    "consisted of",
+    "constituted",
+    "calm"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "associate",
+   "tr": "ilişkilendirmek; ortak, meslektaş",
+   "syn": [
+    "connect",
+    "relate",
+    "partner"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "examine",
+   "tr": "incelemek, araştırmak, muayene etmek",
+   "syn": [
+    "investigate",
+    "inspect",
+    "analyze"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "recognize",
+   "tr": "tanımak, farkına varmak, kabul etmek",
+   "syn": [
+    "identify",
+    "realize",
+    "acknowledge"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "lead",
+   "tr": "yol açmak, yönlendirmek; liderlik",
+   "syn": [
+    "cause",
+    "result in",
+    "guide"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "reveal",
+   "tr": "ortaya çıkarmak, açığa vurmak",
+   "syn": [
+    "disclose",
+    "expose",
+    "uncover"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "approach",
+   "tr": "yaklaşmak, ele almak; yaklaşım, yöntem",
+   "syn": [
+    "deal with",
+    "method",
+    "way"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "landed",
+   "tr": "indi, karaya çıktı; inmiş",
+   "syn": [
+    "touched down",
+    "arrived"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "abundant",
+   "tr": "bol, bereketli",
+   "syn": [
+    "plentiful",
+    "ample"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "revolution",
+   "tr": "devrim, köklü değişim",
+   "syn": [
+    "major change",
+    "transformation",
+    "uprising"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "explore",
+   "tr": "keşfetmek, araştırmak",
+   "syn": [
+    "discover",
+    "investigate",
+    "examine"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "re-entry",
+   "tr": "yeniden giriş (atmosfere)",
+   "syn": [
+    "returning",
+    "entering again"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "struggle",
+   "tr": "mücadele etmek, çabalamak; mücadele",
+   "syn": [
+    "strive",
+    "fight",
+    "effort"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "revolve",
+   "tr": "etrafında dönmek",
+   "syn": [
+    "rotate",
+    "orbit",
+    "circle"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "revealed",
+   "tr": "ortaya çıkardı / çıkarılmış",
+   "syn": [
+    "disclosed",
+    "exposed",
+    "uncovered"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "attributed",
+   "tr": "atfedilmiş, bağlanmış",
+   "syn": [
+    "ascribed",
+    "credited",
+    "assigned"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "concluded",
+   "tr": "sonuca vardı, sonuçlandırdı",
+   "syn": [
+    "finished",
+    "determined",
+    "inferred"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "anticipated",
+   "tr": "öngördü, bekledi; beklenen",
+   "syn": [
+    "expected",
+    "predicted",
+    "foreseen"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "contribute",
+   "tr": "katkıda bulunmak, neden olmak",
+   "syn": [
+    "add",
+    "help cause"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "predict",
+   "tr": "tahmin etmek, öngörmek",
+   "syn": [
+    "forecast",
+    "anticipate",
+    "foresee"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "declared",
+   "tr": "ilan etti, açıkladı",
+   "syn": [
+    "announced",
+    "stated",
+    "proclaimed"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "intake",
+   "tr": "alım, tüketim",
+   "syn": [
+    "consumption",
+    "admission",
+    "amount taken in"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "keen",
+   "tr": "istekli, hevesli; keskin",
+   "syn": [
+    "eager",
+    "enthusiastic",
+    "sharp"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  },
+  {
+   "word": "enhance",
+   "tr": "artırmak, geliştirmek",
+   "syn": [
+    "improve",
+    "increase",
+    "strengthen"
+   ],
+   "note": "",
+   "source": "Notlarım tablo"
+  }
+ ],
+ "weakTopics": [
+  "edat-esdizim",
+  "baglac-zitlik",
+  "gerund-infinitive",
+  "either-neither",
+  "relative",
+  "baglac-neden-amac"
+ ],
+ "grammarNotes": [
+  {
+   "topic": "edat-esdizim",
+   "rule": "temperature, rate, speed, level, pressure (+ sayı) → AT. Çeviri yapma, edatı işaretle geç.",
+   "ex": "Water boils at a temperature of 100 °C. / It grows at a rate of 2% a year."
+  },
+  {
+   "topic": "baglac-zitlik",
+   "rule": "Although / while / whereas görünce sadece olumlu-olumsuz değil, ZAMAN zıtlığı da ara: yeni ↔ eski, genç ↔ antik.",
+   "ex": "Although geology is a young science, its roots go back to ancient Greece."
+  },
+  {
+   "topic": "baglac-zitlik",
+   "rule": "While, even though, whereas cümle başında da gelir: 'While X ..., Y ...' = X iken/oysa Y. Virgülden sonra zıt kutbu ara.",
+   "ex": "While coal is cheap, it is highly polluting."
+  },
+  {
+   "topic": "yakin-anlam",
+   "rule": "Restatement: kökteki ana bağlacın karşılığını şıklarda ara (while/although ↔ however, but, yet).",
+   "ex": "While A, B. ≈ A; however, B."
+  },
+  {
+   "topic": "baglac-neden-amac",
+   "rule": "in order to / so as to + V1; with a view to / with the aim of + Ving (to burada edat).",
+   "ex": "in order to reduce costs = with a view to reducing costs"
+  },
+  {
+   "topic": "edat-esdizim",
+   "rule": "lead to + isim / Ving (to edattır, yalın fiil gelmez). Aynı aile: contribute to, give rise to.",
+   "ex": "Stress can lead to losing sleep. / Heat leads to expansion."
+  },
+  {
+   "topic": "gerund-infinitive",
+   "rule": "mean + Ving = anlamına gelmek; mean + to V = niyetinde olmak, kastetmek.",
+   "ex": "Saving energy means using less. / I meant to call you."
+  },
+  {
+   "topic": "gerund-infinitive",
+   "rule": "with + isim + Ving (aktif, eşzamanlı) / with + isim + V3 (pasif). begin/start → to V veya Ving.",
+   "ex": "With prices rising, demand fell. / With the work finished, they left."
+  },
+  {
+   "topic": "either-neither",
+   "rule": "either ... or (ya ... ya da), neither ... nor (ne ... ne de, fiil olumlu), both ... and (çoğul fiil). Fiil yakın özneye uyar.",
+   "ex": "Neither the pump nor the valves were damaged."
+  },
+  {
+   "topic": "relative",
+   "rule": "which ↔ that: virgülden sonra ve edattan sonra THAT kullanılmaz (, which / in which). the only/the first/superlative/all sonrası that tercih edilir.",
+   "ex": "Iron, which rusts, ... / the temperature at which ... / the only metal that ..."
+  },
+  {
+   "topic": "ilgisiz",
+   "rule": "İlgisiz cümle: konu (ör. yangın → sel) ya da kutup (neden kullanılır → eleştirilir) aniden kayıyorsa o cümle atılır.",
+   "ex": "Yangın tahmini anlatılırken 'sel ve kuraklık' cümlesi → ilgisiz."
+  },
+  {
+   "topic": "kelime",
+   "rule": "Kelime öğrenirken yanındaki edatı da yaz (consist of, depend on, resistant to); kelimeleri tür (isim/fiil/sıfat/zarf/bağlaç) gruplarıyla çalış, cümlede kullan.",
+   "ex": "rely on, focus on, attribute A to B"
+  }
+ ],
+ "weakDrills": [
+  "ilgisiz",
+  "yakin-anlam"
+ ]
+}

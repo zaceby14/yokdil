@@ -1,0 +1,191 @@
+{
+ "start": "2026-11-16",
+ "exam": "2027-02-28",
+ "apply": [
+  "2027-01-12",
+  "2027-01-20"
+ ],
+ "weeks": [
+  {
+   "n": 1,
+   "phase": "Temel",
+   "newWords": 15,
+   "grammar": [
+    "baglac-zitlik",
+    "baglac-neden-amac"
+   ],
+   "drills": [],
+   "goal": "Temel gramer + kelime"
+  },
+  {
+   "n": 2,
+   "phase": "Temel",
+   "newWords": 15,
+   "grammar": [
+    "edat-esdizim",
+    "zaman-uyumu"
+   ],
+   "drills": [],
+   "goal": "Temel gramer + kelime"
+  },
+  {
+   "n": 3,
+   "phase": "Temel",
+   "newWords": 15,
+   "grammar": [
+    "relative",
+    "gerund-infinitive"
+   ],
+   "drills": [],
+   "goal": "Temel gramer + kelime"
+  },
+  {
+   "n": 4,
+   "phase": "Temel",
+   "newWords": 15,
+   "grammar": [
+    "passive",
+    "kosul-wish"
+   ],
+   "drills": [],
+   "goal": "Temel gramer + kelime"
+  },
+  {
+   "n": 5,
+   "phase": "Temel",
+   "newWords": 15,
+   "grammar": [
+    "noun-clause",
+    "karsilastirma"
+   ],
+   "drills": [],
+   "goal": "Temel gramer + kelime"
+  },
+  {
+   "n": 6,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "either-neither"
+   ],
+   "drills": [
+    "cloze"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 7,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "quantifier"
+   ],
+   "drills": [
+    "cumle-tamamlama"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 8,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "modal"
+   ],
+   "drills": [
+    "ceviri-en-tr",
+    "ceviri-tr-en"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 9,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "participle"
+   ],
+   "drills": [
+    "paragraf-tamamlama"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 10,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "inversion"
+   ],
+   "drills": [
+    "ilgisiz"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 11,
+   "phase": "Soru tipleri",
+   "newWords": 10,
+   "grammar": [
+    "referans"
+   ],
+   "drills": [
+    "yakin-anlam",
+    "cloze"
+   ],
+   "goal": "Soru tipi çalış"
+  },
+  {
+   "n": 12,
+   "phase": "Deneme",
+   "newWords": 5,
+   "grammar": [],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ilgisiz",
+    "paragraf-tamamlama"
+   ],
+   "goal": "Hafta sonu tam deneme"
+  },
+  {
+   "n": 13,
+   "phase": "Deneme",
+   "newWords": 5,
+   "grammar": [],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ilgisiz",
+    "paragraf-tamamlama"
+   ],
+   "goal": "Hafta sonu tam deneme"
+  },
+  {
+   "n": 14,
+   "phase": "Deneme",
+   "newWords": 5,
+   "grammar": [],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ilgisiz",
+    "paragraf-tamamlama"
+   ],
+   "goal": "Hafta sonu tam deneme"
+  },
+  {
+   "n": 15,
+   "phase": "Deneme",
+   "newWords": 5,
+   "grammar": [],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ilgisiz",
+    "paragraf-tamamlama"
+   ],
+   "goal": "Hafta sonu tam deneme"
+  }
+ ]
+}

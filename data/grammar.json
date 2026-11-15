@@ -1,0 +1,4915 @@
+[
+ {
+  "id": "g0001",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 1,
+  "q": "---- quantum computing is still a young discipline, its mathematical roots go back more than a century.",
+  "options": [
+   "Because",
+   "Unless",
+   "Once",
+   "So that",
+   "Although"
+  ],
+  "answer": 4,
+  "explain": "Genç ↔ eski zaman zıtlığı var; zıtlık bağlacı Although. Because/So that neden-amaç, Unless koşul.",
+  "tip": "Yeni ↔ eski, az ↔ çok gibi kutup zıtlığını ara."
+ },
+ {
+  "id": "g0002",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Steel is strong and cheap; ----, it rusts quickly when exposed to seawater.",
+  "options": [
+   "therefore",
+   "however",
+   "moreover",
+   "for instance",
+   "likewise"
+  ],
+  "answer": 1,
+  "explain": "Olumlu (güçlü, ucuz) → olumsuz (paslanır) kutup değişimi; however. Therefore sonuç, moreover ekleme.",
+  "tip": "Noktalı virgülden sonra kutup değişiyorsa however/nevertheless."
+ },
+ {
+  "id": "g0003",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 1,
+  "q": "---- its small size, the new sensor can detect gas leaks from a distance of fifty metres.",
+  "options": [
+   "Although",
+   "Because",
+   "Due to",
+   "Despite",
+   "In order to"
+  ],
+  "answer": 3,
+  "explain": "Boşluktan sonra isim öbeği (its small size) var; zıtlık + isim = Despite. Although cümle ister.",
+  "tip": "Ardından isim varsa despite/in spite of; cümle varsa although."
+ },
+ {
+  "id": "g0004",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- older bridges were designed for horse-drawn carts, modern ones must carry heavy lorries.",
+  "options": [
+   "Since",
+   "As long as",
+   "Unless",
+   "Whereas",
+   "So that"
+  ],
+  "answer": 3,
+  "explain": "Eski köprü ↔ modern köprü karşılaştırması; whereas iki tarafı karşılaştırır. Since neden olurdu, anlam bozulur.",
+  "tip": "İki grup karşılaştırılıyorsa whereas/while."
+ },
+ {
+  "id": "g0005",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The first prototype was heavy and noisy, ---- the second one was light and almost silent.",
+  "options": [
+   "because",
+   "while",
+   "so",
+   "unless",
+   "as if"
+  ],
+  "answer": 1,
+  "explain": "Ağır/gürültülü ↔ hafif/sessiz: iki prototip karşılaştırılıyor; while (oysa).",
+  "tip": "Virgülden sonra zıt özellik varsa while/whereas."
+ },
+ {
+  "id": "g0006",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The results of the trial were encouraging; ----, the researchers warned that the sample size was too small.",
+  "options": [
+   "consequently",
+   "in addition",
+   "nevertheless",
+   "similarly",
+   "namely"
+  ],
+  "answer": 2,
+  "explain": "Olumlu sonuç → uyarı (olumsuz): nevertheless. Consequently sonuç anlamı verir, uyarı sonuç değil.",
+  "tip": "\"Ama yine de\" anlamı → nevertheless/nonetheless."
+ },
+ {
+  "id": "g0007",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- copper is an excellent conductor, it is rarely used for long-distance power lines because of its weight and cost.",
+  "options": [
+   "Since",
+   "Provided that",
+   "Once",
+   "In case",
+   "Even though"
+  ],
+  "answer": 4,
+  "explain": "İletken (olumlu) ↔ nadiren kullanılır (olumsuz): Even though. Since neden kurar, anlam çelişir.",
+  "tip": "Cümle başında zıtlık için even though/although."
+ },
+ {
+  "id": "g0008",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Solar panels produce no emissions while operating; ----, their production requires large amounts of energy.",
+  "options": [
+   "as a result",
+   "on the other hand",
+   "for example",
+   "in other words",
+   "therefore"
+  ],
+  "answer": 1,
+  "explain": "Emisyonsuz (olumlu) ↔ üretim enerji ister (olumsuz): on the other hand. In other words yeniden ifade eder, zıtlık değil.",
+  "tip": "Bir konunun iki yüzü anlatılıyorsa on the other hand."
+ },
+ {
+  "id": "g0009",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The alloy performed well in laboratory tests, ---- it failed within weeks under real operating conditions.",
+  "options": [
+   "so",
+   "for",
+   "yet",
+   "hence",
+   "thus"
+  ],
+  "answer": 2,
+  "explain": "Laboratuvarda iyi ↔ gerçekte başarısız: yet (ama). So/hence/thus sonuç; for (çünkü) neden.",
+  "tip": "Yet = but; kutup değişiminde düşün."
+ },
+ {
+  "id": "g0010",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- the Moon has almost no atmosphere, the Earth is surrounded by a thick layer of gases.",
+  "options": [
+   "Because",
+   "While",
+   "Once",
+   "Unless",
+   "Until"
+  ],
+  "answer": 1,
+  "explain": "Ay atmosfersiz ↔ Dünya kalın atmosfer: karşılaştırma bağlacı While cümle başında da kullanılır.",
+  "tip": "While cümle başında hem 'iken' hem 'oysa' olabilir; anlamdan karar ver."
+ },
+ {
+  "id": "g0011",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 1,
+  "q": "---- heavy rain, the engineers completed the foundation work on schedule.",
+  "options": [
+   "Although",
+   "Even though",
+   "Whereas",
+   "Because",
+   "In spite of"
+  ],
+  "answer": 4,
+  "explain": "Ardından isim (heavy rain) var: In spite of. Although/Even though/Whereas cümle ister.",
+  "tip": "Bağlaç mı edat mı? Önce boşluktan sonrasına bak."
+ },
+ {
+  "id": "g0012",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Diamond is the hardest natural material; ----, graphite, which is also pure carbon, is soft enough to write with.",
+  "options": [
+   "furthermore",
+   "accordingly",
+   "for this reason",
+   "similarly",
+   "by contrast"
+  ],
+  "answer": 4,
+  "explain": "Sert ↔ yumuşak: by contrast. Similarly benzerlik, ters anlam.",
+  "tip": "İki şey zıt özellik gösteriyorsa by contrast/in contrast."
+ },
+ {
+  "id": "g0013",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The theory explains most of the observations, ---- it cannot account for the unusual behaviour of the outer planets.",
+  "options": [
+   "so that",
+   "because",
+   "but",
+   "as",
+   "since"
+  ],
+  "answer": 2,
+  "explain": "Çoğunu açıklar ↔ bazısını açıklayamaz: but. As/since/because neden bildirir.",
+  "tip": "Olumlu → olumsuz geçişte but/yet."
+ },
+ {
+  "id": "g0014",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the virus was identified decades ago, an effective vaccine has only recently become available.",
+  "options": [
+   "Although",
+   "Once",
+   "Because",
+   "If",
+   "So that"
+  ],
+  "answer": 0,
+  "explain": "Onlarca yıl önce ↔ ancak yakın zamanda: zaman zıtlığı, Although. Once 'bir kez -ince' anlamı mantıksız.",
+  "tip": "Eski ↔ yeni zaman zıtlığı da zıtlık bağlacı ister."
+ },
+ {
+  "id": "g0015",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The method is expensive; ----, it remains the most reliable way of detecting cracks inside metal parts.",
+  "options": [
+   "hence",
+   "likewise",
+   "nonetheless",
+   "in short",
+   "thereby"
+  ],
+  "answer": 2,
+  "explain": "Pahalı (olumsuz) ↔ en güvenilir (olumlu): nonetheless. Hence sonuç anlamı yanlış.",
+  "tip": "Olumsuz → olumlu dönüşte de zıtlık bağlacı gerekir."
+ },
+ {
+  "id": "g0016",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Mercury is a metal; ----, unlike most metals, it is liquid at room temperature.",
+  "options": [
+   "therefore",
+   "thus",
+   "however",
+   "as a result",
+   "moreover"
+  ],
+  "answer": 2,
+  "explain": "Metal ama sıvı: beklentiye ters, however. Therefore/thus/as a result sonuç.",
+  "tip": "Beklentiye ters bilgi = zıtlık."
+ },
+ {
+  "id": "g0017",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Some bacteria are harmful, ---- many others are essential for digestion.",
+  "options": [
+   "because",
+   "whereas",
+   "if",
+   "so",
+   "unless"
+  ],
+  "answer": 1,
+  "explain": "Zararlı ↔ gerekli: whereas.",
+  "tip": "\"Bazıları ... diğerleri ...\" kalıbı genelde whereas/while ister."
+ },
+ {
+  "id": "g0018",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The building survived the earthquake ---- its age, which surprised many structural engineers.",
+  "options": [
+   "despite",
+   "although",
+   "because",
+   "whereas",
+   "unless"
+  ],
+  "answer": 0,
+  "explain": "İsim öbeği (its age) öncesi zıtlık edatı: despite. Although cümle ister.",
+  "tip": "Despite'tan sonra 'of' gelmez, isim/Ving gelir."
+ },
+ {
+  "id": "g0019",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- most early computers filled entire rooms, today's smartphones are far more powerful.",
+  "options": [
+   "As",
+   "Since",
+   "Unless",
+   "While",
+   "So that"
+  ],
+  "answer": 3,
+  "explain": "Eski devasa ↔ bugünkü küçük ama güçlü: While (oysa).",
+  "tip": "Eski ↔ bugün karşılaştırması: while/whereas/although."
+ },
+ {
+  "id": "g0020",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Wind power is cheap and clean; it is, ----, unreliable on calm days.",
+  "options": [
+   "therefore",
+   "however",
+   "for instance",
+   "thus",
+   "moreover"
+  ],
+  "answer": 1,
+  "explain": "Ucuz/temiz ↔ güvenilmez: cümle ortasında however. Therefore/thus sonuç.",
+  "tip": "However cümle ortasında virgüller arasında da gelebilir."
+ },
+ {
+  "id": "g0021",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The drug reduced symptoms in mice; ----, it had no measurable effect on human patients.",
+  "options": [
+   "in addition",
+   "similarly",
+   "accordingly",
+   "that is",
+   "in contrast"
+  ],
+  "answer": 4,
+  "explain": "Farelerde etkili ↔ insanlarda etkisiz: in contrast. Similarly zıt anlam verir.",
+  "tip": "İki grubun zıt sonucu: in contrast."
+ },
+ {
+  "id": "g0022",
+  "topic": "baglac-zitlik",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- they are both gases at room temperature, oxygen supports combustion while nitrogen does not.",
+  "options": [
+   "Because",
+   "Since",
+   "Unless",
+   "Once",
+   "Although"
+  ],
+  "answer": 4,
+  "explain": "Her ikisi gaz (benzerlik) ↔ davranış farklı: Although. Because/since mantık hatası.",
+  "tip": "Benzerlik ↔ fark da zıtlık kurar."
+ },
+ {
+  "id": "g0023",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The concrete was covered with plastic sheets ---- it would not dry too quickly.",
+  "options": [
+   "although",
+   "so that",
+   "unless",
+   "whereas",
+   "even if"
+  ],
+  "answer": 1,
+  "explain": "Amaç cümlesi + would: so that. Although zıtlık.",
+  "tip": "so that + özne + can/could/would."
+ },
+ {
+  "id": "g0024",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Samples were stored at −80 °C ---- prevent the proteins from breaking down.",
+  "options": [
+   "in order to",
+   "so that",
+   "because",
+   "due to",
+   "despite"
+  ],
+  "answer": 0,
+  "explain": "Boşluktan sonra yalın fiil (prevent): in order to. So that cümle ister, due to isim ister.",
+  "tip": "in order to + V1; so that + cümle."
+ },
+ {
+  "id": "g0025",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The laboratory was redesigned with a view to ---- the risk of chemical spills.",
+  "options": [
+   "reducing",
+   "reduce",
+   "reduced",
+   "be reduced",
+   "have reduced"
+  ],
+  "answer": 0,
+  "explain": "With a view to + Ving: reducing. 'to' burada edat, yalın fiil gelmez.",
+  "tip": "with a view to = in order to, ama ardından Ving."
+ },
+ {
+  "id": "g0026",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The flight was cancelled ---- strong winds over the runway.",
+  "options": [
+   "because of",
+   "because",
+   "so that",
+   "although",
+   "in order to"
+  ],
+  "answer": 0,
+  "explain": "Ardından isim öbeği (strong winds): because of. Because cümle ister.",
+  "tip": "Neden + isim = because of / due to / owing to."
+ },
+ {
+  "id": "g0027",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- oil prices rose sharply in the 1970s, many countries began investing in nuclear power.",
+  "options": [
+   "Although",
+   "Unless",
+   "So that",
+   "Whereas",
+   "As"
+  ],
+  "answer": 4,
+  "explain": "Yükselen fiyat → nükleere yatırım: neden ilişkisi, As (çünkü).",
+  "tip": "Neden-sonuç: as/since/because."
+ },
+ {
+  "id": "g0028",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Heat cannot escape from the inner layer; ----, the core temperature keeps rising.",
+  "options": [
+   "nevertheless",
+   "in contrast",
+   "consequently",
+   "although",
+   "otherwise"
+  ],
+  "answer": 2,
+  "explain": "Isı kaçamıyor → sıcaklık artıyor: sonuç, consequently. Nevertheless zıtlık.",
+  "tip": "Birinci cümle nedense ikinci sonuçsa consequently/therefore."
+ },
+ {
+  "id": "g0029",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The coating reflects most sunlight, ---- keeping the building cool in summer.",
+  "options": [
+   "despite",
+   "unless",
+   "whereas",
+   "thus",
+   "although"
+  ],
+  "answer": 3,
+  "explain": "Virgülden sonra Ving ile sonuç: thus + Ving. Despite isim alır ama anlam zıt.",
+  "tip": "thus/thereby + Ving = böylece."
+ },
+ {
+  "id": "g0030",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The valve releases excess steam, ---- preventing the boiler from exploding.",
+  "options": [
+   "whereby",
+   "whereas",
+   "thereby",
+   "lest",
+   "so that"
+  ],
+  "answer": 2,
+  "explain": "Thereby + Ving = böylece. Whereby 'ki onunla' (cümle ister), so that cümle ister.",
+  "tip": "thereby + Ving; whereby + cümle."
+ },
+ {
+  "id": "g0031",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- water expands when it freezes, rocks crack after repeated cold nights.",
+  "options": [
+   "Although",
+   "Unless",
+   "Whereas",
+   "Even if",
+   "Since"
+  ],
+  "answer": 4,
+  "explain": "Donunca genişler → kaya çatlar: neden, Since.",
+  "tip": "Since: hem 'beri' hem 'çünkü'; zaman ifadesi yoksa neden."
+ },
+ {
+  "id": "g0032",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The plant was shut down ---- a dangerous leak should occur during the storm.",
+  "options": [
+   "so as to",
+   "for fear that",
+   "owing to",
+   "in order to",
+   "thanks to"
+  ],
+  "answer": 1,
+  "explain": "Korkusuyla + cümle (should occur): for fear that. so as to/in order to fiil ister, owing to/thanks to isim.",
+  "tip": "lest / for fear that + should + V1."
+ },
+ {
+  "id": "g0033",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Many species are disappearing ---- the loss of their natural habitats.",
+  "options": [
+   "because",
+   "so that",
+   "although",
+   "due to",
+   "in order to"
+  ],
+  "answer": 3,
+  "explain": "Ardından isim öbeği: due to. Because cümle ister.",
+  "tip": "due to + isim."
+ },
+ {
+  "id": "g0034",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The results were unreliable ---- the instruments had not been calibrated properly.",
+  "options": [
+   "so that",
+   "unless",
+   "since",
+   "despite",
+   "in order that"
+  ],
+  "answer": 2,
+  "explain": "Güvenilmez çünkü kalibre edilmemiş: since + cümle. Despite isim alır, zıt anlam.",
+  "tip": "Ardından tam cümle + neden = since/because/as."
+ },
+ {
+  "id": "g0035",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new engine burns less fuel; ----, it produces fewer emissions.",
+  "options": [
+   "however",
+   "hence",
+   "although",
+   "whereas",
+   "unless"
+  ],
+  "answer": 1,
+  "explain": "Az yakıt → az emisyon: sonuç, hence. However zıtlık.",
+  "tip": "Sonuç: hence/thus/therefore."
+ },
+ {
+  "id": "g0036",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Engineers added more sensors so as ---- small changes in pressure.",
+  "options": [
+   "detecting",
+   "detect",
+   "to detect",
+   "detected",
+   "for detecting"
+  ],
+  "answer": 2,
+  "explain": "so as + to V1: to detect.",
+  "tip": "so as to / in order to + V1."
+ },
+ {
+  "id": "g0037",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The bridge was closed ---- engineers could inspect the damaged cables.",
+  "options": [
+   "so as to",
+   "with a view to",
+   "because of",
+   "in order to",
+   "so that"
+  ],
+  "answer": 4,
+  "explain": "Ardından tam cümle (engineers could inspect): so that. so as to/in order to fiil, with a view to Ving ister.",
+  "tip": "Özne + could geldiyse so that."
+ },
+ {
+  "id": "g0038",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the high cost of platinum, researchers are looking for cheaper catalysts.",
+  "options": [
+   "Owing to",
+   "Since",
+   "Because",
+   "So that",
+   "Although"
+  ],
+  "answer": 0,
+  "explain": "İsim öbeği önünde neden edatı: Owing to. Since/Because cümle ister.",
+  "tip": "owing to = due to = because of."
+ },
+ {
+  "id": "g0039",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Graphene is unusual ---- it conducts electricity better than copper while being almost transparent.",
+  "options": [
+   "so that",
+   "in order that",
+   "even if",
+   "lest",
+   "in that"
+  ],
+  "answer": 4,
+  "explain": "\"…-dığı için/bakımından\" anlamı: in that. So that/in order that amaç bildirir.",
+  "tip": "in that = because, 'şu açıdan ki'."
+ },
+ {
+  "id": "g0040",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Fresh water is scarce in the region; ----, desalination plants have been built along the coast.",
+  "options": [
+   "therefore",
+   "nevertheless",
+   "by contrast",
+   "in spite of this",
+   "otherwise"
+  ],
+  "answer": 0,
+  "explain": "Kıtlık → tesis kuruldu: sonuç, therefore. Nevertheless/in spite of this zıtlık.",
+  "tip": "Sorun → çözüm ilişkisi genelde sonuç bağlacıdır."
+ },
+ {
+  "id": "g0041",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The robot arm was made of aluminium ---- it would be light enough to move quickly.",
+  "options": [
+   "so that",
+   "because of",
+   "despite",
+   "even though",
+   "unless"
+  ],
+  "answer": 0,
+  "explain": "Amaç + would: so that.",
+  "tip": "Amaç → so that/in order to."
+ },
+ {
+  "id": "g0042",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The project was launched with the aim of ---- the energy efficiency of public buildings.",
+  "options": [
+   "to improve",
+   "improve",
+   "improved",
+   "improving",
+   "be improving"
+  ],
+  "answer": 3,
+  "explain": "With the aim of + Ving: improving. 'of' edattır.",
+  "tip": "Edattan sonra fiil hep Ving."
+ },
+ {
+  "id": "g0043",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The data were collected over ten years; ----, the study provides a reliable picture of long-term trends.",
+  "options": [
+   "however",
+   "even so",
+   "as a result",
+   "whereas",
+   "on the contrary"
+  ],
+  "answer": 2,
+  "explain": "On yıl veri → güvenilir tablo: as a result. Even so/however zıtlık.",
+  "tip": "Uzun veri → güvenilir sonuç: neden-sonuç."
+ },
+ {
+  "id": "g0044",
+  "topic": "baglac-neden-amac",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Divers ascend slowly ---- nitrogen bubbles should form in their blood.",
+  "options": [
+   "so that",
+   "lest",
+   "so as to",
+   "owing to",
+   "in case of"
+  ],
+  "answer": 1,
+  "explain": "lest + should + V1 = -mesin diye. so that olumsuzluk olmadan anlamı ters çevirir; in case of isim ister.",
+  "tip": "lest kendisi olumsuz anlam taşır; ayrıca not gerekmez."
+ },
+ {
+  "id": "g0045",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Pure aluminium melts ---- a temperature of about 660 °C.",
+  "options": [
+   "in",
+   "at",
+   "on",
+   "by",
+   "with"
+  ],
+  "answer": 1,
+  "explain": "Temperature, rate, speed, level, pressure ile 'at' kullanılır: at a temperature of.",
+  "tip": "Temperature/rate/speed/level → AT. Çeviri yapma."
+ },
+ {
+  "id": "g0046",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The glacier is retreating ---- a rate of nearly forty metres a year.",
+  "options": [
+   "with",
+   "in",
+   "at",
+   "on",
+   "for"
+  ],
+  "answer": 2,
+  "explain": "'at a rate of' kalıbı. With a rate de yanlış eşdizim.",
+  "tip": "Rate → at a rate of."
+ },
+ {
+  "id": "g0047",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Carbon dioxide in the atmosphere is now ---- its highest level for at least 800,000 years.",
+  "options": [
+   "on",
+   "at",
+   "in",
+   "by",
+   "under"
+  ],
+  "answer": 1,
+  "explain": "'at its highest level' kalıbı.",
+  "tip": "Level → at a level / at its highest level."
+ },
+ {
+  "id": "g0048",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "In terms ---- energy density, petrol is still far ahead of most batteries.",
+  "options": [
+   "with",
+   "of",
+   "for",
+   "at",
+   "on"
+  ],
+  "answer": 1,
+  "explain": "'in terms of' sabit kalıp.",
+  "tip": "in terms of = bakımından."
+ },
+ {
+  "id": "g0049",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The collapse of the roof was due ---- the weight of the snow.",
+  "options": [
+   "of",
+   "for",
+   "with",
+   "from",
+   "to"
+  ],
+  "answer": 4,
+  "explain": "'be due to' kalıbı.",
+  "tip": "due to / owing to / thanks to → TO."
+ },
+ {
+  "id": "g0050",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Repeated heating and cooling can lead ---- small cracks in the welded joints.",
+  "options": [
+   "in",
+   "into",
+   "for",
+   "on",
+   "to"
+  ],
+  "answer": 4,
+  "explain": "'lead to + isim' kalıbı; result in ile karıştırma.",
+  "tip": "lead to / contribute to / give rise to."
+ },
+ {
+  "id": "g0051",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Excessive use of fertilisers often results ---- the pollution of nearby rivers.",
+  "options": [
+   "in",
+   "from",
+   "to",
+   "with",
+   "of"
+  ],
+  "answer": 0,
+  "explain": "Neden → sonuç: result in. Result from nedeni gösterir (ters yön).",
+  "tip": "result in = sonuç; result from = neden."
+ },
+ {
+  "id": "g0052",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Most of the damage resulted ---- the fire that followed the earthquake, not from the shaking itself.",
+  "options": [
+   "from",
+   "in",
+   "to",
+   "into",
+   "with"
+  ],
+  "answer": 0,
+  "explain": "Hasar → yangından kaynaklandı: result from (neden). 'not from' ipucu.",
+  "tip": "Ardından neden geliyorsa result from."
+ },
+ {
+  "id": "g0053",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Water consists ---- two hydrogen atoms and one oxygen atom.",
+  "options": [
+   "in",
+   "of",
+   "from",
+   "with",
+   "by"
+  ],
+  "answer": 1,
+  "explain": "'consist of' kalıbı. Consist in başka anlam (-de yatmak).",
+  "tip": "consist of = be composed of = be made up of."
+ },
+ {
+  "id": "g0054",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The success of the treatment depends largely ---- how early the disease is diagnosed.",
+  "options": [
+   "in",
+   "at",
+   "on",
+   "to",
+   "with"
+  ],
+  "answer": 2,
+  "explain": "'depend on' kalıbı.",
+  "tip": "depend/rely/focus → ON."
+ },
+ {
+  "id": "g0055",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Workers who are exposed ---- high noise levels for years may lose part of their hearing.",
+  "options": [
+   "with",
+   "to",
+   "for",
+   "at",
+   "by"
+  ],
+  "answer": 1,
+  "explain": "'be exposed to' kalıbı.",
+  "tip": "expose A to B."
+ },
+ {
+  "id": "g0056",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new material is highly resistant ---- corrosion, even in salty water.",
+  "options": [
+   "against",
+   "of",
+   "from",
+   "to",
+   "with"
+  ],
+  "answer": 3,
+  "explain": "'resistant to' kalıbı.",
+  "tip": "resistant / susceptible / vulnerable / prone → TO."
+ },
+ {
+  "id": "g0057",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Coastal cities are particularly vulnerable ---- rising sea levels.",
+  "options": [
+   "with",
+   "for",
+   "at",
+   "from",
+   "to"
+  ],
+  "answer": 4,
+  "explain": "'vulnerable to' kalıbı.",
+  "tip": "Hassasiyet sıfatları TO alır."
+ },
+ {
+  "id": "g0058",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The authors attribute the sudden drop in fish numbers ---- a combination of warming and overfishing.",
+  "options": [
+   "with",
+   "for",
+   "on",
+   "from",
+   "to"
+  ],
+  "answer": 4,
+  "explain": "'attribute A to B' kalıbı.",
+  "tip": "attribute/ascribe A to B."
+ },
+ {
+  "id": "g0059",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Ozone protects living organisms ---- harmful ultraviolet radiation.",
+  "options": [
+   "of",
+   "from",
+   "with",
+   "to",
+   "at"
+  ],
+  "answer": 1,
+  "explain": "'protect A from B' kalıbı.",
+  "tip": "protect/prevent/prohibit A FROM B."
+ },
+ {
+  "id": "g0060",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Zinc coatings prevent steel ---- rusting in humid conditions.",
+  "options": [
+   "to",
+   "from",
+   "of",
+   "for",
+   "against"
+  ],
+  "answer": 1,
+  "explain": "'prevent A from Ving' kalıbı.",
+  "tip": "prevent + nesne + from + Ving."
+ },
+ {
+  "id": "g0061",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The two methods differ mainly ---- the way the samples are heated.",
+  "options": [
+   "on",
+   "at",
+   "by",
+   "for",
+   "in"
+  ],
+  "answer": 4,
+  "explain": "'differ in' (bakımından farklı olmak); 'differ from' karşılaştırılan şey.",
+  "tip": "differ from A in B."
+ },
+ {
+  "id": "g0062",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The gas is stored ---- high pressure in steel cylinders.",
+  "options": [
+   "under",
+   "on",
+   "by",
+   "over",
+   "for"
+  ],
+  "answer": 0,
+  "explain": "'under pressure' kalıbı (basınç altında). On/by/over pressure ile eşdizim kurmaz.",
+  "tip": "under (high) pressure; at a pressure of + sayı."
+ },
+ {
+  "id": "g0063",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The study focused ---- the long-term effects of microplastics on marine life.",
+  "options": [
+   "in",
+   "on",
+   "at",
+   "to",
+   "for"
+  ],
+  "answer": 1,
+  "explain": "'focus on' kalıbı.",
+  "tip": "focus/concentrate on."
+ },
+ {
+  "id": "g0064",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Light travels ---- a speed of nearly 300,000 kilometres per second.",
+  "options": [
+   "with",
+   "in",
+   "at",
+   "on",
+   "by"
+  ],
+  "answer": 2,
+  "explain": "'at a speed of' kalıbı.",
+  "tip": "Speed → at."
+ },
+ {
+  "id": "g0065",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The number of cases rose ---- 15 per cent last year, reaching a total of 4,000.",
+  "options": [
+   "by",
+   "at",
+   "of",
+   "with",
+   "in"
+  ],
+  "answer": 0,
+  "explain": "Artış miktarı 'by' ile: rose by 15%. 'at' sabit seviye için.",
+  "tip": "increase/rise/fall BY + miktar; TO + son değer."
+ },
+ {
+  "id": "g0066",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Fossil fuels still account ---- about 80 per cent of the world's energy supply.",
+  "options": [
+   "to",
+   "of",
+   "with",
+   "on",
+   "for"
+  ],
+  "answer": 4,
+  "explain": "'account for' (oluşturmak / açıklamak).",
+  "tip": "account for + oran = oluşturmak."
+ },
+ {
+  "id": "g0067",
+  "topic": "edat-esdizim",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The lifespan of a battery is closely related ---- the number of charging cycles.",
+  "options": [
+   "with",
+   "to",
+   "of",
+   "on",
+   "by"
+  ],
+  "answer": 1,
+  "explain": "'be related to' kalıbı.",
+  "tip": "related/linked/connected TO."
+ },
+ {
+  "id": "g0068",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Titanium is a metal ---- is both light and very strong.",
+  "options": [
+   "who",
+   "which",
+   "whose",
+   "where",
+   "what"
+  ],
+  "answer": 1,
+  "explain": "Cansız isim (metal) + özne konumunda boşluk: which. Who insan için, what öncül almaz.",
+  "tip": "Cansız öncül → which/that."
+ },
+ {
+  "id": "g0069",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Marie Curie, ---- research on radioactivity won two Nobel Prizes, was born in Warsaw.",
+  "options": [
+   "who",
+   "which",
+   "that",
+   "whom",
+   "whose"
+  ],
+  "answer": 4,
+  "explain": "Sahiplik (onun araştırması): whose + isim.",
+  "tip": "Boşluktan sonra isim + fiil → whose."
+ },
+ {
+  "id": "g0070",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The laboratory ---- the first vaccine was developed is now a museum.",
+  "options": [
+   "which",
+   "that",
+   "whose",
+   "where",
+   "what"
+  ],
+  "answer": 3,
+  "explain": "Boşluktan sonra tam cümle (the vaccine was developed) ve öncül yer: where.",
+  "tip": "Ardındaki cümle tamsa (eksik öğe yoksa) where/when."
+ },
+ {
+  "id": "g0071",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Silicon, ---- is the second most abundant element in the Earth's crust, is used in computer chips.",
+  "options": [
+   "which",
+   "that",
+   "where",
+   "what",
+   "whose"
+  ],
+  "answer": 0,
+  "explain": "Virgüllü (non-defining) yapıda that kullanılmaz: which.",
+  "tip": "Virgülden sonra THAT gelmez."
+ },
+ {
+  "id": "g0072",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The engineer to ---- the report was sent did not reply for two weeks.",
+  "options": [
+   "who",
+   "that",
+   "which",
+   "whose",
+   "whom"
+  ],
+  "answer": 4,
+  "explain": "Edattan sonra insan için whom; edattan sonra that ve who gelmez.",
+  "tip": "Edat + whom/which; edat + that YASAK."
+ },
+ {
+  "id": "g0073",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The temperature at ---- water boils depends on air pressure.",
+  "options": [
+   "that",
+   "where",
+   "what",
+   "when",
+   "which"
+  ],
+  "answer": 4,
+  "explain": "Edat (at) + which; edattan sonra that gelmez.",
+  "tip": "at which = where/when anlamı taşıyabilir."
+ },
+ {
+  "id": "g0074",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The researchers studied twenty patients, most of ---- had been treated with the new drug.",
+  "options": [
+   "who",
+   "them",
+   "whom",
+   "which",
+   "that"
+  ],
+  "answer": 2,
+  "explain": "'most of + whom' (insanlar). 'them' iki cümleyi bağlamaz; that/who edat sonrası olmaz.",
+  "tip": "most of / some of / none of + whom/which."
+ },
+ {
+  "id": "g0075",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The team tested several alloys, none of ---- could withstand temperatures above 900 °C.",
+  "options": [
+   "them",
+   "that",
+   "which",
+   "whom",
+   "what"
+  ],
+  "answer": 2,
+  "explain": "Cansız (alloys) için none of which. 'them' bağlaç olmadan iki cümleyi bağlayamaz.",
+  "tip": "Virgülden sonra 'of them' görürsen bağlaç var mı bak."
+ },
+ {
+  "id": "g0076",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The year ---- the transistor was invented marked the start of modern electronics.",
+  "options": [
+   "which",
+   "when",
+   "where",
+   "whose",
+   "what"
+  ],
+  "answer": 1,
+  "explain": "Öncül zaman (year) + tam cümle: when.",
+  "tip": "Zaman öncülü + tam cümle → when."
+ },
+ {
+  "id": "g0077",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 1,
+  "q": "People ---- work night shifts often suffer from sleep problems.",
+  "options": [
+   "which",
+   "whose",
+   "who",
+   "where",
+   "whom"
+  ],
+  "answer": 2,
+  "explain": "İnsan öncülü + özne boşluğu: who.",
+  "tip": "İnsan + fiil → who."
+ },
+ {
+  "id": "g0078",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The reason ---- the bridge collapsed has not yet been fully explained.",
+  "options": [
+   "which",
+   "where",
+   "why",
+   "whose",
+   "what"
+  ],
+  "answer": 2,
+  "explain": "Öncül 'reason' + tam cümle: why.",
+  "tip": "reason + why."
+ },
+ {
+  "id": "g0079",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- is most surprising about the result is how quickly the cells recovered.",
+  "options": [
+   "That",
+   "Which",
+   "It",
+   "What",
+   "Whether"
+  ],
+  "answer": 3,
+  "explain": "Öncülü olmayan, 'şey ki' anlamlı yapı: What.",
+  "tip": "Öncül yoksa ve 'şey' anlamı varsa what."
+ },
+ {
+  "id": "g0080",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "This is the only material ---- can survive the high temperatures inside the reactor.",
+  "options": [
+   "what",
+   "where",
+   "whose",
+   "who",
+   "that"
+  ],
+  "answer": 4,
+  "explain": "Cansız öncül (material) + özne boşluğu: that. What öncül almaz; where yer için ve tam cümle ister.",
+  "tip": "the only / the first / superlative / all → THAT."
+ },
+ {
+  "id": "g0081",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The method, ---- was first used in the 1950s, is still common in hospitals.",
+  "options": [
+   "that",
+   "which",
+   "who",
+   "what",
+   "where"
+  ],
+  "answer": 1,
+  "explain": "Virgüllü yapı + cansız öncül: which. That virgülle kullanılmaz.",
+  "tip": "Virgül → which (that değil)."
+ },
+ {
+  "id": "g0082",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The scientists observed a process ---- light energy is converted into chemical energy.",
+  "options": [
+   "which",
+   "what",
+   "whose",
+   "whereby",
+   "that"
+  ],
+  "answer": 3,
+  "explain": "Ardından tam cümle var ve 'süreç ki onunla' anlamı: whereby (= by which).",
+  "tip": "Tam cümle + yöntem/süreç öncülü → whereby."
+ },
+ {
+  "id": "g0083",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Several volcanoes, some of ---- are still active, lie along the coast.",
+  "options": [
+   "them",
+   "that",
+   "which",
+   "whom",
+   "where"
+  ],
+  "answer": 2,
+  "explain": "Cansız + some of which. 'them' bağlaçsız kullanılamaz.",
+  "tip": "some of which = bunların bazıları (bağlaçlı)."
+ },
+ {
+  "id": "g0084",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The device measures the speed ---- the blood flows through the arteries.",
+  "options": [
+   "which",
+   "at which",
+   "where",
+   "whose",
+   "in that"
+  ],
+  "answer": 1,
+  "explain": "'speed' 'at' ister ve ardından tam cümle var: at which.",
+  "tip": "Öncülün edatı ilgi zamirinin önüne gelir: at which."
+ },
+ {
+  "id": "g0085",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The students ---- results were highest received a scholarship.",
+  "options": [
+   "who",
+   "which",
+   "whom",
+   "whose",
+   "that"
+  ],
+  "answer": 3,
+  "explain": "Sahiplik (their results): whose.",
+  "tip": "whose + isim."
+ },
+ {
+  "id": "g0086",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Engineers rejected the first design, ---- surprised the manufacturer.",
+  "options": [
+   "that",
+   "what",
+   "it",
+   "whom",
+   "which"
+  ],
+  "answer": 4,
+  "explain": "Önceki cümlenin tamamını niteleyen virgüllü which. That/what virgüllü kullanılamaz.",
+  "tip": "Cümlenin tümüne gönderme → , which."
+ },
+ {
+  "id": "g0087",
+  "topic": "relative",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The village ---- they built the first wind farm has become energy independent.",
+  "options": [
+   "which",
+   "that",
+   "whose",
+   "in which",
+   "whom"
+  ],
+  "answer": 3,
+  "explain": "Ardından tam cümle var: yer için in which (= where).",
+  "tip": "in which = where."
+ },
+ {
+  "id": "g0088",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Engineers began ---- new uses for steam engines in the nineteenth century.",
+  "options": [
+   "find",
+   "found",
+   "to have found",
+   "to find",
+   "having been found"
+  ],
+  "answer": 3,
+  "explain": "Begin + to V veya Ving alır; şıklarda uygun olan to find.",
+  "tip": "begin/start/continue → to V veya Ving."
+ },
+ {
+  "id": "g0089",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "With new factories ---- across the region, demand for coal rose rapidly.",
+  "options": [
+   "to appear",
+   "appeared",
+   "appearing",
+   "having been appeared",
+   "to be appeared"
+  ],
+  "answer": 2,
+  "explain": "With + isim + Ving (aktif, eşzamanlı eylem): appearing. Appear geçişsiz, pasifi olmaz.",
+  "tip": "with + N + Ving (aktif) / V3 (pasif)."
+ },
+ {
+  "id": "g0090",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "With most of the samples ---- by the flood, the team had to restart the experiment.",
+  "options": [
+   "destroyed",
+   "destroying",
+   "to destroy",
+   "destroy",
+   "having destroyed"
+  ],
+  "answer": 0,
+  "explain": "With + isim + V3 (pasif): örnekler yok edildi.",
+  "tip": "Nesne eylemi yapmıyorsa with + N + V3."
+ },
+ {
+  "id": "g0091",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Saving energy at home often means ---- habits rather than buying new devices.",
+  "options": [
+   "to change",
+   "changing",
+   "change",
+   "changed",
+   "to have changed"
+  ],
+  "answer": 1,
+  "explain": "Mean + Ving = anlamına gelmek. Mean + to V = niyet etmek.",
+  "tip": "mean + Ving: 'demek'; mean to V: 'niyet etmek'."
+ },
+ {
+  "id": "g0092",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The researchers meant ---- the trial in spring, but the equipment arrived late.",
+  "options": [
+   "starting",
+   "start",
+   "started",
+   "to start",
+   "having started"
+  ],
+  "answer": 3,
+  "explain": "Niyet (planlamışlardı): mean + to V.",
+  "tip": "'niyetinde olmak' = mean to V."
+ },
+ {
+  "id": "g0093",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Most patients avoided ---- salty food after the diagnosis.",
+  "options": [
+   "to eat",
+   "eat",
+   "to have eaten",
+   "eating",
+   "eaten"
+  ],
+  "answer": 3,
+  "explain": "Avoid + Ving.",
+  "tip": "avoid, enjoy, finish, keep, consider + Ving."
+ },
+ {
+  "id": "g0094",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The company decided ---- the old factory with a solar plant.",
+  "options": [
+   "replacing",
+   "to replace",
+   "replace",
+   "replaced",
+   "having replaced"
+  ],
+  "answer": 1,
+  "explain": "Decide + to V.",
+  "tip": "decide, plan, aim, hope, fail, manage + to V."
+ },
+ {
+  "id": "g0095",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The sensor is capable of ---- changes as small as one millionth of a metre.",
+  "options": [
+   "detect",
+   "to detect",
+   "detecting",
+   "detected",
+   "being detect"
+  ],
+  "answer": 2,
+  "explain": "Edat (of) + Ving.",
+  "tip": "Edat sonrası fiil = Ving."
+ },
+ {
+  "id": "g0096",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Scientists stopped ---- the chemical after it was found to be toxic.",
+  "options": [
+   "using",
+   "to use",
+   "use",
+   "used",
+   "having been used"
+  ],
+  "answer": 0,
+  "explain": "Stop + Ving = yapmayı bırakmak. Stop + to V = bir şeyi yapmak için durmak (anlamı bozar).",
+  "tip": "stop Ving: bırakmak; stop to V: -mek için durmak."
+ },
+ {
+  "id": "g0097",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Researchers are used to ---- long hours in the laboratory.",
+  "options": [
+   "work",
+   "working",
+   "worked",
+   "be working",
+   "have worked"
+  ],
+  "answer": 1,
+  "explain": "'be used to' (alışık olmak) + Ving; 'to' edattır.",
+  "tip": "be used to + Ving; used to + V1 (eskiden)."
+ },
+ {
+  "id": "g0098",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The first steam engines used ---- large amounts of coal.",
+  "options": [
+   "to consuming",
+   "consuming",
+   "to consume",
+   "consume",
+   "consumed"
+  ],
+  "answer": 2,
+  "explain": "'used to + V1' = eskiden yapardı. Be olmadığından Ving gelmez.",
+  "tip": "be yoksa used to + V1."
+ },
+ {
+  "id": "g0099",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new rules force factories ---- their waste before releasing it.",
+  "options": [
+   "treating",
+   "treat",
+   "to treat",
+   "treated",
+   "to treating"
+  ],
+  "answer": 2,
+  "explain": "Force + nesne + to V.",
+  "tip": "force/allow/enable/cause + nesne + to V."
+ },
+ {
+  "id": "g0100",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "A sudden change in temperature can cause the glass ----.",
+  "options": [
+   "cracking",
+   "crack",
+   "to crack",
+   "cracked",
+   "to cracking"
+  ],
+  "answer": 2,
+  "explain": "Cause + nesne + to V.",
+  "tip": "cause sb/sth to V."
+ },
+ {
+  "id": "g0101",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Proper ventilation lets the hot air ---- through the roof.",
+  "options": [
+   "to escape",
+   "escaping",
+   "escaped",
+   "escape",
+   "to escaping"
+  ],
+  "answer": 3,
+  "explain": "Let + nesne + V1 (to almaz).",
+  "tip": "let/make + nesne + V1."
+ },
+ {
+  "id": "g0102",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The workers remember ---- a loud bang just before the tank failed.",
+  "options": [
+   "to hear",
+   "hear",
+   "heard",
+   "hearing",
+   "to have heard"
+  ],
+  "answer": 3,
+  "explain": "Remember + Ving = geçmişte yapılanı hatırlamak.",
+  "tip": "remember Ving: geçmiş; remember to V: yapmayı unutmamak."
+ },
+ {
+  "id": "g0103",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 1,
+  "q": "It is important ---- protective glasses when using a laser.",
+  "options": [
+   "wearing",
+   "wear",
+   "to wear",
+   "worn",
+   "to wearing"
+  ],
+  "answer": 2,
+  "explain": "It is + sıfat + to V.",
+  "tip": "It is important/necessary/difficult + to V."
+ },
+ {
+  "id": "g0104",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Instead of ---- the metal, the engineers cooled it rapidly in oil.",
+  "options": [
+   "heat",
+   "to heat",
+   "heated",
+   "heating",
+   "being heat"
+  ],
+  "answer": 3,
+  "explain": "Instead of (edat) + Ving.",
+  "tip": "instead of / apart from / besides + Ving."
+ },
+ {
+  "id": "g0105",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The team succeeded in ---- the first stable sample of the new compound.",
+  "options": [
+   "to produce",
+   "produce",
+   "producing",
+   "produced",
+   "be producing"
+  ],
+  "answer": 2,
+  "explain": "Succeed in + Ving.",
+  "tip": "succeed in, persist in, insist on + Ving."
+ },
+ {
+  "id": "g0106",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The probe is too small ---- by ordinary radar.",
+  "options": [
+   "to be detected",
+   "to have detected",
+   "detecting",
+   "being detected",
+   "detected"
+  ],
+  "answer": 0,
+  "explain": "Too + sıfat + to V; prob tespit edilir (pasif): to be detected.",
+  "tip": "too ... to V; pasif anlamı kontrol et."
+ },
+ {
+  "id": "g0107",
+  "topic": "gerund-infinitive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The material is strong enough ---- the weight of a truck.",
+  "options": [
+   "supporting",
+   "support",
+   "to support",
+   "supported",
+   "for supporting"
+  ],
+  "answer": 2,
+  "explain": "Sıfat + enough + to V.",
+  "tip": "enough + to V."
+ },
+ {
+  "id": "g0108",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Since the first satellite was launched in 1957, thousands of others ---- into orbit.",
+  "options": [
+   "were sent",
+   "are sent",
+   "had been sent",
+   "have been sent",
+   "will be sent"
+  ],
+  "answer": 3,
+  "explain": "Since + geçmiş zaman → ana cümle present perfect: have been sent.",
+  "tip": "since + Past → Present Perfect."
+ },
+ {
+  "id": "g0109",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "By the time the fire brigade arrived, the flames ---- to the upper floors.",
+  "options": [
+   "have spread",
+   "spread",
+   "had spread",
+   "are spreading",
+   "will spread"
+  ],
+  "answer": 2,
+  "explain": "By the time + Past → ana cümle Past Perfect: had spread.",
+  "tip": "by the time + Past → had V3."
+ },
+ {
+  "id": "g0110",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "By 2040, electric cars ---- most petrol cars on European roads.",
+  "options": [
+   "have replaced",
+   "will have replaced",
+   "had replaced",
+   "replaced",
+   "are replacing"
+  ],
+  "answer": 1,
+  "explain": "By + gelecek tarih → Future Perfect: will have replaced.",
+  "tip": "by + gelecek tarih → will have V3."
+ },
+ {
+  "id": "g0111",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Water ---- at 100 °C at sea level.",
+  "options": [
+   "boiled",
+   "is boiling",
+   "has boiled",
+   "had boiled",
+   "boils"
+  ],
+  "answer": 4,
+  "explain": "Genel bilimsel gerçek → Simple Present.",
+  "tip": "Doğa yasaları → geniş zaman."
+ },
+ {
+  "id": "g0112",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "In 1928, Alexander Fleming ---- that mould could kill bacteria.",
+  "options": [
+   "has noticed",
+   "noticed",
+   "notices",
+   "had been noticing",
+   "will notice"
+  ],
+  "answer": 1,
+  "explain": "Belirli geçmiş tarih (1928) → Simple Past.",
+  "tip": "Geçmiş tarih + bitmiş olay → V2."
+ },
+ {
+  "id": "g0113",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The engineers ---- the bridge for three hours when they discovered the crack.",
+  "options": [
+   "have been inspecting",
+   "had been inspecting",
+   "are inspecting",
+   "will inspect",
+   "inspect"
+  ],
+  "answer": 1,
+  "explain": "Geçmişte bir eylemden önce süregelen eylem: Past Perfect Continuous.",
+  "tip": "for + süre + when + Past → had been Ving."
+ },
+ {
+  "id": "g0114",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Over the past two decades, the price of solar panels ---- dramatically.",
+  "options": [
+   "fell",
+   "has fallen",
+   "falls",
+   "had fallen",
+   "will fall"
+  ],
+  "answer": 1,
+  "explain": "'Over the past two decades' → bugüne uzanan süre, Present Perfect.",
+  "tip": "over/in the past/last + süre → has V3."
+ },
+ {
+  "id": "g0115",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 3,
+  "q": "As soon as the results ---- available, they will be published online.",
+  "options": [
+   "will become",
+   "became",
+   "become",
+   "had become",
+   "would become"
+  ],
+  "answer": 2,
+  "explain": "Zaman bağlacı (as soon as) + gelecek anlamı → Simple Present.",
+  "tip": "Zaman cümlesinde will kullanılmaz."
+ },
+ {
+  "id": "g0116",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Until the telescope was invented, people ---- that the Milky Way was made of stars.",
+  "options": [
+   "have not known",
+   "do not know",
+   "will not know",
+   "did not know",
+   "are not knowing"
+  ],
+  "answer": 3,
+  "explain": "Geçmişte bir noktaya kadar süren durum: Simple Past (did not know). Present perfect geçmişte kapanmış dönemle kullanılmaz.",
+  "tip": "Geçmişte biten dönem → Past Simple / Past Perfect."
+ },
+ {
+  "id": "g0117",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 1,
+  "q": "At present, scientists ---- the effects of microplastics on human health.",
+  "options": [
+   "studied",
+   "are studying",
+   "had studied",
+   "were studying",
+   "will have studied"
+  ],
+  "answer": 1,
+  "explain": "'At present' → Present Continuous.",
+  "tip": "at present / currently / nowadays → am/is/are Ving."
+ },
+ {
+  "id": "g0118",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 3,
+  "q": "When the probe reaches Jupiter next year, it ---- for nearly six years.",
+  "options": [
+   "has travelled",
+   "will have travelled",
+   "had travelled",
+   "travelled",
+   "travels"
+  ],
+  "answer": 1,
+  "explain": "Gelecekte bir ana kadar tamamlanmış süre: Future Perfect.",
+  "tip": "Gelecek an + 'for süre' → will have V3."
+ },
+ {
+  "id": "g0119",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The ancient Egyptians ---- simple levers and ramps to move huge blocks of stone.",
+  "options": [
+   "have used",
+   "use",
+   "will use",
+   "have been using",
+   "used"
+  ],
+  "answer": 4,
+  "explain": "Antik dönem, bitmiş geçmiş → Simple Past.",
+  "tip": "Tarihi dönem → V2."
+ },
+ {
+  "id": "g0120",
+  "topic": "zaman-uyumu",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Researchers ---- the new drug for five years, and the trials are still continuing.",
+  "options": [
+   "tested",
+   "had tested",
+   "have been testing",
+   "test",
+   "were testing"
+  ],
+  "answer": 2,
+  "explain": "Geçmişte başlayıp hâlâ süren eylem (still continuing): Present Perfect Continuous.",
+  "tip": "'still' + süre → have been Ving."
+ },
+ {
+  "id": "g0121",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Penicillin ---- by Alexander Fleming in 1928.",
+  "options": [
+   "discovered",
+   "has discovered",
+   "is discovering",
+   "was discovered",
+   "discovers"
+  ],
+  "answer": 3,
+  "explain": "Özne (penicillin) eylemi yapmaz + by + geçmiş tarih: was discovered.",
+  "tip": "by + fail → pasif."
+ },
+ {
+  "id": "g0122",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Thousands of new chemicals ---- every year, but only a few are tested for safety.",
+  "options": [
+   "are produced",
+   "produce",
+   "are producing",
+   "have produced",
+   "produced"
+  ],
+  "answer": 0,
+  "explain": "Kimyasallar üretilir (pasif) + her yıl (geniş zaman): are produced.",
+  "tip": "every year → geniş zaman pasifi."
+ },
+ {
+  "id": "g0123",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new bridge ---- by the end of next year.",
+  "options": [
+   "will have been completed",
+   "will have completed",
+   "has been completed",
+   "completes",
+   "is completing"
+  ],
+  "answer": 0,
+  "explain": "By + gelecek → future perfect; köprü tamamlanır (pasif).",
+  "tip": "Önce zaman, sonra aktif/pasif."
+ },
+ {
+  "id": "g0124",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The samples ---- carefully before they were sent to the laboratory.",
+  "options": [
+   "had cleaned",
+   "have been cleaned",
+   "cleaned",
+   "had been cleaned",
+   "were cleaning"
+  ],
+  "answer": 3,
+  "explain": "Gönderilmeden önce (geçmişten önce) + pasif: had been cleaned.",
+  "tip": "before + Past → had been V3 (pasif)."
+ },
+ {
+  "id": "g0125",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The cause of the disease is still ----.",
+  "options": [
+   "investigating",
+   "investigated by",
+   "to investigate",
+   "investigate",
+   "being investigated"
+  ],
+  "answer": 4,
+  "explain": "Hâlâ araştırılıyor: is being investigated (present continuous pasif).",
+  "tip": "still + süren pasif → is being V3."
+ },
+ {
+  "id": "g0126",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Concrete ---- for thousands of years as a building material.",
+  "options": [
+   "has used",
+   "has been used",
+   "is using",
+   "used",
+   "uses"
+  ],
+  "answer": 1,
+  "explain": "Binlerce yıldır (süre) + kullanılır (pasif): has been used.",
+  "tip": "for + süre + pasif → has been V3."
+ },
+ {
+  "id": "g0127",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The data are believed ---- by a software error last month.",
+  "options": [
+   "to be corrupted",
+   "to corrupt",
+   "to have corrupted",
+   "being corrupted",
+   "to have been corrupted"
+  ],
+  "answer": 4,
+  "explain": "'are believed' + geçmişte olmuş pasif olay: to have been corrupted.",
+  "tip": "is said/believed + to have been V3 = geçmiş pasif."
+ },
+ {
+  "id": "g0128",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "It ---- that the universe is about 13.8 billion years old.",
+  "options": [
+   "estimates",
+   "has estimated",
+   "is estimating",
+   "is estimated",
+   "estimated"
+  ],
+  "answer": 3,
+  "explain": "It is estimated that ... kalıbı (pasif).",
+  "tip": "It is thought/believed/estimated that."
+ },
+ {
+  "id": "g0129",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The heat shield must ---- before every launch.",
+  "options": [
+   "inspect",
+   "inspected",
+   "be inspected",
+   "be inspecting",
+   "have inspected"
+  ],
+  "answer": 2,
+  "explain": "Modal + be + V3 (pasif).",
+  "tip": "modal + be V3."
+ },
+ {
+  "id": "g0130",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Most smartphones ---- in Asia.",
+  "options": [
+   "are manufactured",
+   "manufacture",
+   "are manufacturing",
+   "manufactured",
+   "have manufactured"
+  ],
+  "answer": 0,
+  "explain": "Telefonlar üretilir (pasif, genel durum).",
+  "tip": "Özne eylemi yapamıyorsa pasif."
+ },
+ {
+  "id": "g0131",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The theory, which ---- for decades, was finally confirmed by satellite data.",
+  "options": [
+   "had questioned",
+   "had been questioned",
+   "has been questioned",
+   "questioned",
+   "is questioned"
+  ],
+  "answer": 1,
+  "explain": "Doğrulanmadan önce (geçmişten önce) on yıllarca sorgulanmıştı: had been questioned.",
+  "tip": "Ana cümle geçmişse, önceki süre → had been V3."
+ },
+ {
+  "id": "g0132",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The results of the study ---- next month in a leading journal.",
+  "options": [
+   "will publish",
+   "will be published",
+   "are publishing",
+   "have been published",
+   "published"
+  ],
+  "answer": 1,
+  "explain": "Gelecek ay + yayımlanacak (pasif): will be published.",
+  "tip": "next month → will be V3."
+ },
+ {
+  "id": "g0133",
+  "topic": "passive",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Old batteries should not ---- with household waste.",
+  "options": [
+   "throw away",
+   "be throwing away",
+   "be thrown away",
+   "thrown away",
+   "have thrown away"
+  ],
+  "answer": 2,
+  "explain": "Modal + be + V3 (pasif phrasal verb).",
+  "tip": "should be V3."
+ },
+ {
+  "id": "g0134",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 1,
+  "q": "If the temperature falls below 0 °C, water ----.",
+  "options": [
+   "froze",
+   "would freeze",
+   "had frozen",
+   "would have frozen",
+   "freezes"
+  ],
+  "answer": 4,
+  "explain": "Zero conditional (bilimsel gerçek): If + present, present.",
+  "tip": "Doğa yasası → If + V1, V1."
+ },
+ {
+  "id": "g0135",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "If the engineers had checked the cables, the collapse ----.",
+  "options": [
+   "could be prevented",
+   "can be prevented",
+   "will be prevented",
+   "could have been prevented",
+   "was prevented"
+  ],
+  "answer": 3,
+  "explain": "Type 3: If + had V3, would/could have V3.",
+  "tip": "had V3 → would/could have V3."
+ },
+ {
+  "id": "g0136",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "If we used more renewable energy, carbon emissions ---- much lower.",
+  "options": [
+   "will be",
+   "would have been",
+   "are",
+   "had been",
+   "would be"
+  ],
+  "answer": 4,
+  "explain": "Type 2: If + V2, would + V1.",
+  "tip": "If + V2 → would V1."
+ },
+ {
+  "id": "g0137",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Unless the patient ---- treatment soon, the infection may spread.",
+  "options": [
+   "will receive",
+   "receives",
+   "received",
+   "would receive",
+   "had received"
+  ],
+  "answer": 1,
+  "explain": "Unless = if not; koşul cümlesinde present.",
+  "tip": "unless + olumlu present."
+ },
+ {
+  "id": "g0138",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Many researchers wish they ---- more funding for basic science.",
+  "options": [
+   "have",
+   "will have",
+   "would have had",
+   "had",
+   "are having"
+  ],
+  "answer": 3,
+  "explain": "Şimdiki bir dilek: wish + V2.",
+  "tip": "wish + V2 = şimdi; wish + had V3 = geçmiş."
+ },
+ {
+  "id": "g0139",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The team wishes it ---- the experiment before the equipment broke down.",
+  "options": [
+   "completed",
+   "completes",
+   "will complete",
+   "has completed",
+   "had completed"
+  ],
+  "answer": 4,
+  "explain": "Geçmişe yönelik pişmanlık: wish + had V3.",
+  "tip": "Geçmiş pişmanlık → wish + had V3."
+ },
+ {
+  "id": "g0140",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the satellite not been repaired, the mission would have failed.",
+  "options": [
+   "If",
+   "Had",
+   "Should",
+   "Were",
+   "Unless"
+  ],
+  "answer": 1,
+  "explain": "Devrik Type 3: Had + özne + V3 (= If the satellite had not been repaired).",
+  "tip": "If'siz devrik: Had / Were / Should."
+ },
+ {
+  "id": "g0141",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- there be a power failure, the backup generator will start automatically.",
+  "options": [
+   "Had",
+   "Should",
+   "Were",
+   "If",
+   "Unless"
+  ],
+  "answer": 1,
+  "explain": "Devrik Type 1: Should + özne + V1 (= If there is). 'be' yalın olduğundan If değil Should.",
+  "tip": "Should + özne + V1 = If ... olursa."
+ },
+ {
+  "id": "g0142",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the Earth closer to the Sun, its oceans would boil away.",
+  "options": [
+   "Were",
+   "Had",
+   "Should",
+   "If",
+   "Was"
+  ],
+  "answer": 0,
+  "explain": "Devrik Type 2: Were + özne (= If the Earth were).",
+  "tip": "Were + özne + isim/sıfat → Type 2."
+ },
+ {
+  "id": "g0143",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The material will not crack ---- it is heated too quickly.",
+  "options": [
+   "if",
+   "provided that",
+   "as long as",
+   "unless",
+   "only if"
+  ],
+  "answer": 3,
+  "explain": "Isıtma hızlı OLMADIKÇA çatlamaz: unless. If/provided that/as long as/only if anlamı tersine çevirir.",
+  "tip": "Unless = if ... not; mantığı ters çevirerek dene."
+ },
+ {
+  "id": "g0144",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The device works well ---- it is kept dry.",
+  "options": [
+   "unless",
+   "even if",
+   "whereas",
+   "as long as",
+   "in case of"
+  ],
+  "answer": 3,
+  "explain": "Kuru tutulduğu sürece çalışır: as long as.",
+  "tip": "as long as = provided that."
+ },
+ {
+  "id": "g0145",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 3,
+  "q": "It is high time the government ---- stricter rules on plastic waste.",
+  "options": [
+   "introduces",
+   "will introduce",
+   "had introduced",
+   "has introduced",
+   "introduced"
+  ],
+  "answer": 4,
+  "explain": "'It is high time' + V2.",
+  "tip": "It's (high) time + özne + V2."
+ },
+ {
+  "id": "g0146",
+  "topic": "kosul-wish",
+  "type": "bosluk",
+  "level": 2,
+  "q": "If the dinosaurs had not died out, mammals ---- the dominant animals today.",
+  "options": [
+   "might not have been",
+   "might not be",
+   "will not be",
+   "are not",
+   "had not been"
+  ],
+  "answer": 1,
+  "explain": "Karışık koşul: geçmiş koşul (had V3) → bugün sonucu (today): might not be.",
+  "tip": "'today/now' varsa sonuç would/might + V1."
+ },
+ {
+  "id": "g0147",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Scientists are still trying to find out ---- the dinosaurs became extinct so suddenly.",
+  "options": [
+   "that",
+   "what",
+   "which",
+   "whom",
+   "why"
+  ],
+  "answer": 4,
+  "explain": "'find out' + soru kelimesiyle isim cümlesi; neden: why. That bilinmeyeni sormaz; ardından tam cümle olduğu için what olmaz.",
+  "tip": "Ardında tam cümle + bilinmeyen → why/how/when/whether."
+ },
+ {
+  "id": "g0148",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The researchers could not determine ---- the new drug was safer than the old one.",
+  "options": [
+   "whether",
+   "what",
+   "that",
+   "which",
+   "who"
+  ],
+  "answer": 0,
+  "explain": "Evet/hayır belirsizliği: whether.",
+  "tip": "determine/know/ask + whether = -ip -mediği."
+ },
+ {
+  "id": "g0149",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the Earth orbits the Sun was once a dangerous idea.",
+  "options": [
+   "What",
+   "Whether",
+   "Which",
+   "It",
+   "That"
+  ],
+  "answer": 4,
+  "explain": "Kesin bilgi içeren isim cümlesi özne: That. What ardından eksik öğe ister; cümle tam.",
+  "tip": "Tam cümle + özne konumunda bilgi → That."
+ },
+ {
+  "id": "g0150",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- causes the northern lights is the interaction of solar particles with the atmosphere.",
+  "options": [
+   "That",
+   "Whether",
+   "Which",
+   "What",
+   "How"
+  ],
+  "answer": 3,
+  "explain": "Fiilin öznesi eksik (… causes): What (= the thing that).",
+  "tip": "Ardındaki cümlede özne/nesne eksikse what."
+ },
+ {
+  "id": "g0151",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 3,
+  "q": "It is not yet clear ---- the vaccine will be effective against new variants.",
+  "options": [
+   "whether",
+   "that",
+   "what",
+   "which",
+   "who"
+  ],
+  "answer": 0,
+  "explain": "'not yet clear' belirsizlik bildirir: whether.",
+  "tip": "Belirsizlik sıfatları (unclear, uncertain) → whether."
+ },
+ {
+  "id": "g0152",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The study shows ---- regular exercise reduces the risk of heart disease.",
+  "options": [
+   "that",
+   "what",
+   "whether",
+   "which",
+   "whom"
+  ],
+  "answer": 0,
+  "explain": "Kesin bulgu bildiren isim cümlesi: that.",
+  "tip": "show/suggest/find + that."
+ },
+ {
+  "id": "g0153",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Engineers disagree about ---- the tunnel should be built under or over the river.",
+  "options": [
+   "that",
+   "whether",
+   "if",
+   "what",
+   "which"
+  ],
+  "answer": 1,
+  "explain": "Edattan sonra if kullanılmaz; 'or' seçeneği: whether.",
+  "tip": "Edattan sonra IF değil WHETHER."
+ },
+ {
+  "id": "g0154",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The model can predict ---- much rain will fall in a given week.",
+  "options": [
+   "how",
+   "what",
+   "that",
+   "whether",
+   "which"
+  ],
+  "answer": 0,
+  "explain": "'how much' miktar sorar.",
+  "tip": "how much/many + isim."
+ },
+ {
+  "id": "g0155",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The fact ---- some bacteria survive boiling water surprised early biologists.",
+  "options": [
+   "what",
+   "which",
+   "whether",
+   "that",
+   "where"
+  ],
+  "answer": 3,
+  "explain": "'the fact that' kalıbı.",
+  "tip": "the fact/idea/belief + that."
+ },
+ {
+  "id": "g0156",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Nobody knows exactly ---- the first humans arrived in Australia.",
+  "options": [
+   "what",
+   "that",
+   "which",
+   "whom",
+   "when"
+  ],
+  "answer": 4,
+  "explain": "Zaman bilinmeyeni: when.",
+  "tip": "Tam cümle + zaman bilinmeyeni → when."
+ },
+ {
+  "id": "g0157",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- the drug works is still poorly understood.",
+  "options": [
+   "How",
+   "What",
+   "Which",
+   "Who",
+   "Whom"
+  ],
+  "answer": 0,
+  "explain": "İşleyiş biçimi bilinmiyor ve ardından tam cümle var: How. What/Which/Who eksik öğe ister.",
+  "tip": "Anlama göre soru kelimesi seç: how = nasıl."
+ },
+ {
+  "id": "g0158",
+  "topic": "noun-clause",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Whether the project continues depends on ---- funding is available next year.",
+  "options": [
+   "that",
+   "what",
+   "which",
+   "if not",
+   "whether"
+  ],
+  "answer": 4,
+  "explain": "Edattan (on) sonra belirsizlik: whether.",
+  "tip": "depends on + whether."
+ },
+ {
+  "id": "g0159",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Diamond is ---- than any other natural material.",
+  "options": [
+   "hardest",
+   "more hard",
+   "the hardest",
+   "as hard",
+   "harder"
+  ],
+  "answer": 4,
+  "explain": "Than → comparative: harder.",
+  "tip": "than görünce -er/more."
+ },
+ {
+  "id": "g0160",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new battery stores twice ---- energy as the old one.",
+  "options": [
+   "more",
+   "as many",
+   "as much",
+   "so much",
+   "much more"
+  ],
+  "answer": 2,
+  "explain": "'twice as much ... as' kalıbı; energy sayılamaz.",
+  "tip": "kat + as much/many + as."
+ },
+ {
+  "id": "g0161",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The higher the altitude, ---- the air becomes.",
+  "options": [
+   "thinner",
+   "the thinnest",
+   "thinnest",
+   "the thinner",
+   "more thin"
+  ],
+  "answer": 3,
+  "explain": "'The + comparative ..., the + comparative' kalıbı.",
+  "tip": "The more ..., the more ..."
+ },
+ {
+  "id": "g0162",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Jupiter is by far ---- planet in the solar system.",
+  "options": [
+   "the largest",
+   "larger",
+   "the larger",
+   "largest",
+   "as large"
+  ],
+  "answer": 0,
+  "explain": "'by far' + superlative: the largest.",
+  "tip": "by far / the most + the -est."
+ },
+ {
+  "id": "g0163",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The more carefully the samples are prepared, ---- the results will be.",
+  "options": [
+   "the more reliable",
+   "more reliable",
+   "the most reliable",
+   "most reliable",
+   "as reliable"
+  ],
+  "answer": 0,
+  "explain": "The + comparative, the + comparative.",
+  "tip": "İki yarı da 'the + comparative'."
+ },
+ {
+  "id": "g0164",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Glass is not ---- strong as steel, but it is much more resistant to corrosion.",
+  "options": [
+   "so much",
+   "more",
+   "than",
+   "such",
+   "as"
+  ],
+  "answer": 4,
+  "explain": "'not as ... as' karşılaştırması; ikinci 'as' metinde var.",
+  "tip": "as + sıfat + as."
+ },
+ {
+  "id": "g0165",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Sound travels about four times ---- in water than in air.",
+  "options": [
+   "fastest",
+   "as fast",
+   "faster",
+   "more fast",
+   "the faster"
+  ],
+  "answer": 2,
+  "explain": "'than' → comparative: faster.",
+  "tip": "kat + comparative + than da olur."
+ },
+ {
+  "id": "g0166",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The second test was ---- the first one; both produced the same results.",
+  "options": [
+   "more successful",
+   "successful than",
+   "the most successful",
+   "so successful",
+   "as successful as"
+  ],
+  "answer": 4,
+  "explain": "Eşitlik (aynı sonuçlar): as successful as.",
+  "tip": "Eşitlik → as ... as."
+ },
+ {
+  "id": "g0167",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Lithium is the ---- of all metals, with a density about half that of water.",
+  "options": [
+   "lightest",
+   "lighter",
+   "most light",
+   "more lighter",
+   "light"
+  ],
+  "answer": 0,
+  "explain": "'of all' → superlative: lightest.",
+  "tip": "of all / in the world → superlative."
+ },
+ {
+  "id": "g0168",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Modern engines are much ---- efficient than those built fifty years ago.",
+  "options": [
+   "most",
+   "as",
+   "very",
+   "so",
+   "more"
+  ],
+  "answer": 4,
+  "explain": "much + more + sıfat + than.",
+  "tip": "much/far/a lot + comparative."
+ },
+ {
+  "id": "g0169",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The cost of the new method is similar to ---- of the conventional one.",
+  "options": [
+   "those",
+   "this",
+   "these",
+   "it",
+   "that"
+  ],
+  "answer": 4,
+  "explain": "Tekil 'cost' tekrarını önleyen zamir: that.",
+  "tip": "Karşılaştırmada tekil → that of; çoğul → those of."
+ },
+ {
+  "id": "g0170",
+  "topic": "karsilastirma",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The fuel efficiency of hybrid cars is higher than ---- of diesel cars.",
+  "options": [
+   "that",
+   "those",
+   "it",
+   "them",
+   "this"
+  ],
+  "answer": 0,
+  "explain": "'fuel efficiency' tekil ve tekrar ediliyor: that of.",
+  "tip": "Kıyas yapılan şeyi bul: tekil mi çoğul mu?"
+ },
+ {
+  "id": "g0171",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 1,
+  "q": "---- the temperature nor the pressure changed during the experiment.",
+  "options": [
+   "Either",
+   "Both",
+   "Not only",
+   "Whether",
+   "Neither"
+  ],
+  "answer": 4,
+  "explain": "Nor ile eşleşen: Neither.",
+  "tip": "neither ... nor / either ... or / both ... and."
+ },
+ {
+  "id": "g0172",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The fault lies ---- in the cable or in the power supply.",
+  "options": [
+   "either",
+   "neither",
+   "both",
+   "whether",
+   "not only"
+  ],
+  "answer": 0,
+  "explain": "Or ile eşleşen: either.",
+  "tip": "either ... or."
+ },
+ {
+  "id": "g0173",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- iron and nickel are magnetic at room temperature.",
+  "options": [
+   "Either",
+   "Neither",
+   "Both",
+   "Not only",
+   "Whether"
+  ],
+  "answer": 2,
+  "explain": "And + çoğul fiil (are): Both.",
+  "tip": "both ... and + çoğul fiil."
+ },
+ {
+  "id": "g0174",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new alloy is not only lighter ---- more resistant to heat.",
+  "options": [
+   "but also",
+   "and also",
+   "or",
+   "nor",
+   "as well"
+  ],
+  "answer": 0,
+  "explain": "not only ... but also.",
+  "tip": "not only → but also."
+ },
+ {
+  "id": "g0175",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Neither the drug ---- the placebo had any effect on blood pressure.",
+  "options": [
+   "nor",
+   "or",
+   "and",
+   "but",
+   "neither"
+  ],
+  "answer": 0,
+  "explain": "Neither ile nor.",
+  "tip": "Neither'ı gördün mü → nor."
+ },
+ {
+  "id": "g0176",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Neither the students nor the teacher ---- aware of the gas leak.",
+  "options": [
+   "were",
+   "are",
+   "have been",
+   "was",
+   "be"
+  ],
+  "answer": 3,
+  "explain": "Neither ... nor'da fiil yakın özneye uyar (the teacher, tekil): was.",
+  "tip": "either/neither ... or/nor → fiil ikinci özneye uyar."
+ },
+ {
+  "id": "g0177",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Either the sensors or the software ---- responsible for the error.",
+  "options": [
+   "is",
+   "are",
+   "were",
+   "have been",
+   "be"
+  ],
+  "answer": 0,
+  "explain": "Fiil yakın özneye (the software, tekil) uyar: is.",
+  "tip": "Yakın özne kuralı."
+ },
+ {
+  "id": "g0178",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The test can be done ---- in the laboratory or on site.",
+  "options": [
+   "neither",
+   "both",
+   "not only",
+   "either",
+   "whether"
+  ],
+  "answer": 3,
+  "explain": "Or ile: either.",
+  "tip": "or → either."
+ },
+ {
+  "id": "g0179",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Neither of the two methods ---- suitable for large samples.",
+  "options": [
+   "is",
+   "be",
+   "being",
+   "to be",
+   "have"
+  ],
+  "answer": 0,
+  "explain": "'Neither of + çoğul isim' resmi dilde tekil fiil alır: is.",
+  "tip": "neither of / either of + tekil fiil (resmi)."
+ },
+ {
+  "id": "g0180",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The animal can live ---- on land and in water.",
+  "options": [
+   "both",
+   "either",
+   "neither",
+   "not only",
+   "as well"
+  ],
+  "answer": 0,
+  "explain": "And ile: both.",
+  "tip": "and → both."
+ },
+ {
+  "id": "g0181",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Not only ---- the method cheaper, but it is also faster.",
+  "options": [
+   "it is",
+   "is",
+   "does",
+   "has",
+   "was it"
+  ],
+  "answer": 1,
+  "explain": "'Not only' cümle başında → devrik: Not only is the method ...",
+  "tip": "Not only başta → devrik yapı."
+ },
+ {
+  "id": "g0182",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The patients did not report any improvement, and ---- did the doctors.",
+  "options": [
+   "either",
+   "so",
+   "nor did",
+   "neither",
+   "also"
+  ],
+  "answer": 3,
+  "explain": "Olumsuz cümleye (did not report) katılım: neither + yardımcı + özne. 'so' olumlu cümleye katılır; 'nor did' seçilirse 'did' iki kez gelir.",
+  "tip": "olumsuz + 'and neither did X'."
+ },
+ {
+  "id": "g0183",
+  "topic": "either-neither",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The engine did not start, and the backup system did not work ----.",
+  "options": [
+   "neither",
+   "too",
+   "either",
+   "also",
+   "so"
+  ],
+  "answer": 2,
+  "explain": "Olumsuz cümle sonunda 'de/da': either. Too/also olumlu cümlede kullanılır.",
+  "tip": "Olumsuz sonda → either; olumlu sonda → too."
+ },
+ {
+  "id": "g0184",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Very ---- water is left in the reservoir after the long drought.",
+  "options": [
+   "few",
+   "many",
+   "little",
+   "a few",
+   "several"
+  ],
+  "answer": 2,
+  "explain": "Water sayılamaz ve olumsuz anlam: little.",
+  "tip": "Sayılamaz → little/much; sayılabilir → few/many."
+ },
+ {
+  "id": "g0185",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Only a ---- species can survive in such salty lakes.",
+  "options": [
+   "little",
+   "much",
+   "few",
+   "lot",
+   "less"
+  ],
+  "answer": 2,
+  "explain": "Species sayılabilir + 'only a': a few.",
+  "tip": "only a few + çoğul sayılabilir."
+ },
+ {
+  "id": "g0186",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "There is ---- evidence that the drug causes serious side effects; most studies found it safe.",
+  "options": [
+   "few",
+   "a few",
+   "little",
+   "many",
+   "several"
+  ],
+  "answer": 2,
+  "explain": "Evidence sayılamaz; 'most studies found it safe' → çok az kanıt: little.",
+  "tip": "little = neredeyse hiç (olumsuz); a little = biraz."
+ },
+ {
+  "id": "g0187",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The team tested fifty samples, ---- of which contained traces of lead.",
+  "options": [
+   "much",
+   "a great deal",
+   "most",
+   "little",
+   "every"
+  ],
+  "answer": 2,
+  "explain": "'most of which' + sayılabilir çoğul.",
+  "tip": "most/many/some/none of which."
+ },
+ {
+  "id": "g0188",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- of the energy produced by a car engine is lost as heat.",
+  "options": [
+   "Many",
+   "Few",
+   "A few",
+   "Much",
+   "Several"
+  ],
+  "answer": 3,
+  "explain": "Energy sayılamaz: Much of.",
+  "tip": "much of + sayılamaz."
+ },
+ {
+  "id": "g0189",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- cell in the body contains the same genetic information.",
+  "options": [
+   "All",
+   "Most",
+   "Many",
+   "Every",
+   "Both"
+  ],
+  "answer": 3,
+  "explain": "Tekil isim (cell) + tekil fiil (contains): Every.",
+  "tip": "every/each + tekil isim."
+ },
+ {
+  "id": "g0190",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The new process uses ---- energy than the old one.",
+  "options": [
+   "fewer",
+   "little",
+   "few",
+   "less",
+   "least"
+  ],
+  "answer": 3,
+  "explain": "Sayılamaz + than: less. Fewer sayılabilir içindir.",
+  "tip": "less + sayılamaz; fewer + sayılabilir."
+ },
+ {
+  "id": "g0191",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Today ---- people die of smallpox, as the disease has been eradicated.",
+  "options": [
+   "any",
+   "little",
+   "much",
+   "a few",
+   "no"
+  ],
+  "answer": 4,
+  "explain": "Hastalık yok edildi → hiç kimse: no. A few anlamı bozar.",
+  "tip": "Mantık sorusu: yok edildi → no/none."
+ },
+ {
+  "id": "g0192",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "A large ---- of plastic ends up in the oceans every year.",
+  "options": [
+   "number",
+   "many",
+   "few",
+   "amount",
+   "several"
+  ],
+  "answer": 3,
+  "explain": "Plastic sayılamaz: a large amount of.",
+  "tip": "amount + sayılamaz; number + sayılabilir."
+ },
+ {
+  "id": "g0193",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 2,
+  "q": "A growing ---- of researchers believe that the effect is real.",
+  "options": [
+   "amount",
+   "number",
+   "deal",
+   "much",
+   "little"
+  ],
+  "answer": 1,
+  "explain": "Researchers sayılabilir çoğul: a number of.",
+  "tip": "a number of + çoğul fiil."
+ },
+ {
+  "id": "g0194",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- of the two samples was contaminated, so both could be used.",
+  "options": [
+   "Neither",
+   "Either",
+   "None",
+   "Both",
+   "All"
+  ],
+  "answer": 0,
+  "explain": "İki örnekten hiçbiri kirlenmemiş → ikisi de kullanılabilir: Neither. None ikiden fazlası için.",
+  "tip": "İki şey → neither/either/both; ikiden fazla → none/any/all."
+ },
+ {
+  "id": "g0195",
+  "topic": "quantifier",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Of all the planets, ---- has as many moons as Saturn.",
+  "options": [
+   "neither",
+   "no",
+   "none",
+   "nothing",
+   "nobody"
+  ],
+  "answer": 2,
+  "explain": "Çok sayıda gezegen içinden hiçbiri: none (tek başına zamir). 'no' isim ister.",
+  "tip": "none = hiçbiri (zamir); no + isim."
+ },
+ {
+  "id": "g0196",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Patients ---- take this drug on an empty stomach; it can cause pain.",
+  "options": [
+   "should not",
+   "must",
+   "need",
+   "can",
+   "have to"
+  ],
+  "answer": 0,
+  "explain": "Uyarı (ağrı yapabilir) → yapmamalı: should not.",
+  "tip": "Uyarı → should not / must not."
+ },
+ {
+  "id": "g0197",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The rocks are full of marine fossils, so this area ---- under the sea millions of years ago.",
+  "options": [
+   "should have been",
+   "must have been",
+   "can be",
+   "must be",
+   "would be"
+  ],
+  "answer": 1,
+  "explain": "Geçmişe yönelik güçlü çıkarım: must have V3.",
+  "tip": "Geçmiş + kesin çıkarım → must have V3."
+ },
+ {
+  "id": "g0198",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The engine ---- overheated because the cooling fan was broken; that seems the most likely cause.",
+  "options": [
+   "should have",
+   "may have",
+   "must",
+   "need have",
+   "would"
+  ],
+  "answer": 1,
+  "explain": "Geçmiş için olasılık: may have V3.",
+  "tip": "Geçmiş olasılık → may/might/could have V3."
+ },
+ {
+  "id": "g0199",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The engineers ---- the cables earlier; now the repair will be much more expensive.",
+  "options": [
+   "must have checked",
+   "could check",
+   "may check",
+   "should have checked",
+   "had to check"
+  ],
+  "answer": 3,
+  "explain": "Geçmişte yapılmayan doğru eylem (eleştiri): should have V3.",
+  "tip": "should have V3 = yapmalıydı (ama yapmadı)."
+ },
+ {
+  "id": "g0200",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The data ---- been altered; the files were locked and no one had access.",
+  "options": [
+   "must have",
+   "should have",
+   "cannot have",
+   "need have",
+   "would have"
+  ],
+  "answer": 2,
+  "explain": "Geçmiş için imkânsızlık çıkarımı: cannot have V3.",
+  "tip": "İmkânsız → can't/couldn't have V3."
+ },
+ {
+  "id": "g0201",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "You ---- wear a mask in this room; the air is filtered and completely safe.",
+  "options": [
+   "must not",
+   "cannot",
+   "should",
+   "do not have to",
+   "must"
+  ],
+  "answer": 3,
+  "explain": "Gereklilik yok: do not have to. Must not yasak bildirir, anlam ters.",
+  "tip": "don't have to = gerek yok; mustn't = yasak."
+ },
+ {
+  "id": "g0202",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Only trained staff ---- enter the reactor building.",
+  "options": [
+   "may",
+   "need",
+   "ought",
+   "would",
+   "shall have"
+  ],
+  "answer": 0,
+  "explain": "İzin: may.",
+  "tip": "may = izinli olmak (resmi)."
+ },
+ {
+  "id": "g0203",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The researchers ---- repeat the test three times before they got a stable result.",
+  "options": [
+   "must",
+   "had to",
+   "should",
+   "ought",
+   "need"
+  ],
+  "answer": 1,
+  "explain": "Geçmişte zorunluluk: had to. Must'ın geçmişi yok.",
+  "tip": "Geçmiş zorunluluk → had to."
+ },
+ {
+  "id": "g0204",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Without water, plants ---- produce sugar through photosynthesis.",
+  "options": [
+   "must",
+   "should",
+   "may not have",
+   "cannot",
+   "need"
+  ],
+  "answer": 3,
+  "explain": "Yetenek/imkânsızlık: cannot.",
+  "tip": "Su yoksa yapamaz → cannot."
+ },
+ {
+  "id": "g0205",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The bridge ---- have collapsed if the extra supports had not been added.",
+  "options": [
+   "must",
+   "should",
+   "can",
+   "might",
+   "need"
+  ],
+  "answer": 3,
+  "explain": "Koşullu geçmiş olasılık: might have V3.",
+  "tip": "If + had V3 → might/would/could have V3."
+ },
+ {
+  "id": "g0206",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Small cracks ---- lead to serious failures if they are not repaired.",
+  "options": [
+   "can",
+   "must",
+   "need",
+   "ought",
+   "would have"
+  ],
+  "answer": 0,
+  "explain": "Genel olasılık: can.",
+  "tip": "Genel olasılık → can / may."
+ },
+ {
+  "id": "g0207",
+  "topic": "modal",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The team ---- have used a larger sample, but they did not have enough funding.",
+  "options": [
+   "could",
+   "must",
+   "ought",
+   "shall",
+   "need"
+  ],
+  "answer": 0,
+  "explain": "Geçmişte mümkün olan ama yapılmayan: could have V3.",
+  "tip": "could have V3 = yapabilirdi (ama yapmadı)."
+ },
+ {
+  "id": "g0208",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The engine ---- in this car was designed in Germany.",
+  "options": [
+   "using",
+   "to use",
+   "uses",
+   "is used",
+   "used"
+  ],
+  "answer": 4,
+  "explain": "İndirgenmiş relative (which is used) → pasif: used.",
+  "tip": "Nesne eylemi almıyorsa V3."
+ },
+ {
+  "id": "g0209",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- the experiment, the researchers published their findings.",
+  "options": [
+   "Completed",
+   "Having been completed",
+   "Having completed",
+   "To be completed",
+   "Complete"
+  ],
+  "answer": 2,
+  "explain": "Önce tamamlayıp sonra yayımladılar (aktif, önce olan): Having completed.",
+  "tip": "Önceki aktif eylem → Having V3."
+ },
+ {
+  "id": "g0210",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "---- in 1889, the Eiffel Tower was once the tallest structure in the world.",
+  "options": [
+   "Building",
+   "Having built",
+   "Built",
+   "To build",
+   "Being building"
+  ],
+  "answer": 2,
+  "explain": "Kule inşa edildi (pasif): Built.",
+  "tip": "Özne eylemi yapmıyor → V3."
+ },
+ {
+  "id": "g0211",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Scientists ---- the effects of noise found that it raises blood pressure.",
+  "options": [
+   "studied",
+   "to study",
+   "having been studied",
+   "studying",
+   "study"
+  ],
+  "answer": 3,
+  "explain": "Bilim insanları inceliyor (aktif): studying.",
+  "tip": "Özne eylemi yapıyorsa Ving."
+ },
+ {
+  "id": "g0212",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- by heavy traffic for decades, the old bridge finally had to be closed.",
+  "options": [
+   "Having damaged",
+   "Damaging",
+   "To damage",
+   "Being damaging",
+   "Having been damaged"
+  ],
+  "answer": 4,
+  "explain": "Önceden ve pasif hasar: Having been damaged.",
+  "tip": "Önceki pasif → Having been V3."
+ },
+ {
+  "id": "g0213",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "When ---- to air, iron slowly turns into rust.",
+  "options": [
+   "exposing",
+   "having exposed",
+   "to expose",
+   "expose",
+   "exposed"
+  ],
+  "answer": 4,
+  "explain": "Demir havaya maruz bırakılır (pasif): when exposed.",
+  "tip": "when/if/once + V3 (pasif) / Ving (aktif)."
+ },
+ {
+  "id": "g0214",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Not ---- what caused the failure, the engineers ordered further tests.",
+  "options": [
+   "known",
+   "to know",
+   "having known",
+   "knowing",
+   "being known"
+  ],
+  "answer": 3,
+  "explain": "Olumsuz participle (bilmediği için, aktif): Not knowing.",
+  "tip": "Not + Ving = -mediği için."
+ },
+ {
+  "id": "g0215",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The gas ---- from the volcano contained high levels of sulphur.",
+  "options": [
+   "releasing",
+   "released",
+   "to release",
+   "releases",
+   "has released"
+  ],
+  "answer": 1,
+  "explain": "Gaz salındı (pasif indirgenmiş relative): released.",
+  "tip": "which was released → released."
+ },
+ {
+  "id": "g0216",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Plants ---- in poor soil tend to have shorter roots.",
+  "options": [
+   "growing up",
+   "to grow",
+   "having grown",
+   "grown",
+   "grow"
+  ],
+  "answer": 3,
+  "explain": "Bitkiler yetiştirilir (pasif): grown. 'growing' de olabilir mi? Plants growing in poor soil da doğru olurdu; şıklarda 'growing up' anlamı (büyüyüp yetişkin olmak) yanlış.",
+  "tip": "Phrasal verb anlamına dikkat: grow up = büyümek (insan)."
+ },
+ {
+  "id": "g0217",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 3,
+  "q": "After ---- for two hours, the mixture was allowed to cool.",
+  "options": [
+   "heat",
+   "heated",
+   "being heated",
+   "having heated",
+   "to heat"
+  ],
+  "answer": 2,
+  "explain": "Karışım ısıtıldı (pasif) + After + Ving yapısı: being heated.",
+  "tip": "after + being V3 (pasif)."
+ },
+ {
+  "id": "g0218",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Most of the electricity ---- in the country comes from hydroelectric plants.",
+  "options": [
+   "generating",
+   "to generate",
+   "generates",
+   "has generated",
+   "generated"
+  ],
+  "answer": 4,
+  "explain": "Elektrik üretilir (pasif): generated.",
+  "tip": "which is generated → generated."
+ },
+ {
+  "id": "g0219",
+  "topic": "participle",
+  "type": "bosluk",
+  "level": 3,
+  "q": "---- in the Arctic, the research station is supplied by aircraft only twice a year.",
+  "options": [
+   "Locating",
+   "Having located",
+   "To locate",
+   "Being locating",
+   "Located"
+  ],
+  "answer": 4,
+  "explain": "İstasyon konumlandırılmış (pasif sıfat): Located.",
+  "tip": "be located in → Located in ..."
+ },
+ {
+  "id": "g0220",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Rarely ---- such a large meteorite been found intact.",
+  "options": [
+   "it has",
+   "have",
+   "is",
+   "has",
+   "was"
+  ],
+  "answer": 3,
+  "explain": "Olumsuz zarf (Rarely) başta → devrik: Rarely has + özne + V3.",
+  "tip": "Rarely/Seldom/Never başta → yardımcı fiil + özne."
+ },
+ {
+  "id": "g0221",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Not until the microscope was invented ---- scientists see bacteria.",
+  "options": [
+   "they could",
+   "can",
+   "did they",
+   "could",
+   "were"
+  ],
+  "answer": 3,
+  "explain": "Not until ... → ana cümle devrik: could scientists see.",
+  "tip": "Not until ... + devrik ana cümle."
+ },
+ {
+  "id": "g0222",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Only after the data had been checked ---- the results published.",
+  "options": [
+   "were",
+   "they were",
+   "was",
+   "had",
+   "did"
+  ],
+  "answer": 0,
+  "explain": "Only after ... → devrik: were the results published (pasif, çoğul).",
+  "tip": "Only after/when/if ... + devrik."
+ },
+ {
+  "id": "g0223",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Hardly ---- the engine started when a warning light came on.",
+  "options": [
+   "did",
+   "has",
+   "had",
+   "was",
+   "it had"
+  ],
+  "answer": 2,
+  "explain": "Hardly ... when kalıbı: Hardly had + özne + V3 ... when.",
+  "tip": "Hardly/Scarcely had ... when; No sooner had ... than."
+ },
+ {
+  "id": "g0224",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "No sooner had the valve opened ---- the pressure dropped.",
+  "options": [
+   "when",
+   "then",
+   "than",
+   "that",
+   "as"
+  ],
+  "answer": 2,
+  "explain": "'No sooner ... than' kalıbı.",
+  "tip": "No sooner → than (when değil)."
+ },
+ {
+  "id": "g0225",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Never before ---- so much data been available to climate scientists.",
+  "options": [
+   "have",
+   "had been",
+   "is",
+   "has",
+   "did"
+  ],
+  "answer": 3,
+  "explain": "Never before + has + özne(tekil: so much data) + V3.",
+  "tip": "Never before + has/have + özne + V3."
+ },
+ {
+  "id": "g0226",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "So strong ---- the new fibre that it can stop a bullet.",
+  "options": [
+   "it is",
+   "is",
+   "does",
+   "has",
+   "was it"
+  ],
+  "answer": 1,
+  "explain": "'So + sıfat + be + özne + that' devrik yapı: So strong is the fibre that...",
+  "tip": "So/Such + ... + be + özne + that."
+ },
+ {
+  "id": "g0227",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Under no circumstances ---- the protective door be opened during the test.",
+  "options": [
+   "it should",
+   "must not",
+   "should",
+   "can not",
+   "does"
+  ],
+  "answer": 2,
+  "explain": "Olumsuz ifade başta → devrik: should the door be opened. 'must not' çift olumsuzluk olur.",
+  "tip": "Under no circumstances / On no account + devrik (olumsuz fiil yok)."
+ },
+ {
+  "id": "g0228",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Little ---- the early researchers know how dangerous radiation was.",
+  "options": [
+   "had",
+   "do",
+   "were",
+   "did",
+   "they did"
+  ],
+  "answer": 3,
+  "explain": "Little (olumsuz anlam) başta → did + özne + V1.",
+  "tip": "Little did ... know = hiç bilmiyordu."
+ },
+ {
+  "id": "g0229",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Not only ---- the new material lighter, but it is also cheaper to produce.",
+  "options": [
+   "it is",
+   "is",
+   "does",
+   "was it",
+   "has"
+  ],
+  "answer": 1,
+  "explain": "Not only başta → devrik: is the material lighter.",
+  "tip": "Not only başta → yardımcı fiil önce."
+ },
+ {
+  "id": "g0230",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Such ---- the force of the explosion that windows broke two kilometres away.",
+  "options": [
+   "it was",
+   "did",
+   "had",
+   "were it",
+   "was"
+  ],
+  "answer": 4,
+  "explain": "'Such + be + isim + that' devrik: Such was the force ...",
+  "tip": "Such was/is + isim + that."
+ },
+ {
+  "id": "g0231",
+  "topic": "inversion",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Only by reducing emissions ---- we slow down global warming.",
+  "options": [
+   "can",
+   "we can",
+   "will",
+   "do",
+   "are"
+  ],
+  "answer": 0,
+  "explain": "Only by + Ving → devrik: can we slow.",
+  "tip": "Only by/with/through ... + devrik."
+ },
+ {
+  "id": "g0232",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Bees pollinate many food crops. Without ----, global food production would fall sharply.",
+  "options": [
+   "them",
+   "it",
+   "this",
+   "those",
+   "that"
+  ],
+  "answer": 0,
+  "explain": "Çoğul 'bees' → them.",
+  "tip": "Zamir sayısı öncülüne uymalı."
+ },
+ {
+  "id": "g0233",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Some metals expand much more than others when heated. ---- difference must be considered when two metals are joined.",
+  "options": [
+   "These",
+   "Those",
+   "They",
+   "This",
+   "Such"
+  ],
+  "answer": 3,
+  "explain": "Tekil 'difference' + önceki cümleye gönderme: This.",
+  "tip": "this/these + isim → önceki cümle."
+ },
+ {
+  "id": "g0234",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Steel and aluminium are both used in cars; the former is stronger, while ---- is lighter.",
+  "options": [
+   "the latter",
+   "the former",
+   "this",
+   "those",
+   "the other ones"
+  ],
+  "answer": 0,
+  "explain": "İkili listede ikincisi: the latter (aluminium).",
+  "tip": "former = ilki, latter = ikincisi."
+ },
+ {
+  "id": "g0235",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The study found that people who sleep less eat more. ---- a link had been suspected but never proven.",
+  "options": [
+   "This",
+   "These",
+   "Those",
+   "It",
+   "Such"
+  ],
+  "answer": 4,
+  "explain": "'Such a + isim' = böyle bir bağlantı. 'This a link' dil bilgisi hatası.",
+  "tip": "such a + tekil isim; this + isim (a olmadan)."
+ },
+ {
+  "id": "g0236",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The population of the city is larger than ---- of the capital.",
+  "options": [
+   "that",
+   "those",
+   "it",
+   "this",
+   "which"
+  ],
+  "answer": 0,
+  "explain": "Tekil 'population' tekrarı: that of.",
+  "tip": "that of (tekil) / those of (çoğul)."
+ },
+ {
+  "id": "g0237",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Wind turbines are cheaper than they used to be, but ---- in remote areas are still costly to maintain.",
+  "options": [
+   "that",
+   "it",
+   "this",
+   "which",
+   "those"
+  ],
+  "answer": 4,
+  "explain": "Çoğul 'turbines' tekrarı: those (in remote areas).",
+  "tip": "Çoğul öncül → those."
+ },
+ {
+  "id": "g0238",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Many metals conduct heat very well. ---- property makes them useful for cooking pots.",
+  "options": [
+   "These",
+   "Those",
+   "This",
+   "They",
+   "Such"
+  ],
+  "answer": 2,
+  "explain": "Tekil 'property' + önceki cümleye gönderme: This. 'Such property' için 'such a property' gerekirdi; These/Those çoğul.",
+  "tip": "this + tekil isim; such a + tekil isim."
+ },
+ {
+  "id": "g0239",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The patients were divided into two groups. One received the drug, and ---- received a placebo.",
+  "options": [
+   "the other",
+   "another",
+   "others",
+   "other",
+   "the others ones"
+  ],
+  "answer": 0,
+  "explain": "İki gruptan ikincisi: the other.",
+  "tip": "İkiden biri → the other; çok içinden biri → another."
+ },
+ {
+  "id": "g0240",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Several theories have been proposed, but none of ---- explains all the observations.",
+  "options": [
+   "it",
+   "they",
+   "those ones",
+   "them",
+   "which"
+  ],
+  "answer": 3,
+  "explain": "Edattan sonra nesne zamiri ve çoğul: them. 'which' iki cümleyi bağlar ama burada 'but' zaten bağlaç; çift bağlaç olur.",
+  "tip": "Bağlaç varsa 'of them'; bağlaç yoksa 'of which'."
+ },
+ {
+  "id": "g0241",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Engineers tested three designs. ---- of them was strong enough to pass the safety test.",
+  "options": [
+   "No",
+   "None",
+   "Neither",
+   "Nothing",
+   "Nobody"
+  ],
+  "answer": 1,
+  "explain": "Üç tasarım (ikiden fazla) → None of them. Neither ikili içindir.",
+  "tip": "none of them (2+); neither of them (2)."
+ },
+ {
+  "id": "g0242",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Vaccines train the immune system to recognise a virus. In ---- way, the body is ready before an infection occurs.",
+  "options": [
+   "this",
+   "these",
+   "such",
+   "those",
+   "it"
+  ],
+  "answer": 0,
+  "explain": "'In this way' kalıbı (bu şekilde).",
+  "tip": "in this way = böylece."
+ },
+ {
+  "id": "g0243",
+  "topic": "referans",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Rivers carry large amounts of sediment. Much of ---- is deposited where the river meets the sea.",
+  "options": [
+   "it",
+   "them",
+   "those",
+   "these",
+   "they"
+  ],
+  "answer": 0,
+  "explain": "Sayılamaz 'sediment' → it.",
+  "tip": "much of + it (sayılamaz); many of + them."
+ },
+ {
+  "id": "g0244",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Clinical trials are needed to test the ---- of a new drug before it is approved.",
+  "options": [
+   "efficacy",
+   "scarcity",
+   "ambiguity",
+   "uniformity",
+   "hostility"
+  ],
+  "answer": 0,
+  "explain": "İlacın etkinliği test edilir: efficacy.",
+  "tip": "drug/treatment ile en sık eşdizim: efficacy."
+ },
+ {
+  "id": "g0245",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The engine ---- a large amount of heat, which must be removed by the cooling system.",
+  "options": [
+   "prohibits",
+   "restrains",
+   "postpones",
+   "neglects",
+   "generates"
+  ],
+  "answer": 4,
+  "explain": "Motor ısı üretir: generates.",
+  "tip": "heat/electricity ile → generate/produce."
+ },
+ {
+  "id": "g0246",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Copper is ---- used in electrical wiring because it conducts electricity well.",
+  "options": [
+   "barely",
+   "widely",
+   "reluctantly",
+   "vaguely",
+   "hardly"
+  ],
+  "answer": 1,
+  "explain": "Yaygın olarak kullanılır: widely used. Barely/hardly anlamı tersine çevirir.",
+  "tip": "'used' ile eşdizim: widely/commonly."
+ },
+ {
+  "id": "g0247",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Smoking ---- the risk of many diseases, including lung cancer.",
+  "options": [
+   "reveals",
+   "increases",
+   "confirms",
+   "attributes",
+   "composes"
+  ],
+  "answer": 1,
+  "explain": "Riski artırır: increases. Reveal/confirm risk ile anlamsız.",
+  "tip": "risk ile: increase/reduce/raise/lower."
+ },
+ {
+  "id": "g0248",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The researchers ---- the failure of the bridge to poor maintenance.",
+  "options": [
+   "contributed",
+   "distributed",
+   "retributed",
+   "attributed",
+   "tributed"
+  ],
+  "answer": 3,
+  "explain": "attribute A to B = A'yı B'ye bağlamak. Contribute to = katkı yapmak, nesne+to yapısı farklı.",
+  "tip": "attribute/ascribe A to B."
+ },
+ {
+  "id": "g0249",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Many plants cannot ---- in such dry conditions; only cacti grow there.",
+  "options": [
+   "survive",
+   "arrive",
+   "derive",
+   "deprive",
+   "revive"
+  ],
+  "answer": 0,
+  "explain": "Kuru koşullarda hayatta kalamaz: survive.",
+  "tip": "Koşul + bitki → survive/thrive."
+ },
+ {
+  "id": "g0250",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Lead is highly ---- and was removed from petrol in most countries.",
+  "options": [
+   "durable",
+   "abundant",
+   "transparent",
+   "toxic",
+   "flexible"
+  ],
+  "answer": 3,
+  "explain": "Benzinden kaldırılmasının nedeni zehirli olması: toxic.",
+  "tip": "Sonuç cümlesi (removed) nedeni ima eder."
+ },
+ {
+  "id": "g0251",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Air ---- mainly of nitrogen and oxygen.",
+  "options": [
+   "consists",
+   "contains",
+   "includes",
+   "comprises",
+   "composes"
+  ],
+  "answer": 0,
+  "explain": "Of ile kullanılan: consists of. Contain/include/comprise of almaz.",
+  "tip": "'of' varsa consist; yoksa contain/comprise."
+ },
+ {
+  "id": "g0252",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Insulating the walls can ---- reduce heating costs in winter.",
+  "options": [
+   "reluctantly",
+   "arbitrarily",
+   "vaguely",
+   "hardly",
+   "substantially"
+  ],
+  "answer": 4,
+  "explain": "Önemli ölçüde azaltır: substantially. Hardly anlamı tersine çevirir.",
+  "tip": "reduce/increase + substantially/significantly."
+ },
+ {
+  "id": "g0253",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The new design is more ---- than the old one, using 30 per cent less fuel.",
+  "options": [
+   "efficient",
+   "hostile",
+   "obscure",
+   "fragile",
+   "ambiguous"
+  ],
+  "answer": 0,
+  "explain": "Az yakıt → verimli: efficient.",
+  "tip": "Tanım cümledeyse (less fuel) onu karşılayan sıfatı seç."
+ },
+ {
+  "id": "g0254",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Earthquakes ---- most often along the edges of tectonic plates.",
+  "options": [
+   "emerge from",
+   "result in",
+   "consist",
+   "occur",
+   "account"
+  ],
+  "answer": 3,
+  "explain": "Meydana gelir: occur. Result in nesne ister, account for edat ister.",
+  "tip": "happen/occur/take place → nesne almaz."
+ },
+ {
+  "id": "g0255",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Bacteria that are ---- to antibiotics are a growing threat to public health.",
+  "options": [
+   "susceptible",
+   "immune from",
+   "resistant",
+   "vulnerable",
+   "exposed"
+  ],
+  "answer": 2,
+  "explain": "Antibiyotiğe dirençli: resistant to. Susceptible = duyarlı (ters anlam), tehdit olmazdı.",
+  "tip": "'threat' ipucu: dirençli → resistant."
+ },
+ {
+  "id": "g0256",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Scientists have ---- a new species of frog in the Amazon rainforest.",
+  "options": [
+   "invented",
+   "composed",
+   "neglected",
+   "discovered",
+   "postponed"
+  ],
+  "answer": 3,
+  "explain": "Doğada var olan bir türü keşfetmek: discover. Invent icat (yapay).",
+  "tip": "Doğal → discover; insan yapımı → invent."
+ },
+ {
+  "id": "g0257",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The theory was ---- by later experiments, which showed exactly the predicted results.",
+  "options": [
+   "refuted",
+   "confirmed",
+   "abandoned",
+   "contradicted",
+   "undermined"
+  ],
+  "answer": 1,
+  "explain": "Beklenen sonuçlar → doğrulandı: confirmed. Diğerleri olumsuz.",
+  "tip": "İkinci yarının kutbu (+) → olumlu fiil."
+ },
+ {
+  "id": "g0258",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The ---- of the study is to measure air pollution in schools.",
+  "options": [
+   "harm",
+   "aim",
+   "loss",
+   "doubt",
+   "lack"
+  ],
+  "answer": 1,
+  "explain": "Çalışmanın amacı: aim.",
+  "tip": "The aim/purpose/goal of the study is to V."
+ },
+ {
+  "id": "g0259",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Rising temperatures may ---- the melting of polar ice.",
+  "options": [
+   "withstand",
+   "resemble",
+   "postpone",
+   "rehearse",
+   "accelerate"
+  ],
+  "answer": 4,
+  "explain": "Erimeyi hızlandırır: accelerate.",
+  "tip": "Süreç + hızlanma → accelerate/speed up."
+ },
+ {
+  "id": "g0260",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Engineers had to ---- the original design to make the bridge lighter.",
+  "options": [
+   "ratify",
+   "notify",
+   "testify",
+   "modify",
+   "dignify"
+  ],
+  "answer": 3,
+  "explain": "Tasarımı değiştirmek: modify.",
+  "tip": "design ile → modify/alter/adjust."
+ },
+ {
+  "id": "g0261",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The ---- effects of the drug include headaches and nausea.",
+  "options": [
+   "adverse",
+   "beneficial",
+   "vital",
+   "explicit",
+   "abundant"
+  ],
+  "answer": 0,
+  "explain": "Baş ağrısı, bulantı → olumsuz etkiler: adverse effects.",
+  "tip": "Yan etki listesi → adverse/side effects."
+ },
+ {
+  "id": "g0262",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 1,
+  "q": "Plants ---- carbon dioxide from the air and release oxygen.",
+  "options": [
+   "emit",
+   "release",
+   "absorb",
+   "exhaust",
+   "spread"
+  ],
+  "answer": 2,
+  "explain": "CO2 alırlar: absorb. Emit/release ters yön.",
+  "tip": "Alma ↔ verme yönüne dikkat."
+ },
+ {
+  "id": "g0263",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The museum's collection is ---- of more than 10,000 fossils.",
+  "options": [
+   "consisted",
+   "contained",
+   "included",
+   "composed",
+   "involved"
+  ],
+  "answer": 3,
+  "explain": "Be composed of (pasif yapı). Consist pasif olmaz.",
+  "tip": "be composed of / be made up of; consist of (aktif)."
+ },
+ {
+  "id": "g0264",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Doctors ---- that patients drink plenty of water after surgery.",
+  "options": [
+   "prevent",
+   "deny",
+   "recommend",
+   "inhibit",
+   "abolish"
+  ],
+  "answer": 2,
+  "explain": "Tavsiye ederler: recommend that.",
+  "tip": "recommend/suggest that + özne + V1."
+ },
+ {
+  "id": "g0265",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Fossil fuels are a ---- resource; once used, they cannot be replaced.",
+  "options": [
+   "renewable",
+   "infinite",
+   "finite",
+   "flexible",
+   "abundant"
+  ],
+  "answer": 2,
+  "explain": "Yerine konamaz → sınırlı: finite. Renewable ters.",
+  "tip": "Açıklama cümlesini tanım gibi oku."
+ },
+ {
+  "id": "g0266",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The bridge was designed to ---- winds of up to 200 km/h.",
+  "options": [
+   "withdraw",
+   "withhold",
+   "withstand",
+   "undergo",
+   "underline"
+  ],
+  "answer": 2,
+  "explain": "Rüzgâra dayanmak: withstand. Undergo = geçirmek (test, değişim).",
+  "tip": "Yük/rüzgâr/sıcaklık → withstand/resist."
+ },
+ {
+  "id": "g0267",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "There is ---- evidence that the climate is warming, based on data from thousands of stations.",
+  "options": [
+   "compelling",
+   "trivial",
+   "scarce",
+   "vague",
+   "doubtful"
+  ],
+  "answer": 0,
+  "explain": "Binlerce istasyon → güçlü kanıt: compelling.",
+  "tip": "Destek ifadesi (+) → olumlu sıfat."
+ },
+ {
+  "id": "g0268",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The company decided to ---- the use of coal by 2030 and switch to gas.",
+  "options": [
+   "bring about",
+   "phase out",
+   "give rise to",
+   "take up",
+   "account for"
+  ],
+  "answer": 1,
+  "explain": "Kömürü aşamalı olarak bırakmak: phase out.",
+  "tip": "Bırakma/kaldırma → phase out / do away with."
+ },
+ {
+  "id": "g0269",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Regular exercise has a ---- effect on mental health.",
+  "options": [
+   "detrimental",
+   "harmful",
+   "toxic",
+   "adverse",
+   "beneficial"
+  ],
+  "answer": 4,
+  "explain": "Egzersiz → olumlu etki: beneficial.",
+  "tip": "Bağlam olumlu → beneficial/positive."
+ },
+ {
+  "id": "g0270",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The results were ---- with those of earlier studies, so the team was confident.",
+  "options": [
+   "hostile",
+   "absent",
+   "consistent",
+   "irrelevant",
+   "rigid"
+  ],
+  "answer": 2,
+  "explain": "Önceki çalışmalarla tutarlı → güven: consistent with.",
+  "tip": "consistent with = uyumlu."
+ },
+ {
+  "id": "g0271",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Scientists could not ---- the cause of the explosion until all the evidence was examined.",
+  "options": [
+   "deteriorate",
+   "determine",
+   "dominate",
+   "distribute",
+   "dedicate"
+  ],
+  "answer": 1,
+  "explain": "Nedeni belirlemek: determine.",
+  "tip": "cause/reason ile → determine/identify."
+ },
+ {
+  "id": "g0272",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Exposure to loud noise can ---- permanent hearing loss.",
+  "options": [
+   "lead to",
+   "lead in",
+   "result from",
+   "stem from",
+   "depend on"
+  ],
+  "answer": 0,
+  "explain": "Sonuç gösterilir: lead to. Result from/stem from nedeni gösterir (ters).",
+  "tip": "Neden → sonuç: lead to / result in."
+ },
+ {
+  "id": "g0273",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Most of the country's electricity problems ---- poor investment in the 1990s.",
+  "options": [
+   "lead to",
+   "result in",
+   "give rise to",
+   "bring about",
+   "stem from"
+  ],
+  "answer": 4,
+  "explain": "Sorunlar 1990'lardaki yatırımdan kaynaklanır: stem from (neden).",
+  "tip": "Sonuç özne, neden nesne → stem from / arise from."
+ },
+ {
+  "id": "g0274",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Coal still ---- for about a third of the electricity produced worldwide.",
+  "options": [
+   "consists",
+   "makes",
+   "refers",
+   "composes",
+   "accounts"
+  ],
+  "answer": 4,
+  "explain": "account for + oran: accounts for.",
+  "tip": "% / oran + for → account for."
+ },
+ {
+  "id": "g0275",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Engineers ---- out a series of tests on the new engine.",
+  "options": [
+   "took",
+   "made",
+   "put",
+   "looked",
+   "carried"
+  ],
+  "answer": 4,
+  "explain": "carry out a test.",
+  "tip": "test/research/experiment ile → carry out/conduct."
+ },
+ {
+  "id": "g0276",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The new evidence ---- the long-held belief that the disease was caused by bad air.",
+  "options": [
+   "underpinned",
+   "endorsed",
+   "reinforced",
+   "confirmed",
+   "undermined"
+  ],
+  "answer": 4,
+  "explain": "'long-held belief' yeni kanıtla sarsılır: undermined. Diğerleri destekler.",
+  "tip": "Yeni kanıt vs eski inanç → genelde çürütme."
+ },
+ {
+  "id": "g0277",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The device is small and light, which makes it ---- to carry.",
+  "options": [
+   "reluctant",
+   "severe",
+   "convenient",
+   "hostile",
+   "obsolete"
+  ],
+  "answer": 2,
+  "explain": "Küçük ve hafif → taşıması kolay: convenient.",
+  "tip": "Sebep → olumlu sıfat."
+ },
+ {
+  "id": "g0278",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Volcanic eruptions ---- huge amounts of ash into the atmosphere.",
+  "options": [
+   "absorb",
+   "release",
+   "retain",
+   "withhold",
+   "restrain"
+  ],
+  "answer": 1,
+  "explain": "Kül salarlar: release. Absorb ters.",
+  "tip": "gas/ash/energy → release/emit."
+ },
+ {
+  "id": "g0279",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 1,
+  "q": "The temperature ---- constant throughout the experiment.",
+  "options": [
+   "retained",
+   "remained",
+   "maintained",
+   "contained",
+   "sustained"
+  ],
+  "answer": 1,
+  "explain": "Nesne almayan 'kalmak': remained. Maintain/retain/sustain nesne ister.",
+  "tip": "Linking verb: remain + sıfat."
+ },
+ {
+  "id": "g0280",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Oil spills have a ---- impact on marine ecosystems.",
+  "options": [
+   "negligible",
+   "trivial",
+   "beneficial",
+   "devastating",
+   "modest"
+  ],
+  "answer": 3,
+  "explain": "Petrol sızıntısı → yıkıcı etki: devastating.",
+  "tip": "Bilinen olumsuz olay → güçlü olumsuz sıfat."
+ },
+ {
+  "id": "g0281",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The scientists ---- data from more than 5,000 patients.",
+  "options": [
+   "composed",
+   "consisted",
+   "collected",
+   "resembled",
+   "occurred"
+  ],
+  "answer": 2,
+  "explain": "Veri toplamak: collect data.",
+  "tip": "data ile → collect/gather/analyse."
+ },
+ {
+  "id": "g0282",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "The engine stopped ---- because the fuel had run out, not because of a fault.",
+  "options": [
+   "merely as",
+   "barely",
+   "hardly",
+   "scarcely",
+   "simply"
+  ],
+  "answer": 4,
+  "explain": "'Sadece yakıt bittiği için': simply because. Barely/hardly/scarcely olumsuz anlam verir.",
+  "tip": "simply/merely/just because."
+ },
+ {
+  "id": "g0283",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The ---- of a vaccine can take up to ten years.",
+  "options": [
+   "deposit",
+   "decline",
+   "defect",
+   "development",
+   "detection"
+  ],
+  "answer": 3,
+  "explain": "Aşı geliştirme süreci: development.",
+  "tip": "vaccine/product ile → development."
+ },
+ {
+  "id": "g0284",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Improved sanitation has ---- reduced the spread of cholera.",
+  "options": [
+   "reluctantly",
+   "hardly",
+   "dramatically",
+   "arbitrarily",
+   "scarcely"
+  ],
+  "answer": 2,
+  "explain": "Önemli ölçüde azalttı: dramatically. Hardly/scarcely olumsuz.",
+  "tip": "reduce + dramatically/significantly."
+ },
+ {
+  "id": "g0285",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Before the experiment, all instruments were ---- to ensure accurate readings.",
+  "options": [
+   "calibrated",
+   "celebrated",
+   "cultivated",
+   "collapsed",
+   "compiled"
+  ],
+  "answer": 0,
+  "explain": "Ölçüm doğruluğu için ayarlanır: calibrated.",
+  "tip": "instrument + accurate → calibrate."
+ },
+ {
+  "id": "g0286",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Engineers must ---- the possibility of earthquakes when designing buildings in this region.",
+  "options": [
+   "take after",
+   "take into account",
+   "take over",
+   "take off",
+   "take apart"
+  ],
+  "answer": 1,
+  "explain": "Hesaba katmak: take into account.",
+  "tip": "consider = take into account."
+ },
+ {
+  "id": "g0287",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "Recycling aluminium uses only a ---- of the energy needed to produce new metal.",
+  "options": [
+   "fraction",
+   "function",
+   "friction",
+   "faction",
+   "fracture"
+  ],
+  "answer": 0,
+  "explain": "'a fraction of' = çok küçük bir kısmı.",
+  "tip": "a fraction of = küçük bir kısım."
+ },
+ {
+  "id": "g0288",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 3,
+  "q": "Some species ---- to extreme cold by producing natural antifreeze in their blood.",
+  "options": [
+   "have adopted",
+   "have adjusted to",
+   "have adapted",
+   "have admitted",
+   "have adhered"
+  ],
+  "answer": 2,
+  "explain": "Soğuğa uyum sağlamak: adapt to. Adopt = benimsemek, adjust to zaten 'to' içeriyor (tekrar olur).",
+  "tip": "adapt to (uyum) ≠ adopt (benimsemek)."
+ },
+ {
+  "id": "g0289",
+  "topic": "kelime",
+  "type": "bosluk",
+  "level": 2,
+  "q": "The ---- of the new bridge will begin next spring.",
+  "options": [
+   "construction",
+   "destruction",
+   "instruction",
+   "obstruction",
+   "deduction"
+  ],
+  "answer": 0,
+  "explain": "İnşaat başlayacak: construction.",
+  "tip": "bridge/building ile → construction."
+ }
+]

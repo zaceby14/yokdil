@@ -1,0 +1,377 @@
+{
+ "start": "2026-11-16",
+ "exam": "2027-02-28",
+ "apply": [
+  "2027-01-12",
+  "2027-01-20"
+ ],
+ "lateApply": "2027-01-28",
+ "result": "2027-03-26",
+ "backupExam": {
+  "date": "2027-07-25",
+  "apply": [
+   "2027-06-08",
+   "2027-06-16"
+  ],
+  "name": "2027-YÖKDİL/2"
+ },
+ "daily": {
+  "normal": [
+   {
+    "task": "Kart tekrarı",
+    "min": 10
+   },
+   {
+    "task": "Günlük gramer (5–8 soru + hata tekrarı)",
+    "min": 10
+   },
+   {
+    "task": "Okuma + bilinmeyen kelime notu",
+    "min": 20
+   },
+   {
+    "task": "Yeni kartlar",
+    "min": 5
+   }
+  ],
+  "busy": [
+   {
+    "task": "Kart tekrarı",
+    "min": 12
+   },
+   {
+    "task": "3 gramer sorusu",
+    "min": 3
+   }
+  ]
+ },
+ "weeks": [
+  {
+   "n": 1,
+   "phase": "Temel",
+   "dates": [
+    "2026-11-16",
+    "2026-11-22"
+   ],
+   "newWords": 15,
+   "grammar": [
+    "baglac-zitlik"
+   ],
+   "drills": [],
+   "goal": "Zıtlık bağlaçlarını kutup mantığıyla (yeni↔eski dahil) tanı.",
+   "weekend": "Cmt: 1 uzun okuma (More to Read) · Paz: hafif kart tekrarı"
+  },
+  {
+   "n": 2,
+   "phase": "Temel",
+   "dates": [
+    "2026-11-23",
+    "2026-11-29"
+   ],
+   "newWords": 15,
+   "grammar": [
+    "baglac-neden-amac"
+   ],
+   "drills": [],
+   "goal": "Neden-sonuç-amaç bağlaçlarını ve in order to / with a view to + Ving farkını otur.",
+   "weekend": "Cmt: uzun okuma + kelime notu · Paz: hafif tekrar"
+  },
+  {
+   "n": 3,
+   "phase": "Temel",
+   "dates": [
+    "2026-11-30",
+    "2026-12-06"
+   ],
+   "newWords": 15,
+   "grammar": [
+    "edat-esdizim",
+    "zaman-uyumu"
+   ],
+   "drills": [],
+   "goal": "at + temperature/rate/level ve lead to + isim kalıplarını otomatikleştir.",
+   "weekend": "Cmt: uzun okuma · Paz: hata kutusu tekrarı"
+  },
+  {
+   "n": 4,
+   "phase": "Temel",
+   "dates": [
+    "2026-12-07",
+    "2026-12-13"
+   ],
+   "newWords": 15,
+   "grammar": [
+    "relative",
+    "gerund-infinitive"
+   ],
+   "drills": [],
+   "goal": "which/that ayrımını ve mean/with + N + Ving yapılarını çöz.",
+   "weekend": "Cmt: uzun okuma (Ikigai) · Paz: hafif tekrar"
+  },
+  {
+   "n": 5,
+   "phase": "Temel",
+   "dates": [
+    "2026-12-14",
+    "2026-12-20"
+   ],
+   "newWords": 15,
+   "grammar": [
+    "passive",
+    "kosul-wish"
+   ],
+   "drills": [
+    "cumle-tamamlama"
+   ],
+   "goal": "Pasif ve koşul yapılarını cümlede hızlı tanı; 1. fazı bitir.",
+   "weekend": "Cmt: 20 soruluk karışık gramer · Paz: kart tekrarı"
+  },
+  {
+   "n": 6,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2026-12-21",
+    "2026-12-27"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "noun-clause",
+    "karsilastirma"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama"
+   ],
+   "goal": "Cloze ve cümle tamamlamada bağlaç + zaman ipucunu kullan.",
+   "weekend": "Cmt: 10 cloze + 11 cümle tamamlama (süreli) · Paz: hafif tekrar"
+  },
+  {
+   "n": 7,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2026-12-28",
+    "2027-01-03"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "either-neither",
+    "quantifier"
+   ],
+   "drills": [
+    "ceviri-en-tr",
+    "ceviri-tr-en"
+   ],
+   "goal": "Çeviride ana yapıyı (zaman, bağlaç, özne) eşleştirerek ele.",
+   "weekend": "Cmt: 12 çeviri sorusu (süreli) · Paz: hafif tekrar"
+  },
+  {
+   "n": 8,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2027-01-04",
+    "2027-01-10"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "modal",
+    "participle"
+   ],
+   "drills": [
+    "paragraf-tamamlama",
+    "ilgisiz"
+   ],
+   "goal": "İlgisiz cümlede konu ve kutup kaymasını yakala.",
+   "weekend": "Cmt: 6 paragraf tamamlama + 6 ilgisiz cümle · Paz: hafif tekrar"
+  },
+  {
+   "n": 9,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2027-01-11",
+    "2027-01-17"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "inversion",
+    "referans"
+   ],
+   "drills": [
+    "yakin-anlam",
+    "cloze"
+   ],
+   "goal": "Referans zamirleri ile paragraf akışını takip et. Başvuru açılıyor!",
+   "weekend": "Cmt: 1 uzun okuma + 5 parça soru · Paz: başvuruyu yap (12–20 Ocak)"
+  },
+  {
+   "n": 10,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2027-01-18",
+    "2027-01-24"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "baglac-zitlik",
+    "relative"
+   ],
+   "drills": [
+    "ilgisiz",
+    "paragraf-tamamlama",
+    "cumle-tamamlama"
+   ],
+   "goal": "Zayıf konuları (bağlaç, which/that) tekrar et; başvurunun son günü 20 Ocak.",
+   "weekend": "Cmt: karışık soru tipi seti (40 soru) · Paz: hafif tekrar"
+  },
+  {
+   "n": 11,
+   "phase": "Soru tipleri",
+   "dates": [
+    "2027-01-25",
+    "2027-01-31"
+   ],
+   "newWords": 10,
+   "grammar": [
+    "edat-esdizim",
+    "gerund-infinitive",
+    "either-neither"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ceviri-en-tr",
+    "ceviri-tr-en",
+    "paragraf-tamamlama",
+    "ilgisiz",
+    "yakin-anlam"
+   ],
+   "goal": "Tüm soru tiplerini karışık çöz; zaman yönetimini dene.",
+   "weekend": "Cmt: yarım deneme (40 soru, 90 dk) · Paz: hata analizi"
+  },
+  {
+   "n": 12,
+   "phase": "Deneme",
+   "dates": [
+    "2027-02-01",
+    "2027-02-07"
+   ],
+   "newWords": 5,
+   "grammar": [
+    "kelime",
+    "baglac-zitlik",
+    "edat-esdizim"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ceviri-en-tr",
+    "ceviri-tr-en",
+    "paragraf-tamamlama",
+    "ilgisiz",
+    "yakin-anlam"
+   ],
+   "goal": "İlk tam denemeyi çöz ve hatalarını konulara ayır.",
+   "weekend": "Cmt: ÖSYM çıkmış kitapçık tam deneme (180 dk) · Paz: hata analizi"
+  },
+  {
+   "n": 13,
+   "phase": "Deneme",
+   "dates": [
+    "2027-02-08",
+    "2027-02-14"
+   ],
+   "newWords": 5,
+   "grammar": [
+    "kelime",
+    "relative",
+    "gerund-infinitive"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ceviri-en-tr",
+    "ceviri-tr-en",
+    "paragraf-tamamlama",
+    "ilgisiz",
+    "yakin-anlam"
+   ],
+   "goal": "En zayıf 3 alana ağırlık ver, kelime tekrarını artır.",
+   "weekend": "Cmt: tam deneme (180 dk) · Paz: hata analizi + kart tekrarı"
+  },
+  {
+   "n": 14,
+   "phase": "Deneme",
+   "dates": [
+    "2027-02-15",
+    "2027-02-21"
+   ],
+   "newWords": 5,
+   "grammar": [
+    "kelime",
+    "either-neither",
+    "baglac-neden-amac"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ceviri-en-tr",
+    "ceviri-tr-en",
+    "paragraf-tamamlama",
+    "ilgisiz",
+    "yakin-anlam"
+   ],
+   "goal": "Süre hedefi: okuma bölümüne en az 50 dk ayır.",
+   "weekend": "Cmt: tam deneme (180 dk) · Paz: hata analizi"
+  },
+  {
+   "n": 15,
+   "phase": "Deneme",
+   "dates": [
+    "2027-02-22",
+    "2027-02-28"
+   ],
+   "newWords": 5,
+   "grammar": [
+    "kelime"
+   ],
+   "drills": [
+    "cloze",
+    "cumle-tamamlama",
+    "ilgisiz",
+    "yakin-anlam"
+   ],
+   "goal": "Hafif tekrar, yeni konu yok; sınava dinç gir.",
+   "weekend": "Cmt: sadece kart tekrarı + 1 kısa okuma · Paz 28 Şubat: SINAV"
+  }
+ ],
+ "notes": [
+  {
+   "date": "2027-01-05",
+   "text": "Hatırlatma: YÖKDİL/1 başvurusu 12 Ocak'ta açılıyor; ÖSYM AİS şifreni ve ücret ödeme yöntemini hazırla."
+  },
+  {
+   "date": "2027-01-12",
+   "text": "YÖKDİL/1 başvurusu bugün başladı (12–20 Ocak). Alan: Fen Bilimleri, dil: İngilizce."
+  },
+  {
+   "date": "2027-01-18",
+   "text": "Başvuru için son 3 gün (son gün 20 Ocak). Yaptıysan ücretin ödendiğini kontrol et."
+  },
+  {
+   "date": "2027-01-28",
+   "text": "Geç başvuru son günü (28 Ocak). Normal başvuruyu kaçırdıysan bugün yap."
+  },
+  {
+   "date": "2027-02-21",
+   "text": "Sınav giriş belgesini ÖSYM AİS'ten al; sınav yerini kontrol et."
+  },
+  {
+   "date": "2027-02-28",
+   "text": "Sınav günü: kimlik + giriş belgesi. Önce bildiğin soru tiplerinden başla, okumaya en az 50 dk bırak."
+  },
+  {
+   "date": "2027-03-26",
+   "text": "YÖKDİL/1 sonuç günü."
+  }
+ ],
+ "osymLink": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html"
+}

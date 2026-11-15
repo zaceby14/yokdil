@@ -1,0 +1,4844 @@
+[
+ {
+  "id": "d001",
+  "type": "cloze",
+  "stem": "Galvanizing is one of the oldest methods of protecting steel (1) ---- corrosion. The steel is dipped into a bath of molten zinc (2) ---- a temperature of about 450 °C. Zinc protects steel in two ways: it forms a physical barrier, and it corrodes in preference to iron, (3) ---- the steel remains intact even where the coating is scratched. (4) ---- its effectiveness, galvanizing is not suitable for every application, since the coating can be damaged at high service temperatures. Nevertheless, galvanized structures (5) ---- for more than fifty years in many rural environments.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "with",
+     "at",
+     "into",
+     "over",
+     "against"
+    ],
+    "answer": 4,
+    "explain": "protect sth against/from sth kalıbı.",
+    "tip": "Fiil + edat eşdizimini ezberle: protect against."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "in",
+     "at",
+     "on",
+     "by",
+     "for"
+    ],
+    "answer": 1,
+    "explain": "at a temperature of ... eşdizimi.",
+    "tip": "at + temperature/rate/level/speed."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "so that",
+     "although",
+     "unless",
+     "as if",
+     "whereas"
+    ],
+    "answer": 0,
+    "explain": "Çinko önce aşınır → sonuç olarak çelik sağlam kalır: sonuç bağlacı.",
+    "tip": "Boşluktan önce/sonra neden-sonuç ilişkisi var mı bak."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "Because of",
+     "Owing to",
+     "In addition to",
+     "Instead of",
+     "Despite"
+    ],
+    "answer": 4,
+    "explain": "Etkili ↔ her yere uygun değil: zıtlık + isim → Despite.",
+    "tip": "+/- kutbu: olumlu bilgi → olumsuz bilgi = zıtlık."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "had lasted",
+     "can last",
+     "were lasting",
+     "have been lasted",
+     "will have lasting"
+    ],
+    "answer": 1,
+    "explain": "Genel geçer bilgi; geniş zaman modal 'can last'.",
+    "tip": "Genel doğrular geniş zaman/modal ister."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d002",
+  "type": "cloze",
+  "stem": "Wind turbines have grown dramatically in size over the past three decades. Larger blades sweep a bigger area and (1) ---- capture more energy. The power available in wind also increases with the cube of wind speed, so even a small rise in wind speed matters a great deal. (2) ---- this reason, turbines are also mounted on taller towers, where winds are stronger and steadier. However, size brings new problems. Very long blades must be light and stiff at the same time, (3) ---- has led manufacturers to use carbon-fibre composites. Transporting such blades by road is also difficult, so some companies (4) ---- developing blades that can be assembled from segments on site. Offshore, where there are fewer restrictions on size, the largest turbines now (5) ---- enough electricity for thousands of homes.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "however",
+     "otherwise",
+     "instead",
+     "therefore",
+     "nevertheless"
+    ],
+    "answer": 3,
+    "explain": "Daha büyük alan süpürür → sonuç olarak daha çok enerji yakalar.",
+    "tip": "Neden → sonuç: therefore/thus."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "For",
+     "Due",
+     "Because",
+     "As",
+     "Since"
+    ],
+    "answer": 0,
+    "explain": "'For this reason' kalıbı. Due/Because 'to/of' ister.",
+    "tip": "for this reason = bu nedenle."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "that",
+     "what",
+     "whose",
+     "which",
+     "where"
+    ],
+    "answer": 3,
+    "explain": "Virgülden sonra önceki cümlenin tamamını niteleyen ilgi zamiri 'which'; 'that' virgülden sonra gelmez.",
+    "tip": "Virgül + that YOK."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "have",
+     "were being",
+     "had",
+     "are",
+     "will have"
+    ],
+    "answer": 3,
+    "explain": "'some companies are developing' şimdiki zaman, güncel süreç.",
+    "tip": "Bağlamın zamanı: genel güncel durum."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "generated",
+     "had generated",
+     "were generating",
+     "generate",
+     "have been generated"
+    ],
+    "answer": 3,
+    "explain": "'now' → geniş zaman, aktif: turbines generate electricity.",
+    "tip": "Zaman zarfı (now) ipucudur."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d003",
+  "type": "cloze",
+  "stem": "Sound is a mechanical wave, which means that it needs a medium (1) ---- travel. In air, it moves at about 343 metres per second, but it travels much faster in water and faster still in steel. This is (2) ---- the particles in solids are packed closely together and pass vibrations to one another quickly. In a vacuum, (3) ----, there are no particles at all, so sound cannot travel. Astronauts in space must therefore communicate by radio, (4) ---- relies on electromagnetic waves. Engineers use the speed of sound in metals to test parts (5) ---- cracks: an ultrasonic pulse is sent into the material, and any echo from inside reveals a hidden defect.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "so as",
+     "with a view to",
+     "in case",
+     "because of",
+     "in order to"
+    ],
+    "answer": 4,
+    "explain": "Amaç + yalın fiil: in order to travel. 'with a view to' -ing ister.",
+    "tip": "in order to + V1; with a view to + Ving."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "although",
+     "so that",
+     "unless",
+     "despite",
+     "because"
+    ],
+    "answer": 4,
+    "explain": "Sonucun nedeni açıklanıyor: This is because...",
+    "tip": "This is because = Bunun nedeni..."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "therefore",
+     "for example",
+     "similarly",
+     "however",
+     "in addition"
+    ],
+    "answer": 3,
+    "explain": "Katı/sıvı ↔ boşluk zıtlığı; ara zıtlık bağlacı.",
+    "tip": "Virgüller arasında bağlaç: however/therefore ayrımı kutupla yapılır."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "which",
+     "who",
+     "what",
+     "where",
+     "when"
+    ],
+    "answer": 0,
+    "explain": "Radyoyu niteleyen, virgüllü ilgi cümlesi: which.",
+    "tip": "Cansız nesne + virgül → which."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "with",
+     "by",
+     "for",
+     "on",
+     "from"
+    ],
+    "answer": 2,
+    "explain": "test sth for cracks = çatlak açısından test etmek.",
+    "tip": "test/check/screen for."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d004",
+  "type": "cloze",
+  "stem": "Catalysts are substances that speed up chemical reactions without being consumed. They work by offering an alternative reaction pathway (1) ---- requires less energy. Enzymes, the catalysts of living cells, are often extremely selective, (2) ---- industrial catalysts tend to be less specific but more robust. Many important industrial catalysts (3) ---- by trial and error in the early twentieth century, long before chemists understood how they worked. Today, (4) ----, researchers use computer simulations to design new catalysts atom by atom. This approach could reduce the amount of rare metals such as platinum (5) ---- in fuel cells and car exhausts.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "what",
+     "that",
+     "whose",
+     "where",
+     "who"
+    ],
+    "answer": 1,
+    "explain": "'pathway that requires' — virgülsüz tanımlayıcı ilgi cümlesi; that/which olur.",
+    "tip": "Virgülsüz → that kullanılabilir."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "whereas",
+     "because",
+     "so that",
+     "unless",
+     "in case"
+    ],
+    "answer": 0,
+    "explain": "Seçici ↔ daha az spesifik: iki şeyin karşılaştırmalı zıtlığı.",
+    "tip": "while/whereas = iki şeyi karşılaştıran zıtlık."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "have discovered",
+     "discovered",
+     "are discovering",
+     "were discovered",
+     "had been discovering"
+    ],
+    "answer": 3,
+    "explain": "Geçmiş zaman zarfı (early twentieth century) + edilgen (katalizörler keşfedildi).",
+    "tip": "Özne eylemi yapıyor mu? Yapmıyorsa passive."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "as a result",
+     "for instance",
+     "by contrast",
+     "in other words",
+     "likewise"
+    ],
+    "answer": 2,
+    "explain": "Deneme-yanılma ↔ bilgisayarla tasarım: zıtlık.",
+    "tip": "Today, by contrast = Eski ↔ yeni zıtlığı."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "using",
+     "to use",
+     "used",
+     "uses",
+     "have used"
+    ],
+    "answer": 2,
+    "explain": "'platinum used in fuel cells' — edilgen sıfat-fiil (which is used).",
+    "tip": "İsim + V3 = edilgen kısaltma."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d005",
+  "type": "cloze",
+  "stem": "Antibiotics transformed medicine in the twentieth century, but their success is under threat. Bacteria reproduce rapidly, and (1) ---- an antibiotic is used, the few cells that happen to resist it survive and multiply. Over time, resistant strains (2) ---- dominant. The problem is made worse (3) ---- the overuse of antibiotics in both human medicine and livestock farming. (4) ---- new antibiotics are urgently needed, few have reached the market in recent decades, partly because developing them is expensive and unprofitable. Some researchers are therefore exploring alternatives, such as viruses that infect only bacteria, (5) ---- are known as phages.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "unless",
+     "although",
+     "whereas",
+     "so that",
+     "whenever"
+    ],
+    "answer": 4,
+    "explain": "Her kullanımda dirençli olanlar hayatta kalır: zaman/tekrar bağlacı.",
+    "tip": "whenever = her ne zaman."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "becoming",
+     "become",
+     "to become",
+     "has become",
+     "is becoming"
+    ],
+    "answer": 1,
+    "explain": "Genel süreç, geniş zaman çoğul özne: strains become.",
+    "tip": "Over time + genel doğru → geniş zaman."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "with",
+     "from",
+     "by",
+     "at",
+     "on"
+    ],
+    "answer": 2,
+    "explain": "Edilgende eylemi yapan: made worse by.",
+    "tip": "Passive + by + fail."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "Although",
+     "Because",
+     "Since",
+     "As",
+     "Once"
+    ],
+    "answer": 0,
+    "explain": "Acil gerekli ↔ çok az piyasaya çıktı: zıtlık.",
+    "tip": "+/- kutbu."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "who",
+     "where",
+     "which",
+     "whose",
+     "what"
+    ],
+    "answer": 2,
+    "explain": "Viruses ... which are known as phages; virgüllü ilgi cümlesi.",
+    "tip": "Virgülden sonra that yok; canlı-insan değil → which."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d006",
+  "type": "cloze",
+  "stem": "Bees and other pollinators play a vital role in food production. About three-quarters of the world's major food crops depend (1) ---- some extent on animal pollination. In recent decades, (2) ----, many pollinator populations have declined. Scientists have identified several causes, including habitat loss, pesticides and disease. (3) ---- these factors acts alone; they often combine and make each other worse. Farmers can help by planting strips of wild flowers, (4) ---- provide food and shelter for insects throughout the season. Such measures are relatively cheap, and studies suggest that they can (5) ---- crop yields in nearby fields.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "at",
+     "in",
+     "to",
+     "for",
+     "by"
+    ],
+    "answer": 2,
+    "explain": "to some extent = bir dereceye kadar; depend on ... to some extent.",
+    "tip": "Kalıp: to some extent."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "therefore",
+     "however",
+     "as a result",
+     "for example",
+     "in addition"
+    ],
+    "answer": 1,
+    "explain": "Hayati rol ↔ azalma: zıtlık.",
+    "tip": "Olumlu → olumsuz = however."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "Both of",
+     "None of",
+     "Each of",
+     "All of",
+     "Either"
+    ],
+    "answer": 1,
+    "explain": "'acts alone; they often combine' — hiçbiri tek başına etkili değil: None of.",
+    "tip": "Noktalı virgülden sonrası anlamı belirler."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "who",
+     "where",
+     "which",
+     "when",
+     "whose"
+    ],
+    "answer": 2,
+    "explain": "Strips of wild flowers ... which provide food.",
+    "tip": "İlgi zamiri: cansız + virgül → which."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "increase",
+     "increasing",
+     "increased",
+     "to increase",
+     "increases"
+    ],
+    "answer": 0,
+    "explain": "Modal 'can' + yalın fiil.",
+    "tip": "Modal + V1."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d007",
+  "type": "cloze",
+  "stem": "Mars is a cold, dry desert today, but there is strong evidence that liquid water once flowed (1) ---- its surface. Orbiting spacecraft have photographed ancient river valleys and deltas, and rovers have found minerals that form only (2) ---- the presence of water. Scientists believe that Mars lost most of its atmosphere (3) ---- billions of years, partly because the planet lacks a global magnetic field to shield it from the solar wind. (4) ---- the atmosphere thinned, the surface became too cold and the air pressure too low for liquid water to remain stable. The key question now is (5) ---- life ever arose there during its wetter past.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "among",
+     "between",
+     "through",
+     "across",
+     "into"
+    ],
+    "answer": 3,
+    "explain": "Yüzey boyunca akmak: flow across the surface.",
+    "tip": "across = bir yüzeyin üzerinde baştan başa."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "in",
+     "at",
+     "on",
+     "with",
+     "by"
+    ],
+    "answer": 0,
+    "explain": "in the presence of = varlığında.",
+    "tip": "Kalıp: in the presence/absence of."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "since",
+     "until",
+     "by",
+     "over",
+     "during the"
+    ],
+    "answer": 3,
+    "explain": "over billions of years = milyarlarca yıl boyunca (süreç).",
+    "tip": "over + süre = süre boyunca kademeli değişim."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "Unless",
+     "As",
+     "Although",
+     "Even if",
+     "So that"
+    ],
+    "answer": 1,
+    "explain": "Atmosfer inceldikçe → yüzey soğudu; eşzamanlı/neden.",
+    "tip": "As = -dıkça / -dığı için."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "that",
+     "what",
+     "whether",
+     "which",
+     "how much"
+    ],
+    "answer": 2,
+    "explain": "Evet/hayır içerikli isim cümlesi: whether life arose.",
+    "tip": "Soru 'olup olmadığı' ise whether/if."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d008",
+  "type": "cloze",
+  "stem": "Volcanic eruptions vary greatly in their violence. The key factor is the viscosity of the magma, which depends largely (1) ---- its silica content. Runny, low-silica magma allows gas to escape easily, (2) ---- eruptions tend to be relatively gentle, as in Hawaii. Thick, silica-rich magma, by contrast, traps gas (3) ---- pressure builds up and is released explosively. Monitoring volcanoes involves measuring ground deformation, gas emissions and small earthquakes. Although these signals cannot tell scientists exactly when an eruption will occur, they (4) ---- authorities to evacuate thousands of people in time on several occasions. (5) ----, the 1991 eruption of Mount Pinatubo in the Philippines caused relatively few deaths thanks to timely warnings.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "at",
+     "for",
+     "on",
+     "with",
+     "from"
+    ],
+    "answer": 2,
+    "explain": "depend on = -e bağlı olmak.",
+    "tip": "depend on / rely on."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "but",
+     "so",
+     "unless",
+     "although",
+     "or"
+    ],
+    "answer": 1,
+    "explain": "Gaz kolay kaçar → patlamalar yumuşak: sonuç.",
+    "tip": "Neden → sonuç: so."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "since",
+     "unless",
+     "whereas",
+     "though",
+     "until"
+    ],
+    "answer": 4,
+    "explain": "Gazı tutar, ta ki basınç artıp patlayana dek.",
+    "tip": "until = -e kadar (süreç sonu)."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "allow",
+     "had allowed",
+     "will allow",
+     "are allowing",
+     "have allowed"
+    ],
+    "answer": 4,
+    "explain": "'on several occasions' geçmişten bugüne tekrarlanan deneyim: present perfect.",
+    "tip": "Tekrar sayısı (several times/occasions) + bugüne etki → have V3."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "For example",
+     "However",
+     "In contrast",
+     "Otherwise",
+     "Nevertheless"
+    ],
+    "answer": 0,
+    "explain": "Önceki iddiaya örnek veriliyor.",
+    "tip": "Somut olay/isim gelirse örnek bağlacı."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d009",
+  "type": "cloze",
+  "stem": "Large language models are trained on enormous collections of text, (1) ---- they learn to predict the next word in a sentence. This simple objective turns out to be surprisingly powerful, (2) ---- predicting text accurately requires some representation of grammar, facts and even reasoning. Yet the models have well-known weaknesses. They can produce statements that sound confident but are false, a problem (3) ---- is often described as hallucination. (4) ---- this risk, developers increasingly connect models to external sources such as search engines or databases, so that answers can be checked against reliable information. Experts warn, however, that no technique has yet eliminated errors entirely, so human oversight (5) ---- essential in high-stakes fields such as medicine and law.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "in that",
+     "by whom",
+     "whose",
+     "from which",
+     "what"
+    ],
+    "answer": 3,
+    "explain": "collections of text from which they learn — edat + which.",
+    "tip": "İlgi zamirinden önce edat gelebilir: from which, in which."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "although",
+     "unless",
+     "whereas",
+     "so that",
+     "since"
+    ],
+    "answer": 4,
+    "explain": "Basit hedefin güçlü olmasının nedeni açıklanıyor.",
+    "tip": "since = çünkü."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "what",
+     "that",
+     "whose",
+     "where",
+     "who"
+    ],
+    "answer": 1,
+    "explain": "a problem that is described — tanımlayıcı ilgi cümlesi.",
+    "tip": "Virgülsüz, nesne: that/which."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "To reduce",
+     "Reducing of",
+     "Having reduced by",
+     "Reduced",
+     "In spite of"
+    ],
+    "answer": 0,
+    "explain": "Amaç: Bu riski azaltmak için → To + V1.",
+    "tip": "Cümle başında amaç: To + V1 / In order to."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "remained",
+     "had remained",
+     "remains",
+     "has remained ago",
+     "remaining"
+    ],
+    "answer": 2,
+    "explain": "Genel geçerli tavsiye; geniş zaman, tekil özne (oversight).",
+    "tip": "Uyarı/tavsiye bağlamı → geniş zaman."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d010",
+  "type": "cloze",
+  "stem": "Medical imaging has changed the way doctors diagnose disease. X-rays, discovered by Wilhelm Röntgen in 1895, (1) ---- physicians to see bones without surgery for the first time. However, ordinary X-ray images show soft tissues poorly. Computed tomography, (2) ---- combines many X-ray images taken from different angles, produces detailed cross-sections of the body. Magnetic resonance imaging, on the other hand, uses no ionising radiation at all; (3) ----, it relies on strong magnetic fields and radio waves. MRI is particularly useful for examining the brain, (4) ---- it is slower and more expensive than CT. In emergencies, therefore, doctors often choose CT (5) ---- its speed.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "have allowed",
+     "allow",
+     "were allowed",
+     "had been allowing",
+     "allowed"
+    ],
+    "answer": 4,
+    "explain": "1895 keşfi, geçmişte bir ilk: simple past, aktif.",
+    "tip": "Geçmiş tarih + 'for the first time' → V2."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "who",
+     "where",
+     "which",
+     "what",
+     "whose"
+    ],
+    "answer": 2,
+    "explain": "Virgüllü ilgi cümlesi; CT'yi niteliyor.",
+    "tip": "Virgül + which."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "therefore",
+     "for example",
+     "moreover",
+     "similarly",
+     "instead"
+    ],
+    "answer": 4,
+    "explain": "'X kullanmaz; bunun yerine Y kullanır': instead.",
+    "tip": "Olumsuz ifade + ; instead."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "because",
+     "so that",
+     "unless",
+     "as long as",
+     "although"
+    ],
+    "answer": 4,
+    "explain": "Faydalı ↔ yavaş ve pahalı: zıtlık.",
+    "tip": "+/- kutbu."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "in spite of",
+     "instead of",
+     "regardless of",
+     "apart from",
+     "because of"
+    ],
+    "answer": 4,
+    "explain": "Hızı nedeniyle CT tercih edilir: neden + isim.",
+    "tip": "because of + N; because + cümle."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d011",
+  "type": "cloze",
+  "stem": "The steam engine is often associated with James Watt, but he did not invent it. Thomas Newcomen had built working engines for pumping water out of mines (1) ---- 1712. These engines were reliable but wasteful, (2) ---- the cylinder was heated and cooled with every stroke. Watt's key improvement, patented in 1769, was a separate condenser, (3) ---- allowed the cylinder to stay hot all the time. This reduced fuel consumption (4) ---- about two-thirds. Watt later added other innovations, including a mechanism that converted the up-and-down motion of the piston into rotation. (5) ---- these improvements, steam power could drive machines in factories far from rivers and coal mines.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "since",
+     "for",
+     "until",
+     "at",
+     "by"
+    ],
+    "answer": 4,
+    "explain": "by + tarih + past perfect = o tarihe kadar yapmıştı.",
+    "tip": "had V3 + by + geçmiş tarih."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "although",
+     "unless",
+     "because",
+     "so that",
+     "whereas"
+    ],
+    "answer": 2,
+    "explain": "Savurgan olmasının nedeni: her strokta ısıtılıp soğutulması.",
+    "tip": "Sonuç → neden: because."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "that",
+     "who",
+     "what",
+     "which",
+     "where"
+    ],
+    "answer": 3,
+    "explain": "Virgüllü ilgi cümlesi; 'that' virgülden sonra gelmez.",
+    "tip": "Virgül + which."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "at",
+     "with",
+     "on",
+     "for",
+     "by"
+    ],
+    "answer": 4,
+    "explain": "reduce by + miktar = ... oranında azaltmak.",
+    "tip": "increase/reduce BY (fark), TO (son değer)."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "Thanks to",
+     "In spite of",
+     "Instead of",
+     "Regardless of",
+     "Contrary to"
+    ],
+    "answer": 0,
+    "explain": "İyileştirmeler sayesinde fabrikalarda kullanılabildi: olumlu neden.",
+    "tip": "thanks to = sayesinde (+N)."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d012",
+  "type": "cloze",
+  "stem": "In cold rolling, steel strip is passed between rolls at room temperature to reduce its thickness and improve its surface finish. (1) ---- hot rolling, which shapes the metal while it is soft, cold rolling requires much greater forces, since the metal hardens as it is deformed. This strengthening, (2) ---- as work hardening, is useful in some products, but it also makes further reduction difficult. For this reason, the strip is often annealed, that is, heated and then cooled slowly (3) ---- restore its ductility. Modern tandem mills, (4) ---- the strip passes through several stands in succession, can reach speeds of more than 1,000 metres per minute. At such speeds, even small variations in tension (5) ---- to defects such as wrinkles or strip breaks.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "Unlike",
+     "Like",
+     "As well as",
+     "Because of",
+     "Thanks to"
+    ],
+    "answer": 0,
+    "explain": "Sıcak haddeleme ↔ soğuk haddeleme farkı: Unlike.",
+    "tip": "Karşılaştırmalı zıtlık + isim → Unlike."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "known",
+     "knowing",
+     "to know",
+     "is known",
+     "knew"
+    ],
+    "answer": 0,
+    "explain": "'This strengthening, (which is) known as ...' — edilgen sıfat-fiil (V3).",
+    "tip": "İsim + V3 = which is V3 kısaltması."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "so that",
+     "in case",
+     "with a view of",
+     "so as to",
+     "because"
+    ],
+    "answer": 3,
+    "explain": "Amaç + yalın fiil: so as to restore.",
+    "tip": "so as to / in order to + V1; so that + cümle."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "which",
+     "that",
+     "whose",
+     "in which",
+     "what"
+    ],
+    "answer": 3,
+    "explain": "'the strip passes through' tam cümle → edat + which gerekir (in which / where).",
+    "tip": "Arkası tam cümle ise in which/where."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "can lead it",
+     "can lead",
+     "can be led",
+     "leading",
+     "leads to it"
+    ],
+    "answer": 1,
+    "explain": "lead to + N: variations can lead to defects.",
+    "tip": "lead to + isim; edilgen olmaz."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d013",
+  "type": "cloze",
+  "stem": "Geothermal energy uses heat from beneath the Earth's surface to generate electricity or warm buildings. Unlike solar and wind power, it is available day and night, (1) ---- makes it a valuable source of steady, baseload power. Until recently, (2) ----, conventional geothermal plants could be built only in a few regions, such as Iceland, where hot water and steam lie close to the surface. Enhanced geothermal systems aim to change this. Engineers drill deep into hot, dry rock and pump water down at high pressure (3) ---- open small fractures, (4) ---- the water to circulate and absorb heat. The technique borrows heavily from the oil and gas industry. Critics point out that injecting fluids can trigger small earthquakes, so careful monitoring (5) ---- at every site.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "what",
+     "that",
+     "which",
+     "who",
+     "where"
+    ],
+    "answer": 2,
+    "explain": "Önceki cümlenin tamamını niteleyen virgüllü which.",
+    "tip": "Cümleyi niteleyen ', which'."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "however",
+     "therefore",
+     "moreover",
+     "for instance",
+     "thus"
+    ],
+    "answer": 0,
+    "explain": "Avantaj ↔ sadece birkaç bölgede kurulabilmesi: zıtlık.",
+    "tip": "Olumlu → kısıt: however."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "so that",
+     "in order to",
+     "with a view to",
+     "because of",
+     "as though"
+    ],
+    "answer": 1,
+    "explain": "Amaç + yalın fiil: in order to open.",
+    "tip": "with a view to + opening olurdu."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "allowing",
+     "allowed",
+     "to allow",
+     "allows",
+     "having been allowed"
+    ],
+    "answer": 0,
+    "explain": "Önceki eylemin sonucu: ', allowing' (participle, sonuç).",
+    "tip": "Virgül + Ving = sonuç (bu da ... sağlar)."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "requires",
+     "has required ago",
+     "is required",
+     "required",
+     "is requiring"
+    ],
+    "answer": 2,
+    "explain": "Monitoring gerektirilir: edilgen geniş zaman.",
+    "tip": "Özne iş yapmıyorsa passive."
+   }
+  ],
+  "topic": "enerji",
+  "level": 3
+ },
+ {
+  "id": "d014",
+  "type": "cloze",
+  "stem": "The human gut contains trillions of bacteria, (1) ---- are known together as the gut microbiome. For a long time, these microbes were thought to be simply passengers, but research now shows that they help digest food, produce vitamins and train the immune system. The composition of the microbiome differs (2) ---- person to person and is shaped by diet, medicines and even the way a baby is born. Antibiotics can kill (3) ---- harmful and helpful bacteria, which may upset the balance for months. (4) ---- this reason, doctors advise patients to use antibiotics only when necessary. Researchers (5) ---- now studying whether changes in the microbiome are linked to diseases such as obesity and diabetes.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "who",
+     "which",
+     "what",
+     "whose",
+     "where"
+    ],
+    "answer": 1,
+    "explain": "Bakterileri niteleyen virgüllü ilgi cümlesi.",
+    "tip": "Virgül + which."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "at",
+     "from",
+     "by",
+     "with",
+     "in"
+    ],
+    "answer": 1,
+    "explain": "differ from person to person = kişiden kişiye değişir.",
+    "tip": "Kalıp: from ... to ..."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "either",
+     "neither",
+     "not only",
+     "both",
+     "whether"
+    ],
+    "answer": 3,
+    "explain": "both A and B = hem ... hem de.",
+    "tip": "both...and / either...or / neither...nor eşini ara."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "Because",
+     "Due",
+     "Owing",
+     "For",
+     "Since"
+    ],
+    "answer": 3,
+    "explain": "For this reason kalıbı.",
+    "tip": "for this reason."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "have",
+     "are",
+     "were being",
+     "had",
+     "will have"
+    ],
+    "answer": 1,
+    "explain": "'now studying' → şimdiki zaman, çoğul özne.",
+    "tip": "now + Ving → am/is/are."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d015",
+  "type": "cumle-tamamlama",
+  "stem": "Although stainless steel is highly resistant to corrosion, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "it contains at least 10.5 percent chromium",
+     "it is therefore used widely in kitchens",
+     "its surface forms a protective oxide film",
+     "engineers prefer it for outdoor structures",
+     "it can still suffer pitting in chloride-rich environments"
+    ],
+    "answer": 4,
+    "explain": "Although (+) dayanıklı → ikinci kısım (−) olmalı: yine de oyuklanma olabilir. Diğerleri aynı yönde (+).",
+    "tip": "Zıtlık bağlacı: kutbu ters çevir."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ },
+ {
+  "id": "d016",
+  "type": "cumle-tamamlama",
+  "stem": "Because the crack had grown slowly over thousands of load cycles, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the engineers will inspect the part next year",
+     "the material is usually stronger in compression",
+     "the bolt has never been tightened",
+     "fatigue cracks rarely start at sharp corners",
+     "the final fracture surface showed clear beach marks"
+    ],
+    "answer": 4,
+    "explain": "Neden (yavaş büyüme, past perfect) → sonuç (geçmiş, kırık yüzeyde izler). Tuzak: 'will inspect' zaman uyumsuz.",
+    "tip": "Past perfect + because → ana cümle past."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d017",
+  "type": "cumle-tamamlama",
+  "stem": "Green hydrogen is still more expensive than grey hydrogen, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because it is produced with renewable electricity at low cost",
+     "so it is the cheapest fuel on the market",
+     "as long as natural gas is no longer used",
+     "even though the cost of renewable electricity has fallen sharply",
+     "which releases large amounts of carbon dioxide"
+    ],
+    "answer": 3,
+    "explain": "Pahalı ↔ yenilenebilir elektrik ucuzladı: zıtlık. 'because ... at low cost' mantıksız.",
+    "tip": "even though = -e rağmen."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d018",
+  "type": "cumle-tamamlama",
+  "stem": "If the Earth had no atmosphere, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the sky looked blue because of scattering",
+     "sunlight will be scattered by gas molecules",
+     "the daytime sky would look black rather than blue",
+     "blue light had been absorbed by oxygen",
+     "the sky has appeared violet since ancient times"
+    ],
+    "answer": 2,
+    "explain": "Type 2 koşul (If + V2/had) → would + V1.",
+    "tip": "If + V2 → would V1; If + had V3 → would have V3."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d019",
+  "type": "cumle-tamamlama",
+  "stem": "Tardigrades can survive in a dried state for years, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because they are active all the time",
+     "so they never enter cryptobiosis",
+     "whereas active tardigrades are much more easily killed",
+     "unless their metabolism almost stops",
+     "although they never lose any water"
+    ],
+    "answer": 2,
+    "explain": "Kuru hâlde dayanıklı ↔ aktifken kırılgan: whereas karşılaştırması. 'although they never lose any water' metne ters (kuruyunca suyun neredeyse tamamını kaybederler); 'unless' koşulu tersine çevirir.",
+    "tip": "whereas: iki durumu kıyasla."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d020",
+  "type": "cumle-tamamlama",
+  "stem": "Unless ocean temperatures return to normal within a few weeks, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the corals will recover their algae quickly",
+     "the reef had been completely healthy",
+     "corals produced more calcium carbonate",
+     "many bleached corals are likely to die",
+     "bleaching was caused by cold water"
+    ],
+    "answer": 3,
+    "explain": "Unless = if not: sıcaklık düzelmezse → mercanlar ölebilir. Zaman: geniş/gelecek.",
+    "tip": "Unless = if...not; kutbu dikkatle eşleştir."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d021",
+  "type": "cumle-tamamlama",
+  "stem": "Since the Apollo astronauts brought back rock samples, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "scientists were unable to study the Moon at all",
+     "scientists have been able to compare lunar and terrestrial rocks directly",
+     "the Moon will form from a giant impact",
+     "the Moon had no iron core before the missions",
+     "astronauts land on the Moon every year"
+    ],
+    "answer": 1,
+    "explain": "Since + geçmiş olay → ana cümle present perfect (have been able).",
+    "tip": "since + V2 → have V3."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 1
+ },
+ {
+  "id": "d022",
+  "type": "cumle-tamamlama",
+  "stem": "Laennec was able to hear the heartbeat clearly ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "once he had rolled a sheet of paper into a tube",
+     "unless he used a hollow cylinder",
+     "while patients will be lying in bed",
+     "so that sound travels poorly through solids",
+     "even though he has placed his ear on the chest"
+    ],
+    "answer": 0,
+    "explain": "Ana cümle past; 'once he had rolled' past perfect sırası doğru. Diğerleri zaman/mantık hatalı.",
+    "tip": "Önce olan eylem: had V3."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d023",
+  "type": "cumle-tamamlama",
+  "stem": "Robots are often trained in simulations first ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although simulations allow fast and cheap training",
+     "because real robots never break",
+     "so that they can attempt millions of trials without being damaged",
+     "unless they are expensive to build",
+     "as if they had been designed by computers"
+    ],
+    "answer": 2,
+    "explain": "Amaç: simülasyonda zarar görmeden çok deneme. 'although ... fast and cheap' zıtlık değil.",
+    "tip": "so that + can = amaç."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d024",
+  "type": "cumle-tamamlama",
+  "stem": "The Haber-Bosch process has greatly increased food production; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "therefore, it has no environmental effects",
+     "for example, plants cannot use atmospheric nitrogen",
+     "similarly, it supports half of humanity",
+     "in other words, it was invented in 1909",
+     "however, it also consumes a significant share of the world's energy"
+    ],
+    "answer": 4,
+    "explain": "Olumlu etki → olumsuz yön: however. 'similarly' aynı fikri tekrar ediyor, mantıksız.",
+    "tip": "Noktalı virgül sonrası bağlaç: ilişkiyi belirle."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d025",
+  "type": "cumle-tamamlama",
+  "stem": "Had the designers rounded off the corners of the window openings, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the cracks will not start so easily",
+     "the cracks might not have started so easily",
+     "the aircraft broke up in flight",
+     "fatigue had been concentrated near the openings",
+     "the investigators find no beach marks"
+    ],
+    "answer": 1,
+    "explain": "Devrik Type 3 koşul (Had + özne + V3) → might/would have V3.",
+    "tip": "Had + S + V3 = If S had V3."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d026",
+  "type": "cumle-tamamlama",
+  "stem": "Sodium-ion batteries store less energy per kilogram than lithium-ion ones; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "nevertheless, they may be ideal for stationary storage",
+     "as a result, they are the best choice for long-range cars",
+     "for instance, sodium is lighter than lithium",
+     "in addition, they store more energy",
+     "that is, they are more expensive"
+    ],
+    "answer": 0,
+    "explain": "Dezavantaj (−) → yine de avantajlı kullanım (+): nevertheless.",
+    "tip": "nevertheless = buna rağmen."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d027",
+  "type": "cumle-tamamlama",
+  "stem": "Not only does thawing permafrost release greenhouse gases, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "but it also damages roads and buildings built on frozen ground",
+     "and therefore it never affects infrastructure",
+     "although it releases carbon dioxide",
+     "so it is called a positive feedback",
+     "but microbes are inactive in cold soil"
+    ],
+    "answer": 0,
+    "explain": "Not only ... but also yapısı; ikinci kısım ek bir zarar.",
+    "tip": "not only (devrik) → but (also)."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d028",
+  "type": "cumle-tamamlama",
+  "stem": "Scientists cannot yet predict exactly when an earthquake will occur, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "so they know the time of every earthquake",
+     "because early warning systems give a minute's notice",
+     "but they can estimate long-term probabilities for active faults",
+     "and they can therefore warn people days in advance",
+     "since faults never move"
+    ],
+    "answer": 2,
+    "explain": "Yapamaz (−) ↔ yapabilir (+): but. 'days in advance' çelişki.",
+    "tip": "Olumsuz → olumlu: but/yet."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 1
+ },
+ {
+  "id": "d029",
+  "type": "cumle-tamamlama",
+  "stem": "Superconductors are not yet used in ordinary power lines ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because they must be cooled to very low temperatures",
+     "although they require expensive cooling",
+     "so that they have zero resistance",
+     "unless electrons form pairs",
+     "even though they need extreme cooling"
+    ],
+    "answer": 0,
+    "explain": "Kullanılmama nedeni: soğutma gereksinimi. 'although/even though' kutbu yanlış.",
+    "tip": "Olumsuz sonuç + neden = because."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d030",
+  "type": "cumle-tamamlama",
+  "stem": "mRNA vaccines could be designed within days ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "until the virus had not mutated",
+     "as soon as the genetic sequence of the virus was published",
+     "although the genetic sequence is unknown",
+     "because the vaccines must be stored cold",
+     "so that the virus would be grown in eggs"
+    ],
+    "answer": 1,
+    "explain": "Tasarım dizinin yayımlanmasının hemen ardından: as soon as + past.",
+    "tip": "Zaman bağlacı + uyumlu zaman."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d031",
+  "type": "cumle-tamamlama",
+  "stem": "By the time Thomas introduced his basic lining in the late 1870s, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "Bessemer will announce his process",
+     "Bessemer steel had already been produced for about two decades",
+     "steel has been very cheap since then",
+     "the converter disappears from modern plants",
+     "phosphorus is removed easily"
+    ],
+    "answer": 1,
+    "explain": "By the time + past → past perfect.",
+    "tip": "By the time + V2 → had V3."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d032",
+  "type": "cumle-tamamlama",
+  "stem": "A catalytic converter works poorly ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "after it has become hot",
+     "until it reaches its operating temperature",
+     "because it contains platinum",
+     "so that emissions are reduced",
+     "while the engine runs at full speed for hours"
+    ],
+    "answer": 1,
+    "explain": "Isınana kadar kötü çalışır. 'after it has become hot' tersi.",
+    "tip": "until = -e kadar."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d033",
+  "type": "cumle-tamamlama",
+  "stem": "Machine-learning weather models are fast; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "consequently, they predict extreme events best",
+     "they may, however, struggle with rare extreme events",
+     "they therefore require huge supercomputers",
+     "for this reason, they solve physical equations",
+     "likewise, they need hours of computing time"
+    ],
+    "answer": 1,
+    "explain": "Hızlı (+) → nadir olaylarda zayıf (−): however.",
+    "tip": "Kutuplar zıtsa however/yet."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d034",
+  "type": "cumle-tamamlama",
+  "stem": "Even if a gene-editing tool cuts DNA precisely, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "it never makes any mistakes",
+     "the outcome still depends on how the cell repairs the cut",
+     "it had cut the wrong place",
+     "the cell's repair system is not involved",
+     "it is therefore completely safe"
+    ],
+    "answer": 1,
+    "explain": "Even if = -se bile → beklenmedik sonuç/kısıt. 'therefore safe' even if ile çelişir.",
+    "tip": "even if: varsayım + yine de."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d035",
+  "type": "cumle-tamamlama",
+  "stem": "The transit method can detect a planet only if ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the planet is brighter than its star",
+     "it has no atmosphere",
+     "the star has no spots",
+     "its orbit is aligned with our line of sight",
+     "it orbits very far from any star"
+    ],
+    "answer": 3,
+    "explain": "Yalnızca yörünge görüş hattıyla hizalıysa geçiş görünür.",
+    "tip": "only if = sadece ... ise (şart)."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d036",
+  "type": "cumle-tamamlama",
+  "stem": "While inertial confinement uses lasers to compress fuel, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "it heats the fuel to millions of degrees",
+     "lasers consume more energy than they produce",
+     "tokamaks rely on magnetic fields to hold the plasma",
+     "the fuel pellet is tiny",
+     "it was reported in 2022"
+    ],
+    "answer": 2,
+    "explain": "While burada karşılaştırma: lazer ↔ manyetik alan. Diğerleri aynı yöntemi anlatıyor.",
+    "tip": "while/whereas: iki farklı özneyi kıyasla."
+   }
+  ],
+  "topic": "enerji",
+  "level": 3
+ },
+ {
+  "id": "d037",
+  "type": "cumle-tamamlama",
+  "stem": "Bolts that have been electroplated are often baked afterwards ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "even though they absorb no hydrogen",
+     "because baking makes them more brittle",
+     "unless hydrogen has escaped",
+     "so that any absorbed hydrogen can diffuse out",
+     "as long as they will crack"
+    ],
+    "answer": 3,
+    "explain": "Amaç: emilen hidrojenin çıkması. Diğerleri mantık hatalı.",
+    "tip": "Amaç sorusu: so that / in order to."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d038",
+  "type": "cumle-tamamlama",
+  "stem": "The more carbon dioxide the oceans absorb, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the more acidic seawater becomes",
+     "the less acidic seawater is",
+     "seawater becomes more alkaline",
+     "the oceans absorbed less heat",
+     "the more shells were built"
+    ],
+    "answer": 0,
+    "explain": "The more ..., the more ... yapısı; CO2 → asitlik artar.",
+    "tip": "the + comparative, the + comparative."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d039",
+  "type": "cumle-tamamlama",
+  "stem": "Wegener's critics did not dispute his fossil evidence; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "therefore, they accepted his theory at once",
+     "similarly, they rejected the fossils",
+     "rather, they objected to the mechanism he proposed",
+     "for example, they discovered magnetic stripes",
+     "as a result, he became a geologist"
+    ],
+    "answer": 2,
+    "explain": "Olumsuz ifade → 'rather' ile asıl itiraz: mekanizma.",
+    "tip": "not X; rather Y."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d040",
+  "type": "cumle-tamamlama",
+  "stem": "Doctors often choose CT in emergencies ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although it is faster than MRI",
+     "unless it is quick",
+     "so that MRI takes longer",
+     "even though speed is important",
+     "because it is much faster than MRI"
+    ],
+    "answer": 4,
+    "explain": "Tercih nedeni: hız. 'although faster' kutbu yanlış.",
+    "tip": "Neden mi zıtlık mı? Kutbu kontrol et."
+   }
+  ],
+  "topic": "tip",
+  "level": 1
+ },
+ {
+  "id": "d041",
+  "type": "cumle-tamamlama",
+  "stem": "Sound cannot travel through a vacuum ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although it moves faster in steel",
+     "so that astronauts use radios",
+     "unless it is very loud",
+     "while light needs a medium",
+     "since there are no particles to carry the vibrations"
+    ],
+    "answer": 4,
+    "explain": "Nedeni: titreşimi taşıyacak parçacık yok. 'while light needs a medium' yanlış bilgi.",
+    "tip": "since = çünkü."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d042",
+  "type": "cumle-tamamlama",
+  "stem": "Cold-rolled strip is often annealed ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "in order to restore the ductility lost through work hardening",
+     "because it becomes softer during rolling",
+     "although its ductility has been fully preserved",
+     "so that it becomes even harder",
+     "with a view to harden it"
+    ],
+    "answer": 0,
+    "explain": "Amaç: süneklik geri kazanmak. 'with a view to harden' hatalı (with a view to + Ving).",
+    "tip": "with a view to + Ving!"
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d043",
+  "type": "cumle-tamamlama",
+  "stem": "Wind turbines are placed on tall towers ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although winds are weaker higher up",
+     "because winds are stronger and steadier at greater heights",
+     "so that blades become heavier",
+     "unless the wind is steady",
+     "even if winds are stronger at the top"
+    ],
+    "answer": 1,
+    "explain": "Neden: yukarıda rüzgâr güçlü ve düzenli.",
+    "tip": "because + cümle."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d044",
+  "type": "cumle-tamamlama",
+  "stem": "PFAS have been detected in the blood of most people tested, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "that they break down quickly in nature",
+     "whose bonds are weak",
+     "although they are found almost everywhere",
+     "which shows how widespread these chemicals have become",
+     "so they are rarely found in the environment"
+    ],
+    "answer": 3,
+    "explain": "', which' tüm cümleyi niteler: ne kadar yaygın olduklarını gösterir. 'that' virgülden sonra olmaz.",
+    "tip": "Virgül + which = bu da ..."
+   }
+  ],
+  "topic": "kimya",
+  "level": 3
+ },
+ {
+  "id": "d045",
+  "type": "cumle-tamamlama",
+  "stem": "Antibiotics should be used only when necessary, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although overuse causes resistance",
+     "as overuse encourages the spread of resistant bacteria",
+     "so that resistant strains become dominant",
+     "unless bacteria multiply quickly",
+     "whereas resistance is helpful"
+    ],
+    "answer": 1,
+    "explain": "Tavsiyenin nedeni: aşırı kullanım direnç yayar. 'as' = çünkü.",
+    "tip": "as = çünkü / -dığı için."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d046",
+  "type": "cumle-tamamlama",
+  "stem": "Language models sometimes produce false statements ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because they always check their sources",
+     "even though they sound confident",
+     "so that answers are reliable",
+     "unless they are wrong",
+     "because they always know the truth"
+    ],
+    "answer": 1,
+    "explain": "Yanlış (−) ↔ kendinden emin görünür (+): even though.",
+    "tip": "Beklenti ↔ gerçek: even though."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 1
+ },
+ {
+  "id": "d047",
+  "type": "cumle-tamamlama",
+  "stem": "Had only visible matter been present in spiral galaxies, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "their outer stars orbit at constant speeds",
+     "dark matter will be detected underground",
+     "Rubin had measured the speeds",
+     "their outer stars would have orbited much more slowly",
+     "Neptune moves faster than Mercury"
+    ],
+    "answer": 3,
+    "explain": "Devrik Type 3 (Had ... been) → would have V3.",
+    "tip": "Had + S + V3 → would have V3."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 3
+ },
+ {
+  "id": "d048",
+  "type": "cumle-tamamlama",
+  "stem": "The Tacoma Narrows Bridge collapsed in 1940 ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "before it will be opened to traffic",
+     "since it has been opened",
+     "although wind tunnels are standard today",
+     "so that designers test models",
+     "only four months after it had been opened to traffic"
+    ],
+    "answer": 4,
+    "explain": "after + past perfect: önce açıldı, sonra çöktü.",
+    "tip": "Sıralama: önceki olay had V3."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 3
+ },
+ {
+  "id": "d049",
+  "type": "cumle-tamamlama",
+  "stem": "Watt did not invent the steam engine, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "so he built the first engine in 1712",
+     "because Newcomen improved it",
+     "and therefore it remained wasteful",
+     "but he made it far more efficient",
+     "unless he added a condenser"
+    ],
+    "answer": 3,
+    "explain": "İcat etmedi (−) ↔ verimli yaptı (+): but.",
+    "tip": "Olumsuz → olumlu: but."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 1
+ },
+ {
+  "id": "d050",
+  "type": "cumle-tamamlama",
+  "stem": "Planting wild flowers near farms helps pollinators ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "despite providing them with food",
+     "instead of feeding them",
+     "unless it gives them shelter",
+     "by providing them with food and shelter",
+     "although giving food"
+    ],
+    "answer": 3,
+    "explain": "Nasıl? by + Ving = yöntem.",
+    "tip": "by + Ving = -erek."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d051",
+  "type": "cumle-tamamlama",
+  "stem": "Silica-rich magma traps gas more effectively than runny magma; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "however, its eruptions are always gentle",
+     "for instance, Hawaii has runny magma",
+     "otherwise, gas escapes easily",
+     "in contrast, it contains more silica",
+     "consequently, its eruptions tend to be more explosive"
+    ],
+    "answer": 4,
+    "explain": "Gaz hapsi → patlayıcı: sonuç (consequently).",
+    "tip": "Sebep-sonuç: consequently/therefore."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d052",
+  "type": "cumle-tamamlama",
+  "stem": "Whereas a bit is either zero or one, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "a qubit can exist in a superposition of both states",
+     "a bit is used in classical computers",
+     "it requires very low temperatures",
+     "qubits are cooled near absolute zero",
+     "errors are unavoidable in classical computers"
+    ],
+    "answer": 0,
+    "explain": "Whereas kıyas: bit ↔ qubit; ikinci kısım farklı özne ve zıt özellik.",
+    "tip": "whereas: özne değişir, özellik zıtlaşır."
+   }
+  ],
+  "topic": "fizik",
+  "level": 3
+ },
+ {
+  "id": "d053",
+  "type": "cumle-tamamlama",
+  "stem": "It was not until doctors could link sounds to diseases ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "when the stethoscope will become useful",
+     "which the stethoscope was invented",
+     "that the stethoscope became a truly valuable diagnostic tool",
+     "because the stethoscope had been forgotten",
+     "so that paper tubes were abandoned"
+    ],
+    "answer": 2,
+    "explain": "It was not until X that Y: ancak X'ten sonra Y oldu.",
+    "tip": "Vurgu yapısı: It was not until ... that ..."
+   }
+  ],
+  "topic": "tip",
+  "level": 3
+ },
+ {
+  "id": "d054",
+  "type": "cumle-tamamlama",
+  "stem": "Rust does not protect the steel underneath, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because it is dense and adheres firmly",
+     "although it is loose and flaky",
+     "unless corrosion continues",
+     "whereas the steel is not exposed",
+     "so corrosion can continue until the part becomes too weak"
+    ],
+    "answer": 4,
+    "explain": "Koruma yok → sonuç: korozyon sürer. 'because dense' metne ve mantığa ters.",
+    "tip": "so = bu yüzden."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ },
+ {
+  "id": "d055",
+  "type": "cumle-tamamlama",
+  "stem": "Geothermal plants can supply power day and night, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "like solar panels, which work only during the day",
+     "although they never stop working",
+     "because the Sun shines at night",
+     "so that solar power is constant",
+     "unlike solar panels, which depend on sunlight"
+    ],
+    "answer": 4,
+    "explain": "Unlike = karşıtlık; güneş ışığa bağlı. 'like' anlam hatası.",
+    "tip": "like ↔ unlike kutbuna dikkat."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d056",
+  "type": "cumle-tamamlama",
+  "stem": "Nitrogen must be converted into compounds such as ammonia ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "after plants have absorbed it",
+     "although plants absorb it directly",
+     "before plants can absorb it",
+     "unless plants need it",
+     "because plants can use it as a gas"
+    ],
+    "answer": 2,
+    "explain": "Önce dönüştürülmeli, sonra bitkiler alabilir.",
+    "tip": "Zaman sırası: before/after."
+   }
+  ],
+  "topic": "kimya",
+  "level": 1
+ },
+ {
+  "id": "d057",
+  "type": "cumle-tamamlama",
+  "stem": "Epigenetic marks are largely erased in the early embryo, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "so that they are always passed to grandchildren",
+     "although they are never erased",
+     "because they are copied when cells divide",
+     "which makes inheritance across many generations difficult in mammals",
+     "that proves inheritance over many generations"
+    ],
+    "answer": 3,
+    "explain": "Silinme → kuşaklar arası aktarım zor. ', which' cümleyi niteler.",
+    "tip": "Sonuç bildiren ', which'."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d058",
+  "type": "cumle-tamamlama",
+  "stem": "Industrial robots perform well on assembly lines ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "even though parts always arrive in the same position",
+     "unless parts arrive in the same position",
+     "as long as parts arrive in the same position every time",
+     "so that objects vary in shape",
+     "because the environment keeps changing"
+    ],
+    "answer": 2,
+    "explain": "Koşul: parçalar aynı konumda geldiği sürece. 'unless' kutbu ters.",
+    "tip": "as long as = -dığı sürece."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d059",
+  "type": "cumle-tamamlama",
+  "stem": "Reflecting sunlight into space might reduce warming, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "and it would therefore stop acidification",
+     "because it lowers carbon dioxide levels",
+     "so oceans would absorb less carbon dioxide",
+     "but it would do nothing to stop ocean acidification",
+     "since acidification is caused by heat"
+    ],
+    "answer": 3,
+    "explain": "Ama CO2 azalmadığı için asitlenme sürer: zıtlık + would uyumu.",
+    "tip": "might → would modal uyumu."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d060",
+  "type": "cumle-tamamlama",
+  "stem": "Early warning systems can alert distant cities ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "after the shaking has ended",
+     "unless the earthquake has started",
+     "although P-waves travel fast",
+     "because S-waves arrive first",
+     "before the strongest shaking reaches them"
+    ],
+    "answer": 4,
+    "explain": "Güçlü sarsıntı gelmeden önce uyarı. 'S-waves arrive first' yanlış.",
+    "tip": "Zaman bağlacı mantığı."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 1
+ },
+ {
+  "id": "d061",
+  "type": "cumle-tamamlama",
+  "stem": "Although a single dip in brightness may suggest a planet, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "astronomers usually wait for several transits before confirming it",
+     "astronomers accept it as a discovery immediately",
+     "the planet's orbit is aligned with our line of sight",
+     "it reveals the planet's size",
+     "telescopes record the dip"
+    ],
+    "answer": 0,
+    "explain": "Tek düşüş planete işaret eder (+) ↔ ama doğrulama için beklenir: zıtlık.",
+    "tip": "Although (+) → (−/kısıt)."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d062",
+  "type": "cumle-tamamlama",
+  "stem": "Early Bessemer steel was often brittle, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although the process left phosphorus in the metal",
+     "so it was used for all railways at once",
+     "as the process failed to remove phosphorus",
+     "unless phosphorus remained",
+     "which made the steel tougher"
+    ],
+    "answer": 2,
+    "explain": "Gevrekliğin nedeni: fosfor giderilemedi.",
+    "tip": "as = because."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d063",
+  "type": "cumle-tamamlama",
+  "stem": "MRI does not use ionising radiation; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "instead, it uses magnetic fields and radio waves",
+     "therefore, it uses X-rays",
+     "for example, it relies on radiation",
+     "otherwise, it would be faster",
+     "similarly, CT uses no radiation"
+    ],
+    "answer": 0,
+    "explain": "Olumsuz → yerine ne kullandığı: instead.",
+    "tip": "not X; instead Y."
+   }
+  ],
+  "topic": "tip",
+  "level": 1
+ },
+ {
+  "id": "d064",
+  "type": "cumle-tamamlama",
+  "stem": "So high are the speeds in modern tandem mills ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "that even small variations in tension can cause strip breaks",
+     "because the strip is rolled at room temperature",
+     "which variations are small",
+     "although strip breaks never occur",
+     "so as to reduce tension"
+    ],
+    "answer": 0,
+    "explain": "Devrik so ... that: So high are the speeds that ... (öyle yüksek ki).",
+    "tip": "So + adj + be + S + that."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d065",
+  "type": "ilgisiz",
+  "stem": "(I) Corrosion costs industrialised countries a significant share of their national income every year. (II) Steel was first produced in large quantities after the invention of the Bessemer process. (III) Bridges, pipelines and ships all require regular inspection and protective coatings. (IV) Without such maintenance, corroded parts can lose strength and eventually fail. (V) For this reason, many engineers argue that corrosion protection should be planned at the design stage.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: korozyonun maliyeti ve korunma. II çeliğin seri üretim tarihine kayıyor. IV'teki 'such maintenance' III'e bağlanıyor.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ },
+ {
+  "id": "d066",
+  "type": "ilgisiz",
+  "stem": "(I) Hydrogen can be stored as a compressed gas, as a liquid or within other chemical compounds. (II) Compressed storage requires strong tanks that can withstand pressures of several hundred bar. (III) Liquefaction, on the other hand, demands cooling to about minus 253 degrees Celsius, which consumes a great deal of energy. (IV) Hydrogen is the most abundant element in the universe and the main fuel of stars. (V) Chemical carriers such as ammonia are easier to handle but must be converted back to hydrogen before use.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: hidrojenin depolama yöntemleri. IV evrendeki bolluğuna kayıyor; anahtar kelime aynı, alt konu farklı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d067",
+  "type": "ilgisiz",
+  "stem": "(I) A rainbow forms when sunlight enters raindrops and is bent, or refracted. (II) Thunderstorms are most common in tropical regions during the afternoon. (III) Because different colours are bent by slightly different amounts, the white light is separated into a spectrum. (IV) Light is also reflected from the back of each drop before leaving it. (V) As a result, an observer standing with the Sun behind them sees a curved band of colours.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: gökkuşağı oluşumu. II fırtınaların coğrafi dağılımı — akışı bozar; III I'deki kırılmayı açıklar.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d068",
+  "type": "ilgisiz",
+  "stem": "(I) Honeybees communicate the location of food through a movement known as the waggle dance. (II) Honey has been used as a medicine in many cultures because of its antibacterial properties. (III) The angle of the dance relative to vertical indicates the direction of the food in relation to the Sun. (IV) The duration of the waggling part tells other bees how far away the source is. (V) In this way, a single scout can direct hundreds of workers to a rich patch of flowers.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: arıların dansla iletişimi. II balın tıbbi kullanımı — 'honey/bee' kelime tuzağı, konu kayması.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d069",
+  "type": "ilgisiz",
+  "stem": "(I) Mangrove forests grow along tropical coastlines where land meets the sea. (II) Their dense roots slow down waves and reduce coastal erosion during storms. (III) They also store large amounts of carbon in their waterlogged soils. (IV) Moreover, they serve as nurseries for many species of fish and shellfish. (V) Tropical rainforests, which are located far from the coast, receive more than two metres of rain each year.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: mangrovların faydaları. V kıyıdan uzak yağmur ormanlarının yağışı — farklı ekosistem.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d070",
+  "type": "ilgisiz",
+  "stem": "(I) Comets are icy bodies that spend most of their time in the cold outer regions of the solar system. (II) Saturn's rings are made mostly of ice particles of different sizes. (III) When a comet approaches the Sun, its ice begins to turn directly into gas. (IV) This gas, together with released dust, forms a bright head and a long tail. (V) The tail always points away from the Sun because it is pushed by sunlight and the solar wind.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: kuyruklu yıldızların Güneş'e yaklaşınca davranışı. II Satürn halkaları — ortak kelime 'ice' tuzağı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 1
+ },
+ {
+  "id": "d071",
+  "type": "ilgisiz",
+  "stem": "(I) Groundwater is stored in layers of porous rock or sediment called aquifers. (II) In many dry regions, it provides most of the water used for drinking and irrigation. (III) When it is pumped out faster than rain can refill it, the water table falls. (IV) Rivers that flow into the sea carry large amounts of sediment to their deltas. (V) In some cities, this over-extraction has even caused the ground surface to sink.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: yeraltı suyu ve aşırı çekim. IV nehirlerin deltaya sediment taşıması — konu dışı; V 'this over-extraction' III'e bağlı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d072",
+  "type": "ilgisiz",
+  "stem": "(I) Self-driving cars rely on several types of sensors to understand their surroundings. (II) Many people still prefer to drive cars with manual gearboxes because they enjoy the experience. (III) Cameras recognise traffic lights, road signs and lane markings. (IV) Radar measures the distance and speed of other vehicles, even in fog or rain. (V) Lidar, which uses laser pulses, builds a detailed three-dimensional map of the environment.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: otonom araç sensörleri. II manuel vites tercihi — konu kayması; III–V sensörleri sıralıyor.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d073",
+  "type": "ilgisiz",
+  "stem": "(I) Hearing aids have changed dramatically since the days of large ear trumpets. (II) Modern devices are small enough to fit almost invisibly inside the ear canal. (III) Digital processors in them can amplify speech while reducing background noise. (IV) Some models can even connect wirelessly to phones and televisions. (V) Loud music at concerts is one of the main causes of hearing loss among young people.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: işitme cihazlarının gelişimi. V işitme kaybının nedeni — alt konu farklı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d074",
+  "type": "ilgisiz",
+  "stem": "(I) The Romans built aqueducts to carry water from distant springs to their cities. (II) These structures used a very gentle, continuous slope so that water could flow by gravity alone. (III) Where valleys had to be crossed, engineers built bridges with multiple tiers of arches. (IV) Some aqueducts were so well constructed that parts of them still carry water today. (V) Roman roads were also famous for their straightness and durability.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: Roma su kemerleri. V Roma yolları — aynı medeniyet, farklı konu ('also' tuzağı).",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d075",
+  "type": "ilgisiz",
+  "stem": "(I) Water has an unusually high boiling point for such a small molecule. (II) This is because its molecules are held together by hydrogen bonds. (III) These bonds must be broken before water can turn into vapour. (IV) Without hydrogen bonding, water would boil at a far lower temperature and life as we know it would be impossible. (V) Hydrogen is also being studied as a clean fuel for heavy vehicles.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: hidrojen bağı ve suyun kaynama noktası. V hidrojen yakıtı — 'hydrogen' kelime tuzağı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "kimya",
+  "level": 1
+ },
+ {
+  "id": "d076",
+  "type": "ilgisiz",
+  "stem": "(I) Aluminium is widely used in aircraft because it combines low density with good strength. (II) Pure aluminium, however, is relatively soft. (III) To make it stronger, manufacturers add small amounts of copper, magnesium or zinc and apply heat treatment. (IV) Aluminium is produced from bauxite, much of which is mined in Australia and Guinea. (V) The resulting alloys can be nearly as strong as some steels while weighing about one-third as much.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: alüminyumun alaşımlanarak güçlendirilmesi. IV hammadde madenciliği — kayma. V 'resulting alloys' III'e bağlı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d077",
+  "type": "ilgisiz",
+  "stem": "(I) Solar panels convert sunlight directly into electricity. (II) Their efficiency falls slightly as their temperature rises. (III) For this reason, panels in cool, sunny places can perform surprisingly well. (IV) Some installers therefore leave space behind panels so that air can cool them. (V) Solar eclipses occur when the Moon passes between the Earth and the Sun.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: panel verimliliği ve sıcaklık. V güneş tutulması — 'solar' kelime tuzağı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d078",
+  "type": "ilgisiz",
+  "stem": "(I) A microwave oven heats food by producing electromagnetic waves at a frequency that water molecules absorb readily. (II) Microwaves are also used to transmit signals between telephone towers and satellites. (III) The waves cause the water molecules to rotate rapidly, and this motion generates heat. (IV) Because heating depends on water content, dry parts of a meal may stay cooler than moist ones. (V) Stirring food halfway through cooking therefore helps to spread the heat more evenly.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: mikrodalga fırının ısıtma ilkesi. II haberleşmede kullanımı — kayma; III doğrudan I'in devamı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d079",
+  "type": "ilgisiz",
+  "stem": "(I) Stem cells are unspecialised cells that can develop into many different cell types. (II) Embryonic stem cells can become almost any cell in the body. (III) Adult stem cells, by contrast, are usually limited to the tissue in which they are found. (IV) Cell membranes are made of a double layer of lipids that controls what enters the cell. (V) In 2006, scientists showed that ordinary skin cells could be reprogrammed to behave like embryonic stem cells.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: kök hücre türleri. IV hücre zarı yapısı — genel biyoloji ama alt konu dışı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d080",
+  "type": "ilgisiz",
+  "stem": "(I) Plastic waste that enters the sea can break down into tiny fragments called microplastics. (II) These particles have been found from the surface of the ocean to the deepest trenches. (III) Fish and shellfish often swallow them, mistaking them for food. (IV) Plastics were first developed in the late nineteenth century as substitutes for ivory. (V) Scientists are now studying whether microplastics moving up the food chain could affect human health.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: denizde mikroplastik. IV plastiğin icat tarihi — konu kayması.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d081",
+  "type": "ilgisiz",
+  "stem": "(I) Neutron stars are the collapsed cores left behind after some massive stars explode. (II) They are so dense that a teaspoon of their material would weigh billions of tonnes on Earth. (III) Many of them rotate extremely quickly and emit beams of radiation from their magnetic poles. (IV) The first artificial satellite, Sputnik 1, was launched by the Soviet Union in 1957. (V) When such a beam sweeps past Earth, astronomers detect regular pulses, which is why these objects are called pulsars.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: nötron yıldızları ve pulsarlar. IV Sputnik — tamamen farklı. V 'such a beam' III'e bağlı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 3
+ },
+ {
+  "id": "d082",
+  "type": "ilgisiz",
+  "stem": "(I) Caves in limestone regions are formed mainly by the action of water. (II) Rainwater absorbs carbon dioxide and becomes slightly acidic. (III) Granite is a hard igneous rock often used for kitchen countertops. (IV) As this weak acid seeps through cracks, it slowly dissolves the limestone. (V) Over thousands of years, the cracks widen into passages and large chambers.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: kireçtaşı mağaralarının oluşumu. III granitin kullanımı — kayma; IV 'this weak acid' II'ye bağlı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 1
+ },
+ {
+  "id": "d083",
+  "type": "ilgisiz",
+  "stem": "(I) Training large AI models requires enormous amounts of electricity. (II) Data centres also need water to cool their servers, especially in hot climates. (III) Some researchers have estimated the carbon footprint of training a single large model. (IV) Chess-playing programs defeated the world champion for the first time in 1997. (V) Companies are increasingly locating data centres near renewable energy sources to reduce these impacts.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: yapay zekânın çevresel/enerji maliyeti. IV satranç programı tarihi — konu dışı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d084",
+  "type": "ilgisiz",
+  "stem": "(I) Antimicrobial resistance occurs when microbes evolve to survive the drugs designed to kill them. (II) Resistant infections are harder to treat and can require longer hospital stays. (III) The World Health Organization has described it as one of the greatest threats to global health. (IV) Vaccines can reduce resistance indirectly by preventing infections that would otherwise be treated with antibiotics. (V) Penicillin was discovered by Alexander Fleming in 1928 after mould contaminated one of his bacterial cultures.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: antimikrobiyal direnç ve önlemler. V penisilinin keşif öyküsü — tarihe kayma.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "tip",
+  "level": 3
+ },
+ {
+  "id": "d085",
+  "type": "ilgisiz",
+  "stem": "(I) The Eiffel Tower was built for the 1889 World's Fair in Paris. (II) Paris is also famous for its museums, cafés and fashion houses. (III) Many artists at the time criticised its design as ugly and useless. (IV) The tower was supposed to be dismantled after twenty years. (V) However, it was saved because it proved valuable as a radio transmission antenna.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: Eiffel Kulesi'nin hikâyesi. II Paris'in genel ünü — konu kayması; III'teki 'its design' kuleye döner.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 1
+ },
+ {
+  "id": "d086",
+  "type": "ilgisiz",
+  "stem": "(I) Batteries generate electricity through chemical reactions between two electrodes and an electrolyte. (II) Electricity was first studied systematically in the eighteenth century using static charges. (III) During discharge, ions move through the electrolyte while electrons flow through the external circuit. (IV) In rechargeable batteries, this process can be reversed by applying an external current. (V) Repeated cycling, however, slowly degrades the electrodes and reduces capacity.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: batarya çalışma ilkesi. II elektriğin tarihçesi — kayma; III I'in devamı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d087",
+  "type": "ilgisiz",
+  "stem": "(I) Concrete is strong in compression but weak in tension. (II) To overcome this weakness, engineers embed steel bars, known as rebar, in the concrete. (III) Cement production is responsible for a notable share of global carbon dioxide emissions. (IV) The steel carries the tensile loads while the concrete resists compression and protects the steel from corrosion. (V) This combination has made reinforced concrete the most widely used construction material in the world.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: betonarmenin işleyişi. III çimento emisyonu — ilgili ama alt konu dışı; IV II'nin devamı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d088",
+  "type": "ilgisiz",
+  "stem": "(I) Pumped hydro storage is the most widely used method of storing electricity on a large scale. (II) When there is surplus power, water is pumped from a lower reservoir to a higher one. (III) Dams can also change river ecosystems and block the migration of fish. (IV) When demand rises, the water is released downhill through turbines to generate electricity again. (V) Although some energy is lost in each cycle, the method can respond within minutes to changes in demand.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: pompaj depolamanın çalışma ilkesi. III barajların ekolojik etkisi — kayma; II→IV süreç akışı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "enerji",
+  "level": 3
+ },
+ {
+  "id": "d089",
+  "type": "ilgisiz",
+  "stem": "(I) GPS satellites carry extremely precise atomic clocks. (II) According to relativity, these clocks tick at a slightly different rate from clocks on the ground. (III) Albert Einstein received the Nobel Prize for his explanation of the photoelectric effect, not for relativity. (IV) If engineers did not correct for this difference, position errors would grow by kilometres every day. (V) The system's accuracy is therefore a practical, everyday confirmation of Einstein's theory.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: GPS ve görelilik düzeltmesi. III Einstein'ın Nobel'i — isim tuzağı, alt konu dışı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "fizik",
+  "level": 3
+ },
+ {
+  "id": "d090",
+  "type": "ilgisiz",
+  "stem": "(I) Migratory birds can travel thousands of kilometres between their breeding and wintering grounds. (II) To find their way, they use several cues, including the position of the Sun and stars. (III) Many species can also sense the Earth's magnetic field. (IV) Some birds, such as ostriches, cannot fly at all. (V) Young birds often learn routes partly by following experienced adults.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: göçmen kuşların yön bulması. IV uçamayan kuşlar — kayma.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d091",
+  "type": "ilgisiz",
+  "stem": "(I) Wolves were reintroduced to Yellowstone National Park in 1995 after an absence of about seventy years. (II) Their return reduced the number of elk and changed where the remaining elk grazed. (III) Wolves belong to the same species as domestic dogs. (IV) With less grazing pressure, willows and aspens recovered along some riverbanks. (V) Scientists continue to debate how large these cascading effects have been.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: kurtların ekosisteme etkisi (trofik kaskad). III kurt-köpek tür ilişkisi — kayma.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d092",
+  "type": "ilgisiz",
+  "stem": "(I) The James Webb Space Telescope observes mainly in infrared light. (II) Infrared allows it to see through clouds of dust that block visible light. (III) It also lets astronomers study the earliest galaxies, whose light has been stretched to longer wavelengths by the expansion of the universe. (IV) To detect faint infrared signals, the telescope must be kept extremely cold behind a large sunshield. (V) The Hubble Space Telescope was launched in 1990 and later repaired by astronauts.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: JWST ve kızılötesi gözlem. V Hubble'ın tarihçesi — başka teleskop.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d093",
+  "type": "ilgisiz",
+  "stem": "(I) Tsunamis are usually generated when an undersea earthquake suddenly lifts or drops the seafloor. (II) In the deep ocean, the waves may be less than a metre high but travel at the speed of a jet aircraft. (III) Surfers prefer beaches where steady winds produce regular waves. (IV) As the waves approach shallow water near the coast, they slow down and grow dramatically in height. (V) This is why a tsunami that passes unnoticed under ships can devastate the shoreline.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: tsunami oluşumu ve büyümesi. III sörf dalgaları — 'waves' tuzağı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d094",
+  "type": "ilgisiz",
+  "stem": "(I) Computer vision allows machines to recognise objects in images. (II) Modern systems learn this skill by studying millions of labelled photographs. (III) Digital cameras have replaced film cameras for most purposes. (IV) Once trained, they can identify faces, read handwriting or spot defects on a production line. (V) However, they can be fooled by small changes that a human would hardly notice.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: bilgisayarlı görü. III dijital kamera — kayma; IV 'they' II'deki sistemlere bağlı.",
+    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 1
+ },
+ {
+  "id": "d095",
+  "type": "paragraf-tamamlama",
+  "stem": "Weld joints are often the weakest points in a steel structure. ---- In addition, the rapid heating and cooling of the surrounding metal can create residual stresses and brittle zones. For these reasons, critical welds are inspected with ultrasound or X-rays before a structure enters service.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Steel is an alloy of iron and carbon that has been produced for thousands of years.",
+     "However, welding is rarely used in modern construction.",
+     "These inspections are therefore unnecessary for most structures.",
+     "Small defects such as pores or incomplete fusion may be trapped inside the weld metal.",
+     "Aluminium, by contrast, is much lighter than steel."
+    ],
+    "answer": 3,
+    "explain": "'In addition' ile ikinci bir zayıflık nedeni ekleniyor → boşluk ilk nedeni vermeli (kusurlar). Tuzak: 'These inspections' henüz anılmadı.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d096",
+  "type": "paragraf-tamamlama",
+  "stem": "Electric cars produce no exhaust emissions while driving. ---- If the electricity comes mainly from coal, the overall emissions of an electric car may be only slightly lower than those of an efficient petrol car. In countries with a high share of renewables, however, the advantage is much larger.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Petrol cars were invented in the late nineteenth century.",
+     "As a result, they are completely free of any environmental impact.",
+     "Many drivers enjoy the quiet ride of electric cars.",
+     "Their total environmental impact, however, depends on how the electricity that charges them is generated.",
+     "Charging stations are usually located near shopping centres."
+    ],
+    "answer": 3,
+    "explain": "Sonraki cümle elektriğin kaynağına göre emisyon farkını anlatıyor → boşluk bu konuyu açmalı. Tuzak: 'completely free' sonrası ile çelişir.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d097",
+  "type": "paragraf-tamamlama",
+  "stem": "---- When a moving magnet passes a coil of wire, it induces an electric current in the coil. Power stations exploit this principle on a huge scale: turbines driven by steam, water or wind rotate magnets inside coils to produce electricity. Without electromagnetic induction, the modern electricity grid would not exist.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Steam turbines must be cooled with large amounts of water.",
+     "Almost all the electricity we use is generated by a phenomenon discovered by Michael Faraday in 1831.",
+     "Magnets lose their strength when they are heated strongly.",
+     "This is why wind turbines are so tall.",
+     "Copper is the most common metal used in wiring."
+    ],
+    "answer": 1,
+    "explain": "Boşluk başta → konu cümlesi: indüksiyon/Faraday. Diğerleri ayrıntı ya da kopuk ('This is why' bağlamsız).",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d098",
+  "type": "paragraf-tamamlama",
+  "stem": "Many plants defend themselves against insects by producing toxic chemicals. Producing these chemicals, however, costs energy that could otherwise be used for growth. ---- When a leaf is damaged, signals spread through the plant and switch on the production of defensive compounds within hours.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Insects have six legs and three body segments.",
+     "Plants therefore never grow when insects are present.",
+     "As a result, toxic plants are always larger than non-toxic ones.",
+     "For this reason, many species produce large amounts of toxins only after they have been attacked.",
+     "Some flowers attract bees with bright colours."
+    ],
+    "answer": 3,
+    "explain": "Maliyet → çözüm: sadece saldırıdan sonra üretmek; sonraki cümle bu mekanizmayı açıklıyor.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d099",
+  "type": "paragraf-tamamlama",
+  "stem": "Cities are often several degrees warmer than the surrounding countryside, an effect known as the urban heat island. Dark surfaces such as asphalt and roofs absorb sunlight during the day and release heat at night. ---- Planting trees, creating green roofs and using lighter-coloured materials can all help to reduce the effect.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Rural areas, in contrast, have more asphalt than cities.",
+     "Moreover, the lack of vegetation means that less water evaporates to cool the air.",
+     "Therefore, cities are always colder at night.",
+     "Many people move to cities to find work.",
+     "These trees grow faster in cold climates."
+    ],
+    "answer": 1,
+    "explain": "İkinci neden ekleniyor (Moreover); sonra çözüm önerileri. Tuzak: 'These trees' ağaçtan önce bahsedilmedi.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d100",
+  "type": "paragraf-tamamlama",
+  "stem": "Mercury is the closest planet to the Sun, yet it is not the hottest. ---- Venus, which is farther away, has a thick atmosphere of carbon dioxide that traps heat. As a result, its surface is hot enough to melt lead.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Because it has almost no atmosphere, it cannot keep the heat it receives.",
+     "Mercury was named after the Roman messenger god.",
+     "Venus is the brightest planet in the night sky.",
+     "Therefore, Mercury is the hottest planet in the solar system.",
+     "Many spacecraft have visited Mars."
+    ],
+    "answer": 0,
+    "explain": "Merkür neden en sıcak değil? Atmosfer yok. Sonraki cümle Venüs'le kıyas. Tuzak: 'Therefore ... hottest' çelişki.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 1
+ },
+ {
+  "id": "d101",
+  "type": "paragraf-tamamlama",
+  "stem": "Landslides can be triggered by heavy rain, earthquakes or human activity. ---- When the slope becomes saturated, the water pressure between soil particles increases and reduces the friction that holds them together. Eventually, the slope can no longer support its own weight and fails.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Earthquakes are measured using seismometers.",
+     "Many mountain roads have been built in the last century.",
+     "Landslides, however, never occur after rain.",
+     "Volcanoes are often found near plate boundaries.",
+     "Rainfall is particularly dangerous because water adds weight to the soil and weakens it."
+    ],
+    "answer": 4,
+    "explain": "Sonraki cümle suya doymuş yamacı anlatıyor → boşluk yağmuru seçmeli.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d102",
+  "type": "paragraf-tamamlama",
+  "stem": "Facial recognition systems have become remarkably accurate in recent years. ---- Studies have found that some systems make more errors when identifying women and people with darker skin. Critics argue that such technology should not be used in policing until these problems are solved.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Their performance, however, is not equally good for all groups of people.",
+     "Many smartphones can be unlocked with a fingerprint.",
+     "Therefore, they never make mistakes.",
+     "The first digital camera was built in 1975.",
+     "These critics have developed better cameras."
+    ],
+    "answer": 0,
+    "explain": "Doğruluk (+) → ama herkes için eşit değil (−); sonraki cümle bu eşitsizliğin kanıtı.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d103",
+  "type": "paragraf-tamamlama",
+  "stem": "Blood pressure is one of the most important indicators of cardiovascular health. ---- For this reason, it is often called a 'silent killer'. Doctors recommend regular measurements, especially for people over forty or with a family history of heart disease.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Blood is pumped by the heart through arteries and veins.",
+     "Low blood pressure is always more dangerous than high blood pressure.",
+     "Most patients feel severe pain when their blood pressure rises.",
+     "Measurements should therefore be avoided.",
+     "High blood pressure usually causes no symptoms, yet it greatly increases the risk of heart attack and stroke."
+    ],
+    "answer": 4,
+    "explain": "'silent killer' için belirtisiz ama tehlikeli olmalı. Tuzak: 'severe pain' sessizlikle çelişir.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d104",
+  "type": "paragraf-tamamlama",
+  "stem": "In 1869, the first transcontinental railroad in the United States was completed. ---- Before its completion, a journey from New York to California took several months by wagon or ship. Afterwards, the same trip could be made in about a week, which transformed trade and settlement in the American West.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Railways in Britain had begun operating several decades earlier.",
+     "Steam locomotives burned coal or wood.",
+     "However, it reduced travel speed considerably.",
+     "Today, most long journeys are made by air.",
+     "It linked the existing eastern network with the Pacific coast for the first time."
+    ],
+    "answer": 4,
+    "explain": "Başlangıçtaki olgunun önemini açıklayan köprü cümle: doğu ağı Pasifik'e ilk kez bağlandı. Tuzak: 'reduced travel speed' çelişir.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 3
+ },
+ {
+  "id": "d105",
+  "type": "paragraf-tamamlama",
+  "stem": "Rust forms when iron reacts with oxygen and water. ---- This is why cars in regions where salt is spread on winter roads tend to corrode faster. Salt dissolved in water increases its electrical conductivity, which speeds up the electrochemical reactions involved.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Iron is the fourth most common element in the Earth's crust.",
+     "The process is greatly accelerated in the presence of salt.",
+     "Oxygen makes up about 21 percent of the atmosphere.",
+     "Cars should therefore never be driven in winter.",
+     "Rust, however, protects iron from further corrosion."
+    ],
+    "answer": 1,
+    "explain": "Sonraki 'This is why ... salt' → boşluk tuzun hızlandırıcı etkisini vermeli. Tuzak: 'Rust protects' yanlış.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d106",
+  "type": "paragraf-tamamlama",
+  "stem": "Titanium alloys are prized in aerospace and medicine for their high strength, low density and excellent corrosion resistance. ---- Extracting titanium from its ore requires a complex, energy-intensive process, and the metal is difficult to machine. Researchers are therefore developing cheaper production routes and additive manufacturing methods that reduce material waste.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Titanium was named after the Titans of Greek mythology.",
+     "Their widespread use, however, is limited by their high cost.",
+     "As a result, titanium is the cheapest structural metal.",
+     "Medical implants must be sterilised before surgery.",
+     "These methods have made titanium completely free."
+    ],
+    "answer": 1,
+    "explain": "Avantajlar (+) → kısıt (yüksek maliyet); sonraki cümle maliyet nedenlerini açıklıyor.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d107",
+  "type": "paragraf-tamamlama",
+  "stem": "Nuclear power plants generate large amounts of electricity without emitting carbon dioxide during operation. ---- The most serious concerns relate to accidents, such as those at Chernobyl and Fukushima, and to the long-term storage of radioactive waste. High construction costs and long building times have also slowed new projects.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Therefore, every country has decided to build new plants.",
+     "Coal plants, in contrast, emit no carbon dioxide.",
+     "Uranium is a metal found in many rocks.",
+     "Nevertheless, the technology remains controversial in many countries.",
+     "These accidents never had any effects on public opinion."
+    ],
+    "answer": 3,
+    "explain": "Avantaj → 'Nevertheless ... controversial' → sonraki 'most serious concerns' bunu açıyor.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d108",
+  "type": "paragraf-tamamlama",
+  "stem": "Lasers produce light that is very different from that of an ordinary bulb. ---- Because all the waves are in step and travel in the same direction, laser light can be focused into an extremely small spot. This property makes lasers useful for cutting metal, performing eye surgery and reading data from optical discs.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Ordinary bulbs have been replaced by LEDs in many homes.",
+     "Lasers were invented after the Second World War.",
+     "Their light has a single wavelength and its waves are coherent, meaning that their peaks line up.",
+     "However, laser light cannot be focused.",
+     "Eye surgery is a common operation among older people."
+    ],
+    "answer": 2,
+    "explain": "Sonraki 'Because all the waves are in step' → boşluk koheransı tanımlamalı.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "fizik",
+  "level": 3
+ },
+ {
+  "id": "d109",
+  "type": "paragraf-tamamlama",
+  "stem": "Sleep is essential for both the body and the brain. ---- During deep sleep, for example, the brain appears to clear away waste products that build up during the day. Lack of sleep has been linked to poor concentration, weakened immunity and a higher risk of several diseases.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Some animals sleep standing up.",
+     "Scientists have found that many important processes take place while we sleep.",
+     "Coffee is one of the most popular drinks in the world.",
+     "Therefore, people should sleep less than six hours.",
+     "Dreams usually occur in the early evening."
+    ],
+    "answer": 1,
+    "explain": "'for example' → boşluk genel bir iddia olmalı: uykuda önemli süreçler olur.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d110",
+  "type": "paragraf-tamamlama",
+  "stem": "Invasive species are organisms introduced into regions where they do not naturally occur. ---- The zebra mussel, for instance, spread through North American lakes after arriving in ships' ballast water. It now blocks water pipes and outcompetes native mussels, causing costs estimated in billions of dollars.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Lakes in North America were formed by glaciers.",
+     "Free from their natural predators, some of them multiply rapidly and cause serious ecological and economic damage.",
+     "Most introduced species are completely harmless and beneficial.",
+     "Ships are the cheapest way to transport goods.",
+     "These pipes are made of steel."
+    ],
+    "answer": 1,
+    "explain": "'for instance' ile zarar örneği geliyor → boşluk genel zarar iddiası. Tuzak: 'harmless' örnekle çelişir.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d111",
+  "type": "paragraf-tamamlama",
+  "stem": "Black holes cannot be observed directly, since not even light can escape from them. ---- Gas falling towards a black hole is heated to millions of degrees and emits X-rays. In 2019, astronomers went further and produced the first image of the shadow of a black hole against its glowing surroundings.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Light travels at about 300,000 kilometres per second.",
+     "Therefore, astronomers have stopped studying them.",
+     "Astronomers can, however, detect them through their effects on nearby matter.",
+     "Stars like the Sun will eventually become black holes.",
+     "These X-rays are harmless to astronauts."
+    ],
+    "answer": 2,
+    "explain": "Doğrudan gözlenemez (−) → dolaylı tespit (+); sonraki cümle örnek. Tuzak: Güneş kara delik olmaz (yanlış bilgi).",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 3
+ },
+ {
+  "id": "d112",
+  "type": "paragraf-tamamlama",
+  "stem": "Diamonds and graphite are both made of pure carbon. ---- In diamond, each carbon atom is strongly bonded to four others in a rigid three-dimensional network. In graphite, the atoms form flat sheets that can slide over each other easily.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Their very different properties come from the way the atoms are arranged.",
+     "Diamonds are mined mainly in Africa and Russia.",
+     "Graphite is therefore harder than diamond.",
+     "Pencils were invented in the sixteenth century.",
+     "These sheets are found only in diamonds."
+    ],
+    "answer": 0,
+    "explain": "Sonraki iki cümle atom dizilişi farkını anlatıyor → boşluk bunu tanıtmalı.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 1
+ },
+ {
+  "id": "d113",
+  "type": "paragraf-tamamlama",
+  "stem": "Early chatbots followed hand-written rules: if a user typed a certain phrase, the program replied with a prepared answer. ---- Modern systems, by contrast, learn statistical patterns from vast amounts of text and can respond to questions they have never seen before. This flexibility, however, makes their behaviour harder to predict and control.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Computers became widely available in homes in the 1980s.",
+     "Modern systems therefore follow hand-written rules.",
+     "These patterns were written by hand.",
+     "Chatbots are used mainly in hospitals.",
+     "Such systems were predictable but failed as soon as users went beyond the expected inputs."
+    ],
+    "answer": 4,
+    "explain": "Eski sistemin artı/eksisi → 'Modern systems, by contrast' kıyası. Tuzak: 'hand-written' modern sistem için yanlış.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d114",
+  "type": "paragraf-tamamlama",
+  "stem": "Vaccines train the immune system to recognise a disease without causing the illness itself. ---- If the real pathogen enters the body later, the immune system can respond quickly and strongly. This is why vaccinated people are much less likely to become seriously ill.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "They do this by exposing the body to a harmless part or version of the pathogen.",
+     "Many vaccines are injected into the upper arm.",
+     "The first hospitals were built in ancient times.",
+     "However, vaccinated people always become seriously ill.",
+     "These hospitals are very expensive."
+    ],
+    "answer": 0,
+    "explain": "Nasıl çalıştığını açıklayan köprü cümle; sonraki 'later' bunu izler.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "tip",
+  "level": 1
+ },
+ {
+  "id": "d115",
+  "type": "paragraf-tamamlama",
+  "stem": "The Panama Canal, opened in 1914, connects the Atlantic and Pacific Oceans. ---- Ships no longer had to sail around the southern tip of South America. Today, thousands of vessels pass through the canal every year.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Panama is a country in Central America.",
+     "However, it made sea voyages much longer.",
+     "The canal was dug entirely by hand in a single year.",
+     "It shortened many sea voyages by thousands of kilometres.",
+     "Many tourists visit Central America in winter."
+    ],
+    "answer": 3,
+    "explain": "Kanalın etkisi: yolculuğu kısalttı; sonraki cümle bunun açıklaması.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 1
+ },
+ {
+  "id": "d116",
+  "type": "paragraf-tamamlama",
+  "stem": "Most chemical reactions speed up as temperature rises. ---- Faster molecules collide more often and, more importantly, a larger fraction of collisions have enough energy to break existing bonds. As a rough rule, the rate of many reactions doubles for every ten-degree increase in temperature.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Temperature is measured in degrees Celsius or kelvin.",
+     "However, temperature has no effect on molecular motion.",
+     "This is because heating increases the average speed of the molecules.",
+     "Some reactions release heat, while others absorb it.",
+     "These bonds can never be broken."
+    ],
+    "answer": 2,
+    "explain": "Sonraki 'Faster molecules' → boşluk ısınmanın molekül hızını artırdığını söylemeli.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "kimya",
+  "level": 3
+ },
+ {
+  "id": "d117",
+  "type": "paragraf-tamamlama",
+  "stem": "Copper has been used by humans for about ten thousand years. ---- Today, it is essential in electrical wiring because it conducts electricity better than any other metal except silver. Its resistance to corrosion also makes it popular for water pipes.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Silver is more expensive than gold.",
+     "Copper, however, conducts electricity very poorly.",
+     "Electrical wiring was invented ten thousand years ago.",
+     "These pipes are made of plastic.",
+     "Its softness made it easy to hammer into tools and ornaments in ancient times."
+    ],
+    "answer": 4,
+    "explain": "Kronolojik akış: antik kullanım → 'Today' modern kullanım. Tuzak: 'conducts poorly' çelişki.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ },
+ {
+  "id": "d118",
+  "type": "paragraf-tamamlama",
+  "stem": "Tidal energy has one major advantage over wind and solar power: it is highly predictable. ---- Engineers can therefore calculate the output of a tidal plant years in advance. However, suitable sites with strong tidal currents are rare, and building equipment that survives harsh marine conditions is costly.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Wind farms are often built offshore.",
+     "Solar panels work best in cloudy weather.",
+     "Tides are driven by the gravitational pull of the Moon and the Sun, whose movements are known precisely.",
+     "Tides are completely random and cannot be forecast.",
+     "These sites are very common along every coast."
+    ],
+    "answer": 2,
+    "explain": "'therefore' → öngörülebilirliğin nedeni gelmeli: Ay ve Güneş'in hareketi biliniyor.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "enerji",
+  "level": 3
+ },
+ {
+  "id": "d119",
+  "type": "paragraf-tamamlama",
+  "stem": "Ice floats on water, which is unusual for a solid. ---- This happens because water molecules form an open, hexagonal structure when they freeze. As a result, lakes freeze from the top down, and fish can survive the winter in the liquid water below.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Ice is used to keep food fresh.",
+     "Fish can breathe air for long periods.",
+     "Lakes therefore freeze from the bottom up.",
+     "In most substances, the solid form is denser than the liquid.",
+     "These fish live only in warm water."
+    ],
+    "answer": 3,
+    "explain": "'unusual' iddiasını açıklayan karşılaştırma: çoğu maddede katı daha yoğun.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d120",
+  "type": "paragraf-tamamlama",
+  "stem": "Bacteria can exchange genes not only with their offspring but also with unrelated neighbours. ---- This process, known as horizontal gene transfer, allows a resistance gene that appears in one species to spread rapidly to others. It is one of the main reasons why antibiotic resistance has become such a global problem.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Bacteria were first observed under a microscope in the seventeenth century.",
+     "However, bacteria never share genes with other species.",
+     "Most bacteria are harmful to humans.",
+     "This disease affects only animals.",
+     "They may, for example, pass small rings of DNA called plasmids directly from one cell to another."
+    ],
+    "answer": 4,
+    "explain": "'This process, known as...' → boşluk somut süreci anlatmalı (plazmit aktarımı).",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d121",
+  "type": "paragraf-tamamlama",
+  "stem": "Forests play an important role in the water cycle. ---- This moisture rises into the atmosphere and later falls as rain, sometimes hundreds of kilometres away. When large areas of forest are cut down, rainfall in nearby regions can decrease.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Trees take up water from the soil and release it through their leaves.",
+     "Forests are home to many species of birds.",
+     "Paper is made from wood.",
+     "Therefore, forests reduce the amount of moisture in the air.",
+     "These birds migrate south in winter."
+    ],
+    "answer": 0,
+    "explain": "Sonraki 'This moisture' → boşluk nemi tanıtmalı: yapraklardan su salınımı.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d122",
+  "type": "paragraf-tamamlama",
+  "stem": "The International Space Station orbits the Earth about once every ninety minutes. ---- Astronauts on board therefore see around sixteen sunrises and sunsets every day. To help their bodies keep a normal rhythm, they follow a fixed schedule based on Greenwich Mean Time.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "The station was built with the help of several countries.",
+     "Astronauts must exercise for about two hours a day.",
+     "This means that it travels from daylight into darkness many times within twenty-four hours.",
+     "However, it orbits the Earth only once a month.",
+     "These countries all use the same time zone."
+    ],
+    "answer": 2,
+    "explain": "'therefore ... sixteen sunrises' → boşluk ara açıklama: gece-gündüz çok kez geçiş.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d123",
+  "type": "paragraf-tamamlama",
+  "stem": "Earthquakes in the middle of tectonic plates are rarer than those at plate boundaries, but they can be surprisingly destructive. ---- In addition, buildings in such regions are often not designed to resist strong shaking, because large earthquakes there are so infrequent.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "The old, cold crust in plate interiors transmits seismic waves efficiently, so shaking can be felt over very large areas.",
+     "Most volcanoes are located at plate boundaries.",
+     "Plate boundaries are always found in the middle of oceans.",
+     "Therefore, they never cause any damage.",
+     "These boundaries are moving apart."
+    ],
+    "answer": 0,
+    "explain": "'In addition' ikinci bir neden ekliyor → boşluk yıkıcılığın ilk nedenini vermeli.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d124",
+  "type": "paragraf-tamamlama",
+  "stem": "Robot vacuum cleaners have become common in many homes. ---- Some models also build a map of the house, so they can clean rooms in an efficient order and return to their charging station when the battery is low.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Vacuum cleaners were invented in the early twentieth century.",
+     "However, they cannot detect any obstacles.",
+     "They use sensors to detect walls, furniture and stairs so that they do not crash or fall.",
+     "Many people prefer carpets to wooden floors.",
+     "These stations are very heavy."
+    ],
+    "answer": 2,
+    "explain": "'Some models also' → önce temel bir özellik verilmeli: sensörlerle engel algılama.",
+    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 1
+ },
+ {
+  "id": "d125",
+  "type": "ceviri-en-tr",
+  "stem": "Although stainless steel is resistant to most forms of corrosion, it can suffer from pitting in environments rich in chloride.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olduğu için klorür bakımından zengin ortamlarda oyuklanmaya maruz kalabilir.",
+     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olsa da klorür bakımından zengin ortamlarda oyuklanmaya maruz kalabilir.",
+     "Paslanmaz çelik klorür bakımından zengin ortamlarda oyuklanmaya maruz kalsa da korozyonun bütün türlerine karşı dirençlidir.",
+     "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olmasına rağmen klorürlü ortamlarda oyuklanmaya hiç maruz kalmaz.",
+     "Klorür bakımından zengin ortamlar, paslanmaz çeliğin korozyona karşı direncini her zaman tamamen ortadan kaldırır."
+    ],
+    "answer": 1,
+    "explain": "Although = -se de/-masına rağmen; 'most forms' = çoğu türü; 'can suffer' = maruz kalabilir. Tuzaklar: 'için' (bağlaç kayması), 'bütün' (most≠all), 'hiç' (olumsuzluk).",
+    "tip": "Önce ana bağlacı eşleştir, sonra niceleyici (most/all)."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d126",
+  "type": "ceviri-en-tr",
+  "stem": "Hydrogen produced from renewable electricity is called green hydrogen.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Yeşil hidrojen, yenilenebilir elektrik üretmek için kullanılır.",
+     "Yenilenebilir elektrik üreten hidrojene yeşil hidrojen denmiştir.",
+     "Hidrojen yenilenebilir elektrikten üretildiğinde yeşil olmaz.",
+     "Yenilenebilir elektrikten üretilen hidrojene yeşil hidrojen denir.",
+     "Yenilenebilir elektrik, yeşil hidrojen olarak adlandırılır."
+    ],
+    "answer": 3,
+    "explain": "'produced from' edilgen sıfat-fiil: 'üretilen'. Tuzak: 'üreten' etken (özne kayması).",
+    "tip": "V3 sıfat → '-ilen/-ılan'."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d127",
+  "type": "ceviri-en-tr",
+  "stem": "The shorter the wavelength of light, the more strongly it is scattered by gas molecules in the atmosphere.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Işığın dalga boyu kısa olduğu için atmosferdeki gaz molekülleri onu saçamaz.",
+     "Atmosferdeki gaz molekülleri ne kadar çoksa ışık o kadar kısa dalga boyuna sahip olur.",
+     "Işığın dalga boyu ne kadar uzunsa atmosferde o kadar güçlü saçılır.",
+     "Gaz molekülleri, kısa dalga boylu ışığı atmosferden tamamen uzaklaştırır.",
+     "Işığın dalga boyu ne kadar kısaysa atmosferdeki gaz molekülleri tarafından o kadar güçlü saçılır."
+    ],
+    "answer": 4,
+    "explain": "The ...-er, the ...-er = ne kadar ...sa o kadar. Tuzak: 'uzun' (kutup ters), özne değişimi.",
+    "tip": "Karşılaştırmalı yapıyı birebir eşle."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d128",
+  "type": "ceviri-en-tr",
+  "stem": "It was not until the 2010s that scientists learned how to use a bacterial defence system to edit genes precisely.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bilim insanları, genleri hassas biçimde düzenlemek için bakteriyel bir savunma sistemini nasıl kullanacaklarını ancak 2010'larda öğrendiler.",
+     "Bilim insanları 2010'lardan beri genleri düzenlemek için bakterileri savunma sistemi olarak kullanmaktadır.",
+     "2010'lara kadar bilim insanları bakteriyel savunma sistemini genleri düzenlemek için sıklıkla kullandılar.",
+     "Bilim insanları, bakterilerin genlerini hassas biçimde düzenleyen savunma sistemini 2010'lardan önce keşfetmişti.",
+     "Bakteriyel savunma sistemi, 2010'larda bilim insanlarının genlerini düzenlemeye başladı."
+    ],
+    "answer": 0,
+    "explain": "It was not until X that Y = Y ancak X'te oldu. Tuzaklar: 'beri' (since), 'kadar ... kullandılar' (anlam ters), özne kayması.",
+    "tip": "not until = ancak ... -de/-dıktan sonra."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d129",
+  "type": "ceviri-en-tr",
+  "stem": "If ocean temperatures remain high for several weeks, corals may expel the algae living in their tissues.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Okyanus sıcaklıkları birkaç hafta yüksek kaldığı için mercanlar dokularındaki algleri dışarı atmıştır.",
+     "Okyanus sıcaklıkları birkaç hafta boyunca yüksek kalırsa mercanlar dokularında yaşayan algleri dışarı atabilir.",
+     "Mercanlar dokularında yaşayan algleri dışarı atarsa okyanus sıcaklıkları birkaç hafta yüksek kalabilir.",
+     "Okyanus sıcaklıkları birkaç hafta yüksek kalsa bile mercanlar algleri asla dışarı atmaz.",
+     "Okyanus sıcaklıkları yükseldiğinde algler mercanların dokularında birkaç hafta yaşayabilir."
+    ],
+    "answer": 1,
+    "explain": "If = -se/-sa; may = -ebilir. Tuzaklar: 'için' (neden), koşul-sonuç yer değişimi, 'bile'.",
+    "tip": "Koşul hangi yarıda? Yerini koru."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d130",
+  "type": "ceviri-en-tr",
+  "stem": "Most exoplanets have been detected not by direct observation but by the effects they have on their host stars.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Ötegezegenlerin çoğu hem doğrudan gözlemle hem de yıldızlar üzerindeki etkileriyle tespit edilmiştir.",
+     "Ev sahibi yıldızlar, ötegezegenlerin çoğunu doğrudan gözlemle tespit etmiştir.",
+     "Ötegezegenlerin çoğu doğrudan gözlemle değil, ev sahibi yıldızları üzerinde oluşturdukları etkiler aracılığıyla tespit edilmiştir.",
+     "Ötegezegenlerin hepsi, yıldızları üzerinde etki oluşturmadıkları için doğrudan gözlemlenmiştir.",
+     "Ötegezegenlerin çoğu doğrudan gözlemlenecek ve yıldızlar üzerindeki etkileri ölçülecektir."
+    ],
+    "answer": 2,
+    "explain": "not X but Y = X ile değil Y ile. Tuzaklar: 'hem...hem' (both), 'hepsi', gelecek zaman.",
+    "tip": "Yapıyı birebir eşle: not...but."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d131",
+  "type": "ceviri-en-tr",
+  "stem": "Laennec invented the stethoscope in 1816 after he had struggled to examine a patient.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Laennec 1816'da stetoskobu icat etmeden önce hiçbir hastayı muayene etmemişti.",
+     "Laennec, stetoskobu icat ettikten sonra hastaları muayene etmekte zorlandı.",
+     "Laennec 1816'dan beri hastaları stetoskopla muayene etmektedir.",
+     "Laennec, bir hastayı muayene etmekte zorlandıktan sonra 1816'da stetoskobu icat etti.",
+     "Bir hasta, Laennec'in stetoskobu icat etmesine 1816'da yardım etti."
+    ],
+    "answer": 3,
+    "explain": "after + had V3: önce zorlandı, sonra icat etti. Tuzak: sıra tersine çevrilmiş, 'beri'.",
+    "tip": "Olay sırasını kontrol et."
+   }
+  ],
+  "topic": "tip",
+  "level": 1
+ },
+ {
+  "id": "d132",
+  "type": "ceviri-en-tr",
+  "stem": "Robots trained in simulations may perform poorly in the real world because no simulation is perfect.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterse de simülasyonlar kusursuzdur.",
+     "Gerçek dünyada eğitilen robotlar simülasyonlarda kötü performans gösterir.",
+     "Hiçbir simülasyon kusursuz olmadığı hâlde robotlar gerçek dünyada her zaman iyi performans gösterir.",
+     "Simülasyon kusursuz olmadığında robotlar gerçek dünyada eğitilmelidir.",
+     "Hiçbir simülasyon kusursuz olmadığından, simülasyonlarda eğitilen robotlar gerçek dünyada kötü performans gösterebilir."
+    ],
+    "answer": 4,
+    "explain": "because = -dığından; may = -ebilir. Tuzaklar: 'gösterse de' (zıtlık), yer değişimi, 'her zaman'.",
+    "tip": "Neden-sonuç ilişkisini koru."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d133",
+  "type": "ceviri-en-tr",
+  "stem": "Catalysts speed up chemical reactions without being consumed in the process.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Katalizörler, süreç içinde tüketilmeden kimyasal tepkimeleri hızlandırır.",
+     "Katalizörler, kimyasal tepkimeleri hızlandırdıkları için süreç içinde tüketilir.",
+     "Kimyasal tepkimeler, katalizörleri tüketmeden hızlanamaz.",
+     "Katalizörler süreç içinde tüketildikçe tepkimeler yavaşlar.",
+     "Katalizörler tepkimeleri hızlandırmasa da süreçte tüketilmez."
+    ],
+    "answer": 0,
+    "explain": "without being consumed = tüketilmeden (edilgen + olumsuz). Tuzaklar: olumsuzluk kaybı, neden ekleme.",
+    "tip": "without + Ving = -meden."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d134",
+  "type": "ceviri-en-tr",
+  "stem": "Even though scientists cannot predict earthquakes, they can estimate the probability that a fault will produce a large one within a few decades.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bilim insanları depremleri önceden tahmin edemese de bir fayın birkaç on yıl içinde büyük bir deprem üretme olasılığını hesaplayabilir.",
+     "Bilim insanları depremleri önceden tahmin edebildiği için bir fayın birkaç on yıl içinde büyük deprem üreteceğini kesin olarak bilir.",
+     "Bilim insanları bir fayın büyük deprem üretme olasılığını hesaplayamadığı için depremleri tahmin edemez.",
+     "Bilim insanları depremleri tahmin edemediğinden faylar birkaç on yılda bir büyük deprem üretir.",
+     "Bilim insanları birkaç on yıl içinde depremleri önceden tahmin edebilecek olsa da olasılık hesaplayamaz."
+    ],
+    "answer": 0,
+    "explain": "Even though = -se de; 'probability' = olasılık (kesinlik değil). Tuzaklar: olumsuzluk ve bağlaç kayması.",
+    "tip": "Olumsuz + olumlu kutuplarını sırayla eşle."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d135",
+  "type": "ceviri-en-tr",
+  "stem": "A current started in a superconducting loop can flow for years without any power source.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Süper iletken bir halka, yıllarca güç kaynağı olmadan akım başlatabilir.",
+     "Süper iletken bir halkada akım ancak güç kaynağı ile yıllarca akabilir.",
+     "Süper iletken bir halkada başlatılan akım birkaç yıl sonra durmak zorundadır.",
+     "Güç kaynağı olmadan başlatılan akım süper iletken halkayı yıllarca ısıtır.",
+     "Süper iletken bir halkada başlatılan akım, herhangi bir güç kaynağı olmadan yıllarca akabilir."
+    ],
+    "answer": 4,
+    "explain": "Özne 'a current started in...' = başlatılan akım; without = olmadan. Tuzaklar: özne kayması, 'ancak ... ile'.",
+    "tip": "Öznenin uzun isim öbeğini doğru kur."
+   }
+  ],
+  "topic": "fizik",
+  "level": 1
+ },
+ {
+  "id": "d136",
+  "type": "ceviri-en-tr",
+  "stem": "Before Bessemer's process was introduced, steel was so expensive that it was used mainly for tools and weapons.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bessemer'in yöntemi tanıtılmadan önce çelik o kadar pahalıydı ki esas olarak alet ve silah yapımında kullanılıyordu.",
+     "Bessemer'in yöntemi tanıtıldıktan sonra çelik o kadar ucuzladı ki alet ve silah yapımında kullanılmaya başlandı.",
+     "Bessemer'in yönteminden önce çelik alet ve silah yapımında kullanıldığı için pahalıydı.",
+     "Bessemer'in yöntemi, çeliği esas olarak alet ve silah yapımında kullanmak için tanıtıldı.",
+     "Bessemer yöntemini tanıtmadan önce çelik aletler ve silahlar çok pahalı değildi."
+    ],
+    "answer": 0,
+    "explain": "so ... that = o kadar ... ki; before = -meden önce. Tuzaklar: before/after, neden-sonuç tersine.",
+    "tip": "so...that sonuç yapısını koru."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d137",
+  "type": "ceviri-en-tr",
+  "stem": "mRNA vaccines can be updated quickly, as only the genetic instructions need to be changed.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "mRNA aşıları hızla güncellendiği için genetik talimatların değiştirilmesine gerek yoktur.",
+     "Yalnızca genetik talimatların değiştirilmesi gerektiğinden mRNA aşıları hızla güncellenebilir.",
+     "mRNA aşılarının güncellenmesi, genetik talimatlar değiştirilse bile yavaştır.",
+     "Genetik talimatların tamamının değiştirilmesi gerektiğinden mRNA aşıları yavaş güncellenir.",
+     "mRNA aşıları, yalnızca genetik talimatlar değiştirildiğinde kullanılabilir."
+    ],
+    "answer": 1,
+    "explain": "as = -dığından (neden); only = yalnızca; can be updated = güncellenebilir.",
+    "tip": "as'in anlamı: çünkü / -dikçe / gibi — bağlama bak."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d138",
+  "type": "ceviri-en-tr",
+  "stem": "Unless emissions are reduced, thawing permafrost will release more greenhouse gases, which will in turn accelerate warming.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Emisyonlar azaltılırsa, çözülen donmuş toprak daha fazla sera gazı salacak ve ısınma hızlanacaktır.",
+     "Emisyonlar azaltılmadığı için donmuş toprak çözülmüş ve ısınma yavaşlamıştır.",
+     "Isınma hızlanmazsa donmuş toprak daha az sera gazı salacak ve emisyonlar azalacaktır.",
+     "Emisyonlar azaltılmazsa, çözülen donmuş toprak daha fazla sera gazı salacak, bu da ısınmayı hızlandıracaktır.",
+     "Donmuş toprak çözülse bile emisyonlar azaltılırsa ısınma hızlanmayacaktır."
+    ],
+    "answer": 3,
+    "explain": "Unless = -mezse; ', which' = bu da. Tuzaklar: 'azaltılırsa' (olumsuzluk kaybı), geçmiş zaman.",
+    "tip": "Unless = if not; olumsuzluğu koru."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d139",
+  "type": "ceviri-en-tr",
+  "stem": "Had only visible matter been present, the outer stars of spiral galaxies would have orbited much more slowly.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Yalnızca görünür madde mevcut olduğu için sarmal gökadaların dış yıldızları çok daha yavaş dolanmıştır.",
+     "Görünür madde mevcut olmasaydı, dış yıldızlar çok daha hızlı dolanacaktı.",
+     "Yalnızca görünür madde mevcut olsaydı, sarmal gökadaların dış kısımlarındaki yıldızlar çok daha yavaş dolanırdı.",
+     "Sarmal gökadaların dış yıldızları yavaş dolandığında yalnızca görünür madde mevcut olur.",
+     "Yalnızca görünür madde, sarmal gökadaların dış yıldızlarını daha yavaş dolandırmıştır."
+    ],
+    "answer": 2,
+    "explain": "Devrik Type 3 koşul (gerçek dışı geçmiş) = '-saydı ... -irdi'. Tuzaklar: 'olduğu için' gerçek kabul, olumsuzluk.",
+    "tip": "Had + S + V3 = If S had V3."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 3
+ },
+ {
+  "id": "d140",
+  "type": "ceviri-en-tr",
+  "stem": "The higher the strength of a steel, the more susceptible it tends to be to hydrogen embrittlement.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bir çeliğin dayanımı yüksek olduğu sürece hidrojen gevrekleşmesine karşı dayanıklıdır.",
+     "Hidrojen gevrekleşmesi ne kadar artarsa çeliğin dayanımı o kadar yükselir.",
+     "Bir çeliğin dayanımı ne kadar yüksekse hidrojen gevrekleşmesine o kadar yatkın olma eğilimindedir.",
+     "Bir çeliğin dayanımı ne kadar yüksekse hidrojen gevrekleşmesine o kadar dirençli olur.",
+     "Yüksek dayanımlı çelikler hidrojen gevrekleşmesine hiçbir zaman yatkın değildir."
+    ],
+    "answer": 2,
+    "explain": "the ...-er, the more susceptible = ne kadar ... o kadar yatkın. 'tends to' = eğilimindedir. Tuzaklar: kutup ters, neden-sonuç yer değişimi.",
+    "tip": "Hedge kelimelerini (tend to, may) atma."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d141",
+  "type": "ceviri-en-tr",
+  "stem": "Not only are sodium-ion batteries cheaper, but they also perform better than lithium-ion batteries at low temperatures.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Sodyum iyon piller daha ucuz olmasına rağmen düşük sıcaklıklarda lityum iyon pillerden daha kötü performans gösterir.",
+     "Sodyum iyon piller ne daha ucuzdur ne de düşük sıcaklıklarda daha iyi performans gösterir.",
+     "Lityum iyon piller hem daha ucuzdur hem de düşük sıcaklıklarda daha iyi çalışır.",
+     "Sodyum iyon piller yalnızca daha ucuz olmakla kalmaz, düşük sıcaklıklarda lityum iyon pillerden daha iyi performans da gösterir.",
+     "Sodyum iyon piller düşük sıcaklıklarda daha iyi çalıştıkları için daha ucuzdur."
+    ],
+    "answer": 3,
+    "explain": "Not only ... but also = yalnızca ... değil, ... da. Tuzaklar: neither...nor, özne değişimi, neden ekleme.",
+    "tip": "Çift bağlaçların eşini ara."
+   }
+  ],
+  "topic": "enerji",
+  "level": 3
+ },
+ {
+  "id": "d142",
+  "type": "ceviri-en-tr",
+  "stem": "Excess fertiliser can wash into rivers, where it may cause harmful algal blooms.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Nehirler, zararlı alg patlamalarına karşı gübre olarak kullanılabilir.",
+     "Fazla gübre nehirlere karışabilir ve orada zararlı alg patlamalarına neden olabilir.",
+     "Zararlı alg patlamaları nehirlerdeki gübre miktarını azaltır.",
+     "Fazla gübre nehirlere karışmadığı sürece alg patlamaları oluşur.",
+     "Fazla gübre nehirlere karıştığında alg patlamalarını her zaman önler."
+    ],
+    "answer": 1,
+    "explain": "where = orada (yer); can/may = -ebilir. Tuzaklar: anlam tersine, 'her zaman'.",
+    "tip": "Modal derecesini koru (may ≠ always)."
+   }
+  ],
+  "topic": "kimya",
+  "level": 1
+ },
+ {
+  "id": "d143",
+  "type": "ceviri-en-tr",
+  "stem": "Machine-learning forecasts, which can be produced in about a minute, still depend on data generated with the help of traditional models.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Makine öğrenmesi tahminleri yaklaşık bir dakikada üretildiği için artık geleneksel modellere ihtiyaç duymamaktadır.",
+     "Geleneksel modeller, makine öğrenmesi tahminlerinin yardımıyla yaklaşık bir dakikada veri üretebilir.",
+     "Makine öğrenmesi tahminleri hâlâ yaklaşık bir dakikada geleneksel modeller üretmektedir.",
+     "Yaklaşık bir dakikada üretilen veriler, makine öğrenmesi modellerini geleneksel hâle getirmiştir.",
+     "Yaklaşık bir dakikada üretilebilen makine öğrenmesi tahminleri hâlâ geleneksel modellerin yardımıyla oluşturulan verilere dayanmaktadır."
+    ],
+    "answer": 4,
+    "explain": "Virgüllü which = 'üretilebilen' sıfat; still = hâlâ; depend on = dayanmak. Tuzaklar: 'artık ihtiyaç duymamak' (still kaybı), özne değişimi.",
+    "tip": "Ana yüklem ve özneyi önce bul."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d144",
+  "type": "ceviri-en-tr",
+  "stem": "Tardigrades can survive extreme conditions by losing almost all the water in their bodies.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Su ayıları aşırı koşullarda vücutlarındaki suyu hiç kaybetmeden yaşar.",
+     "Su ayıları vücutlarındaki suyun tamamını kaybettiklerinde ölür.",
+     "Aşırı koşullar, su ayılarının vücutlarına daha fazla su girmesini sağlar.",
+     "Su ayıları, vücutlarındaki suyun neredeyse tamamını kaybederek aşırı koşullarda hayatta kalabilir.",
+     "Su ayıları aşırı koşullarda hayatta kalamadığı için suyunu kaybeder."
+    ],
+    "answer": 3,
+    "explain": "by + Ving = -erek; almost all = neredeyse tamamı.",
+    "tip": "by Ving = yöntem: -erek/-arak."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d145",
+  "type": "ceviri-en-tr",
+  "stem": "Engineers now regard the explanation that the Tacoma Narrows Bridge collapsed simply because of resonance as incomplete.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rezonans nedeniyle çöktüğü açıklamasını artık eksik bulmaktadır.",
+     "Mühendisler artık Tacoma Narrows Köprüsü'nün rezonans nedeniyle çökmediğini kesin olarak kanıtlamıştır.",
+     "Tacoma Narrows Köprüsü, mühendislerin eksik açıklamaları nedeniyle çökmüştür.",
+     "Mühendisler, köprünün çöküşünü açıklamak için rezonansın tek ve eksiksiz neden olduğunu düşünmektedir.",
+     "Mühendisler, Tacoma Narrows Köprüsü'nün yalnızca rüzgâr nedeniyle çökmeyeceğini önceden biliyordu."
+    ],
+    "answer": 0,
+    "explain": "regard X as incomplete = X'i eksik saymak; simply = yalnızca. Tuzaklar: 'çökmediğini kanıtlamış' (aşırı), 'eksiksiz' (ters).",
+    "tip": "regard/consider X as Y yapısını yakala."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 3
+ },
+ {
+  "id": "d146",
+  "type": "ceviri-en-tr",
+  "stem": "Cold-rolled strip is usually annealed to restore the ductility lost during rolling.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Soğuk haddelenmiş şerit, haddeleme sırasında sünekliğini kaybetmemek için hiç tavlanmaz.",
+     "Tavlanan şerit, haddeleme sırasında daha fazla süneklik kaybeder.",
+     "Soğuk haddelenmiş şerit, haddeleme sırasında kaybedilen sünekliği geri kazandırmak için genellikle tavlanır.",
+     "Soğuk haddeleme, şeridin tavlanması sırasında kaybedilen sünekliği geri kazandırır.",
+     "Soğuk haddelenmiş şerit genellikle sünek olduğu için tavlanır."
+    ],
+    "answer": 2,
+    "explain": "to + V1 (amaç) = -mek için; 'lost during rolling' = haddeleme sırasında kaybedilen.",
+    "tip": "Amaç yapısı: to/in order to = -mek için."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ },
+ {
+  "id": "d147",
+  "type": "ceviri-en-tr",
+  "stem": "Bees pollinate many of the crops that we depend on for food.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Besin için arılara bağımlı olan ürünlerin hepsi tozlaşır.",
+     "Arılar, besin için bağımlı olduğumuz ürünlerin çoğunu tozlaştırır.",
+     "Arılar, bizim yetiştirdiğimiz ürünlerle beslenir.",
+     "Ürünlerin çoğu arıları tozlaştırır.",
+     "Arılar, besin için bize bağımlıdır."
+    ],
+    "answer": 1,
+    "explain": "many of = çoğu; 'that we depend on' = bağımlı olduğumuz. Tuzaklar: özne-nesne değişimi, 'hepsi'.",
+    "tip": "İlgi cümlesini isme bağla."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d148",
+  "type": "ceviri-en-tr",
+  "stem": "Wegener's critics objected not to his observations but to the mechanism he proposed for continental drift.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Wegener'i eleştirenler hem gözlemlerine hem de önerdiği mekanizmaya itiraz ettiler.",
+     "Wegener'i eleştirenler, önerdiği mekanizmayı kabul edip gözlemlerine itiraz ettiler.",
+     "Wegener'i eleştirenler, onun gözlemlerine değil, kıtaların kayması için önerdiği mekanizmaya itiraz ettiler.",
+     "Wegener, eleştirmenlerin kıtaların kayması için önerdiği mekanizmaya itiraz etti.",
+     "Wegener'i eleştirenler, gözlemleri olmadığı için mekanizmasını reddettiler."
+    ],
+    "answer": 2,
+    "explain": "not X but Y = X'e değil Y'ye. Tuzaklar: both, ters dağılım, özne kayması.",
+    "tip": "not...but eşleşmesi."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d149",
+  "type": "ceviri-tr-en",
+  "stem": "Kromun eklenmesiyle oluşan ince oksit tabakası, yüzey çizildiğinde kendini onarabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The thin oxide layer formed by chromium cannot repair itself unless the surface is scratched.",
+     "When chromium is added, the surface is scratched and the oxide layer becomes thinner.",
+     "The thin oxide layer formed by the addition of chromium can repair itself when the surface is scratched.",
+     "The addition of chromium repairs the thin oxide layer before the surface is scratched.",
+     "Although the surface is scratched, the oxide layer formed by chromium has repaired itself."
+    ],
+    "answer": 2,
+    "explain": "'oluşan' = formed (V3); '-dığında' = when; '-ebilir' = can. Tuzaklar: unless/olumsuzluk, before, although + present perfect.",
+    "tip": "Önce yüklemi bul: onarabilir = can repair."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d150",
+  "type": "ceviri-tr-en",
+  "stem": "Rüzgâr türbinleri, rüzgârın daha güçlü ve düzenli olduğu yüksek kulelere yerleştirilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Wind turbines are mounted on tall towers, although the wind is weaker there.",
+     "Tall towers make the wind stronger and steadier for turbines.",
+     "Wind turbines were mounted on tall towers because the wind had been steady.",
+     "Wind turbines are mounted on tall towers, where the wind is stronger and steadier.",
+     "Where the wind is stronger, turbines are mounted on short towers."
+    ],
+    "answer": 3,
+    "explain": "'-dığı yüksek kuleler' = towers where...; edilgen geniş zaman 'are mounted'. Tuzaklar: although, geçmiş zaman, anlam tersine.",
+    "tip": "Yer bildiren ilgi cümlesi: where."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d151",
+  "type": "ceviri-tr-en",
+  "stem": "Ses, katılarda gazlardan çok daha hızlı yayılır çünkü katılardaki parçacıklar birbirine daha yakındır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Sound travels much faster in gases than in solids because the particles in gases are closer together.",
+     "Although the particles in solids are closer together, sound travels faster in gases.",
+     "The particles in solids move faster than sound because they are close together.",
+     "Sound travels much faster in solids than in gases because the particles in solids are closer together.",
+     "Sound travelled faster in solids so that the particles could come closer together."
+    ],
+    "answer": 3,
+    "explain": "Karşılaştırma yönü: katı > gaz; çünkü = because. Tuzaklar: kıyas ters, although, so that.",
+    "tip": "Karşılaştırmanın yönünü kontrol et."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d152",
+  "type": "ceviri-tr-en",
+  "stem": "Bakterilerin genetik materyali yalnızca yavrularına değil, akraba olmayan komşularına da aktarabildiği bilinmektedir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "It is known that bacteria can transfer genetic material only to their offspring, not to their neighbours.",
+     "It is known that bacteria can transfer genetic material not only to their offspring but also to unrelated neighbours.",
+     "Bacteria are known to transfer genetic material neither to their offspring nor to their neighbours.",
+     "It was known that unrelated neighbours transferred their genetic material to bacteria.",
+     "Bacteria can transfer genetic material to their offspring unless their neighbours are related."
+    ],
+    "answer": 1,
+    "explain": "'yalnızca ... değil ... da' = not only ... but also; 'bilinmektedir' = It is known that. Tuzaklar: only (anlam daralması), neither/nor, özne kayması.",
+    "tip": "Çift bağlacı birebir eşle."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d153",
+  "type": "ceviri-tr-en",
+  "stem": "Ağaç dikmek ve açık renkli malzemeler kullanmak, kentsel ısı adası etkisini azaltmaya yardımcı olabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Planting trees and using darker materials have increased the urban heat island effect.",
+     "The urban heat island effect can help trees to grow and materials to become lighter.",
+     "Unless trees are planted, lighter materials will reduce the urban heat island effect.",
+     "Planting trees is more helpful than using lighter materials to reduce the effect.",
+     "Planting trees and using lighter-coloured materials can help to reduce the urban heat island effect."
+    ],
+    "answer": 4,
+    "explain": "Gerund özne: Planting ... and using ...; '-ebilir' = can. Tuzaklar: darker, present perfect, özne-nesne değişimi, ekstra karşılaştırma.",
+    "tip": "Fazladan bilgi ekleyen şıkkı ele."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d154",
+  "type": "ceviri-tr-en",
+  "stem": "Kuyruklu yıldızın kuyruğu, güneş rüzgârı tarafından itildiği için her zaman Güneş'in tersini gösterir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "A comet's tail always points towards the Sun because it pushes the solar wind.",
+     "A comet's tail always points away from the Sun because it is pushed by the solar wind.",
+     "Although the solar wind pushes it, a comet's tail sometimes points away from the Sun.",
+     "The solar wind always points away from the Sun so that it can push a comet's tail.",
+     "A comet's tail pointed away from the Sun after the solar wind had pushed it."
+    ],
+    "answer": 1,
+    "explain": "'tarafından itildiği için' = because it is pushed by (edilgen + neden). Tuzaklar: towards, aktif çatı, although, geçmiş zaman.",
+    "tip": "Edilgen çatıyı (tarafından) kaçırma."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 1
+ },
+ {
+  "id": "d155",
+  "type": "ceviri-tr-en",
+  "stem": "Doktorlar, hızı nedeniyle acil durumlarda genellikle MR yerine BT'yi tercih eder.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Doctors usually prefer MRI to CT in emergencies because of its speed.",
+     "Doctors usually prefer CT to MRI in emergencies because of its speed.",
+     "Doctors rarely use CT in emergencies in spite of its speed.",
+     "In emergencies, CT is preferred to MRI only if it is slower.",
+     "Doctors preferred CT to MRI in emergencies so that it would be faster."
+    ],
+    "answer": 1,
+    "explain": "prefer A to B = A'yı B'ye tercih etmek; nedeniyle = because of. Tuzaklar: tercih ters, in spite of, so that.",
+    "tip": "prefer A to B yönüne dikkat."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d156",
+  "type": "ceviri-tr-en",
+  "stem": "Dil modelleri kendinden emin görünen ancak yanlış olan ifadeler üretebilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Language models can produce statements that sound uncertain but are true.",
+     "Since they sound confident, the statements of language models are true.",
+     "Language models produced confident statements because they were false.",
+     "Language models can produce statements that sound confident but are false.",
+     "Statements that are false cannot be produced by language models."
+    ],
+    "answer": 3,
+    "explain": "'görünen ancak yanlış olan ifadeler' = statements that sound ... but are false. Tuzaklar: kutup ters, neden ekleme, olumsuzluk.",
+    "tip": "İlgi cümlesi içindeki zıtlığı koru."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d157",
+  "type": "ceviri-tr-en",
+  "stem": "Haber-Bosch süreci gıda üretimini büyük ölçüde artırmış olsa da dünya enerjisinin önemli bir bölümünü tüketmektedir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Because the Haber-Bosch process has greatly increased food production, it consumes very little of the world's energy.",
+     "The Haber-Bosch process will increase food production unless it consumes a significant share of the world's energy.",
+     "Although the Haber-Bosch process has greatly increased food production, it consumes a significant share of the world's energy.",
+     "Although the Haber-Bosch process consumed a significant share of energy, it had not increased food production.",
+     "The Haber-Bosch process has increased the world's energy as much as food production."
+    ],
+    "answer": 2,
+    "explain": "'-miş olsa da' = Although + present perfect; tüketmektedir = consumes. Tuzaklar: because, unless, zaman ve kutup değişimi.",
+    "tip": "Bağlaç + zaman ikilisini birlikte eşle."
+   }
+  ],
+  "topic": "kimya",
+  "level": 3
+ },
+ {
+  "id": "d158",
+  "type": "ceviri-tr-en",
+  "stem": "Depremin merkezine çok yakın yerler hiçbir uyarı almayabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Places very close to the epicentre of an earthquake always receive the longest warning.",
+     "Places far from the epicentre may receive no warning at all.",
+     "Places very close to the epicentre must have received a warning.",
+     "Places very close to the epicentre of an earthquake may receive no warning at all.",
+     "The epicentre of an earthquake may be very close to places with warnings."
+    ],
+    "answer": 3,
+    "explain": "'almayabilir' = may receive no ...; 'çok yakın' = very close. Tuzaklar: far, must have, always.",
+    "tip": "Modal derecesi: may ≠ must."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d159",
+  "type": "ceviri-tr-en",
+  "stem": "Watt'ın ayrı yoğuşturucusu, silindirin her zaman sıcak kalmasını sağlayarak yakıt tüketimini önemli ölçüde azalttı.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Watt's separate condenser greatly increased fuel consumption by allowing the cylinder to cool down.",
+     "Because the cylinder stayed hot all the time, Watt invented a separate condenser.",
+     "Watt's separate condenser greatly reduced fuel consumption by allowing the cylinder to stay hot all the time.",
+     "Watt's separate condenser has reduced fuel consumption although the cylinder never stays hot.",
+     "The cylinder allowed Watt's condenser to stay hot and reduce fuel consumption."
+    ],
+    "answer": 2,
+    "explain": "'-sağlayarak' = by allowing; geçmiş zaman 'reduced'. Tuzaklar: increased, neden-sonuç tersine, özne değişimi.",
+    "tip": "-erek = by + Ving."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d160",
+  "type": "ceviri-tr-en",
+  "stem": "Kuantum bitleri o kadar kırılgandır ki çevreyle istenmeyen en küçük etkileşim bile bilgilerini kaybetmelerine yol açabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Qubits are so fragile that even the slightest unwanted interaction with the environment can cause them to lose their information.",
+     "Qubits are so strong that no interaction with the environment can cause them to lose their information.",
+     "Although qubits are fragile, interactions with the environment help them to keep their information.",
+     "Qubits lose their information so that they can interact with the environment.",
+     "The environment is so fragile that qubits can easily destroy it."
+    ],
+    "answer": 0,
+    "explain": "so ... that = o kadar ... ki; 'bile' = even; 'yol açabilir' = can cause. Tuzaklar: kutup ters, so that (amaç), özne değişimi.",
+    "tip": "so + adj + that = sonuç."
+   }
+  ],
+  "topic": "fizik",
+  "level": 3
+ },
+ {
+  "id": "d161",
+  "type": "ceviri-tr-en",
+  "stem": "Aşılar, bağışıklık sistemini hastalığın kendisine yol açmadan bir hastalığı tanıması için eğitir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Vaccines cause the illness itself so that the immune system can recognise it.",
+     "Vaccines train the immune system to recognise a disease without causing the illness itself.",
+     "The immune system trains vaccines to recognise a disease.",
+     "Vaccines trained the immune system after causing the illness.",
+     "Without vaccines, the immune system cannot recognise any disease."
+    ],
+    "answer": 1,
+    "explain": "'yol açmadan' = without causing; 'tanıması için' = to recognise. Tuzaklar: olumsuzluk kaybı, özne-nesne değişimi, after.",
+    "tip": "-meden = without + Ving."
+   }
+  ],
+  "topic": "tip",
+  "level": 1
+ },
+ {
+  "id": "d162",
+  "type": "ceviri-tr-en",
+  "stem": "Mercanlar, sıcaklık normale hızla dönerse ağarmadan sonra toparlanabilir; aksi takdirde geniş resif alanları ölebilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Corals cannot recover after bleaching even if the temperature returns to normal; therefore, large areas of reef die.",
+     "If large areas of reef die, the temperature returns to normal quickly and corals recover.",
+     "Corals recovered after bleaching because the temperature had returned to normal; however, reefs died.",
+     "Corals can recover before bleaching unless the temperature returns to normal.",
+     "Corals can recover after bleaching if the temperature returns to normal quickly; otherwise, large areas of reef may die."
+    ],
+    "answer": 4,
+    "explain": "if = -se; otherwise = aksi takdirde; can/may. Tuzaklar: olumsuzluk, koşul tersine, geçmiş zaman, before/unless.",
+    "tip": "otherwise = aksi takdirde."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d163",
+  "type": "ceviri-tr-en",
+  "stem": "Gökbilimciler bir keşfi kabul etmeden önce genellikle birkaç geçiş gözlemlemeyi ve başka bir yöntemle doğrulamayı beklerler.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Astronomers usually accept a discovery before they observe several transits.",
+     "After accepting a discovery, astronomers confirm it with the same method.",
+     "Astronomers usually wait to observe several transits and to confirm them with another method before they accept a discovery.",
+     "Astronomers never wait for another method because a single transit is enough.",
+     "A discovery is accepted by astronomers only if no transits are observed."
+    ],
+    "answer": 2,
+    "explain": "before = -meden önce; another method = başka bir yöntem. Tuzaklar: sıra değişimi, same method, never.",
+    "tip": "Zaman sırası: before/after."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d164",
+  "type": "ceviri-tr-en",
+  "stem": "Hidrojen gevrekleşmesi çoğu zaman gecikmeli ortaya çıktığından, bir cıvata sıkıldıktan haftalar sonra bile kırılabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Although hydrogen embrittlement often appears with a delay, a bolt never fractures after it has been tightened.",
+     "A bolt is tightened weeks after hydrogen embrittlement appears so that it does not fracture.",
+     "Since a bolt fractures weeks later, hydrogen embrittlement is always immediate.",
+     "Since hydrogen embrittlement often appears with a delay, a bolt may fracture even weeks after it has been tightened.",
+     "Hydrogen embrittlement may appear even weeks before a bolt is tightened."
+    ],
+    "answer": 3,
+    "explain": "'-dığından' = since (neden); 'sıkıldıktan sonra' = after it has been tightened; 'kırılabilir' = may fracture. Tuzaklar: although/never, sıra tersine.",
+    "tip": "Neden bağlacı + edilgen yan cümle."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d165",
+  "type": "ceviri-tr-en",
+  "stem": "Yeşil hidrojen, doğrudan elektrikle çalıştırılması zor olan sektörlerde en değerli olacaktır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Green hydrogen will be most valuable in sectors that are difficult to electrify directly.",
+     "Green hydrogen will be least valuable in sectors that are difficult to electrify directly.",
+     "Sectors that are easy to electrify will need green hydrogen most.",
+     "Green hydrogen has been used to electrify all sectors directly.",
+     "Because green hydrogen is valuable, all sectors are difficult to electrify."
+    ],
+    "answer": 0,
+    "explain": "'zor olan sektörler' = sectors that are difficult to...; 'en değerli olacaktır' = will be most valuable. Tuzaklar: least, easy, present perfect.",
+    "tip": "Üstünlük derecesi: most ↔ least."
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d166",
+  "type": "ceviri-tr-en",
+  "stem": "Su molekülleri hidrojen bağlarıyla bir arada tutulduğu için suyun kaynama noktası yüksektir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Water has a low boiling point although its molecules are held together by hydrogen bonds.",
+     "Hydrogen bonds have a high boiling point because they hold water together.",
+     "Water molecules held hydrogen bonds together so that the boiling point would rise.",
+     "Water boils at a high temperature unless hydrogen bonds hold its molecules together.",
+     "Water has a high boiling point because its molecules are held together by hydrogen bonds."
+    ],
+    "answer": 4,
+    "explain": "'tutulduğu için' = because ... are held (edilgen + neden). Tuzaklar: low/although, özne değişimi, so that, unless.",
+    "tip": "Edilgen + neden."
+   }
+  ],
+  "topic": "kimya",
+  "level": 1
+ },
+ {
+  "id": "d167",
+  "type": "ceviri-tr-en",
+  "stem": "Gerçek robotlar yavaş olduğundan ve bozulabildiğinden, araştırmacılar onları önce bilgisayar simülasyonlarında eğitmeyi tercih eder.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Although real robots are fast and never break, researchers train them first in simulations.",
+     "Researchers prefer real robots to simulations because simulations are slow and can break.",
+     "Computer simulations train researchers first because robots are slow.",
+     "Since researchers trained robots in simulations, the robots became slow and broke.",
+     "Since real robots are slow and can break, researchers prefer to train them first in computer simulations."
+    ],
+    "answer": 4,
+    "explain": "'-dığından' = since; 'eğitmeyi tercih eder' = prefer to train. Tuzaklar: although, tercih ters, özne değişimi, neden-sonuç tersine.",
+    "tip": "Neden yan cümlesinin iki parçasını da kontrol et."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 3
+ },
+ {
+  "id": "d168",
+  "type": "ceviri-tr-en",
+  "stem": "Bazı bitkiler, enerji tasarrufu yapmak için savunma kimyasallarını ancak saldırıya uğradıktan sonra büyük miktarda üretir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Some plants produce defensive chemicals in large amounts only after they have been attacked, in order to save energy.",
+     "Some plants produce defensive chemicals in large amounts before they are attacked, in order to waste energy.",
+     "Some plants are attacked only after they have produced defensive chemicals.",
+     "All plants save energy by never producing defensive chemicals.",
+     "Some plants produced defensive chemicals so that insects would attack them."
+    ],
+    "answer": 0,
+    "explain": "'ancak ... -dıktan sonra' = only after; 'tasarruf yapmak için' = in order to save. Tuzaklar: before, sıra tersine, all/never.",
+    "tip": "only after = ancak ...-den sonra."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d169",
+  "type": "ceviri-tr-en",
+  "stem": "Okyanus tabanındaki manyetik şeritlerin keşfi, kıtaların kayması fikrinin sonunda kabul görmesine yol açtı.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The idea of continental drift led to the discovery of magnetic stripes on the ocean floor.",
+     "The discovery of magnetic stripes on the ocean floor led to the eventual acceptance of the idea of continental drift.",
+     "The discovery of magnetic stripes on the ocean floor led to the rejection of continental drift.",
+     "Magnetic stripes on the ocean floor have been accepted since continents drifted.",
+     "The acceptance of continental drift has led to magnetic stripes on the ocean floor."
+    ],
+    "answer": 1,
+    "explain": "'-e yol açtı' = led to + N. Tuzaklar: neden-sonuç tersine, rejection, since.",
+    "tip": "lead to + isim; yönü kontrol et."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d170",
+  "type": "ceviri-tr-en",
+  "stem": "Tacoma Narrows Köprüsü, trafiğe açıldıktan yalnızca dört ay sonra çöktü.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The Tacoma Narrows Bridge was opened to traffic only four months after it collapsed.",
+     "The Tacoma Narrows Bridge has collapsed for four months since it opened.",
+     "The Tacoma Narrows Bridge collapsed only four months after it had been opened to traffic.",
+     "The Tacoma Narrows Bridge collapsed four months before it was opened to traffic.",
+     "The Tacoma Narrows Bridge had been opened to traffic for only four days."
+    ],
+    "answer": 2,
+    "explain": "'açıldıktan ... sonra' = after it had been opened; 'yalnızca dört ay' = only four months. Tuzaklar: sıra, since, before, days.",
+    "tip": "Sayı ve birimleri kontrol et."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 1
+ },
+ {
+  "id": "d171",
+  "type": "ceviri-tr-en",
+  "stem": "Laennec, duyduğu sesleri hastalarda daha sonra bulduğu hastalıklarla ilişkilendirmek için yıllarını harcadı.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Laennec spent years linking the sounds he heard to the diseases he later found in patients.",
+     "Laennec spent years finding diseases so that he could stop hearing sounds.",
+     "The diseases Laennec found in patients produced the sounds he later invented.",
+     "Laennec has spent only a few days linking sounds to diseases.",
+     "Laennec linked diseases to patients before he heard any sounds."
+    ],
+    "answer": 0,
+    "explain": "spend time + Ving = -erek zaman harcamak; 'later found' = daha sonra bulduğu. Tuzaklar: so that, özne değişimi, süre, sıra.",
+    "tip": "spend + time + Ving."
+   }
+  ],
+  "topic": "tip",
+  "level": 3
+ },
+ {
+  "id": "d172",
+  "type": "ceviri-tr-en",
+  "stem": "Okyanuslar, insan faaliyetlerinin saldığı karbondioksitin yaklaşık dörtte birini emer.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The oceans absorb roughly a quarter of the carbon dioxide released by human activities.",
+     "The oceans release roughly a quarter of the carbon dioxide absorbed by human activities.",
+     "Human activities absorb roughly a quarter of the oceans' carbon dioxide.",
+     "The oceans absorb roughly three quarters of the carbon dioxide released by humans.",
+     "The oceans absorbed all of the carbon dioxide released by human activities."
+    ],
+    "answer": 0,
+    "explain": "'saldığı karbondioksit' = carbon dioxide released by; 'yaklaşık dörtte biri' = roughly a quarter. Tuzaklar: fiil yönü, özne, oran.",
+    "tip": "Oran ve sayıları birebir kontrol et."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 1
+ },
+ {
+  "id": "d173",
+  "type": "yakin-anlam",
+  "stem": "Although high-strength steels allow lighter designs, they tend to be more vulnerable to hydrogen embrittlement.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Because high-strength steels are vulnerable to hydrogen embrittlement, they allow lighter designs.",
+     "High-strength steels are both lighter and completely resistant to hydrogen embrittlement.",
+     "Lighter designs make steels more vulnerable to hydrogen embrittlement unless they are high-strength.",
+     "High-strength steels are no longer used in light designs owing to hydrogen embrittlement.",
+     "High-strength steels make lighter designs possible, but they are generally more susceptible to hydrogen embrittlement."
+    ],
+    "answer": 4,
+    "explain": "Although (zıtlık) ↔ but; 'tend to be' ↔ 'generally'. Tuzak: because (neden), 'completely resistant' (kutup).",
+    "tip": "Ana bağlacın anlamını eşleştir: although = but."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d174",
+  "type": "yakin-anlam",
+  "stem": "Green hydrogen remains more expensive than grey hydrogen.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Green hydrogen is now cheaper than grey hydrogen.",
+     "Green and grey hydrogen cost exactly the same.",
+     "Grey hydrogen will soon be more expensive than green hydrogen.",
+     "Grey hydrogen is still cheaper than green hydrogen.",
+     "Green hydrogen used to be cheaper than grey hydrogen."
+    ],
+    "answer": 3,
+    "explain": "A, B'den pahalı = B, A'dan ucuz; remains = still.",
+    "tip": "Karşılaştırmayı ters çevirerek kontrol et."
+   }
+  ],
+  "topic": "enerji",
+  "level": 1
+ },
+ {
+  "id": "d175",
+  "type": "yakin-anlam",
+  "stem": "Superconductivity would be far more widely used if it did not require such extreme cooling.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Superconductivity is widely used because it requires extreme cooling.",
+     "Extreme cooling has made superconductivity cheap and common.",
+     "The need for extreme cooling is what prevents superconductivity from being used much more widely.",
+     "Superconductivity will never be used, even with cooling.",
+     "If superconductivity were used more widely, it would need less cooling."
+    ],
+    "answer": 2,
+    "explain": "Type 2 koşul: soğutma gerekmeseydi yaygın olurdu = soğutma yaygınlaşmayı engelliyor.",
+    "tip": "Gerçek dışı koşul = gerçekte tersi var."
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d176",
+  "type": "yakin-anlam",
+  "stem": "It was not until researchers designed their own guide RNA that CRISPR could be used to edit almost any gene.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Researchers designed their own guide RNA after CRISPR had been used to edit every gene.",
+     "Only after researchers designed their own guide RNA could CRISPR be used to edit almost any gene.",
+     "CRISPR could edit almost any gene before researchers designed guide RNA.",
+     "Researchers never needed guide RNA to use CRISPR.",
+     "Since CRISPR edits all genes, guide RNA was not designed."
+    ],
+    "answer": 1,
+    "explain": "not until ... that = only after (devrik). Tuzak: sıra tersine, 'before'.",
+    "tip": "not until = only after."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 3
+ },
+ {
+  "id": "d177",
+  "type": "yakin-anlam",
+  "stem": "Unless ocean temperatures fall quickly, bleached corals are likely to die.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Bleached corals will die even if ocean temperatures fall quickly.",
+     "If ocean temperatures fall quickly, bleached corals will probably die.",
+     "Bleached corals will probably die if ocean temperatures do not fall quickly.",
+     "Ocean temperatures will fall quickly unless corals die.",
+     "Bleached corals never die when temperatures remain high."
+    ],
+    "answer": 2,
+    "explain": "Unless = if ... not; likely to = probably.",
+    "tip": "unless → if not çevirisini yap."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d178",
+  "type": "yakin-anlam",
+  "stem": "Much as the giant impact hypothesis explains many observations, it still leaves some questions unanswered.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Because the giant impact hypothesis explains everything, no questions remain.",
+     "While the giant impact hypothesis accounts for many observations, it has not answered all the questions yet.",
+     "The giant impact hypothesis explains few observations and answers no questions.",
+     "Since some questions remain, the giant impact hypothesis has been rejected.",
+     "The giant impact hypothesis leaves questions unanswered so that it can explain observations."
+    ],
+    "answer": 1,
+    "explain": "Much as = although/while. 'leaves questions unanswered' = has not answered all.",
+    "tip": "Much as = Although (sık çıkan)."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 3
+ },
+ {
+  "id": "d179",
+  "type": "yakin-anlam",
+  "stem": "Doctors choose CT rather than MRI in emergencies on account of its speed.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Doctors prefer MRI in emergencies since it is faster than CT.",
+     "Since CT is faster, doctors prefer it to MRI in emergencies.",
+     "Despite being slower, CT is chosen in emergencies.",
+     "Doctors choose CT in emergencies whereas MRI is faster.",
+     "In emergencies, doctors use both CT and MRI because of their speed."
+    ],
+    "answer": 1,
+    "explain": "on account of = because of; rather than = yerine (tercih).",
+    "tip": "on account of / owing to / due to = because of."
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d180",
+  "type": "yakin-anlam",
+  "stem": "No sooner had the model been trained than it produced a ten-day forecast in about a minute.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "As soon as the model was trained, it produced a ten-day forecast in about a minute.",
+     "The model was trained for ten days before producing a forecast.",
+     "The model produced a forecast long before it had been trained.",
+     "It took the model a long time to produce a forecast after training.",
+     "The model had not been trained when it produced a ten-day forecast."
+    ],
+    "answer": 0,
+    "explain": "No sooner ... than = as soon as.",
+    "tip": "No sooner had ... than = ...-er ...-mez."
+   }
+  ],
+  "topic": "yapay-zeka",
+  "level": 2
+ },
+ {
+  "id": "d181",
+  "type": "yakin-anlam",
+  "stem": "Catalytic converters work so poorly when cold that many emissions occur in the first minutes after starting.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Catalytic converters work best when cold, so emissions are lowest after starting.",
+     "Many emissions occur after the converter warms up because it works poorly.",
+     "Although converters work poorly when cold, few emissions occur after starting.",
+     "Because catalytic converters are ineffective until they warm up, a large share of emissions occurs soon after starting.",
+     "Catalytic converters are cooled after starting in order to reduce emissions."
+    ],
+    "answer": 3,
+    "explain": "so ... that = sonuç; neden-sonuç ilişkisi korunmalı.",
+    "tip": "so...that → because ... / therefore."
+   }
+  ],
+  "topic": "kimya",
+  "level": 2
+ },
+ {
+  "id": "d182",
+  "type": "yakin-anlam",
+  "stem": "Scientists are unable to predict when earthquakes will occur.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Scientists can predict exactly when earthquakes will occur.",
+     "Earthquakes occur only when scientists predict them.",
+     "It is not possible for scientists to say in advance when earthquakes will happen.",
+     "Scientists are unwilling to predict earthquakes.",
+     "Scientists predicted every earthquake in the past."
+    ],
+    "answer": 2,
+    "explain": "unable = not possible (yetersizlik). Tuzak: unwilling = istememek (farklı anlam).",
+    "tip": "unable ≠ unwilling."
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 1
+ },
+ {
+  "id": "d183",
+  "type": "yakin-anlam",
+  "stem": "Had Bessemer's process removed phosphorus, early Bessemer steel would not have been so brittle.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Bessemer's process removed phosphorus, so early steel was not brittle.",
+     "Early Bessemer steel was brittle although phosphorus had been removed.",
+     "Phosphorus made early Bessemer steel less brittle.",
+     "Bessemer's process will remove phosphorus to make steel brittle.",
+     "Early Bessemer steel was brittle partly because the process failed to remove phosphorus."
+    ],
+    "answer": 4,
+    "explain": "Devrik Type 3: gerçekte fosfor giderilmedi → çelik gevrekti.",
+    "tip": "Type 3 koşul = geçmişte tersi oldu."
+   }
+  ],
+  "topic": "muhendislik-tarihi",
+  "level": 2
+ },
+ {
+  "id": "d184",
+  "type": "yakin-anlam",
+  "stem": "However carefully qubits are shielded, errors cannot be avoided entirely.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "No matter how well qubits are protected, some errors will still occur.",
+     "If qubits are shielded carefully, errors can be avoided completely.",
+     "Qubits are shielded carefully because errors never occur.",
+     "Errors occur only when qubits are not shielded.",
+     "Shielding qubits carefully increases the number of errors."
+    ],
+    "answer": 0,
+    "explain": "However + adv = No matter how; 'cannot be avoided entirely' = some errors will still occur.",
+    "tip": "However + sıfat/zarf = No matter how."
+   }
+  ],
+  "topic": "fizik",
+  "level": 3
+ },
+ {
+  "id": "d185",
+  "type": "yakin-anlam",
+  "stem": "Tardigrades are not indestructible when they are active.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Active tardigrades can never be killed.",
+     "Tardigrades are active only when they are indestructible.",
+     "Dried tardigrades can be killed easily.",
+     "Tardigrades are never active.",
+     "Active tardigrades can be killed."
+    ],
+    "answer": 4,
+    "explain": "not indestructible = öldürülebilir.",
+    "tip": "Çift olumsuzluğu çöz: not + in- = olabilir."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 1
+ },
+ {
+  "id": "d186",
+  "type": "yakin-anlam",
+  "stem": "Plant growth in a warmer Arctic is unlikely to offset the carbon released by thawing permafrost.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Arctic plants will certainly absorb more carbon than permafrost releases.",
+     "Thawing permafrost releases carbon because Arctic plants grow faster.",
+     "Arctic plants will stop permafrost from thawing.",
+     "The extra carbon absorbed by Arctic plants will probably not be enough to balance the carbon released as permafrost thaws.",
+     "The carbon released by permafrost will make Arctic plants die."
+    ],
+    "answer": 3,
+    "explain": "unlikely to = muhtemelen ... değil; offset = balance/compensate.",
+    "tip": "Hedge: unlikely = probably not."
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d187",
+  "type": "yakin-anlam",
+  "stem": "Rust, unlike chromium oxide, does not protect the metal beneath it.",
+  "items": [
+   {
+    "q": "Verilen cümleye anlamca en yakın cümleyi seçin.",
+    "options": [
+     "Chromium oxide protects the metal underneath, whereas rust does not.",
+     "Both rust and chromium oxide protect the metal beneath them.",
+     "Neither rust nor chromium oxide protects the metal.",
+     "Rust protects the metal better than chromium oxide does.",
+     "Chromium oxide does not protect the metal, but rust does."
+    ],
+    "answer": 0,
+    "explain": "unlike = whereas ile karşıtlık; koruyan kromoksit.",
+    "tip": "unlike ↔ whereas; özneleri doğru dağıt."
+   }
+  ],
+  "topic": "malzeme",
+  "level": 1
+ }
+]

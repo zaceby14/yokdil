@@ -1,0 +1,173 @@
+[
+ {
+  "id": "d001",
+  "type": "cloze",
+  "topic": "karisik",
+  "level": 2,
+  "stem": "Solar panels convert sunlight (1) ---- electricity. (2) ---- their efficiency has improved, they still lose energy (3) ---- high temperatures.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "into",
+     "onto",
+     "with",
+     "at",
+     "by"
+    ],
+    "answer": 0,
+    "explain": "convert into."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "Because",
+     "Although",
+     "Unless",
+     "So that",
+     "Once"
+    ],
+    "answer": 1,
+    "explain": "Zıtlık: Although."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "in",
+     "on",
+     "at",
+     "for",
+     "to"
+    ],
+    "answer": 2,
+    "explain": "at high temperatures."
+   }
+  ]
+ },
+ {
+  "id": "d002",
+  "type": "cumle-tamamlama",
+  "topic": "baglac-zitlik",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "While some alloys resist heat very well, ----.",
+    "options": [
+     "they are used in jet engines",
+     "others soften at relatively low temperatures",
+     "heat is a form of energy",
+     "because metals expand",
+     "so that engines run longer"
+    ],
+    "answer": 1,
+    "explain": "While zıtlık: some ↔ others."
+   }
+  ]
+ },
+ {
+  "id": "d003",
+  "type": "ilgisiz",
+  "topic": "konu-kaymasi",
+  "level": 2,
+  "stem": "(I) Wind turbines turn moving air into electricity. (II) Their blades are designed to capture as much wind as possible. (III) Many birds migrate south in winter. (IV) Larger blades usually produce more power. (V) Engineers therefore try to build longer and lighter blades.",
+  "items": [
+   {
+    "q": "Which sentence is irrelevant?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "III kuş göçü: konu kayması."
+   }
+  ]
+ },
+ {
+  "id": "d004",
+  "type": "paragraf-tamamlama",
+  "topic": "karisik",
+  "level": 2,
+  "stem": "Concrete is strong under compression. ----. For this reason, builders place steel bars inside it.",
+  "items": [
+   {
+    "q": "Which sentence completes the paragraph?",
+    "options": [
+     "However, it cracks easily when pulled",
+     "Concrete was used by the Romans",
+     "Steel is a metal",
+     "Builders work long hours",
+     "Water is needed to mix cement"
+    ],
+    "answer": 0,
+    "explain": "However + 'for this reason' çelik takviye."
+   }
+  ]
+ },
+ {
+  "id": "d005",
+  "type": "ceviri-en-tr",
+  "topic": "ceviri",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "Although the test was short, it revealed several weaknesses in the design.",
+    "options": [
+     "Test kısa olduğu için tasarımda birçok zayıflık ortaya çıkardı.",
+     "Test kısa olmasına rağmen tasarımdaki birçok zayıflığı ortaya çıkardı.",
+     "Tasarımdaki zayıflıklar testin kısa olmasına yol açtı.",
+     "Test kısa olsaydı zayıflıklar ortaya çıkmazdı.",
+     "Testin kısa sürmesi tasarımı güçlendirdi."
+    ],
+    "answer": 1,
+    "explain": "Although = -e rağmen."
+   }
+  ]
+ },
+ {
+  "id": "d006",
+  "type": "ceviri-tr-en",
+  "topic": "ceviri",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "Yüksek basınç, borularda çatlaklara yol açabilir.",
+    "options": [
+     "High pressure may lead to cracks in pipes.",
+     "Cracks in pipes cause high pressure.",
+     "Pipes crack unless pressure is high.",
+     "High pressure prevents cracks in pipes.",
+     "Although pressure is high, pipes crack."
+    ],
+    "answer": 0,
+    "explain": "yol açmak = lead to."
+   }
+  ]
+ },
+ {
+  "id": "d007",
+  "type": "yakin-anlam",
+  "topic": "restatement",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "Neither the sensor nor the cable was damaged.",
+    "options": [
+     "Both the sensor and the cable were damaged.",
+     "The sensor was damaged, but the cable wasn't.",
+     "The sensor and the cable were both undamaged.",
+     "Either the sensor or the cable was damaged.",
+     "Only the cable was damaged."
+    ],
+    "answer": 2,
+    "explain": "Neither…nor = ikisi de değil."
+   }
+  ]
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "id": "p001",
+  "title": "Rust and Its Hidden Cost",
+  "topic": "malzeme",
+  "level": 2,
+  "words": 120,
+  "text": "Corrosion is a slow process, yet its economic cost is enormous. When steel is exposed to water and oxygen, iron atoms lose electrons and form iron oxide, which we call rust.\n\nEngineers use several methods to slow this process. A thin layer of zinc can protect the steel, thereby reducing maintenance costs. Although such coatings are not new, modern versions last much longer than older ones.",
+  "questions": [
+   {
+    "q": "According to the passage, rust forms when ----.",
+    "options": [
+     "zinc reacts with steel",
+     "iron loses electrons in the presence of water and oxygen",
+     "coatings become too thin",
+     "steel is heated",
+     "electrons are added to iron"
+    ],
+    "answer": 1,
+    "explain": "1. paragraf: su + oksijen, demir elektron kaybeder."
+   },
+   {
+    "q": "The word 'thereby' is closest in meaning to ----.",
+    "options": [
+     "however",
+     "in contrast",
+     "as a result",
+     "despite this",
+     "instead"
+    ],
+    "answer": 2,
+    "explain": "thereby = böylece, sonuç."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "corrosion",
+    "tr": "korozyon, aşınma"
+   },
+   {
+    "w": "coating",
+    "tr": "kaplama"
+   }
+  ]
+ },
+ {
+  "id": "p002",
+  "title": "Why Batteries Age",
+  "topic": "enerji",
+  "level": 2,
+  "words": 90,
+  "text": "Every time a lithium battery is charged, tiny changes occur inside it. Over hundreds of cycles, these changes reduce the amount of energy the battery can store.\n\nHigh temperatures speed up this ageing. For this reason, many electric cars include cooling systems that keep the battery at a stable temperature.",
+  "questions": [
+   {
+    "q": "What is the main idea of the passage?",
+    "options": [
+     "Electric cars are expensive.",
+     "Batteries age with use, and heat makes it faster.",
+     "Cooling systems are dangerous.",
+     "Lithium is rare.",
+     "Batteries never lose capacity."
+    ],
+    "answer": 1,
+    "explain": "Ana fikir: kullanım ve ısı yaşlanmayı artırır."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "cycle",
+    "tr": "döngü"
+   }
+  ]
+ }
+]

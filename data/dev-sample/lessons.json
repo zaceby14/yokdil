@@ -1,0 +1,72 @@
+[
+ {
+  "id": "baglac-zitlik",
+  "title": "Zıtlık bağlaçları",
+  "order": 1,
+  "minutes": 8,
+  "summary": "although, while, whereas, however, despite",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "**Although / even though** + cümle: iki yarı **zıt kutupta**.\n- yeni ↔ eski gibi zaman zıtlığı da sayılır\n- **despite / in spite of** + isim veya Ving"
+   },
+   {
+    "h": "Karşılaştırma",
+    "md": "| Bağlaç | Sonrası | Örnek |\n|---|---|---|\n| although | cümle | Although it is cheap, it lasts long. |\n| despite | isim / Ving | Despite its low cost, … |\n| however | yeni cümle | It is cheap. However, … |"
+   }
+  ],
+  "checks": [
+   {
+    "q": "---- its small size, the sensor is very accurate.",
+    "options": [
+     "Although",
+     "Despite",
+     "However",
+     "Whereas",
+     "Because"
+    ],
+    "answer": 1,
+    "explain": "Sonrası isim öbeği: Despite."
+   },
+   {
+    "q": "The method is old; ----, it is still widely used.",
+    "options": [
+     "although",
+     "despite",
+     "however",
+     "whereas",
+     "because of"
+    ],
+    "answer": 2,
+    "explain": "Noktalı virgül + yeni cümle: however."
+   }
+  ]
+ },
+ {
+  "id": "edat-esdizim",
+  "title": "Edatlar ve eşdizim",
+  "order": 3,
+  "minutes": 6,
+  "summary": "at a rate, in terms of, due to, lead to",
+  "blocks": [
+   {
+    "h": "Sık kalıplar",
+    "md": "- **at** a temperature / rate / level / speed\n- **in terms of** = açısından\n- **due to** + isim = -den dolayı\n- **lead to** + isim = yol açmak"
+   }
+  ],
+  "checks": [
+   {
+    "q": "The gas expands ---- a rate of 2% per degree.",
+    "options": [
+     "in",
+     "on",
+     "at",
+     "by",
+     "with"
+    ],
+    "answer": 2,
+    "explain": "at a rate."
+   }
+  ]
+ }
+]

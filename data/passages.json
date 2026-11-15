@@ -1,0 +1,2494 @@
+[
+ {
+  "id": "p001",
+  "title": "Why Stainless Steel Resists Rust",
+  "topic": "malzeme",
+  "level": 1,
+  "words": 215,
+  "text": "Ordinary steel is strong and cheap, but it has a serious weakness: when it is exposed to water and oxygen, it slowly turns into rust. Rust is a loose, flaky oxide that does not protect the metal underneath, so corrosion can continue until a part becomes too weak to use. For this reason, engineers have long searched for ways to keep steel from reacting with its environment.\n\nOne of the most successful answers is stainless steel. Its secret is chromium, which is added in amounts of at least about 10.5 percent. Chromium reacts with oxygen more readily than iron does and forms an extremely thin layer of chromium oxide on the surface. Unlike rust, this layer is dense and sticks firmly to the metal, so it acts as a barrier against further attack.\n\nWhat makes the layer even more useful is that it can repair itself. If the surface is scratched, the exposed chromium quickly reacts with oxygen in the air, and the protective film forms again within a short time. However, stainless steel is not completely immune to damage. In environments rich in chloride, such as seawater or de-icing salt on roads, the film can break down locally, and small but deep pits may develop. For such conditions, grades containing molybdenum are usually preferred.",
+  "questions": [
+   {
+    "q": "The passage mainly explains ----.",
+    "options": [
+     "why ordinary steel is cheaper to produce than stainless steel",
+     "how chromium enables stainless steel to protect itself against corrosion",
+     "the history of the invention of stainless steel",
+     "why seawater is the main cause of rust in all metals",
+     "how engineers repair scratched steel surfaces in factories"
+    ],
+    "answer": 1,
+    "explain": "Metnin tamamı kromun oluşturduğu koruyucu oksit tabakasını anlatıyor. Tuzak: 'seawater' son paragrafta geçiyor ama ana fikir değil (kısmi bilgi)."
+   },
+   {
+    "q": "According to the passage, the chromium oxide layer differs from rust in that ----.",
+    "options": [
+     "it is dense and adheres firmly to the metal",
+     "it forms more slowly than iron oxide",
+     "it is thick enough to be seen with the naked eye",
+     "it cannot form again once it has been damaged",
+     "it is completely resistant to chloride"
+    ],
+    "answer": 0,
+    "explain": "'Unlike rust, this layer is dense and sticks firmly to the metal' cümlesi dayanak. Tuzak: 'cannot form again' metnin tersi (kendini onarır)."
+   },
+   {
+    "q": "It can be inferred from the passage that stainless steel used in a marine environment ----.",
+    "options": [
+     "never requires any kind of maintenance",
+     "contains less chromium than ordinary steel",
+     "rusts as quickly as ordinary steel does",
+     "loses all of its chromium within a short time",
+     "may still suffer from localized corrosion unless a suitable grade is chosen"
+    ],
+    "answer": 4,
+    "explain": "Klorürlü ortamda film yerel olarak bozulup çukur oluşabilir; molibdenli kaliteler tercih edilir. Tuzak: 'rusts as quickly as ordinary steel' aşırı genelleme."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "flaky",
+    "tr": "pul pul dökülen"
+   },
+   {
+    "w": "corrosion",
+    "tr": "korozyon, paslanma"
+   },
+   {
+    "w": "readily",
+    "tr": "kolayca, hemen"
+   },
+   {
+    "w": "dense",
+    "tr": "yoğun, sık"
+   },
+   {
+    "w": "barrier",
+    "tr": "engel, bariyer"
+   },
+   {
+    "w": "immune",
+    "tr": "bağışık, etkilenmez"
+   },
+   {
+    "w": "pit",
+    "tr": "çukur (oyuklanma korozyonu)"
+   },
+   {
+    "w": "grade",
+    "tr": "kalite, sınıf (çelik)"
+   },
+   {
+    "w": "de-icing",
+    "tr": "buz çözücü"
+   }
+  ]
+ },
+ {
+  "id": "p002",
+  "title": "Splitting Water for Clean Fuel",
+  "topic": "enerji",
+  "level": 1,
+  "words": 197,
+  "text": "Hydrogen is often described as the fuel of the future. When it is burned or used in a fuel cell, the only direct product is water, so it releases no carbon dioxide at the point of use. The problem is that pure hydrogen hardly exists on Earth. It is usually locked inside other compounds, and it must be separated before it can be used.\n\nToday, most hydrogen is produced from natural gas in a process that releases large amounts of carbon dioxide. This kind of hydrogen is sometimes called grey hydrogen. A cleaner option is electrolysis, in which an electric current splits water into hydrogen and oxygen. If the electricity comes from wind or solar power, the result is known as green hydrogen.\n\nElectrolysis is not a new idea; scientists demonstrated it more than two hundred years ago. What has changed is the falling cost of renewable electricity. Even so, green hydrogen remains more expensive than grey hydrogen, partly because electrolysers are costly and partly because some energy is lost in the conversion. Supporters argue that it will be most valuable in sectors that are difficult to electrify directly, such as steelmaking, fertiliser production and long-distance shipping.",
+  "questions": [
+   {
+    "q": "According to the passage, green hydrogen is different from grey hydrogen because ----.",
+    "options": [
+     "it releases more energy when it is burned",
+     "it is extracted directly from natural deposits",
+     "it is cheaper to produce on a large scale",
+     "it produces carbon dioxide only in fuel cells",
+     "it is produced by electrolysis using renewable electricity"
+    ],
+    "answer": 4,
+    "explain": "'If the electricity comes from wind or solar power, the result is known as green hydrogen.' Tuzak: 'cheaper' metnin tersi (hâlâ daha pahalı)."
+   },
+   {
+    "q": "The author mentions that electrolysis was demonstrated more than two hundred years ago in order to ----.",
+    "options": [
+     "argue that the method is now outdated",
+     "show that the method itself is old and that cost is what has changed",
+     "explain why grey hydrogen is still widely used",
+     "prove that early scientists used renewable energy",
+     "criticise the slow progress of modern research"
+    ],
+    "answer": 1,
+    "explain": "Yazarın amacı: 'not a new idea ... What has changed is the falling cost' — yöntem eski, değişen maliyet."
+   },
+   {
+    "q": "It can be understood from the passage that supporters of green hydrogen ----.",
+    "options": [
+     "believe it should replace electricity in all sectors",
+     "deny that energy is lost during electrolysis",
+     "consider it already cheaper than natural gas",
+     "want to stop the production of fertilisers",
+     "see it as especially useful in sectors that are hard to electrify"
+    ],
+    "answer": 4,
+    "explain": "Son cümle: 'most valuable in sectors that are difficult to electrify directly'. Tuzak: 'all sectors' aşırı genelleme."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "fuel cell",
+    "tr": "yakıt hücresi"
+   },
+   {
+    "w": "compound",
+    "tr": "bileşik"
+   },
+   {
+    "w": "electrolysis",
+    "tr": "elektroliz"
+   },
+   {
+    "w": "split",
+    "tr": "ayrıştırmak, bölmek"
+   },
+   {
+    "w": "renewable",
+    "tr": "yenilenebilir"
+   },
+   {
+    "w": "conversion",
+    "tr": "dönüşüm"
+   },
+   {
+    "w": "electrify",
+    "tr": "elektrikli hâle getirmek"
+   },
+   {
+    "w": "fertiliser",
+    "tr": "gübre"
+   }
+  ]
+ },
+ {
+  "id": "p003",
+  "title": "The Colour of the Sky",
+  "topic": "fizik",
+  "level": 1,
+  "words": 210,
+  "text": "Sunlight looks white, but it is actually a mixture of all the colours of the rainbow. Each colour corresponds to a different wavelength: red light has the longest waves in the visible range, while blue and violet light have the shortest. When sunlight enters the atmosphere, it meets countless gas molecules, mostly nitrogen and oxygen, which are much smaller than the wavelength of the light itself.\n\nThese tiny molecules scatter light in all directions, but they do not treat all colours equally. Short wavelengths are scattered far more strongly than long ones, an effect known as Rayleigh scattering after the British physicist who described it. As a result, blue light is spread across the whole sky, and wherever we look, some of it reaches our eyes.\n\nIf short wavelengths are scattered most, one might ask why the sky is not violet. There are several reasons. Part of the violet light is absorbed high in the atmosphere, sunlight contains slightly less violet than blue, and our eyes are more sensitive to blue. The same principle also explains red sunsets. When the Sun is low, its light travels through a much thicker layer of air, so most of the blue is scattered away before it reaches us, leaving mainly red and orange.",
+  "questions": [
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "describing the chemical composition of the atmosphere",
+     "explaining why the sky appears blue and sunsets appear red",
+     "comparing the sensitivity of human and animal eyes",
+     "the life and work of a British physicist",
+     "showing that sunlight contains no violet light"
+    ],
+    "answer": 1,
+    "explain": "Metin Rayleigh saçılmasıyla mavi gökyüzünü ve kırmızı gün batımını açıklıyor. Tuzak: fizikçi sadece adı için anılıyor."
+   },
+   {
+    "q": "According to the passage, the sky does not look violet partly because ----.",
+    "options": [
+     "human eyes are more sensitive to blue than to violet",
+     "violet light has the longest wavelength",
+     "gas molecules do not scatter violet light at all",
+     "sunlight contains no violet light",
+     "violet light travels faster than blue light"
+    ],
+    "answer": 0,
+    "explain": "'our eyes are more sensitive to blue' dayanak. Tuzak: 'contains no violet' — metin 'slightly less' diyor (kısmi doğru/çarpıtma)."
+   },
+   {
+    "q": "The word \"it\" in the sentence \"some of it reaches our eyes\" refers to ----.",
+    "options": [
+     "the whole sky",
+     "Rayleigh scattering",
+     "blue light",
+     "the atmosphere",
+     "sunlight entering space"
+    ],
+    "answer": 2,
+    "explain": "Önceki yan cümle 'blue light is spread across the whole sky' — 'it' mavi ışığa döner. Taktik: zamir en yakın uygun isme bakar, anlam kontrolü yap."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "wavelength",
+    "tr": "dalga boyu"
+   },
+   {
+    "w": "scatter",
+    "tr": "saçmak, saçılmak"
+   },
+   {
+    "w": "countless",
+    "tr": "sayısız"
+   },
+   {
+    "w": "absorb",
+    "tr": "soğurmak, emmek"
+   },
+   {
+    "w": "sensitive",
+    "tr": "duyarlı"
+   },
+   {
+    "w": "principle",
+    "tr": "ilke"
+   },
+   {
+    "w": "visible",
+    "tr": "görünür"
+   },
+   {
+    "w": "layer",
+    "tr": "katman"
+   }
+  ]
+ },
+ {
+  "id": "p004",
+  "title": "The Toughest Animals on Earth",
+  "topic": "biyoloji",
+  "level": 1,
+  "words": 204,
+  "text": "Tardigrades, also called water bears, are tiny animals usually less than a millimetre long. They live in many places, from mountain tops to the deep sea, but they are most often found in the thin films of water on moss and lichen. Under a microscope, they look like small, slow bears with eight legs, which explains their popular name.\n\nWhat makes tardigrades famous is not their appearance but their ability to survive conditions that would kill almost any other animal. When their environment dries out, they pull in their legs, lose nearly all the water in their bodies and enter a state called cryptobiosis. In this state their metabolism almost stops. They can remain like this for years and then return to normal life within hours after water returns.\n\nIn laboratory tests, dried tardigrades have survived extreme cold, high levels of radiation and even a short period in the vacuum of space. Scientists believe that special proteins protect their cells by forming a glass-like material that holds delicate molecules in place. Researchers hope that understanding these proteins could one day help to store vaccines and other medicines without refrigeration. Nevertheless, active tardigrades are not indestructible, and many of them die when temperatures rise quickly.",
+  "questions": [
+   {
+    "q": "According to the passage, tardigrades enter cryptobiosis when ----.",
+    "options": [
+     "they are exposed to the vacuum of space for years",
+     "the temperature rises quickly",
+     "they find water on moss and lichen",
+     "their environment dries out",
+     "they are placed under a microscope"
+    ],
+    "answer": 3,
+    "explain": "'When their environment dries out, they ... enter a state called cryptobiosis.' Tuzak: 'temperature rises quickly' son cümlede ölüm nedeni olarak geçiyor."
+   },
+   {
+    "q": "Researchers are interested in tardigrade proteins mainly because they ----.",
+    "options": [
+     "might help to store medicines without cooling",
+     "make the animals look like small bears",
+     "allow tardigrades to move faster",
+     "increase the animals' metabolism",
+     "are found only in the deep sea"
+    ],
+    "answer": 0,
+    "explain": "'could one day help to store vaccines and other medicines without refrigeration'. refrigeration = cooling (eş anlam eşleştirme)."
+   },
+   {
+    "q": "It can be inferred from the last sentence that ----.",
+    "options": [
+     "tardigrades are much more vulnerable when they are active than when they are dried",
+     "tardigrades cannot survive extreme cold",
+     "all tardigrades die in laboratory tests",
+     "cryptobiosis has no effect on survival",
+     "tardigrades prefer warm environments"
+    ],
+    "answer": 0,
+    "explain": "Kuruyken uç koşullara dayanıyor, ama 'active tardigrades are not indestructible' — aktifken daha kırılgan. Tuzak: 'cannot survive extreme cold' metnin tersi."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "lichen",
+    "tr": "liken"
+   },
+   {
+    "w": "appearance",
+    "tr": "görünüş"
+   },
+   {
+    "w": "metabolism",
+    "tr": "metabolizma"
+   },
+   {
+    "w": "vacuum",
+    "tr": "boşluk, vakum"
+   },
+   {
+    "w": "delicate",
+    "tr": "hassas, narin"
+   },
+   {
+    "w": "refrigeration",
+    "tr": "soğutma"
+   },
+   {
+    "w": "indestructible",
+    "tr": "yok edilemez"
+   },
+   {
+    "w": "survive",
+    "tr": "hayatta kalmak"
+   }
+  ]
+ },
+ {
+  "id": "p005",
+  "title": "When Corals Turn White",
+  "topic": "ekoloji",
+  "level": 1,
+  "words": 197,
+  "text": "Coral reefs cover a tiny fraction of the ocean floor, yet they support roughly a quarter of all marine species. A reef is built by small animals called coral polyps, which produce hard skeletons of calcium carbonate. Inside the tissues of most reef-building corals live microscopic algae. The algae carry out photosynthesis and share the sugars they make with the coral, which in turn provides them with shelter and nutrients.\n\nThis partnership is sensitive to temperature. When the water becomes only one or two degrees warmer than the usual summer maximum for several weeks, the relationship breaks down. The coral expels the algae, and because the algae give corals most of their colour, the white skeleton becomes visible through the transparent tissue. This process is known as bleaching.\n\nA bleached coral is not dead, but it is starving and much more likely to catch diseases. If temperatures return to normal quickly, the algae can come back and the coral may recover. If the heat lasts too long, large areas of reef may die. Marine heatwaves have become more frequent as the oceans warm, and scientists warn that reefs now have less time to recover between bleaching events.",
+  "questions": [
+   {
+    "q": "According to the passage, a coral becomes white during bleaching because ----.",
+    "options": [
+     "its skeleton changes into a different mineral",
+     "the algae produce too much sugar",
+     "it dies as soon as the water warms",
+     "it loses the algae that give it most of its colour",
+     "diseases destroy its calcium carbonate skeleton"
+    ],
+    "answer": 3,
+    "explain": "'because the algae give corals most of their colour, the white skeleton becomes visible'. Tuzak: 'dies as soon as' — metin 'not dead' diyor."
+   },
+   {
+    "q": "Which of the following is TRUE according to the passage?",
+    "options": [
+     "A bleached coral can recover if temperatures return to normal quickly.",
+     "Coral reefs cover about a quarter of the ocean floor.",
+     "Algae provide corals with shelter and nutrients.",
+     "Bleaching occurs only when water becomes much colder.",
+     "Marine heatwaves have become rarer in recent years."
+    ],
+    "answer": 0,
+    "explain": "'If temperatures return to normal quickly, the algae can come back and the coral may recover.' Tuzak: 'a quarter' türlerin oranı, alan değil; barınağı mercan veriyor."
+   },
+   {
+    "q": "The author's main concern in the last paragraph is that ----.",
+    "options": [
+     "bleached corals are always dead",
+     "scientists cannot measure ocean temperatures",
+     "algae are harmful to coral reefs",
+     "reefs have less time to recover as heatwaves become more frequent",
+     "corals should be moved to colder seas"
+    ],
+    "answer": 3,
+    "explain": "Son cümle yazarın endişesini veriyor: 'less time to recover between bleaching events'."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "fraction",
+    "tr": "küçük bir kısım"
+   },
+   {
+    "w": "skeleton",
+    "tr": "iskelet"
+   },
+   {
+    "w": "tissue",
+    "tr": "doku"
+   },
+   {
+    "w": "shelter",
+    "tr": "barınak"
+   },
+   {
+    "w": "expel",
+    "tr": "dışarı atmak"
+   },
+   {
+    "w": "transparent",
+    "tr": "saydam"
+   },
+   {
+    "w": "starve",
+    "tr": "açlık çekmek"
+   },
+   {
+    "w": "recover",
+    "tr": "iyileşmek, toparlanmak"
+   }
+  ]
+ },
+ {
+  "id": "p006",
+  "title": "Where Did the Moon Come From?",
+  "topic": "astronomi",
+  "level": 1,
+  "words": 207,
+  "text": "For centuries, the origin of the Moon was a puzzle. Some scientists thought it had formed at the same time as Earth from the same cloud of material. Others suggested that Earth's gravity had captured a passing body, or that a fast-spinning young Earth had thrown off a piece of itself. Each idea, however, failed to explain at least one important observation.\n\nThe rock samples brought back by the Apollo missions changed the debate. They showed that lunar rocks are extremely similar to rocks from Earth's mantle in their chemical make-up, but the Moon has a much smaller iron core. They also suggested that the Moon's surface had once been covered by an ocean of molten rock.\n\nToday, most researchers support the giant impact hypothesis. According to this idea, a planet-sized object, often called Theia, struck the young Earth about 4.5 billion years ago. The collision threw enormous amounts of hot material into orbit, and this material gradually came together to form the Moon. The model explains why the Moon is poor in iron and why it was once so hot. Even so, details remain under discussion, since computer simulations often predict that the Moon should contain more material from Theia than the samples appear to show.",
+  "questions": [
+   {
+    "q": "The main purpose of the passage is to ----.",
+    "options": [
+     "explain how the Apollo missions were planned",
+     "argue that the Moon was captured by Earth's gravity",
+     "show that computer simulations are always reliable",
+     "describe how ideas about the Moon's origin developed and which one is favoured today",
+     "compare the iron cores of all the planets"
+    ],
+    "answer": 3,
+    "explain": "Metin eski hipotezlerden 'giant impact' görüşüne geçişi anlatıyor. Tuzak: 'captured' reddedilen fikirlerden biri."
+   },
+   {
+    "q": "According to the passage, the Apollo samples showed that ----.",
+    "options": [
+     "the Moon has a larger iron core than Earth",
+     "lunar rocks are chemically similar to Earth's mantle rocks",
+     "the Moon formed far away from Earth",
+     "Theia was made mostly of iron",
+     "the Moon has never been hot"
+    ],
+    "answer": 1,
+    "explain": "'lunar rocks are extremely similar to rocks from Earth's mantle in their chemical make-up'. Tuzak: çekirdek 'much smaller'."
+   },
+   {
+    "q": "It can be understood from the last sentence that the giant impact hypothesis ----.",
+    "options": [
+     "has been completely rejected by most scientists",
+     "is supported by no observations at all",
+     "explains every detail of the Moon's composition",
+     "was proposed before the Apollo missions began",
+     "is widely accepted but still has unresolved problems"
+    ],
+    "answer": 4,
+    "explain": "'most researchers support' + 'details remain under discussion' = kabul görüyor ama sorunlu. 'Even so' zıtlık sinyali."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "origin",
+    "tr": "köken"
+   },
+   {
+    "w": "capture",
+    "tr": "yakalamak"
+   },
+   {
+    "w": "lunar",
+    "tr": "Ay'a ait"
+   },
+   {
+    "w": "mantle",
+    "tr": "manto"
+   },
+   {
+    "w": "molten",
+    "tr": "erimiş"
+   },
+   {
+    "w": "hypothesis",
+    "tr": "hipotez"
+   },
+   {
+    "w": "collision",
+    "tr": "çarpışma"
+   },
+   {
+    "w": "orbit",
+    "tr": "yörünge"
+   }
+  ]
+ },
+ {
+  "id": "p007",
+  "title": "A Roll of Paper and a New Way of Listening",
+  "topic": "tip",
+  "level": 1,
+  "words": 202,
+  "text": "Before the nineteenth century, a doctor who wanted to listen to a patient's heart or lungs had to press an ear directly against the patient's chest. This method, known as immediate auscultation, was uncomfortable for both people and often gave poor results, especially when the patient was overweight.\n\nIn 1816, the French physician René Laennec faced exactly this problem with a young female patient. Remembering that sound travels well through solid materials, he rolled a sheet of paper into a tube, placed one end on her chest and the other at his ear. To his surprise, he could hear the heartbeat far more clearly than ever before. Laennec soon replaced the paper with a hollow wooden cylinder and called his invention the stethoscope, from Greek words meaning \"chest\" and \"to look at\".\n\nLaennec did more than build a tool. He spent years linking the sounds he heard to the diseases he later found in patients' bodies after death, and he published a detailed guide to these sounds. Over time, the design improved: flexible tubes and two earpieces were added, and modern versions can even record and amplify sounds electronically. Yet the basic idea of listening carefully to the body remains the same.",
+  "questions": [
+   {
+    "q": "According to the passage, Laennec first used a roll of paper because ----.",
+    "options": [
+     "wooden cylinders were too expensive",
+     "he wanted to record the heartbeat electronically",
+     "other doctors had already used paper tubes",
+     "the patient had a lung disease",
+     "pressing his ear to the patient's chest was impractical"
+    ],
+    "answer": 4,
+    "explain": "Doğrudan kulak dayamak rahatsız ve verimsizdi; genç kadın hastada 'exactly this problem'. Tuzak: elektronik kayıt modern dönem."
+   },
+   {
+    "q": "The phrase \"this problem\" in the second paragraph refers to ----.",
+    "options": [
+     "the high cost of medical instruments",
+     "the difficulty and discomfort of listening with the ear directly on the chest",
+     "the lack of Greek names for new tools",
+     "the poor quality of paper in 1816",
+     "the failure to find diseases after death"
+    ],
+    "answer": 1,
+    "explain": "'This' önceki paragrafın tamamını (immediate auscultation zorluğu) özetler. Taktik: referans kelimesi geriye bakar."
+   },
+   {
+    "q": "It can be inferred from the passage that Laennec's guide was valuable because it ----.",
+    "options": [
+     "explained how to make paper tubes",
+     "described the history of Greek medicine",
+     "connected particular sounds with particular diseases",
+     "introduced electronic amplifiers",
+     "replaced the need for any examination"
+    ],
+    "answer": 2,
+    "explain": "'linking the sounds he heard to the diseases' — ses ile hastalığı eşleştiren rehber."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "physician",
+    "tr": "hekim"
+   },
+   {
+    "w": "auscultation",
+    "tr": "dinleme (oskültasyon)"
+   },
+   {
+    "w": "hollow",
+    "tr": "içi boş"
+   },
+   {
+    "w": "cylinder",
+    "tr": "silindir"
+   },
+   {
+    "w": "amplify",
+    "tr": "yükseltmek, güçlendirmek"
+   },
+   {
+    "w": "flexible",
+    "tr": "esnek"
+   },
+   {
+    "w": "overweight",
+    "tr": "kilolu"
+   },
+   {
+    "w": "solid",
+    "tr": "katı"
+   }
+  ]
+ },
+ {
+  "id": "p008",
+  "title": "Robots That Learn by Trial and Error",
+  "topic": "yapay-zeka",
+  "level": 1,
+  "words": 207,
+  "text": "Traditional industrial robots are programmed step by step. An engineer tells the machine exactly where to move, how fast to go and when to close its gripper. This works very well in factories, where the same part arrives in the same position thousands of times a day. It works poorly, however, when objects vary in shape or the environment keeps changing.\n\nReinforcement learning offers a different approach. Instead of following fixed instructions, the robot tries an action and receives a numerical reward that tells it how well it did. Over many attempts, it gradually prefers actions that lead to higher rewards. In this way, a robot arm can learn to pick up unfamiliar objects or a walking robot can learn to keep its balance on rough ground.\n\nThe main difficulty is that learning requires a huge number of trials, and real robots are slow and can break. For this reason, researchers often train them first in computer simulations, where millions of attempts can be made in a few hours. The trained program is then transferred to the physical machine. Unfortunately, no simulation is perfect, so a robot that performs well on screen may still struggle in the real world, a problem that engineers call the reality gap.",
+  "questions": [
+   {
+    "q": "According to the passage, traditional programming of robots is most effective when ----.",
+    "options": [
+     "objects change shape frequently",
+     "the same task is repeated in the same conditions",
+     "the robot is walking on rough ground",
+     "the robot receives numerical rewards",
+     "simulations are not available"
+    ],
+    "answer": 1,
+    "explain": "'works very well in factories, where the same part arrives in the same position'."
+   },
+   {
+    "q": "Researchers use computer simulations mainly because ----.",
+    "options": [
+     "they are more realistic than the physical world",
+     "they allow a very large number of trials quickly and without damage",
+     "real robots cannot receive rewards",
+     "they remove the need for a physical robot",
+     "simulated robots never make mistakes"
+    ],
+    "answer": 1,
+    "explain": "Gerçek robot yavaş ve bozulabilir; simülasyonda 'millions of attempts ... in a few hours'. Tuzak: 'more realistic' — metin tersini söylüyor."
+   },
+   {
+    "q": "The term \"reality gap\" describes ----.",
+    "options": [
+     "the time needed to build a new robot",
+     "the gap between a robot's gripper and an object",
+     "the difference between performance in simulation and in the real world",
+     "the cost difference between old and new robots",
+     "the distance a robot can walk without falling"
+    ],
+    "answer": 2,
+    "explain": "Son cümle: ekranda iyi olan robot gerçekte zorlanabilir — buna 'reality gap' denir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "gripper",
+    "tr": "tutucu, kavrayıcı"
+   },
+   {
+    "w": "vary",
+    "tr": "değişmek, farklılık göstermek"
+   },
+   {
+    "w": "reinforcement",
+    "tr": "pekiştirme"
+   },
+   {
+    "w": "reward",
+    "tr": "ödül"
+   },
+   {
+    "w": "gradually",
+    "tr": "yavaş yavaş"
+   },
+   {
+    "w": "trial",
+    "tr": "deneme"
+   },
+   {
+    "w": "transfer",
+    "tr": "aktarmak"
+   },
+   {
+    "w": "struggle",
+    "tr": "zorlanmak"
+   }
+  ]
+ },
+ {
+  "id": "p009",
+  "title": "Cracks That Grow in Silence",
+  "topic": "malzeme",
+  "level": 2,
+  "words": 220,
+  "text": "Most people imagine that a metal part breaks when it is loaded beyond its strength. In practice, a large share of mechanical failures happen at stresses well below that limit. The cause is fatigue: the gradual damage produced when a component is loaded and unloaded many times. Each cycle may seem harmless, but together they can initiate a microscopic crack, usually at a surface defect, a sharp corner or a hole where stress is concentrated.\n\nOnce a crack exists, every new cycle pushes it a tiny distance further. On the fracture surface, this slow growth often leaves curved lines called beach marks, which resemble the patterns left by waves on sand. Eventually, the remaining cross-section becomes too small to carry the load, and the part fails suddenly, often without visible warning.\n\nThe danger of fatigue became painfully clear in the 1950s, when several Comet jet airliners, the first of their kind, broke up in flight. Investigators found that cracks had started near openings in the pressurised fuselage, where repeated pressurisation cycles had concentrated stress. Since then, engineers have learned to round off corners, polish critical surfaces and introduce compressive stresses by shot peening. Equally important, they now design for inspection, calculating how fast a crack could grow so that it can be detected and repaired long before it becomes critical.",
+  "questions": [
+   {
+    "q": "The passage is mainly about ----.",
+    "options": [
+     "the construction of the first jet airliners",
+     "why metals are stronger under compression",
+     "how fatigue cracks develop and how engineers reduce their danger",
+     "the methods used to polish metal surfaces",
+     "the patterns that waves leave on sand"
+    ],
+    "answer": 2,
+    "explain": "Yorulma çatlağının başlaması, ilerlemesi ve önlemler anlatılıyor. Tuzak: Comet sadece örnek; 'beach marks' benzetme."
+   },
+   {
+    "q": "According to the passage, fatigue cracks usually begin ----.",
+    "options": [
+     "in the centre of thick, smooth parts",
+     "only when the load exceeds the metal's strength",
+     "after the part has already failed",
+     "on surfaces that have been shot peened",
+     "at places where stress is concentrated, such as sharp corners or holes"
+    ],
+    "answer": 4,
+    "explain": "'usually at a surface defect, a sharp corner or a hole where stress is concentrated'. Tuzak: 'exceeds strength' metnin tersi (well below)."
+   },
+   {
+    "q": "It can be inferred from the last sentence that modern design philosophy ----.",
+    "options": [
+     "accepts that cracks may form but ensures they are found before they become dangerous",
+     "assumes that well-designed parts will never crack",
+     "relies only on stronger materials to prevent fatigue",
+     "avoids inspecting parts in service",
+     "considers shot peening unnecessary"
+    ],
+    "answer": 0,
+    "explain": "'design for inspection ... detected and repaired long before it becomes critical' — çatlak olabilir, kritik olmadan bulunur (hasar toleransı)."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "fatigue",
+    "tr": "yorulma"
+   },
+   {
+    "w": "initiate",
+    "tr": "başlatmak"
+   },
+   {
+    "w": "defect",
+    "tr": "kusur"
+   },
+   {
+    "w": "concentrate",
+    "tr": "yoğunlaşmak"
+   },
+   {
+    "w": "fracture",
+    "tr": "kırılma"
+   },
+   {
+    "w": "resemble",
+    "tr": "benzemek"
+   },
+   {
+    "w": "fuselage",
+    "tr": "gövde (uçak)"
+   },
+   {
+    "w": "compressive",
+    "tr": "basma (gerilmesi)"
+   },
+   {
+    "w": "shot peening",
+    "tr": "bilyeli dövme"
+   }
+  ]
+ },
+ {
+  "id": "p010",
+  "title": "Beyond Lithium",
+  "topic": "enerji",
+  "level": 2,
+  "words": 222,
+  "text": "Lithium-ion batteries power almost every phone and laptop, and they have made electric cars practical. Their success rests on lithium's light weight and its ability to store a large amount of energy in a small volume. Yet this success has raised concerns. Lithium deposits are concentrated in a few countries, mining can consume large volumes of water, and the price of lithium has swung dramatically in recent years.\n\nSodium-ion batteries are attracting attention as a possible alternative. Sodium is chemically similar to lithium, but it is far more abundant; it can be obtained from ordinary salt, which is found almost everywhere. Sodium-ion cells can also use aluminium instead of copper for one of their current collectors, which further reduces cost. In addition, some designs perform better than lithium-ion cells at low temperatures.\n\nThe main drawback is energy density. Sodium atoms are heavier and larger than lithium atoms, so a sodium-ion battery of the same weight stores less energy. This makes it less attractive for long-range cars, where every kilogram matters. However, many applications do not demand the highest energy density. For storing solar power in stationary systems or for small urban vehicles, low cost and safety may matter more than weight. For this reason, experts generally see sodium-ion technology not as a replacement for lithium-ion batteries but as a complement to them.",
+  "questions": [
+   {
+    "q": "According to the passage, one advantage of sodium is that it ----.",
+    "options": [
+     "is lighter than lithium",
+     "stores more energy per kilogram than lithium",
+     "is widely available and inexpensive to obtain",
+     "requires copper current collectors",
+     "is found in only a few countries"
+    ],
+    "answer": 2,
+    "explain": "'far more abundant; it can be obtained from ordinary salt'. Tuzak: 'lighter' ve 'more energy' metnin tersi."
+   },
+   {
+    "q": "Sodium-ion batteries are less suitable for long-range cars because ----.",
+    "options": [
+     "they cannot operate at low temperatures",
+     "they are more expensive than lithium-ion batteries",
+     "they require large amounts of water",
+     "they store less energy for the same weight",
+     "they are less safe than lithium-ion batteries"
+    ],
+    "answer": 3,
+    "explain": "'a sodium-ion battery of the same weight stores less energy' + 'where every kilogram matters'."
+   },
+   {
+    "q": "The author's view of sodium-ion technology can best be described as ----.",
+    "options": [
+     "highly critical, rejecting it as impractical",
+     "enthusiastic, claiming it will soon replace lithium completely",
+     "indifferent, showing no interest in its future",
+     "balanced, presenting it as a useful addition rather than a replacement",
+     "confused, giving contradictory information about it"
+    ],
+    "answer": 3,
+    "explain": "Yazar avantaj ve dezavantajı veriyor; son cümle 'not as a replacement ... but as a complement'. Ton: dengeli/objektif."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "deposit",
+    "tr": "yatak, rezerv"
+   },
+   {
+    "w": "swing",
+    "tr": "dalgalanmak"
+   },
+   {
+    "w": "abundant",
+    "tr": "bol"
+   },
+   {
+    "w": "current collector",
+    "tr": "akım toplayıcı"
+   },
+   {
+    "w": "drawback",
+    "tr": "dezavantaj"
+   },
+   {
+    "w": "energy density",
+    "tr": "enerji yoğunluğu"
+   },
+   {
+    "w": "stationary",
+    "tr": "sabit"
+   },
+   {
+    "w": "complement",
+    "tr": "tamamlayıcı"
+   }
+  ]
+ },
+ {
+  "id": "p011",
+  "title": "Bread from Air",
+  "topic": "kimya",
+  "level": 2,
+  "words": 232,
+  "text": "Nitrogen makes up about 78 percent of the air, yet plants cannot use it in that form. The two atoms in a nitrogen molecule are held together by a triple bond, one of the strongest bonds in chemistry. Before crops can absorb nitrogen, it must be \"fixed\", that is, converted into compounds such as ammonia or nitrates. In nature, this is done mainly by certain bacteria and, to a small extent, by lightning.\n\nAt the beginning of the twentieth century, farmers relied on natural fertilisers, and scientists warned that the world's supply would soon fail to keep pace with a growing population. The German chemist Fritz Haber found a solution in 1909. He showed that nitrogen and hydrogen could be combined into ammonia at high pressure and a moderately high temperature in the presence of an iron-based catalyst. Carl Bosch, an engineer at the company BASF, then faced the enormous task of turning a laboratory experiment into an industrial process, which required new steels able to withstand hydrogen at high pressure.\n\nThe Haber-Bosch process is often said to support the food supply of roughly half of humanity. Its benefits, however, come at a price. The process consumes a significant share of the world's energy, and most of the hydrogen it uses is still made from fossil fuels. Moreover, excess fertiliser washes into rivers and seas, where it can cause harmful algal blooms.",
+  "questions": [
+   {
+    "q": "According to the passage, plants cannot use atmospheric nitrogen directly because ----.",
+    "options": [
+     "it makes up only a small part of the air",
+     "its atoms are held together by a very strong bond",
+     "lightning destroys most of it",
+     "it is a compound of ammonia and nitrates",
+     "bacteria consume all of it"
+    ],
+    "answer": 1,
+    "explain": "'triple bond, one of the strongest bonds' — önce 'fix' edilmesi gerekir. Tuzak: '78 percent' büyük oran."
+   },
+   {
+    "q": "It can be understood from the passage that Carl Bosch's contribution was ----.",
+    "options": [
+     "discovering that bacteria fix nitrogen",
+     "inventing the iron-based catalyst in 1909",
+     "warning about the shortage of natural fertilisers",
+     "reducing the energy consumption of the process",
+     "scaling up Haber's laboratory method into industrial production"
+    ],
+    "answer": 4,
+    "explain": "'turning a laboratory experiment into an industrial process'. Tuzak: 1909 ve katalizör Haber'e ait."
+   },
+   {
+    "q": "The last paragraph mainly points out that the Haber-Bosch process ----.",
+    "options": [
+     "no longer plays a role in food production",
+     "uses mainly renewable hydrogen today",
+     "has great benefits but also serious environmental costs",
+     "has solved the problem of algal blooms",
+     "supports the food supply of all humanity"
+    ],
+    "answer": 2,
+    "explain": "'Its benefits, however, come at a price' — enerji, fosil yakıt, alg patlaması. Tuzak: 'all humanity' — metin 'roughly half'."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "triple bond",
+    "tr": "üçlü bağ"
+   },
+   {
+    "w": "fix",
+    "tr": "bağlamak (azot fiksasyonu)"
+   },
+   {
+    "w": "keep pace with",
+    "tr": "ayak uydurmak"
+   },
+   {
+    "w": "catalyst",
+    "tr": "katalizör"
+   },
+   {
+    "w": "withstand",
+    "tr": "dayanmak"
+   },
+   {
+    "w": "excess",
+    "tr": "fazla, aşırı"
+   },
+   {
+    "w": "algal bloom",
+    "tr": "alg patlaması"
+   },
+   {
+    "w": "moderately",
+    "tr": "orta derecede"
+   }
+  ]
+ },
+ {
+  "id": "p012",
+  "title": "Molecular Scissors",
+  "topic": "biyoloji",
+  "level": 2,
+  "words": 227,
+  "text": "For decades, changing a specific gene in a living organism was slow, expensive and unreliable. That situation changed dramatically after 2012, when researchers showed that a bacterial defence system known as CRISPR could be turned into a precise tool for editing DNA.\n\nIn bacteria, CRISPR acts as a kind of immune memory. When a virus attacks, the bacterium stores a short piece of the virus's DNA in its own genome. If the same virus returns, the bacterium produces an RNA copy of the stored piece, which guides a protein called Cas9 to the matching viral DNA. Cas9 then cuts the DNA and disables the invader. Scientists realised that by designing their own guide RNA, they could direct Cas9 to almost any sequence in almost any organism. Once the DNA is cut, the cell's repair machinery takes over, and researchers can exploit this process to disable a gene or insert a new one.\n\nThe technique has spread to laboratories around the world because it is cheap and relatively easy to use. It is already being applied to crops, to animal models of disease and, in clinical trials, to inherited blood disorders such as sickle cell disease. Nevertheless, CRISPR is not flawless. Cas9 sometimes cuts at unintended sites, and changes made to embryos would be passed on to future generations, which raises ethical questions that science alone cannot answer.",
+  "questions": [
+   {
+    "q": "According to the passage, in bacteria CRISPR functions as ----.",
+    "options": [
+     "a method of producing new proteins for growth",
+     "a way of passing genes to future generations",
+     "a repair system for damaged cells",
+     "a defence system that remembers viruses",
+     "a laboratory tool designed by scientists"
+    ],
+    "answer": 3,
+    "explain": "'In bacteria, CRISPR acts as a kind of immune memory'. Tuzak: 'laboratory tool' — bilim insanlarının sonradan dönüştürdüğü hâli."
+   },
+   {
+    "q": "The phrase \"this process\" in the second paragraph refers to ----.",
+    "options": [
+     "the storage of viral DNA in bacteria",
+     "the attack of a virus on a bacterium",
+     "the repair of cut DNA by the cell",
+     "the design of guide RNA by researchers",
+     "the spread of CRISPR to laboratories"
+    ],
+    "answer": 2,
+    "explain": "Hemen önceki ifade: 'the cell's repair machinery takes over' — 'this process' hücrenin onarımıdır."
+   },
+   {
+    "q": "It can be inferred from the last paragraph that the author believes ----.",
+    "options": [
+     "decisions about editing embryos involve issues beyond purely scientific ones",
+     "CRISPR should be banned in all laboratories",
+     "unintended cuts never occur with Cas9",
+     "ethical questions have already been fully resolved",
+     "sickle cell disease cannot be treated with CRISPR"
+    ],
+    "answer": 0,
+    "explain": "'ethical questions that science alone cannot answer'. Tuzak: 'banned' metinde yok (aşırı yorum)."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "defence",
+    "tr": "savunma"
+   },
+   {
+    "w": "genome",
+    "tr": "genom"
+   },
+   {
+    "w": "disable",
+    "tr": "etkisiz hâle getirmek"
+   },
+   {
+    "w": "invader",
+    "tr": "istilacı"
+   },
+   {
+    "w": "sequence",
+    "tr": "dizi"
+   },
+   {
+    "w": "exploit",
+    "tr": "yararlanmak"
+   },
+   {
+    "w": "inherited",
+    "tr": "kalıtsal"
+   },
+   {
+    "w": "flawless",
+    "tr": "kusursuz"
+   },
+   {
+    "w": "unintended",
+    "tr": "istenmeyen, kasıtsız"
+   }
+  ]
+ },
+ {
+  "id": "p013",
+  "title": "The Thawing North",
+  "topic": "ekoloji",
+  "level": 2,
+  "words": 215,
+  "text": "Across large parts of Siberia, Alaska and northern Canada, the ground beneath the surface has remained frozen for thousands of years. This permanently frozen soil, called permafrost, contains the remains of plants and animals that never fully decomposed because microbes cannot work in such cold conditions. Scientists estimate that permafrost holds roughly twice as much carbon as the atmosphere currently does.\n\nAs the Arctic warms faster than the global average, this frozen store is beginning to thaw. When it does, microbes become active again and break down the old organic matter, releasing carbon dioxide and, in waterlogged soils, methane, a gas that traps far more heat over a short period. These emissions add to warming, which in turn causes more thawing. Climate scientists call such self-reinforcing processes positive feedbacks, although there is nothing positive about their consequences.\n\nThawing also creates problems on the surface. Roads, pipelines and buildings designed for solid frozen ground can crack or sink as the soil softens. In some regions, coastlines are collapsing into the sea at alarming rates. The pace of future emissions is still uncertain, partly because plants may grow more vigorously in a warmer Arctic and absorb some of the released carbon. However, most studies suggest that this uptake will not be large enough to offset the losses.",
+  "questions": [
+   {
+    "q": "According to the passage, organic matter in permafrost has not fully decomposed because ----.",
+    "options": [
+     "it contains no carbon",
+     "plants absorb all of it",
+     "microbes are unable to act effectively at such low temperatures",
+     "methane prevents microbial activity",
+     "it is buried under the sea"
+    ],
+    "answer": 2,
+    "explain": "'never fully decomposed because microbes cannot work in such cold conditions'."
+   },
+   {
+    "q": "The author uses the phrase \"there is nothing positive about their consequences\" in order to ----.",
+    "options": [
+     "criticise climate scientists for using wrong data",
+     "clarify that the scientific term does not mean the effects are beneficial",
+     "suggest that feedbacks will slow down warming",
+     "show that methane is harmless",
+     "argue that the Arctic is not warming"
+    ],
+    "answer": 1,
+    "explain": "'positive feedback' terimi 'kendini besleyen' anlamında; yazar 'iyi' anlamına gelmediğini vurguluyor (yazarın amacı)."
+   },
+   {
+    "q": "It can be concluded from the last paragraph that increased plant growth in the Arctic ----.",
+    "options": [
+     "will completely stop future emissions",
+     "is the main cause of coastal collapse",
+     "has made permafrost refreeze",
+     "will damage roads and pipelines",
+     "is unlikely to fully compensate for carbon released by thawing"
+    ],
+    "answer": 4,
+    "explain": "'this uptake will not be large enough to offset the losses'. offset = compensate (eş anlam)."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "permafrost",
+    "tr": "donmuş toprak (permafrost)"
+   },
+   {
+    "w": "decompose",
+    "tr": "ayrışmak, çürümek"
+   },
+   {
+    "w": "thaw",
+    "tr": "çözülmek, erimek"
+   },
+   {
+    "w": "waterlogged",
+    "tr": "suya doymuş"
+   },
+   {
+    "w": "self-reinforcing",
+    "tr": "kendini güçlendiren"
+   },
+   {
+    "w": "collapse",
+    "tr": "çökmek"
+   },
+   {
+    "w": "vigorously",
+    "tr": "güçlü biçimde"
+   },
+   {
+    "w": "offset",
+    "tr": "dengelemek, telafi etmek"
+   },
+   {
+    "w": "uptake",
+    "tr": "alım, emilim"
+   }
+  ]
+ },
+ {
+  "id": "p014",
+  "title": "Shadows of Distant Worlds",
+  "topic": "astronomi",
+  "level": 2,
+  "words": 231,
+  "text": "Until the 1990s, no planet had been confirmed around a star like our Sun. Today, astronomers have catalogued more than five thousand such worlds, known as exoplanets. Most of them have never been seen directly, because a planet is extremely faint compared with the star it orbits. Instead, they are detected by the effects they have on their stars.\n\nThe most productive technique is the transit method. If a planet's orbit happens to be aligned with our line of sight, the planet passes in front of its star once every orbit and blocks a small fraction of its light. A telescope that monitors the star's brightness records a tiny, regular dip. The depth of the dip reveals the size of the planet relative to the star, while the time between dips gives the length of its year. Space telescopes such as Kepler and TESS have used this approach to discover thousands of candidates.\n\nThe method has limitations. Only planets with suitably aligned orbits can be detected, and a single dip may be caused by a passing object or by spots on the star itself. Therefore, astronomers usually require several transits and confirmation by another technique before they accept a discovery. When it works, however, the transit method can offer even more: as starlight passes through a planet's atmosphere during a transit, it carries chemical fingerprints that reveal which gases are present.",
+  "questions": [
+   {
+    "q": "According to the passage, most exoplanets have not been observed directly because ----.",
+    "options": [
+     "they are very dim compared with their host stars",
+     "they are too close to Earth",
+     "their orbits are never aligned with our line of sight",
+     "telescopes cannot measure brightness",
+     "they have no atmospheres"
+    ],
+    "answer": 0,
+    "explain": "'a planet is extremely faint compared with the star it orbits'. faint = dim."
+   },
+   {
+    "q": "According to the passage, the time between two dips in brightness indicates ----.",
+    "options": [
+     "the size of the planet",
+     "how long the planet takes to orbit its star",
+     "the gases in the planet's atmosphere",
+     "the distance between the star and Earth",
+     "the number of spots on the star"
+    ],
+    "answer": 1,
+    "explain": "'the time between dips gives the length of its year'. Tuzak: dip derinliği boyutu verir."
+   },
+   {
+    "q": "Astronomers require several transits before accepting a discovery mainly because ----.",
+    "options": [
+     "planets never pass in front of stars twice",
+     "Kepler and TESS cannot record dips",
+     "a single dip might have another cause",
+     "atmospheres block all starlight",
+     "the transit method is the least productive one"
+    ],
+    "answer": 2,
+    "explain": "'a single dip may be caused by a passing object or by spots ... Therefore ...' — neden-sonuç bağlacı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "catalogue",
+    "tr": "kataloglamak"
+   },
+   {
+    "w": "faint",
+    "tr": "sönük"
+   },
+   {
+    "w": "transit",
+    "tr": "geçiş"
+   },
+   {
+    "w": "aligned",
+    "tr": "hizalı"
+   },
+   {
+    "w": "line of sight",
+    "tr": "görüş hattı"
+   },
+   {
+    "w": "dip",
+    "tr": "düşüş"
+   },
+   {
+    "w": "candidate",
+    "tr": "aday"
+   },
+   {
+    "w": "fingerprint",
+    "tr": "parmak izi, iz"
+   }
+  ]
+ },
+ {
+  "id": "p015",
+  "title": "Seconds Before the Shaking",
+  "topic": "yerbilimi",
+  "level": 2,
+  "words": 226,
+  "text": "Despite more than a century of research, scientists still cannot predict earthquakes. No reliable signal has been found that tells us, days or hours in advance, exactly where and when a major rupture will occur. What seismologists can do is estimate long-term probabilities: they can say, for example, that a particular fault has a high chance of producing a large earthquake within the next few decades.\n\nA more modest but practical goal is early warning. An earthquake releases different kinds of waves. The first to arrive are primary or P-waves, which travel fast but usually cause little damage. They are followed by slower secondary or S-waves and surface waves, which produce most of the destructive shaking. Because electronic signals travel far faster than seismic waves, a network of sensors near the fault can detect the P-waves, estimate the size and location of the earthquake within seconds, and send an alert to areas further away before the strong shaking arrives.\n\nThe warning time is short, ranging from a few seconds to perhaps a minute, and places very close to the epicentre may receive no warning at all. Even so, a few seconds can be enough for trains to slow down, surgeons to stop operations and people to take cover under a table. Systems of this kind already operate in Japan, Mexico and parts of the United States.",
+  "questions": [
+   {
+    "q": "The main difference between prediction and early warning, as described in the passage, is that early warning ----.",
+    "options": [
+     "tells people days in advance when an earthquake will occur",
+     "detects an earthquake that has already started and alerts distant areas",
+     "is based on long-term probabilities for each fault",
+     "works only very close to the epicentre",
+     "prevents surface waves from forming"
+    ],
+    "answer": 1,
+    "explain": "Erken uyarı başlamış depremin P-dalgasını yakalayıp uzak bölgelere haber verir. Tuzak: 'days in advance' tahmin (prediction) tanımı ve mümkün değil."
+   },
+   {
+    "q": "According to the passage, early warning is possible because ----.",
+    "options": [
+     "P-waves cause the most damage",
+     "S-waves arrive before P-waves",
+     "sensors can predict earthquakes days earlier",
+     "surface waves travel faster than electronic signals",
+     "electronic signals travel faster than seismic waves"
+    ],
+    "answer": 4,
+    "explain": "'Because electronic signals travel far faster than seismic waves' — 'because' doğrudan dayanak."
+   },
+   {
+    "q": "It can be inferred from the passage that people living very near the epicentre ----.",
+    "options": [
+     "receive the longest warning time",
+     "feel only P-waves",
+     "are never affected by strong shaking",
+     "may not benefit from an early warning system",
+     "are warned a minute before the P-waves arrive"
+    ],
+    "answer": 3,
+    "explain": "'places very close to the epicentre may receive no warning at all'. Tuzak: 'longest warning' tersi."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "rupture",
+    "tr": "kırılma, yırtılma"
+   },
+   {
+    "w": "seismologist",
+    "tr": "sismolog"
+   },
+   {
+    "w": "fault",
+    "tr": "fay"
+   },
+   {
+    "w": "modest",
+    "tr": "mütevazı, ılımlı"
+   },
+   {
+    "w": "destructive",
+    "tr": "yıkıcı"
+   },
+   {
+    "w": "alert",
+    "tr": "uyarı"
+   },
+   {
+    "w": "epicentre",
+    "tr": "dış merkez"
+   },
+   {
+    "w": "take cover",
+    "tr": "sığınmak"
+   }
+  ]
+ },
+ {
+  "id": "p016",
+  "title": "Electricity Without Resistance",
+  "topic": "fizik",
+  "level": 2,
+  "words": 224,
+  "text": "When an electric current flows through an ordinary wire, the moving electrons collide with the vibrating atoms of the metal and lose energy as heat. This resistance is why cables become warm and why a portion of electricity is lost on its way from power stations to homes. In 1911, however, the Dutch physicist Heike Kamerlingh Onnes discovered something remarkable. When he cooled mercury to about four degrees above absolute zero, its electrical resistance suddenly disappeared.\n\nThis phenomenon, called superconductivity, has two striking features. First, a current started in a superconducting loop can continue to flow for years without any power source. Second, a superconductor pushes magnetic fields out of its interior, which allows a magnet to float above it. Explaining these effects took almost fifty years; the accepted theory states that, at very low temperatures, electrons form pairs that move through the material without scattering.\n\nSuperconductors are already essential in hospital MRI scanners and particle accelerators, where they create powerful magnetic fields. Their wider use, however, is limited by the need for extreme cooling, which is expensive and complex. In 1986, researchers discovered ceramic materials that become superconducting at much higher temperatures, though still far below room temperature. Since then, the search for a superconductor that works under everyday conditions has continued, and several widely publicised claims have failed to survive independent testing.",
+  "questions": [
+   {
+    "q": "According to the passage, ordinary wires lose energy because ----.",
+    "options": [
+     "magnetic fields are pushed out of the wire",
+     "electrons form pairs at low temperatures",
+     "electrons collide with vibrating atoms and produce heat",
+     "the wire is cooled below absolute zero",
+     "currents continue to flow for years"
+    ],
+    "answer": 2,
+    "explain": "İlk cümle: elektronlar titreşen atomlara çarpar, ısı olarak enerji kaybolur."
+   },
+   {
+    "q": "Which of the following is NOT mentioned as a feature or use of superconductors?",
+    "options": [
+     "They are used to transmit electricity to most homes today.",
+     "A current can flow in them without a power source.",
+     "They expel magnetic fields from their interior.",
+     "They are used in MRI scanners.",
+     "They are used in particle accelerators."
+    ],
+    "answer": 0,
+    "explain": "Ev elektrik iletiminde kullanıldığı söylenmiyor; aksine yaygın kullanım soğutma yüzünden sınırlı. NOT sorusunda metinde geçmeyeni ara."
+   },
+   {
+    "q": "The author's attitude towards claims of room-temperature superconductors is ----.",
+    "options": [
+     "enthusiastic, accepting them as proven",
+     "cautious, noting that several have not been confirmed",
+     "hostile, saying the search should stop",
+     "neutral, claiming they are all correct",
+     "uninterested, since such materials are useless"
+    ],
+    "answer": 1,
+    "explain": "'several widely publicised claims have failed to survive independent testing' — temkinli ton."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "collide",
+    "tr": "çarpışmak"
+   },
+   {
+    "w": "resistance",
+    "tr": "direnç"
+   },
+   {
+    "w": "remarkable",
+    "tr": "dikkat çekici"
+   },
+   {
+    "w": "phenomenon",
+    "tr": "olgu"
+   },
+   {
+    "w": "striking",
+    "tr": "çarpıcı"
+   },
+   {
+    "w": "interior",
+    "tr": "iç kısım"
+   },
+   {
+    "w": "accelerator",
+    "tr": "hızlandırıcı"
+   },
+   {
+    "w": "publicised",
+    "tr": "kamuoyuna duyurulmuş"
+   }
+  ]
+ },
+ {
+  "id": "p017",
+  "title": "Instructions Instead of Ingredients",
+  "topic": "tip",
+  "level": 2,
+  "words": 222,
+  "text": "Traditional vaccines usually expose the immune system to a weakened or inactivated virus, or to a purified piece of it. Producing these ingredients can take months, because the virus or its proteins must be grown in eggs or cell cultures. Messenger RNA vaccines follow a different strategy. Rather than delivering the viral protein itself, they deliver genetic instructions that allow the body's own cells to make a harmless piece of that protein for a short time.\n\nThe idea is decades old, but early attempts faced serious obstacles. Injected RNA was quickly destroyed and could trigger strong inflammation. Two advances solved much of the problem. Researchers found that slightly modifying the building blocks of RNA made it far less likely to provoke an unwanted immune reaction, and they developed tiny fat particles, called lipid nanoparticles, that protect the RNA and help it enter cells.\n\nWhen the COVID-19 pandemic began, these advances allowed vaccines to be designed within days of the virus's genetic sequence being published. Because the platform remains the same and only the instructions change, mRNA vaccines can in principle be updated quickly when a virus mutates. They are not without drawbacks: some formulations must be stored at very low temperatures, which complicates distribution in regions with poor infrastructure. Nevertheless, researchers are now testing the approach against influenza and even certain cancers.",
+  "questions": [
+   {
+    "q": "According to the passage, mRNA vaccines differ from traditional vaccines in that they ----.",
+    "options": [
+     "contain a weakened form of the whole virus",
+     "are grown in eggs for several months",
+     "do not involve the immune system",
+     "can be stored easily at room temperature",
+     "cause the body's cells to produce a piece of viral protein"
+    ],
+    "answer": 4,
+    "explain": "'deliver genetic instructions that allow the body's own cells to make a harmless piece of that protein'."
+   },
+   {
+    "q": "The two advances mentioned in the second paragraph were important because they ----.",
+    "options": [
+     "made RNA more stable and less likely to cause inflammation",
+     "allowed vaccines to be grown in cell cultures",
+     "removed the need for any delivery system",
+     "made the vaccines cheaper than traditional ones",
+     "reduced the time needed to publish genetic sequences"
+    ],
+    "answer": 0,
+    "explain": "Değiştirilmiş yapı taşları istenmeyen bağışıklık tepkisini azaltır, lipid nanopartiküller RNA'yı korur."
+   },
+   {
+    "q": "According to the passage, a disadvantage of some mRNA vaccines is that they ----.",
+    "options": [
+     "cannot be updated when a virus mutates",
+     "take years to design",
+     "are effective only against cancer",
+     "must be injected together with live viruses",
+     "require very cold storage, which makes distribution difficult"
+    ],
+    "answer": 4,
+    "explain": "'must be stored at very low temperatures, which complicates distribution'. Tuzak: 'cannot be updated' tersi."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "inactivated",
+    "tr": "etkisizleştirilmiş"
+   },
+   {
+    "w": "purified",
+    "tr": "saflaştırılmış"
+   },
+   {
+    "w": "obstacle",
+    "tr": "engel"
+   },
+   {
+    "w": "inflammation",
+    "tr": "iltihaplanma, enflamasyon"
+   },
+   {
+    "w": "provoke",
+    "tr": "tetiklemek, kışkırtmak"
+   },
+   {
+    "w": "mutate",
+    "tr": "mutasyona uğramak"
+   },
+   {
+    "w": "formulation",
+    "tr": "formülasyon"
+   },
+   {
+    "w": "infrastructure",
+    "tr": "altyapı"
+   }
+  ]
+ },
+ {
+  "id": "p018",
+  "title": "Air Through Molten Iron",
+  "topic": "muhendislik-tarihi",
+  "level": 2,
+  "words": 237,
+  "text": "In the early nineteenth century, iron was produced in two main forms. Cast iron, made in blast furnaces, contained a lot of carbon; it was cheap and easy to shape but brittle. Wrought iron contained very little carbon and was tough, yet it had to be produced by hand in small batches through a laborious process called puddling. Steel, with an intermediate carbon content, combined strength and toughness, but it was so expensive that it was used mainly for tools, springs and weapons.\n\nIn 1856, the English inventor Henry Bessemer announced a method that changed this situation. He blew air through molten pig iron in a large vessel known as a converter. The oxygen in the air reacted with carbon and silicon in the metal, and these reactions released so much heat that the iron stayed liquid without any additional fuel. In about twenty minutes, several tonnes of iron could be converted into steel.\n\nThe process was not an immediate success. Early Bessemer steel was often brittle, because the method did not remove phosphorus and left too much oxygen in the metal. The problems were solved by others: adding manganese improved quality, and in the late 1870s Sidney Gilchrist Thomas introduced a basic lining that captured phosphorus. With cheap steel available, railways, ships and skyscrapers could be built on a new scale. The Bessemer converter has long disappeared, but its central idea survives in modern oxygen steelmaking.",
+  "questions": [
+   {
+    "q": "According to the passage, before Bessemer's invention, steel was used mainly for tools and weapons because ----.",
+    "options": [
+     "it was more brittle than cast iron",
+     "it contained no carbon",
+     "it could be produced only in blast furnaces",
+     "it was too costly for large-scale use",
+     "it was weaker than wrought iron"
+    ],
+    "answer": 3,
+    "explain": "'it was so expensive that it was used mainly for tools, springs and weapons' (so...that = sonuç)."
+   },
+   {
+    "q": "It can be understood from the passage that the Bessemer process did not need additional fuel because ----.",
+    "options": [
+     "the converter was heated by electricity",
+     "pig iron melts at room temperature",
+     "the reactions of oxygen with carbon and silicon produced enough heat",
+     "manganese supplied extra heat",
+     "the process took only twenty minutes"
+    ],
+    "answer": 2,
+    "explain": "'these reactions released so much heat that the iron stayed liquid without any additional fuel'."
+   },
+   {
+    "q": "The author mentions Sidney Gilchrist Thomas in order to ----.",
+    "options": [
+     "claim that he invented the converter before Bessemer",
+     "argue that phosphorus improves steel quality",
+     "explain why the converter disappeared",
+     "show that later improvements were needed to make the process fully successful",
+     "suggest that Bessemer's idea was useless"
+    ],
+    "answer": 3,
+    "explain": "Paragrafın mantığı: 'not an immediate success ... The problems were solved by others'. Thomas fosforu tutan astarı getirdi."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "brittle",
+    "tr": "gevrek, kırılgan"
+   },
+   {
+    "w": "wrought iron",
+    "tr": "dövme demir"
+   },
+   {
+    "w": "laborious",
+    "tr": "zahmetli"
+   },
+   {
+    "w": "intermediate",
+    "tr": "ara, orta"
+   },
+   {
+    "w": "converter",
+    "tr": "konvertör"
+   },
+   {
+    "w": "molten",
+    "tr": "erimiş"
+   },
+   {
+    "w": "lining",
+    "tr": "astar, refrakter kaplama"
+   },
+   {
+    "w": "pig iron",
+    "tr": "pik demir"
+   }
+  ]
+ },
+ {
+  "id": "p019",
+  "title": "Cleaning the Exhaust",
+  "topic": "kimya",
+  "level": 2,
+  "words": 227,
+  "text": "A petrol engine does not burn its fuel perfectly. Along with carbon dioxide and water, its exhaust contains carbon monoxide, unburnt hydrocarbons and nitrogen oxides, all of which harm human health and contribute to smog. Since the 1970s, stricter air-quality laws in many countries have made it necessary to remove most of these pollutants before they leave the tailpipe.\n\nThe device that does this is the catalytic converter. Inside a metal case is a ceramic block with thousands of narrow channels, which give it an enormous surface area. The walls of these channels are coated with tiny amounts of precious metals, mainly platinum, palladium and rhodium. These metals act as catalysts: they speed up chemical reactions without being consumed themselves. Carbon monoxide and hydrocarbons are oxidised to carbon dioxide and water, while nitrogen oxides are reduced to harmless nitrogen.\n\nFor all three reactions to work efficiently at once, the engine must run with a very precise ratio of air to fuel. An oxygen sensor in the exhaust continuously sends information to the engine's computer, which adjusts the fuel supply many times per second. The converter also works poorly until it is hot, so a large share of emissions from a modern car occur in the first minutes after a cold start. Because the precious metals are valuable, catalytic converters have unfortunately become a frequent target of thieves.",
+  "questions": [
+   {
+    "q": "According to the passage, the precious metals in a catalytic converter ----.",
+    "options": [
+     "are consumed after each journey",
+     "convert carbon dioxide into carbon monoxide",
+     "accelerate reactions without being used up",
+     "cool the exhaust gases",
+     "replace the need for an oxygen sensor"
+    ],
+    "answer": 2,
+    "explain": "'they speed up chemical reactions without being consumed themselves'. speed up = accelerate; consumed = used up."
+   },
+   {
+    "q": "The oxygen sensor mentioned in the passage is needed in order to ----.",
+    "options": [
+     "measure the amount of platinum in the converter",
+     "heat the converter after a cold start",
+     "detect thieves",
+     "help keep the air-to-fuel ratio within a narrow range",
+     "increase the production of nitrogen oxides"
+    ],
+    "answer": 3,
+    "explain": "Sensör bilgi gönderir, bilgisayar yakıtı ayarlar — 'very precise ratio of air to fuel'."
+   },
+   {
+    "q": "It can be inferred from the passage that short car trips from a cold start ----.",
+    "options": [
+     "produce no pollutants at all",
+     "make the converter work most efficiently",
+     "produce relatively high emissions per kilometre",
+     "damage the ceramic block",
+     "require no fuel adjustment"
+    ],
+    "answer": 2,
+    "explain": "Konvertör ısınana kadar kötü çalışır; emisyonun büyük kısmı ilk dakikalarda. Kısa yolculukta oran yüksek olur (çıkarım)."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "exhaust",
+    "tr": "egzoz"
+   },
+   {
+    "w": "pollutant",
+    "tr": "kirletici"
+   },
+   {
+    "w": "tailpipe",
+    "tr": "egzoz borusu"
+   },
+   {
+    "w": "precious metal",
+    "tr": "değerli metal"
+   },
+   {
+    "w": "oxidise",
+    "tr": "oksitlemek"
+   },
+   {
+    "w": "reduce",
+    "tr": "indirgemek"
+   },
+   {
+    "w": "ratio",
+    "tr": "oran"
+   },
+   {
+    "w": "emission",
+    "tr": "salım, emisyon"
+   }
+  ]
+ },
+ {
+  "id": "p020",
+  "title": "Forecasting with Machines",
+  "topic": "yapay-zeka",
+  "level": 2,
+  "words": 222,
+  "text": "For more than half a century, weather forecasts have been produced by numerical models. These programs divide the atmosphere into millions of boxes and solve the physical equations of fluid motion, heat and moisture for each one. They are remarkably skilful, but they require some of the most powerful supercomputers in the world, and a single global forecast can take hours of computing time.\n\nIn the past few years, a different approach has emerged. Technology companies and research centres have trained machine-learning models on decades of past weather data. Instead of solving physical equations, these models learn statistical patterns that link the state of the atmosphere at one moment to its state a few hours later. Once trained, they can produce a ten-day global forecast in about a minute on a single processor, and in several tests their accuracy has matched or exceeded that of leading traditional models for many variables.\n\nMeteorologists, however, are not ready to abandon physics. Machine-learning models are trained on data that were themselves created with the help of traditional models, so they still depend on them. They may also perform poorly for rare and extreme events, which by definition appear infrequently in the training data. Many experts therefore expect a hybrid future, in which physical models and machine learning work together, each compensating for the other's weaknesses.",
+  "questions": [
+   {
+    "q": "According to the passage, a major advantage of machine-learning forecasts is that they ----.",
+    "options": [
+     "solve the physical equations more precisely",
+     "do not require any past data",
+     "always predict extreme events accurately",
+     "have replaced traditional models completely",
+     "can be produced far faster and with much less computing power"
+    ],
+    "answer": 4,
+    "explain": "'ten-day global forecast in about a minute on a single processor'. Tuzak: 'replaced completely' metnin tersi."
+   },
+   {
+    "q": "Meteorologists are reluctant to abandon physical models partly because ----.",
+    "options": [
+     "physical models are cheaper to run",
+     "machine-learning models are never accurate",
+     "rare events appear frequently in training data",
+     "supercomputers are no longer available",
+     "machine-learning models rely on data produced with the help of those models"
+    ],
+    "answer": 4,
+    "explain": "'trained on data that were themselves created with the help of traditional models'."
+   },
+   {
+    "q": "The passage suggests that the future of weather forecasting will most likely ----.",
+    "options": [
+     "rely only on machine learning",
+     "return to forecasts made without computers",
+     "combine physical and machine-learning methods",
+     "ignore extreme weather events",
+     "depend on a single global model"
+    ],
+    "answer": 2,
+    "explain": "'Many experts therefore expect a hybrid future'."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "numerical",
+    "tr": "sayısal"
+   },
+   {
+    "w": "equation",
+    "tr": "denklem"
+   },
+   {
+    "w": "moisture",
+    "tr": "nem"
+   },
+   {
+    "w": "emerge",
+    "tr": "ortaya çıkmak"
+   },
+   {
+    "w": "exceed",
+    "tr": "aşmak"
+   },
+   {
+    "w": "abandon",
+    "tr": "terk etmek"
+   },
+   {
+    "w": "infrequently",
+    "tr": "seyrek"
+   },
+   {
+    "w": "compensate",
+    "tr": "telafi etmek"
+   },
+   {
+    "w": "hybrid",
+    "tr": "karma"
+   }
+  ]
+ },
+ {
+  "id": "p021",
+  "title": "The Smallest Atom, the Biggest Threat",
+  "topic": "malzeme",
+  "level": 3,
+  "words": 263,
+  "text": "High-strength steels have allowed engineers to build lighter bridges, safer cars and deeper offshore wells. Paradoxically, the stronger a steel is, the more vulnerable it tends to be to one of the smallest of all intruders: hydrogen. Because hydrogen atoms are tiny, they can diffuse into the crystal lattice of steel even at room temperature. Sources are surprisingly common, ranging from corrosion reactions and acid pickling to welding with damp electrodes and electroplating.\n\nOnce inside, hydrogen atoms tend to accumulate at regions of high stress, such as the tip of a small crack or a notch. There they weaken the bonds between iron atoms and promote cracking at loads that the material would normally carry without difficulty. The resulting failure, known as hydrogen embrittlement, is particularly treacherous because it is often delayed. A bolt may be tightened without any sign of trouble and then fracture hours or even weeks later, after enough hydrogen has migrated to the critical spot.\n\nAlthough the phenomenon has been studied for more than a century, its exact mechanism is still debated, and several competing theories may each describe part of the truth. In practice, engineers rely on a combination of measures: limiting the hardness of components exposed to hydrogen, baking parts after electroplating so that absorbed hydrogen can escape, and designing microstructures containing fine particles that trap hydrogen harmlessly. The issue is gaining new urgency. If hydrogen is to be transported through existing gas pipelines or stored at high pressure in steel tanks, the compatibility of these materials with hydrogen will have to be demonstrated rather than assumed.",
+  "questions": [
+   {
+    "q": "It can be understood from the passage that, in terms of hydrogen embrittlement, higher strength in steel ----.",
+    "options": [
+     "completely prevents hydrogen from entering the lattice",
+     "makes delayed failures impossible",
+     "has no connection with the problem",
+     "is achieved mainly by adding hydrogen",
+     "generally increases the risk rather than reducing it"
+    ],
+    "answer": 4,
+    "explain": "'Paradoxically, the stronger a steel is, the more vulnerable it tends to be' — the more..., the more... karşılaştırma yapısı."
+   },
+   {
+    "q": "According to the passage, hydrogen embrittlement is especially dangerous because ----.",
+    "options": [
+     "failure may occur long after a component has been loaded",
+     "it can be detected only at very high temperatures",
+     "it affects only damp electrodes",
+     "it always causes visible deformation before fracture",
+     "it occurs only in steels with low hardness"
+    ],
+    "answer": 0,
+    "explain": "'often delayed ... fracture hours or even weeks later'. treacherous = sinsi. Tuzak: 'visible deformation' tersi."
+   },
+   {
+    "q": "The author's main point in the last paragraph is that ----.",
+    "options": [
+     "the mechanism of embrittlement has finally been fully explained",
+     "despite incomplete understanding, practical measures exist, and new hydrogen uses make the issue more pressing",
+     "existing pipelines are already proven to be safe for hydrogen",
+     "baking parts after electroplating increases hydrogen content",
+     "hydrogen should never be stored in steel tanks"
+    ],
+    "answer": 1,
+    "explain": "Mekanizma tartışmalı ('Although ... still debated') ama pratik önlemler var; 'gaining new urgency'. Tuzak: 'already proven' — metin 'demonstrated rather than assumed' diyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "vulnerable",
+    "tr": "savunmasız, hassas"
+   },
+   {
+    "w": "intruder",
+    "tr": "davetsiz misafir"
+   },
+   {
+    "w": "diffuse",
+    "tr": "yayınmak (difüzyon)"
+   },
+   {
+    "w": "lattice",
+    "tr": "kafes (kristal)"
+   },
+   {
+    "w": "pickling",
+    "tr": "asitle temizleme, dekapaj"
+   },
+   {
+    "w": "accumulate",
+    "tr": "birikmek"
+   },
+   {
+    "w": "notch",
+    "tr": "çentik"
+   },
+   {
+    "w": "treacherous",
+    "tr": "sinsi, tehlikeli"
+   },
+   {
+    "w": "migrate",
+    "tr": "göç etmek, ilerlemek"
+   },
+   {
+    "w": "compatibility",
+    "tr": "uyumluluk"
+   }
+  ]
+ },
+ {
+  "id": "p022",
+  "title": "Making Steel Without Coal",
+  "topic": "malzeme",
+  "level": 3,
+  "words": 263,
+  "text": "Steel is indispensable to modern life, but its production is responsible for roughly seven to nine percent of global carbon dioxide emissions. Most of these emissions arise in the blast furnace, where coke made from coal serves both as a fuel and as the agent that removes oxygen from iron ore. Because this chemical role cannot be performed by electricity alone, decarbonising steel is widely regarded as one of the hardest challenges of the energy transition.\n\nOne promising route replaces carbon with hydrogen. In direct reduction, iron ore pellets react with a hot reducing gas in a shaft furnace below the melting point of iron, producing a porous solid known as direct reduced iron, or sponge iron. Plants of this type already operate in regions with cheap natural gas, which supplies a mixture of hydrogen and carbon monoxide. If the gas is pure hydrogen produced with renewable electricity, the main by-product becomes water vapour instead of carbon dioxide. The sponge iron is then usually melted in an electric arc furnace.\n\nThe obstacles are considerable. Producing enough green hydrogen for a single large steelworks would require vast amounts of renewable electricity. Direct reduction also works best with high-grade ore containing few impurities, and such ore is in limited supply. Furthermore, existing blast furnaces represent enormous investments that companies are reluctant to abandon before the end of their working lives. For these reasons, many producers are pursuing transitional strategies, for instance injecting hydrogen into existing furnaces or capturing carbon dioxide, while pilot plants test whether fully hydrogen-based steelmaking can operate reliably on an industrial scale.",
+  "questions": [
+   {
+    "q": "According to the passage, decarbonising steel is particularly difficult because ----.",
+    "options": [
+     "steel production accounts for most global emissions",
+     "electric arc furnaces cannot melt iron",
+     "hydrogen reacts too slowly with ore",
+     "carbon plays a chemical role in removing oxygen from ore, not just a heating role",
+     "iron ore contains no oxygen"
+    ],
+    "answer": 3,
+    "explain": "'coke ... serves both as a fuel and as the agent that removes oxygen ... cannot be performed by electricity alone'. Tuzak: 'most global emissions' — metin %7–9 diyor."
+   },
+   {
+    "q": "It is stated in the passage that direct reduced iron ----.",
+    "options": [
+     "is made in a blast furnace using coke",
+     "can be produced only with pure hydrogen",
+     "contains more impurities than any other product",
+     "is the final product sold to customers",
+     "is produced in solid form without melting the iron"
+    ],
+    "answer": 4,
+    "explain": "'below the melting point of iron, producing a porous solid'. Tuzak: doğal gazla da üretilebiliyor ('already operate ... natural gas')."
+   },
+   {
+    "q": "Which of the following can be inferred about steel producers from the last paragraph?",
+    "options": [
+     "Most have already closed their blast furnaces.",
+     "They have unlimited access to high-grade ore.",
+     "Many prefer intermediate steps rather than replacing blast furnaces immediately.",
+     "They consider hydrogen-based steelmaking fully proven.",
+     "They are not interested in reducing emissions."
+    ],
+    "answer": 2,
+    "explain": "'reluctant to abandon' + 'pursuing transitional strategies' — ara adımlar. Tuzak: 'fully proven' — pilot tesisler hâlâ test ediyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "indispensable",
+    "tr": "vazgeçilmez"
+   },
+   {
+    "w": "coke",
+    "tr": "kok"
+   },
+   {
+    "w": "agent",
+    "tr": "etken madde"
+   },
+   {
+    "w": "decarbonise",
+    "tr": "karbonsuzlaştırmak"
+   },
+   {
+    "w": "reduction",
+    "tr": "indirgeme"
+   },
+   {
+    "w": "porous",
+    "tr": "gözenekli"
+   },
+   {
+    "w": "by-product",
+    "tr": "yan ürün"
+   },
+   {
+    "w": "impurity",
+    "tr": "safsızlık"
+   },
+   {
+    "w": "reluctant",
+    "tr": "isteksiz"
+   },
+   {
+    "w": "transitional",
+    "tr": "geçiş dönemine ait"
+   }
+  ]
+ },
+ {
+  "id": "p023",
+  "title": "A Star in a Bottle",
+  "topic": "enerji",
+  "level": 3,
+  "words": 266,
+  "text": "The Sun shines because, in its core, hydrogen nuclei fuse into helium and release enormous amounts of energy. Reproducing this process on Earth has been a goal of physicists since the 1950s. Fusion fuel is abundant, the reactions produce no carbon dioxide, and, unlike fission reactors, a fusion plant would not generate long-lived radioactive waste in large quantities or be at risk of a runaway chain reaction.\n\nThe difficulty lies in the conditions required. Atomic nuclei are positively charged and repel each other, so they must collide at extremely high speeds, which means heating the fuel to temperatures of the order of a hundred million degrees. At such temperatures, matter becomes a plasma that would destroy any container it touched. The most developed approach, the tokamak, holds the plasma in a doughnut-shaped chamber using powerful magnetic fields. An alternative, inertial confinement, fires intense lasers at a tiny fuel pellet to compress and heat it in a fraction of a second.\n\nIn December 2022, the National Ignition Facility in the United States reported that a laser experiment had released more fusion energy than the laser light delivered to the target. The achievement was widely celebrated as a historic milestone. Yet it must be interpreted with care: the lasers themselves consumed far more electricity than the fusion reaction produced, and a power plant would need to repeat such reactions many times per second. Meanwhile, the international ITER tokamak under construction in France has faced repeated delays and rising costs. Fusion, critics joke, has always been thirty years away; its supporters reply that the joke is finally becoming outdated.",
+  "questions": [
+   {
+    "q": "According to the passage, extremely high temperatures are needed for fusion because ----.",
+    "options": [
+     "plasma cools down too quickly in magnetic fields",
+     "fusion produces long-lived radioactive waste",
+     "lasers cannot operate at low temperatures",
+     "positively charged nuclei repel each other and must collide at great speed",
+     "hydrogen turns into helium only in the Sun"
+    ],
+    "answer": 3,
+    "explain": "'nuclei are positively charged and repel each other, so they must collide at extremely high speeds, which means heating...'."
+   },
+   {
+    "q": "The author warns that the 2022 result should be \"interpreted with care\" because ----.",
+    "options": [
+     "the experiment was never repeated",
+     "the total energy used by the lasers was much greater than the energy produced",
+     "the laser light delivered no energy to the target",
+     "ITER had already achieved the same result",
+     "the reaction produced carbon dioxide"
+    ],
+    "answer": 1,
+    "explain": "'the lasers themselves consumed far more electricity than the fusion reaction produced'. Hedefe giden ışık enerjisi < füzyon, ama toplam elektrik >> füzyon."
+   },
+   {
+    "q": "The tone of the final sentence can best be described as ----.",
+    "options": [
+     "cautiously hopeful, while acknowledging past scepticism",
+     "deeply pessimistic about fusion research",
+     "angry at critics of fusion",
+     "completely indifferent to fusion's future",
+     "certain that fusion power plants already exist"
+    ],
+    "answer": 0,
+    "explain": "Eleştirmenlerin şakası (hep 30 yıl uzakta) aktarılıyor, destekçiler şakanın eskidiğini söylüyor — temkinli umut."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "nucleus (pl. nuclei)",
+    "tr": "çekirdek"
+   },
+   {
+    "w": "fuse",
+    "tr": "kaynaşmak (füzyon)"
+   },
+   {
+    "w": "fission",
+    "tr": "fisyon, bölünme"
+   },
+   {
+    "w": "runaway",
+    "tr": "kontrolden çıkan"
+   },
+   {
+    "w": "repel",
+    "tr": "itmek"
+   },
+   {
+    "w": "confinement",
+    "tr": "hapsetme"
+   },
+   {
+    "w": "pellet",
+    "tr": "pelet, küçük tablet"
+   },
+   {
+    "w": "milestone",
+    "tr": "dönüm noktası"
+   },
+   {
+    "w": "outdated",
+    "tr": "modası geçmiş"
+   }
+  ]
+ },
+ {
+  "id": "p024",
+  "title": "Fragile Qubits",
+  "topic": "fizik",
+  "level": 3,
+  "words": 273,
+  "text": "Ordinary computers process information in bits, each of which is either a zero or a one. Quantum computers use qubits, which can exist in a superposition of both states at once. When several qubits become entangled, their states are linked in such a way that describing one of them independently of the others is no longer possible. In principle, these properties allow a quantum computer to explore certain problems in ways that no classical machine could match, such as simulating complex molecules or factoring very large numbers.\n\nThe same features that make qubits powerful also make them extraordinarily fragile. Any unwanted interaction with the environment, whether a stray vibration, a fluctuation in temperature or a passing electromagnetic signal, can disturb the delicate quantum state. This process, known as decoherence, causes the qubit to lose its information, often within a fraction of a second. For this reason, many leading devices operate inside refrigerators cooled to a few thousandths of a degree above absolute zero and are carefully shielded from outside disturbances.\n\nEven with such precautions, errors are unavoidable. The proposed solution is quantum error correction, in which the information of one reliable \"logical\" qubit is spread across many physical qubits, so that errors can be detected and fixed without directly measuring, and thereby destroying, the stored information. The cost is steep: estimates suggest that a single logical qubit might require hundreds or even thousands of physical ones. Recent experiments have shown that adding more physical qubits can indeed reduce the error rate, a crucial proof of principle. Nevertheless, the large, fault-tolerant machines needed for the most valuable applications remain, by most estimates, years away.",
+  "questions": [
+   {
+    "q": "According to the passage, decoherence ----.",
+    "options": [
+     "is the process that creates entanglement",
+     "is caused by unwanted interactions with the environment",
+     "improves the stability of logical qubits",
+     "takes place only in classical computers",
+     "occurs only at room temperature"
+    ],
+    "answer": 1,
+    "explain": "'Any unwanted interaction with the environment ... This process, known as decoherence'."
+   },
+   {
+    "q": "Why does quantum error correction avoid measuring the stored information directly?",
+    "options": [
+     "Because measurement would destroy the information.",
+     "Because measurement requires room temperature.",
+     "Because physical qubits cannot be measured at all.",
+     "Because it would make the computer classical permanently.",
+     "Because measurement is too expensive."
+    ],
+    "answer": 0,
+    "explain": "'without directly measuring, and thereby destroying, the stored information' — thereby = böylece (sonuç)."
+   },
+   {
+    "q": "It can be inferred from the last paragraph that the recent experiments ----.",
+    "options": [
+     "are encouraging but do not mean that useful large machines are ready",
+     "proved that a logical qubit needs only one physical qubit",
+     "showed that adding qubits always increases errors",
+     "made fault-tolerant machines widely available",
+     "ended the need for refrigeration"
+    ],
+    "answer": 0,
+    "explain": "'crucial proof of principle. Nevertheless ... remain years away' — umut verici ama hazır değil."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "superposition",
+    "tr": "süperpozisyon, üst üste binme"
+   },
+   {
+    "w": "entangled",
+    "tr": "dolanık"
+   },
+   {
+    "w": "fragile",
+    "tr": "kırılgan"
+   },
+   {
+    "w": "stray",
+    "tr": "başıboş, istenmeyen"
+   },
+   {
+    "w": "fluctuation",
+    "tr": "dalgalanma"
+   },
+   {
+    "w": "decoherence",
+    "tr": "eşevresizlik"
+   },
+   {
+    "w": "shield",
+    "tr": "korumak, perdelemek"
+   },
+   {
+    "w": "precaution",
+    "tr": "önlem"
+   },
+   {
+    "w": "steep",
+    "tr": "yüksek (maliyet)"
+   },
+   {
+    "w": "fault-tolerant",
+    "tr": "hataya dayanıklı"
+   }
+  ]
+ },
+ {
+  "id": "p025",
+  "title": "Beyond the Genetic Code",
+  "topic": "biyoloji",
+  "level": 3,
+  "words": 263,
+  "text": "Almost every cell in your body contains the same DNA, yet a nerve cell and a liver cell look and behave very differently. The explanation lies not in the genes themselves but in which genes are switched on or off. The study of such heritable changes in gene activity that do not involve alterations to the DNA sequence is called epigenetics.\n\nOne of the best-understood mechanisms is DNA methylation, in which small chemical tags called methyl groups are attached to the DNA, usually silencing nearby genes. Another involves the proteins called histones, around which DNA is wound. Chemical modifications to histones can loosen or tighten this packaging, making genes more or less accessible to the machinery that reads them. These patterns are copied when cells divide, which is why a skin cell gives rise to more skin cells rather than to neurons.\n\nWhat has attracted public interest is evidence that the environment can influence these marks. Diet, stress, smoking and exposure to pollutants have all been associated with changes in methylation. Some studies of people conceived during periods of famine have reported differences in methylation decades later. Claims that such changes are routinely passed on across many human generations, however, deserve caution. In mammals, most epigenetic marks are erased in the germ cells and in the early embryo, and convincing evidence of inheritance over several generations comes mainly from plants and laboratory animals. Epigenetics is therefore best understood not as a rejection of genetics but as an additional layer of regulation that helps explain how a single genome can produce many different outcomes.",
+  "questions": [
+   {
+    "q": "According to the passage, nerve cells and liver cells differ mainly because ----.",
+    "options": [
+     "they contain completely different DNA sequences",
+     "liver cells have no histones",
+     "nerve cells lack methyl groups entirely",
+     "different sets of genes are active in them",
+     "they are produced by different parents"
+    ],
+    "answer": 3,
+    "explain": "'The explanation lies not in the genes themselves but in which genes are switched on or off'."
+   },
+   {
+    "q": "The author refers to studies of people conceived during famine in order to ----.",
+    "options": [
+     "prove that epigenetic changes are always inherited for many generations",
+     "give an example of possible environmental effects on epigenetic marks",
+     "show that diet has no influence on methylation",
+     "argue that genetics should be rejected",
+     "explain how histones are modified"
+    ],
+    "answer": 1,
+    "explain": "Çevrenin etkisine örnek. Tuzak: 'always inherited for many generations' — yazar hemen ardından 'deserve caution' diyor."
+   },
+   {
+    "q": "Which of the following best summarises the author's view in the last part of the passage?",
+    "options": [
+     "Epigenetics proves that genes play no role in development.",
+     "Epigenetic marks are never erased in mammals.",
+     "Plants and humans inherit epigenetic marks in exactly the same way.",
+     "Epigenetics complements genetics, and strong claims about human inheritance should be treated carefully.",
+     "Environmental factors have no connection with epigenetic changes."
+    ],
+    "answer": 3,
+    "explain": "'not as a rejection of genetics but as an additional layer' + 'deserve caution'. Ana bağlacı eşleştir: not... but."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "heritable",
+    "tr": "kalıtsal, aktarılabilir"
+   },
+   {
+    "w": "alteration",
+    "tr": "değişiklik"
+   },
+   {
+    "w": "methylation",
+    "tr": "metilasyon"
+   },
+   {
+    "w": "silence",
+    "tr": "susturmak (geni)"
+   },
+   {
+    "w": "wind (wound)",
+    "tr": "sarmak (sarılmış)"
+   },
+   {
+    "w": "accessible",
+    "tr": "erişilebilir"
+   },
+   {
+    "w": "conceive",
+    "tr": "ana rahmine düşmek"
+   },
+   {
+    "w": "famine",
+    "tr": "kıtlık"
+   },
+   {
+    "w": "erase",
+    "tr": "silmek"
+   },
+   {
+    "w": "germ cell",
+    "tr": "üreme hücresi"
+   }
+  ]
+ },
+ {
+  "id": "p026",
+  "title": "The Other Carbon Problem",
+  "topic": "ekoloji",
+  "level": 3,
+  "words": 273,
+  "text": "Discussions of carbon dioxide usually focus on its role in warming the planet. Yet roughly a quarter of the carbon dioxide released by human activities does not stay in the atmosphere at all; it dissolves in the oceans. This uptake has slowed climate change considerably, but it comes at a chemical cost. When carbon dioxide dissolves in seawater, it forms carbonic acid, which releases hydrogen ions and lowers the water's pH. Since the beginning of the industrial era, the average pH of surface seawater has fallen by about 0.1 units. Because the pH scale is logarithmic, this apparently small change corresponds to an increase in acidity of roughly thirty percent.\n\nThe consequences are most serious for organisms that build shells or skeletons from calcium carbonate, including corals, oysters, sea snails and some plankton. The extra hydrogen ions combine with carbonate ions, reducing the amount available for building shells. Under these conditions, organisms must spend more energy to grow, and in extreme cases existing shells may begin to dissolve. Laboratory experiments have shown deformed shells in larvae of some species, and natural sites near volcanic vents, where carbon dioxide bubbles from the seabed, offer a preview of how communities may change, with fewer calcifying species and more seaweeds.\n\nNot every species is equally affected, and some appear surprisingly tolerant. The effects also interact with warming and with the loss of oxygen in the oceans, which makes predictions difficult. What is clear, however, is that ocean acidification cannot be solved by approaches that cool the planet without reducing carbon dioxide, such as reflecting sunlight back into space. Only lowering emissions addresses both problems at once.",
+  "questions": [
+   {
+    "q": "The author mentions that the pH scale is logarithmic in order to ----.",
+    "options": [
+     "argue that the change in pH is negligible",
+     "explain how carbon dioxide warms the atmosphere",
+     "prove that seawater has become alkaline",
+     "show that a small numerical change represents a large change in acidity",
+     "describe how pH is measured in laboratories"
+    ],
+    "answer": 3,
+    "explain": "Yazarın amacı: 0,1'lik değişim küçük görünse de logaritmik ölçekte ~%30 asitlik artışı demek."
+   },
+   {
+    "q": "According to the passage, the natural sites near volcanic vents are useful because they ----.",
+    "options": [
+     "prevent the acidification of the surrounding ocean",
+     "show how marine communities may look under higher carbon dioxide levels",
+     "are rich in calcifying species",
+     "contain no seaweeds",
+     "release oxygen into the water"
+    ],
+    "answer": 1,
+    "explain": "'offer a preview of how communities may change' — gelecek koşulların doğal laboratuvarı. Tuzak: 'rich in calcifying species' tersi."
+   },
+   {
+    "q": "It can be inferred from the last paragraph that reflecting sunlight into space ----.",
+    "options": [
+     "is the only way to solve both problems",
+     "increases carbon dioxide emissions directly",
+     "might reduce warming but would not stop ocean acidification",
+     "has already reversed acidification",
+     "makes all marine species tolerant"
+    ],
+    "answer": 2,
+    "explain": "Gezegeni CO2 azaltmadan soğutan yöntemler asitlenmeyi çözmez; sadece emisyon azaltımı ikisini birden çözer."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "dissolve",
+    "tr": "çözünmek"
+   },
+   {
+    "w": "uptake",
+    "tr": "alım, soğurma"
+   },
+   {
+    "w": "logarithmic",
+    "tr": "logaritmik"
+   },
+   {
+    "w": "acidity",
+    "tr": "asitlik"
+   },
+   {
+    "w": "larva (pl. larvae)",
+    "tr": "larva"
+   },
+   {
+    "w": "vent",
+    "tr": "baca, çıkış (volkanik)"
+   },
+   {
+    "w": "calcify",
+    "tr": "kireçlenmek, kalsiyum biriktirmek"
+   },
+   {
+    "w": "tolerant",
+    "tr": "dayanıklı, hoşgörülü"
+   },
+   {
+    "w": "preview",
+    "tr": "ön izleme"
+   }
+  ]
+ },
+ {
+  "id": "p027",
+  "title": "The Missing Mass",
+  "topic": "astronomi",
+  "level": 3,
+  "words": 287,
+  "text": "In the 1970s, the American astronomer Vera Rubin and her colleagues measured how fast stars and gas move around the centres of spiral galaxies. According to Newton's laws, objects far from the bright centre, where most of the visible matter lies, should orbit more slowly, just as Neptune moves more slowly around the Sun than Mercury does. Instead, Rubin found that the orbital speeds remained roughly constant far into the outer regions. If only visible matter were present, these galaxies should have flown apart long ago.\n\nThe most widely accepted explanation is that galaxies are embedded in vast halos of dark matter, a form of matter that exerts gravity but neither emits nor absorbs light. Supporting evidence has since come from several independent directions: the way clusters of galaxies bend the light of more distant objects, the pattern of tiny temperature variations in the cosmic microwave background, and computer simulations showing that the large-scale structure of the universe could not have formed in the available time without additional mass. Taken together, these observations suggest that dark matter outweighs ordinary matter by a factor of about five.\n\nWhat dark matter actually consists of, however, remains unknown. For decades, a leading candidate was a class of heavy particles that interact only weakly with ordinary matter, but increasingly sensitive underground detectors have so far failed to observe them. A minority of physicists argue that the problem lies not in missing matter but in our theory of gravity, which may need modification at very low accelerations. Such theories explain galaxy rotation well but struggle to account for observations of galaxy clusters. The debate illustrates how science often advances: a single unexpected measurement can expose a gap that takes generations to fill.",
+  "questions": [
+   {
+    "q": "Rubin's observations were surprising because ----.",
+    "options": [
+     "Neptune was found to move faster than Mercury",
+     "spiral galaxies were shown to contain no gas",
+     "stars far from galactic centres moved faster than expected from visible matter alone",
+     "galaxies were observed to be flying apart",
+     "Newton's laws were confirmed exactly"
+    ],
+    "answer": 2,
+    "explain": "Beklenti: dışta yavaşlama; bulgu: hız sabit kaldı. Tuzak: Neptün/Merkür sadece benzetme."
+   },
+   {
+    "q": "Which of the following is NOT presented as evidence for dark matter?",
+    "options": [
+     "The bending of light by galaxy clusters",
+     "Temperature variations in the cosmic microwave background",
+     "Simulations of the formation of large-scale structure",
+     "The direct detection of heavy, weakly interacting particles underground",
+     "The rotation speeds of stars in spiral galaxies"
+    ],
+    "answer": 3,
+    "explain": "Yeraltı dedektörleri bu parçacıkları 'failed to observe' — kanıt değil. NOT sorusu: metinle çelişeni seç."
+   },
+   {
+    "q": "The author's purpose in the last sentence is to ----.",
+    "options": [
+     "draw a general lesson about how scientific progress works",
+     "reject the existence of dark matter",
+     "prove that gravity theories must be modified",
+     "criticise Rubin's measurements",
+     "suggest that the debate has been settled"
+    ],
+    "answer": 0,
+    "explain": "'The debate illustrates how science often advances' — genel bir ders/çıkarım."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "orbital",
+    "tr": "yörüngesel"
+   },
+   {
+    "w": "embedded",
+    "tr": "gömülü"
+   },
+   {
+    "w": "halo",
+    "tr": "hale"
+   },
+   {
+    "w": "exert",
+    "tr": "uygulamak (kuvvet)"
+   },
+   {
+    "w": "emit",
+    "tr": "yaymak"
+   },
+   {
+    "w": "cluster",
+    "tr": "küme"
+   },
+   {
+    "w": "outweigh",
+    "tr": "ağır basmak"
+   },
+   {
+    "w": "candidate",
+    "tr": "aday"
+   },
+   {
+    "w": "modification",
+    "tr": "değişiklik"
+   },
+   {
+    "w": "expose",
+    "tr": "ortaya çıkarmak"
+   }
+  ]
+ },
+ {
+  "id": "p028",
+  "title": "The Drifting Continents",
+  "topic": "yerbilimi",
+  "level": 3,
+  "words": 268,
+  "text": "In 1912, the German meteorologist Alfred Wegener proposed that the continents had once been joined in a single landmass and had slowly drifted apart. His evidence was varied and, in hindsight, persuasive. The coastlines of South America and Africa fit together like pieces of a puzzle; identical fossils of land-dwelling reptiles appeared on continents now separated by oceans; and rock formations and traces of ancient glaciers lined up when the continents were reassembled.\n\nMost geologists nevertheless rejected the idea for several decades. Their main objection was not to Wegener's observations but to his mechanism. He suggested that continents ploughed through the ocean floor, pushed by forces related to Earth's rotation, yet physicists calculated that such forces were far too weak. Without a plausible cause, many scientists found it easier to imagine vanished land bridges that had once connected the continents. It did not help that Wegener was an outsider to geology.\n\nThe breakthrough came from the ocean floor itself. In the 1950s and 1960s, surveys revealed a vast system of underwater mountain ridges and, alongside them, symmetrical stripes of rock with alternating magnetic orientations. These stripes were explained by the idea that new crust forms at the ridges and spreads outward, recording reversals of Earth's magnetic field as it cools. Combined with the discovery that old crust sinks back into the mantle at deep ocean trenches, this led to the theory of plate tectonics. Continents, it turned out, do not plough through the seafloor; they ride on moving plates. Wegener, who died on an expedition to Greenland in 1930, did not live to see his central idea vindicated.",
+  "questions": [
+   {
+    "q": "According to the passage, most geologists rejected Wegener's idea mainly because ----.",
+    "options": [
+     "he could not offer a convincing mechanism for continental movement",
+     "his fossil evidence was shown to be false",
+     "the coastlines of the continents did not match",
+     "he had discovered magnetic stripes on the ocean floor",
+     "he was a famous geologist with rival theories"
+    ],
+    "answer": 0,
+    "explain": "'Their main objection was not to Wegener's observations but to his mechanism' — not X but Y yapısı."
+   },
+   {
+    "q": "The magnetic stripes on the ocean floor are important because they ----.",
+    "options": [
+     "prove that land bridges once connected the continents",
+     "show that Earth's magnetic field has never changed",
+     "were the main evidence in Wegener's 1912 proposal",
+     "support the idea that new crust forms at ridges and spreads outward",
+     "indicate that continents plough through the seafloor"
+    ],
+    "answer": 3,
+    "explain": "Simetrik şeritler 'new crust forms at the ridges and spreads outward' ile açıklanıyor. Tuzak: Wegener'in kanıtı değil (1950–60'lar)."
+   },
+   {
+    "q": "It can be inferred from the passage that Wegener's theory was ----.",
+    "options": [
+     "correct in every detail",
+     "completely wrong and later abandoned",
+     "accepted immediately by physicists",
+     "based only on magnetic evidence",
+     "right in its central claim but wrong about how continents move"
+    ],
+    "answer": 4,
+    "explain": "Kıtalar hareket ediyor (doğru), ama 'do not plough through the seafloor; they ride on moving plates' (mekanizma yanlış). 'vindicated' = haklı çıkmak."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "drift",
+    "tr": "sürüklenmek"
+   },
+   {
+    "w": "in hindsight",
+    "tr": "geriye bakınca"
+   },
+   {
+    "w": "persuasive",
+    "tr": "ikna edici"
+   },
+   {
+    "w": "objection",
+    "tr": "itiraz"
+   },
+   {
+    "w": "plough",
+    "tr": "sürmek, yararak ilerlemek"
+   },
+   {
+    "w": "plausible",
+    "tr": "akla yatkın"
+   },
+   {
+    "w": "ridge",
+    "tr": "sırt (okyanus ortası)"
+   },
+   {
+    "w": "alternating",
+    "tr": "değişen, ardışık"
+   },
+   {
+    "w": "trench",
+    "tr": "hendek (okyanus çukuru)"
+   },
+   {
+    "w": "vindicate",
+    "tr": "haklı çıkarmak"
+   }
+  ]
+ },
+ {
+  "id": "p029",
+  "title": "Chemicals That Refuse to Break Down",
+  "topic": "kimya",
+  "level": 3,
+  "words": 266,
+  "text": "Per- and polyfluoroalkyl substances, commonly known as PFAS, are a family of several thousand synthetic chemicals that have been produced since the 1940s. Their defining feature is the bond between carbon and fluorine, one of the strongest in organic chemistry. This bond gives PFAS remarkable properties: they repel both water and oil, withstand high temperatures and resist chemical attack. As a result, they have been used in non-stick cookware, waterproof clothing, food packaging and fire-fighting foams.\n\nThe very stability that makes PFAS so useful also makes them a problem. Because natural processes break them down extremely slowly, if at all, they have earned the nickname \"forever chemicals\". They have now been detected in rainwater, soil, wildlife and the blood of most people tested in industrialised countries. Some well-studied PFAS have been linked to effects on the immune system, raised cholesterol and certain cancers, which has prompted regulators to restrict them and to set increasingly strict limits for drinking water.\n\nRemoving PFAS once they are in the environment is difficult and expensive. Activated carbon filters and specialised resins can capture many of them from water, but this only transfers the chemicals to another material that must then be disposed of. Destroying them generally requires very high temperatures or energy-intensive treatments, and researchers are investigating methods that break the carbon-fluorine bond under milder conditions. Many scientists argue that, given the size of the chemical family, regulating substances one at a time is too slow. They propose treating PFAS as a single class and limiting their use to applications that are essential and for which no safer alternatives exist.",
+  "questions": [
+   {
+    "q": "According to the passage, the carbon-fluorine bond is responsible for ----.",
+    "options": [
+     "both the useful properties of PFAS and their persistence in the environment",
+     "the low cost of fire-fighting foams",
+     "the rapid breakdown of PFAS in rainwater",
+     "the ability of PFAS to absorb water",
+     "the use of PFAS as a medicine"
+    ],
+    "answer": 0,
+    "explain": "Bağ yararlı özellikleri veriyor; 'The very stability that makes PFAS so useful also makes them a problem'. Tuzak: suyu 'repel' eder, emmez."
+   },
+   {
+    "q": "The author points out that filters and resins are not a complete solution because they ----.",
+    "options": [
+     "only move the chemicals into another material that still needs disposal",
+     "cannot capture any PFAS from water",
+     "destroy the carbon-fluorine bond too quickly",
+     "require milder conditions than other methods",
+     "produce new forms of PFAS"
+    ],
+    "answer": 0,
+    "explain": "'this only transfers the chemicals to another material that must then be disposed of'."
+   },
+   {
+    "q": "It can be inferred that the scientists mentioned in the last paragraph believe that ----.",
+    "options": [
+     "all PFAS should be allowed in consumer products",
+     "PFAS pose no risk to human health",
+     "each PFAS should be studied for decades before any action",
+     "no applications of PFAS are essential",
+     "current substance-by-substance regulation cannot keep up with the number of PFAS"
+    ],
+    "answer": 4,
+    "explain": "'regulating substances one at a time is too slow' + sınıf olarak düzenleme önerisi. Tuzak: 'no applications are essential' — 'essential' kullanıma izin veriyorlar."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "synthetic",
+    "tr": "yapay, sentetik"
+   },
+   {
+    "w": "repel",
+    "tr": "itmek"
+   },
+   {
+    "w": "withstand",
+    "tr": "dayanmak"
+   },
+   {
+    "w": "stability",
+    "tr": "kararlılık"
+   },
+   {
+    "w": "detect",
+    "tr": "tespit etmek"
+   },
+   {
+    "w": "prompt",
+    "tr": "yol açmak, sevk etmek"
+   },
+   {
+    "w": "restrict",
+    "tr": "kısıtlamak"
+   },
+   {
+    "w": "resin",
+    "tr": "reçine"
+   },
+   {
+    "w": "dispose of",
+    "tr": "bertaraf etmek"
+   },
+   {
+    "w": "persistence",
+    "tr": "kalıcılık"
+   }
+  ]
+ },
+ {
+  "id": "p030",
+  "title": "The Bridge That Danced",
+  "topic": "muhendislik-tarihi",
+  "level": 3,
+  "words": 273,
+  "text": "When the Tacoma Narrows Bridge opened in the state of Washington in July 1940, it was the third-longest suspension bridge in the world and a showcase of elegant, economical design. Its deck was remarkably slender: instead of a deep, open steel truss, it was stiffened by shallow solid plate girders, which made it light and graceful but also unusually flexible. Even during construction, workers noticed that the deck moved up and down in moderate winds, and the bridge soon acquired the nickname \"Galloping Gertie\". Drivers sometimes crossed it for the thrill of watching cars ahead disappear and reappear in the waves of the roadway.\n\nOn 7 November 1940, only four months after opening, a steady wind of roughly 65 kilometres per hour set the deck into a violent twisting motion. For about an hour, the roadway rotated back and forth until cables and supports failed and the central span collapsed into the water below. Nobody was killed, although a dog trapped in an abandoned car was lost.\n\nThe collapse is often presented in textbooks as a simple case of resonance, in which the wind pushed the bridge at its natural frequency. Engineers now regard this explanation as incomplete. A steady wind does not supply a regular periodic push in the way that a child is pushed on a swing. Instead, the twisting motion of the deck altered the airflow around it, and the airflow in turn fed energy back into the motion, a self-excited phenomenon known as aeroelastic flutter. The failure transformed bridge engineering: designers began testing models in wind tunnels and favouring deeper or aerodynamically shaped decks, practices that remain standard today.",
+  "questions": [
+   {
+    "q": "According to the passage, the Tacoma Narrows Bridge was unusually flexible mainly because ----.",
+    "options": [
+     "it was built with weak cables",
+     "it was the longest suspension bridge in the world",
+     "workers built it during strong winds",
+     "it was designed to move for the thrill of drivers",
+     "its deck was stiffened by shallow plate girders instead of a deep truss"
+    ],
+    "answer": 4,
+    "explain": "'stiffened by shallow solid plate girders, which made it light and graceful but also unusually flexible'. Tuzak: 'longest' — metin 'third-longest'."
+   },
+   {
+    "q": "The author mentions a child on a swing in order to ----.",
+    "options": [
+     "show that the bridge was designed for children",
+     "illustrate the kind of regular push that a steady wind does not provide",
+     "prove that resonance fully explains the collapse",
+     "describe how the cables were tested",
+     "compare the bridge's length with a playground"
+    ],
+    "answer": 1,
+    "explain": "Salıncak periyodik itme örneği; yazar rüzgârın böyle itmediğini, rezonans açıklamasının eksik olduğunu gösteriyor."
+   },
+   {
+    "q": "Which of the following can be concluded from the passage?",
+    "options": [
+     "Engineers today consider resonance the complete explanation of the collapse.",
+     "The bridge collapsed on the day it opened.",
+     "The collapse led to lasting changes in the methods used to design bridges.",
+     "Several drivers were killed in the collapse.",
+     "Wind tunnel testing had been standard before 1940."
+    ],
+    "answer": 2,
+    "explain": "'The failure transformed bridge engineering ... practices that remain standard today'. Tuzak: 'incomplete' açıklama; kimse ölmedi; 4 ay sonra çöktü."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "suspension bridge",
+    "tr": "asma köprü"
+   },
+   {
+    "w": "deck",
+    "tr": "tabliye"
+   },
+   {
+    "w": "slender",
+    "tr": "ince, narin"
+   },
+   {
+    "w": "truss",
+    "tr": "kafes kiriş"
+   },
+   {
+    "w": "girder",
+    "tr": "kiriş"
+   },
+   {
+    "w": "gallop",
+    "tr": "dörtnala koşmak"
+   },
+   {
+    "w": "span",
+    "tr": "açıklık"
+   },
+   {
+    "w": "resonance",
+    "tr": "rezonans"
+   },
+   {
+    "w": "self-excited",
+    "tr": "kendinden uyarılan"
+   },
+   {
+    "w": "flutter",
+    "tr": "çırpınma (aeroelastik)"
+   }
+  ]
+ }
+]

@@ -1,0 +1,76 @@
+{
+ "cards": [
+  {
+   "word": "utilize",
+   "tr": "kullanmak",
+   "syn": [
+    "make use of",
+    "take advantage of"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "mitigate",
+   "tr": "hafifletmek",
+   "syn": [
+    "alleviate",
+    "reduce"
+   ],
+   "note": "",
+   "source": "Notlarım 04.04.2026"
+  },
+  {
+   "word": "comprise",
+   "tr": "oluşmak, kapsamak",
+   "syn": [
+    "consist of",
+    "include"
+   ],
+   "note": "comprise of DEĞİL",
+   "source": "Notlarım 10.04.2026"
+  },
+  {
+   "word": "feasible",
+   "tr": "uygulanabilir",
+   "syn": [
+    "viable",
+    "practicable"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  },
+  {
+   "word": "hence",
+   "tr": "bu nedenle",
+   "syn": [
+    "thus",
+    "therefore"
+   ],
+   "note": "",
+   "source": "Notlarım 12.04.2026"
+  }
+ ],
+ "weakTopics": [
+  "edat-esdizim",
+  "baglac-zitlik",
+  "either-neither",
+  "relative",
+  "gerund-infinitive"
+ ],
+ "grammarNotes": [
+  {
+   "topic": "edat-esdizim",
+   "text": "Sıcaklık / hız / seviye önünde 'at' gelir.",
+   "ex": "at a temperature of 50 °C"
+  },
+  {
+   "topic": "gerund-infinitive",
+   "text": "mean + Ving = gerektirmek; mean + to V = niyet etmek."
+  },
+  {
+   "topic": "baglac-zitlik",
+   "text": "Although/while: iki yarı zıt kutupta (yeni ↔ eski dahil)."
+  }
+ ]
+}
