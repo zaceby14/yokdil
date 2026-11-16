@@ -372,3 +372,5 @@ button.card.link { width: 100%; text-align: left; font: inherit; cursor: pointer
 .tbl td, .tbl th { word-break: normal; overflow-wrap: normal; hyphens: none; min-width: 5.5rem; vertical-align: top; }
 /* Yüzen "Not" düğmesi son satırı kapatmasın */
 .view { padding-bottom: 72px; }
+.settings-btn { width: auto; gap: 4px; padding: 0 10px; display: inline-flex; align-items: center; }
+.settings-btn .btn-label { font-size: .8rem; font-weight: 600; }

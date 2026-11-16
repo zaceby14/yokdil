@@ -8,6 +8,7 @@ import { dueMistakes } from '../mistakes.js';
 import { openSessions } from '../quiz.js';
 import { tourPool } from '../memory.js';
 import { startFocus, running, lens } from '../focus.js';
+import { getToken } from '../sync.js';
 
 export default async function render(root) {
   const today = dayKey();
@@ -49,6 +50,7 @@ export default async function render(root) {
           w.goal ? h('div.small.muted', w.goal) : null,
           h('div.streak', 'Seri: ', h('b', streak()), ' gün'))
       ),
+      !getToken() ? h('a.banner', { href: '#/ayarlar' }, 'Çıkmış sorular + senkron için GitHub anahtarını gir → Ayarlar') : null,
       phaseNew ? h('div.banner.phase', `Yeni faz: ${w.phase} · günde ${w.newWords ?? '-'} yeni kelime`) : null,
       applyOn ? h('a.banner', { href: 'https://ais.osym.gov.tr', target: '_blank', rel: 'noopener' }, `Başvuru: ${fmtDate(apply[0])}–${fmtDate(apply[1])} · ÖSYM AİS`) : null,
       ...(w.prog.notes || []).filter(n => n.date === today).map(n => h('div.banner', `${fmtDate(n.date)}: ${n.text}`)),
