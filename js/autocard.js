@@ -2,8 +2,7 @@
 import * as store from './store.js';
 import { uid, toast, lemmas } from './util.js';
 import { wordIndex, enrich } from './data.js';
-import { online } from './lookup.js';
-import { STOP as STOP0 } from './vocab.js';
+import { STOP as STOP0, isFunctionWord, sameLemma } from './vocab.js';
 // Gramer şıklarında çıkan işlev kelimeleri karta eklenmesin
 const STOP = new Set([...STOP0, ...'either neither both whether such own other others another itself themselves himself herself whom whose whatever whichever whoever whenever wherever yet still even ever never been being having having done doing'.split(' ')]);
 
@@ -26,16 +25,22 @@ export function candidate(opt, coreHas = () => false, wordTopic = false) {
 }
 
 // Saf: soru kelime ağırlıklı mı?
-export function wordy(it) {
+export function wordy(it, idx) {
   const t = it.info?.topic, d = it.info?.dtype;
-  if (t === 'kelime' || d === 'cloze') return true;
-  const opts = it.options || []; // bosluk dahil: şıklar tek kelime / ≤3 kelimelik öbek
-  return opts.length > 0 && opts.every(o => String(o).trim().split(/\s+/).length <= 3);
+  const opts = (it.options || []).map(o => Array.isArray(o) ? o.join(' / ') : String(o).trim());
+  if (it.double || opts.some(o => o.includes('/'))) return false; // çift boşluk: dilbilgisi
+  if (t === 'kelime') return true;
+  if (!opts.length || !opts.every(o => o.split(/\s+/).length <= 3)) return false;
+  // Şıklar işlev kelimesi ya da aynı kökün biçimleri (eat / eating / eaten) → gramer sorusu, kart açılmaz
+  if (opts.filter(o => isFunctionWord(o, idx)).length >= 2) return false;
+  for (let i = 0; i < opts.length; i++) for (let j = i + 1; j < opts.length; j++) if (sameLemma(opts[i], opts[j])) return false;
+  return true;
 }
 
 // Saf: soru cümlesinde boşluğa doğru şıkkı yerleştir (cloze: (n) işaretli cümle)
 export function fillContext(it) {
-  const ans = String(it.options?.[it.answer] ?? '').trim();
+  const o = it.options?.[it.answer];
+  const ans = (Array.isArray(o) ? o.join(' / ') : String(o ?? '')).trim();
   const q = String(it.q || '');
   const m = q.match(/^\s*\((\d+)\)\s*$/);
   if (m && it.stem) {
@@ -44,16 +49,25 @@ export function fillContext(it) {
     const s = sents.find(x => x.includes(mark)) || '';
     return s.replace(mark, ans).replace(/\(\d+\)/g, '____').replace(/\s*-{2,}\s*/g, ' ').trim();
   }
+  // Çift boşluk: "x / y" → ilk boşluğa x, ikinciye y
+  const parts = ans.split(/\s*\/\s*/);
+  const nBlank = (q.match(new RegExp(BLANK.source, 'g')) || []).length;
+  if (nBlank >= 2 && parts.length === nBlank) { let k = 0; return q.replace(new RegExp(BLANK.source, 'g'), () => parts[k++]).replace(/\s+/g, ' ').trim(); }
   if (BLANK.test(q)) return q.replace(BLANK, ans).replace(/\s+/g, ' ').trim();
   return '';
 }
 
+// Kök + anlam: words.json (lemma) → forms.json. Kök bulunamazsa çekimli biçim olduğu gibi kalır (inflected=true)
 async function meaning(word) {
   const idx = await wordIndex();
   for (const l of word.includes(' ') ? [word] : lemmas(word)) if (idx.has(l)) return { entry: idx.get(l), lemma: l };
   const en = await enrich(word).catch(() => null);
-  const f = en?.family?.find(x => (x.w || '').toLowerCase() === word) || en?.family?.[0];
-  return { entry: en?.core || null, lemma: en?.core ? en.core.word.toLowerCase() : word, tr: f?.tr || '' };
+  if (en?.core) return { entry: en.core, lemma: en.core.word.toLowerCase() };
+  if (en?.key) {
+    const f = en.family?.find(x => (x.w || '').toLowerCase() === en.key) || null;
+    return { entry: null, lemma: en.key, tr: f?.tr || en.tr || '' };
+  }
+  return { entry: null, lemma: word, tr: '', inflected: lemmas(word).length > 1 };
 }
 
 // Yanlış cevap: kartı olmayan kelimeleri ekle. Döner: eklenen kart sayısı. (Sıralı çalışır → çift kart olmaz)
@@ -65,8 +79,9 @@ export function fromWrong(it, chosen, opts) {
 }
 
 async function addFromWrong(it, chosen, { quiet = false } = {}) {
-  if (store.settings().autoAdd === false || !wordy(it)) return 0;
+  if (store.settings().autoAdd === false) return 0;
   const idx = await wordIndex();
+  if (!wordy(it, idx)) return 0;
   const wordTopic = it.info?.topic === 'kelime';
   const picks = [[it.answer, true], [chosen, false]];
   // Çıkmış (telifli) soru metni karta/senkrona girmez
@@ -76,19 +91,24 @@ async function addFromWrong(it, chosen, { quiet = false } = {}) {
   const cards = store.all('cards');
   for (const [k, isRight] of picks) {
     const w = candidate(it.options?.[k], x => idx.has(x), wordTopic);
-    if (!w) continue;
+    if (!w || isFunctionWord(w, idx)) continue;
     const m = await meaning(w);
-    const word = m.entry ? m.entry.word : w;
+    const word = m.entry ? m.entry.word : m.lemma || w;
     const low = word.toLowerCase();
-    const ex = cards.find(c => (c.word || '').toLowerCase() === low || (m.entry && c.wid === m.entry.id));
+    if (isFunctionWord(low, idx)) continue;
+    // Aynı kökten kart varsa (eat ↔ eating) yenisi açılmaz
+    const ex = cards.find(c => (c.word || '').toLowerCase() === low || (m.entry && c.wid === m.entry.id) ||
+      (!low.includes(' ') && c.word && !c.word.includes(' ') && (lemmas(low).includes(c.word.toLowerCase()) || lemmas(c.word).includes(low))));
     if (ex) {
       // "Biliyorum" dediği kelimede hata: kuyruğa geri al
       if (ex.state === 'known') { store.put('cards', { ...ex, state: 'new', front: Date.now(), ctx: ex.ctx || (isRight ? ctx : ''), tags: [...new Set([...(ex.tags || []), 'hata'])] }); n++; }
       continue;
     }
     const e = m.entry;
+    const tr0 = e?.tr || m.tr || '';
+    if (!tr0) continue; // anlamı bulunamayan kelime / çekim biçimi kart olmaz
     const card = {
-      id: e ? 'w:' + e.id : uid('c'), wid: e?.id || null, word, pos: e?.pos || '', tr: e?.tr || m.tr || '',
+      id: e ? 'w:' + e.id : uid('c'), wid: e?.id || null, word, pos: e?.pos || '', tr: tr0,
       syn: e?.syn || [], coll: e?.coll || '', ex: e?.ex || '', tags: ['hata'], source: 'Hata',
       ctx: isRight ? ctx : '', note: isRight ? '' : `Karıştırdın; doğrusu: ${correctW}`,
       state: 'new', createdAt: Date.now(), front: Date.now()
@@ -96,17 +116,8 @@ async function addFromWrong(it, chosen, { quiet = false } = {}) {
     store.put('cards', card);
     cards.push(card);
     n++;
-    if (!card.tr) fillOnline(card.id, word);
   }
   if (n && !quiet) toast(`+${n} kelime karta eklendi`);
   return n;
 }
 
-// Anlam yoksa çevrimiçi öneri (sessiz)
-function fillOnline(id, word) {
-  if (!navigator.onLine) return;
-  online(word).then(o => {
-    const c = store.get('cards', id);
-    if (c && !c.tr && o?.tr) store.put('cards', { ...c, tr: o.tr, trAuto: true, syn: c.syn?.length ? c.syn : (o.syn || []) });
-  }).catch(() => {});
-}

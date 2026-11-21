@@ -41,19 +41,42 @@ export function tick(task, val = true, key = dayKey()) {
   store.put('days', { ...r, id: key, tasks: { ...(r.tasks || {}), [task]: val } });
 }
 
-export const taskList = busy => busy ? ['kart', 'gramer'] : ['kart', 'gramer', 'okuma', 'yeni'];
+// Görev anahtarları (Bugün sırası). 'hata' yalnız bugünkü hata seti doluysa görünür (tasks.js)
+export const taskList = busy => busy ? ['kart', 'gramer'] : ['kart', 'yeni', 'gramer', 'hata', 'okuma'];
 
 export function dayDone(r) {
   if (!r) return false;
-  return taskList(r.busy).every(t => r.tasks?.[t]);
+  return taskList(r.busy).filter(t => t !== 'hata' || (r.hset || []).length).every(t => r.tasks?.[t]);
+}
+
+// Saf: anlamlı çalışma günü mü? (≥10 dk odak, ≥1 görev ya da deneme)
+export const FOCUS_MIN = 10;
+export const activeDay = (d, mockDays) => !!d && (Object.values(d.tasks || {}).some(Boolean) || (d.focusMin || 0) >= FOCUS_MIN || !!d.mock) ||
+  !!(mockDays && d && mockDays.has(d.id));
+
+// Saf: seri. Bugün henüz çalışılmadıysa dünden sayar (bugün seriyi bozmaz).
+// Dondurma hakkı: haftada 1 (pazartesi başlangıçlı), tek atlanan gün seriyi sıfırlamaz (o gün sayılmaz).
+export function streakCalc(get, today, mockDays = new Set()) {
+  const act = k => activeDay(get(k) || (mockDays.has(k) ? { id: k } : null), mockDays);
+  const wk = k => { const d = parseDay(k).getDay(); return addDays(k, -((d + 6) % 7)); };
+  let n = 0, k = today, frozen = [];
+  if (!act(k)) k = addDays(k, -1);
+  for (let guard = 0; guard < 400; guard++) {
+    if (act(k)) { n++; k = addDays(k, -1); continue; }
+    const prev = addDays(k, -1);
+    if (act(prev) && !frozen.includes(wk(k))) { frozen.push(wk(k)); k = prev; continue; }
+    break;
+  }
+  return { n, frozen };
 }
 
 export function streak(today = dayKey()) {
-  let n = 0, k = today;
-  if (dayDone(store.get('days', k))) n++;
-  k = addDays(k, -1);
-  while (dayDone(store.get('days', k))) { n++; k = addDays(k, -1); }
-  return n;
+  const mockDays = new Set(store.all('mocks').map(m => m.date).filter(Boolean));
+  return streakCalc(k => store.get('days', k), today, mockDays).n;
+}
+export function streakInfo(today = dayKey()) {
+  const mockDays = new Set(store.all('mocks').map(m => m.date).filter(Boolean));
+  return streakCalc(k => store.get('days', k), today, mockDays);
 }
 
 // Zayıf konular: seed + doğruluğu düşük konular

@@ -28,6 +28,14 @@ export const program = () => loadData('program', { start: '2026-11-16', exam: '2
 export const lessons = () => loadData('lessons', []);
 export const forms = () => loadData('forms', {});
 
+// Gramer kolaylaştırıcıları (karar ağacı, kutup kartları…). Örnek dosya yalnız geliştirmede gösterilir.
+const isDev = () => typeof location !== 'undefined' && ['localhost', '127.0.0.1'].includes(location.hostname);
+export async function aids() {
+  const a = await loadData('aids', null);
+  if (!a || typeof a !== 'object' || (usedSample.has('aids') && !isDev())) return null;
+  return a;
+}
+
 // Kelimenin örnekleri ve diğer halleri (forms.json + words.json), basit kök eşleştirme
 export async function enrich(word) {
   const w = (word || '').trim().toLowerCase();

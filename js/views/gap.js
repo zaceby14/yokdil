@@ -3,7 +3,7 @@ import * as store from '../store.js';
 import { words, wordIndex, enrich } from '../data.js';
 import { h, shuffle, dayKey } from '../util.js';
 import { runQuiz } from '../quiz.js';
-import { isStudied, isGraduated } from '../vocab.js';
+import { isStudied, isGraduated, sameLemma } from '../vocab.js';
 
 export const GAP_MIN = 20;
 const N = 10;
@@ -37,10 +37,11 @@ export async function buildItems(n = N) {
     for (const s of await sentencesFor(c)) if ((q = blankOut(s, c.word))) break;
     if (!q) continue;
     const pos = posOf(c), low = c.word.toLowerCase();
-    const bad = new Set([low]);
-    const ok = w => w && !/\s/.test(w) && !bad.has(w.toLowerCase()) && !new RegExp(`\\b${esc(w)}\\b`, 'i').test(q);
+    const used = [low];
+    // Aynı kökten iki şık olmasın (eat / eating)
+    const ok = w => w && !/\s/.test(w) && !used.some(u => sameLemma(u, w.toLowerCase())) && !new RegExp(`\\b${esc(w)}\\b`, 'i').test(q);
     const pick = [];
-    const take = list => { for (const w of shuffle(list)) { if (pick.length >= 4) break; if (ok(w)) { pick.push(w); bad.add(w.toLowerCase()); } } };
+    const take = list => { for (const w of shuffle(list)) { if (pick.length >= 4) break; if (ok(w)) { pick.push(w); used.push(w.toLowerCase()); } } };
     take(pool.filter(x => posOf(x) === pos).map(x => x.word));
     if (pick.length < 4) take(core.filter(x => x.pos === pos).map(x => x.word));
     if (pick.length < 4) take(core.map(x => x.word));
@@ -75,6 +76,6 @@ export default async function gap(root, tabs) {
   runQuiz(box, items, {
     title: 'Boşluk', auto: false, sid: 'bosluk:' + dayKey(), inline: true, name: 'Boşluk doldurma', source: 'Kartlarım',
     onAnswer: (it, ok) => gapResult(it.cardId, ok),
-    onEnd: (_, el) => el.append(h('a.btn.wide', { href: '#/kartlar/bosluk', onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Yeni tur'))
+    onEnd: (_, el) => el.querySelector('.endnext')?.before(h('a.btn.wide', { href: '#/kartlar/bosluk', onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Yeni tur'))
   });
 }

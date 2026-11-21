@@ -279,4 +279,138 @@ t('Birleştirme: sessions ve hızlı notlar koleksiyonu', () => {
   assert.ok(mergeState({}, {}).sessions);
 });
 
+// ===== v6 =====
+const MG = await import('../js/migrations.js');
+const ST = await import('../js/store.js');
+const AC = await import('../js/autocard.js');
+const PL = await import('../js/plan.js');
+const GP = await import('../js/gplan.js');
+const SR = await import('../js/srs.js');
+const MI = await import('../js/mistakes.js');
+const NT = await import('../js/notes.js');
+const U = await import('../js/util.js');
+const idx = new Map([['eat', { word: 'eat', pos: 'v', tr: 'yemek' }], ['because', { word: 'because', pos: 'conj', tr: 'çünkü' }],
+  ['so that', { word: 'so that', pos: 'conj', tr: 'böylece' }], ['amid', { word: 'amid', pos: 'prep', tr: 'ortasında' }], ['yield', { word: 'yield', pos: 'n', tr: 'verim' }]]);
+
+t('İşlev kelimesi: bağlaç/edat (liste + pos conj/prep) kart olmaz', () => {
+  for (const w of ['because', 'so that', 'in that', 'while', 'although', 'amid', 'despite']) assert.ok(V.isFunctionWord(w, idx), w);
+  for (const w of ['yield', 'corrosion', 'eat']) assert.ok(!V.isFunctionWord(w, idx), w);
+  assert.ok(V.sameLemma('eat', 'eating') && V.sameLemma('studies', 'study') && !V.sameLemma('eat', 'yield'));
+});
+
+t('Otomatik kart: gramer biçim sorusu (eat/eating/eaten) ve bağlaç şıkları kart açmaz', () => {
+  assert.equal(AC.wordy({ info: { kind: 'gramer', topic: 'gerund-infinitive' }, options: ['eat', 'eating', 'to eat', 'eaten', 'ate'] }, idx), false);
+  assert.equal(AC.wordy({ info: { kind: 'gramer', topic: 'baglac-zitlik' }, options: ['because', 'although', 'so that', 'in that', 'while'] }, idx), false);
+  assert.equal(AC.wordy({ info: { kind: 'gramer', topic: 'kelime' }, options: ['yield', 'decay', 'shift', 'trait', 'bias'] }, idx), true);
+  assert.equal(AC.wordy({ double: true, info: { topic: 'zaman-uyumu' }, options: ['a / b'] }, idx), false);
+  assert.equal(AC.fillContext({ q: 'Since it ---- in 2021, it ---- by half.', options: ['was / has fallen', 'x / y'], answer: 0 }), 'Since it was in 2021, it has fallen by half.');
+});
+
+t('Göç: Hata kaynaklı, tekrar edilmemiş anlamsız/işlev/çekimli kartlar silinir; SRS geçmişi olana dokunulmaz', () => {
+  const cards = [
+    { id: 'a', word: 'because', tr: 'çünkü', source: 'Hata', state: 'new' },
+    { id: 'b', word: 'eating', tr: '', source: 'Hata', state: 'new' },
+    { id: 'c', word: 'eat', tr: 'yemek', source: 'Hata', state: 'new' },
+    { id: 'd', word: 'so that', tr: 'böylece', source: 'Hata', state: 'review', reps: 2, lastReview: 5 },
+    { id: 'e', word: 'yield', tr: 'verim', source: 'Hata', state: 'new' },
+    { id: 'f', word: 'while', tr: 'iken', source: 'Okuma', state: 'new' },
+    { id: 'g', word: 'eats', tr: 'yer', source: 'Hata', state: 'new' }
+  ];
+  assert.deepEqual(MG.badAutoCards(cards, idx).sort(), ['a', 'b', 'g']);
+  // store.migrate: bir kez çalışır
+  ST.load(); ST.resetAll();
+  for (const c of cards) ST.put('cards', c);
+  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), ['v6-taktik-read', 'v6-autocards']);
+  assert.deepEqual(ST.all('cards').map(c => c.id).sort(), ['c', 'd', 'e', 'f']);
+  assert.ok(ST.raw('cards', 'a').deleted);
+  ST.put('cards', { id: 'h', word: 'because', tr: 'x', source: 'Hata', state: 'new' });
+  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), []); // tekrar çalışmaz
+  assert.ok(ST.get('cards', 'h'));
+});
+
+t('Göç: soru-tipi-taktikleri okundu → 7 taktik dersi okundu', () => {
+  const r = MG.taktikProgress({ read: true, at: 7 }, { 'taktik-ceviri': { read: true } });
+  assert.equal(r.length, 6); assert.ok(r.every(x => x.read && x.id.startsWith('ders:taktik-')));
+  assert.deepEqual(MG.taktikProgress(null), []);
+});
+
+t('Yeni kuyruk: kendi eklediğin kelimeler önde, dünden kalanlar limiti aşar (en geç ertesi gün)', () => {
+  const sod = 1000000;
+  const cards = [
+    ...Array.from({ length: 20 }, (_, i) => ({ id: 's:n' + i, word: 'note' + i, source: 'Notlarım', state: 'new', createdAt: i + 1 })),
+    { id: 'h1', word: 'trait', source: 'Hata', tags: ['hata'], state: 'new', createdAt: 10, front: 50 },
+    { id: 'm1', word: 'underneath', source: 'Okuma', state: 'new', createdAt: sod - 100, mine: sod - 100 },
+    { id: 'm2', word: 'corrosion', source: 'Ikigai', state: 'new', createdAt: sod - 50 },
+    { id: 'm3', word: 'today', source: 'Okuma', state: 'new', createdAt: sod + 5, mine: sod + 5 }
+  ];
+  const q = SR.orderNew(cards, 3, sod).map(c => c.id);
+  assert.deepEqual(q.slice(0, 3), ['m1', 'm2', 'm3']);
+  assert.equal(q[3], undefined);
+  const q0 = SR.orderNew(cards, 0, sod).map(c => c.id); // limit dolu: dünden kalanlar yine gelir
+  assert.deepEqual(q0, ['m1', 'm2']);
+  assert.ok(SR.isMine({ source: 'Okuma' }) && !SR.isMine({ source: 'Hata', tags: ['hata'] }) && !SR.isMine({ id: 's:x', source: 'Notlarım' }));
+});
+
+t('Seri: deneme/odak/görev günü sayar; haftada 1 joker; bugün çalışılmadıysa bozulmaz', () => {
+  const D = { '2026-11-23': { id: '2026-11-23', tasks: { kart: true } }, '2026-11-24': { id: '2026-11-24', focusMin: 12 },
+    '2026-11-25': { id: '2026-11-25', tasks: { gramer: true } }, /* 26 atlandı */ '2026-11-27': { id: '2026-11-27', tasks: { okuma: true } } };
+  const mocks = new Set(['2026-11-28']); // tam deneme günü
+  let r = PL.streakCalc(k => D[k], '2026-11-28', mocks);
+  assert.equal(r.n, 5); assert.equal(r.frozen.length, 1);
+  r = PL.streakCalc(k => D[k], '2026-11-29', mocks); // bugün (Pazar) henüz yok
+  assert.equal(r.n, 5);
+  // aynı haftada ikinci boşluk: seri orada kırılır
+  const D2 = { ...D }; delete D2['2026-11-24'];
+  assert.equal(PL.streakCalc(k => D2[k], '2026-11-28', mocks).n, 3);
+  assert.ok(!PL.activeDay({ id: 'x', focusMin: 5 }) && PL.activeDay({ id: 'x', mock: true }));
+});
+
+t('Hata tekrarı: günde en fazla 8, en eski vade + en çok yanlış önce, tüm kaynaklar', () => {
+  const ms = Array.from({ length: 30 }, (_, i) => ({ id: 'q' + i, due: '2026-11-' + String(10 + (i % 10)).padStart(2, '0'), wrongs: i % 3, kind: ['gramer', 'drill', 'okuma', 'cikmis'][i % 4] }));
+  ms.push({ id: 'solved', due: '2026-11-01', solved: true }, { id: 'future', due: '2026-12-30' });
+  const ids = MI.pickMistakes(ms, '2026-11-25');
+  assert.equal(ids.length, 8);
+  assert.ok(!ids.includes('solved') && !ids.includes('future'));
+  assert.equal(ms.find(m => m.id === ids[0]).due, '2026-11-10');
+  assert.ok(new Set(ids.map(id => ms.find(m => m.id === id).kind)).size >= 2);
+});
+
+t('Gramer seviyesi: ilk görüşte L1, %70 doğruluk → L2 → L3; ipucuyla doğru sayılmaz', () => {
+  const L = (lv, ok, hint) => ({ topic: 'relative', level: lv, correct: ok, hint });
+  assert.deepEqual(GP.topicLevels([]), {});
+  assert.equal(GP.topicLevels([L(1, 1), L(1, 1), L(1, 0)]).relative, 1); // %67
+  assert.equal(GP.topicLevels([L(1, 1), L(1, 1), L(1, 1)]).relative, 2);
+  assert.equal(GP.topicLevels([L(1, 1), L(1, 1), L(1, 1, true)]).relative, 1);
+  assert.equal(GP.topicLevels([L(1, 1), L(1, 1), L(1, 1), L(2, 1), L(2, 1), L(2, 1), L(2, 0)]).relative, 3);
+});
+
+t('Günlük set: seviye kilidi, düşük getirili konulardan en fazla 1', () => {
+  const qs = [];
+  for (const t of ['baglac-zitlik', 'relative']) for (const lv of [1, 2, 3]) for (let i = 0; i < 4; i++) qs.push({ id: `${t}-${lv}-${i}`, topic: t, level: lv });
+  for (const t of U.LOW_TOPICS) for (let i = 0; i < 5; i++) qs.push({ id: `${t}-${i}`, topic: t, level: 1 });
+  let r = 1; const rnd = () => { r = (r * 16807) % 2147483647; return r / 2147483647; };
+  for (let k = 0; k < 20; k++) {
+    const ids = GP.pickDaily(qs, { cur: new Set(['baglac-zitlik']), n: 8, rnd, levels: {} });
+    assert.equal(ids.length, 8);
+    assert.ok(ids.filter(id => U.LOW_TOPICS.some(t => id.startsWith(t))).length <= 1);
+    assert.ok(ids.every(id => /-1-\d$|^[a-z-]+-\d$/.test(id) && !/-[23]-\d$/.test(id)), ids.join());
+  }
+  const ids = GP.pickDaily(qs, { cur: new Set(['inversion']), n: 8, rnd, levels: {} }); // bu haftanın konusu ise sınır yok
+  assert.ok(ids.filter(id => id.startsWith('inversion')).length >= 2);
+  assert.deepEqual(GP.levelOrder([{ level: 3 }, { level: 1 }, { level: 2 }]).map(q => q.level), [1, 2, 3]);
+});
+
+t('Not → karta çevir: Türkçe kelimeler bölünmez', () => {
+  const w = NT.noteWords('cümle Karıştırıyorum: whereas ile while farkı, hydrolysis yavaş');
+  assert.deepEqual(w, ['whereas', 'while', 'hydrolysis']);
+  assert.ok(!w.includes('mle') && !w.includes('kar') && !w.includes('yorum'));
+});
+
+t('Yardımcılar: açıklama "Cevap: X" sayılmaz, bilinmeyen konu adı, çift boşluk şıkkı', () => {
+  assert.equal(U.realExplain('Cevap: B.'), ''); assert.equal(U.realExplain('Cevap: B) '), ''); assert.equal(U.realExplain('since → PP'), 'since → PP');
+  assert.equal(U.topicName('hayvan-davranisi'), 'Hayvan davranışı'); assert.equal(U.topicName('tarim'), 'Tarım'); assert.equal(U.topicName('yeni-konu'), 'Yeni konu');
+  assert.equal(U.optText(['was', 'has']), 'was / has');
+  assert.equal(U.TYPE_LESSON['ceviri-tr-en'], 'taktik-ceviri');
+});
+
 console.log(`\n${n} test geçti`);

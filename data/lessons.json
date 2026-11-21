@@ -3,29 +3,31 @@
   "id": "baglac-zitlik",
   "title": "Zıtlık bağlaçları",
   "order": 1,
+  "topic": "baglac-zitlik",
   "minutes": 6,
   "summary": "Boşlukta iki cümle arası zıtlık (+/–, yeni/eski) varsa doğru türdeki zıtlık bağlacı seçilir.",
+  "formula": "(+) ↔ (−) → although + cümle · despite + isim · ; however,",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Tür | Bağlaç | Sonrası |\n|---|---|---|\n| Yan cümle bağlacı | **although, even though, though, while, whereas** | özne + yüklem |\n| Edat | **despite, in spite of, notwithstanding** | isim / Ving |\n| Zarf | **however, nevertheless, nonetheless, on the other hand, in contrast** | ; / . sonrası, virgül |\n\n- **whereas / while** = \"oysa, -iken\": iki özneyi karşılaştırır.\n- **even if** = \"olsa bile\" (varsayım), **even though** = \"olduğu halde\" (gerçek)."
+    "md": "| Tür | Sözcük | Sonrası |\n|---|---|---|\n| Bağlaç | **although, even though, though, while, whereas, but, yet** | özne + yüklem |\n| Edat | **despite, in spite of, notwithstanding, unlike, regardless of** | isim / Ving |\n| Zarf | **however, nevertheless, nonetheless, on the other hand, in contrast** | ; ya da . sonrası + virgül |\n\n- **but / yet**: cümle ortasında, en sık zıtlık.\n- **whereas / while** = \"oysa\": iki özneyi karşılaştırır.\n- **even if** = olsa bile (varsayım) · **even though** = olduğu halde (gerçek)."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- **despite of** diye bir yapı yok. Cümle gelecekse: **despite the fact that** + cümle.\n- **However** iki cümleyi virgülle bağlamaz: \"X; however, Y\" ya da \"X. However, Y\".\n- **while** iki anlamlı: \"-iken\" (zaman) ve \"oysa\" (zıtlık). Önce anlama bak."
+    "md": "- **Although …, but …** ✗ — ikisi birlikte olmaz. Although X, Y ✓ · X, but Y ✓\n- **despite of** ✗ → despite / in spite of. Cümle gelirse: despite **the fact that** + cümle.\n- **However** iki cümleyi virgülle bağlamaz: X; however, Y ✓ · X, however Y ✗\n- **on the contrary** = aksine (önceki fikri reddeder) · **on the other hand** = öte yandan (karşılaştırır).\n- **while** iki anlamlı: -iken (zaman) / oysa (zıtlık). Önce anlama bak."
    },
    {
     "h": "Senin notun",
-    "md": "- Zıtlık sadece olumlu/olumsuz değildir: **yeni ↔ eski, genç ↔ eski, az ↔ çok, küçük ↔ güçlü** de zıtlıktır.\n- Cümle başında **Although / While / Even though / Whereas** varsa: virgülden sonraki ana cümle kutbu çeviriyor mu? Çeviriyorsa zıtlık bağlacı doğrudur.\n- \"only a decade ago … already\" gibi zarflar zıtlık sinyalidir."
+    "md": "- Zıtlık sadece iyi/kötü değildir: **yeni ↔ eski, az ↔ çok, küçük ↔ güçlü** de zıtlıktır.\n- Cümle başında **Although / While / Even though / Whereas** varsa: virgülden sonraki ana cümle kutbu çeviriyor mu? Çeviriyorsa zıtlık doğru.\n- \"only a decade ago … already\" gibi zarflar zıtlık sinyalidir."
    },
    {
     "h": "Örnekler",
-    "md": "- **Although** the method is new, its principles date back centuries.\n- **Despite** its low density, aluminium is surprisingly strong.\n- Glass is brittle; **nevertheless**, it is used in some load-bearing structures.\n- Mercury is a liquid at room temperature, **whereas** most metals are solids."
+    "md": "- **Although** the method is new, its principles date back centuries.\n- **Despite** its low density, aluminium is surprisingly strong.\n- Glass is brittle; **nevertheless**, it is used in some load-bearing structures.\n- **Unlike** most metals, mercury is a liquid at room temperature."
    }
   ],
   "checks": [
    {
-    "q": "---- the technique was developed only a decade ago, it has already become standard in materials testing.",
+    "q": "---- the bridge is more than a century old, it still carries heavy traffic every day.",
     "options": [
      "Because",
      "As long as",
@@ -34,7 +36,8 @@
      "So that"
     ],
     "answer": 2,
-    "explain": "Sadece on yıl önce ↔ şimdiden standart: yeni/eski zıtlığı → Although."
+    "explain": "Çok eski ↔ hâlâ ağır trafik: zıtlık → Although.",
+    "hint": "Eski köprü ↔ hâlâ ağır trafik: aynı yön mü?"
    },
    {
     "q": "Copper conducts electricity well; ----, it is too soft for many structural uses.",
@@ -46,7 +49,8 @@
      "otherwise"
     ],
     "answer": 0,
-    "explain": "İyi iletken (+) ↔ çok yumuşak (–): zıtlık zarfı however; noktalı virgül sonrası uygun."
+    "explain": "İyi iletken (+) ↔ çok yumuşak (–): zıtlık zarfı however; noktalı virgül sonrası uygun.",
+    "hint": "Noktalı virgülden sonra yön değişiyor mu?"
    },
    {
     "q": "---- its high cost, titanium is widely used in aircraft because of its strength.",
@@ -58,7 +62,8 @@
      "According to"
     ],
     "answer": 1,
-    "explain": "Yüksek maliyet ↔ yine de yaygın kullanım: isimden önce zıtlık edatı Despite."
+    "explain": "Yüksek maliyet ↔ yine de yaygın kullanım: isimden önce zıtlık edatı Despite.",
+    "hint": "Boşluktan sonra fiil var mı?"
    },
    {
     "q": "Some metals expand considerably when heated, ---- others, such as invar, hardly change in size.",
@@ -70,7 +75,8 @@
      "in case"
     ],
     "answer": 3,
-    "explain": "İki grup karşılaştırılıyor (genleşir ↔ değişmez): whereas."
+    "explain": "İki grup karşılaştırılıyor (genleşir ↔ değişmez): whereas.",
+    "hint": "İki grup metal karşılaştırılıyor mu?"
    },
    {
     "q": "---- the fact that the virus mutates rapidly, the vaccine remains effective.",
@@ -82,32 +88,125 @@
      "In spite of"
     ],
     "answer": 4,
-    "explain": "'the fact that' önünde edat gerekir: In spite of the fact that. Although/Even though doğrudan cümle alır."
+    "explain": "'the fact that' önünde edat gerekir: In spite of the fact that. Although/Even though doğrudan cümle alır.",
+    "hint": "\"the fact that\" önüne bağlaç mı edat mı gelir?"
+   }
+  ]
+ },
+ {
+  "id": "despite-although",
+  "title": "Despite ↔ Although dönüşümü",
+  "order": 2,
+  "topic": "despite-although",
+  "minutes": 4,
+  "summary": "Aynı zıtlık iki yapıyla söylenir: bağlaç + cümle ya da edat + isim/Ving. Boşluktan sonrasına bak.",
+  "formula": "Although + cümle ↔ Despite + isim / Ving / the fact that + cümle",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "| Bağlaç (+ cümle) | Edat (+ isim / Ving) |\n|---|---|\n| although, even though, though | despite, in spite of |\n| because, since, as | because of, due to, owing to |\n| while (zaman) | during |\n\n- Edatın arkasına cümle gelecekse: **despite the fact that** + cümle."
+   },
+   {
+    "h": "Bir cümle, dört yol",
+    "md": "- **Although** it is expensive, … \n- **Despite being** expensive, …\n- **Despite its high cost**, …\n- **Despite the fact that** it is expensive, …\n- Because it rained = **Because of / Due to** the rain."
+   },
+   {
+    "h": "Tuzak",
+    "md": "- **despite of** ✗ · in spite **of** ✓\n- Despite it is expensive ✗ → Although it is expensive ✓\n- Although its high cost ✗ → Despite its high cost ✓"
+   }
+  ],
+  "checks": [
+   {
+    "q": "---- the heavy rain, the match went ahead.",
+    "options": [
+     "Since",
+     "Although",
+     "Because",
+     "Despite",
+     "Even though"
+    ],
+    "answer": 3,
+    "explain": "Sonrası isim öbeği → Despite.",
+    "hint": "Boşluktan sonra fiil var mı?"
+   },
+   {
+    "q": "---- it was raining heavily, the match went ahead.",
+    "options": [
+     "Although",
+     "Due to",
+     "In spite of",
+     "Because of",
+     "Despite"
+    ],
+    "answer": 0,
+    "explain": "Sonrası cümle (it was raining) → Although.",
+    "hint": "Boşluktan sonra özne + fiil var mı?"
+   },
+   {
+    "q": "---- having little money, the team built a working prototype.",
+    "options": [
+     "Because",
+     "Despite",
+     "Although",
+     "Even though",
+     "Whereas"
+    ],
+    "answer": 1,
+    "explain": "Sonrası Ving → Despite.",
+    "hint": "Boşluktan sonra Ving var: bağlaç mı edat mı?"
+   },
+   {
+    "q": "The test continued ---- the fact that one sensor had failed.",
+    "options": [
+     "even though",
+     "in spite of",
+     "although",
+     "whereas",
+     "because"
+    ],
+    "answer": 1,
+    "explain": "the fact that önüne edat → in spite of.",
+    "hint": "\"the fact that\" önüne ne gelir?"
+   },
+   {
+    "q": "The road was closed ---- the snow.",
+    "options": [
+     "since",
+     "as",
+     "although",
+     "because of",
+     "because"
+    ],
+    "answer": 3,
+    "explain": "Sonrası isim → because of.",
+    "hint": "\"the snow\" cümle mi isim mi?"
    }
   ]
  },
  {
   "id": "baglac-neden-amac",
   "title": "Neden, sonuç ve amaç bağlaçları",
-  "order": 2,
+  "order": 3,
+  "topic": "baglac-neden-amac",
   "minutes": 6,
   "summary": "Boşluktan önceki ve sonraki kısım arasında neden→sonuç ya da amaç ilişkisi varsa yapıya uyan bağlaç seçilir.",
+  "formula": "to + V1 = in order to · edat to + Ving = with a view to · ; therefore,",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Anlam | + cümle | + isim / Ving | + V1 |\n|---|---|---|---|\n| Neden | **because, since, as** | **because of, due to, owing to, on account of** | – |\n| Sonuç | **so, so…that, such…that**; zarf: **therefore, thus, hence, consequently** | **thus / hence + Ving** | – |\n| Amaç | **so that, in order that** (+ can/could/will) | **with a view to, with the aim of, for the purpose of** + Ving | **in order to, so as to** |"
+    "md": "| Anlam | + cümle | + isim / Ving / V1 |\n|---|---|---|\n| Neden | **because, since, as, now that, given that, in that** | **because of, due to, owing to, on account of** + isim |\n| Sonuç | **so**; zarf: **therefore, thus, hence, consequently** | **thus / thereby** + Ving |\n| Amaç | **so that, in order that** + can/could/will/would/may | **in order to, so as to** + V1 · **with a view to, with the aim of** + Ving |\n| Olmasın diye | **lest, for fear that** (+ should V1) | **so as not to, in order not to** + V1 |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- **since** iki anlamlı: \"çünkü\" ve \"-den beri\" (Present Perfect ile).\n- **so that** sonrası özne + modal: \"so that it **can** cool\".\n- \"…, **thus reducing** costs\" → thus + Ving sonucu bildirir.\n- **hence** + isim olabilir: \"hence the name\"."
+    "md": "- **since** iki anlamlı: \"çünkü\" ve \"-den beri\" (Present Perfect ile).\n- **so that** sonrası özne + modal: so that it **can** cool.\n- …, **thereby reducing** costs → thereby + Ving = böylece. (whereby + tam cümle!)\n- **in that** = -dığı için / şu bakımdan: unusual **in that** it conducts…\n- so…that / such…that → ayrı ders: **so-such-too-enough**."
    },
    {
     "h": "Senin notun",
-    "md": "- **in order to + V1**: in order to **reduce** ✓\n- **with a view to + Ving** (buradaki *to* edattır!): with a view to **reducing** ✓, with a view to reduce ✗\n- Aynı mantık: look forward to, be used to, contribute to, lead to → Ving."
+    "md": "- **in order to + V1**: in order to **reduce** ✓\n- **with a view to + Ving** (to edat!): with a view to **reducing** ✓ · with a view to reduce ✗\n- \"to\" testi: to'dan sonra isim koy. Olursa → Ving. (look forward to, contribute to, lead to)"
    },
    {
     "h": "Örnekler",
-    "md": "- The wire was coated **in order to** prevent corrosion.\n- The plant was redesigned **with a view to** cutting energy use.\n- The ice sheet is melting; **hence**, sea levels are rising.\n- Flights were cancelled **due to** volcanic ash."
+    "md": "- The wire was coated **in order to** prevent corrosion.\n- The plant was redesigned **with a view to** cutting energy use.\n- The valve opens, **thereby** preventing an explosion.\n- Divers rise slowly **lest** bubbles **should** form in their blood."
    }
   ],
   "checks": [
@@ -121,7 +220,8 @@
      "as a result"
     ],
     "answer": 1,
-    "explain": "Boşluktan sonra V1 (prevent) → in order to. so that özne ister; with a view to Ving ister."
+    "explain": "Boşluktan sonra V1 (prevent) → in order to. so that özne ister; with a view to Ving ister.",
+    "hint": "Boşluktan sonra V1 (prevent) var."
    },
    {
     "q": "The engineers redesigned the blade ---- reducing noise.",
@@ -133,7 +233,8 @@
      "with a view to"
     ],
     "answer": 4,
-    "explain": "Boşluktan sonra Ving (reducing) ve amaç → with a view to."
+    "explain": "Boşluktan sonra Ving (reducing) ve amaç → with a view to.",
+    "hint": "Boşluktan sonra Ving var: \"to\" testi."
    },
    {
     "q": "The reaction releases heat; ----, the container must be cooled continuously.",
@@ -145,7 +246,8 @@
      "despite"
     ],
     "answer": 0,
-    "explain": "Isı açığa çıkıyor → bu yüzden soğutulmalı: sonuç zarfı therefore."
+    "explain": "Isı açığa çıkıyor → bu yüzden soğutulmalı: sonuç zarfı therefore.",
+    "hint": "Isı açığa çıkıyor → soğutma: ilişki ne?"
    },
    {
     "q": "The bridge was closed ---- strong winds.",
@@ -157,7 +259,8 @@
      "due to"
     ],
     "answer": 4,
-    "explain": "Sonrası isim öbeği (strong winds) → due to. because/since cümle ister."
+    "explain": "Sonrası isim öbeği (strong winds) → due to. because/since cümle ister.",
+    "hint": "Boşluktan sonra cümle mi isim mi?"
    },
    {
     "q": "Iron rusts quickly in humid air, ---- it is usually coated with paint or zinc.",
@@ -169,32 +272,219 @@
      "in order that"
     ],
     "answer": 2,
-    "explain": "Paslanır → bu yüzden kaplanır: sonuç bağlacı so."
+    "explain": "Paslanır → bu yüzden kaplanır: sonuç bağlacı so.",
+    "hint": "Paslanma → kaplama: neden-sonuç mu zıtlık mı?"
+   }
+  ]
+ },
+ {
+  "id": "so-such-too-enough",
+  "title": "so…that · such…that · too · enough",
+  "order": 4,
+  "topic": "so-such-too-enough",
+  "minutes": 4,
+  "summary": "Sonuç bildiren dört kalıp: so + sıfat, such + isim, too (olmuyor), enough (oluyor).",
+  "formula": "so + sıfat + that · such (a) + isim + that · too + sıfat + to V (olmuyor) · sıfat + enough + to V (oluyor)",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "| Yapı | Formül |\n|---|---|\n| **so** | so + sıfat/zarf + that |\n| **so** (miktar) | so many/much/few/little + isim + that |\n| **such** | such + (a) + (sıfat) + isim + that |\n| **too** | too + sıfat + (for X) + to V |\n| **enough** | sıfat + enough + to V · enough + isim + to V |"
+   },
+   {
+    "h": "Örnekler",
+    "md": "- The metal was **so** hot **that** it glowed.\n- It was **such a** strong field **that** …\n- The particles are **too** small **to see**. (= göremeyiz)\n- The beam is strong **enough to** carry a truck.\n- The battery has **enough** energy **to** run all night."
+   },
+   {
+    "h": "Tuzak",
+    "md": "- **enough strong** ✗ → strong **enough** ✓\n- **so that** (amaç) ≠ **so … that** (sonuç)\n- **too** = fazla (olumsuz) · **very** = çok (nötr)\n- such + **çoğul / sayılamaz**: a yok → **such** high temperatures"
+   }
+  ],
+  "checks": [
+   {
+    "q": "The wind was ---- strong that the bridge was closed.",
+    "options": [
+     "enough",
+     "very",
+     "too",
+     "such",
+     "so"
+    ],
+    "answer": 4,
+    "explain": "so + sıfat + that.",
+    "hint": "Boşluktan sonra sıfat mı isim mi?"
+   },
+   {
+    "q": "It was ---- heavy rain that the roads flooded.",
+    "options": [
+     "enough",
+     "such",
+     "very",
+     "too",
+     "so"
+    ],
+    "answer": 1,
+    "explain": "such + (sıfat) + sayılamaz isim + that.",
+    "hint": "\"heavy rain\" isim öbeği mi?"
+   },
+   {
+    "q": "The sample is ---- small to be seen without a microscope.",
+    "options": [
+     "such",
+     "very much",
+     "so",
+     "too",
+     "enough"
+    ],
+    "answer": 3,
+    "explain": "too + sıfat + to V → görülemez.",
+    "hint": "Mikroskopsuz görülebiliyor mu?"
+   },
+   {
+    "q": "The cable is not ---- to carry this load.",
+    "options": [
+     "strong enough",
+     "enough strong",
+     "so strong",
+     "too strong",
+     "such strong"
+    ],
+    "answer": 0,
+    "explain": "sıfat + enough.",
+    "hint": "enough sıfattan önce mi sonra mı gelir?"
+   },
+   {
+    "q": "There were ---- many errors that the test had to be repeated.",
+    "options": [
+     "too",
+     "enough",
+     "very",
+     "so",
+     "such"
+    ],
+    "answer": 3,
+    "explain": "so + many + isim + that.",
+    "hint": "\"many\" ile so mu such mı gelir?"
+   }
+  ]
+ },
+ {
+  "id": "baglac-master",
+  "title": "Bağlaç MASTER tablosu",
+  "order": 5,
+  "topic": "baglac-master",
+  "minutes": 6,
+  "summary": "14 anlam grubu × 3 yapı. Önce yapıyı (cümle / isim / zarf) sonra anlamı seç.",
+  "formula": "1) Sonrası cümle mi isim mi, ; X, mi? 2) Anlam grubu? → tablodan seç",
+  "blocks": [
+   {
+    "h": "Zıtlık · Neden · Sonuç",
+    "md": "| Anlam | + cümle | + isim / Ving · zarf |\n|---|---|---|\n| Zıtlık | although, while, whereas, but, yet | despite, unlike · however, nevertheless |\n| Neden | because, since, as, now that, given that | because of, due to, owing to, thanks to |\n| Sonuç | so, so…that | thus/thereby + Ving · therefore, hence, consequently |"
+   },
+   {
+    "h": "Amaç · Koşul · Zaman",
+    "md": "| Anlam | + cümle | + isim / Ving / V1 · zarf |\n|---|---|---|\n| Amaç | so that, in order that | in order to + V1 · with a view to + Ving |\n| Olmasın diye | lest, for fear that | so as not to + V1 |\n| Koşul | if, unless, provided that, as long as, in case | but for, in case of · otherwise |\n| Zaman | when, once, until, since, by the time | during, prior to, upon + Ving · meanwhile |"
+   },
+   {
+    "h": "Ekleme · Örnek · Benzerlik",
+    "md": "| Anlam | + isim / Ving | Zarf (; X,) |\n|---|---|---|\n| Ekleme | in addition to, besides, apart from, as well as | moreover, furthermore, in addition |\n| Örnek | such as, including, like | for example, for instance |\n| Benzerlik | like, similar to | similarly, likewise |\n| Açıklama | – | namely, that is, in other words |"
+   },
+   {
+    "h": "Tercih · İstisna · Özet",
+    "md": "| Anlam | + isim / V1 / cümle | Zarf |\n|---|---|---|\n| Tercih | instead of, rather than | instead, rather, alternatively |\n| İstisna | except (for), other than · except that | – |\n| Özet | – | in short, in conclusion, overall |\n\n- \"also\" görürsen → ekleme (besides, apart from)."
+   }
+  ],
+  "checks": [
+   {
+    "q": "The new design is cheaper; ----, it is easier to install.",
+    "options": [
+     "moreover",
+     "otherwise",
+     "instead",
+     "however",
+     "namely"
+    ],
+    "answer": 0,
+    "explain": "Artıya artı ekleme → moreover.",
+    "hint": "İkinci cümle yeni bir artı mı?"
+   },
+   {
+    "q": "Many fruits, ---- oranges and lemons, are rich in vitamin C.",
+    "options": [
+     "such as",
+     "despite",
+     "unlike",
+     "instead of",
+     "because of"
+    ],
+    "answer": 0,
+    "explain": "Örnek listesi → such as.",
+    "hint": "Virgüller arasında örnek mi var?"
+   },
+   {
+    "q": "All the tests were successful ---- the last one.",
+    "options": [
+     "except",
+     "besides",
+     "such as",
+     "as well as",
+     "including"
+    ],
+    "answer": 0,
+    "explain": "Hariç → except.",
+    "hint": "Son test diğerlerinden farklı mı?"
+   },
+   {
+    "q": "Copper conducts heat well. ----, silver is an excellent conductor.",
+    "options": [
+     "However",
+     "Otherwise",
+     "Similarly",
+     "On the contrary",
+     "Instead"
+    ],
+    "answer": 2,
+    "explain": "Benzer özellik → Similarly.",
+    "hint": "İki metal benzer mi?"
+   },
+   {
+    "q": "The team decided to repair the old pump ---- buy a new one.",
+    "options": [
+     "in addition to",
+     "such as",
+     "because of",
+     "rather than",
+     "instead"
+    ],
+    "answer": 3,
+    "explain": "Tercih + V1 → rather than.",
+    "hint": "Boşluktan sonra V1 (buy) var."
    }
   ]
  },
  {
   "id": "edat-esdizim",
   "title": "Edatlar ve eşdizim",
-  "order": 3,
+  "order": 6,
+  "topic": "edat-esdizim",
   "minutes": 6,
   "summary": "Boşlukta tek edat sorulur; çözüm, önündeki fiil/sıfat/isimle kalıp (eşdizim) bilgisidir.",
+  "formula": "sayı/değer → at · sonuç → lead to / result in · neden → result from · basınç → under",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Kalıp | Örnek |\n|---|---|\n| **at** + temperature / rate / level / speed / pressure | at high pressure |\n| **in** terms of / response to / contrast to / addition to | in terms of cost |\n| **due to / owing to / because of** + isim | due to heat |\n| **lead to / contribute to / give rise to / result in** + sonuç | lead to failure |\n| **result from / stem from / arise from** + neden | stem from stress |\n| depend **on**, consist **of**, differ **from**, be exposed **to**, be resistant **to**, be capable **of**, be responsible **for** | |"
+    "md": "| Kalıp | Örnek |\n|---|---|\n| **at** + temperature / rate / level / speed / depth | at high speed |\n| **under** + pressure / conditions / control | under high pressure |\n| **at a pressure of** + sayı | at a pressure of 5 bar |\n| **in** terms of / response to / contrast to | in terms of cost |\n| **lead to / contribute to / result in** + sonuç | lead to failure |\n| **result from / stem from / arise from** + neden | stem from stress |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- **result in** (sonuç verir) ↔ **result from** (-den kaynaklanır): yön ters.\n- lead to / contribute to'daki **to** edattır → arkasından isim veya Ving.\n- \"by\" artış miktarı: increased **by** 20%; \"at\" hız/değer: **at** a rate of 5%."
+    "md": "- **result in** (sonuç verir) ↔ **result from** (-den kaynaklanır): yön ters.\n- Değişim isimleri → **in**: a **rise in** temperature, an **increase in** cost.\n- Miktar → **by**: increased **by** 20% · son değer → **to**: rose **to** 80%.\n- **at veya under** high pressure ikisi de görülür; sayı varsa **at a pressure of**.\n- Sıfat + edat listesi → ayrı ders: **sifat-fiil-edat**."
    },
    {
     "h": "Senin notun",
-    "md": "- Sıcaklık, hız, oran, seviye → **at**: \"boils **at** 100 °C\", \"**at** a rate of\", \"**at** low levels\" (in değil!).\n- **lead to + isim**: leads to **an increase** ✓, leads to **forming** ✓, leads to form ✗."
+    "md": "- Sıcaklık, hız, oran, seviye → **at**: boils **at** 100 °C, **at** a rate of, **at** low levels (in ✗).\n- **lead to + isim**: leads to **an increase** ✓ · leads to **the formation of** ✓ · leads to form ✗"
    },
    {
     "h": "Örnekler",
-    "md": "- Nitrogen becomes liquid **at** −196 °C.\n- Smoking contributes **to** heart disease.\n- The cracks resulted **from** repeated loading.\n- The two alloys differ **in terms of** hardness."
+    "md": "- Nitrogen becomes liquid **at** −196 °C.\n- The gas is stored **under** high pressure.\n- Smoking contributes **to** heart disease.\n- The cracks resulted **from** repeated loading."
    }
   ],
   "checks": [
@@ -208,7 +498,8 @@
      "with"
     ],
     "answer": 2,
-    "explain": "Sıcaklık değeriyle 'at' kullanılır: at low temperatures."
+    "explain": "Sıcaklık değeriyle 'at' kullanılır: at low temperatures.",
+    "hint": "\"temperatures\" var: kişisel kuralın."
    },
    {
     "q": "Excessive use of fertilizers can lead ---- the pollution of groundwater.",
@@ -220,7 +511,8 @@
      "with"
     ],
     "answer": 0,
-    "explain": "lead to + isim: 'yol açmak'."
+    "explain": "lead to + isim: 'yol açmak'.",
+    "hint": "\"lead ----\" sonuç bildiren kalıp."
    },
    {
     "q": "The disease results ---- a deficiency of vitamin B12.",
@@ -232,7 +524,8 @@
      "from"
     ],
     "answer": 4,
-    "explain": "Hastalık eksiklikten kaynaklanır: neden → result from."
+    "explain": "Hastalık eksiklikten kaynaklanır: neden → result from.",
+    "hint": "Hastalık eksiklikten mi kaynaklanır, eksikliğe mi yol açar?"
    },
    {
     "q": "Carbon emissions are rising ---- an alarming rate.",
@@ -244,7 +537,8 @@
      "under"
     ],
     "answer": 1,
-    "explain": "rate ile 'at a rate' kalıbı."
+    "explain": "rate ile 'at a rate' kalıbı.",
+    "hint": "\"rate\" hangi edatla?"
    },
    {
     "q": "The new alloy is superior to steel ---- weight and corrosion resistance.",
@@ -256,28 +550,211 @@
      "in spite of"
     ],
     "answer": 3,
-    "explain": "'… bakımından' anlamı: in terms of."
+    "explain": "'… bakımından' anlamı: in terms of.",
+    "hint": "\"bakımından\" anlamı hangi öbek?"
+   }
+  ]
+ },
+ {
+  "id": "sifat-fiil-edat",
+  "title": "Sıfat + edat · Fiil + edat (fen listesi)",
+  "order": 7,
+  "topic": "sifat-fiil-edat",
+  "minutes": 5,
+  "summary": "Edat çift boşluklarının çoğu bu kalıplardan gelir. Listeyi kart gibi ezberle.",
+  "formula": "resistant/prone/exposed TO · rich IN · capable OF · responsible FOR · consistent WITH · depend ON",
+  "blocks": [
+   {
+    "h": "Sıfat + edat",
+    "md": "| Edat | Sıfatlar |\n|---|---|\n| **to** | similar, resistant, exposed, prone, vulnerable, sensitive, related, unique, equivalent, superior |\n| **of** | capable, composed, aware, typical |\n| **for** | responsible, suitable, famous |\n| **with** | consistent, compatible, associated |\n| **in / on / from** | rich **in** · based / dependent **on** · different / free **from** |"
+   },
+   {
+    "h": "Fiil + edat",
+    "md": "| Edat | Fiiller |\n|---|---|\n| **on** | depend, rely, focus |\n| **of** | consist |\n| **to** | contribute, refer, attribute A to B |\n| **from** | result (neden), derive, differ, protect A from B |\n| **in / into / for / with** | result **in** · convert **into** · account **for** · interact **with** |\n\n- range **from** … **to** …"
+   },
+   {
+    "h": "Tuzak",
+    "md": "- **superior to** (than ✗)\n- **result in** = sonuç · **result from** = neden\n- **free from / free of** ikisi de olur."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Children are more vulnerable ---- air pollution than adults.",
+    "options": [
+     "to",
+     "with",
+     "of",
+     "for",
+     "at"
+    ],
+    "answer": 0,
+    "explain": "vulnerable to.",
+    "hint": "Sıfat + edat: vulnerable ----"
+   },
+   {
+    "q": "The soil here is rich ---- iron.",
+    "options": [
+     "for",
+     "with",
+     "on",
+     "of",
+     "in"
+    ],
+    "answer": 4,
+    "explain": "rich in.",
+    "hint": "Sıfat + edat: rich ----"
+   },
+   {
+    "q": "The results are consistent ---- our model.",
+    "options": [
+     "of",
+     "on",
+     "to",
+     "for",
+     "with"
+    ],
+    "answer": 4,
+    "explain": "consistent with.",
+    "hint": "Sıfat + edat: consistent ----"
+   },
+   {
+    "q": "Most of the energy is derived ---- fossil fuels.",
+    "options": [
+     "by",
+     "to",
+     "from",
+     "of",
+     "with"
+    ],
+    "answer": 2,
+    "explain": "derive from.",
+    "hint": "Fiil + edat: derived ----"
+   },
+   {
+    "q": "The machine is capable ---- lifting five tonnes.",
+    "options": [
+     "to",
+     "in",
+     "for",
+     "of",
+     "on"
+    ],
+    "answer": 3,
+    "explain": "capable of + Ving.",
+    "hint": "Sıfat + edat: capable ----"
+   }
+  ]
+ },
+ {
+  "id": "edat-ving",
+  "title": "Edat + Ving ve \"to\" testi",
+  "order": 8,
+  "topic": "edat-ving",
+  "minutes": 4,
+  "summary": "Edattan sonra fiil hep -ing alır. \"to\" bazen edattır: isim testini yap.",
+  "formula": "edat + Ving · \"to'ya isim sığıyorsa -ing\" (with a view to reducing)",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "| Edat + Ving | Anlam |\n|---|---|\n| **by** Ving | -arak (yöntem) |\n| **without** Ving | -meden |\n| **instead of** Ving | -mek yerine |\n| **on / upon** Ving | -ır -ırmaz |\n| **in** Ving | -erken |\n| **besides / despite / after / before** Ving | |"
+   },
+   {
+    "h": "\"to\" testi",
+    "md": "- to'dan sonra bir **isim** koy. Anlamlıysa to = edat → **Ving**.\n- contribute to **success** ✓ → contribute to **reducing** ✓\n- in order to **success** ✗ → in order to **reduce** ✓\n- to = edat olanlar: **with a view to, look forward to, be used to, contribute to, lead to, object to, be devoted to, in addition to, the key to, when it comes to**"
+   },
+   {
+    "h": "Tuzak",
+    "md": "- with a view to **reduce** ✗ → reducing ✓\n- He is used to **work** ✗ (alışkın) → used to **working** ✓\n- after **to heat** ✗ → after **heating** ✓"
+   }
+  ],
+  "checks": [
+   {
+    "q": "They cut costs by ---- cheaper materials.",
+    "options": [
+     "use",
+     "using",
+     "to use",
+     "used",
+     "uses"
+    ],
+    "answer": 1,
+    "explain": "by + Ving.",
+    "hint": "Boşluktan önce edat var mı?"
+   },
+   {
+    "q": "The plant was built with a view to ---- jobs.",
+    "options": [
+     "be created",
+     "created",
+     "creating",
+     "creates",
+     "create"
+    ],
+    "answer": 2,
+    "explain": "with a view to + Ving (to edat).",
+    "hint": "\"to\" testi: with a view to + isim olur mu?"
+   },
+   {
+    "q": "Don't start the engine without ---- the oil.",
+    "options": [
+     "checked",
+     "to check",
+     "checking",
+     "checks",
+     "check"
+    ],
+    "answer": 2,
+    "explain": "without + Ving.",
+    "hint": "\"without\" edat mı?"
+   },
+   {
+    "q": "The workers are used to ---- in noisy conditions.",
+    "options": [
+     "work",
+     "worked",
+     "working",
+     "be worked",
+     "works"
+    ],
+    "answer": 2,
+    "explain": "be used to + Ving = alışkın.",
+    "hint": "\"are used to\": alışkın mı, kullanılmak mı?"
+   },
+   {
+    "q": "The samples were heated in order to ---- the water.",
+    "options": [
+     "removal",
+     "be removing",
+     "removing",
+     "remove",
+     "removed"
+    ],
+    "answer": 3,
+    "explain": "in order to + V1 (to edat değil).",
+    "hint": "\"in order to success\" olur mu? Olmazsa ne gelir?"
    }
   ]
  },
  {
   "id": "zaman-uyumu",
   "title": "Zamanlar ve zaman uyumu",
-  "order": 4,
+  "order": 9,
+  "topic": "zaman-uyumu",
   "minutes": 7,
   "summary": "Boşlukta fiil zamanı sorulur; cümledeki zaman ifadesi ve diğer fiilin zamanı cevabı belirler.",
+  "formula": "since → PP · by the time + V2 → had V3 · by 2050 → will have V3 · bağlaç + will ✗",
   "blocks": [
    {
-    "h": "Kural",
-    "md": "| İpucu | Zaman |\n|---|---|\n| since, for, over the past/last…, so far, to date, recently | **Present Perfect** |\n| ago, in 1990, last year, **until recently** | **Past Simple** |\n| by the time + past, before + past (öncelik) | **Past Perfect** |\n| by 2050, by the end of… (gelecek) | **Future Perfect** |\n| genel gerçek, bilimsel olgu | **Present Simple** |\n| currently, at present, now | **Present Continuous** |"
+    "h": "Zaman tablosu",
+    "md": "| İfade | Ana cümle | Örnek |\n|---|---|---|\n| since + geçmiş an | **has V3** (cont.) | Since it **was** built, it **has carried** … |\n| for + süre | has V3 (sürüyor) / V2 (bitti) | for ten years |\n| over the past / so far / to date | **has V3** | So far it **has saved** … |\n| ago / in 1990 / last year | **V2** | It **opened** in 1990. |\n| recently | **has V3 veya V2** | It **was recently** discovered. |\n| by the time + V2 | **had V3** | … it **had spread**. |\n| by the time + V1 | **will have V3** | By the time it arrives, it **will have travelled** … |\n| by 2040 / by 1900 | will have V3 / had V3 | |\n| currently, now, at present | **is Ving** | |\n| genel gerçek | **V1** | Water **boils** at 100 °C. |"
    },
    {
-    "h": "Uyum",
-    "md": "- When / after / before / until + **past** → ana cümle **past**.\n- Zaman bağlacından sonra **will kullanılmaz**: When the ice **melts** (will melt ✗), sea levels will rise.\n- When + past simple, past continuous: kesilen eylem (\"was measuring when the power failed\")."
+    "h": "Süreklilik",
+    "md": "- **while / as + was Ving**, V2: While it **was cooling**, it **cracked**.\n- **has been Ving**: for/since + hâlâ sürüyor: They **have been testing** it for five years.\n- **had been Ving**: geçmişteki bir ana kadar sürdü: had been running **when/before** it stopped.\n- Zaman ifadesi ayrıntısı (ever since, until, once, no sooner) → ders: **zaman-ifadeleri**."
    },
    {
-    "h": "Sınav tuzağı",
-    "md": "- **Until recently** → Past Simple (\"Until recently, scientists believed…\").\n- **It is the first time** → Present Perfect.\n- Bilimsel gerçek, ana cümle geçmişte olsa bile Present kalabilir: \"Galileo showed that objects **fall** at the same rate.\" "
+    "h": "Altın kurallar",
+    "md": "- Zaman bağlacından sonra **will yok**: When the ice **melts** ✓ · will melt ✗\n- **since → Present Perfect** (ana cümle).\n- **Past perfect** varsa yanında **past simple** ara (önce / sonra).\n- **Until recently** → V2 · **It is the first time** → has V3."
    },
    {
     "h": "Örnekler",
@@ -295,7 +772,8 @@
      "will increase"
     ],
     "answer": 3,
-    "explain": "'Over the past two decades' → Present Perfect."
+    "explain": "'Over the past two decades' → Present Perfect.",
+    "hint": "\"Over the past two decades\" hangi zaman?"
    },
    {
     "q": "Until recently, scientists ---- that the brain could not produce new neurons in adults.",
@@ -307,7 +785,8 @@
      "are believing"
     ],
     "answer": 1,
-    "explain": "'Until recently' artık doğru olmayan geçmiş inanç → Past Simple."
+    "explain": "'Until recently' artık doğru olmayan geçmiş inanç → Past Simple.",
+    "hint": "\"Until recently\" bitmiş bir inanç mı?"
    },
    {
     "q": "By the time the rescue team arrived, the gas ---- through the entire building.",
@@ -319,7 +798,8 @@
      "is spreading"
     ],
     "answer": 0,
-    "explain": "By the time + past: varıştan önce bitmiş eylem → Past Perfect."
+    "explain": "By the time + past: varıştan önce bitmiş eylem → Past Perfect.",
+    "hint": "\"By the time … arrived\" geçmiş: ana cümle?"
    },
    {
     "q": "By 2050, the global population ---- nearly 10 billion, according to estimates.",
@@ -331,7 +811,8 @@
      "will have reached"
     ],
     "answer": 4,
-    "explain": "By + gelecek tarih → Future Perfect."
+    "explain": "By + gelecek tarih → Future Perfect.",
+    "hint": "\"By 2050\" geçmiş mi gelecek mi?"
    },
    {
     "q": "Water ---- at 0 °C under normal atmospheric pressure.",
@@ -343,32 +824,241 @@
      "was freezing"
     ],
     "answer": 2,
-    "explain": "Bilimsel genel gerçek → Present Simple."
+    "explain": "Bilimsel genel gerçek → Present Simple.",
+    "hint": "Bilimsel genel gerçek mi?"
+   },
+   {
+    "q": "Since the dam ---- in 2005, it ---- electricity for half a million homes.",
+    "options": [
+     "opens / will provide",
+     "had opened / provides",
+     "was opening / had provided",
+     "has opened / provided",
+     "opened / has provided"
+    ],
+    "answer": 4,
+    "explain": "\"in 2005\" → opened; since + past → ana cümle Present Perfect: has provided.",
+    "hint": "Önce \"in 2005\" olan boşluğu çöz, sonra since kuralı."
+   },
+   {
+    "q": "By the time the engineers ---- the fault, the battery ---- completely.",
+    "options": [
+     "will find / was draining",
+     "had found / has drained",
+     "find / drained",
+     "found / had drained",
+     "have found / drains"
+    ],
+    "answer": 3,
+    "explain": "By the time + past → ana cümle past perfect: found / had drained.",
+    "hint": "By the time + V2 → ana cümle hangi zaman?"
+   }
+  ]
+ },
+ {
+  "id": "zaman-ifadeleri",
+  "title": "Zaman ifadesi ↔ tense eşleşmesi",
+  "order": 10,
+  "topic": "zaman-ifadeleri",
+  "minutes": 5,
+  "summary": "Zaman bağlacı/ifadesi ana cümlenin zamanını belirler. Önce ifadeyi bul, sonra tabloya bak.",
+  "formula": "ever since + V2 → PP · until/once/as soon as + V1 → will · No sooner had…than · Hardly had…when",
+  "blocks": [
+   {
+    "h": "Bağlaçlar",
+    "md": "| İfade | Ana cümle | Örnek |\n|---|---|---|\n| **ever since** + V2 | has V3 | Ever since it **opened**, it **has grown**. |\n| **when / once / as soon as** + V1 | will | Once it **cools**, it **will harden**. |\n| **until** + V1 | will | It **will run** until it **breaks**. |\n| **until** + V2 | V2 (didn't … until) | It **didn't start** until we **fixed** it. |\n| **by the time** + V2 | had V3 | |\n| **by the time** + V1 | will have V3 | |"
+   },
+   {
+    "h": "Devrik zaman kalıpları",
+    "md": "- **No sooner had** X V3 **than** Y V2.\n- **Hardly / Scarcely had** X V3 **when** Y V2.\n- **It was not until** 1928 **that** … V2.\n- Ezber: **H-W, N-T** (Hardly–When, No sooner–Than)."
+   },
+   {
+    "h": "for / ifade",
+    "md": "- **for** + süre: sürüyorsa **has V3**, bittiyse **V2**.\n- **by 2040** → will have V3 · **by 1900** → had V3.\n- **while** + was Ving, V2 · **throughout / during** + isim."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Ever since the new rules ----, accidents have fallen by half.",
+    "options": [
+     "will be introduced",
+     "are introduced",
+     "were introduced",
+     "had introduced",
+     "have introduced"
+    ],
+    "answer": 2,
+    "explain": "Ever since + V2, ana cümle PP. Kurallar getirildi (edilgen).",
+    "hint": "Ana cümle PP: since yan cümlesi hangi zaman?"
+   },
+   {
+    "q": "The pump will keep running until the tank ---- full.",
+    "options": [
+     "will be",
+     "was",
+     "had been",
+     "would be",
+     "is"
+    ],
+    "answer": 4,
+    "explain": "until + present; will yok.",
+    "hint": "until'den sonra will olur mu?"
+   },
+   {
+    "q": "No sooner had the test started ---- the power failed.",
+    "options": [
+     "when",
+     "as",
+     "then",
+     "that",
+     "than"
+    ],
+    "answer": 4,
+    "explain": "No sooner … than.",
+    "hint": "No sooner'ın eşi?"
+   },
+   {
+    "q": "The bridge ---- for 80 years before it was finally replaced.",
+    "options": [
+     "has stood",
+     "had stood",
+     "is standing",
+     "stands",
+     "will stand"
+    ],
+    "answer": 1,
+    "explain": "before + V2 → önce süren eylem had V3.",
+    "hint": "Değiştirilme geçmişte: köprünün durması ondan önce mi?"
+   },
+   {
+    "q": "Once the paint ----, the second layer can be applied.",
+    "options": [
+     "would dry",
+     "dried",
+     "will dry",
+     "had dried",
+     "dries"
+    ],
+    "answer": 4,
+    "explain": "once + present (gelecek anlam); will yok.",
+    "hint": "Bağlaçtan sonra will yok."
+   }
+  ]
+ },
+ {
+  "id": "cift-bosluk",
+  "title": "Çift boşluk taktiği",
+  "order": 11,
+  "topic": "cift-bosluk",
+  "minutes": 3,
+  "summary": "Sınavda her testte ~6 soru iki boşluklu (---- / ----). Önce kolay boşluğu çöz, şıkların yarısı gider.",
+  "formula": "Önce kolay boşluk → şık ele → kalan 2 şıkta ikinci boşluk",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "- **Önce kolay boşluk.** Tek boşluğu çöz; 5 şıktan 3'ü gider.\n- Zaman/zaman: önce **zaman ifadesi olan** boşluk (since, by, ago, now).\n- Edat/edat: önce **kesin kalıp** olan boşluk (suitable **for**, consist **of**, from … **to**).\n- Çift bağlaç: bir eşi bul (neither → nor)."
+   },
+   {
+    "h": "Örnek 1",
+    "md": "Since the sensor ---- in 2019, it ---- more than two million readings.\n- \"in 2019\" → **was installed**. Sadece bir şıkta var.\n- Kontrol: since + past → ana cümle **has recorded** ✓"
+   },
+   {
+    "h": "Örnek 2",
+    "md": "The coating protects the hull ---- corrosion and is suitable ---- use in salt water.\n- \"suitable **for**\" kesin → for'lu şıklar kalır.\n- protect **from** ✓ → **from / for**."
+   }
+  ],
+  "checks": [
+   {
+    "q": "The factory ---- in 1995 and since then it ---- three times.",
+    "options": [
+     "is built / will expand",
+     "was built / has been expanded",
+     "has been built / was expanded",
+     "had built / expands",
+     "built / expanded"
+    ],
+    "answer": 1,
+    "explain": "in 1995 → was built; since then → has been expanded.",
+    "hint": "Önce \"in 1995\" boşluğu."
+   },
+   {
+    "q": "The sensor is sensitive ---- light and works best ---- low temperatures.",
+    "options": [
+     "of / in",
+     "from / under",
+     "with / on",
+     "for / by",
+     "to / at"
+    ],
+    "answer": 4,
+    "explain": "sensitive to; temperature → at.",
+    "hint": "Önce kesin kalıp: sensitive ----."
+   },
+   {
+    "q": "---- the engine ---- the brakes had been checked before the race, so the car was stopped.",
+    "options": [
+     "Either / nor",
+     "Not only / and",
+     "Neither / nor",
+     "Whether / nor",
+     "Both / or"
+    ],
+    "answer": 2,
+    "explain": "Araç durduruldu → hiçbiri kontrol edilmemişti: Neither … nor.",
+    "hint": "Eşleri tutan tek çift hangisi?"
+   },
+   {
+    "q": "By the time the experts ----, the fire ---- most of the building.",
+    "options": [
+     "arrived / had destroyed",
+     "arrive / destroyed",
+     "will arrive / was destroying",
+     "have arrived / had destroyed",
+     "had arrived / has destroyed"
+    ],
+    "answer": 0,
+    "explain": "By the time + V2 → had V3.",
+    "hint": "\"By the time\" boşluğunu önce çöz."
+   },
+   {
+    "q": "Prices rose ---- 10% ---- the first half of the year.",
+    "options": [
+     "in / by",
+     "to / until",
+     "with / for",
+     "by / during",
+     "at / since"
+    ],
+    "answer": 3,
+    "explain": "artış miktarı by; dönem içinde during.",
+    "hint": "Önce miktar edatı: rose ---- 10%."
    }
   ]
  },
  {
   "id": "relative",
   "title": "Relative clauses (which / that / whose / where)",
-  "order": 5,
+  "order": 12,
+  "topic": "relative",
   "minutes": 7,
   "summary": "Boşlukta ilgi zamiri sorulur; virgül, edat ve sonrasının tam/eksik cümle olması cevabı verir.",
+  "formula": "virgül/edat → which · sonrası tam → where/when · sonrası isim → whose · the only → that",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Zamir | Ne için | Sonrası |\n|---|---|---|\n| **which** | şey | eksik cümle (özne/nesne yok) |\n| **who** | insan | eksik cümle |\n| **that** | şey/insan (sadece virgülsüz) | eksik cümle |\n| **whose** | sahiplik | **isim** + cümle |\n| **where** (= in which) | yer | **tam** cümle |\n| **when** (= in/at which) | zaman | **tam** cümle |"
+    "md": "| Zamir | Ne için | Sonrası |\n|---|---|---|\n| **which / that** | şey | eksik cümle |\n| **who / that** | insan | eksik cümle |\n| **whom** | insan (nesne, edat + whom) | eksik cümle |\n| **whose** | sahiplik | **isim** + cümle |\n| **where / when / why** | yer / zaman / neden (reason) | **tam** cümle |\n| **whereby** (= by which) | yöntem, süreç | **tam** cümle |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- **where** sonrası tam cümle: \"the lab **where** they tested the samples\".\n- Edat + **which/whom**: \"the rate **at which** ice melts\". Edat + that ✗.\n- \", **which**\" önceki cümlenin tamamını niteleyebilir: \"The test failed, which surprised everyone.\" "
+    "md": "- Edat + **which / whom**: the rate **at which**, the man **to whom**. Edat + that ✗ → ayrı ders: **preposition-which**.\n- **the only / the first / all / superlative + that**: the only material **that** survives.\n- Önünde isim varsa **what** ✗: the thing **what** ✗ → the thing **that/which**.\n- \", **which**\" önceki cümlenin tamamını niteleyebilir."
    },
    {
     "h": "Senin notun",
-    "md": "**which mi that mı?** Sırayla sor:\n1. Boşluktan önce **virgül** var mı? → **which** (that ✗)\n2. Boşluktan önce **edat** var mı? → **which** (that ✗)\n3. İkisi de yoksa ikisi de olur; şıklarda tek biri vardır.\nSonra: sonrası tam cümle ise which değil **where/when/whose** düşün."
+    "md": "**which mi that mı?** Sırayla sor:\n1. Boşluktan önce **virgül** var mı? → **which** (that ✗)\n2. Boşluktan önce **edat** var mı? → **which** (that ✗)\n3. İkisi de yoksa ikisi de olur; şıklarda genelde biri vardır.\nSonra: sonrası tam cümle ise **where/when/whose/whereby** düşün."
    },
    {
     "h": "Örnekler",
-    "md": "- Titanium, **which** resists corrosion, is used in implants.\n- A catalyst is a substance **that** speeds up a reaction.\n- The region **where** the earthquake struck lies on a fault.\n- Bees, **whose** numbers are falling, pollinate many crops."
+    "md": "- Titanium, **which** resists corrosion, is used in implants.\n- The reason **why** the bridge failed is unknown.\n- Photosynthesis is a process **whereby** light becomes chemical energy.\n- This is the only alloy **that** stays strong at 1,000 °C."
    }
   ],
   "checks": [
@@ -382,7 +1072,8 @@
      "what"
     ],
     "answer": 0,
-    "explain": "Virgülden sonra 'that' gelemez; şey + eksik cümle (özne yok) → which."
+    "explain": "Virgülden sonra 'that' gelemez; şey + eksik cümle (özne yok) → which.",
+    "hint": "Boşluktan önce virgül var mı?"
    },
    {
     "q": "The laboratory ---- the experiments were carried out has been closed.",
@@ -394,7 +1085,8 @@
      "where"
     ],
     "answer": 4,
-    "explain": "Sonrası tam cümle (the experiments were carried out) ve yer → where."
+    "explain": "Sonrası tam cümle (the experiments were carried out) ve yer → where.",
+    "hint": "Boşluktan sonraki cümle tam mı?"
    },
    {
     "q": "Researchers studied a species of frog ---- skin produces a natural antibiotic.",
@@ -406,7 +1098,8 @@
      "when"
     ],
     "answer": 2,
-    "explain": "'frog's skin' sahiplik; boşluktan sonra isim → whose."
+    "explain": "'frog's skin' sahiplik; boşluktan sonra isim → whose.",
+    "hint": "Boşluktan sonra isim (skin) var."
    },
    {
     "q": "The temperature at ---- the metal melts depends on its purity.",
@@ -418,7 +1111,8 @@
      "what"
     ],
     "answer": 1,
-    "explain": "Edattan (at) sonra that gelemez → at which."
+    "explain": "Edattan (at) sonra that gelemez → at which.",
+    "hint": "Boşluktan önce edat (at) var."
    },
    {
     "q": "The device failed, ---- surprised the engineers.",
@@ -430,32 +1124,125 @@
      "who"
     ],
     "answer": 3,
-    "explain": "Virgül + önceki cümlenin tamamını niteleme → which."
+    "explain": "Virgül + önceki cümlenin tamamını niteleme → which.",
+    "hint": "Boşluk önceki cümlenin tamamını mı niteliyor?"
+   }
+  ]
+ },
+ {
+  "id": "preposition-which",
+  "title": "Edat + which (at which, by which, whereby)",
+  "order": 13,
+  "topic": "preposition-which",
+  "minutes": 4,
+  "summary": "Fen metinlerinde edat ilgi zamirinin önüne gelir. Edat + which / whom; edat + that olmaz.",
+  "formula": "edat + which (şey) / whom (insan) · whereby = by which · edat + that ✗",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "| Yapı | Nereden gelir | Örnek |\n|---|---|---|\n| **at which** | at a rate/temperature | the rate **at which** ice melts |\n| **to which** | refer to, the extent to | the extent **to which** … |\n| **by which / whereby** | by a process | a process **whereby** … |\n| **during which** | during a period | a period **during which** … |\n| **under which** | under conditions | conditions **under which** … |\n| **in which** (= where) | in a place | the lab **in which** … |"
+   },
+   {
+    "h": "Nasıl bulunur?",
+    "md": "- İlgi cümlesindeki fiilin edatını bul: ice melts **at** a rate → the rate **at which** ice melts.\n- Sonrası **tam cümle** olur (edat boşluğu doldurur).\n- İnsan: the engineer **to whom** I wrote."
+   },
+   {
+    "h": "Tuzak",
+    "md": "- at **that** ✗ · in **that** (relative) ✗\n- at **where** ✗ → at which / where\n- whereby + tam cümle; thereby + Ving (karıştırma!)"
+   }
+  ],
+  "checks": [
+   {
+    "q": "The rate at ---- the glacier is melting has doubled.",
+    "options": [
+     "where",
+     "that",
+     "which",
+     "when",
+     "what"
+    ],
+    "answer": 2,
+    "explain": "Edat + which.",
+    "hint": "Boşluktan önce edat var."
+   },
+   {
+    "q": "The conditions under ---- the samples were stored were not ideal.",
+    "options": [
+     "what",
+     "which",
+     "that",
+     "whom",
+     "where"
+    ],
+    "answer": 1,
+    "explain": "under conditions → under which.",
+    "hint": "Edat + that olur mu?"
+   },
+   {
+    "q": "The scientist to ---- the prize was given is from Turkey.",
+    "options": [
+     "whose",
+     "that",
+     "whom",
+     "which",
+     "who"
+    ],
+    "answer": 2,
+    "explain": "Edat + insan → whom.",
+    "hint": "Edattan sonra insan için hangisi?"
+   },
+   {
+    "q": "This is a method ---- old plastic can be turned into fuel.",
+    "options": [
+     "thereby",
+     "that",
+     "what",
+     "which",
+     "whereby"
+    ],
+    "answer": 4,
+    "explain": "Tam cümle + yöntem → whereby (= by which).",
+    "hint": "Sonrası tam cümle mi? thereby Ving ister."
+   },
+   {
+    "q": "The years during ---- the bridge was built were difficult.",
+    "options": [
+     "which",
+     "what",
+     "that",
+     "where",
+     "when"
+    ],
+    "answer": 0,
+    "explain": "during which.",
+    "hint": "Edat + zamir: during when olur mu?"
    }
   ]
  },
  {
   "id": "gerund-infinitive",
   "title": "Gerund / Infinitive",
-  "order": 6,
+  "order": 14,
+  "topic": "gerund-infinitive",
   "minutes": 7,
   "summary": "Boşlukta fiilin -ing mi to V mi olacağı sorulur; önündeki fiil veya edat belirler.",
+  "formula": "edat → Ving · enable + nesne + to V · let/make + nesne + V1 · used to V1 ≠ be used to Ving",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Fiil | Kalıp |\n|---|---|\n| avoid, consider, involve, suggest, keep, finish, risk | + **Ving** |\n| aim, attempt, fail, manage, tend, seem, decide, refuse | + **to V** |\n| enable, allow, cause, force, require, encourage + **nesne** | + **to V** |\n| prevent / stop + nesne + **from** | + **Ving** |\n| Tüm edatlar (by, without, instead of, after) | + **Ving** |"
+    "md": "| Önce gelen | Kalıp |\n|---|---|\n| avoid, consider, involve, keep, finish, risk | + **Ving** |\n| aim, attempt, fail, manage, tend, decide | + **to V** |\n| enable, allow, cause, force, require + nesne | + **to V** |\n| **let, make, have** + nesne (help: ikisi de) | + **V1** |\n| prevent / stop + nesne + **from** | + **Ving** |\n| Tüm edatlar (by, without, instead of) | + **Ving** |\n| It is important / necessary / difficult | + **to V** |"
    },
    {
     "h": "Anlamı değişenler",
-    "md": "| Fiil | + Ving | + to V |\n|---|---|---|\n| **mean** | anlamına gelmek, gerektirmek | niyet etmek |\n| **stop** | bırakmak | durup …mak |\n| **remember / forget** | yapmış olmayı hatırlamak | yapmayı hatırlamak |\n| **try** | denemek (yöntem) | çabalamak |\n- **begin / start**: ikisi de olur; ama \"is beginning **to melt**\" (çift -ing yok)."
+    "md": "| Fiil | + Ving | + to V |\n|---|---|---|\n| **mean** | gerektirmek | niyet etmek |\n| **stop** | bırakmak | durup …mak |\n| **remember** | yapmış olmayı | yapmayı (unutmamak) |\n\n- **suggest + Ving** (öneri) · **suggest that + V1** → ders: **subjunctive**.\n- too / enough + to V → ders: **so-such-too-enough**."
+   },
+   {
+    "h": "used to üçlüsü",
+    "md": "| Yapı | Anlam |\n|---|---|\n| **used to + V1** | eskiden yapardı |\n| **be used to + Ving** | alışkın olmak |\n| **be used to + V1** | (bir iş için) kullanılmak |\n\n- Engines **used to burn** coal. · We **are used to working** late. · Lasers **are used to cut** steel."
    },
    {
     "h": "Senin notun",
-    "md": "- **mean + Ving** = gerektirmek: \"Cutting emissions **means changing** fuels.\"\n- **mean + to V** = niyet: \"We **meant to repeat** the test.\"\n- **with + isim + Ving** = \"…-ken / …-diği için\": \"**With temperatures rising**, glaciers shrink.\" Pasif: with + isim + V3. Cümle değil: with temperatures **are** rising ✗."
-   },
-   {
-    "h": "Örnekler",
-    "md": "- The method involves **heating** the sample to 500 °C.\n- The coating prevents the metal **from rusting**.\n- The new software allows engineers **to simulate** crashes."
+    "md": "- **mean + Ving** = gerektirmek: Cutting emissions **means changing** fuels.\n- **mean + to V** = niyet: We **meant to repeat** the test (but…).\n- **with + isim + Ving/V3**: **With temperatures rising**, glaciers shrink. Arada çekimli fiil yok: with temperatures **are** rising ✗"
    }
   ],
   "checks": [
@@ -465,11 +1252,12 @@
      "to have",
      "have",
      "had",
-     "to having",
+     "having had",
      "having"
     ],
     "answer": 4,
-    "explain": "mean = 'anlamına gelmek / sonuç vermek' → mean + Ving."
+    "explain": "mean = 'anlamına gelmek / sonuç vermek' → mean + Ving.",
+    "hint": "\"mean\" burada niyet mi, sonuç mu?"
    },
    {
     "q": "The new catalyst enables the reaction ---- at room temperature.",
@@ -478,10 +1266,11 @@
      "proceeding",
      "to proceed",
      "proceeded",
-     "to proceeding"
+     "proceeds"
     ],
     "answer": 2,
-    "explain": "enable + nesne + to V."
+    "explain": "enable + nesne + to V.",
+    "hint": "\"enables + nesne + ----\" kalıbı."
    },
    {
     "q": "---- the number of cases increasing every day, hospitals are running out of beds.",
@@ -493,7 +1282,8 @@
      "So that"
     ],
     "answer": 0,
-    "explain": "Boşluktan sonra isim + Ving (cümle değil) → with + N + Ving."
+    "explain": "Boşluktan sonra isim + Ving (cümle değil) → with + N + Ving.",
+    "hint": "Boşluktan sonra isim + Ving var, çekimli fiil yok."
    },
    {
     "q": "The team avoided ---- the samples to direct sunlight.",
@@ -502,10 +1292,11 @@
      "to expose",
      "exposed",
      "exposing",
-     "to exposing"
+     "exposure"
     ],
     "answer": 3,
-    "explain": "avoid + Ving."
+    "explain": "avoid + Ving.",
+    "hint": "\"avoided\" hangi biçimi alır?"
    },
    {
     "q": "The researchers meant ---- the experiment, but the equipment broke down.",
@@ -517,24 +1308,27 @@
      "having repeated"
     ],
     "answer": 1,
-    "explain": "Niyet etmişlerdi ama olmadı → mean + to V."
+    "explain": "Niyet etmişlerdi ama olmadı → mean + to V.",
+    "hint": "\"but the equipment broke down\": niyet mi?"
    }
   ]
  },
  {
   "id": "passive",
   "title": "Edilgen yapı (passive)",
-  "order": 7,
+  "order": 15,
+  "topic": "passive",
   "minutes": 5,
   "summary": "Boşlukta etken/edilgen ve zaman birlikte sorulur; nesne var mı ve zaman ifadesi ne diye bakılır.",
+  "formula": "nesne yok / by var → edilgen · occur, happen, exist, take place edilgen ✗",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Zaman | Passive |\n|---|---|\n| Present / Past | is / was **done** |\n| Continuous | is / was **being done** |\n| Perfect | has / had **been done** |\n| Modal | can / must **be done**, may **have been done** |\n| Gerund / Infinitive | **being done** / **to be done**, **to have been done** |\n- Fen metinlerinde sık: \"It **is thought that**…\", \"X **is thought to be** / **to have been**…\" "
+    "md": "| Zaman | Passive |\n|---|---|\n| Present / Past | is / was **done** |\n| Continuous | is / was **being done** |\n| Perfect | has / had **been done** |\n| Modal | can / must **be done** · may **have been done** |\n| Gerund / Inf. | **being done** / **to be done** / **to have been done** |\n\n- Fen kalıbı: It **is thought that** … · X **is thought to have been** V3."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Boşluktan sonra **nesne varsa** genelde etken, yoksa (veya **by** varsa) edilgen.\n- Geçişsiz fiiller edilgen olmaz: **occur, happen, appear, exist, emerge, remain, consist of** (are occurred ✗).\n- Geçmişteki olay + \"is thought\" → **to have been V3**."
+    "md": "- Boşluktan sonra **nesne varsa** genelde etken; yoksa (veya **by** varsa) edilgen.\n- Geçişsizler edilgen olmaz: **occur, happen, appear, exist, emerge, remain, take place, arise, rise, fall** (are occurred ✗).\n- **need + Ving** = edilgen anlam: The filter **needs cleaning** (= needs to be cleaned).\n- **have sth done** = yaptırmak: They **had the tank inspected**."
    },
    {
     "h": "Örnekler",
@@ -552,19 +1346,21 @@
      "develops"
     ],
     "answer": 1,
-    "explain": "'by Jenner' + geçmiş tarih → Past Simple passive."
+    "explain": "'by Jenner' + geçmiş tarih → Past Simple passive.",
+    "hint": "\"by Jenner\" + geçmiş tarih."
    },
    {
     "q": "Earthquakes ---- when stress in the Earth's crust is suddenly released.",
     "options": [
      "are occurred",
-     "were occurred",
-     "are occurring by",
+     "are occurring",
+     "occurred",
      "occur",
-     "have been occurred"
+     "had occurred"
     ],
     "answer": 3,
-    "explain": "occur geçişsizdir, edilgen olmaz; genel gerçek → occur."
+    "explain": "occur geçişsizdir, edilgen olmaz; genel gerçek → occur.",
+    "hint": "occur edilgen olur mu? Genel gerçek mi?"
    },
    {
     "q": "The dinosaurs are thought ---- out by a massive asteroid impact.",
@@ -576,7 +1372,8 @@
      "to have been wiped"
     ],
     "answer": 4,
-    "explain": "Geçmiş olay + edilgen (by an impact) → to have been wiped."
+    "explain": "Geçmiş olay + edilgen (by an impact) → to have been wiped.",
+    "hint": "Dinozorlar yok eden mi edilen mi? Geçmiş mi?"
    },
    {
     "q": "The bridge ---- at the moment, so traffic is being diverted.",
@@ -588,7 +1385,8 @@
      "was repaired"
     ],
     "answer": 0,
-    "explain": "'at the moment' + köprü onarılan → Present Continuous passive."
+    "explain": "'at the moment' + köprü onarılan → Present Continuous passive.",
+    "hint": "\"at the moment\" + köprü onaran mı onarılan mı?"
    },
    {
     "q": "Most patients prefer ---- in detail before surgery.",
@@ -600,24 +1398,31 @@
      "having informed"
     ],
     "answer": 2,
-    "explain": "Hastalar bilgilendirilir (nesne yok) → passive gerund: being informed."
+    "explain": "Hastalar bilgilendirilir (nesne yok) → being informed. Not: \"to be informed\" da doğru olurdu, ama şıklarda yok.",
+    "hint": "Hastalar bilgilendiren mi bilgilendirilen mi?"
    }
   ]
  },
  {
   "id": "kosul-wish",
   "title": "If, unless ve wish",
-  "order": 8,
+  "order": 16,
+  "topic": "kosul-wish",
   "minutes": 6,
   "summary": "Boşlukta koşul tipi veya bağlaç sorulur; if ve ana cümlenin zaman eşleşmesine bakılır.",
+  "formula": "0: V1–V1 · 1: V1–will · 2: V2–would · 3: had V3–would have V3 · It's time + V2",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Tip | If cümlesi | Ana cümle |\n|---|---|---|\n| 0 (genel gerçek) | present | present |\n| 1 (olası) | present | will / can |\n| 2 (hayali, şimdi) | past | would / could |\n| 3 (hayali, geçmiş) | had V3 | would / could **have V3** |\n| Karışık | had V3 | would V1 (now) |"
+    "md": "| Tip | If cümlesi | Ana cümle |\n|---|---|---|\n| 0 (gerçek) | present | present |\n| 1 (olası) | present | will / can |\n| 2 (hayali, şimdi) | past | would / could |\n| 3 (hayali, geçmiş) | had V3 | would have V3 |\n| Karışık A | had V3 | would V1 (now) |\n| Karışık B | past | would have V3 |"
    },
    {
-    "h": "Bağlaçlar ve wish",
-    "md": "- **unless** = if not (sonrası olumlu). **provided / providing (that), as long as, on condition that** = \"şartıyla\".\n- **in case** = \"ihtimaline karşı\" (if değil). **otherwise** = \"aksi halde\".\n- **but for / without** + isim = \"…olmasaydı\".\n- **wish / if only** + past (şimdi), + had V3 (geçmiş).\n- Devrik: **Had** they tested… = If they had tested…; **Were** it… ; **Should** you…"
+    "h": "Bağlaçlar",
+    "md": "- **unless** = if not (sonrası olumlu). **provided (that), as long as, on condition that** = şartıyla.\n- **only if** = sadece …-se · **even if** = -se bile.\n- **in case** = ihtimaline karşı · **otherwise** = aksi halde.\n- **but for / without** + isim = …olmasaydı.\n- Devrik: **Had** they tested… · **Were** it… · **Should** you…"
+   },
+   {
+    "h": "wish ve time",
+    "md": "- **wish + V2** (şimdi) · **wish + had V3** (geçmiş) · **wish + would** (başkasının değişmesi dileği).\n- **It is (high) time + özne + V2**: It is time we **changed** the rules."
    },
    {
     "h": "Örnekler",
@@ -635,7 +1440,8 @@
      "would have boiled"
     ],
     "answer": 2,
-    "explain": "Bilimsel gerçek → Type 0: present + present."
+    "explain": "Bilimsel gerçek → Type 0: present + present.",
+    "hint": "Bilimsel gerçek mi? Hangi tip?"
    },
    {
     "q": "If the dam had been inspected regularly, the disaster ----.",
@@ -647,7 +1453,8 @@
      "could have been prevented"
     ],
     "answer": 4,
-    "explain": "If + had V3 → could have been V3 (Type 3, passive)."
+    "explain": "If + had V3 → could have been V3 (Type 3, passive).",
+    "hint": "\"had been inspected\": hangi tip?"
    },
    {
     "q": "The cells will die ---- they receive enough oxygen.",
@@ -659,7 +1466,8 @@
      "in case"
     ],
     "answer": 1,
-    "explain": "Oksijen alMAzlarsa ölür → unless (= if not)."
+    "explain": "Oksijen alMAzlarsa ölür → unless (= if not).",
+    "hint": "Oksijen alınca mı ölür, alamazsa mı?"
    },
    {
     "q": "---- the material earlier, they would have noticed the defect.",
@@ -671,7 +1479,8 @@
      "Were the engineers tested"
     ],
     "answer": 0,
-    "explain": "Type 3 devrik: Had + özne + V3 = If they had tested."
+    "explain": "Type 3 devrik: Had + özne + V3 = If they had tested.",
+    "hint": "Boşluktan sonra \"the material earlier\": devrik Type 3?"
    },
    {
     "q": "Many researchers wish they ---- more funding for long-term studies now.",
@@ -683,24 +1492,27 @@
      "are having"
     ],
     "answer": 3,
-    "explain": "wish + şimdiki dilek ('now') → past simple: had."
+    "explain": "wish + şimdiki dilek ('now') → past simple: had.",
+    "hint": "\"now\" var: dilek şimdi için mi?"
    }
   ]
  },
  {
   "id": "noun-clause",
   "title": "İsim cümleleri (that / whether / what)",
-  "order": 9,
+  "order": 17,
+  "topic": "noun-clause",
   "minutes": 6,
   "summary": "Fiil veya edattan sonra gelen bilgi cümlesinin bağlacı sorulur; sonrasının tam/eksik olması belirler.",
+  "formula": "tam → that/whether · eksik → what · edat + whether (if ✗)",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Bağlaç | Anlam | Sonrası |\n|---|---|---|\n| **that** | -dığı (bilgi) | **tam** cümle |\n| **whether / if** | -ıp -madığı | tam cümle |\n| **what** | -dığı şey | **eksik** cümle |\n| **how, why, when, where** | nasıl/neden/ne zaman/nerede | tam cümle |\n- Düz cümle düzeni: \"how the cells **divide**\" (how do the cells divide ✗).\n- Özne olarak: **The fact that / What / Whether** … + tekil fiil."
+    "md": "| Bağlaç | Anlam | Sonrası |\n|---|---|---|\n| **that** | -dığı (bilgi) | **tam** cümle |\n| **whether / if** | -ıp -madığı | tam cümle |\n| **what** | -dığı şey | **eksik** cümle |\n| **how, why, when, where** | nasıl/neden/… | tam cümle |\n\n- **how much / how many + isim**: how much rain will fall.\n- Düz sıra: how the cells **divide** (how do the cells divide ✗)."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Edattan sonra **whether** (if ✗): \"depends **on whether**\".\n- Cümle başında özne: **Whether** … (If ✗).\n- **what** sonrası eksik; **that** sonrası tam. \"What causes X\" → özne yok → what.\n- show, find, suggest, indicate + **that** (whether değil, kesin bilgi)."
+    "md": "- Edattan sonra **whether** (if ✗): depends **on whether**.\n- Cümle başında özne: **Whether** … (If ✗) · **whether or not** ✓ · if or not ✗\n- **show / find / suggest / indicate + that**: olumlu, kesin cümlede. Olumsuzda whether olabilir: has not shown **whether** …\n- **suggest / recommend that + V1** (öneri) → ders: **subjunctive**."
    },
    {
     "h": "Örnekler",
@@ -718,7 +1530,8 @@
      "where"
     ],
     "answer": 3,
-    "explain": "Belirsizlik (unsure) + tam cümle → whether (-ıp -madığı)."
+    "explain": "Belirsizlik (unsure) + tam cümle → whether (-ıp -madığı).",
+    "hint": "\"unsure\" belirsizlik mi?"
    },
    {
     "q": "---- causes the sudden decline in bee populations remains unclear.",
@@ -730,7 +1543,8 @@
      "It"
     ],
     "answer": 0,
-    "explain": "'causes' öznesi eksik → what (… şey)."
+    "explain": "'causes' öznesi eksik → what (… şey).",
+    "hint": "\"causes\" öznesi eksik mi?"
    },
    {
     "q": "The results depend on ---- the samples are stored at a low temperature.",
@@ -742,7 +1556,8 @@
      "which"
     ],
     "answer": 2,
-    "explain": "Edattan (on) sonra if değil whether."
+    "explain": "Edattan (on) sonra if değil whether.",
+    "hint": "Boşluktan önce edat (on) var."
    },
    {
     "q": "Recent studies have shown ---- regular exercise improves memory.",
@@ -754,7 +1569,8 @@
      "that"
     ],
     "answer": 4,
-    "explain": "show + kesin bilgi + tam cümle → that."
+    "explain": "show + kesin bilgi + tam cümle → that.",
+    "hint": "\"shown\" kesin bilgi mi?"
    },
    {
     "q": "Nobody knows exactly ---- the first stars formed.",
@@ -766,28 +1582,121 @@
      "whose"
     ],
     "answer": 1,
-    "explain": "formed geçişsiz, cümle tam; zaman bilgisi → when."
+    "explain": "formed geçişsiz, cümle tam; zaman bilgisi → when.",
+    "hint": "Sonrası tam cümle; bilinmeyen zaman mı?"
+   }
+  ]
+ },
+ {
+  "id": "subjunctive",
+  "title": "Subjunctive (suggest that + V1)",
+  "order": 18,
+  "topic": "subjunctive",
+  "minutes": 3,
+  "summary": "Öneri/zorunluluk fiillerinden sonra that cümlesinde fiil yalın kalır (be, drink). Ama suggest = göstermek ise normal zaman.",
+  "formula": "suggest/recommend/insist/require + that + özne + V1 · \"önermek\" → V1, \"göstermek\" → normal zaman",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "- **suggest / recommend / insist / require / demand / propose + that + özne + V1**\n- **It is essential / vital / important / necessary that + özne + V1**\n- Edilgen: … that the valve **be** replaced."
+   },
+   {
+    "h": "suggest'in iki anlamı",
+    "md": "| Anlam | Yapı | Örnek |\n|---|---|---|\n| önermek | that + **V1** | He suggested that the valve **be** replaced. |\n| göstermek | that + **normal zaman** | The data suggest that the valve **was** faulty. |\n| önermek | + **Ving** | He suggested **replacing** the valve. |"
+   },
+   {
+    "h": "Tuzak",
+    "md": "- Doctors recommend that patients **drinks** ✗ → **drink** ✓\n- suggest **to do** ✗ → suggest **doing** / suggest **that** we do"
+   }
+  ],
+  "checks": [
+   {
+    "q": "The inspector recommended that the bridge ---- immediately.",
+    "options": [
+     "was closed",
+     "will be closed",
+     "be closed",
+     "is closed",
+     "closing"
+    ],
+    "answer": 2,
+    "explain": "recommend that + be V3.",
+    "hint": "recommend = önermek: fiil hangi biçimde?"
+   },
+   {
+    "q": "It is vital that the patient ---- the medicine on time.",
+    "options": [
+     "taking",
+     "will take",
+     "took",
+     "take",
+     "takes"
+    ],
+    "answer": 3,
+    "explain": "It is vital that + V1.",
+    "hint": "\"It is vital that\" kalıbı."
+   },
+   {
+    "q": "The tests suggest that the metal ---- too brittle.",
+    "options": [
+     "be",
+     "to be",
+     "were being",
+     "being",
+     "was"
+    ],
+    "answer": 4,
+    "explain": "suggest = göstermek (bulgu) → normal zaman.",
+    "hint": "Testler öneri mi yapıyor, bulgu mu gösteriyor?"
+   },
+   {
+    "q": "The engineer suggested ---- the old cables.",
+    "options": [
+     "replace",
+     "replacing",
+     "to replacing",
+     "to replace",
+     "replaced"
+    ],
+    "answer": 1,
+    "explain": "suggest + Ving.",
+    "hint": "suggest sonrası to V olur mu?"
+   },
+   {
+    "q": "The law requires that every car ---- tested each year.",
+    "options": [
+     "is",
+     "was",
+     "be",
+     "being",
+     "will be"
+    ],
+    "answer": 2,
+    "explain": "require that + be V3.",
+    "hint": "\"requires that\" sonrası fiil yalın mı?"
    }
   ]
  },
  {
   "id": "karsilastirma",
   "title": "Karşılaştırma yapıları",
-  "order": 10,
+  "order": 19,
+  "topic": "karsilastirma",
   "minutes": 5,
   "summary": "Boşlukta than, as…as veya the more… yapısının parçası sorulur; eş parçayı ara.",
+  "formula": "than → -er · as…as · much (very ✗) + -er · the -est of all · superior to",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Yapı | Örnek |\n|---|---|\n| -er / more … **than** | harder **than** steel |\n| **as** … **as** / not as … as | **as** strong **as** |\n| **the** -er …, **the** -er … | **The** higher, **the** colder |\n| twice / three times **as** … **as** | twice **as** fast **as** |\n| **much, far, even, considerably** + comparative | **much** larger (very larger ✗) |\n| superior / inferior / preferable **to** | superior **to** (than ✗) |\n| similar **to**, different **from**, compared **to/with** | |"
+    "md": "| Yapı | Örnek |\n|---|---|\n| -er / more … **than** | harder **than** steel |\n| **as … as** / not as … as | **as** strong **as** |\n| **as much / many** + isim **as** | **as much** energy **as** |\n| X times **as … as** = X times **-er than** | twice **as** fast **as** = twice fast**er than** |\n| **the** -er …, **the** -er … | **The** higher, **the** colder |\n| **the -est / the most** (of all, in, ever) | **the lightest** of all metals |\n| **much, far, even** + comparative | **much** larger (very larger ✗) |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Cümlede **than** varsa şık comparative olmalı; **as** varsa ikinci **as**.\n- \"the more …, the more …\" iki tarafta da **the** zorunlu.\n- **less** + sıfat + than: less dense **than**."
+    "md": "- Cümlede **than** varsa → comparative; **as** varsa → ikinci **as**; **of all / in the world / by far** → superlative.\n- İki şeyden biri: **the stronger of the two** (the strongest ✗).\n- **superior / inferior / preferable to** (than ✗) · similar **to** · different **from**."
    },
    {
     "h": "Örnekler",
-    "md": "- **The** faster a reaction runs, **the** more heat it releases.\n- Steel is **far** stronger **than** aluminium.\n- The new chip is **three times as** efficient **as** the old one."
+    "md": "- **The** faster a reaction runs, **the** more heat it releases.\n- Jupiter is **by far the largest** planet.\n- Sound travels four times **faster** in water **than** in air."
    }
   ],
   "checks": [
@@ -797,11 +1706,12 @@
      "the lower",
      "lower",
      "the lowest",
-     "more low",
+     "the more",
      "as low"
     ],
     "answer": 0,
-    "explain": "the + comparative …, the + comparative …"
+    "explain": "the + comparative …, the + comparative …; basınç düşer → the lower.",
+    "hint": "\"The higher …\": ikinci yarı da aynı kalıp mı?"
    },
    {
     "q": "Diamond is ---- harder than quartz.",
@@ -813,19 +1723,21 @@
      "such"
     ],
     "answer": 3,
-    "explain": "Comparative'i güçlendiren: much (very ✗, more harder ✗)."
+    "explain": "Comparative'i güçlendiren: much (very ✗, more harder ✗).",
+    "hint": "Comparative'i güçlendiren sözcük: very olur mu?"
    },
    {
     "q": "This battery lasts twice ---- the previous model.",
     "options": [
-     "longer than",
+     "longer",
      "as long as",
-     "as longer as",
+     "so long as",
      "so long that",
      "the longest"
     ],
     "answer": 1,
-    "explain": "twice as + sıfat/zarf + as."
+    "explain": "twice as + sıfat/zarf + as. (\"twice longer than\" olurdu ama şıkta than yok.)",
+    "hint": "\"twice ---- the previous model\": than var mı?"
    },
    {
     "q": "Aluminium is less dense ---- steel, which makes it ideal for aircraft.",
@@ -837,7 +1749,8 @@
      "than"
     ],
     "answer": 4,
-    "explain": "less … than."
+    "explain": "less … than.",
+    "hint": "Cümlede \"less dense\" var: eşi?"
    },
    {
     "q": "Ceramic components are superior ---- metal ones in terms of heat resistance.",
@@ -849,24 +1762,117 @@
      "for"
     ],
     "answer": 2,
-    "explain": "superior to (than değil)."
+    "explain": "superior to (than değil).",
+    "hint": "\"superior\" than alır mı?"
+   }
+  ]
+ },
+ {
+  "id": "as-like-such-as",
+  "title": "as · like · such as",
+  "order": 20,
+  "topic": "as-like-such-as",
+  "minutes": 3,
+  "summary": "like = gibi (benzerlik), as = olarak (rol) veya + cümle, such as = örneğin (liste).",
+  "formula": "like + isim = gibi · as + isim = olarak · such as = örneğin · as + cümle = -dıkça / çünkü / -ken",
+  "blocks": [
+   {
+    "h": "Kural",
+    "md": "| Sözcük | Anlam | Örnek |\n|---|---|---|\n| like + isim | gibi (benzer) | **Like** steel, titanium is strong. |\n| as + isim | olarak (rol) | used **as** a catalyst |\n| such as | örneğin (liste) | metals **such as** copper |\n| as + cümle | -dıkça / çünkü / -ken | **As** it cools, it contracts. |"
+   },
+   {
+    "h": "as'ın 4 anlamı",
+    "md": "- **-dıkça**: As the temperature rises, …\n- **çünkü**: As the road was icy, …\n- **-ken**: As we were testing, …\n- **gibi** (kalıp): **as expected, as shown, as mentioned**"
+   },
+   {
+    "h": "Tuzak",
+    "md": "- works **as** an engineer (gerçek meslek) · behaves **like** a liquid (benzetme)\n- like + cümle ✗ (resmi dilde) → as + cümle\n- such as + liste, tek örnekte de olur."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Silicon is used ---- a semiconductor.",
+    "options": [
+     "such as",
+     "alike",
+     "as if",
+     "as",
+     "like"
+    ],
+    "answer": 3,
+    "explain": "Rol → as.",
+    "hint": "Silisyum yarı iletken \"olarak\" mı kullanılıyor?"
+   },
+   {
+    "q": "---- glass, this plastic is transparent.",
+    "options": [
+     "Like",
+     "As",
+     "So",
+     "Alike",
+     "Such as"
+    ],
+    "answer": 0,
+    "explain": "Benzerlik → Like.",
+    "hint": "Plastik cam mı, cama benziyor mu?"
+   },
+   {
+    "q": "Gases ---- oxygen and nitrogen make up most of the air.",
+    "options": [
+     "such as",
+     "as",
+     "so as",
+     "as well",
+     "as such"
+    ],
+    "answer": 0,
+    "explain": "Örnek liste → such as.",
+    "hint": "Örnekler mi sayılıyor?"
+   },
+   {
+    "q": "---- the water heats up, it expands.",
+    "options": [
+     "Alike",
+     "Unlike",
+     "As",
+     "Like",
+     "Such as"
+    ],
+    "answer": 2,
+    "explain": "as + cümle = -dıkça.",
+    "hint": "Boşluktan sonra tam cümle var."
+   },
+   {
+    "q": "---- shown in the table, costs fell sharply.",
+    "options": [
+     "Unlike",
+     "As",
+     "So",
+     "Such as",
+     "Like"
+    ],
+    "answer": 1,
+    "explain": "As shown = gösterildiği gibi.",
+    "hint": "\"gösterildiği gibi\" kalıbı."
    }
   ]
  },
  {
   "id": "either-neither",
   "title": "Either / neither / both / not only",
-  "order": 11,
+  "order": 21,
+  "topic": "either-neither",
   "minutes": 5,
   "summary": "İkili bağlacın bir parçası verilir, eşi sorulur; eşleşmeyi ezberle.",
+  "formula": "both–and · either–or · neither–nor · not only–but also · whether–or",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Yapı | Anlam | Fiil |\n|---|---|---|\n| **both** A **and** B | hem … hem | çoğul |\n| **either** A **or** B | ya … ya da | B'ye uyar |\n| **neither** A **nor** B | ne … ne de | B'ye uyar, **olumlu** |\n| **not only** A **but (also)** B | sadece değil … aynı zamanda | B'ye uyar |\n| **whether** A **or** B | -sa da -sa da | |\n| A **as well as** B / **rather than** | -nın yanı sıra / -den ziyade | A'ya uyar |"
+    "md": "| Yapı | Anlam | Fiil |\n|---|---|---|\n| **both** A **and** B | hem … hem | çoğul |\n| **either** A **or** B | ya … ya da | B'ye uyar |\n| **neither** A **nor** B | ne … ne de | B'ye uyar, **olumlu** |\n| **not only** A **but also** B | sadece değil … | B'ye uyar |\n| **neither of / either of** + çoğul | ikisinden hiçbiri / biri | **tekil** |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- neither … **nor** (or ✗), either … **or** (nor ✗), both … **and** (or ✗).\n- neither zaten olumsuz: \"Neither … **is**\" (isn't ✗).\n- Cümle başında **Not only** → devrik: \"Not only **does it** cut costs, but it also…\" "
+    "md": "- neither … **nor** (or ✗) · either … **or** (nor ✗) · both … **and** (or ✗).\n- neither zaten olumsuz: Neither … **is** (isn't ✗).\n- Olumsuza katılma: **and neither / nor did X** (devrik) · **not … either** (sonda).\n- Paralellik: both **light** and **cheap** (sıfat–sıfat), both **by air** and **by touch**.\n- Başta **Not only** → devrik: Not only **does it** cut costs, but it also …"
    },
    {
     "h": "Senin notun",
@@ -874,7 +1880,7 @@
    },
    {
     "h": "Örnekler",
-    "md": "- The virus spreads **either** by air **or** by touch.\n- **Neither** the pump **nor** the valves were damaged.\n- The material is **not only** light **but also** cheap."
+    "md": "- The virus spreads **either** by air **or** by touch.\n- **Neither of** the two pumps **was** damaged.\n- The pump did not fail, **and neither did** the valve."
    }
   ],
   "checks": [
@@ -888,7 +1894,8 @@
      "rather"
     ],
     "answer": 1,
-    "explain": "'or' ile eşleşen → either."
+    "explain": "'or' ile eşleşen → either.",
+    "hint": "Cümlede \"or\" var."
    },
    {
     "q": "Neither the patients ---- the doctors were informed about the side effects.",
@@ -900,7 +1907,8 @@
      "nor"
     ],
     "answer": 4,
-    "explain": "neither … nor."
+    "explain": "neither … nor.",
+    "hint": "Cümle \"Neither\" ile başlıyor."
    },
    {
     "q": "The new material is not only lightweight ---- highly resistant to corrosion.",
@@ -912,7 +1920,8 @@
      "as well"
     ],
     "answer": 2,
-    "explain": "not only … but also."
+    "explain": "not only … but also.",
+    "hint": "Cümlede \"not only\" var."
    },
    {
     "q": "---- the temperature and the pressure must be kept constant during the test.",
@@ -924,7 +1933,8 @@
      "Whether"
     ],
     "answer": 0,
-    "explain": "'and' + çoğul anlam → both … and."
+    "explain": "'and' + çoğul anlam → both … and.",
+    "hint": "Cümlede \"and\" ve \"must be kept\" (ikisi birden) var."
    },
    {
     "q": "The samples were ---- heated nor cooled before analysis.",
@@ -936,28 +1946,48 @@
      "whether"
     ],
     "answer": 3,
-    "explain": "'nor' ile eşleşen → neither."
+    "explain": "'nor' ile eşleşen → neither.",
+    "hint": "Cümlede \"nor\" var."
+   },
+   {
+    "q": "---- the old pump ---- the new one could reach the required pressure, so a third pump was ordered.",
+    "options": [
+     "Not only / or",
+     "Whether / and",
+     "Both / and",
+     "Neither / nor",
+     "Either / nor"
+    ],
+    "answer": 3,
+    "explain": "Üçüncü pompa sipariş edildi → ikisi de başaramadı: Neither … nor.",
+    "hint": "\"so a third pump was ordered\" ne gösteriyor? Eşleri tutan çift hangisi?"
    }
   ]
  },
  {
   "id": "quantifier",
   "title": "Miktar sözcükleri (quantifiers)",
-  "order": 12,
+  "order": 22,
+  "topic": "quantifier",
   "minutes": 5,
   "summary": "Boşlukta few/little, most of which gibi miktar sözcüğü sorulur; isim sayılabilir mi ve bağlaç var mı bakılır.",
+  "formula": "few/many/fewer + çoğul · little/much/less + sayılamaz · , most of which",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Sayılabilen (çoğul) | Sayılamayan | İkisi de |\n|---|---|---|\n| many, (a) few, several, a number of | much, (a) little, a great deal of, an amount of | some, any, most, all, a lot of, plenty of, no |\n- **few / little** = çok az (olumsuz anlam); **a few / a little** = birkaç / biraz (olumlu).\n- **each / every** + tekil isim + tekil fiil.\n- **a number of** + çoğul fiil; **the number of** + **tekil** fiil."
+    "md": "| Sayılabilen (çoğul) | Sayılamayan |\n|---|---|\n| many, (a) few, several, **fewer** | much, (a) little, a great deal of, **less** |\n| **a large number of** | **a large amount of** |\n\n- İkisi de: some, any, most, all, a lot of, plenty of, **no**.\n- **few / little** = çok az (olumsuz) · **a few / a little** = birkaç / biraz.\n- **each / every** + tekil isim + tekil fiil."
+   },
+   {
+    "h": "no / none / iki şey",
+    "md": "- **no + isim**: no evidence · **none** tek başına / **none of**: none of the samples.\n- İki şey: **both / either / neither** · ikiden çok: **all / any / none**.\n- **a number of** + çoğul fiil · **the number of** + **tekil** fiil."
    },
    {
     "h": "Relative ile",
-    "md": "- Virgülden sonra: **most / some / none / all / both / many of which** (şey), **of whom** (insan).\n- \"…, most of **them**\" ✗ (iki cümleyi bağlayan yok) → \"…, most of **which**\".\n- **most** + isim (genel) / **most of the** + isim (belirli)."
+    "md": "- Virgülden sonra: **most / some / none / all / many of which** (şey), **of whom** (insan).\n- \"…, most of **them**\" ✗ (bağlaç yok) → \"…, most of **which**\".\n- **most** + isim (genel) / **most of the** + isim (belirli)."
    },
    {
     "h": "Örnekler",
-    "md": "- **Few** studies have tested this, so evidence is weak.\n- The team tested 50 alloys, **none of which** melted below 900 °C.\n- **The number of** species **is** declining."
+    "md": "- The new engine uses **less** fuel and has **fewer** parts.\n- The team tested 50 alloys, **none of which** melted below 900 °C.\n- **The number of** species **is** declining."
    }
   ],
   "checks": [
@@ -971,7 +2001,8 @@
      "most of which"
     ],
     "answer": 4,
-    "explain": "Virgül + bağlaç gerekli → most of which."
+    "explain": "Virgül + bağlaç gerekli → most of which.",
+    "hint": "Virgülden sonra iki cümleyi bağlayan gerekir mi?"
    },
    {
     "q": "There is ---- evidence that the drug works, so more trials are needed.",
@@ -983,7 +2014,8 @@
      "several"
     ],
     "answer": 1,
-    "explain": "evidence sayılamaz + olumsuz anlam (daha çok deneme gerekli) → little."
+    "explain": "evidence sayılamaz + olumsuz anlam (daha çok deneme gerekli) → little.",
+    "hint": "\"evidence\" sayılabilir mi? Anlam olumsuz mu?"
    },
    {
     "q": "---- of the bacteria we carry are harmless.",
@@ -995,7 +2027,8 @@
      "Each"
     ],
     "answer": 3,
-    "explain": "Çoğul isim + 'of the' + are → Most of the."
+    "explain": "Çoğul isim + 'of the' + are → Most of the.",
+    "hint": "Çoğul isim + \"of the\" + are."
    },
    {
     "q": "The number of electric vehicles on the roads ---- rapidly.",
@@ -1007,7 +2040,8 @@
      "were grown"
     ],
     "answer": 2,
-    "explain": "The number of + tekil fiil → is growing."
+    "explain": "The number of + tekil fiil → is growing.",
+    "hint": "\"The number of\" tekil mi çoğul mu fiil alır?"
    },
    {
     "q": "---- cell in the body contains the same DNA.",
@@ -1019,42 +2053,50 @@
      "Few"
     ],
     "answer": 0,
-    "explain": "Tekil isim (cell) + tekil fiil (contains) → every."
+    "explain": "Tekil isim (cell) + tekil fiil (contains) → every.",
+    "hint": "Tekil isim (cell) + tekil fiil."
    }
   ]
  },
  {
   "id": "modal",
   "title": "Modallar (may have done, must have)",
-  "order": 13,
+  "order": 23,
+  "topic": "modal",
   "minutes": 5,
   "summary": "Boşlukta modal + have V3 gibi tahmin/çıkarım yapısı sorulur; zaman ve kesinlik derecesi belirler.",
+  "formula": "must have = kesin · may have = belki · can't have = imkânsız · should have = yapmalıydı",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Anlam | Şimdi | Geçmiş |\n|---|---|---|\n| Kesin çıkarım | **must** be | **must have** V3 |\n| Olasılık | **may / might / could** be | **may / might / could have** V3 |\n| İmkânsız | **can't** be | **can't / couldn't have** V3 |\n| Yapmalıydı (yapılmadı) | should | **should have** V3 |\n| Gerek yokmuş (yapıldı) | needn't | **needn't have** V3 |\n- Edilgen: may **have been** V3."
+    "md": "| Anlam | Şimdi | Geçmiş |\n|---|---|---|\n| Kesin çıkarım | **must** be | **must have** V3 |\n| Olasılık | **may / might / could** be | **may / might / could have** V3 |\n| İmkânsız | **can't** be | **can't / couldn't have** V3 |\n| Yapmalıydı (yapılmadı) | should | **should have** V3 |\n| Yapabilirdi (yapmadı) | – | **could have** V3 |\n| Gerek yokmuş (yapıldı) | needn't | **needn't have** V3 |"
+   },
+   {
+    "h": "Zorunluluk ve izin",
+    "md": "- **mustn't** = yasak · **don't have to** = gerek yok.\n- Geçmiş zorunluluk: **had to** (must have ✗: o çıkarımdır).\n- **may** = izin (resmi): Only staff **may** enter.\n- **could have V3** iki anlamlı: belki oldu / yapabilirdi ama yapmadı."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Geçmiş zaman ifadesi (millions of years ago, in the past) → **modal + have V3**.\n- Kanıt güçlü (\"clearly\", \"so\") → **must have**; kanıt zayıf (\"suggest\", \"possibly\") → **may/might have**.\n- Kanıt tersini gösteriyorsa → **can't have**."
+    "md": "- Geçmiş zaman ifadesi → **modal + have V3**.\n- Kanıt güçlü (clearly, so) → **must have**; zayıf (suggest, possibly) → **may/might have**; tersi → **can't have**."
    },
    {
     "h": "Örnekler",
-    "md": "- The rocks are rounded, so water **must have shaped** them.\n- Ancient humans **may have used** fire earlier than thought.\n- The engineers **should have checked** the welds."
+    "md": "- The rocks are rounded, so water **must have shaped** them.\n- The team **could have used** a larger sample, but money ran out.\n- You **don't have to** wear a mask here; the air is clean."
    }
   ],
   "checks": [
    {
-    "q": "The dinosaurs ---- by a combination of volcanic activity and an asteroid impact 66 million years ago.",
+    "q": "The ship ---- by an iceberg, but no evidence of ice damage has been found yet.",
     "options": [
-     "may kill",
-     "must be killed",
-     "may have been killed",
-     "should kill",
-     "can be killed"
+     "may have been hit",
+     "must hit",
+     "should hit",
+     "can be hit",
+     "must be hitting"
     ],
-    "answer": 2,
-    "explain": "Geçmiş + olasılık + edilgen → may have been killed."
+    "answer": 0,
+    "explain": "Kanıt yok, sadece olasılık + geçmiş + edilgen → may have been hit.",
+    "hint": "Kanıt var mı? Olasılık mı kesinlik mi?"
    },
    {
     "q": "The fossil is very well preserved, so it ---- in very fine sediment.",
@@ -1066,7 +2108,8 @@
      "will bury"
     ],
     "answer": 0,
-    "explain": "Güçlü kanıt (so) → must have been buried."
+    "explain": "Güçlü kanıt (so) → must have been buried.",
+    "hint": "\"so\" güçlü kanıt mı?"
    },
    {
     "q": "The patient ---- the symptoms earlier; now treatment is more difficult.",
@@ -1078,7 +2121,8 @@
      "should have reported"
     ],
     "answer": 4,
-    "explain": "Yapmalıydı ama yapmadı → should have V3."
+    "explain": "Yapmalıydı ama yapmadı → should have V3.",
+    "hint": "\"now treatment is more difficult\": yapılması gereken yapılmadı mı?"
    },
    {
     "q": "This sample ---- contaminated in the lab, because it was sealed the whole time.",
@@ -1090,40 +2134,48 @@
      "had to be"
     ],
     "answer": 3,
-    "explain": "Mühürlüydü → kirlenmiş olamaz: can't have been."
+    "explain": "Mühürlüydü → kirlenmiş olamaz: can't have been.",
+    "hint": "Mühürlüydü: kirlenmesi mümkün mü?"
    },
    {
     "q": "Water ---- once have flowed on Mars, as the dry riverbeds suggest.",
     "options": [
      "should",
      "may",
-     "must to",
+     "needn't",
      "can't",
      "ought"
     ],
     "answer": 1,
-    "explain": "'suggest' olasılık → may have V3."
+    "explain": "'suggest' olasılık → may have V3.",
+    "hint": "\"suggest\" güçlü mü zayıf mı kanıt?"
    }
   ]
  },
  {
   "id": "participle",
   "title": "Participle clauses (Ving / V3 / having done)",
-  "order": 14,
+  "order": 24,
+  "topic": "participle",
   "minutes": 6,
   "summary": "Kısaltılmış cümlede Ving, V3 ya da having V3 seçimi sorulur; özne eylemi yapıyor mu ve önce mi oldu bakılır.",
+  "formula": "Ving = yapan · V3 = yapılan · Having V3 = önce yaptı · bağlaç + V3 = edilgen kısaltma",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Biçim | Anlam | Örnek |\n|---|---|---|\n| **Ving** | etken, aynı anda | **Using** a laser, they cut the steel. |\n| **V3** | edilgen | **Heated** to 500 °C, the metal softens. |\n| **Having V3** | etken, önce oldu | **Having tested** it, they published. |\n| **Having been V3** | edilgen, önce oldu | **Having been cooled**, the alloy hardened. |\n- İsimden sonra: the gas **released** (= which is released), cells **producing** insulin (= which produce)."
+    "md": "| Biçim | Anlam | Örnek |\n|---|---|---|\n| **Ving** | etken, aynı anda | **Using** a laser, they cut it. |\n| **V3** | edilgen | **Heated** to 500 °C, it softens. |\n| **Having V3** | etken, önce | **Having tested** it, they … |\n| **Having been V3** | edilgen, önce | **Having been cooled**, it … |\n| **Not + Ving** | olumsuz | **Not knowing** the cause, … |"
+   },
+   {
+    "h": "Bağlaç + kısaltma",
+    "md": "- **Bağlaç + Ving** (etken): after **heating** the sample, … · while **working** …\n- **Bağlaç + V3** (edilgen): **when heated**, **once installed**, **if treated**, **unless stated**.\n- Edilgen + edat: **After being heated**, the mixture …\n- Kalıplar: **Located / Situated / Based in** …, the station …"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Kısaltmanın öznesi **ana cümlenin öznesidir**. \"Discovered in 1928, penicillin…\" → penisilin keşfedildi → V3.\n- Arkasında nesne varsa genelde Ving / Having V3; yoksa V3.\n- after / before / when / while + Ving: \"**After heating** the sample, …\" "
+    "md": "- Kısaltmanın öznesi **ana cümlenin öznesidir**: Discovered in 1928, penicillin … → penisilin keşfedildi → V3.\n- When **exposed** to air, iron rusts ✓ · When exposing ✗ (demir maruz bırakmıyor)\n- İsimden sonra: the gas **released** (= which is released), cells **producing** insulin."
    },
    {
     "h": "Örnekler",
-    "md": "- **Exposed** to air, iron slowly rusts.\n- Satellites **orbiting** the Earth collect weather data.\n- **Having analysed** the data, the team revised the model."
+    "md": "- **Exposed** to air, iron slowly rusts.\n- **Not knowing** the cause, the team ran more tests.\n- **Located** in the Arctic, the station is supplied by air."
    }
   ],
   "checks": [
@@ -1134,10 +2186,11 @@
      "Having discovered",
      "To discover",
      "Discovered",
-     "Being discovering"
+     "Being discovered"
     ],
     "answer": 3,
-    "explain": "Penisilin keşfedildi (edilgen) → Discovered."
+    "explain": "Penisilin keşfedildi (edilgen, geçmiş) → Discovered.",
+    "hint": "Penisilin keşfeden mi keşfedilen mi?"
    },
    {
     "q": "The data ---- from the satellite were analysed by a team in Germany.",
@@ -1149,7 +2202,8 @@
      "collect"
     ],
     "answer": 1,
-    "explain": "Veri toplandı (= which were collected) → collected."
+    "explain": "Veri toplandı (= which were collected) → collected.",
+    "hint": "Veri toplayan mı toplanan mı?"
    },
    {
     "q": "---- the experiment three times, the team finally published the results.",
@@ -1161,19 +2215,21 @@
      "Having repeated"
     ],
     "answer": 4,
-    "explain": "Ekip deneyi önce tekrarladı (etken, nesne var) → Having repeated."
+    "explain": "Ekip deneyi önce tekrarladı (etken, nesne var) → Having repeated.",
+    "hint": "Ekip önce mi tekrarladı? Nesne var mı?"
    },
    {
     "q": "Bacteria ---- in the human gut help digest food.",
     "options": [
      "living",
      "lived",
-     "been living",
-     "to be lived",
+     "are living",
+     "to live",
      "live"
     ],
     "answer": 0,
-    "explain": "= which live (etken, şimdiki) → living."
+    "explain": "= which live (etken) → living. Ana fiil 'help' olduğu için ikinci çekimli fiil olmaz.",
+    "hint": "Ana fiil \"help\": boşluğa çekimli fiil gelir mi?"
    },
    {
     "q": "---- by heavy rain, the soil slid down the hill.",
@@ -1185,32 +2241,31 @@
      "Weaken"
     ],
     "answer": 2,
-    "explain": "Toprak yağmurla zayıfladı (by → edilgen) → Weakened."
+    "explain": "Toprak yağmurla zayıfladı (by → edilgen) → Weakened.",
+    "hint": "\"by heavy rain\": toprak zayıflatan mı?"
    }
   ]
  },
  {
   "id": "inversion",
   "title": "Devrik ve vurgulu yapılar",
-  "order": 15,
+  "order": 25,
+  "topic": "inversion",
   "minutes": 5,
   "summary": "Olumsuz/kısıtlayıcı zarfla başlayan cümlede soru düzeni (yardımcı fiil + özne) sorulur.",
+  "formula": "olumsuz zarf başta → yardımcı + özne · Hardly–when · No sooner–than · It was not until … that",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Başta | Yapı |\n|---|---|\n| **Never, Rarely, Seldom, Little** | + yardımcı fiil + özne |\n| **Hardly / Scarcely** … **when** | Hardly **had** X … when … |\n| **No sooner** … **than** | No sooner **had** X … than … |\n| **Not only** … but also | Not only **does** X … |\n| **Only after / Only when / Only by / Not until** + yan cümle | ana cümle devrik |\n| **So** + sıfat … **that** | So strong **was** the wind that … |\n| Koşul: **Had / Were / Should** | Had they known… |"
+    "md": "| Başta | Yapı |\n|---|---|\n| **Never, Rarely, Seldom, Little** | + yardımcı fiil + özne |\n| **Under no circumstances, At no time, In no way** | + yardımcı fiil + özne |\n| **Hardly** … **when** · **No sooner** … **than** | Hardly **had** X … when |\n| **Only after / when / by + Ving / Not until** | ana cümle devrik |\n| **So** + sıfat · **Such + be** + isim … that | So strong **was** … / Such **was** the force … |\n| Koşul: **Had / Were / Should** | Had they known … |"
    },
    {
     "h": "Vurgulu yapılar",
-    "md": "- **It is / was … that**: \"**It was** in 1953 **that** DNA's structure was described.\"\n- **What** … **is / was**: \"**What** surprised them **was** the speed.\" "
+    "md": "- **It is / was … that**: **It was** in 1953 **that** …\n- **Not until** 1990 **was** it confirmed ↔ **It was not until** 1990 **that** it **was** confirmed (devriksiz).\n- **What** … **is / was**: **What** surprised them **was** the speed."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Eşleşme: Hardly–**when**, No sooner–**than**.\n- **Only after** + düz cümle, ardından **ana cümle devrik**: \"Only after the test **did they see**…\"\n- Devrikte ana fiil yalın kalır: did they **notice** (noticed ✗)."
-   },
-   {
-    "h": "Örnekler",
-    "md": "- **Seldom do** volcanoes erupt without warning signs.\n- **Not until** the 1990s **was** the first exoplanet confirmed."
+    "md": "- Eşleşme: Hardly–**when**, No sooner–**than**.\n- **Only after** + düz cümle, sonra **ana cümle devrik**.\n- Devrikte ana fiil yalın: did they **notice** (noticed ✗)."
    }
   ],
   "checks": [
@@ -1220,11 +2275,12 @@
      "have scientists found",
      "scientists have found",
      "scientists found",
-     "found scientists",
-     "did scientists found"
+     "scientists had found",
+     "scientists do find"
     ],
     "answer": 0,
-    "explain": "Rarely başta → yardımcı fiil + özne: have scientists found."
+    "explain": "Rarely başta → yardımcı fiil + özne: have scientists found.",
+    "hint": "\"Rarely\" başta: düz mü devrik mi?"
    },
    {
     "q": "No sooner had the reactor been shut down ---- a second alarm sounded.",
@@ -1236,7 +2292,8 @@
      "as"
     ],
     "answer": 2,
-    "explain": "No sooner … than."
+    "explain": "No sooner … than.",
+    "hint": "No sooner'ın eşi?"
    },
    {
     "q": "Only after the data were checked again ---- the error.",
@@ -1245,10 +2302,11 @@
      "the team did notice",
      "noticed the team",
      "did the team notice",
-     "had noticed the team"
+     "the team had noticed"
     ],
     "answer": 3,
-    "explain": "Only after + yan cümle → ana cümle devrik: did the team notice."
+    "explain": "Only after + yan cümle → ana cümle devrik: did the team notice.",
+    "hint": "\"Only after …\" sonrası ana cümle?"
    },
    {
     "q": "It was in 1953 ---- Watson and Crick described the structure of DNA.",
@@ -1260,40 +2318,44 @@
      "whose"
     ],
     "answer": 1,
-    "explain": "Vurgulu yapı: It was … that."
+    "explain": "Vurgulu yapı: It was … that.",
+    "hint": "\"It was in 1953 ----\": vurgulu yapı."
    },
    {
     "q": "So powerful ---- that it could be detected thousands of kilometres away.",
     "options": [
      "the explosion was",
-     "was being the explosion",
+     "the explosion had been",
      "it was the explosion",
      "the explosion had",
      "was the explosion"
     ],
     "answer": 4,
-    "explain": "So + sıfat başta → devrik: was the explosion."
+    "explain": "So + sıfat başta → devrik: was the explosion.",
+    "hint": "\"So powerful\" başta: devrik mi?"
    }
   ]
  },
  {
   "id": "referans",
   "title": "Referans sözcükleri (this, such, the former)",
-  "order": 16,
+  "order": 26,
+  "topic": "referans",
   "minutes": 5,
   "summary": "Boşlukta önceki bir ifadeye dönen zamir sorulur; tekil/çoğul uyumu ve neye döndüğü belirler.",
+  "formula": "that of (tekil) · those of (çoğul) · former/latter = ikinin 1./2. · the other = ikinin diğeri",
   "blocks": [
    {
     "h": "Kural",
-    "md": "| Sözcük | Neye döner |\n|---|---|\n| **it / its**, **they / their** | tekil / çoğul isim |\n| **this / these** | önceki fikir, cümle, isim |\n| **that of / those of** | tekrar edilmeyen isim (tekil / çoğul) |\n| **such** (a) + isim | \"bu tür\" |\n| **the former / the latter** | iki şeyden ilki / ikincisi |\n| **one / ones** | aynı türden sayılabilen isim |\n| **do so** | önceki eylem |"
+    "md": "| Sözcük | Neye döner |\n|---|---|\n| **it / they** | tekil / çoğul isim |\n| **this + tekil · these + çoğul** | önceki fikir / isim |\n| **such (a) + isim** | bu tür |\n| **that of / those of** | tekrar edilmeyen isim |\n| **the former / the latter** | iki şeyden ilki / ikincisi |\n| **do so** | önceki eylem |"
+   },
+   {
+    "h": "other ailesi",
+    "md": "| Sözcük | Anlam |\n|---|---|\n| **the other** | ikinin diğeri |\n| **another** | bir başka (tekil) |\n| **others** | başkaları (bazıları) |\n| **the others** | kalanların hepsi |\n\n- **none of them** (bağlaç varsa) · **none of which** (bağlaç yoksa) · **much of it** (sayılamaz)."
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Karşılaştırmada isim tekrarlanmaz: \"The density of X is higher than **that** of Y\" (tekil), \"the results … **those** of Y\" (çoğul).\n- **the former / the latter** sadece iki şey sayılınca.\n- Paragraf tamamlama ve ilgisiz cümlede **this / such / they** neye dönüyor kontrol et: dönecek isim yoksa şık yanlıştır."
-   },
-   {
-    "h": "Örnekler",
-    "md": "- Some bacteria resist antibiotics. **This** makes infections harder to treat.\n- Bats and birds both fly, but **the former** are mammals.\n- The prices of solar panels are lower than **those** of a decade ago."
+    "md": "- Karşılaştırmada isim tekrarlanmaz: … higher than **that** of Y (tekil) · **those** of Y (çoğul).\n- Paragraf tamamlama / ilgisiz cümlede **this / such / they** neye dönüyor kontrol et: dönecek isim yoksa şık yanlış."
    }
   ],
   "checks": [
@@ -1307,19 +2369,21 @@
      "one"
     ],
     "answer": 1,
-    "explain": "'the melting point' tekil; tekrar etmek yerine 'that' kullanılır → that of lead."
+    "explain": "'the melting point' tekil; tekrar etmek yerine 'that' kullanılır → that of lead.",
+    "hint": "\"the melting point\" tekil mi çoğul mu?"
    },
    {
     "q": "Mammals and reptiles differ in temperature control: the former are warm-blooded, while ---- are cold-blooded.",
     "options": [
-     "the others",
+     "the first",
      "the former",
      "those",
-     "these ones",
+     "such",
      "the latter"
     ],
     "answer": 4,
-    "explain": "İki grup; ikincisi (reptiles) → the latter."
+    "explain": "İki grup; ikincisi (reptiles) → the latter.",
+    "hint": "İki grup sayıldı: ikincisi?"
    },
    {
     "q": "The brains of dolphins are larger than ---- of most other animals.",
@@ -1331,7 +2395,8 @@
      "these"
     ],
     "answer": 0,
-    "explain": "'the brains' çoğul → those of."
+    "explain": "'the brains' çoğul → those of.",
+    "hint": "\"the brains\" tekil mi çoğul mu?"
    },
    {
     "q": "Some bacteria can survive in boiling water. ---- organisms are called extremophiles.",
@@ -1343,44 +2408,48 @@
      "Its"
     ],
     "answer": 2,
-    "explain": "Çoğul isim (organisms) + 'bu tür' anlamı → Such."
+    "explain": "Çoğul isim (organisms) + 'bu tür' anlamı → Such.",
+    "hint": "Boşluktan sonra çoğul isim + \"bu tür\" anlamı?"
    },
    {
     "q": "Researchers asked the volunteers to drink less coffee, but only a few did ----.",
     "options": [
-     "it",
+     "its",
      "such",
-     "that",
+     "one",
      "so",
      "them"
     ],
     "answer": 3,
-    "explain": "Önceki eylemi tekrar: did so."
+    "explain": "Önceki eylemi tekrar: did so.",
+    "hint": "Önceki eylemi tekrar eden kalıp?"
    }
   ]
  },
  {
   "id": "kelime-turu",
   "title": "Kelime türü (isim-sıfat-zarf-fiil ekleri)",
-  "order": 17,
+  "order": 27,
+  "topic": "kelime-turu",
   "minutes": 5,
   "summary": "Şıklar aynı kökün farklı biçimleriyse, boşluğun yerinden tür (isim/sıfat/zarf/fiil) bulunur.",
+  "formula": "the __ of → isim · __ + isim → sıfat · sıfat/fiil niteleyen → zarf · to/modal + __ → fiil",
   "blocks": [
    {
     "h": "Son ekler",
-    "md": "| Tür | Ekler | Örnek |\n|---|---|---|\n| İsim | -tion, -sion, -ment, -ness, -ity, -ance/-ence, -ure, -er/-or/-ist | stability, pressure |\n| Sıfat | -al, -ive, -ous, -ful, -less, -able/-ible, -ic, -ant/-ent | toxic, durable |\n| Zarf | sıfat + **-ly** | rapidly |\n| Fiil | -ize/-ise, -ify, -en, -ate | weaken, purify |"
+    "md": "| Tür | Ekler | Örnek |\n|---|---|---|\n| İsim | -tion, -ment, -ness, -ity, -ance/-ence, -ure | stability |\n| Sıfat | -al, -ive, -ous, -ful, -less, -able, -ic | durable |\n| Zarf | sıfat + **-ly** | rapidly |\n| Fiil | -ize, -ify, -en, -ate | weaken |"
    },
    {
     "h": "Boşlukta tür tespiti",
-    "md": "- **the / a / sıfat / of** önü → **isim**.\n- **be, become, seem, remain** sonrası veya **isim önü** → **sıfat**.\n- Sıfatı, fiili veya cümleyi niteliyorsa → **zarf** (highly toxic, grew rapidly).\n- Özneden ya da **modal / to** sonrası → **fiil**."
+    "md": "- **the / a / sıfat / of** önü → **isim**.\n- **be, become, seem, remain** sonrası veya **isim önü** → **sıfat**.\n- Sıfatı, fiili veya cümleyi niteliyorsa → **zarf**.\n- **modal / to** sonrası → **fiil**."
+   },
+   {
+    "h": "-ing / -ed sıfat",
+    "md": "- **-ing** = etki yapan: **promising** results, a **surprising** effect.\n- **-ed** = etkilenen (insan): researchers were **interested / satisfied**.\n- The results were **surprised** ✗ → surprising ✓"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- -ly ile biten sıfatlar var: **costly, likely, friendly, timely**.\n- -ate hem fiil hem sıfat olabilir: **separate, moderate, estimate** (isim de).\n- Kelime sorusunda şıklar farklı anlamlı ama aynı türdeyse, bu yöntem yetmez → anlam + eşdizim."
-   },
-   {
-    "h": "Örnekler",
-    "md": "- The **durability** of the coating was tested. (isim)\n- The coating proved highly **durable**. (sıfat)\n- Engineers must **strengthen** the frame. (fiil)"
+    "md": "- -ly ile biten sıfatlar: **costly, likely, friendly, timely**.\n- -ate hem fiil hem sıfat: **separate, moderate**.\n- **-ive / -ent / -ant** bazen isim de olur: **an alternative, a solvent, a pollutant**."
    }
   ],
   "checks": [
@@ -1394,7 +2463,8 @@
      "stabilizing"
     ],
     "answer": 2,
-    "explain": "the … of arası → isim: stability."
+    "explain": "the … of arası → isim: stability.",
+    "hint": "\"the ---- of\" arası."
    },
    {
     "q": "The new drug is ---- effective against resistant bacteria.",
@@ -1406,7 +2476,8 @@
      "higher"
     ],
     "answer": 0,
-    "explain": "Sıfatı (effective) niteleyen → zarf: highly."
+    "explain": "Sıfatı (effective) niteleyen → zarf: highly.",
+    "hint": "Boşluk \"effective\" sıfatını niteliyor."
    },
    {
     "q": "Increased carbon dioxide levels can ---- the oceans.",
@@ -1418,7 +2489,8 @@
      "acidly"
     ],
     "answer": 3,
-    "explain": "Modal (can) sonrası ve nesne (the oceans) var → fiil: acidify."
+    "explain": "Modal (can) sonrası ve nesne (the oceans) var → fiil: acidify.",
+    "hint": "Modal (can) sonrası + nesne var."
    },
    {
     "q": "The patient showed a ---- improvement after the treatment.",
@@ -1430,7 +2502,8 @@
      "remarkable"
     ],
     "answer": 4,
-    "explain": "a … isim arası → sıfat: remarkable."
+    "explain": "a … isim arası → sıfat: remarkable.",
+    "hint": "\"a ---- improvement\": isimden önce."
    },
    {
     "q": "Engineers must ---- the risks before construction begins.",
@@ -1442,70 +2515,72 @@
      "analyst"
     ],
     "answer": 1,
-    "explain": "must + fiil yalın hali → analyse."
+    "explain": "must + fiil yalın hali → analyse.",
+    "hint": "\"must\" sonrası."
    }
   ]
  },
  {
   "id": "onek-sonek",
   "title": "Ön ek ve kökler (kelime tahmini)",
-  "order": 18,
+  "order": 28,
+  "topic": "onek-sonek",
   "minutes": 6,
   "summary": "Bilinmeyen fen kelimesini ön ek + kök + son ek olarak parçalayıp anlamını tahmin etmeye yarar.",
+  "formula": "un/in/non/dis = değil · hypo = düşük · hyper = yüksek · trans = öte · de = kaldırma · -proof = geçirmez",
   "blocks": [
    {
     "h": "Ön ekler",
-    "md": "| Ön ek | Anlam | Örnek |\n|---|---|---|\n| **un-, in-/im-/il-/ir-, non-, dis-** | değil, olumsuz | insoluble, nonlinear |\n| **mis-** | yanlış | misinterpret |\n| **anti-, counter-** | karşı | antibody |\n| **re- / pre- / post-** | yeniden / önce / sonra | precondition |\n| **over- / under-** | aşırı / yetersiz | overheat |\n| **hyper-, super- / hypo-, sub-** | üst, aşırı / alt, düşük | hypotension |\n| **inter- / intra- / trans-** | arası / içi / öte | intracellular |\n| **mono-, uni- / bi-, di- / poly-, multi-** | tek / iki / çok | polymer |\n| **micro- / macro-, semi-, co-, auto-** | küçük / büyük, yarı, birlikte, kendi | semiconductor |"
+    "md": "| Ön ek | Anlam | Örnek |\n|---|---|---|\n| **un-, in-/im-, non-, dis-** | değil | insoluble |\n| **mis- / mal-** | yanlış / kötü | malfunction |\n| **anti-, counter-** | karşı | antibody |\n| **re- / pre- / post-** | yeniden / önce / sonra | precondition |\n| **over- / under-** | aşırı / yetersiz | overheat |\n| **hyper- / hypo-, sub-** | yüksek / düşük, alt | hypotension |\n| **inter- / intra- / trans-** | arası / içi / öte | intracellular |\n| **de- / en-** | kaldırma / yapmak | dehydrate, enlarge |"
    },
    {
-    "h": "Kökler",
-    "md": "| Kök | Anlam | Örnek |\n|---|---|---|\n| bio, geo, hydro, thermo, photo | yaşam, yer, su, ısı, ışık | hydrothermal |\n| -logy, -meter, -scope, -graph | bilimi, ölçer, gözlem aleti, yazan | seismograph |\n| -cide, -vore, chron | öldürücü, yiyen, zaman | herbicide |"
+    "h": "Kökler ve son ekler",
+    "md": "| Parça | Anlam | Örnek |\n|---|---|---|\n| bio, geo, hydro, thermo | yaşam, yer, su, ısı | hydrothermal |\n| -logy, -meter, -scope | bilimi, ölçer, gözlem aleti | seismometer |\n| -cide, -proof, -less | öldürücü, geçirmez, -sız | waterproof |"
    },
    {
     "h": "Sınav taktiği",
-    "md": "- Kelimeyi parçala: **photo + synth + esis** = ışıkla birleştirme.\n- **Olumsuz ön ek kutup çevirir**: cümle tamamlama ve paragrafta anlam yönünü değiştirir; gözden kaçırma.\n- Ön ek her zaman ön ek değildir (**re**ad, **under**stand): tahmini bağlamla doğrula."
-   },
-   {
-    "h": "Örnekler",
-    "md": "- Many plastics are **non**-biodegradable.\n- The patient developed **hypo**thermia after the accident.\n- **Inter**national teams **co**-authored the study."
+    "md": "- Kelimeyi parçala: **photo + synth + esis** = ışıkla birleştirme.\n- **Olumsuz ön ek kutup çevirir**: cümle tamamlama ve paragrafta yönü değiştirir.\n- Ön ek her zaman ön ek değildir (**re**ad, **under**stand): bağlamla doğrula."
    }
   ],
   "checks": [
    {
-    "q": "'Hypothermia' kelimesi büyük olasılıkla ne anlama gelir?",
+    "q": "After hours in icy water, the climber suffered from ----, a dangerous fall in body temperature.",
     "options": [
-     "aşırı ısınma",
-     "ısı ölçümü",
-     "ısı iletimi",
-     "vücut ısısının aşırı düşmesi",
-     "su kaybı"
+     "hyperthermia",
+     "thermometer",
+     "hypothermia",
+     "thermostat",
+     "dehydration"
     ],
-    "answer": 3,
-    "explain": "hypo- = altında, düşük; therm = ısı → vücut ısısının düşmesi."
+    "answer": 2,
+    "explain": "hypo- = düşük; therm = ısı → vücut ısısının düşmesi: hypothermia.",
+    "hint": "Buzlu su vücut ısısını düşürür mü yükseltir mi?"
    },
    {
     "q": "Many antibiotics are ---- against viruses, so they should not be used for the flu.",
     "options": [
      "effective",
      "ineffective",
-     "overeffective",
-     "preeffective",
-     "coeffective"
+     "essential",
+     "expensive",
+     "excessive"
     ],
     "answer": 1,
-    "explain": "'kullanılmamalı' sonucu → etkisiz: in- olumsuz ön eki."
+    "explain": "'kullanılmamalı' sonucu → etkisiz: in- olumsuz ön eki.",
+    "hint": "\"should not be used\": etkili mi etkisiz mi?"
    },
    {
     "q": "The patient's blood sugar was dangerously low, a condition known as ----.",
     "options": [
      "hyperglycemia",
-     "glycemiology",
-     "polyglycemia",
-     "antiglycemia",
-     "hypoglycemia"
+     "hypoglycemia",
+     "anaemia",
+     "hypothermia",
+     "dehydration"
     ],
-    "answer": 4,
-    "explain": "Düşük şeker → hypo- (hyper- = yüksek)."
+    "answer": 1,
+    "explain": "Düşük şeker → hypo- + glyc (şeker): hypoglycemia (hyper- = yüksek).",
+    "hint": "Düşük şeker: hypo mu hyper mı?"
    },
    {
     "q": "Satellites can ---- signals between continents.",
@@ -1517,7 +2592,8 @@
      "admit"
     ],
     "answer": 2,
-    "explain": "trans- = öte, bir yerden diğerine → transmit (iletmek)."
+    "explain": "trans- = öte, bir yerden diğerine → transmit (iletmek).",
+    "hint": "Kıtalar arası iletim: hangi ön ek \"öte\"?"
    },
    {
     "q": "'Insecticide' ne tür bir maddedir?",
@@ -1529,28 +2605,35 @@
      "böcekleri koruyan"
     ],
     "answer": 0,
-    "explain": "-cide = öldürücü → böcek öldürücü."
+    "explain": "-cide = öldürücü → böcek öldürücü.",
+    "hint": "-cide ne demek?"
    }
   ]
  },
  {
   "id": "phrasal-verbs",
   "title": "Sık fen phrasal verb'leri",
-  "order": 19,
+  "order": 29,
+  "topic": "kelime",
   "minutes": 6,
   "summary": "Boşlukta fiil + edat öbeği sorulur; fen metinlerinde tekrar eden 25-30 öbeği bilmek yeter.",
+  "formula": "carry out = yürütmek · give off = yaymak · rule out = dışlamak · take place = gerçekleşmek",
   "blocks": [
    {
-    "h": "Tablo",
-    "md": "| Phrasal verb | Anlam |\n|---|---|\n| **carry out** | yürütmek (deney, araştırma) |\n| **come up with / put forward** | bulmak / öne sürmek |\n| **account for** | açıklamak; (oran) oluşturmak |\n| **break down** | ayrışmak, parçalamak; bozulmak |\n| **break out** | patlak vermek (salgın, yangın) |\n| **bring about / give rise to** | neden olmak |\n| **give off** | yaymak (gaz, ısı, ışık) |\n| **rule out** | olasılık dışı bırakmak |\n| **point out / find out / figure out** | belirtmek / öğrenmek / çözmek |\n| **be made up of / consist of** | -den oluşmak |\n| **run out of** | tükenmek |\n| **cut down on** | azaltmak |\n| **set up / set off** | kurmak / tetiklemek |\n| **look into** | araştırmak |\n| **turn into** | -e dönüşmek |\n| **wipe out / phase out** | yok etmek / aşamalı kaldırmak |\n| **stem from** | -den kaynaklanmak |\n| **deal with / cope with** | ele almak / başa çıkmak |\n| **keep up with** | ayak uydurmak |\n| **take up** | yer kaplamak; başlamak |"
+    "h": "Tablo 1",
+    "md": "| Phrasal verb | Anlam |\n|---|---|\n| **carry out / carry on** | yürütmek / devam etmek |\n| **take place** | gerçekleşmek (edilgen olmaz) |\n| **account for** | açıklamak; (oran) oluşturmak |\n| **break down / break out** | ayrışmak, bozulmak / patlak vermek |\n| **bring about / give rise to** | neden olmak |\n| **bring down** | düşürmek (fiyat, ateş) |\n| **give off** | yaymak (gaz, ısı) |\n| **rule out** | olasılık dışı bırakmak |\n| **make up / be made up of** | oluşturmak / -den oluşmak |\n| **build up** | birikmek |"
+   },
+   {
+    "h": "Tablo 2",
+    "md": "| Phrasal verb | Anlam |\n|---|---|\n| **die out / wipe out** | nesli tükenmek / yok etmek |\n| **phase out** | aşamalı kaldırmak |\n| **rely on / depend on** | güvenmek, bağlı olmak |\n| **refer to / point to** | atıf yapmak / işaret etmek |\n| **do without / make do with** | -sız idare etmek / ile yetinmek |\n| **run out of / cut down on** | tükenmek / azaltmak |\n| **set up / set off** | kurmak / tetiklemek |\n| **look into / turn into** | araştırmak / -e dönüşmek |\n| **stem from / deal with** | kaynaklanmak / ele almak |"
    },
    {
     "h": "Sınav tuzağı",
-    "md": "- Aynı fiil, farklı edat: **break down / break out**, **carry out / carry on**, **give off / give up**.\n- Bilmiyorsan edatın yönünden tahmin et: **out** = dışarı/tamamen, **down** = azalma/parçalanma, **up** = artma/kurma."
+    "md": "- Aynı fiil, farklı edat: **break down / break out**, **carry out / carry on**, **give off / give up**.\n- Bilmiyorsan yönden tahmin: **out** = dışarı/tamamen, **down** = azalma, **up** = artma/kurma."
    },
    {
     "h": "Örnekler",
-    "md": "- Decaying leaves **give off** methane.\n- Enzymes **break down** proteins into amino acids.\n- Coal **accounts for** a third of the country's electricity."
+    "md": "- The first tests **took place** in 2019.\n- Dust **builds up** inside the filter.\n- Many frog species have **died out**."
    }
   ],
   "checks": [
@@ -1564,7 +2647,8 @@
      "wiped out"
     ],
     "answer": 0,
-    "explain": "Deney yapmak → carry out."
+    "explain": "Deney yapmak → carry out.",
+    "hint": "Deney \"yapmak\" hangi öbek?"
    },
    {
     "q": "Burning coal ---- large amounts of carbon dioxide.",
@@ -1576,7 +2660,8 @@
      "looks into"
     ],
     "answer": 2,
-    "explain": "Gaz yaymak → give off."
+    "explain": "Gaz yaymak → give off.",
+    "hint": "Kömür yakmak gaz \"yayar\"."
    },
    {
     "q": "Doctors could not ---- the possibility of a viral infection.",
@@ -1588,7 +2673,8 @@
      "rule out"
     ],
     "answer": 4,
-    "explain": "Olasılığı dışlamak → rule out."
+    "explain": "Olasılığı dışlamak → rule out.",
+    "hint": "Olasılığı \"dışlamak\"."
    },
    {
     "q": "Proteins are ---- long chains of amino acids.",
@@ -1600,7 +2686,8 @@
      "given off by"
     ],
     "answer": 1,
-    "explain": "-den oluşmak → be made up of."
+    "explain": "-den oluşmak → be made up of.",
+    "hint": "\"-den oluşmak\"."
    },
    {
     "q": "The cholera epidemic ---- after the floods contaminated the water supply.",
@@ -1612,110 +2699,680 @@
      "made up"
     ],
     "answer": 3,
-    "explain": "Salgın patlak vermek → break out."
+    "explain": "Salgın patlak vermek → break out.",
+    "hint": "Salgın \"patlak verir\"."
    }
   ]
  },
  {
-  "id": "soru-tipi-taktikleri",
-  "title": "Soru tipi taktikleri",
-  "order": 20,
-  "minutes": 8,
-  "summary": "Her YÖKDİL soru tipi için hızlı çözüm sırası: önce yapı, sonra anlam, en son kelime.",
+  "id": "taktik-bosluk",
+  "title": "Taktik: Cümlede boşluk (1–20)",
+  "order": 30,
+  "topic": "bosluk",
+  "minutes": 3,
+  "summary": "Önce şıklar, sonra boşluğun önü-arkası, en son anlam.",
+  "formula": "önce şık → sonra yapı → en son kelime",
   "blocks": [
    {
-    "h": "Boşluk (1–20)",
-    "md": "- Önce **şıklara** bak: kelime mi, zaman mı, edat mı, bağlaç mı?\n- Zaman sorusunda **zaman ifadesini** (since, by, ago) bul.\n- Edat/kelime sorusunda boşluğun **hemen önü ve arkası** (eşdizim) belirleyicidir.\n- Bilinmeyen kelimede **ön/son ek** ile tür ve yön tahmini."
-   },
-   {
-    "h": "Cloze (21–30)",
-    "md": "- Paragrafı baştan **hızlıca** oku, konuyu ve genel zamanı yakala.\n- Bağlaç boşluğu: **önceki ve sonraki cümle** ilişkisi (zıtlık, sonuç, ekleme, örnek).\n- Zaman boşluğu: paragrafın **genel zamanı** ve tarihler.\n- Edat boşluğu: önündeki fiil/sıfatın kalıbı."
-   },
-   {
-    "h": "Cümle tamamlama (31–41)",
-    "md": "- **Yapı elemesi**: verilen parça yan cümleyse şık ana cümle olmalı (ikisi de bağlaçlı olamaz).\n- **Zaman uyumu**: past ↔ past, will ↔ present.\n- **Kutup**: although/but → ters yön; because/so → aynı yön.\n- **Zamir uyumu**: it/they neye dönüyor?"
-   },
-   {
-    "h": "Çeviri (42–53)",
-    "md": "- **İng→Tr**: ana bağlacı ve zamanı bul, Türkçe şıkta karşılığına bak (although = -mesine rağmen).\n- **Tr→İng**: Türkçe cümlenin **sonundaki yüklemden** başla; -dığı için, -mesine rağmen, -dıkça gibi ekleri İngilizce bağlaçla eşle.\n- İki yönde de: özne, etken/edilgen, nicelik (bazı, çoğu, sadece) ve **fazla/eksik bilgi** olan şıkları ele.\n- Kelime anlamı **en son** kriter."
-   },
-   {
-    "h": "Paragraf tamamlama (54–59)",
-    "md": "- Boşluğun **önceki ve sonraki** cümlesini oku; şık ikisine de bağlanmalı.\n- **this, such, they, these** gibi referanslar neye dönüyor kontrol et.\n- **However / Therefore** ile başlayan şıkta yön doğru mu?\n- Paragraf sonundaysa: sonuç/özet bağlayan cümle."
-   },
-   {
-    "h": "İlgisiz cümle (60–65)",
-    "md": "- **İlk cümle** konuyu verir; I genelde ilgisiz değildir.\n- Tuzak: **aynı anahtar kelime** ama farklı bakış açısı (tanım, tarih, başka yer).\n- Şüpheli cümleyi çıkar: önceki ve sonraki cümle **pürüzsüz bağlanıyorsa** o ilgisizdir."
-   },
-   {
-    "h": "Paragraf (66–80)",
-    "md": "- Önce **soruyu** oku, sonra parçada ilgili yeri ara.\n- Ana fikir genelde **ilk veya son** cümlede.\n- \"According to the passage\" → cevap **metinde açıkça** var; yorum yapma.\n- **always, all, never, only** gibi kesin şıklara şüpheyle bak."
-   },
-   {
-    "h": "Senin notun",
-    "md": "- **İlgisiz cümle**: konu kayması seni yakalıyor. Her cümleye \"ilk cümlenin konusunu mu anlatıyor?\" diye sor; sadece kelime benzerliği yetmez.\n- **Restatement / çeviri**: önce **ana bağlacı** eşle (although ↔ rağmen, unless ↔ -mezse). Bağlaç tutmayan şıkkı anlamına bakmadan ele."
+    "h": "Sıra",
+    "md": "- Önce **şıklara** bak: kelime mi, zaman mı, edat mı, bağlaç mı?\n- Zaman: **zaman ifadesini** bul (since, by, ago).\n- Edat/kelime: boşluğun **hemen önü ve arkası** (eşdizim).\n- Çift boşluk: **kolay yarı önce** (ders: cift-bosluk).\n- Bilinmeyen kelime: **ön/son ek** ile tür ve yön."
    }
   ],
   "checks": [
    {
-    "q": "Cümle tamamlamada verilen parça 'Although the method is cheap, ----' ise ilk ne yapılır?",
+    "q": "The engine converts heat ---- motion.",
     "options": [
-     "En uzun şıkkı seçmek",
-     "Zamanı uyan ilk şıkkı seçmek",
-     "Kutbu çeviren (olumsuz yönlü) ana cümleleri aramak",
-     "İçinde 'although' geçen şıkları aramak",
-     "Şıklardaki bütün kelimeleri çevirmek"
+     "on",
+     "by",
+     "into",
+     "of",
+     "at"
     ],
     "answer": 2,
-    "explain": "Although zıtlık ister: 'ucuz' (+) → ana cümle (–) olmalı. Bağlaçlı şıklar da yapıca elenir."
+    "explain": "convert into.",
+    "hint": "Şıklar edat: önündeki fiil hangi edatı alır?"
    },
    {
-    "q": "İlgisiz cümle sorularında en sık tuzak hangisidir?",
+    "q": "Over the last decade, sales ---- steadily.",
     "options": [
-     "Dil bilgisi hatası olan cümle",
-     "En kısa cümle",
-     "Paragrafın ilk cümlesi",
-     "Sayısal veri içeren cümle",
-     "Aynı anahtar kelimeyi kullanıp konuyu kaydıran cümle"
-    ],
-    "answer": 4,
-    "explain": "İlgisiz cümle genelde aynı kelimeleri taşır ama farklı bir konuya/yöne kayar."
-   },
-   {
-    "q": "Çeviri sorusunda ilk kontrol edilmesi gereken nedir?",
-    "options": [
-     "Ana bağlaç/yapı ve zaman eşleşmesi",
-     "Şıklardaki kelime sayısı",
-     "En uzun şık",
-     "Sadece fiilin anlamı",
-     "Bilinmeyen kelimenin sözlük anlamı"
+     "have grown",
+     "had grown",
+     "grow",
+     "will grow",
+     "grew"
     ],
     "answer": 0,
-    "explain": "Önce bağlaç ve zaman eşleşmesi; tutmayan şıklar hemen elenir."
+    "explain": "over the last decade → PP.",
+    "hint": "Şıklar zaman: ifade ne?"
    },
    {
-    "q": "Paragraf tamamlamada boşluk paragrafın sonundaysa hangi şık en olasıdır?",
+    "q": "---- the high cost, the project went ahead.",
     "options": [
-     "İlk cümleyi aynen tekrar eden",
-     "Yeni bir konu açan",
-     "Konuyla ilgisiz bir örnek veren",
-     "Önceki cümleye bağlanıp sonucu/özeti veren",
-     "Her zaman 'However' ile başlayan"
+     "Unless",
+     "Although",
+     "Since",
+     "Despite",
+     "Because"
     ],
     "answer": 3,
-    "explain": "Son boşluk genelde önceki cümleye bağlı bir sonuç ya da özet ister."
+    "explain": "isim + zıtlık → Despite.",
+    "hint": "Şıklar bağlaç/edat: sonrası cümle mi?"
    },
    {
-    "q": "Cloze testte boşluk bir bağlaçsa doğru yaklaşım hangisidir?",
+    "q": "The ---- of the dam took ten years.",
     "options": [
-     "Sadece boşluklu cümleyi okumak",
-     "Önceki ve sonraki cümlenin ilişkisini (zıtlık/sonuç/ekleme) bulmak",
-     "İlk şıkkı işaretlemek",
-     "Sadece paragrafın başlığına bakmak",
-     "Sadece fiil zamanını kontrol etmek"
+     "constructively",
+     "construct",
+     "construction",
+     "constructive",
+     "constructed"
+    ],
+    "answer": 2,
+    "explain": "the __ of → isim.",
+    "hint": "Şıklar aynı kökün türleri: boşluk nerede?"
+   },
+   {
+    "q": "Scientists ---- a series of tests on the vaccine.",
+    "options": [
+     "died out",
+     "carried out",
+     "gave off",
+     "ran out of",
+     "broke out"
     ],
     "answer": 1,
-    "explain": "Bağlaç iki fikir arasındaki ilişkiyi kurar; bu yüzden iki tarafı da okumak gerekir."
+    "explain": "test + carry out.",
+    "hint": "Şıklar phrasal: \"tests\" ile hangisi?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-cloze",
+  "title": "Taktik: Cloze (21–30)",
+  "order": 31,
+  "topic": "cloze",
+  "minutes": 3,
+  "summary": "Paragrafı hızlıca oku, genel zamanı ve konuyu yakala; bağlaçta iki cümleyi de oku.",
+  "formula": "genel zaman + konu → boşluğun iki yanı → kalıp",
+  "blocks": [
+   {
+    "h": "Sıra",
+    "md": "- Paragrafı baştan **hızlıca** oku: konu ve **genel zaman**.\n- Bağlaç boşluğu: **önceki ve sonraki cümle** ilişkisi (zıtlık, sonuç, ekleme, örnek).\n- Zaman boşluğu: paragrafın genel zamanı ve tarihler.\n- Edat boşluğu: önündeki fiil/sıfatın kalıbı (cloze'un ~%40'ı edat)."
+   }
+  ],
+  "checks": [
+   {
+    "q": "In 1903 the Wright brothers flew the first plane. Since then, aircraft ---- much faster.",
+    "options": [
+     "become",
+     "will become",
+     "had become",
+     "have become",
+     "became"
+    ],
+    "answer": 3,
+    "explain": "since then → PP.",
+    "hint": "\"Since then\" hangi zamanı ister?"
+   },
+   {
+    "q": "Bees are vital for crops. ----, their numbers are falling fast.",
+    "options": [
+     "Similarly",
+     "Thus",
+     "However",
+     "For example",
+     "Therefore"
+    ],
+    "answer": 2,
+    "explain": "Önemli ↔ azalıyor: zıtlık.",
+    "hint": "İki cümle aynı yön mü?"
+   },
+   {
+    "q": "Honey never spoils. Jars found in old tombs, ----, were still edible.",
+    "options": [
+     "otherwise",
+     "instead",
+     "however",
+     "for example",
+     "in contrast"
+    ],
+    "answer": 3,
+    "explain": "Genel bilgi → örnek.",
+    "hint": "İkinci cümle bir örnek mi?"
+   },
+   {
+    "q": "The ice melts ---- a rate of 2 m per year.",
+    "options": [
+     "by",
+     "on",
+     "in",
+     "with",
+     "at"
+    ],
+    "answer": 4,
+    "explain": "at a rate of.",
+    "hint": "Önündeki/arkasındaki kalıp?"
+   },
+   {
+    "q": "Plastic is cheap. ----, it is light and easy to shape.",
+    "options": [
+     "In addition",
+     "Instead",
+     "On the contrary",
+     "However",
+     "Otherwise"
+    ],
+    "answer": 0,
+    "explain": "Artıya artı → in addition.",
+    "hint": "Yeni bir artı mı ekleniyor?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-cumle-tamamlama",
+  "title": "Taktik: Cümle tamamlama (31–41)",
+  "order": 32,
+  "topic": "cumle-tamamlama",
+  "minutes": 3,
+  "summary": "Önce yapı elemesi (7 kural), sonra kutup ve zamir uyumu.",
+  "formula": "yapı (bağlaç sayısı, virgül, özne) → zaman → kutup → zamir",
+  "blocks": [
+   {
+    "h": "Sıra",
+    "md": "- **Yapı**: verilen parça yan cümleyse şık ana cümle (ders: cumle-tamamlama-kurallari).\n- **Zaman**: past ↔ past, will ↔ present.\n- **Kutup**: although/but → ters · because/so → aynı.\n- **Zamir**: it/they neye dönüyor?\n- Bölümün çoğu bağlaçla çözülür; en sık zıtlık."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Even though the bridge was repaired last year, ----.",
+    "options": [
+     "and it was painted",
+     "because it is very old",
+     "but it is still unsafe",
+     "so it was reopened",
+     "it is already showing new cracks"
+    ],
+    "answer": 4,
+    "explain": "Even though → bağlaçsız ana cümle; onarıldı ↔ yeni çatlak.",
+    "hint": "Şık bağlaç içerebilir mi? Yön?"
+   },
+   {
+    "q": "----, the patient recovered quickly.",
+    "options": [
+     "The early treatment, which",
+     "Despite the treatment started early",
+     "Starting the treatment early",
+     "The treatment started early",
+     "Because the treatment started early"
+    ],
+    "answer": 4,
+    "explain": "bağlaç + cümle; erken tedavi → hızlı iyileşme.",
+    "hint": "Verilen kısım tam cümle: boşluğa ne gelir?"
+   },
+   {
+    "q": "If the battery is charged correctly, ----.",
+    "options": [
+     "lasting ten years",
+     "it had lasted ten years",
+     "it lasted ten years",
+     "it would have lasted ten years",
+     "it will last for ten years"
+    ],
+    "answer": 4,
+    "explain": "Tip 1: present → will.",
+    "hint": "if cümlesi hangi zamanda?"
+   },
+   {
+    "q": "Having studied the data carefully, ----.",
+    "options": [
+     "the scientists changed their model",
+     "a new model appeared",
+     "the data were wrong",
+     "it was clear",
+     "the model was changed"
+    ],
+    "answer": 0,
+    "explain": "Veriyi inceleyen özne → the scientists.",
+    "hint": "Veriyi kim inceledi?"
+   },
+   {
+    "q": "The new engine is quieter than the old one, ----.",
+    "options": [
+     "and which ideal for buses",
+     "it is ideal for city buses",
+     "which makes it ideal for city buses",
+     "because of ideal for buses",
+     "that makes it ideal for city buses"
+    ],
+    "answer": 2,
+    "explain": "Tam cümle + , which.",
+    "hint": "Virgülden sonra that olur mu?"
+   }
+  ]
+ },
+ {
+  "id": "cumle-tamamlama-kurallari",
+  "title": "Cümle tamamlama: 7 yapı kuralı",
+  "order": 33,
+  "topic": "cumle-tamamlama-kurallari",
+  "minutes": 5,
+  "summary": "Anlama bakmadan önce yapıyla ele: bağlaç sayısı, virgül, özne ve zaman uyumu.",
+  "formula": "Verilen bağlaçlı → şık bağlaçsız · verilen tam → şık bağlaçlı · iki bağlaç ✗",
+  "blocks": [
+   {
+    "h": "7 kural",
+    "md": "- **1.** Verilen parça bağlaçla başlıyorsa (Although X, ----) → şık **bağlaçsız** ana cümle.\n- **2.** Verilen parça tam ana cümleyse (X ----.) → şık bağlaçla / which / , Ving ile başlar.\n- **3.** ----, the X … → şık = **bağlaç + cümle**.\n- **4.** Parça Ving / V3 / Having V3 ile başlıyorsa → şıkkın **öznesi** o eylemi yapan.\n- **5.** İki bağlaç yan yana olmaz: Although … but ✗ · Because … so ✗\n- **6.** Zaman: since → PP · if tipine uygun · zaman bağlacında will ✗\n- **7.** Parçada it / they / this varsa → şıkta döneceği isim olmalı."
+   },
+   {
+    "h": "Örnek",
+    "md": "----, the engineers decided to replace the entire cable system.\n- Kural 3 → şık bağlaç + cümle: \"Although the damage was serious\" veya \"Since the damage was serious\".\n- Anlam: ciddi hasar → değiştirdiler (aynı yön, zıtlık yok) → **Since**."
+   },
+   {
+    "h": "Sonra anlam",
+    "md": "- Yapıdan geçen şıklarda **kutup**: although/but → ters · because/so → aynı.\n- Olumsuz ön ek (un-, in-) ve hardly, rarely kutbu çevirir."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Although the material is very light, ----.",
+    "options": [
+     "because it contains carbon",
+     "and it is cheap",
+     "so it is used in aircraft",
+     "it is surprisingly strong",
+     "but it is also strong"
+    ],
+    "answer": 3,
+    "explain": "Although var → şık bağlaçsız (Kural 1, 5). Hafif ↔ şaşırtıcı biçimde güçlü.",
+    "hint": "Şıkta ikinci bir bağlaç olabilir mi?"
+   },
+   {
+    "q": "Using a new type of sensor, ----.",
+    "options": [
+     "the leak was measured",
+     "it was a successful test",
+     "accuracy increased",
+     "the data were more accurate",
+     "the team measured the leak precisely"
+    ],
+    "answer": 4,
+    "explain": "Kural 4: sensörü kullanan özne → the team.",
+    "hint": "Sensörü kim kullandı? Şıkkın öznesi o mu?"
+   },
+   {
+    "q": "----, the test was repeated.",
+    "options": [
+     "Because the first results were unclear",
+     "Despite the first results were unclear",
+     "Unclear first results",
+     "The first results were unclear",
+     "The first results, which were unclear"
+    ],
+    "answer": 0,
+    "explain": "Kural 3: bağlaç + cümle.",
+    "hint": "Verilen kısım tam cümle: boşluğa ne gelmeli?"
+   },
+   {
+    "q": "Sea levels have risen by 20 cm ----.",
+    "options": [
+     "when records will begin",
+     "by the time records begin",
+     "since records began in 1900",
+     "after records will have begun",
+     "until records begin"
+    ],
+    "answer": 2,
+    "explain": "Kural 6: ana cümle PP → since + V2.",
+    "hint": "Ana cümle hangi zaman?"
+   },
+   {
+    "q": "When they are heated, ----.",
+    "options": [
+     "most metals expand",
+     "heating most metals expand",
+     "but most metals expand",
+     "because most metals expand",
+     "the expansion of most metals"
+    ],
+    "answer": 0,
+    "explain": "Kural 1 + 7: they → metals; şık bağlaçsız ana cümle.",
+    "hint": "\"they\" neye dönüyor? Şık bağlaç içerebilir mi?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-ceviri",
+  "title": "Taktik: Çeviri (42–53)",
+  "order": 34,
+  "topic": "ceviri-en-tr",
+  "minutes": 3,
+  "summary": "Önce ana bağlacı ve zamanı eşle; tutmayan şıkkı anlama bakmadan ele.",
+  "formula": "bağlaç + zaman eşle → özne / etken-edilgen → nicelik → kelime en son",
+  "blocks": [
+   {
+    "h": "İng→Tr",
+    "md": "- Ana **bağlacı** ve **zamanı** bul: although = -mesine rağmen, unless = -mezse.\n- Türkçe şıkta karşılığı yoksa → ele.\n- Relative (which/whose) → Türkçede \"-en, -dığı\"."
+   },
+   {
+    "h": "Tr→İng",
+    "md": "- Türkçe cümlenin **sonundaki yüklemden** başla.\n- -dığı için = because · -mesine rağmen = although · -dıkça = as · -mek için = to V.\n- İki yönde: özne, etken/edilgen, **bazı/çoğu/sadece**, fazla/eksik bilgi olan şıkları ele."
+   }
+  ],
+  "checks": [
+   {
+    "q": "\"Although the method is cheap, it is slow.\" En iyi çeviri hangi bağlacı içermeli?",
+    "options": [
+     "-dıkça",
+     "-mesine rağmen",
+     "-mezse",
+     "-dığı için",
+     "-mek için"
+    ],
+    "answer": 1,
+    "explain": "Although = -mesine rağmen.",
+    "hint": "Although'nun Türkçe karşılığı?"
+   },
+   {
+    "q": "\"Su ısıtıldıkça genleşir.\" İngilizce çeviride hangi bağlaç olmalı?",
+    "options": [
+     "Unless water is heated",
+     "Although water is heated",
+     "Because water heated",
+     "As water is heated",
+     "So that water is heated"
+    ],
+    "answer": 3,
+    "explain": "-dıkça = as.",
+    "hint": "\"-dıkça\" hangi bağlaç?"
+   },
+   {
+    "q": "\"Most samples were contaminated.\" çevirisinde nicelik nedir?",
+    "options": [
+     "Bazı örnekler",
+     "Bütün örnekler",
+     "Hiçbir örnek",
+     "Örneklerin çoğu",
+     "Sadece bir örnek"
+    ],
+    "answer": 3,
+    "explain": "most = çoğu.",
+    "hint": "\"Most\" ne demek?"
+   },
+   {
+    "q": "\"The bridge was built in 1990.\" Türkçede fiil nasıl olmalı?",
+    "options": [
+     "inşa etmişti",
+     "inşa edildi",
+     "inşa ediliyor",
+     "inşa edilecek",
+     "inşa etti"
+    ],
+    "answer": 1,
+    "explain": "Edilgen + geçmiş: inşa edildi.",
+    "hint": "Etken mi edilgen mi? Zaman?"
+   },
+   {
+    "q": "\"Yağmur yağmazsa bitkiler kurur.\" hangi bağlaçla başlar?",
+    "options": [
+     "Because it rains",
+     "Although it rains",
+     "If it rains",
+     "Unless it rains",
+     "When it rains"
+    ],
+    "answer": 3,
+    "explain": "-mezse = unless.",
+    "hint": "\"-mezse\" hangi bağlaç?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-paragraf-tamamlama",
+  "title": "Taktik: Paragraf tamamlama (54–59)",
+  "order": 35,
+  "topic": "paragraf-tamamlama",
+  "minutes": 3,
+  "summary": "Boşluğun önceki ve sonraki cümlesini oku; şık ikisine de bağlanmalı.",
+  "formula": "önce/sonra cümle → this/such/they neye dönüyor → However/Therefore yönü",
+  "blocks": [
+   {
+    "h": "Sıra",
+    "md": "- Boşluğun **önceki ve sonraki** cümlesini oku; şık ikisine bağlanmalı.\n- **this, such, they, these** neye dönüyor? Dönecek isim yoksa şık yanlış.\n- **However / Therefore** ile başlayan şıkta yön doğru mu?\n- Paragraf sonundaysa: sonuç/özet cümlesi."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Some frogs can freeze in winter and live again in spring. ---- Their cells contain a sugar that acts like antifreeze. Hangi cümle boşluğa uyar?",
+    "options": [
+     "Frogs are amphibians.",
+     "Many frogs live in rainforests.",
+     "However, frogs cannot fly.",
+     "Snakes also hibernate.",
+     "This is possible because of a special chemical in their bodies."
+    ],
+    "answer": 4,
+    "explain": "Sonraki cümle nedeni açıklıyor; \"This\" önceki bilgiye döner.",
+    "hint": "Sonraki cümle neyi açıklıyor?"
+   },
+   {
+    "q": "Paragraf tamamlamada şık \"These devices …\" ile başlıyorsa önce ne kontrol edilir?",
+    "options": [
+     "Şıkta sayı var mı",
+     "Şık en uzun mu",
+     "Şık olumsuz mu",
+     "Önceki cümlede çoğul bir cihaz ismi var mı",
+     "Şıkta tarih var mı"
+    ],
+    "answer": 3,
+    "explain": "These + çoğul isim önceki cümlede olmalı.",
+    "hint": "\"These\" neye dönmeli?"
+   },
+   {
+    "q": "Boşluktan sonraki cümle \"As a result, costs fell.\" ise boşluğa en uygun şık hangisidir?",
+    "options": [
+     "Costs are important.",
+     "The factory was founded in 1950.",
+     "However, costs rose.",
+     "The factory began using cheaper energy.",
+     "Factories are large."
+    ],
+    "answer": 3,
+    "explain": "As a result → önceki cümle neden olmalı.",
+    "hint": "\"As a result\" bir önceki cümlede ne ister?"
+   },
+   {
+    "q": "Boşluk paragrafın sonundaysa genelde hangi tür cümle gelir?",
+    "options": [
+     "Önceki fikri bağlayan sonuç/özet",
+     "İlgisiz örnek",
+     "Soru cümlesi",
+     "Yeni bir konu",
+     "İlk cümlenin aynısı"
+    ],
+    "answer": 0,
+    "explain": "Son boşluk sonuç/özet ister.",
+    "hint": "Paragrafın sonu ne yapar?"
+   },
+   {
+    "q": "Şık \"However, …\" ile başlıyor. Doğru olması için ne gerekir?",
+    "options": [
+     "Önceki cümleyle aynı yön",
+     "Önceki cümleyle zıt yön",
+     "Paragrafın ilk cümlesi olması",
+     "Kısa olması",
+     "Sayı içermesi"
+    ],
+    "answer": 1,
+    "explain": "However = zıtlık.",
+    "hint": "However hangi ilişkiyi kurar?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-ilgisiz",
+  "title": "Taktik: Anlam bütünlüğünü bozan cümle (60–65)",
+  "order": 36,
+  "topic": "ilgisiz",
+  "minutes": 3,
+  "summary": "İlk cümle konuyu verir. Aynı kelimeyi kullanan ama konuyu kaydıran cümleyi bul.",
+  "formula": "aynı konu mu? → aynı alt konu mu? → aynı bakış mı? (ortak kelime ≠ ilgili)",
+  "blocks": [
+   {
+    "h": "Sıra",
+    "md": "- **İlk cümle** konuyu verir; I genelde ilgisiz değildir.\n- Tuzak: **aynı anahtar kelime** ama farklı bakış (tanım, tarih, başka yer).\n- Şüpheli cümleyi çıkar: önceki ve sonraki **pürüzsüz bağlanıyorsa** o ilgisizdir."
+   },
+   {
+    "h": "Senin notun",
+    "md": "- Konu kayması seni yakalıyor. Her cümleye sor: **ilk cümlenin konusunu mu anlatıyor?**\n- 3 soru: Aynı konu mu? Aynı **alt** konu mu? Aynı bakış (neden/tarih/yer) mı?"
+   }
+  ],
+  "checks": [
+   {
+    "q": "(I) Camels are well adapted to deserts. (II) They can go for days without water. (III) Their humps store fat, not water. (IV) Camels were first domesticated about 3,000 years ago. (V) Their thick fur protects them from the hot sun. Hangi cümle akışı bozar?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: çöle uyum. IV tarih (evcilleştirme) → konu kayması.",
+    "hint": "Her cümle \"çöle uyum\" konusunu mu anlatıyor?"
+   },
+   {
+    "q": "(I) Copper is an excellent conductor. (II) It is therefore used in most electrical wires. (III) The Statue of Liberty is covered in copper. (IV) Its low resistance means little energy is lost. (V) For these reasons, copper dominates the wiring market. Hangi cümle akışı bozar?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: iletkenlik ve kablolar. III aynı kelime (copper) ama farklı alt konu.",
+    "hint": "Ortak kelime yeter mi? Alt konu aynı mı?"
+   },
+   {
+    "q": "İlgisiz cümle sorusunda en sık tuzak hangisidir?",
+    "options": [
+     "Dil bilgisi hatası olan cümle",
+     "Aynı anahtar kelimeyi kullanıp konuyu kaydıran cümle",
+     "Sayı içeren cümle",
+     "En kısa cümle",
+     "İlk cümle"
+    ],
+    "answer": 1,
+    "explain": "Ortak kelime ≠ ilgili.",
+    "hint": "Tuzak cümle nasıl görünür?"
+   },
+   {
+    "q": "Şüpheli bir cümleyi çıkardığında ne kontrol edilir?",
+    "options": [
+     "Paragraf kısaldı mı",
+     "Önceki ve sonraki cümle pürüzsüz bağlanıyor mu",
+     "Çıkan cümle olumsuz mu",
+     "Çıkan cümle uzun mu",
+     "Çıkan cümlede sayı var mı"
+    ],
+    "answer": 1,
+    "explain": "Pürüzsüz bağlantı → çıkan cümle ilgisiz.",
+    "hint": "Cümleyi çıkarınca akış bozuluyor mu?"
+   },
+   {
+    "q": "Paragrafın ilk cümlesi neden genelde ilgisiz değildir?",
+    "options": [
+     "Hep soru cümlesidir",
+     "Konuyu o belirler",
+     "En uzun cümle odur",
+     "Hep olumsuzdur",
+     "Hep tarih içerir"
+    ],
+    "answer": 1,
+    "explain": "Konu cümlesi.",
+    "hint": "İlk cümlenin görevi ne?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-paragraf",
+  "title": "Taktik: Okuma parçası (66–80)",
+  "order": 37,
+  "topic": "paragraf",
+  "minutes": 3,
+  "summary": "Önce soruyu oku, sonra parçada ilgili yeri bul. Cevap metinde açıkça olmalı.",
+  "formula": "soru → anahtar kelime → metinde yer → kesin şıklara şüphe",
+  "blocks": [
+   {
+    "h": "Sıra",
+    "md": "- Önce **soruyu** oku, sonra parçada ilgili yeri ara.\n- Ana fikir genelde **ilk veya son** cümlede.\n- \"According to the passage\" → cevap **metinde açıkça** var; yorum yapma.\n- **always, all, never, only** gibi kesin şıklara şüpheyle bak.\n- Sınavda soruların çoğu **detay** sorusu."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Metin: \"Some birds migrate thousands of kilometres. They use the sun and stars to find their way.\" Soru: Birds find their way by ----.",
+    "options": [
+     "only using smell",
+     "always flying at night",
+     "using the sun and stars",
+     "asking other birds",
+     "following rivers"
+    ],
+    "answer": 2,
+    "explain": "Metinde açıkça: sun and stars.",
+    "hint": "Metinde \"find their way\" nerede geçiyor?"
+   },
+   {
+    "q": "\"According to the passage\" sorusunda doğru yaklaşım hangisidir?",
+    "options": [
+     "İlk şıkkı seçmek",
+     "Kendi bilgini kullanmak",
+     "Kesin ifadeli şıkkı seçmek",
+     "Metinde açıkça yazanı seçmek",
+     "En uzun şıkkı seçmek"
+    ],
+    "answer": 3,
+    "explain": "Cevap metinde.",
+    "hint": "Cevap nereden gelmeli?"
+   },
+   {
+    "q": "Ana fikir sorusunda önce nereye bakılır?",
+    "options": [
+     "Örnek cümlelere",
+     "Parantez içine",
+     "İlk ve son cümleye",
+     "En uzun cümleye",
+     "Ortadaki sayılara"
+    ],
+    "answer": 2,
+    "explain": "Ana fikir genelde ilk/son cümlede.",
+    "hint": "Ana fikir genelde nerede?"
+   },
+   {
+    "q": "Şıkta \"always\" veya \"never\" varsa ne yapılır?",
+    "options": [
+     "Görmezden gelinir",
+     "Hemen yanlış kabul edilmez ama ilk seçilir",
+     "En son okunur",
+     "Metinde bu kesinlik var mı diye kontrol edilir",
+     "Hemen doğru kabul edilir"
+    ],
+    "answer": 3,
+    "explain": "Kesin ifade metinde yoksa şık yanlış.",
+    "hint": "Metin bu kadar kesin mi?"
+   },
+   {
+    "q": "Metin: \"The drug reduced pain in most patients, but a few reported headaches.\" Soru: The drug ----.",
+    "options": [
+     "caused headaches in most patients",
+     "had no effect",
+     "helped most patients but caused headaches in some",
+     "was never tested",
+     "helped all patients"
+    ],
+    "answer": 2,
+    "explain": "most + a few → detay eşleşmesi.",
+    "hint": "\"most\" ve \"a few\" kelimelerini şıklarda eşle."
    }
   ]
  }

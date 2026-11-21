@@ -20,8 +20,10 @@ export function nextMistake(m, correct, today = dayKey()) {
 }
 
 // key: soru anahtarı (g0001 veya d001#2). info: {kind:'gramer'|'drill'|'okuma', topic, dtype}
-export function answer(key, correct, info) {
-  store.put('grammarLog', { id: uid('l'), q: key, correct: !!correct, at: Date.now(), day: dayKey(), ...info });
+export function answer(key, correct, info, extra = {}) {
+  const day = dayKey();
+  const inSet = (store.get('days', day)?.hset || []).includes(key);
+  store.put('grammarLog', { id: uid('l'), q: key, correct: !!correct, at: Date.now(), day, ...info, ...(extra.hint ? { hint: true } : {}), ...(inSet ? { hset: true } : {}) });
   bumpDay('answered'); if (correct) bumpDay('correct');
   const n = nextMistake(store.get('mistakes', key), correct);
   if (n) store.put('mistakes', { ...n, id: key, kind: info.kind, topic: info.topic || '', dtype: info.dtype || '' });
@@ -33,3 +35,28 @@ export function dueMistakes(kind) {
 }
 
 export function openMistakes() { return store.all('mistakes').filter(m => !m.solved); }
+
+// Günlük hata tekrarı: en fazla 8 soru (en eski vade, sonra en çok yanlış). Tüm kaynaklar (gramer, alıştırma, okuma, çıkmış, ders).
+export const DAILY_MISTAKES = 8;
+export function pickMistakes(list, today = dayKey(), n = DAILY_MISTAKES) {
+  return list.filter(m => !m.solved && m.due && m.due <= today && m.kind !== 'hafiza')
+    .sort((a, b) => a.due.localeCompare(b.due) || (b.wrongs || 0) - (a.wrongs || 0) || String(a.id).localeCompare(String(b.id)))
+    .slice(0, n).map(m => m.id);
+}
+
+// Bugünün hata seti (gün kaydında sabit; birikmiş sayı büyüse de bugün en fazla 8)
+export function mistakeSet(key = dayKey()) {
+  const r = store.get('days', key) || { id: key, tasks: {} };
+  if (Array.isArray(r.hset)) return r.hset;
+  const ids = pickMistakes(store.all('mistakes'), key);
+  store.put('days', { ...r, id: key, hset: ids }, { silent: true });
+  return ids;
+}
+
+// {ids, done, total}: bugün setten kaç soru çözüldü
+export function mistakeToday(key = dayKey()) {
+  const ids = mistakeSet(key);
+  const set = new Set(ids);
+  const done = new Set(store.all('grammarLog').filter(l => l.day === key && set.has(l.q) && l.hset).map(l => l.q)).size;
+  return { ids, done, total: ids.length };
+}

@@ -38,6 +38,29 @@ export function tourPool(cards = store.all('cards'), today = dayKey()) {
     (isToday(c.lastReview) && (c.hist || []).at(-1) === 'a') || ((c.tags || []).includes('hata') && isToday(c.createdAt))));
 }
 
+export const TOUR_MAX = 8;
+// Hafıza turu kartları: anlamı olan, en fazla 8 (Bugün'deki sayı = turdaki soru sayısı)
+export const tourCards = (cards = store.all('cards'), today = dayKey()) =>
+  tourPool(cards, today).filter(c => (c.tr || '').trim()).sort((a, b) => (inLadder(b) - inLadder(a)) || String(a.id).localeCompare(String(b.id))).slice(0, TOUR_MAX);
+
+// Saf: anlam seçme sorusu (kelime → 5 Türkçe anlamdan biri). others: [{word, tr}]
+export function meaningItem(card, others, rnd = Math.random) {
+  const ans = (card.tr || '').trim();
+  if (!ans) return null;
+  const bad = new Set([ans.toLowerCase()]);
+  const cand = [];
+  for (const o of shuffle(others, rnd)) {
+    if (cand.length >= 4) break;
+    const t = (o.tr || '').trim();
+    if (!t || bad.has(t.toLowerCase()) || (o.word || '').toLowerCase() === card.word.toLowerCase()) continue;
+    bad.add(t.toLowerCase()); cand.push(t);
+  }
+  if (cand.length < 4) return null;
+  const options = shuffle([ans, ...cand], rnd);
+  return { key: 'anlam:' + card.id, cardId: card.id, q: `${card.word}\n\nTürkçe anlamı hangisi?`, options, answer: options.indexOf(ans),
+    explain: `${card.word} = ${ans}`, label: 'Anlam', info: { kind: 'hafiza', dtype: 'anlam' } };
+}
+
 // Saf: eş anlam sorusu (YÖKDİL yakın anlam formatı): kelime → 5 şıktan eş anlamlısı
 export function synItem(card, others, rnd = Math.random) {
   const syn = (card.syn || []).filter(s => s && s.split(/\s+/).length <= 3 && s.toLowerCase() !== card.word.toLowerCase());

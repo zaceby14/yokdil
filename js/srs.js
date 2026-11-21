@@ -67,15 +67,29 @@ export function dueCards() {
 
 export function dueCount() { return dueCards().length; }
 
-// Bugün eklenebilecek yeni kart sayısı ve listesi (kişisel yeniler önce, sonra çekirdek deste)
+// Kendi eklediği kart mı? (okurken dokunma, elle ekleme, not, parça sonu seçimi)
+const AUTO_SRC = ['Çekirdek', 'Notlarım', 'Hata'];
+export const isMine = c => !!c?.mine || (!!c && !(c.tags || []).includes('hata') && !AUTO_SRC.includes(c.source || 'Çekirdek') && !String(c.id || '').startsWith('s:'));
+export const MINE_EXTRA = 10; // dünden kalan kendi kelimeleri limiti en fazla bu kadar aşabilir
+
+// Saf: yeni kuyruk sırası. Kendi eklediklerin (eskiden yeniye) → öne alınanlar (tarama/hata) → notlarım/seed.
+// Dünden (ya da önceden) kalan kendi kelimelerin limit dolsa bile gelir (en fazla MINE_EXTRA) → en geç ertesi gün.
+export function orderNew(cards, left, startToday) {
+  const fresh = cards.filter(c => (c.state || 'new') === 'new');
+  const mine = fresh.filter(isMine).sort((a, b) => (a.mine || a.createdAt || 0) - (b.mine || b.createdAt || 0));
+  const rest = fresh.filter(c => !isMine(c)).sort((a, b) => newOrder(a) - newOrder(b));
+  const old = mine.filter(c => (c.mine || c.createdAt || 0) < startToday);
+  const n = Math.max(left, Math.min(old.length, left + MINE_EXTRA));
+  return [...mine, ...rest].slice(0, n);
+}
+
+// Bugün eklenebilecek yeni kart sayısı ve listesi (kendi kelimelerin önce, sonra çekirdek deste)
 export async function newQueue() {
   const r = dayRec();
   if (r.busy) return [];
   const left = Math.max(0, (await newLimit()) - (r.newDone || 0));
-  if (!left) return [];
-  const personal = store.all('cards').filter(c => (c.state || 'new') === 'new')
-    .sort((a, b) => newOrder(a) - newOrder(b));
-  const q = personal.slice(0, left).map(c => ({ card: c }));
+  const sod = new Date(); sod.setHours(0, 0, 0, 0);
+  const q = orderNew(store.all('cards'), left, sod.getTime()).map(c => ({ card: c }));
   if (q.length < left) {
     const have = new Set(Object.values(store.snapshot().cards).map(c => c.wid).filter(Boolean));
     const known = new Set(store.all('cards').map(c => (c.word || '').toLowerCase()));

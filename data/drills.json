@@ -2151,7 +2151,7 @@
     ],
     "answer": 1,
     "explain": "Konu: korozyonun maliyeti ve korunma. II çeliğin seri üretim tarihine kayıyor. IV'teki 'such maintenance' III'e bağlanıyor.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Anahtar kavram 'korozyon': her cümle korozyonun maliyeti/önlenmesinden mi söz ediyor, yoksa sadece 'çelik' mi geçiyor?"
    }
   ],
   "topic": "malzeme",
@@ -2173,7 +2173,7 @@
     ],
     "answer": 3,
     "explain": "Konu: hidrojenin depolama yöntemleri. IV evrendeki bolluğuna kayıyor; anahtar kelime aynı, alt konu farklı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'hidrojeni depolama yöntemleri': her cümle bir yöntem mi anlatıyor? Aynı kelime ≠ aynı alt konu."
    }
   ],
   "topic": "enerji",
@@ -2195,7 +2195,7 @@
     ],
     "answer": 1,
     "explain": "Konu: gökkuşağı oluşumu. II fırtınaların coğrafi dağılımı — akışı bozar; III I'deki kırılmayı açıklar.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Süreç zinciri: ışık damlaya girer → kırılır → ayrışır → yansır. Zincirin halkası olmayan cümleyi ara."
    }
   ],
   "topic": "fizik",
@@ -2217,7 +2217,7 @@
     ],
     "answer": 1,
     "explain": "Konu: arıların dansla iletişimi. II balın tıbbi kullanımı — 'honey/bee' kelime tuzağı, konu kayması.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'arının dansla iletişimi': 'arı/bal' geçen her cümle dansı mı anlatıyor?"
    }
   ],
   "topic": "biyoloji",
@@ -2239,7 +2239,7 @@
     ],
     "answer": 4,
     "explain": "Konu: mangrovların faydaları. V kıyıdan uzak yağmur ormanlarının yağışı — farklı ekosistem.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Hangi ekosistem anlatılıyor? Her cümlenin öznesi aynı ekosistem mi, kontrol et."
    }
   ],
   "topic": "ekoloji",
@@ -2261,7 +2261,7 @@
     ],
     "answer": 1,
     "explain": "Konu: kuyruklu yıldızların Güneş'e yaklaşınca davranışı. II Satürn halkaları — ortak kelime 'ice' tuzağı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu bir gök cisminin Güneş'e yaklaşınca davranışı; ortak bir madde adı (buz) başka bir cisme götürebilir."
    }
   ],
   "topic": "astronomi",
@@ -2283,7 +2283,7 @@
     ],
     "answer": 3,
     "explain": "Konu: yeraltı suyu ve aşırı çekim. IV nehirlerin deltaya sediment taşıması — konu dışı; V 'this over-extraction' III'e bağlı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'yeraltı suyu ve aşırı çekim'; 'this over-extraction' gibi referansların neye bağlandığını izle."
    }
   ],
   "topic": "yerbilimi",
@@ -2305,7 +2305,7 @@
     ],
     "answer": 1,
     "explain": "Konu: otonom araç sensörleri. II manuel vites tercihi — konu kayması; III–V sensörleri sıralıyor.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu cümlesi 'sensörler' diyor: sonraki cümleler sensörleri sıralamalı. Listeyi bozan var mı?"
    }
   ],
   "topic": "yapay-zeka",
@@ -2327,7 +2327,7 @@
     ],
     "answer": 4,
     "explain": "Konu: işitme cihazlarının gelişimi. V işitme kaybının nedeni — alt konu farklı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu cihazın gelişimi; işitmeyle ilgili ama cihazdan söz etmeyen cümleye dikkat."
    }
   ],
   "topic": "tip",
@@ -2349,7 +2349,7 @@
     ],
     "answer": 4,
     "explain": "Konu: Roma su kemerleri. V Roma yolları — aynı medeniyet, farklı konu ('also' tuzağı).",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Aynı medeniyet ≠ aynı konu: her cümle su kemerlerini mi anlatıyor? 'also' kelimesine dikkat."
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -2371,7 +2371,7 @@
     ],
     "answer": 4,
     "explain": "Konu: hidrojen bağı ve suyun kaynama noktası. V hidrojen yakıtı — 'hydrogen' kelime tuzağı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'suyun kaynama noktası ve hidrojen bağı'; 'hydrogen' kelimesi her cümlede aynı bağlamda mı?"
    }
   ],
   "topic": "kimya",
@@ -2393,7 +2393,7 @@
     ],
     "answer": 3,
     "explain": "Konu: alüminyumun alaşımlanarak güçlendirilmesi. IV hammadde madenciliği — kayma. V 'resulting alloys' III'e bağlı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu alüminyumun güçlendirilmesi; 'resulting alloys' hangi cümleye bağlanıyor, zinciri kur."
    }
   ],
   "topic": "malzeme",
@@ -2415,7 +2415,7 @@
     ],
     "answer": 4,
     "explain": "Konu: panel verimliliği ve sıcaklık. V güneş tutulması — 'solar' kelime tuzağı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu panel verimi ve sıcaklık; 'solar' kelimesi ortak diye her cümleyi ilgili sayma."
    }
   ],
   "topic": "enerji",
@@ -2437,7 +2437,7 @@
     ],
     "answer": 1,
     "explain": "Konu: mikrodalga fırının ısıtma ilkesi. II haberleşmede kullanımı — kayma; III doğrudan I'in devamı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu cümlesi fırının NASIL ısıttığını söylüyor; her cümle bu ilkeyi mi açıklıyor?"
    }
   ],
   "topic": "fizik",
@@ -2459,7 +2459,7 @@
     ],
     "answer": 3,
     "explain": "Konu: kök hücre türleri. IV hücre zarı yapısı — genel biyoloji ama alt konu dışı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'kök hücre türleri'; genel biyoloji bilgisi verip türlerden söz etmeyen cümleyi ara."
    }
   ],
   "topic": "biyoloji",
@@ -2481,7 +2481,7 @@
     ],
     "answer": 3,
     "explain": "Konu: denizde mikroplastik. IV plastiğin icat tarihi — konu kayması.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'denizde mikroplastik ve etkisi'; 'plastic' geçen her cümle bu etkiyi mi anlatıyor?"
    }
   ],
   "topic": "ekoloji",
@@ -2503,7 +2503,7 @@
     ],
     "answer": 3,
     "explain": "Konu: nötron yıldızları ve pulsarlar. IV Sputnik — tamamen farklı. V 'such a beam' III'e bağlı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu nötron yıldızı → pulsar; 'such a beam' hangi cümleye bağlanıyor? Aradaki kopukluğu ara."
    }
   ],
   "topic": "astronomi",
@@ -2525,7 +2525,7 @@
     ],
     "answer": 2,
     "explain": "Konu: kireçtaşı mağaralarının oluşumu. III granitin kullanımı — kayma; IV 'this weak acid' II'ye bağlı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Süreç zinciri: yağmur → asit → çözünme → mağara. 'this weak acid' referansını takip et."
    }
   ],
   "topic": "yerbilimi",
@@ -2547,7 +2547,7 @@
     ],
     "answer": 3,
     "explain": "Konu: yapay zekânın çevresel/enerji maliyeti. IV satranç programı tarihi — konu dışı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu yapay zekânın enerji/çevre maliyeti; son cümledeki 'these impacts' nelere dönüyor, onları say."
    }
   ],
   "topic": "yapay-zeka",
@@ -2569,7 +2569,7 @@
     ],
     "answer": 4,
     "explain": "Konu: antimikrobiyal direnç ve önlemler. V penisilinin keşif öyküsü — tarihe kayma.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu 'antimikrobiyal direnç: tehdit ve önlem'; her cümle bu iki başlıktan birine giriyor mu?"
    }
   ],
   "topic": "tip",
@@ -2591,7 +2591,7 @@
     ],
     "answer": 1,
     "explain": "Konu: Eiffel Kulesi'nin hikâyesi. II Paris'in genel ünü — konu kayması; III'teki 'its design' kuleye döner.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu kulenin kendi hikâyesi; her cümlenin öznesi kule mi, yoksa başka bir şey mi?"
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -2613,7 +2613,7 @@
     ],
     "answer": 1,
     "explain": "Konu: batarya çalışma ilkesi. II elektriğin tarihçesi — kayma; III I'in devamı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu bataryanın çalışma ilkesi; 'elektrik' kelimesi ortak ama her cümle bataryayı mı anlatıyor?"
    }
   ],
   "topic": "kimya",
@@ -2635,7 +2635,7 @@
     ],
     "answer": 2,
     "explain": "Konu: betonarmenin işleyişi. III çimento emisyonu — ilgili ama alt konu dışı; IV II'nin devamı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu betonarmenin nasıl çalıştığı; betonla ilgili ama işleyiş dışına çıkan cümleyi ara."
    }
   ],
   "topic": "malzeme",
@@ -2657,7 +2657,7 @@
     ],
     "answer": 2,
     "explain": "Konu: pompaj depolamanın çalışma ilkesi. III barajların ekolojik etkisi — kayma; II→IV süreç akışı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Süreç sırası: fazla güç → su yukarı → talep → su aşağı. Bu akışı kesen cümle var mı?"
    }
   ],
   "topic": "enerji",
@@ -2679,7 +2679,7 @@
     ],
     "answer": 2,
     "explain": "Konu: GPS ve görelilik düzeltmesi. III Einstein'ın Nobel'i — isim tuzağı, alt konu dışı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu GPS saatleri ve görelilik düzeltmesi; bir özel ismin geçmesi konuyla bağ kurmaya yetmez."
    }
   ],
   "topic": "fizik",
@@ -2701,7 +2701,7 @@
     ],
     "answer": 3,
     "explain": "Konu: göçmen kuşların yön bulması. IV uçamayan kuşlar — kayma.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu göçmen kuşların yön bulması; 'kuş' geçen her cümle yön bulmayı mı anlatıyor?"
    }
   ],
   "topic": "biyoloji",
@@ -2723,7 +2723,7 @@
     ],
     "answer": 2,
     "explain": "Konu: kurtların ekosisteme etkisi (trofik kaskad). III kurt-köpek tür ilişkisi — kayma.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Zincir: kurt → geyik → bitki. Bu etki zincirine girmeyen cümle var mı?"
    }
   ],
   "topic": "ekoloji",
@@ -2745,7 +2745,7 @@
     ],
     "answer": 4,
     "explain": "Konu: JWST ve kızılötesi gözlem. V Hubble'ın tarihçesi — başka teleskop.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu tek bir teleskopun kızılötesi gözlemi; her cümlenin öznesi aynı teleskop mu?"
    }
   ],
   "topic": "astronomi",
@@ -2767,7 +2767,7 @@
     ],
     "answer": 2,
     "explain": "Konu: tsunami oluşumu ve büyümesi. III sörf dalgaları — 'waves' tuzağı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu tsunami dalgasının oluşup büyümesi; 'waves' kelimesi her cümlede aynı dalga mı?"
    }
   ],
   "topic": "yerbilimi",
@@ -2789,7 +2789,7 @@
     ],
     "answer": 2,
     "explain": "Konu: bilgisayarlı görü. III dijital kamera — kayma; IV 'they' II'deki sistemlere bağlı.",
-    "tip": "Konu cümlesini (I) belirle, her cümleyi ona göre test et; ortak kelime tuzağına düşme."
+    "tip": "Konu bilgisayarlı görü; 'they' zamirinin hangi isme döndüğünü takip et."
    }
   ],
   "topic": "yapay-zeka",
@@ -2811,7 +2811,7 @@
     ],
     "answer": 3,
     "explain": "'In addition' ikinci bir zayıflık nedeni ekliyor → boşluk ilk nedeni vermeli (gözenek, eksik ergime gibi gizli kusurlar). Tuzak: 'These inspections' henüz anılmadı; kaynağın az kullanıldığı ve alüminyum bilgisi akışa uymaz.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Boşluktan sonra 'In addition' var: boşluk, sonraki cümleyle aynı türden bir İLK bilgi vermeli."
    }
   ],
   "topic": "malzeme",
@@ -2833,7 +2833,7 @@
     ],
     "answer": 3,
     "explain": "Sonraki cümle elektriğin kaynağına göre emisyon farkını anlatıyor → boşluk bu konuyu açmalı. Tuzak: 'completely free' sonrası ile çelişir.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "İlk cümle olumlu; sonrası elektriğin kaynağına bağlı bir koşul anlatıyor. Köprü cümle bu ikisini bağlamalı."
    }
   ],
   "topic": "enerji",
@@ -2855,7 +2855,7 @@
     ],
     "answer": 1,
     "explain": "Boşluk başta → konu cümlesi: indüksiyon/Faraday. Diğerleri ayrıntı ya da kopuk ('This is why' bağlamsız).",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Boşluk en başta: sonraki cümlelerin ortak konusunu tek cümlede toplayan şıkkı ara."
    }
   ],
   "topic": "fizik",
@@ -2877,7 +2877,7 @@
     ],
     "answer": 3,
     "explain": "Maliyet → çözüm: sadece saldırıdan sonra üretmek; sonraki cümle bu mekanizmayı açıklıyor.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Önce bir 'maliyet' sorunu, sonra bir mekanizma geliyor. Boşluk sorundan mekanizmaya geçişi sağlamalı."
    }
   ],
   "topic": "biyoloji",
@@ -2899,7 +2899,7 @@
     ],
     "answer": 1,
     "explain": "İkinci neden ekleniyor (Moreover); sonra çözüm önerileri. Tuzak: 'These trees' ağaçtan önce bahsedilmedi.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Önce bir neden, sonra çözümler geliyor. Boşluk bir neden daha mı eklemeli? Bağlaçlara bak."
    }
   ],
   "topic": "ekoloji",
@@ -2921,7 +2921,7 @@
     ],
     "answer": 0,
     "explain": "Merkür neden en sıcak değil? Atmosfer yok. Sonraki cümle Venüs'le kıyas. Tuzak: 'Therefore ... hottest' çelişki.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Paradoks: en yakın ama en sıcak değil. Boşluk bunun nedenini vermeli; sonraki cümle kıyas yapıyor."
    }
   ],
   "topic": "astronomi",
@@ -2943,7 +2943,7 @@
     ],
     "answer": 4,
     "explain": "Sonraki cümle suya doymuş yamacı anlatıyor → boşluk yağmuru seçmeli.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'suya doymuş yamaç'tan söz ediyor: üç tetikleyiciden hangisine odaklanıldığını bul."
    }
   ],
   "topic": "yerbilimi",
@@ -2965,7 +2965,7 @@
     ],
     "answer": 0,
     "explain": "Doğruluk (+) → ama herkes için eşit değil (−); sonraki cümle bu eşitsizliğin kanıtı.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "İlk cümle (+), sonraki cümle bir eksiklik kanıtı. Boşlukta yön değişimi gerekir mi?"
    }
   ],
   "topic": "yapay-zeka",
@@ -2987,7 +2987,7 @@
     ],
     "answer": 4,
     "explain": "'silent killer' için belirtisiz ama tehlikeli olmalı. Tuzak: 'severe pain' sessizlikle çelişir.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümlede 'For this reason … silent killer' var: boşluk bu lakabı açıklamalı."
    }
   ],
   "topic": "tip",
@@ -3009,7 +3009,7 @@
     ],
     "answer": 4,
     "explain": "Başlangıçtaki olgunun önemini açıklayan köprü cümle: doğu ağı Pasifik kıyısına ilk kez bağlandı. Tuzak: 'reduced the speed of travel' sonraki cümleyle (bir haftaya inen yolculuk) çelişir.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Boşluktan sonra 'Before … / Afterwards' kıyası var: boşluk olayın neyi neye bağladığını söylemeli."
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -3031,7 +3031,7 @@
     ],
     "answer": 1,
     "explain": "Sonraki 'This is why ... salt' → boşluk tuzun hızlandırıcı etkisini vermeli. Tuzak: pasın demiri koruduğu bilgisi yanlış; diğerleri konu dışı ya da mantıksız.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'This is why … salt' diyor: 'this' neyi gösteriyor olmalı?"
    }
   ],
   "topic": "kimya",
@@ -3053,7 +3053,7 @@
     ],
     "answer": 1,
     "explain": "Avantajlar (+) → kısıt (yüksek maliyet); sonraki cümle maliyet nedenlerini açıklıyor.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Önce avantajlar, sonra üretim zorlukları geliyor. Boşluk bu iki parçayı hangi kavramla bağlar?"
    }
   ],
   "topic": "malzeme",
@@ -3075,7 +3075,7 @@
     ],
     "answer": 3,
     "explain": "Avantaj → 'Even so' ile hâlâ tartışmalı olduğu → sonraki 'most serious concerns' bunu açıyor. Tuzak: 'These accidents' henüz anılmadı; 'every country' ve kömürün CO2 salmadığı bilgisi yanlış.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'The most serious concerns' diyor: boşlukta 'endişe/tartışma' fikri açılmalı."
    }
   ],
   "topic": "enerji",
@@ -3097,7 +3097,7 @@
     ],
     "answer": 2,
     "explain": "Sonraki 'Because all the waves are in step' → boşluk koheransı tanımlamalı.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki 'Because all the waves are in step' cümlesine bak: boşluk hangi özelliği tanımlamalı?"
    }
   ],
   "topic": "fizik",
@@ -3119,7 +3119,7 @@
     ],
     "answer": 1,
     "explain": "'for example' → boşluk genel bir iddia olmalı: uykuda önemli süreçler olur.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'for example' ile başlıyor: boşluk bu örneğin genel iddiası olmalı."
    }
   ],
   "topic": "biyoloji",
@@ -3141,7 +3141,7 @@
     ],
     "answer": 1,
     "explain": "'for instance' ile zarar örneği geliyor → boşluk genel zarar iddiası. Tuzak: 'harmless' örnekle çelişir.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'for instance' ile bir zarar örneği veriyor: boşlukta genel iddia ne olmalı?"
    }
   ],
   "topic": "ekoloji",
@@ -3163,7 +3163,7 @@
     ],
     "answer": 2,
     "explain": "Doğrudan gözlenemez (−) → dolaylı tespit (+); sonraki cümle örnek. Tuzak: Güneş kara delik olmaz (yanlış bilgi).",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "İlk cümle 'doğrudan gözlenemez' diyor, sonrası gözlem yolları anlatıyor. Yön değişimi ara."
    }
   ],
   "topic": "astronomi",
@@ -3185,7 +3185,7 @@
     ],
     "answer": 0,
     "explain": "Sonraki iki cümle atom dizilişi farkını anlatıyor → boşluk bunu tanıtmalı.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki iki cümle iki maddenin atom dizilişini karşılaştırıyor: boşluk bu karşılaştırmayı tanıtmalı."
    }
   ],
   "topic": "yerbilimi",
@@ -3207,7 +3207,7 @@
     ],
     "answer": 4,
     "explain": "Eski sistemin artı/eksisi → 'Modern systems, by contrast' kıyası. Tuzak: 'hand-written' modern sistem için yanlış.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'Modern systems, by contrast' diyor: boşluk eski sistemin bir özelliğini tamamlamalı."
    }
   ],
   "topic": "yapay-zeka",
@@ -3229,7 +3229,7 @@
     ],
     "answer": 0,
     "explain": "Nasıl çalıştığını açıklayan köprü cümle; sonraki 'later' bunu izler.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümlede 'later' var: boşluk ondan önceki adımı (nasıl yapıldığını) anlatmalı."
    }
   ],
   "topic": "tip",
@@ -3251,7 +3251,7 @@
     ],
     "answer": 3,
     "explain": "Kanalın etkisi: yolculuğu kısalttı; sonraki cümle bunun açıklaması.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'Ships no longer had to sail around…' diyor: boşluk bunun genel sonucunu vermeli."
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -3273,7 +3273,7 @@
     ],
     "answer": 2,
     "explain": "Sonraki 'Faster molecules' → boşluk ısınmanın molekül hızını artırdığını söylemeli.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'Faster molecules' ile başlıyor: bu bilgi boşlukta önceden verilmiş olmalı."
    }
   ],
   "topic": "kimya",
@@ -3295,7 +3295,7 @@
     ],
     "answer": 4,
     "explain": "Kronolojik akış: antik kullanım → 'Today' modern kullanım. Tuzak: 'conducts electricity very poorly' sonraki cümleyle çelişir; 'These pipes' henüz anılmadı.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Zaman çizgisine bak: sonraki cümle 'Today' ile başlıyor. Boşluk hangi döneme ait olmalı?"
    }
   ],
   "topic": "malzeme",
@@ -3317,7 +3317,7 @@
     ],
     "answer": 2,
     "explain": "'therefore' → öngörülebilirliğin nedeni gelmeli: Ay ve Güneş'in hareketi biliniyor.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümlede 'therefore' var: boşluk öngörülebilirliğin NEDENİNİ vermeli."
    }
   ],
   "topic": "enerji",
@@ -3339,7 +3339,7 @@
     ],
     "answer": 3,
     "explain": "'unusual' iddiasını açıklayan karşılaştırma: çoğu katının aksine buz, sıvısından daha az yoğundur; sonraki 'This happens because' bunun nedenini veriyor.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "İlk cümle 'unusual' diyor, sonraki 'This happens because'. Boşluk bu tuhaflığı adlandırmalı."
    }
   ],
   "topic": "fizik",
@@ -3361,7 +3361,7 @@
     ],
     "answer": 4,
     "explain": "'This process, known as...' → boşluk somut süreci anlatmalı (plazmit aktarımı).",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'This process, known as…' diyor: boşluk bu süreci somut olarak anlatmalı."
    }
   ],
   "topic": "biyoloji",
@@ -3383,7 +3383,7 @@
     ],
     "answer": 0,
     "explain": "Sonraki 'This moisture' → boşluk nemi tanıtmalı: yapraklardan su salınımı.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'This moisture' ile başlıyor: boşlukta nemin kaynağı tanıtılmalı."
    }
   ],
   "topic": "ekoloji",
@@ -3405,7 +3405,7 @@
     ],
     "answer": 2,
     "explain": "'therefore ... sixteen sunrises' → boşluk ara açıklama: gece-gündüz çok kez geçiş.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümlede 'therefore … sixteen sunrises' var: boşluk bu sonucun ara adımı olmalı."
    }
   ],
   "topic": "astronomi",
@@ -3427,7 +3427,7 @@
     ],
     "answer": 0,
     "explain": "'In addition' ikinci bir neden ekliyor → boşluk yıkıcılığın ilk nedenini vermeli.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Boşluktan sonra 'In addition' var: boşluk yıkıcılığın İLK nedenini vermeli."
    }
   ],
   "topic": "yerbilimi",
@@ -3449,7 +3449,7 @@
     ],
     "answer": 2,
     "explain": "'Some models also' → önce temel bir özellik verilmeli: sensörlerle engel algılama.",
-    "tip": "Boşluktan önceki ve sonraki cümleye bak; bağlaç ve 'this/such' referanslarını kontrol et."
+    "tip": "Sonraki cümle 'Some models also' diyor: boşluk tüm modellerin temel bir özelliğini vermeli."
    }
   ],
   "topic": "yapay-zeka",
@@ -4840,5 +4840,2497 @@
   ],
   "topic": "malzeme",
   "level": 1
+ },
+ {
+  "id": "d188",
+  "type": "cumle-tamamlama",
+  "stem": "Although honeybees can see ultraviolet light, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "they are almost blind to the colour red",
+     "but they cannot tell the colour red from black",
+     "which helps them to locate the nectar inside flowers",
+     "because their eyes contain three types of colour receptor",
+     "they therefore find flowers with ultraviolet patterns easily"
+    ],
+    "answer": 0,
+    "explain": "Although (+) UV görebilir → ana cümle (−) olmalı: kırmızıyı neredeyse göremez. 'therefore' aynı yön; 'but' although ile birlikte olmaz; 'because/which' ana cümle kurmaz.",
+    "tip": "Although ile başlayan parçaya bağlaçsız, ters kutuplu ana cümle gelir.",
+    "hint": "Verilen parça bağlaçla başlıyor: şık bağlaçsız mı olmalı? Kutbu ters mi?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d189",
+  "type": "cumle-tamamlama",
+  "stem": "Wheat grows best in cool, dry climates, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "whereas rice requires warm conditions and lots of water",
+     "although it is mainly cultivated in cool, dry regions",
+     "which is why rice is grown in exactly the same regions",
+     "since rice requires warm conditions and plenty of water",
+     "whereas barley also prefers cool and dry conditions"
+    ],
+    "answer": 0,
+    "explain": "whereas iki şeyi karşıtlar: buğday serin-kuru ↔ pirinç sıcak-sulu. 'whereas ... also' karşıtlık yok; 'although' aynı bilgiyi tekrar eder; 'since' sahte neden.",
+    "tip": "whereas = oysa: iki farklı öznenin ZIT özelliği gelir.",
+    "hint": "Şıklarda iki farklı ürün var: hangisi buğdayla gerçekten karşıt?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d190",
+  "type": "cumle-tamamlama",
+  "stem": "While most clouds form in the lowest layer of the atmosphere, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the lowest layer of the atmosphere is called the troposphere",
+     "however, a few rare types develop at much higher altitudes",
+     "most of the weather that affects us also occurs there",
+     "some thin, icy clouds can appear eighty kilometres up",
+     "they are composed of tiny water droplets or ice crystals"
+    ],
+    "answer": 3,
+    "explain": "While burada zıtlık: çoğu bulut alçakta ↔ bazıları çok yüksekte. 'however' while ile birlikte iki bağlaç olur; diğerleri aynı yönde bilgi.",
+    "tip": "Cümle başı While çoğunlukla zıtlıktır; ikinci yarı istisnayı verir.",
+    "hint": "'most clouds' dendi: zıtlık için hangi şık 'bazıları' der?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d191",
+  "type": "cumle-tamamlama",
+  "stem": "Despite being one of the driest places on Earth, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the Atacama Desert supports plants that live on coastal fog",
+     "rainfall in the Atacama Desert is extremely rare indeed",
+     "the Atacama Desert receives almost no rain in most years",
+     "the Atacama Desert has rarely been visited by researchers",
+     "scientists have found that the Atacama Desert hosts life"
+    ],
+    "answer": 0,
+    "explain": "Despite + Ving: Ving'in öznesi ana cümlenin öznesi olmalı (çöl). Kurak (−) ↔ bitki yaşatır (+). 'rainfall' ve 'scientists' özne uyuşmazlığı; diğerleri zıtlık kurmaz.",
+    "tip": "Despite being … → ana cümlenin öznesi o 'being'in sahibi olmalı.",
+    "hint": "Önce özneyi test et: 'one of the driest places' kim olabilir?"
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 2
+ },
+ {
+  "id": "d192",
+  "type": "cumle-tamamlama",
+  "stem": "Genetically modified crops can reduce the need for pesticides; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "however, they also reduce the cost of protecting crops from insects",
+     "however, critics worry that pests may eventually adapt to them",
+     "therefore, critics worry that pests may eventually adapt to them",
+     "although critics worry that pests may eventually adapt to them",
+     "however, farmers can therefore spray their fields less often"
+    ],
+    "answer": 1,
+    "explain": "(+) fayda → (−) endişe: '; however,' doğru. 'therefore' kutbu yanlış; noktalı virgülden sonra 'although' tam cümle kurmaz; diğer 'however' şıkları aynı yönde bilgi verir.",
+    "tip": "; however, → iki tam cümle + zıt kutup.",
+    "hint": "Noktalı virgülden sonra bağlaç + tam cümle gelir; anlam aynı yön mü ters mi?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d193",
+  "type": "cumle-tamamlama",
+  "stem": "Since sea turtles lay their eggs on sandy beaches, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the temperature of the sand had decided the sex of the young",
+     "coastal development poses a direct threat to their breeding",
+     "but most hatchlings never survive to reach adulthood",
+     "they spend most of their lives far out in the open ocean",
+     "which makes the open sea a safe place for them to feed"
+    ],
+    "answer": 1,
+    "explain": "Since = çünkü: kumsalda yumurtlar → kıyı yapılaşması üremeyi tehdit eder. 'had decided' zaman uyumsuz; 'but' iki bağlaç; 'which' ana cümle kurmaz; açık deniz bilgisi sonuç değil.",
+    "tip": "Since + neden → ana cümle o nedenin sonucu.",
+    "hint": "'Since' burada 'çünkü'. Kumsalda yumurtlamanın doğrudan sonucu ne olabilir?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d194",
+  "type": "cumle-tamamlama",
+  "stem": "As warm air can hold more water vapour than cold air, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "fog usually disappears when the air becomes colder",
+     "the air cools down as it rises over high mountains",
+     "cold air rises much more quickly than warm air does",
+     "a rise in temperature tends to make heavy rain more intense",
+     "so humid summers will have produced more thunderstorms"
+    ],
+    "answer": 3,
+    "explain": "As = çünkü: sıcak hava daha çok nem tutar → ısınma şiddetli yağışı artırır. 'so' iki bağlaç + zaman hatası; sis soğukta oluşur; diğerleri sonuç değil.",
+    "tip": "Cümle başı As + neden → ana cümle sonuç.",
+    "hint": "İlk yarı bir neden veriyor: hangi şık onun mantıklı sonucu?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d195",
+  "type": "cumle-tamamlama",
+  "stem": "Farmers in dry regions often cover the soil with straw ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although the straw keeps the soil cool and moist",
+     "in order that the soil dried out more quickly",
+     "so that less water is lost through evaporation",
+     "so that more water had been lost through evaporation",
+     "because of less water evaporates from the soil"
+    ],
+    "answer": 2,
+    "explain": "so that = -sın diye: amaç, buharlaşmayla daha az su kaybı. 'had been lost' zaman ve anlam hatası; 'because of' + cümle olmaz; 'although' kutbu yanlış.",
+    "tip": "so that + özne + fiil (amaç); because of + isim.",
+    "hint": "Saman örtmenin amacı ne? Şıklarda yapıyı da kontrol et: of + cümle olur mu?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d196",
+  "type": "cumle-tamamlama",
+  "stem": "Lizards cannot produce their own body heat; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "therefore, they rarely need to warm up in the morning",
+     "so that they bask in the sun before they start hunting",
+     "therefore, they bask in the sun before they start hunting",
+     "therefore, basking in the sun before they start hunting",
+     "however, they bask in the sun before they start hunting"
+    ],
+    "answer": 2,
+    "explain": "Isı üretemez → güneşlenir: neden-sonuç, '; therefore,'. 'however' kutup; 'rarely need to warm up' mantık; 'so that' amaç + noktalı virgül sonrası eksik; 'basking' çekimli fiil yok.",
+    "tip": "; therefore, + tam cümle (özne + çekimli fiil).",
+    "hint": "Bağlaç anlamını seçtikten sonra şıkta çekimli fiil var mı, bak."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d197",
+  "type": "cumle-tamamlama",
+  "stem": "Some small birds migrate at night ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "although the cooler air helps them avoid overheating",
+     "whereas the cooler air helps them avoid overheating",
+     "because of the cooler air helps them avoid overheating",
+     "because the cooler air would have helped them avoid overheating",
+     "because the cooler air helps them avoid overheating"
+    ],
+    "answer": 4,
+    "explain": "Gece göç etmenin nedeni: serin hava. 'because of' + cümle olmaz; although/whereas kutup yanlış; 'would have helped' zaman uyumsuz.",
+    "tip": "Bağlaç + cümle, edat + isim. Zaman: genel gerçek = geniş zaman.",
+    "hint": "Dört şık aynı cümle: farkı bağlaç ve fiil zamanında ara."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d198",
+  "type": "cumle-tamamlama",
+  "stem": "Unless farmers rotate their crops, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "pests that feed on a single crop can build up in the soil",
+     "if pests build up in the soil year after year",
+     "the soil will stay rich in nutrients for many years to come",
+     "soil-borne diseases would have been much less common",
+     "they plant different crops on the same field each year"
+    ],
+    "answer": 0,
+    "explain": "Unless = -mezse: rotasyon yoksa → zararlılar birikir (−). 'stay rich' kutup ters; 'plant different crops' rotasyonun tanımı, çelişir; 'would have been' koşul tipine uymaz; 'if...' ana cümle değil.",
+    "tip": "Unless (olumsuz koşul) → ana cümle olumsuz sonuç.",
+    "hint": "'Unless' = 'eğer ... -mezse'. Rotasyon yapılmazsa ne olur?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d199",
+  "type": "cumle-tamamlama",
+  "stem": "Seeds can be stored for decades ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "provided that they will be kept dry and cold",
+     "even if they had been kept dry and cold",
+     "provided that they are kept dry and cold",
+     "unless they are kept dry and cold",
+     "provided that they are kept warm and moist"
+    ],
+    "answer": 2,
+    "explain": "provided that = şartıyla; koşul bağlacından sonra will gelmez. 'unless' kutbu ters; sıcak-nemli tohumu bozar; 'had been' zaman uyumsuz.",
+    "tip": "Koşul/zaman bağlacından sonra will ✗ (present kullanılır).",
+    "hint": "Koşul bağlacından sonra hangi zaman gelir? Anlam olarak kuru mu nemli mi?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d200",
+  "type": "cumle-tamamlama",
+  "stem": "As long as a hurricane stays over warm ocean water, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "which is why it weakens over land",
+     "it will quickly weaken and break apart",
+     "but it loses energy over cold land",
+     "it can continue to gain strength",
+     "it had already reached the coast"
+    ],
+    "answer": 3,
+    "explain": "as long as = -dığı sürece: sıcak su enerji kaynağı → güçlenmeye devam eder. 'weaken' kutup; 'had reached' zaman; 'but/which' ana cümle kurmaz.",
+    "tip": "as long as (+ koşul) → ana cümle aynı yönde sonuç.",
+    "hint": "Sıcak okyanus suyu kasırga için iyi mi kötü mü? Sonucun yönü buna uymalı."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 1
+ },
+ {
+  "id": "d201",
+  "type": "cumle-tamamlama",
+  "stem": "Once a young salmon reaches the ocean, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "when it begins to grow quickly on a diet of small fish",
+     "it had never returned to the river in which it hatched",
+     "the river in which it hatched becomes its main feeding ground",
+     "it will be hatched in a gravel bed far up the river",
+     "it may feed there for years before returning to its home river"
+    ],
+    "answer": 4,
+    "explain": "once = -ınca (ardından): okyanusa varınca yıllarca beslenir, sonra döner. 'will be hatched' kronoloji hatası; 'had never returned' zaman; nehir besin alanı olmaz (okyanus); 'when...' ana cümle değil.",
+    "tip": "Once + present → ana cümle sonraki aşama; sıralamayı koru.",
+    "hint": "Somonun yaşam sırasını düşün: okyanusa vardıktan SONRA ne olur?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d202",
+  "type": "cumle-tamamlama",
+  "stem": "By the time the drought ended, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because the rains had finally returned to the region",
+     "nearly half of the region's cattle will have been sold by their owners",
+     "farmers have been selling their cattle for many months",
+     "nearly half of the region's cattle had been sold or had died",
+     "nearly half of the region's cattle are sold or die"
+    ],
+    "answer": 3,
+    "explain": "By the time + past → ana cümle past perfect (had V3). 'will have been' gelecek; 'have been selling' ve 'are sold' zaman uyumsuz; 'because...' ana cümle değil.",
+    "tip": "By the time + past → had V3; By the time + present → will have V3.",
+    "hint": "'ended' geçmiş zaman: ondan ÖNCE tamamlanan iş hangi zamanla anlatılır?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d203",
+  "type": "cumle-tamamlama",
+  "stem": "The eggs of many insects remain dormant through the winter ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "since rising temperatures signal that food will soon be available",
+     "until rising temperatures will signal that food is available",
+     "unless rising temperatures had signalled that food was available",
+     "until rising temperatures signal that food will soon be available",
+     "even though falling temperatures signal that food will be scarce"
+    ],
+    "answer": 3,
+    "explain": "until = -e kadar: sıcaklık artıp besin sinyali verene dek bekler. until'den sonra will gelmez; 'since' sahte neden; 'unless' + past perfect uyumsuz; 'even though' mantıksız.",
+    "tip": "until/once/when/as soon as + present (will ✗).",
+    "hint": "Yumurtalar NE ZAMANA kadar bekler? Zaman bağlacından sonra will olur mu?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d204",
+  "type": "cumle-tamamlama",
+  "stem": "As soon as a ground squirrel spots a hawk, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "it will have given a sharp alarm call to the others",
+     "it continues to feed calmly out in the open grass",
+     "so it gives a sharp alarm call to warn the others",
+     "the hawk gives a sharp alarm call to warn the squirrels",
+     "it gives a sharp alarm call to warn others"
+    ],
+    "answer": 4,
+    "explain": "as soon as = -ır -ırmaz: genel davranış, geniş zaman. 'will have given' zaman; şahin alarm vermez (özne); 'so' iki bağlaç; sakin beslenmek mantıksız.",
+    "tip": "Zaman bağlacı + present → ana cümle present (genel davranış).",
+    "hint": "Kim alarm verir? Önce özneyi, sonra zamanı kontrol et."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d205",
+  "type": "cumle-tamamlama",
+  "stem": "No sooner had the first frost arrived ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "than the leaves of the vines have begun to turn brown",
+     "then the leaves of the vines began to turn brown",
+     "when the leaves of the vines began to turn brown",
+     "than the leaves of the vines began to turn brown",
+     "than the leaves of the vines would turn green again"
+    ],
+    "answer": 3,
+    "explain": "No sooner had … V3 → than + past simple. 'when' hardly/scarcely ile kullanılır; 'have begun' zaman; 'then' ≠ than; yeşile dönmek mantıksız.",
+    "tip": "No sooner … than · Hardly/Scarcely … when.",
+    "hint": "'No sooner' hangi kelimeyle eşleşir? Sonra fiil zamanına bak."
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d206",
+  "type": "cumle-tamamlama",
+  "stem": "Ants leave chemical trails on the ground, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "which other ants follow to reach a food source",
+     "which other ants follow them to reach a food source",
+     "whose other ants follow to reach a food source",
+     "what other ants follow to reach a food source",
+     "that other ants follow to reach a food source"
+    ],
+    "answer": 0,
+    "explain": "Virgülden sonra that olmaz → which. 'follow them' nesneyi tekrarlar (which zaten nesne); 'what' önünde isim varken kullanılmaz; 'whose' + isim sahiplik anlamı vermez.",
+    "tip": "Virgül → which. which nesneyse fiilden sonra ayrıca 'them/it' gelmez.",
+    "hint": "Boşluktan önce virgül var: hangi ilgi zamiri virgülden sonra gelemez?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d207",
+  "type": "cumle-tamamlama",
+  "stem": "Monarch butterflies, ----, travel up to 4,000 kilometres to spend the winter in Mexico.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "whose caterpillars feed only on milkweed",
+     "whose caterpillars are fed on milkweed by them",
+     "which caterpillars feed only on milkweed",
+     "whose feed only on milkweed as caterpillars",
+     "that their caterpillars feed only on milkweed"
+    ],
+    "answer": 0,
+    "explain": "Kelebeklerin tırtılları → sahiplik: whose + isim. 'which caterpillars' sahiplik vermez; virgül arasında that olmaz; 'are fed by them' anlam yanlış (kelebek tırtıl beslemez); 'whose' arkasında isim yok.",
+    "tip": "Sonrasında 'onun X'i' anlamı varsa → whose + isim.",
+    "hint": "Boşluk, kelebeklerin 'kendi' bir parçasından söz ediyor: sahiplik zamiri hangisi?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d208",
+  "type": "cumle-tamamlama",
+  "stem": "Field studies have shown ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "elephants that recognising the voices of family members",
+     "what elephants can recognise the voices of family members",
+     "that elephants recognising the voices of family members",
+     "which elephants can recognise the voices of family members",
+     "that elephants can recognise the voices of family members"
+    ],
+    "answer": 4,
+    "explain": "show + that + tam cümle. 'what' boşluk ister ama cümle tam; 'recognising' çekimli fiil değil; 'which' isim cümlesi açmaz.",
+    "tip": "Tam cümle → that; eksik öğeli cümle → what.",
+    "hint": "Şıklardaki cümle tam mı eksik mi? Çekimli fiil var mı?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d209",
+  "type": "cumle-tamamlama",
+  "stem": "Photosynthesis is the process ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "by which plants convert light energy into chemical energy",
+     "in which light energy converts plants into chemical energy",
+     "which plants convert light energy into chemical energy",
+     "by that plants convert light energy into chemical energy",
+     "where plants converting light energy into chemical energy"
+    ],
+    "answer": 0,
+    "explain": "the process by which = 'aracılığıyla ... yaptığı süreç'. Edatsız 'which' süreci nesne yapar (yanlış); edattan sonra that gelmez; 'light converts plants' anlam ters; 'converting' çekimli değil.",
+    "tip": "Edat + which (by which, in which); edat + that ✗.",
+    "hint": "Süreç fiilin nesnesi mi, yoksa 'yolu/aracı' mı? Edat gerekir mi?"
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d210",
+  "type": "cumle-tamamlama",
+  "stem": "----, the new wheat variety produced high yields in the trial.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "Because the summer was unusually dry",
+     "Although the summer was unusually dry",
+     "Although the rainfall was ideal throughout the season",
+     "Despite of the unusually dry summer",
+     "Despite the summer was unusually dry"
+    ],
+    "answer": 1,
+    "explain": "Kuru yaz (−) ↔ yüksek verim (+): Although + cümle. Despite + cümle olmaz; 'Because' kutup; ideal yağış zıtlık kurmaz; 'despite of' yok.",
+    "tip": "Although + cümle · Despite + isim · 'despite of' ✗.",
+    "hint": "Boşluk virgülden önce: bağlaç + cümle gerek. Hangi bağlaç cümle alır?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d211",
+  "type": "cumle-tamamlama",
+  "stem": "While searching for food, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "the hive can be several kilometres away from the honeybees",
+     "honeybees can fly up to several kilometres from the hive",
+     "flowers attract honeybees with bright colours and scent",
+     "it is common for the hive to be left completely unguarded",
+     "honeybees, which fly up to several kilometres from the hive"
+    ],
+    "answer": 1,
+    "explain": "While + Ving: yiyecek arayan kim? Ana cümlenin öznesi arılar olmalı. Kovan ve çiçek yiyecek aramaz; 'it is common' özne kopuk; son şıkta ana fiil yok.",
+    "tip": "Ving/V3 ile başlayan parça → ana cümlenin öznesi o eylemi yapan.",
+    "hint": "'searching' eylemini kim yapıyor? Ana cümlenin öznesine bak."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d212",
+  "type": "cumle-tamamlama",
+  "stem": "Male crickets produce sound by rubbing their wings together, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "while female crickets produce sound in exactly the same way",
+     "whereas grasshoppers usually rub a leg against a wing",
+     "whereas male crickets also rub their wings to attract females",
+     "so that grasshoppers usually rub a leg against a wing",
+     "whereas grasshoppers usually rubbing a leg against a wing"
+    ],
+    "answer": 1,
+    "explain": "whereas: cırcır kanat-kanat ↔ çekirge bacak-kanat. 'also' karşıtlık bozar; 'so that' amaç değil; 'rubbing' çekimli değil; 'same way' karşıtlık yok.",
+    "tip": "whereas/while (karşılaştırma) → farklı özne + farklı özellik.",
+    "hint": "Karşılaştırma bağlacından sonra FARKLI bir hayvan ve FARKLI bir yöntem ara."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d213",
+  "type": "cumle-tamamlama",
+  "stem": "The atmosphere of Venus is so dense ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "because the pressure at its surface is ninety times that on Earth",
+     "so that the pressure at its surface is ninety times that on Earth",
+     "which the pressure at its surface is ninety times that on Earth",
+     "that the pressure at its surface is about ninety times that on Earth",
+     "that the pressure at its surface is lower than that on Earth"
+    ],
+    "answer": 3,
+    "explain": "so + sıfat + that (sonuç). 'which' kalıba uymaz; 'so … so that' çift; yoğun atmosfer düşük basınç vermez; 'because' so…that kalıbını tamamlamaz.",
+    "tip": "so + sıfat → that; such + (a) + isim → that.",
+    "hint": "'so dense' kalıbı hangi kelimeyle tamamlanır? Sonra anlamı kontrol et."
+   }
+  ],
+  "topic": "astronomi",
+  "level": 2
+ },
+ {
+  "id": "d214",
+  "type": "cumle-tamamlama",
+  "stem": "Drip irrigation delivers water directly to plant roots; ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "as a result of far less water wasted than with sprinklers",
+     "as a result, far more water is wasted than with sprinklers",
+     "nevertheless, far less water is wasted than with sprinklers",
+     "as a result, far less water is wasted than with sprinklers",
+     "because far less water is wasted than with sprinklers"
+    ],
+    "answer": 3,
+    "explain": "Doğrudan köke → daha az israf: sonuç. 'more water' mantık; 'nevertheless' kutup; 'because' neden-sonucu ters çevirir; 'as a result of' + cümle olmaz.",
+    "tip": "as a result, + cümle · as a result of + isim.",
+    "hint": "Köke doğrudan su vermek israfı artırır mı azaltır mı? Sonra bağlacın yapısına bak."
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d215",
+  "type": "cumle-tamamlama",
+  "stem": "By the time the storm reaches the coast tomorrow, ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "most residents have left the low-lying areas",
+     "most residents leave the low-lying areas",
+     "most residents will have left the low-lying areas",
+     "most residents will be leaving the area yesterday",
+     "most residents had already left all of the low-lying areas"
+    ],
+    "answer": 2,
+    "explain": "By the time + present (gelecek anlamı, 'tomorrow') → will have V3. 'had left' geçmiş; 'leave' ve 'have left' zaman uymaz; 'yesterday' çelişki.",
+    "tip": "By the time + present → will have V3.",
+    "hint": "'tomorrow' kelimesi zaman ekseni veriyor: gelecekte tamamlanmış eylem nasıl yazılır?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d216",
+  "type": "cumle-tamamlama",
+  "stem": "----, weather forecasts remain reliable for only about a week.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "Although computer models have improved greatly, but",
+     "Despite computer models have improved greatly",
+     "Because computer models have improved greatly",
+     "However computer models have improved greatly",
+     "Although computer models have improved greatly"
+    ],
+    "answer": 4,
+    "explain": "Modeller gelişti (+) ↔ sadece bir hafta güvenilir (−): Although. 'Because' kutup; Despite + cümle olmaz; although…but çift bağlaç; 'However' cümle başında bu yapıyı kurmaz.",
+    "tip": "Although … but ✗ (tek bağlaç yeter).",
+    "hint": "İki yarı aynı yönde mi ters mi? Şıkta fazladan bağlaç var mı?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 1
+ },
+ {
+  "id": "d217",
+  "type": "cumle-tamamlama",
+  "stem": "Researchers studied a district in Kenya ----.",
+  "items": [
+   {
+    "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
+    "options": [
+     "which farmers use beehive fences to keep elephants away from crops",
+     "in where farmers use beehive fences to keep elephants away",
+     "where farmers use beehive fences to keep elephants away from crops",
+     "where beehive fences are used by elephants to keep farmers away",
+     "where farmers using beehive fences to keep elephants away from crops"
+    ],
+    "answer": 2,
+    "explain": "Yer + tam cümle → where. 'which' tam cümleyle olmaz (nesne/özne eksik değil); 'in where' yok; filler çiftçiyi uzak tutmaz (etken/edilgen anlam ters); 'using' çekimli değil.",
+    "tip": "Yer + tam cümle → where; eksik cümle → which/that.",
+    "hint": "Boşluktan sonraki cümle tam mı? Tamsa yer için hangi zamir?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d218",
+  "type": "ceviri-en-tr",
+  "stem": "Wolves, which hunt in packs, can bring down prey much larger than themselves.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Sürüler halinde avlanmayan kurtlar, kendilerinden çok daha büyük avları yere serebilir.",
+     "Sürüler halinde avlanan kurtlar, kendilerinden çok daha büyük avları yere serebilir.",
+     "Sürüler halinde avlanan kurtlar, kendilerinden çok daha küçük avları yere serebilir.",
+     "Sürüler halinde avlanan kurtlar, kendilerinden çok daha büyük avlar tarafından serilebilir.",
+     "Sürüler halinde avlanan kurtlar, kendilerinden çok daha büyük avları yere sermiştir."
+    ],
+    "answer": 1,
+    "explain": "'which hunt in packs' = sürüler halinde avlanan; 'can bring down' = yere serebilir; 'larger' = daha büyük. Tuzaklar: küçük (karşıt), avlanmayan (olumsuz), avlar tarafından (edilgen), sermiştir (zaman).",
+    "tip": "Virgüllü which → Türkçede '-an' sıfat-fiil olur.",
+    "hint": "Önce yüklemi eşleştir: 'can bring down' hangi kipte?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d219",
+  "type": "ceviri-en-tr",
+  "stem": "Although rainfall in the region has increased, crop yields have continued to fall.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bölgedeki yağış miktarı artmış olsa da ürün verimi artmaya devam etmiştir.",
+     "Bölgedeki yağış miktarı artacak olsa da ürün verimi düşmeye devam edecektir.",
+     "Bölgedeki yağış miktarı artmış olsa da ürün verimi düşmeye devam etmektedir.",
+     "Bölgedeki yağış miktarı azalmış olsa da ürün verimi düşmeye devam etmiştir.",
+     "Bölgedeki yağış miktarı arttığı için ürün verimi düşmeye devam etmiştir."
+    ],
+    "answer": 2,
+    "explain": "Although = -se de; 'has increased' = artmış; 'continued to fall' = düşmeye devam etmiş. Tuzaklar: 'için' (bağlaç), azalmış ve artmaya (yön), artacak/edecektir (zaman).",
+    "tip": "Ana bağlacı eşle: although ↔ -se de / -mesine rağmen.",
+    "hint": "İngilizce cümlede iki fiilin yönü (artmak/düşmek) ne? Şıklarda koru."
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d220",
+  "type": "ceviri-en-tr",
+  "stem": "Seeds that are exposed to cold for several weeks germinate more quickly in spring.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Birkaç hafta boyunca soğuğa maruz bırakılan tohumlar ilkbaharda daha hızlı çimlenmiştir.",
+     "Birkaç hafta boyunca soğuğa maruz bırakılan tohumlar ilkbaharda daha yavaş çimlenir.",
+     "Birkaç ay boyunca soğuğa maruz bırakılan tohumlar ilkbaharda daha hızlı çimlenir.",
+     "Birkaç hafta boyunca soğuğa maruz bırakılan tohumlar ilkbaharda daha hızlı çimlenir.",
+     "Birkaç hafta boyunca soğuğa maruz bırakılmayan tohumlar ilkbaharda daha hızlı çimlenir."
+    ],
+    "answer": 3,
+    "explain": "'that are exposed' = maruz bırakılan; 'several weeks' = birkaç hafta; 'more quickly' = daha hızlı; geniş zaman. Tuzaklar: bırakılmayan, yavaş, ay, çimlenmiştir.",
+    "tip": "that + edilgen → '-ılan/-ilen' sıfat-fiili.",
+    "hint": "Süre (weeks), yön (quickly) ve zaman (present): üçünü tek tek kontrol et."
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d221",
+  "type": "ceviri-en-tr",
+  "stem": "Having lost their natural predators, deer populations in many forests have grown rapidly.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Doğal avcılarını kaybettikleri için bütün ormanlardaki geyik nüfusu hızla artmıştır.",
+     "Doğal avcılarını kaybettikleri için birçok ormandaki geyik nüfusu hızla artacaktır.",
+     "Doğal avcılarını kaybetmelerine rağmen birçok ormandaki geyik nüfusu hızla artmıştır.",
+     "Doğal avcılarını kaybettikleri için birçok ormandaki geyik nüfusu hızla artmıştır.",
+     "Doğal avcılarını kaybettikleri için birçok ormandaki geyik nüfusu hızla azalmıştır."
+    ],
+    "answer": 3,
+    "explain": "Having lost = kaybettikleri için (neden anlamı); 'many forests' = birçok orman; 'have grown' = artmıştır. Tuzaklar: rağmen (bağlaç), azalmış (yön), bütün (nicelik), artacaktır (zaman).",
+    "tip": "Having V3, … → önce olan eylem, çoğu zaman 'için/-dıktan sonra'.",
+    "hint": "Avcı kaybı ile nüfus artışı arasındaki ilişki neden mi zıtlık mı?"
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 2
+ },
+ {
+  "id": "d222",
+  "type": "ceviri-en-tr",
+  "stem": "The storm, whose winds reached 200 kilometres per hour, destroyed most of the harvest.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Rüzgârlarının hızı saatte 200 kilometreye ulaşan fırtına, hasadın büyük bölümünü yok etti.",
+     "Rüzgârlarının hızı saatte 200 kilometreye ulaşmayan fırtına, hasadın büyük bölümünü yok etti.",
+     "Rüzgârlarının hızı saatte 200 kilometreye ulaşan fırtına, hasadın büyük bölümünü yok etmiş olabilir.",
+     "Rüzgârlarının hızı saatte 200 kilometreye ulaşan fırtına, hasadın küçük bir bölümünü yok etti.",
+     "Rüzgârlarının hızı saatte 200 kilometreye ulaşan fırtına, hasadın büyük bölümünü yok edecek."
+    ],
+    "answer": 0,
+    "explain": "whose winds = rüzgârlarının; 'most of' = büyük bölümü; 'destroyed' = yok etti (kesin geçmiş). Tuzaklar: küçük bir bölüm (nicelik), ulaşmayan (olumsuz), edecek (zaman), etmiş olabilir (kesinlik).",
+    "tip": "whose + isim → '-ının/-inin … -an' yapısı.",
+    "hint": "Niceleyici 'most of' ve kesin geçmiş 'destroyed'ı şıklarda ara."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d223",
+  "type": "ceviri-en-tr",
+  "stem": "Unlike most fish, sharks lack a swim bladder and must keep moving to avoid sinking.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Çoğu balığın aksine köpekbalıklarında yüzme kesesi yoktur ve batmak için hareket etmeleri gerekir.",
+     "Çoğu balık gibi köpekbalıklarında da yüzme kesesi yoktur ve batmamak için hareket etmeleri gerekir.",
+     "Çoğu balığın aksine köpekbalıklarında yüzme kesesi yoktur ve batmamak için hareket etmeleri gerekir.",
+     "Çoğu balığın aksine köpekbalıklarında yüzme kesesi vardır ve batmamak için hareket etmeleri gerekir.",
+     "Bütün balıkların aksine köpekbalıklarında yüzme kesesi yoktur ve batmamak için hareket etmeleri gerekir."
+    ],
+    "answer": 2,
+    "explain": "Unlike = -ın aksine; lack = yoktur; to avoid sinking = batmamak için; most = çoğu. Tuzaklar: gibi (unlike≠like), vardır (olumsuzluk), batmak için, bütün (nicelik).",
+    "tip": "unlike ↔ -ın aksine / -dan farklı olarak; like ↔ gibi.",
+    "hint": "'Unlike' ve 'lack' iki olumsuzluk taşır: şıklarda ikisini de koru."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d224",
+  "type": "ceviri-en-tr",
+  "stem": "Clouds that form at high altitudes are composed mainly of ice crystals rather than water droplets.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Yüksek irtifalarda oluşan bulutlar, su damlacıklarından çok buz kristallerine dönüşmüştür.",
+     "Alçak irtifalarda oluşan bulutlar, su damlacıklarından çok buz kristallerinden oluşur.",
+     "Yüksek irtifalarda oluşan bulutlar, buz kristallerinden çok su damlacıklarından oluşur.",
+     "Yüksek irtifalarda oluşan bulutlar, su damlacıklarından çok buz kristallerinden oluşur.",
+     "Yüksek irtifalarda oluşan bulutlar, su damlacıkları kadar buz kristallerinden de oluşur."
+    ],
+    "answer": 3,
+    "explain": "'rather than' = -den çok / yerine: buz > su. Tuzaklar: sıralama ters, alçak, 'kadar … de' (as well as), dönüşmüştür (fiil/zaman).",
+    "tip": "A rather than B → B'den çok A (vurgu A'da).",
+    "hint": "'rather than'dan sonraki öğe hangisi? Türkçede onun yerine hangisi vurgulanmalı?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 3
+ },
+ {
+  "id": "d225",
+  "type": "ceviri-en-tr",
+  "stem": "Farmers who plant cover crops between seasons can reduce soil erosion considerably.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Mevsimler arasında örtü bitkisi eken çiftçiler toprak erozyonunu önemli ölçüde azaltabilir.",
+     "Mevsimler arasında örtü bitkisi eken çiftçiler toprak erozyonunu önemli ölçüde artırabilir.",
+     "Mevsimler arasında örtü bitkisi ekmeyen çiftçiler toprak erozyonunu önemli ölçüde azaltabilir.",
+     "Mevsimler arasında örtü bitkisi eken çiftçiler toprak erozyonunu önemli ölçüde azaltmıştır.",
+     "Mevsimler arasında örtü bitkisi eken çiftçiler toprak erozyonunu çok az bir ölçüde azaltabilir."
+    ],
+    "answer": 0,
+    "explain": "who plant = eken; can reduce = azaltabilir; considerably = önemli ölçüde. Tuzaklar: ekmeyen, artırabilir, çok az, azaltmıştır.",
+    "tip": "who + fiil → '-en/-an' sıfat-fiili; can → '-ebilir'.",
+    "hint": "Yüklem 'can reduce': kip ve yön. Zarf 'considerably': miktar."
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d226",
+  "type": "ceviri-en-tr",
+  "stem": "While some birds migrate alone, others travel in large flocks that follow the same route each year.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bazı kuşlar tek başına göç ederken, diğerleri her yıl farklı rotaları izleyen büyük sürüler halinde yolculuk eder.",
+     "Bazı kuşlar tek başına göç ettiği için, diğerleri her yıl aynı rotayı izleyen büyük sürüler halinde yolculuk eder.",
+     "Bazı kuşlar tek başına göç ederken, diğerleri her yıl aynı rotayı izleyen büyük sürüler halinde yolculuk etmiştir.",
+     "Bazı kuşlar tek başına göç ederken, diğerleri her yıl aynı rotayı izleyen büyük sürüler halinde yolculuk eder.",
+     "Bazı kuşlar tek başına göç ederken, diğerleri her yıl aynı rotayı izleyen küçük gruplar halinde yolculuk eder."
+    ],
+    "answer": 3,
+    "explain": "While (karşılaştırma) = -ken; 'large flocks that follow the same route' = aynı rotayı izleyen büyük sürüler. Tuzaklar: 'için' (bağlaç), farklı rotalar, küçük gruplar (nicelik), etmiştir (zaman).",
+    "tip": "Karşılaştırma while ↔ '-ken / oysa'.",
+    "hint": "İlgi cümlesi (that follow …) hangi isme bağlı? Şıklarda o ismin sıfatlarını kontrol et."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d227",
+  "type": "ceviri-en-tr",
+  "stem": "Heated by the Sun, the air near the ground rises and is replaced by cooler air.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Güneşi ısıtan yere yakın hava yükselir ve yerini daha serin hava alır.",
+     "Güneş tarafından ısıtılan yere yakın hava yükselmiş ve yerini daha serin hava almıştı.",
+     "Güneş tarafından ısıtılan yere yakın hava alçalır ve yerini daha serin hava alır.",
+     "Güneş tarafından ısıtılan yere yakın hava yükselir ve yerini daha sıcak hava alır.",
+     "Güneş tarafından ısıtılan yere yakın hava yükselir ve yerini daha serin hava alır."
+    ],
+    "answer": 4,
+    "explain": "Heated by = tarafından ısıtılan (edilgen); rises = yükselir; cooler = daha serin. Tuzaklar: Güneşi ısıtan (etken), alçalır, daha sıcak, almıştı (zaman).",
+    "tip": "V3 + by ile başlayan cümle → edilgen sıfat-fiil '-ılan … tarafından'.",
+    "hint": "'Heated by the Sun': kim kimi ısıtıyor? Etken-edilgen yönünü koru."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 1
+ },
+ {
+  "id": "d228",
+  "type": "ceviri-en-tr",
+  "stem": "Most of the nitrogen that plants need is supplied by bacteria living in the soil.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bitkilerin ihtiyaç duyduğu azotun tamamı, toprakta yaşayan bakteriler tarafından sağlanır.",
+     "Bitkilerin ihtiyaç duyduğu azotun çoğu, toprakta yaşayan bakteriler tarafından sağlanmıştı.",
+     "Bitkilerin ihtiyaç duymadığı azotun çoğu, toprakta yaşayan bakteriler tarafından sağlanır.",
+     "Bitkiler, toprakta yaşayan bakterilerin ihtiyaç duyduğu azotun çoğunu kendileri sağlar.",
+     "Bitkilerin ihtiyaç duyduğu azotun çoğu, toprakta yaşayan bakteriler tarafından sağlanır."
+    ],
+    "answer": 4,
+    "explain": "Most of = çoğu; that plants need = bitkilerin ihtiyaç duyduğu; supplied by bacteria = bakteriler tarafından sağlanır. Tuzaklar: tamamı (nicelik), sağlayan-alan yer değiştirmiş (özne), duymadığı (olumsuz), sağlanmıştı (zaman).",
+    "tip": "is supplied by X → X tarafından sağlanır; 'living' = yaşayan.",
+    "hint": "Azotu kim sağlıyor, kim alıyor? Önce bu iki rolü eşleştir."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d229",
+  "type": "ceviri-en-tr",
+  "stem": "Despite having a small brain, the octopus can solve puzzles that challenge many larger animals.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Küçük bir beyne sahip olduğu için ahtapot, daha büyük birçok hayvanı zorlayan bulmacaları çözebilir.",
+     "Küçük bir beyne sahip olmasına rağmen ahtapot, daha büyük birçok hayvanı zorlayan bulmacaları çözebilmişti.",
+     "Küçük bir beyne sahip olmasına rağmen ahtapot, daha büyük birçok hayvanı zorlayan bulmacaları çözebilir.",
+     "Küçük bir beyne sahip olmasına rağmen ahtapot, daha büyük bütün hayvanları zorlayan bulmacaları çözebilir.",
+     "Küçük bir beyne sahip olmasına rağmen ahtapot, daha büyük birçok hayvanı zorlayan bulmacaları çözemez."
+    ],
+    "answer": 2,
+    "explain": "Despite having = sahip olmasına rağmen; that challenge many larger animals = daha büyük birçok hayvanı zorlayan; can solve = çözebilir. Tuzaklar: 'için', çözemez, bütün, çözebilmişti.",
+    "tip": "despite + Ving ↔ '-mesine rağmen'.",
+    "hint": "Bağlaç, niceleyici (many) ve kip (can): üç kontrol noktası."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 3
+ },
+ {
+  "id": "d230",
+  "type": "ceviri-tr-en",
+  "stem": "Güneş ışığını yansıtan buzullar eridikçe, Dünya daha fazla ısı emer.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "As the glaciers that reflect sunlight melt, the Earth absorbs less heat.",
+     "As the glaciers that do not reflect sunlight melt, the Earth absorbs more heat.",
+     "As the glaciers that reflect sunlight melt, the Earth absorbs more heat.",
+     "Although the glaciers that reflect sunlight melt, the Earth absorbs more heat.",
+     "As the glaciers that reflected sunlight had melted, the Earth absorbed more heat."
+    ],
+    "answer": 2,
+    "explain": "-dıkça = as; yansıtan = that reflect; daha fazla = more; geniş zaman. Tuzaklar: less, although, do not reflect, geçmiş zaman.",
+    "tip": "-dıkça ↔ as (… -dıkça …); 'the more …, the more' de olabilir.",
+    "hint": "'eridikçe' hangi bağlaçla karşılanır? Sonra 'yansıtan'ın olumlu olduğunu kontrol et."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d231",
+  "type": "ceviri-tr-en",
+  "stem": "Kuraklığa dayanıklı olan bu buğday çeşidi, az yağış alan bölgelerde bile yüksek verim verir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "This wheat variety, which is resistant to drought, gives high yields even in regions that receive little rain.",
+     "This wheat variety, which is resistant to drought, gives high yields even in regions that receive a lot of rain.",
+     "This wheat variety, which is resistant to drought, gives low yields even in regions that receive little rain.",
+     "This wheat variety, which is vulnerable to drought, gives high yields even in regions that receive little rain.",
+     "This wheat variety, which was resistant to drought, gave high yields even in regions that received little rain."
+    ],
+    "answer": 0,
+    "explain": "dayanıklı olan = which is resistant to; az yağış alan = that receive little rain; verir = gives. Tuzaklar: a lot of, vulnerable, low, geçmiş zaman.",
+    "tip": "resistant to (dayanıklı) ↔ vulnerable to (savunmasız): edat aynı, kutup ters.",
+    "hint": "Üç sıfatı tek tek eşle: dayanıklı, az, yüksek."
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d232",
+  "type": "ceviri-tr-en",
+  "stem": "Yarasalar, yüksek frekanslı sesler çıkararak karanlıkta yollarını bulur.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Bats found their way in the dark by producing high-frequency sounds.",
+     "Bats find their way in the dark although they produce high-frequency sounds.",
+     "Bats find their way in the dark without producing high-frequency sounds.",
+     "Bats find their way in the dark by producing low-frequency sounds.",
+     "Bats find their way in the dark by producing high-frequency sounds."
+    ],
+    "answer": 4,
+    "explain": "-arak (yöntem) = by + Ving; bulur = find (geniş zaman). Tuzaklar: without (-madan), low, found (geçmiş), although (zıtlık).",
+    "tip": "-arak/-erek (yöntem) ↔ by + Ving; -madan ↔ without + Ving.",
+    "hint": "'çıkararak' yöntem bildiriyor: hangi edat + Ving yöntemi verir?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d233",
+  "type": "ceviri-tr-en",
+  "stem": "Bazı bölgelerde kar yağışı azalmış olsa da toplam yağış miktarı değişmemiştir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Although snowfall has decreased in some regions, total precipitation has changed a lot.",
+     "Although snowfall has decreased in some regions, total precipitation has not changed.",
+     "Since snowfall has decreased in some regions, total precipitation has not changed.",
+     "Although snowfall has decreased in all regions, total precipitation has not changed.",
+     "Although snowfall has increased in some regions, total precipitation has not changed."
+    ],
+    "answer": 1,
+    "explain": "-se de = although; bazı = some; azalmış = has decreased; değişmemiştir = has not changed. Tuzaklar: since, all, increased, olumlu 'has changed'.",
+    "tip": "-se de / -mesine rağmen ↔ although / even though.",
+    "hint": "Bağlaç, niceleyici (bazı) ve olumsuzluk (değişmemiş): üçünü de ara."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d234",
+  "type": "ceviri-tr-en",
+  "stem": "Kraliçe arı tarafından salgılanan kimyasallar, işçi arıların davranışını kontrol eder.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The chemicals released by the worker bees control the behaviour of the queen bee.",
+     "The chemicals released by the queen bee controlled the behaviour of the worker bees.",
+     "The chemicals released by the queen bee do not control the behaviour of the worker bees.",
+     "The chemicals released by the queen bee control the behaviour of the worker bees.",
+     "The chemicals releasing the queen bee control the behaviour of the worker bees."
+    ],
+    "answer": 3,
+    "explain": "tarafından salgılanan = released by (V3 edilgen); kontrol eder = control. Tuzaklar: kraliçe/işçi yer değişimi (özne), releasing (etken), controlled (zaman), do not (olumsuz).",
+    "tip": "'X tarafından -ılan' ↔ V3 + by X (indirgenmiş edilgen relative).",
+    "hint": "Kimyasalı kim salgılıyor, kim etkileniyor? Önce rolleri yerleştir."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d235",
+  "type": "ceviri-tr-en",
+  "stem": "Toprağı sürmeden ekim yapan çiftçiler daha az yakıt kullanır ve erozyonu azaltır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Farmers who sow without ploughing the soil use more fuel and reduce erosion.",
+     "Farmers who sow without ploughing the soil use less fuel and reduce erosion.",
+     "Farmers who sowed without ploughing the soil used less fuel and reduced erosion.",
+     "Farmers who sow after ploughing the soil use less fuel and reduce erosion.",
+     "Farmers who sow without ploughing the soil use less fuel but increase erosion."
+    ],
+    "answer": 1,
+    "explain": "sürmeden = without ploughing; yapan çiftçiler = farmers who sow; az = less; azaltır = reduce. Tuzaklar: after, more, increase, geçmiş zaman.",
+    "tip": "-madan ↔ without + Ving; -dıktan sonra ↔ after + Ving.",
+    "hint": "'-madan' eki hangi edatla verilir? Sonra iki sonucun yönünü koru."
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d236",
+  "type": "ceviri-tr-en",
+  "stem": "26 °C'nin üzerindeki bir sıcaklıkta bulunan okyanus suyu, tropikal fırtınaların oluşması için gereklidir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Ocean water at a temperature above 26 °C is necessary for tropical storms to form.",
+     "Ocean water at a temperature above 26 °C was necessary for tropical storms to form.",
+     "Ocean water at a temperature above 26 °C prevents tropical storms from forming.",
+     "Ocean water at a temperature below 26 °C is necessary for tropical storms to form.",
+     "Ocean water at a temperature above 26 °C is unnecessary for tropical storms to form."
+    ],
+    "answer": 0,
+    "explain": "at a temperature above = … üzerindeki bir sıcaklıkta; gereklidir = is necessary; for X to V = X'in -mesi için. Tuzaklar: below, unnecessary, prevents (anlam ters), was (zaman).",
+    "tip": "at + temperature/rate/level; for + özne + to V = '-mesi için'.",
+    "hint": "'üzerindeki' ve 'gereklidir': ikisinin de yönünü şıkta kontrol et."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 3
+ },
+ {
+  "id": "d237",
+  "type": "ceviri-tr-en",
+  "stem": "Göç eden kuşların çoğu, yolculuklarından önce vücut ağırlıklarını neredeyse iki katına çıkarır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Most migrating birds nearly double their body weight after their journey.",
+     "Few migrating birds nearly double their body weight before their journey.",
+     "Most migrating birds nearly double their body weight before their journey.",
+     "Most migrating birds nearly halve their body weight before their journey.",
+     "Most migrating birds had nearly doubled their body weight before their journey."
+    ],
+    "answer": 2,
+    "explain": "çoğu = most; iki katına çıkarır = double; önce = before; geniş zaman. Tuzaklar: few (nicelik), halve, after, had doubled.",
+    "tip": "Niceleyici eşle: çoğu = most, azı = few.",
+    "hint": "Niceleyici, fiil (iki kat) ve zaman edatı (önce): üç nokta."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d238",
+  "type": "ceviri-tr-en",
+  "stem": "Kurak bölgelerde yetişen bitkilerin aksine, nemli ormanlardaki bitkilerin geniş yaprakları vardır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Like plants that grow in dry regions, plants in humid forests have broad leaves.",
+     "Unlike plants that grow in dry regions, plants in humid forests have thin leaves.",
+     "Because plants grow in dry regions, plants in humid forests have broad leaves.",
+     "Unlike plants that grow in dry regions, plants in humid forests have broad leaves.",
+     "Unlike plants that grow in humid regions, plants in dry forests have broad leaves."
+    ],
+    "answer": 3,
+    "explain": "-ın aksine = unlike; yetişen = that grow; geniş = broad. Tuzaklar: like, thin, kurak/nemli yer değişimi, because.",
+    "tip": "-ın aksine ↔ unlike / in contrast to.",
+    "hint": "Karşılaştırma bağlacını bul; sonra hangi bölgenin hangi bitkiye ait olduğunu kontrol et."
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d239",
+  "type": "ceviri-tr-en",
+  "stem": "Fırtınanın ardından yapılan ölçümler, nehir seviyesinin iki metre yükseldiğini gösterdi.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Measurements taken after the storm showed that the river level had risen to two metres.",
+     "Measurements taken after the storm showed that the river level had fallen by two metres.",
+     "Measurements taken before the storm showed that the river level had risen by two metres.",
+     "Measurements taken after the storm showed that the river level had risen by two metres.",
+     "Measurements taken after the storm will show that the river level has risen by two metres."
+    ],
+    "answer": 3,
+    "explain": "ardından yapılan = taken after; iki metre yükseldi = had risen by two metres (artış miktarı). Tuzaklar: before, fallen, 'to two metres' (seviye iki metreye çıktı ≠ iki metre arttı), will show.",
+    "tip": "rise BY X = X kadar artmak · rise TO X = X'e çıkmak.",
+    "hint": "'iki metre yükseldiğini': artış miktarı mı, varılan seviye mi? Edatı buna göre seç."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d240",
+  "type": "ceviri-tr-en",
+  "stem": "Yuvasını terk eden bir karınca, geri dönüş yolunu güneşin konumunu kullanarak bulabilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "An ant that enters its nest can find its way back by using the position of the Sun.",
+     "An ant that leaves its nest can find its way back by using the position of the Sun.",
+     "An ant that left its nest could have found its way back by using the position of the Sun.",
+     "An ant that leaves its nest cannot find its way back by using the position of the Sun.",
+     "An ant that leaves its nest can find its way back without using the position of the Sun."
+    ],
+    "answer": 1,
+    "explain": "terk eden = that leaves; bulabilir = can find; kullanarak = by using. Tuzaklar: cannot, without, could have found (zaman/kip), enters (anlam ters).",
+    "tip": "who/that + present → '-en/-an'; can → '-ebilir'.",
+    "hint": "Yüklemin kipi (-ebilir) ve '-arak' ekinin karşılığını ara."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d241",
+  "type": "ceviri-tr-en",
+  "stem": "Bilim insanları, mısırın verimini artırmak amacıyla genlerini değiştirmiştir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Scientists have modified the genes of maize despite increasing its yield.",
+     "Scientists will modify the genes of maize with a view to increasing its yield.",
+     "Scientists have modified the genes of maize with a view to increasing its yield.",
+     "Scientists have modified the genes of maize with a view to increase its yield.",
+     "Scientists have modified the genes of maize with a view to reducing its yield."
+    ],
+    "answer": 2,
+    "explain": "amacıyla = with a view to + Ving; değiştirmiştir = have modified. Tuzaklar: 'with a view to increase' (to burada edat → Ving), despite (bağlaç), will (zaman), reducing (anlam).",
+    "tip": "with a view to + Ving · in order to + V1.",
+    "hint": "'amacıyla' için 'with a view to' seçildiyse arkasından hangi fiil biçimi gelir?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d242",
+  "type": "paragraf-tamamlama",
+  "stem": "Honeybee colonies must keep the temperature of their brood at about 35 °C. ---- On hot days, by contrast, worker bees spread drops of water over the comb and fan their wings so that evaporation cools the hive. In this way, the colony acts almost like a single warm-blooded organism.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "As a result, the brood can easily survive temperatures far below 35 °C.",
+     "When it is cold, they huddle together and shiver their muscles to make heat.",
+     "This water is carried back to the hive in the stomachs of special workers.",
+     "Bees also collect nectar from flowers and turn it into honey for the cold winter.",
+     "On hot days, too, they huddle together tightly to keep the brood warm."
+    ],
+    "answer": 1,
+    "explain": "'On hot days, by contrast' → boşluk karşıt durumu (soğuk) anlatmalı: kümelenip titreyerek ısı üretmek. 'This water' henüz anılmadı; bal konu dışı; 35 °C altına dayanmak ilk cümleyle çelişir.",
+    "tip": "Sonraki cümlede 'by contrast' var: boşluk karşıt durumu anlatmalı.",
+    "hint": "Boşluktan sonraki 'by contrast' neyin tersini anlatıyor?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d243",
+  "type": "paragraf-tamamlama",
+  "stem": "Crop rotation means growing different crops on the same field in successive seasons. ---- Pests that specialise in one crop, for instance, cannot build up large populations if their host plant disappears from the field every other year. Rotation with legumes also restores nitrogen to the soil.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "However, most farmers now prefer to grow the same crop every single year.",
+     "Legumes such as beans and peas are rich in both protein and dietary fibre.",
+     "As a result, the soil gradually loses much of its nitrogen and fertility.",
+     "The practice offers several benefits over planting one crop every year.",
+     "These pests are usually controlled with chemical sprays instead of rotation."
+    ],
+    "answer": 3,
+    "explain": "'for instance' ve 'also' → boşluk genel iddia: rotasyonun faydaları. 'These pests' henüz anılmadı; azot kaybı son cümleyle çelişir; baklagil besin değeri konu dışı.",
+    "tip": "'for instance' ile başlayan örnek hangi genel iddiayı destekliyor?",
+    "hint": "Sonraki iki cümle örnek veriyor: neyin örneği?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d244",
+  "type": "paragraf-tamamlama",
+  "stem": "---- During the day, the land heats up faster than the sea, so the air above it rises and cooler air flows in from the water. At night the process reverses, because the land also cools more quickly. This is why coastal towns often enjoy a refreshing breeze on summer afternoons.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Coastal towns are popular holiday destinations in many parts of the world.",
+     "Winds that blow down from the mountains are usually dry and quite warm.",
+     "Sea breezes arise because land and water heat up at different rates.",
+     "This is why the land is always much warmer than the sea, even at night.",
+     "At night, however, the sea heats up far more quickly than the land does."
+    ],
+    "answer": 2,
+    "explain": "Boşluk başta → konu cümlesi: deniz meltemi ve ısınma farkı. 'This is why' başta bağlamsız ve gece bilgisiyle çelişir; gece denizin daha hızlı ısınması yanlış; tatil ve dağ rüzgârı konu dışı.",
+    "tip": "Boşluk en başta: sonraki cümlelerin ortak konusunu adlandıran cümleyi ara.",
+    "hint": "Paragrafın geri kalanı hangi olayı açıklıyor? Onu tanıtan cümle gerekli."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 1
+ },
+ {
+  "id": "d245",
+  "type": "paragraf-tamamlama",
+  "stem": "Many fish species migrate between fresh and salt water during their lives. Eels, for example, hatch in the Sargasso Sea and drift for months towards the rivers of Europe and North America. ---- After many years in fresh water, the adults swim thousands of kilometres back to the sea to breed and then die.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "On reaching the coast, the young eels move up into rivers and lakes.",
+     "Eel populations have fallen sharply in recent decades because of dams.",
+     "The adults then return to the Sargasso Sea, where they had been born.",
+     "However, eels are unable to survive in fresh water for long periods.",
+     "Salmon, by contrast, hatch in rivers and grow up in the open sea instead."
+    ],
+    "answer": 0,
+    "explain": "Kronoloji: denizde doğum → nehirlere sürüklenme → [nehre giriş] → yıllar sonra denize dönüş. Somon kıyası akışı keser; dönüş erken anlatılmış olur; tatlı suda yaşayamama çelişir; nüfus düşüşü konu dışı.",
+    "tip": "Yaşam döngüsünü sırala: boşluk iki aşama arasındaki eksik adım olmalı.",
+    "hint": "Önceki ve sonraki cümle hangi aşamaları anlatıyor? Arada ne eksik?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 3
+ },
+ {
+  "id": "d246",
+  "type": "paragraf-tamamlama",
+  "stem": "Tornadoes are rotating columns of air that extend from a thunderstorm to the ground. ---- Doppler radar, for instance, can detect the rotation inside a storm before a tornado touches down. As a result, people in threatened areas now receive an average warning time of more than ten minutes.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Tornadoes are most common in the central United States during spring.",
+     "As a result, most tornadoes now cause little damage to any buildings.",
+     "This rotation is caused by winds that change direction with height.",
+     "Although they are still hard to predict, many can now be spotted early.",
+     "Unfortunately, there is still no reliable way to warn people before they strike."
+    ],
+    "answer": 3,
+    "explain": "'for instance' radar örneği → genel iddia: erken tespit mümkün. Uyarı imkânsız demek çelişir; dönme nedeni ve coğrafya örneğe bağlanmaz; 'As a result' çift ve dayanaksız.",
+    "tip": "Sonraki örnek (radar) hangi genel iddiayı destekliyor?",
+    "hint": "'for instance' cümlesi bir yöntem örneği: neyin yöntemi?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d247",
+  "type": "paragraf-tamamlama",
+  "stem": "Hydroponics is a method of growing plants without soil. ---- Because the nutrients are supplied directly, plants often grow faster than in a field. Hydroponic farms also use far less water, since the solution is collected and reused rather than draining away.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "These farms are usually located far away from large cities and markets.",
+     "Instead, their roots sit in water that holds all the minerals they need.",
+     "Soil is formed slowly from weathered rock and from decaying organic matter.",
+     "However, the nutrients must first be broken down by bacteria in the soil.",
+     "As a result, the plants need much more water than those grown in fields."
+    ],
+    "answer": 1,
+    "explain": "'without soil' → 'Instead' ile yerine ne kullanıldığı; sonra 'the nutrients' ve 'the solution' bu suya döner. Daha çok su son cümleyle çelişir; toprak bakterisi 'topraksız' ile çelişir; 'These farms' ve toprak oluşumu konu dışı.",
+    "tip": "Sonraki cümlelerde 'the nutrients' ve 'the solution' var: bunları ilk kez tanıtan cümle gerekli.",
+    "hint": "Toprak yoksa kökler nerede durur? 'the solution' neyi gösteriyor?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 1
+ },
+ {
+  "id": "d248",
+  "type": "paragraf-tamamlama",
+  "stem": "Dogs can be trained to detect diseases by smell. ---- In one study, trained dogs identified samples from patients with a certain type of cancer with more than 90 per cent accuracy. Researchers are now trying to build electronic 'noses' that copy this ability.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "These electronic noses are already used in most hospitals today.",
+     "However, their sense of smell is much weaker than that of humans.",
+     "Dogs were first domesticated from grey wolves many thousands of years ago.",
+     "Some illnesses change the chemical make-up of a person's breath or sweat.",
+     "As a result, dogs are now rarely used in any kind of medical research."
+    ],
+    "answer": 3,
+    "explain": "Köpek hastalığı koku ile nasıl bulur? Hastalık nefes/ter kimyasını değiştirir. Koku zayıf ve 'rarely used' çelişir; 'These electronic noses' erken ve 'trying to build' ile çelişir; evcilleştirme konu dışı.",
+    "tip": "İlk cümle bir yetenek söylüyor: bu yeteneği MÜMKÜN kılan bilgi ne olmalı?",
+    "hint": "Köpek neyin kokusunu alıyor olabilir? Sonra sonraki cümleyle çelişen şıkları ele."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d249",
+  "type": "paragraf-tamamlama",
+  "stem": "Volcanic eruptions can affect the climate of the entire planet. ---- These tiny droplets reflect part of the incoming sunlight back into space. After the eruption of Mount Pinatubo in 1991, for example, average global temperatures fell by about half a degree for more than a year.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Large eruptions send sulphur gases high up, where they form tiny droplets.",
+     "As a result, global temperatures usually rise after a large eruption.",
+     "Most volcanoes are located along the edges of the tectonic plates.",
+     "These clouds of ash usually fall back to the ground within a few days.",
+     "Lava flows rarely travel faster than a person can walk on flat ground."
+    ],
+    "answer": 0,
+    "explain": "'These tiny droplets' → boşluk damlacıkları tanıtmalı: kükürt gazları damlacık oluşturur. Kül bulutları damlacık değil ve 'birkaç gün' bir yıllık etkiyle çelişir; sıcaklık artışı örnekle çelişir; levha ve lav konu dışı.",
+    "tip": "Sonraki cümle 'These …' ile başlıyor: boşluk o ismi ilk kez anmalı.",
+    "hint": "'These tiny droplets' neyi gösteriyor? Damlacığı tanıtan şık hangisi?"
+   }
+  ],
+  "topic": "yerbilimi",
+  "level": 3
+ },
+ {
+  "id": "d250",
+  "type": "paragraf-tamamlama",
+  "stem": "Crows are among the most intelligent birds. ---- In laboratory tests, New Caledonian crows have even bent pieces of wire into hooks to pull food out of narrow tubes. Such behaviour was once thought to be unique to humans and great apes.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "However, they are unable to use any objects to reach their food.",
+     "Such tools are also made by several species of fish and insects.",
+     "In the wild, some species shape twigs into simple tools to reach insects.",
+     "Crows usually live in large family groups that defend a shared territory.",
+     "Great apes, by contrast, have never been observed using any tools."
+    ],
+    "answer": 2,
+    "explain": "'even' → doğada alet kullanımından laboratuvarda tel bükmeye yükseliş. Alet kullanamaz demek çelişir; 'Such tools' erken ve yanlış; maymunların alet kullanmadığı son cümleyle çelişir; aile grupları konu dışı.",
+    "tip": "Sonraki cümlede 'even' var: boşluk daha basit bir örnek vermeli.",
+    "hint": "'even' bir artış bildirir: laboratuvar örneğinden önce hangi basit örnek gelir?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d251",
+  "type": "paragraf-tamamlama",
+  "stem": "Agriculture is responsible for a large share of the methane released into the atmosphere. ---- Rice paddies are another important source, because bacteria in the flooded, oxygen-poor soil produce the gas. Scientists are testing new feed additives and periodic draining of paddies to reduce these emissions.",
+  "items": [
+   {
+    "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
+    "options": [
+     "Bacteria in the soil also help many crop plants obtain nitrogen from the air.",
+     "However, rice paddies release almost no methane into the air at all.",
+     "These feed additives are already given to most cattle worldwide.",
+     "Much of it comes from cattle, which release the gas as they digest grass.",
+     "Methane traps heat far more effectively than carbon dioxide does."
+    ],
+    "answer": 3,
+    "explain": "'another important source' → boşluk ilk kaynağı vermeli (sığır); 'feed additives' de bunu doğrular. Metanın ısı tutması doğru ama kaynak değil; pirinç metan salmaz demek çelişir; 'These feed additives' erken; azot konu dışı.",
+    "tip": "Sonraki cümlede 'another … source' var: boşluk İLK kaynağı vermeli.",
+    "hint": "'another source' dendiyse önce bir kaynak anılmış olmalı. Son cümle hangi kaynağa işaret ediyor?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d252",
+  "type": "cloze",
+  "stem": "Many birds are able to sleep with one half of the brain (1) ---- a time. During this state, one eye stays open and remains sensitive (2) ---- the movements of predators. (3) ---- the sleeping half rests, the awake half controls basic functions, so ducks at the edge of a group can keep watch. Researchers have observed that birds in these exposed positions (4) ---- to keep the outward-facing eye open more often than birds in the middle. This behaviour is not unique (5) ---- birds; dolphins also rest one half of the brain at a time.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "by",
+     "on",
+     "in",
+     "of",
+     "at"
+    ],
+    "answer": 4,
+    "explain": "at a time = aynı anda / bir seferde: sabit öbek.",
+    "tip": "at a time / one at a time kalıbını ezberle.",
+    "hint": "'one half ... ---- a time' sabit bir öbek."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "at",
+     "over",
+     "to",
+     "from",
+     "with"
+    ],
+    "answer": 2,
+    "explain": "sensitive to = -e duyarlı.",
+    "tip": "Sıfat + edat: sensitive/vulnerable/exposed + to.",
+    "hint": "'sensitive' hangi edatla kullanılır?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "Until",
+     "Despite",
+     "Unless",
+     "So that",
+     "While"
+    ],
+    "answer": 4,
+    "explain": "Bir yarı uyurken diğeri kontrol eder: eşzamanlılık, While + cümle. Despite + cümle olmaz; Until/Unless anlam bozar.",
+    "tip": "While = -ken (aynı anda).",
+    "hint": "İki yarının yaptığı iş aynı anda mı? Sonrası tam cümle."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "will be tended",
+     "are tended",
+     "tend",
+     "tending",
+     "had tended"
+    ],
+    "answer": 2,
+    "explain": "Genel gözlem: 'birds ... tend to keep' geniş zaman, etken. Diğerleri edilgen, zaman hatalı ya da çekimsiz.",
+    "tip": "Bilimsel genel bulgu → geniş zaman.",
+    "hint": "Özne 'birds' ve fiil 'tend to': geniş zaman, etken."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "in",
+     "with",
+     "to",
+     "for",
+     "from"
+    ],
+    "answer": 2,
+    "explain": "unique to = -e özgü.",
+    "tip": "unique/similar/equivalent + to.",
+    "hint": "'unique' hangi edatı alır?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d253",
+  "type": "cloze",
+  "stem": "Salinity is a serious threat (1) ---- agriculture in dry regions. When fields are irrigated, water evaporates from the surface and leaves salts behind. Over many years, these salts build up (2) ---- the soil becomes too salty for most crops. (3) ---- some plants, such as barley, can tolerate moderate salinity, wheat and beans suffer heavy losses. Farmers can reduce the problem (4) ---- applying extra water to wash the salts below the root zone, although this works only if the land (5) ---- good drainage.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "at",
+     "off",
+     "among",
+     "to",
+     "by"
+    ],
+    "answer": 3,
+    "explain": "a threat to = -e yönelik tehdit.",
+    "tip": "threat/damage/risk + to.",
+    "hint": "'threat' hangi edatla nesnesine bağlanır?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "as if",
+     "until",
+     "in case",
+     "unless",
+     "although"
+    ],
+    "answer": 1,
+    "explain": "Tuzlar birikir → ta ki toprak çok tuzlu olana dek: until.",
+    "tip": "until = -e kadar (bitiş noktası).",
+    "hint": "Birikme ne zamana kadar sürüyor? Zaman bağlacı ara."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "Although",
+     "Since",
+     "Once",
+     "Unless",
+     "Because"
+    ],
+    "answer": 0,
+    "explain": "Arpa dayanır (+) ↔ buğday zarar görür (−): zıtlık.",
+    "tip": "+/− iki özne → Although/While/Whereas.",
+    "hint": "İki bitki aynı tepkiyi mi veriyor, zıt mı?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "on",
+     "for",
+     "with",
+     "at",
+     "by"
+    ],
+    "answer": 4,
+    "explain": "by + Ving = -arak (yöntem).",
+    "tip": "Yöntem: by + Ving.",
+    "hint": "Boşluktan sonra Ving var; 'nasıl' sorusuna hangi edat cevap verir?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "will have had",
+     "has",
+     "is having",
+     "had",
+     "has had"
+    ],
+    "answer": 1,
+    "explain": "'only if' + genel koşul → geniş zaman: has good drainage. Diğerleri zaman uyumsuz.",
+    "tip": "Koşul bağlacı + genel gerçek → present simple.",
+    "hint": "Cümle genel bir kural anlatıyor; 'works' ile aynı zaman."
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d254",
+  "type": "cloze",
+  "stem": "Lightning is a giant spark of electricity that occurs (1) ---- clouds, or between a cloud and the ground. Inside a storm cloud, ice particles collide (2) ---- one another and become electrically charged. Lighter particles carry positive charge to the top of the cloud, (3) ---- heavier ones collect negative charge near the bottom. When the difference in charge becomes large enough, the air can no longer act (4) ---- an insulator. A bolt of lightning heats the surrounding air to about 30,000 °C, (5) ---- causes the air to expand explosively and produce thunder.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "towards",
+     "within",
+     "upon",
+     "onto",
+     "along"
+    ],
+    "answer": 1,
+    "explain": "occurs within clouds = bulutların içinde; 'or between' ile kıyas.",
+    "tip": "within = içinde (sınırlar dahilinde).",
+    "hint": "'or between a cloud and the ground' ile karşılaştır: ilki nerede olur?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "with",
+     "to",
+     "by",
+     "at",
+     "for"
+    ],
+    "answer": 0,
+    "explain": "collide with = ile çarpışmak.",
+    "tip": "Fiil + edat: collide/interact/react + with.",
+    "hint": "'collide' hangi edatı alır?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "so that",
+     "until",
+     "whereas",
+     "unless",
+     "because"
+    ],
+    "answer": 2,
+    "explain": "Hafifler üstte (+) ↔ ağırlar altta (−): karşılaştırma.",
+    "tip": "whereas = oysa (iki şeyi kıyaslar).",
+    "hint": "İki parçacık grubunu karşılaştırıyor; neden-sonuç var mı?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "from",
+     "with",
+     "as",
+     "for",
+     "to"
+    ],
+    "answer": 2,
+    "explain": "act as = … olarak işlev görmek.",
+    "tip": "as + isim = olarak (rol).",
+    "hint": "Hava bir yalıtkan 'olarak' mı davranıyor?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "that",
+     "what",
+     "where",
+     "it",
+     "which"
+    ],
+    "answer": 4,
+    "explain": "Virgülden sonra önceki cümlenin tamamını gösteren which. ', that' olmaz; 'it' iki cümleyi bağlaçsız birleştirir.",
+    "tip": "Virgül + önceki fikir → which.",
+    "hint": "Boşluktan önce virgül var ve özne eksik: hangi zamir?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d255",
+  "type": "cloze",
+  "stem": "About three-quarters of the world's major food crops depend (1) ---- some degree on animal pollinators. Bees are by far the most important of these, (2) ---- flies, beetles and even bats also play a role. In recent decades, however, the number of wild bees (3) ---- in many parts of the world. Scientists attribute this decline (4) ---- several factors, including habitat loss, pesticides and disease. (5) ---- action is taken soon, the yields of crops such as apples and almonds could fall.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "for",
+     "by",
+     "of",
+     "at",
+     "to"
+    ],
+    "answer": 4,
+    "explain": "to some degree = bir ölçüde (sabit öbek).",
+    "tip": "to some/a certain extent/degree.",
+    "hint": "'---- some degree' sabit bir öbek."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "unless",
+     "although",
+     "so",
+     "because",
+     "once"
+    ],
+    "answer": 1,
+    "explain": "Arılar en önemli (+) ↔ başkaları da rol oynar: zıtlık/kabul.",
+    "tip": "although = gerçi, -se de.",
+    "hint": "'by far the most important' ile 'also play a role' arasındaki ilişki?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "falls",
+     "has fallen",
+     "had fallen",
+     "will fall",
+     "fell"
+    ],
+    "answer": 1,
+    "explain": "'In recent decades' → present perfect.",
+    "tip": "over the past/in recent years → has/have V3.",
+    "hint": "Zaman ifadesini bul: 'In recent decades'."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "with",
+     "to",
+     "for",
+     "on",
+     "from"
+    ],
+    "answer": 1,
+    "explain": "attribute X to Y = X'i Y'ye bağlamak.",
+    "tip": "attribute/owe/ascribe + to.",
+    "hint": "'attribute' fiilinin kalıbını hatırla."
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "Unless",
+     "Whereas",
+     "Provided that",
+     "Once",
+     "As long as"
+    ],
+    "answer": 0,
+    "explain": "Önlem alınmazsa verim düşebilir: olumsuz koşul.",
+    "tip": "Unless = if … not.",
+    "hint": "Önlem alınırsa mı, alınmazsa mı verim düşer?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d256",
+  "type": "cloze",
+  "stem": "On coral reefs, small cleaner fish remove parasites (1) ---- the skin and mouths of larger fish. The larger fish, which could easily swallow them, usually (2) ---- still and even open their mouths wide. Both sides benefit (3) ---- this relationship: the cleaners get food, and their clients stay healthy. Experiments show that cleaners behave more honestly (4) ---- other fish are watching, (5) ---- cheating could cost them future customers.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "from",
+     "at",
+     "into",
+     "over",
+     "with"
+    ],
+    "answer": 0,
+    "explain": "remove X from Y = Y'den X'i çıkarmak.",
+    "tip": "remove/separate/protect + from.",
+    "hint": "Parazitler nereden alınıyor? Ayrılma edatı."
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "had remained",
+     "remain",
+     "have been remained",
+     "remained",
+     "will be remained"
+    ],
+    "answer": 1,
+    "explain": "'usually … and even open' → genel davranış, geniş zaman, etken.",
+    "tip": "usually/often + geniş zaman.",
+    "hint": "Paralel fiil 'open' hangi zamanda? Ona uydur."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "to",
+     "on",
+     "of",
+     "at",
+     "from"
+    ],
+    "answer": 4,
+    "explain": "benefit from = -den yarar sağlamak.",
+    "tip": "benefit from · contribute to.",
+    "hint": "'benefit' fiili hangi edatı alır?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "whereas",
+     "unless",
+     "when",
+     "although",
+     "until"
+    ],
+    "answer": 2,
+    "explain": "Başka balıklar izlediğinde daha dürüst davranırlar: zaman/koşul.",
+    "tip": "when = -dığında.",
+    "hint": "Dürüstlük hangi durumda artıyor?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "although",
+     "so that",
+     "whereas",
+     "unless",
+     "since"
+    ],
+    "answer": 4,
+    "explain": "Neden: hile gelecekteki müşterilere mal olabilir.",
+    "tip": "since = çünkü.",
+    "hint": "Virgülden sonraki kısım öncekinin nedeni mi, zıttı mı?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d257",
+  "type": "cloze",
+  "stem": "Weather forecasts are based (1) ---- computer models that divide the atmosphere into millions of small boxes. For each box, the model calculates how temperature, pressure and wind will change (2) ---- the next few hours. (3) ---- these calculations are repeated many times, small errors in the starting data grow larger. This is why forecasts for more than about ten days ahead (4) ---- much less reliable than those for tomorrow. To reduce such errors, forecasters run the same model many times (5) ---- slightly different starting conditions.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "in",
+     "from",
+     "on",
+     "at",
+     "with"
+    ],
+    "answer": 2,
+    "explain": "be based on = -e dayanmak.",
+    "tip": "based on · depend on · rely on.",
+    "hint": "'based' hangi edatla kullanılır?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "among",
+     "over",
+     "since",
+     "by",
+     "at"
+    ],
+    "answer": 1,
+    "explain": "over the next few hours = önümüzdeki birkaç saat boyunca.",
+    "tip": "over + zaman dilimi = boyunca.",
+    "hint": "Bir zaman aralığı boyunca değişim: hangi edat?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "As",
+     "Before",
+     "Unless",
+     "Although",
+     "In case"
+    ],
+    "answer": 0,
+    "explain": "Hesaplar tekrarlandıkça hatalar büyür: as = -dıkça.",
+    "tip": "as = -dıkça (orantılı değişim).",
+    "hint": "Tekrar arttıkça hata da artıyor mu? Orantı bağlacı ara."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "were",
+     "being",
+     "was",
+     "had been",
+     "are"
+    ],
+    "answer": 4,
+    "explain": "Genel gerçek, çoğul özne (forecasts) → are.",
+    "tip": "Genel gerçek + çoğul özne → are.",
+    "hint": "Özne tekil mi çoğul mu? Zaman genel mi?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "at",
+     "onto",
+     "about",
+     "into",
+     "with"
+    ],
+    "answer": 4,
+    "explain": "run a model with … conditions = … koşullarla çalıştırmak.",
+    "tip": "with + araç/koşul.",
+    "hint": "Model hangi koşullar 'ile' çalıştırılıyor?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d258",
+  "type": "cloze",
+  "stem": "Legumes such as beans, peas and clover have a special relationship (1) ---- certain soil bacteria. The bacteria live in small swellings on the roots, (2) ---- they convert nitrogen from the air into a form that plants can use. In return, the plant supplies the bacteria (3) ---- sugars produced by photosynthesis. Because of this partnership, legumes need little nitrogen fertiliser. Farmers (4) ---- this advantage for centuries by planting legumes in rotation with cereals, (5) ---- the following crop benefits from the nitrogen left in the soil.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "of",
+     "to",
+     "at",
+     "among",
+     "with"
+    ],
+    "answer": 4,
+    "explain": "relationship with = ile ilişki.",
+    "tip": "relationship/interaction + with.",
+    "hint": "'relationship' hangi edatla kişiye/canlıya bağlanır?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "that",
+     "which",
+     "where",
+     "what",
+     "whose"
+    ],
+    "answer": 2,
+    "explain": "Yer (swellings) + tam cümle → where. which/that tam cümleyle olmaz.",
+    "tip": "Yer + tam cümle → where.",
+    "hint": "Boşluktan sonraki cümle tam mı?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "for",
+     "to",
+     "from",
+     "at",
+     "with"
+    ],
+    "answer": 4,
+    "explain": "supply X with Y = X'e Y sağlamak.",
+    "tip": "supply/provide + kişi + with + şey.",
+    "hint": "Önce alıcı (bacteria) geldi; şey hangi edatla gelir?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "use",
+     "had used",
+     "are using",
+     "have used",
+     "will use"
+    ],
+    "answer": 3,
+    "explain": "'for centuries' + bugüne uzanan → present perfect.",
+    "tip": "for + süre (bugüne kadar) → have V3.",
+    "hint": "Zaman ifadesi 'for centuries': bugüne uzanıyor mu?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "whereas",
+     "as if",
+     "although",
+     "unless",
+     "so that"
+    ],
+    "answer": 4,
+    "explain": "Amaç: sonraki ürün azottan yararlansın diye.",
+    "tip": "so that + özne + fiil = -sın diye.",
+    "hint": "Rotasyonun amacı mı, zıttı mı anlatılıyor?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d259",
+  "type": "cloze",
+  "stem": "Elephants communicate (1) ---- long distances using very low-frequency sounds called infrasound. These sounds are too low (2) ---- humans to hear, but they can travel several kilometres through the air and the ground. Elephants appear to detect the vibrations (3) ---- their feet as well as their ears. (4) ---- a herd is threatened, it can send warning calls to other groups far away. Researchers (5) ---- these signals with special microphones since the 1980s.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "over",
+     "onto",
+     "among",
+     "beside",
+     "within"
+    ],
+    "answer": 0,
+    "explain": "over long distances = uzun mesafeler boyunca.",
+    "tip": "over + distance/period.",
+    "hint": "Mesafe 'boyunca' hangi edatla?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "of",
+     "with",
+     "from",
+     "by",
+     "for"
+    ],
+    "answer": 4,
+    "explain": "too + sıfat + for + kişi + to V.",
+    "tip": "too … for X to V = X'in …mesi için fazla.",
+    "hint": "'too low ---- humans to hear' kalıbı."
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "beside",
+     "through",
+     "among",
+     "into",
+     "onto"
+    ],
+    "answer": 1,
+    "explain": "detect through their feet = ayakları aracılığıyla.",
+    "tip": "through = içinden/aracılığıyla.",
+    "hint": "Titreşim ayaklardan 'geçerek' mi algılanıyor?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "When",
+     "Whereas",
+     "So that",
+     "Although",
+     "Unless"
+    ],
+    "answer": 0,
+    "explain": "Tehdit edildiğinde uyarı gönderir: zaman.",
+    "tip": "when = -dığında.",
+    "hint": "Uyarı hangi durumda gönderiliyor?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "have been recording",
+     "will record",
+     "are recording",
+     "had been recording",
+     "recorded"
+    ],
+    "answer": 0,
+    "explain": "'since the 1980s' → present perfect (continuous).",
+    "tip": "since + başlangıç → have (been) V3/Ving.",
+    "hint": "Zaman ifadesi: 'since the 1980s'."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 3
+ },
+ {
+  "id": "d260",
+  "type": "cloze",
+  "stem": "A monsoon is a seasonal change in wind direction that brings heavy rain (1) ---- many parts of South Asia. In summer, the land heats up faster than the ocean. As a result, the warm air over the land (2) ---- and moist air flows in from the sea. This moist air releases its water (3) ---- the form of intense rainfall. Millions of farmers depend (4) ---- the monsoon to water their rice fields. (5) ---- the rains arrive late, crops can fail and food prices rise.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "to",
+     "at",
+     "of",
+     "from",
+     "off"
+    ],
+    "answer": 0,
+    "explain": "bring rain to a place = bir yere yağmur getirmek.",
+    "tip": "bring/deliver + to + yer.",
+    "hint": "Yağmur bölgelere 'doğru' mu getiriliyor?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "rises",
+     "raises",
+     "rose",
+     "is risen",
+     "had risen"
+    ],
+    "answer": 0,
+    "explain": "Nesnesiz yükselmek = rise; genel gerçek → rises. raise nesne ister.",
+    "tip": "rise (nesnesiz) · raise (nesneli).",
+    "hint": "Fiilin nesnesi var mı? Paralel fiil 'flows' hangi zamanda?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "at",
+     "in",
+     "by",
+     "on",
+     "with"
+    ],
+    "answer": 1,
+    "explain": "in the form of = … biçiminde.",
+    "tip": "in the form of · in terms of.",
+    "hint": "'---- the form of' sabit öbek."
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "on",
+     "at",
+     "for",
+     "to",
+     "with"
+    ],
+    "answer": 0,
+    "explain": "depend on = -e bağlı olmak.",
+    "tip": "depend/rely/based + on.",
+    "hint": "'depend' hangi edatı alır?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "Unless",
+     "So that",
+     "Whereas",
+     "If",
+     "Although"
+    ],
+    "answer": 3,
+    "explain": "Yağmur geç gelirse ürün zarar görür: koşul.",
+    "tip": "if = eğer (olumlu koşul).",
+    "hint": "Gecikme olursa ne olur? Olumlu koşul mu olumsuz mu?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 1
+ },
+ {
+  "id": "d261",
+  "type": "cloze",
+  "stem": "Hibernation allows some animals to survive winters (1) ---- food is scarce. During hibernation, an animal's body temperature can fall (2) ---- a few degrees above freezing, and its heart rate slows dramatically. (3) ---- these changes, the animal uses only a small fraction of its normal energy. Contrary (4) ---- popular belief, bears are not true hibernators, (5) ---- their body temperature drops only slightly.",
+  "items": [
+   {
+    "q": "(1)",
+    "options": [
+     "whose",
+     "which",
+     "how",
+     "what",
+     "when"
+    ],
+    "answer": 4,
+    "explain": "Zaman ismi (winters) + tam cümle → when.",
+    "tip": "Zaman + tam cümle → when.",
+    "hint": "Boşluktan sonraki cümle tam mı? Önceki isim zaman mı?"
+   },
+   {
+    "q": "(2)",
+    "options": [
+     "into",
+     "to",
+     "of",
+     "at",
+     "on"
+    ],
+    "answer": 1,
+    "explain": "fall to X = X'e düşmek (varılan değer).",
+    "tip": "fall/rise TO (varılan değer) · BY (fark).",
+    "hint": "Sıcaklık hangi değere düşüyor?"
+   },
+   {
+    "q": "(3)",
+    "options": [
+     "Unlike",
+     "Thanks to",
+     "In spite of",
+     "Apart from",
+     "Instead of"
+    ],
+    "answer": 1,
+    "explain": "Bu değişiklikler sayesinde az enerji kullanır: neden (+).",
+    "tip": "thanks to/due to + isim = sayesinde/yüzünden.",
+    "hint": "Değişiklikler enerji kullanımının nedeni mi, zıttı mı?"
+   },
+   {
+    "q": "(4)",
+    "options": [
+     "to",
+     "from",
+     "of",
+     "with",
+     "for"
+    ],
+    "answer": 0,
+    "explain": "contrary to = -in aksine.",
+    "tip": "contrary to · according to · due to.",
+    "hint": "'Contrary' hangi edatla kalıplaşır?"
+   },
+   {
+    "q": "(5)",
+    "options": [
+     "until",
+     "so that",
+     "since",
+     "although",
+     "unless"
+    ],
+    "answer": 2,
+    "explain": "Gerçek kış uykucusu değiller çünkü sıcaklık az düşer: neden.",
+    "tip": "since = çünkü.",
+    "hint": "Virgülden sonraki bilgi bir neden mi?"
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d262",
+  "type": "ilgisiz",
+  "stem": "(I) Many species of songbird learn their songs by listening to adult males during a sensitive period early in life. (II) Bird feathers are made of keratin, the same protein found in human hair and nails. (III) If a young bird is raised in isolation, it produces only a simple, abnormal version of its species' song. (IV) Once this sensitive period has passed, most species find it very difficult to learn new songs. (V) This pattern has made songbirds a useful model for studying how humans acquire language.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: ötücü kuşların şarkı öğrenmesi. II tüylerin yapısına kayıyor. IV'teki 'this sensitive period' I'e bağlanıyor.",
+    "tip": "Anahtar kavram 'şarkı öğrenme': her cümle bu öğrenmeden söz ediyor mu?",
+    "hint": "I'deki ana fikri tek kelimeyle yaz, sonra her cümleyi ona tut."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d263",
+  "type": "ilgisiz",
+  "stem": "(I) Terraces are flat steps cut into hillsides to make steep land suitable for farming. (II) They slow the flow of rainwater down the slope and so reduce soil erosion. (III) Rice is the staple food for more than half of the world's population. (IV) Because water is held on each step, terraces also allow crops such as rice to be irrigated efficiently. (V) In some mountain regions, terraces built centuries ago are still in use today.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: teraslar ve faydaları. III pirincin dünya beslenmesindeki yerine kayıyor; 'rice' kelimesi IV ile ortak ama konu teras değil.",
+    "tip": "Her cümlenin öznesi teras mı? Ortak bir ürün adı geçmesi bağ kurmaya yetmez.",
+    "hint": "Hangi cümlenin öznesi konu cümlesindeki kavram değil?"
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d264",
+  "type": "ilgisiz",
+  "stem": "(I) Hailstones form inside thunderstorms that contain strong upward currents of air. (II) These updrafts carry raindrops high into the cloud, where they freeze. (III) As a frozen particle is lifted and falls repeatedly, it collects new layers of ice and grows larger. (IV) Snowflakes usually have six sides because of the way water molecules bond as they freeze. (V) When it finally becomes too heavy for the updraft to support, it falls to the ground as hail.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: dolunun oluşum süreci. IV kar tanesinin altıgen yapısına kayıyor; V'teki 'it' III'teki parçacığa döner, IV araya girip zinciri koparır.",
+    "tip": "Süreç adımlarını sırala: yukarı akım → donma → büyüme → düşme. Zincirde yeri olmayan adım?",
+    "hint": "'it' gibi zamirlerin hangi isme döndüğünü takip et."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d265",
+  "type": "ilgisiz",
+  "stem": "(I) Earthworms play a key role in maintaining healthy soil. (II) As they burrow, they create channels that allow air and water to reach plant roots. (III) They also feed on dead leaves and turn them into nutrient-rich waste. (IV) In this way, they help recycle nutrients that plants need to grow. (V) Birds such as robins locate earthworms by sight and by listening for their movements.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: solucanların toprağa katkısı. V solucanı avlayan kuşlara kayıyor; solucan geçiyor ama toprağa katkı yok.",
+    "tip": "Konu 'solucanın toprağa katkısı'. Solucan adı geçen her cümle bu katkıyı mı anlatıyor?",
+    "hint": "Bakış açısı aynı mı? Solucanın yaptığı iş mi, ona yapılan mı?"
+   }
+  ],
+  "topic": "ekoloji",
+  "level": 3
+ },
+ {
+  "id": "d266",
+  "type": "ilgisiz",
+  "stem": "(I) Some species of ant grow their own food by cultivating fungus inside their nests. (II) Ants are found on every continent except Antarctica. (III) Worker ants cut pieces of leaves and carry them back to the colony. (IV) There, the leaves are chewed into a paste on which the fungus grows. (V) The ants then feed on the fungus and remove any harmful moulds that appear in their gardens.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 1,
+    "explain": "Konu: karıncaların mantar yetiştirmesi. II karıncaların coğrafi yayılışına kayıyor; III–V yetiştirme sürecini sırayla anlatıyor.",
+    "tip": "Konu bir 'yetiştirme süreci'. Süreçte yeri olmayan genel bilgi cümlesini ara.",
+    "hint": "Konu cümlesi hangi davranışı tanıtıyor? Sonrakiler onu adım adım anlatmalı."
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 1
+ },
+ {
+  "id": "d267",
+  "type": "ilgisiz",
+  "stem": "(I) El Niño is a periodic warming of surface waters in the eastern Pacific Ocean. (II) It weakens the trade winds that normally push warm water towards Asia. (III) The Pacific is the largest and deepest of the world's oceans. (IV) As a result, rainfall patterns shift, bringing floods to parts of South America and droughts to Australia and Indonesia. (V) Because these effects reach so far, forecasters monitor ocean temperatures closely for early signs of an El Niño year.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: El Niño ve etkileri. III Pasifik'in büyüklüğüne kayıyor; IV'teki 'As a result' II'ye bağlanıyor.",
+    "tip": "Konu bir olay (El Niño). Olayı değil, yalnızca geçtiği yeri anlatan cümle var mı?",
+    "hint": "'As a result' gibi bağlaçlar hangi cümleye bağlanıyor? Arada kopukluk ara."
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d268",
+  "type": "ilgisiz",
+  "stem": "(I) Drip irrigation delivers water slowly through small tubes placed near the roots of plants. (II) Since water goes directly to where it is needed, very little is lost through evaporation or runoff. (III) Fertilisers can also be dissolved in the water, so that nutrients reach the roots at the same time. (IV) In the past, many farming communities depended on rivers that flooded their fields every year. (V) Although the system is expensive to install, the savings in water and fertiliser often cover the cost within a few years.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: damla sulamanın avantajları. IV eski taşkın sulamasına kayıyor; V 'the system' ile yine damla sulamaya döner.",
+    "tip": "Konu tek bir sistem. Her cümle aynı sistemi mi anlatıyor, yoksa sadece 'sulama' kelimesi mi ortak?",
+    "hint": "'the system' neyi gösteriyor? Her cümleyi o sisteme bağlamayı dene."
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d269",
+  "type": "ilgisiz",
+  "stem": "(I) Chameleons are famous for their ability to change colour. (II) For a long time, people believed that they did this mainly to blend in with their surroundings. (III) Recent studies, however, suggest that colour change is used chiefly for communication and for controlling body temperature. (IV) A male, for example, may turn bright colours to warn a rival or to attract a female. (V) Chameleons also have eyes that can move independently, giving them an almost 360-degree view.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 4,
+    "explain": "Konu: renk değiştirmenin amacı. V gözlerin hareketine kayıyor; 'also' aynı hayvanın başka özelliğini ekler.",
+    "tip": "Konu bir yeteneğin AMACI. Aynı hayvanın başka bir özelliğine geçen cümle var mı?",
+    "hint": "'also' kelimesi aynı konuyu mu sürdürüyor, yeni bir konu mu açıyor?"
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d270",
+  "type": "ilgisiz",
+  "stem": "(I) Fog forms when air near the ground cools until the water vapour it contains condenses into tiny droplets. (II) This often happens on clear, calm nights, when the ground loses heat quickly. (III) Dense fog is a major hazard for road traffic and for aircraft. (IV) Valleys are especially prone to fog because cold, dense air drains into them from the surrounding slopes. (V) Once the Sun rises and warms the ground, the droplets evaporate and the fog usually clears.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 2,
+    "explain": "Konu: sisin oluşması ve dağılması (fiziksel süreç). III sisin trafiğe tehlikesine kayıyor; konu aynı ama bakış açısı farklı.",
+    "tip": "Aynı konu, aynı bakış mı? Süreç (nasıl oluşur) ile sonuç (kime zarar verir) farklı alt konulardır.",
+    "hint": "Her cümle 'sis nasıl oluşur/dağılır' sorusuna mı cevap veriyor?"
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 3
+ },
+ {
+  "id": "d271",
+  "type": "ilgisiz",
+  "stem": "(I) Plants that are attacked by caterpillars can release chemical signals into the air. (II) These signals attract wasps that lay their eggs inside the caterpillars, eventually killing them. (III) Neighbouring plants that detect the same chemicals may start producing their own defences before they are attacked. (IV) Caterpillars eventually turn into butterflies or moths, many of which pollinate flowers. (V) Scientists hope to use this knowledge to protect crops while using fewer pesticides.",
+  "items": [
+   {
+    "q": "Okunduğunda parçanın anlam bütünlüğünü bozan cümle hangisidir?",
+    "options": [
+     "I",
+     "II",
+     "III",
+     "IV",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "Konu: bitkilerin kimyasal sinyalle savunması. IV tırtılın kelebeğe dönüşmesine kayıyor; V 'this knowledge' sinyal bilgisine döner.",
+    "tip": "Konu bitkinin savunması. Tırtıl geçen her cümle bu savunmayı mı anlatıyor?",
+    "hint": "'this knowledge' hangi bilgiyi gösteriyor? Ona katkı yapmayan cümle?"
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
  }
 ]

@@ -85,3 +85,17 @@ export function resetAll() {
   state = {}; for (const c of COLLECTIONS) state[c] = {};
   persist();
 }
+
+// Göçler: her biri cihaz başına bir kez (id'ler localStorage'da). ctx: { idx (words index) }
+const MK = 'yokdil.mig';
+export function migrate(list, ctx = {}) {
+  let done = [];
+  try { done = JSON.parse(localStorage.getItem(MK)) || []; } catch {}
+  const ran = [];
+  for (const m of list) {
+    if (done.includes(m.id)) continue;
+    try { m.run({ all, get, put, del, raw }, ctx); done.push(m.id); ran.push(m.id); } catch (e) { console.warn('göç', m.id, e); }
+  }
+  if (ran.length) localStorage.setItem(MK, JSON.stringify(done));
+  return ran;
+}

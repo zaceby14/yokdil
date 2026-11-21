@@ -15,8 +15,10 @@ export function md(src) {
       const cells = r => r.replace(/^\||\|$/g, '').split('|').map(c => c.trim());
       const body = rows.filter(r => !/^\|?[\s:|-]+\|?$/.test(r));
       const hasHead = rows.length > 1 && /^\|?[\s:|-]+\|?$/.test(rows[1]);
-      out += '<div class="tbl"><table>' + body.map((r, k) =>
-        '<tr>' + cells(r).map(c => (hasHead && k === 0 ? `<th>${inline(c)}</th>` : `<td>${inline(c)}</td>`)).join('') + '</tr>').join('') + '</table></div>';
+      const head = hasHead ? cells(body[0]) : [];
+      // Dar ekranda satırlar kart olur (td data-th = sütun başlığı)
+      out += `<div class="tbl${hasHead && head.length > 2 ? ' cardify' : ''}"><table>` + body.map((r, k) =>
+        '<tr>' + cells(r).map((c, j) => (hasHead && k === 0 ? `<th>${inline(c)}</th>` : `<td data-th="${esc(head[j] || '')}">${inline(c)}</td>`)).join('') + '</tr>').join('') + '</table></div>';
       continue;
     }
     if (/^[-*] /.test(l)) {

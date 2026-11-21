@@ -14,7 +14,7 @@ export function tokenize(text) {
     const sents = para.replace(/\s*\n\s*/g, ' ').match(/[^.!?]+(?:[.!?]+["'”’)\]]*|$)\s*/g) || [];
     for (const s of sents) {
       const si = sentences.push(s.trim()) - 1;
-      for (const m of s.matchAll(/[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’-][A-Za-zÀ-ÖØ-öø-ÿ]+)*|\d+(?:[.,]\d+)*|\s+|[^\sA-Za-zÀ-ÖØ-öø-ÿ\d]/g)) {
+      for (const m of s.matchAll(/[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’-][A-Za-zÀ-ÖØ-öø-ÿ]+)*|\d+(?:[.,]\d+)*|-{2,}|_{3,}|\s+|[^\sA-Za-zÀ-ÖØ-öø-ÿ\d]/g)) {
         const t = m[0];
         const tok = { t, s: si, w: /^[A-Za-zÀ-ÖØ-öø-ÿ]/.test(t), i: tokens.length };
         tokens.push(tok); pt.push(tok);
@@ -35,9 +35,10 @@ export function tappable(text, opts = {}) {
   const tapOpens = opts.tapOpens !== false;
   let phraseMode = false, selStart = null, lpTimer = null, lpFired = false, startXY = null;
   const body = h((opts.inline ? 'span' : 'div') + '.reader' + (opts.inline ? '.inline' : '') + (opts.cls ? '.' + opts.cls : ''), { lang: 'en' });
+  let nb = 0;
   paras.forEach((pt, pi) => {
     const p = h(opts.inline ? 'span' : 'p');
-    for (const t of pt) p.append(t.w ? h('span.w', { 'data-i': t.i }, t.t) : t.t);
+    for (const t of pt) p.append(t.w ? h('span.w', { 'data-i': t.i }, t.t) : /^(-{2,}|_{3,})$/.test(t.t) ? h('span.blank', { 'data-b': ++nb }, t.t) : t.t);
     body.append(p);
     const extra = opts.afterPara?.(pi, pt.map(t => t.t).join(''));
     if (extra) body.append(extra);
@@ -105,7 +106,8 @@ export function tappable(text, opts = {}) {
     sheet._close = () => { sheet.classList.add('hidden'); clearSel(); };
     const hit = await local(word);
     const entry = hit?.entry, card = hit?.card;
-    const base = isPhrase ? word.toLowerCase() : (hit?.lemma || word.toLowerCase());
+    let base = isPhrase ? word.toLowerCase() : (hit?.lemma || word.toLowerCase());
+    if (!isPhrase && !hit) base = (await enrich(base).catch(() => null))?.key || guessLemma(base);
     const wIn = h('input.wordin', { value: card?.word || entry?.word || base });
     const trIn = h('input', { placeholder: 'Türkçe anlam', value: card?.tr || entry?.tr || '' });
     const synIn = h('input', { placeholder: 'eş anlamlılar (virgülle)', value: (card?.syn || entry?.syn || []).join(', ') });
@@ -133,10 +135,11 @@ export function tappable(text, opts = {}) {
       h('button.btn.primary.wide', { onclick: save }, card ? 'Kartı güncelle' : 'Karta ekle')
     );
     if (!entry && !card) {
-      info.append('Öneri aranıyor…');
-      online(base).then(o => {
+      if (!navigator.onLine) info.append('Çevrimdışı: anlamı sen yaz (kart yine kaydedilir).');
+      else info.append('Öneri aranıyor…');
+      if (navigator.onLine) online(base).then(o => {
         if (sheet.classList.contains('hidden') || wIn.value !== base) return;
-        info.textContent = o.def || (o.tr ? '' : 'Öneri yok');
+        info.textContent = o.def || (o.tr ? '' : 'Öneri bulunamadı (bağlantı yok olabilir): anlamı sen yaz.');
         if (o.tr) { if (!trIn.value) trIn.value = o.tr; sugg.append(h('button.chip', { onclick: () => trIn.value = o.tr }, o.tr)); }
         if (o.syn?.length && !synIn.value) synIn.value = o.syn.join(', ');
       });
@@ -155,7 +158,7 @@ export function tappable(text, opts = {}) {
           id: wid ? 'w:' + wid : uid('c'), wid, word: w, tr: trIn.value.trim(), syn, ctx: ctxIn.value.trim(),
           coll: entry?.coll || '', ex: entry?.ex || '', pos: entry?.pos || '', tags: entry?.tags || [],
           source: opts.source || 'Okuma', page: opts.page || '', note: opts.note || '',
-          state: 'new', createdAt: Date.now(),
+          state: 'new', createdAt: Date.now(), mine: Date.now(),
           ...(wid && (trIn.value.trim() !== (entry.tr || '') || syn.join(',') !== (entry.syn || []).join(',')) ? { userEdited: true } : {})
         });
         toast('Karta eklendi');
@@ -189,6 +192,17 @@ let lpBlock = false;
 if (typeof document !== 'undefined') {
   document.addEventListener('pointerdown', () => { lpBlock = false; }, true);
   document.addEventListener('click', e => { if (lpBlock) { lpBlock = false; e.preventDefault(); e.stopPropagation(); } }, true);
+}
+
+// Saf: sözlükte olmayan kelimede basit kök tahmini (engineers → engineer, studies → study)
+export function guessLemma(w) {
+  w = String(w || '').toLowerCase();
+  if (w.length < 5) return w;
+  if (/ies$/.test(w)) return w.slice(0, -3) + 'y';
+  if (/(ss|us|is|ous|ics)$/.test(w)) return w;
+  if (/(ches|shes|xes|sses)$/.test(w)) return w.slice(0, -2);
+  if (/s$/.test(w)) return w.slice(0, -1);
+  return w;
 }
 
 // Hoparlör ikonu

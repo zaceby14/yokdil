@@ -1,0 +1,66 @@
+{
+  "decisionTree": {
+    "title": "Boşlukta ne arıyorum?",
+    "nodes": [
+      { "id": "n1", "q": "Şıklara bak: ne soruluyor?", "options": [
+        { "label": "Bağlaç / edat karışık", "next": "n2" },
+        { "label": "Fiil biçimleri (tense)", "next": "n3" },
+        { "label": "which / that / whose / where", "result": "Virgül ya da edat varsa **which**; sonrası tam cümle → **where/when**; sonrası isim → **whose**." },
+        { "label": "Ving / to V / V1", "next": "n4" },
+        { "label": "Kelimeler", "result": "Anlam + eşdizim: boşluğun iki yanındaki kelimeye bak." }
+      ] },
+      { "id": "n2", "q": "Boşluktan sonra ne var?", "options": [
+        { "label": "Özne + fiil (tam cümle)", "result": "Bağlaç: although / because / when / if… Sonra anlam: iki taraf aynı yön mü, ters mi?" },
+        { "label": "İsim / Ving (fiil yok)", "result": "Edat: despite / due to / instead of / by…" },
+        { "label": "V1", "result": "in order to / so as to" },
+        { "label": "; ---- , ya da . ---- ,", "result": "Geçiş zarfı: however / therefore / moreover…" }
+      ] },
+      { "id": "n3", "q": "Zaman ifadesi var mı? (since, by, ago, over the past)", "options": [
+        { "label": "Evet", "result": "İfadeye uy: since → have V3 · by the time + past → had V3 · ago → V2" },
+        { "label": "Hayır", "result": "Diğer fiilin zamanına bak; o da yoksa genel gerçek = Present." }
+      ] },
+      { "id": "n4", "q": "Boşluktan önce ne var?", "options": [
+        { "label": "Edat (of, by, without, to=edat)", "result": "Ving" },
+        { "label": "enable / allow / cause + nesne", "result": "to V" },
+        { "label": "let / make + nesne", "result": "V1" }
+      ] }
+    ]
+  },
+  "polarityCards": [
+    { "group": "Zıtlık", "color": "kirmizi", "words": ["although", "while", "whereas", "despite", "however"], "structure": "although + cümle · despite + isim", "ex": "Although it was cheap, the alloy was strong.", "trap": "despite of ✗" },
+    { "group": "Neden-sonuç", "color": "yesil", "words": ["because", "since", "due to", "therefore", "thanks to"], "structure": "because + cümle · due to + isim", "ex": "Due to the heat, the glue failed.", "trap": "because of + cümle ✗" },
+    { "group": "Zaman", "color": "mavi", "words": ["when", "until", "once", "as soon as", "by the time"], "structure": "bağlaç + V1 (will ✗)", "ex": "Once it cools, the metal hardens.", "trap": "when it will cool ✗" },
+    { "group": "Koşul", "color": "mor", "words": ["if", "unless", "provided that", "in case"], "structure": "unless = if not", "ex": "Unless it is sealed, it rusts.", "trap": "unless … not ✗" },
+    { "group": "Örnek / açıklama", "color": "gri", "words": ["such as", "for instance", "namely"], "structure": "such as + isim", "ex": "Metals such as iron rust.", "trap": "such as + cümle ✗" }
+  ],
+  "tenseTable": {
+    "cols": ["İpucu", "Zaman", "Örnek"],
+    "rows": [
+      ["since / for + süre", "have V3", "It has risen since 2010."],
+      ["over the past decade", "have V3", "Prices have fallen over the past decade."],
+      ["by the time + V2", "had V3", "By the time we arrived, it had stopped."],
+      ["ago / in 1990", "V2", "It was built in 1990."],
+      ["by + gelecek zaman", "will have V3", "By 2030 we will have built it."]
+    ]
+  },
+  "cheatSheets": [
+    { "id": "baglac", "title": "Bağlaç tek bakış", "md": "- **Zıtlık:** although + cümle · despite + isim · ; however,\n- **Neden:** because + cümle · due to + isim\n- **Amaç:** in order to + V1 · with a view to + Ving" },
+    { "id": "edat", "title": "Edat tek bakış", "md": "| Durum | Edat |\n|---|---|\n| sayı / değer | at |\n| sonuç | lead to / result in |\n| neden | result from |" }
+  ],
+  "eliminationTips": [
+    { "title": "1. Yapıyı ele", "text": "Boşluktan sonra tam cümle varsa edatları ele.", "ex": "---- the heat, … → despite (isim)" },
+    { "title": "2. Kutbu bul", "text": "İki taraf ters yöndeyse aynı yön bağlaçlarını ele." },
+    { "title": "3. Zamanı eşle", "text": "Zaman ifadesine uymayan fiil biçimlerini ele." }
+  ],
+  "personalRules": [
+    { "topic": "edat-esdizim", "rule": "Değer → AT: at 100 °C, at a rate of", "ex": "at high speed", "wrong": "in 100 °C", "right": "at 100 °C" },
+    { "topic": "baglac-zitlik", "rule": "Although (+), (−). Aynı yönse although ✗", "ex": "Although cheap, it is strong.", "wrong": "Although cheap, it is weak.", "right": "Because cheap, …" },
+    { "topic": "baglac-neden-amac", "rule": "\"to\" testi: sonrasına isim gelirse Ving", "ex": "with a view to reducing", "wrong": "with a view to reduce", "right": "with a view to reducing" },
+    { "topic": "relative", "rule": "Virgül veya edat → which", "ex": "…, which is…", "wrong": ", that", "right": ", which" }
+  ],
+  "mnemonics": [
+    { "topic": "baglac-zitlik", "text": "Despite'ın OF'u yok." },
+    { "topic": "relative", "text": "Virgülden sonra THAT yatar." },
+    { "topic": "zaman-uyumu", "text": "Bağlaçtan sonra will yok." }
+  ]
+}

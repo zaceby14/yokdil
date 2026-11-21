@@ -3,7 +3,7 @@ import * as store from '../store.js';
 import { drills, grammar, passages, seedUser } from '../data.js';
 import { h, shuffle, TYPES } from '../util.js';
 import { week } from '../plan.js';
-import { answer, dueMistakes } from '../mistakes.js';
+import { answer, mistakeToday } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
 import { dItem, gItem, pItem } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
@@ -26,12 +26,12 @@ export default async function render(root, [type]) {
   const w = await week();
   const thisWeek = new Set(w.drills || []);
   const weak = new Set((await seedUser()).weakDrills || []);
-  const due = dueMistakes().length;
+  const hs = mistakeToday();
   root.append(
     soruTabs('alistirma'),
     h('h2', 'Alıştırma'),
     Object.keys(b).length ? null : emptyData(),
-    due ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata kutusu · ${due} bekliyor`) : null,
+    hs.total ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata tekrarı · bugün ${hs.done}/${hs.total}`) : null,
     h('ul.list', Object.entries(TYPES).filter(([k]) => k !== 'diyalog').map(([k, v]) => {
       const items = b[k] || [];
       const done = items.filter(i => seen.has(i.key)).length;
@@ -67,7 +67,7 @@ function session(root, type, items, seen) {
   if (!pick.length) { el.append(emptyData()); return; }
   runQuiz(el, pick.map(i => i.make()), {
     extra: lessonLink, sid: 'alistirma:' + type, name: TYPES[type] || type, source: 'Alıştırma',
-    onAnswer: (it, ok) => answer(it.key, ok, it.info),
-    onEnd: (_, box) => box.append(h('a.btn.wide', { href: '#/alistirma/' + type, onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Devam'))
+    onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m),
+    onEnd: (_, box) => box.querySelector('.endnext')?.before(h('a.btn.wide', { href: '#/alistirma/' + type, onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Aynı tipten devam'))
   });
 }

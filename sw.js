@@ -1,5 +1,5 @@
 // Service worker: uygulama kabuğu önbellekte, data/ ağ öncelikli
-const VER = 'yokdil-v5';
+const VER = 'yokdil-v6';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/app.js', 'js/util.js', 'js/merge.js', 'js/store.js', 'js/data.js', 'js/plan.js', 'js/srs.js', 'js/mistakes.js',
@@ -9,7 +9,8 @@ const SHELL = [
   'js/views/panel.js', 'js/views/settings.js', 'js/views/hub.js', 'js/views/exams.js', 'js/views/lessons.js',
   'js/views/scan.js', 'js/views/gap.js',
   'js/ctx.js', 'js/speak.js', 'js/private.js', 'js/side.js', 'js/notes.js', 'js/focus.js', 'js/memory.js', 'js/contentrev.js',
-  'js/views/notes.js', 'js/views/memory.js'
+  'js/views/notes.js', 'js/views/memory.js',
+  'js/migrations.js', 'js/tasks.js', 'js/gplan.js', 'js/views/aids.js'
 ];
 
 // Yeni sürüm: önbelleği HTTP önbelleğini atlayarak doldur; sayfa "Yenile" deyince devreye gir

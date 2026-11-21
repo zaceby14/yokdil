@@ -1,9 +1,10 @@
 // Gramer: günlük set, hata kutusu, konu çalışması, kural notlarım
 import * as store from '../store.js';
 import { grammar, program } from '../data.js';
-import { h, dayKey, seeded, shuffle, uid, toast, TOPICS, topicName } from '../util.js';
+import { h, dayKey, seeded, uid, toast, TOPICS, topicName } from '../util.js';
 import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
-import { answer, dueMistakes, openMistakes } from '../mistakes.js';
+import { answer, openMistakes, mistakeToday } from '../mistakes.js';
+import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
 import { gItem, resolve } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
@@ -17,7 +18,7 @@ export default async function render(root, [mode, arg]) {
 
 const back = () => h('a.btn.small', { href: '#/gramer' }, '‹ Gramer');
 
-// Günlük set: haftanın konusu ağırlıklı + önceki konular + zayıf konular
+// Günlük set: haftanın konusu + sınav ağırlığı + seviye ilerlemesi (L1 → L2 → L3, konu bazında). Hatalar ayrı görevde.
 export async function dailySet() {
   const r = dayRec();
   if (r.gset?.length) return r.gset;
@@ -25,45 +26,51 @@ export async function dailySet() {
   const w = await week();
   const p = await program();
   const weak = new Set(await weakTopics());
-  const cur = new Set(w.grammar || []);
-  const prev = new Set(p.weeks.filter(x => x.n <= w.n).flatMap(x => x.grammar || []));
+  const cur = new Set([...(w.grammar || []), ...(w.lessons || [])]);
+  const prev = new Set(p.weeks.filter(x => x.n <= w.n).flatMap(x => [...(x.grammar || []), ...(x.lessons || [])]));
   const open = new Set(openMistakes().map(m => m.id));
+  const lvOf = new Map(qs.map(q => [q.id, q.level || 1]));
+  const logs = store.all('grammarLog').filter(l => l.kind === 'gramer');
   const seen = new Map();
-  for (const l of store.all('grammarLog')) if (l.kind === 'gramer') seen.set(l.q, l.correct);
-  const rnd = seeded(dayKey());
-  const pool = qs.filter(q => !open.has(q.id)).map(q => {
-    let wt = (cur.has(q.topic) ? 5 : 0) + (weak.has(q.topic) ? 2 : 0) + (prev.has(q.topic) ? 1 : 0.3);
-    if (seen.get(q.id) === true) wt *= 0.25; else if (!seen.has(q.id)) wt *= 1.5;
-    return { q, k: Math.pow(rnd(), 1 / wt) }; // ağırlıklı örnekleme
-  }).sort((a, b) => b.k - a.k);
-  const ids = pool.slice(0, store.settings().grammarCount || 8).map(x => x.q.id);
+  for (const l of logs) seen.set(l.q, l.correct);
+  const levels = topicLevels(logs.map(l => ({ ...l, level: l.level || lvOf.get(l.q) || 0 })));
+  const ids = pickDaily(qs, { cur, prev, weak, seen, open, levels, n: store.settings().grammarCount || 8, rnd: seeded(dayKey()) });
   updateDay({ gset: ids });
   return ids;
 }
+
+const logAns = (it, ok, k, m) => answer(it.key, ok, it.info, m);
 
 async function daily(root) {
   const r = dayRec();
   const ids = await dailySet();
   const qs = new Map((await grammar()).map(q => [q.id, q]));
-  const errs = (await Promise.all(dueMistakes('gramer').map(m => resolve(m.id)))).filter(Boolean);
-  let items = [...errs.map(e => ({ ...e, label: 'Hata · ' + e.label })), ...ids.map(id => qs.get(id)).filter(Boolean).map(gItem)];
+  let items = ids.map(id => qs.get(id)).filter(Boolean).map(gItem);
   if (r.busy) items = items.slice(0, 3);
   const box = h('div');
   root.append(back(), box);
   if (!items.length) { box.append(emptyData()); return; }
   runQuiz(box, items, {
-    title: 'Günlük', extra: lessonLink, sid: 'gunluk:' + dayKey(), name: 'Günlük gramer', source: 'Gramer',
-    onAnswer: (it, ok) => answer(it.key, ok, it.info),
-    onEnd: (_, el) => { tick('gramer'); el.append(h('a.btn.wide', { href: '#/bugun' }, 'Bugün')); }
+    title: 'Günlük', extra: lessonLink, sid: 'gunluk:' + dayKey(), name: 'Günlük gramer', source: 'Gramer', task: 'gramer',
+    onAnswer: logAns,
+    onEnd: () => tick('gramer')
   });
 }
 
+// Hata tekrarı: bugün en fazla 8 soru (tüm kaynaklar)
 async function box(root) {
-  const items = (await Promise.all(dueMistakes().map(m => resolve(m.id)))).filter(Boolean);
+  const hs = mistakeToday();
+  const left = hs.ids.filter(id => !store.all('grammarLog').some(l => l.q === id && l.day === dayKey() && l.hset));
+  const items = (await Promise.all(left.map(id => resolve(id)))).filter(Boolean);
   const el = h('div');
-  root.append(back(), h('h2', 'Hata kutusu'), el);
-  if (!items.length) { el.append(h('p.muted', 'Bugün tekrar edilecek hata yok.')); return; }
-  runQuiz(el, shuffle(items), { title: 'Hata', extra: lessonLink, sid: 'hata:' + dayKey(), name: 'Hata kutusu', onAnswer: (it, ok) => answer(it.key, ok, it.info) });
+  root.append(back(), h('h2', `Hata tekrarı · bugün ${hs.total}`), el);
+  if (!items.length) {
+    el.append(h('div.card', h('p', hs.total ? 'Bugünkü hata tekrarı bitti.' : 'Bugün tekrar edilecek hata yok.'), h('p.small.muted', 'Kalan hatalar sonraki günlere en fazla 8\'er soru olarak gelir.')));
+    if (hs.total) tick('hata');
+    return;
+  }
+  runQuiz(el, items.map(e => ({ ...e, label: 'Hata · ' + e.label })), { title: 'Hata', extra: lessonLink, sid: 'hata:' + dayKey(), name: 'Hata tekrarı', task: 'hata',
+    onAnswer: logAns, onEnd: () => tick('hata') });
 }
 
 async function byTopic(root, topic) {
@@ -71,14 +78,16 @@ async function byTopic(root, topic) {
   const el = h('div');
   root.append(back(), h('h2', topicName(topic)), el);
   if (!qs.length) { el.append((await grammar()).length ? h('p.muted', 'Bu konuda soru yok') : emptyData()); return; }
-  runQuiz(el, shuffle(qs).slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', onAnswer: (it, ok) => answer(it.key, ok, it.info) });
+  const seenOk = new Set(store.all('grammarLog').filter(l => l.correct).map(l => l.q));
+  const order = levelOrder(qs.filter(q => !seenOk.has(q.id))).concat(levelOrder(qs.filter(q => seenOk.has(q.id))));
+  runQuiz(el, order.slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', onAnswer: logAns });
 }
 
 async function home(root) {
   const w = await week();
   const qs = await grammar();
   const weak = await weakTopics();
-  const due = dueMistakes().length, open = openMistakes().length;
+  const hs = mistakeToday();
   const r = dayRec();
   const acc = {};
   for (const l of store.all('grammarLog')) if (l.kind === 'gramer') { const a = acc[l.topic] ||= [0, 0]; a[1]++; if (l.correct) a[0]++; }
@@ -89,9 +98,9 @@ async function home(root) {
     qs.length ? null : emptyData(),
     h('div.chips', h('span.muted.small', `Hafta ${w.n}: `), (w.grammar || []).map(t => h('span.chip.ok', topicName(t)))),
     h('a.btn.primary.wide.big-btn', { href: '#/gramer/gunluk' }, r.tasks?.gramer ? 'Günlük set ✓ (tekrar)' : `Günlük set · ${r.busy ? 3 : store.settings().grammarCount} soru`),
-    h('a.btn.wide', { href: '#/gramer/hata' }, `Hata kutusu · bugün ${due} / açık ${open}`),
+    hs.total ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata tekrarı · bugün ${hs.done}/${hs.total}`) : h('p.small.muted', 'Bugün hata tekrarı yok.'),
     h('h3', 'Konular'),
-    h('ul.list.compact', Object.keys(TOPICS).filter(t => cnt[t]).map(t => {
+    h('ul.list.compact', [...new Set([...Object.keys(TOPICS), ...Object.keys(cnt)])].filter(t => cnt[t]).map(t => {
       const a = acc[t];
       return h('li', h('a', { href: '#/gramer/konu/' + t },
         h('b', topicName(t)), weak.includes(t) ? h('span.chip.bad.small', 'zayıf') : null,

@@ -4,10 +4,10 @@ import { h, dayKey, uid, toast, topicName, typeName, TOPICS, fmtDate } from '../
 import { stats } from '../srs.js';
 import { seedUser } from '../data.js';
 import { hbars, heatmap, line, stacked } from '../charts.js';
-import { daysToExam } from '../plan.js';
+import { daysToExam, newLimit } from '../plan.js';
 
 // Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
-function vocabBox(st, goal, left) {
+function vocabBox(st, goal, left, limit) {
   const scale = Math.max(goal * 1.15, st.knowTotal);
   const need = Math.max(0, goal - st.knowTotal);
   return h('div.vocab',
@@ -16,7 +16,7 @@ function vocabBox(st, goal, left) {
     h('div.goalbar', h('i', { style: `width:${(st.knowTotal / scale * 100).toFixed(1)}%` }),
       h('span.goal-line', { style: `left:${(goal / scale * 100).toFixed(1)}%`, title: 'hedef' })),
     h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature}`),
-    need && left > 0 ? h('div.small', `Hedefe günde ≈ ${Math.ceil(need / left)} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
+    need && left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${st.knowTotal + limit * left} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
 }
 
 export const MOCK = [
@@ -57,7 +57,7 @@ function acc(filter, keyOf) {
   const m = {};
   for (const l of store.all('grammarLog')) {
     if (!filter(l)) continue;
-    const k = keyOf(l); const a = m[k] ||= [0, 0]; a[1]++; if (l.correct) a[0]++;
+    const k = keyOf(l); const a = m[k] ||= [0, 0]; a[1]++; if (l.correct && !l.hint) a[0]++; // ipucuyla doğru ayrı sayılır
   }
   return m;
 }
@@ -71,6 +71,7 @@ export default async function render(root) {
   const types = acc(l => !!typeOf(l), typeOf);
   const rows = (m, nm) => Object.entries(m).map(([k, [c, n]]) => ({ k, label: nm(k), value: c / n, n, note: `(${n})` }))
     .sort((a, b) => a.value - b.value);
+  const hinted = store.all('grammarLog').filter(l => l.hint && l.correct).length;
   const lapsed = store.all('cards').filter(c => c.lapses > 0).sort((a, b) => b.lapses - a.lapses).slice(0, 8);
   const days = Object.fromEntries(store.all('days').map(d => [d.id, d]));
   const act = k => { const d = days[k]; return d ? (d.reviews || 0) + (d.answered || 0) + Math.round((d.readSec || 0) / 60) + (d.focusMin || 0) : 0; };
@@ -91,9 +92,10 @@ export default async function render(root) {
     h('h2', 'Eksiklerim'),
     sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.')))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
       h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.')))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
     readLine(),
-    sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) })),
+    sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) }),
+      hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),
     sec('Soru tipi doğruluğu', typeBox(rows)),
     sec('En çok unutulan', lapsed.length ? h('ul.list.compact', lapsed.map(c => h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×'))))) : h('p.muted.small', 'Henüz yok')),
     sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Odak: son 7 günde ${focusWeek} dk`)),

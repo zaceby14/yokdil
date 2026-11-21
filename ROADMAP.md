@@ -1,5 +1,28 @@
 # Yol haritası
 
+## v6'da yapılanlar (kurul raporu: öğrenci, gramer öğretmeni, sınav uzmanı)
+- [x] Soru/sınav ekranlarında ana düğme hep erişilebilir: Not telefonda üst çubukta, bildirim üstte ve tıklamayı engellemez, Sonraki/Kontrol yapışkan alt çubukta (e2e: elementFromPoint)
+- [x] Okurken/elle/nottan eklenen kelimeler (mine) yeni kuyruğun önünde; dünden kalanlar limit dolsa da gelir (en fazla +10)
+- [x] Yanlıştan otomatik kart: bağlaç/edat/işlev kelimesi yok, kök (eat ← eating), anlamı yoksa kart yok, aynı kökten ikinci kart yok; boşluk oyununda aynı kökten iki şık yok; göç: eski bozuk Hata kartları silinir (SRS geçmişi olanlar kalır)
+- [x] Hata tekrarı: günde en fazla 8 (en eski / en çok yanlış; tüm kaynaklar), Bugün'de ayrı görev "Hata tekrarı (n/8)"
+- [x] Seri: görev / ≥10 dk odak / deneme günü sayar; haftada 1 joker
+- [x] Kart tekrarı ve yeni kelime ayrı oturum; dakikalar gerçek sayıdan (kart ≈ 8 sn)
+- [x] Bitiş ekranları: yanlış listesi (dokun → açıklama), "Yanlışları tekrar çöz", "Sıradaki: … ›"
+- [x] Hafıza turu: en fazla 8 kelime, seçmeli (eş anlam / aile / anlam), Bugün'deki sayı = soru sayısı; okuma ✓ için < 400 kelime/dk ve ≥ 1 doğru
+- [x] Çıkmış: bölüm bölüm çözme (bölüm şeridi, bölüm sonu ara sonuç + kilit), optikte bölüm başlıkları, Bugün'de yarım deneme bandı, sonuç bölüm bölüm katlanır, "Bu bölümün yanlışlarını tekrar çöz", zayıf bölüm dersi; tipe göre ÖSYM/Yayınevi/Hepsi; "Cevap: X" satırı gizli
+- [x] Ders düğmesi: konu dersi → soru tipi taktik dersi → liste
+- [x] Not → karta çevir Türkçe kelimeleri bölmüyor; dokunma hedefleri ≥ 44 px; dar ekranda tablolar kart görünümü
+- [x] Araçlar (aids.json): karar ağacı, bağlaç kutup kartları, zaman tablosu, kopya kağıtları, şık eleme, kişisel kurallar (yanlışta otomatik)
+- [x] İpucu (cevaptan önce; hint → ders formülü), ipucuyla doğru Eksikler'de ayrı; ders formül kutusu; çift boşluk (iki boşluk, "x / y")
+- [x] Günlük gramer: konu ağırlığı (bağlaç/edat/çift boşluk/relative/zaman), az çıkan 7 konudan en fazla 1, seviye L1 → L2 → L3 (konu bazında %70)
+- [x] program.json: az çıkan 7 konu 9. haftada; çift boşluk / bağlaç master / edat / relative / zaman ifadeleri haftaları; yakın anlam çıktı; 3 yarım (h2, h6, h9) + 5 tam ÖSYM (h10–14); faz 2'de kart 15 dk
+- [x] Okuma paneli: çevrimdışı uyarısı, çoğul → kök
+
+## v6 sonrası fikirler
+- Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
+- Aynı kişisel kuraldan 2 yanlış → Bugün'e kural kartı görevi
+- Yarım deneme için soru sayısı sınırı (ilk 40 soruda otomatik bitir)
+
 ## v4'te yapılanlar
 - [x] Çıkmış sorular gizli repodan (zaceby14/yokdil-ozel/paket.json) anahtarla otomatik: açılışta günde 1, "Soruları güncelle", ETag/304; manuel dosya yükleme duruyor
 - [x] Tek anahtar rehberi (gist + repo); anahtarsız Çıkmış ekranında tek satır + düğme

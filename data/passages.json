@@ -1236,16 +1236,16 @@
     "explain": "İlk cümle: elektronlar titreşen atomlara çarpar, ısı olarak enerji kaybolur."
    },
    {
-    "q": "Which of the following is NOT mentioned as a feature or use of superconductors?",
+    "q": "According to the passage, the wider use of superconductors is limited because ----.",
     "options": [
-     "They are used to transmit electricity to most homes today.",
-     "A current started in a superconducting loop can keep flowing without any power source.",
-     "They push magnetic fields out of their interior, allowing a magnet to float above them.",
-     "They are used in MRI scanners.",
-     "They are used in particle accelerators."
+     "they require extreme cooling, which is expensive and complex",
+     "the ceramic materials discovered in 1986 work only at room temperature",
+     "currents in superconducting loops stop flowing after a few years",
+     "they cannot create magnetic fields strong enough for MRI scanners",
+     "their electrons collide with vibrating atoms and lose energy as heat"
     ],
     "answer": 0,
-    "explain": "Ev elektrik iletiminde kullanıldığı söylenmiyor; aksine yaygın kullanım soğutma yüzünden sınırlı. NOT sorusunda metinde geçmeyeni ara."
+    "explain": "Dayanak: 'Their wider use, however, is limited by the need for extreme cooling, which is expensive and complex'. Tuzak: ısı kaybı sıradan tellere ait; 1986 seramikleri oda sıcaklığının çok altında çalışıyor."
    },
    {
     "q": "The author's attitude towards claims of room-temperature superconductors is ----.",
@@ -2612,16 +2612,16 @@
     "explain": "Katodik koruma çinkonun demirden daha aktif olmasına dayanıyor; bu olmasa çizik bölgede çinko 'kendini feda etmez'. Diğer şıklar bu koşulla ilişkilendirilmemiş."
    },
    {
-    "q": "Which of the following is NOT mentioned in the passage in relation to galvanized coatings?",
+    "q": "According to the passage, aluminium is added to the zinc bath in continuous galvanizing lines so that ----.",
     "options": [
-     "the colour of the coating after immersion",
-     "the addition of small amounts of aluminium to the bath",
-     "the temperature of the zinc bath",
-     "the thickness of the coating",
-     "the aggressiveness of the environment"
+     "the coated sheet can be bent and pressed without cracking",
+     "the outer layer of the coating becomes almost pure aluminium",
+     "zinc corrodes in preference to the steel more quickly",
+     "brittle zinc–iron compounds grow thicker and protect the steel",
+     "the bath can be operated at a temperature well below 450 °C"
     ],
     "answer": 0,
-    "explain": "Banyo sıcaklığı (450 °C), alüminyum, kaplama kalınlığı ve ortamın agresifliği geçiyor; renkten hiç söz edilmiyor."
+    "explain": "Dayanak: alüminyum kırılgan Zn–Fe bileşiklerinin büyümesini sınırlar, 'so the coated sheet can be bent and pressed without cracking'. Tuzak: bileşikler kalınlaşmıyor, büyümesi sınırlanıyor."
    }
   ],
   "gloss": [
@@ -2856,16 +2856,16 @@
     "explain": "Malzeme liflere dik yönde zayıf; tasarımcılar bu yüzden farklı yönlerde katman diziyor. Tek yönlü lif → çok yönlü yüke uygun değil."
    },
    {
-    "q": "Which of the following is NOT mentioned in the passage as a drawback of composites?",
+    "q": "The passage mentions that delamination ----.",
     "options": [
-     "damage that may be invisible on the surface",
-     "their high cost of production",
-     "their weakness across the fibre direction",
-     "the difficulty of recycling them",
-     "the need for special inspection methods"
+     "is a defect that appears on the surface when a tool is dropped",
+     "can occur inside the material while leaving almost no visible mark",
+     "happens because the cured resin can be melted and reshaped",
+     "is prevented when designers stack layers with fibres in different orientations",
+     "makes the material stronger along the fibres than across them"
     ],
     "answer": 1,
-    "explain": "Dik yönde zayıflık, görünmeyen hasar, ultrasonik muayene ihtiyacı ve geri dönüşüm geçiyor; maliyetten söz edilmiyor."
+    "explain": "Dayanak: darbe 'may leave almost no mark on the surface while causing the internal layers to separate'. Tuzak: hasar yüzeyde değil içeride; reçine eritilemiyor."
    }
   ],
   "gloss": [
@@ -3108,16 +3108,16 @@
     "explain": "'does not create energy but shifts it in time' → enerjiyi bir zamandan diğerine taşır. Tuzak: %70–80 geri kazanılıyor, yani fazla üretmez."
    },
    {
-    "q": "Which of the following is NOT mentioned in the passage as a limitation of pumped-storage hydropower?",
+    "q": "According to the passage, engineers are studying closed-loop systems and designs that use old mines or the sea in order to ----.",
     "options": [
-     "high initial costs",
-     "the need for a large height difference between two sites",
-     "long construction times",
-     "the noise produced by the turbines",
-     "possible effects on local ecosystems"
+     "increase the share of energy recovered to well above 80 percent",
+     "connect pumped-storage plants more directly to rivers",
+     "allow plants to respond to changes in demand within seconds",
+     "overcome some of the limitations of pumped storage",
+     "replace batteries as the largest form of grid-scale storage"
     ],
     "answer": 3,
-    "explain": "Coğrafya, ilk yatırım maliyeti, uzun inşaat süresi ve ekosistem etkisi geçiyor; gürültüden söz yok."
+    "explain": "Dayanak: 'To overcome some of these problems, engineers are studying closed-loop systems...'. Tuzak: kapalı devre sistemler nehirlere bağlı değil; zaten en büyük depolama türü pompaj."
    }
   ],
   "gloss": [
@@ -3524,16 +3524,16 @@
     "explain": "'In symmetrical crystals, these displacements cancel out, so no voltage is produced.'"
    },
    {
-    "q": "Which of the following devices is NOT mentioned in the passage as making use of the piezoelectric effect?",
+    "q": "According to the passage, in a quartz watch ----.",
     "options": [
-     "sonar equipment",
-     "quartz watches",
-     "gas lighters",
-     "microwave ovens",
-     "pressure sensors in engines"
+     "a spring-loaded hammer strikes the crystal to produce a stable spark",
+     "the crystal converts sound waves into electrical signals to keep time",
+     "the vibrating crystal is used to harvest energy from footsteps",
+     "an alternating voltage makes the crystal vibrate at a steady frequency",
+     "a symmetrical crystal is used because its internal charges cancel out"
     ],
     "answer": 3,
-    "explain": "Çakmak, kuvars saat, sonar ve motor sensörleri geçiyor; mikrodalga fırın yok."
+    "explain": "Dayanak: 'an alternating voltage makes a tiny quartz crystal vibrate at a very stable frequency'. Tuzak: çekiç çakmağa, ses dalgası sonara ait; simetrik kristal voltaj üretmez."
    }
   ],
   "gloss": [
@@ -4352,16 +4352,16 @@
     "explain": "Kanıt (Almanya çalışması), nedenler, önem. Tuzak: bazı türlerin artması sadece bir yan not; ışık zararlı."
    },
    {
-    "q": "Which of the following is NOT mentioned in the passage as a possible cause of insect decline?",
+    "q": "According to the passage, the German study published in 2017 ----.",
     "options": [
-     "habitat loss",
-     "climate change",
-     "the use of pesticides",
-     "competition from invasive bird species",
-     "artificial light that disorients insects at night"
+     "showed that insect declines are the same in every region",
+     "was carried out by scientists in tropical regions over 27 years",
+     "found that several insect species in the nature reserves had become more common",
+     "reported that the mass of trapped insects had fallen by about three quarters",
+     "weighed insects collected from intensive farmland and buildings"
     ],
     "answer": 3,
-    "explain": "Habitat kaybı, pestisitler, yapay ışık ve iklim değişikliği sayılıyor. Kuşlar sadece böcekle beslenen canlılar olarak geçiyor."
+    "explain": "Dayanak: 'the total mass of insects caught had fallen by about three quarters'. Tuzak: bazı türlerin artışı diğer bölge çalışmalarına ait; tuzaklar doğa koruma alanlarında, tropikte değil."
    },
    {
     "q": "It can be inferred from the passage that conclusions about global insect decline ----.",
@@ -5856,6 +5856,1694 @@
    {
     "w": "flaw",
     "tr": "kusur"
+   }
+  ]
+ },
+ {
+  "id": "p071",
+  "title": "Bees That Dance Directions",
+  "topic": "hayvan-davranisi",
+  "level": 2,
+  "words": 191,
+  "text": "When a honeybee forager discovers a rich patch of flowers, it returns to the hive and performs a series of movements on the vertical surface of the comb. This behaviour, known as the waggle dance, was decoded in the 1940s by the Austrian zoologist Karl von Frisch, who later shared a Nobel Prize for his work.\n\nDuring the dance, the bee runs forward in a straight line while shaking its abdomen from side to side, then circles back and repeats the run. The angle of the straight run relative to vertical corresponds to the angle between the food source and the sun, as seen from the hive. The duration of the waggle phase, meanwhile, indicates distance: the longer the bee waggles, the farther away the flowers are.\n\nBecause the hive is dark, other workers follow the dancer closely and detect its movements largely through touch and vibrations. They also sample the scent of the flowers carried on its body. Remarkably, bees adjust the angle of their dance over the course of the day to compensate for the movement of the sun, which suggests that they possess an internal sense of time.",
+  "questions": [
+   {
+    "q": "According to the passage, the duration of the waggle phase ----.",
+    "options": [
+     "shows the angle between the flowers and the sun as seen from the hive",
+     "depends on the amount of flower scent carried on the dancer's body",
+     "becomes longer as the sun moves across the sky during the day",
+     "tells other bees how far away the food source is",
+     "is detected by the other workers mainly through their sense of sight"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'The duration of the waggle phase ... indicates distance'. Tuzak: açı (angle) güneşe göre yönü verir, süreyi değil."
+   },
+   {
+    "q": "It is stated in the passage that the workers following the dancer ----.",
+    "options": [
+     "watch the dance carefully because the hive is well lit",
+     "perform their own dance on the horizontal floor of the comb",
+     "cannot recognise the scent of the flowers carried by the dancer",
+     "rely largely on touch and vibrations to follow its movements",
+     "learn the location only after flying to the flowers with the dancer"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'Because the hive is dark ... largely through touch and vibrations'. Tuzak: kovan karanlık; 'well lit' metnin tersi."
+   },
+   {
+    "q": "It can be inferred from the passage that a bee dancing in the late afternoon about the same flowers ----.",
+    "options": [
+     "would use a different dance angle from the one it used in the morning",
+     "would waggle for a shorter time because the flowers are closer to the sun",
+     "would no longer need an internal sense of time to guide the workers",
+     "would perform the dance outside the hive, where the sun is visible",
+     "could not communicate distance because the sun has changed position"
+    ],
+    "answer": 0,
+    "explain": "Çıkarım: arılar gün içinde güneş hareket ettikçe dans açısını ayarlıyor, yani aynı çiçek için öğleden sonra açı farklı olur. Tuzak: mesafe (süre) değişmez."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "forager",
+    "tr": "yiyecek arayıcı (işçi arı)"
+   },
+   {
+    "w": "comb",
+    "tr": "petek"
+   },
+   {
+    "w": "decode",
+    "tr": "şifresini çözmek"
+   },
+   {
+    "w": "abdomen",
+    "tr": "karın"
+   },
+   {
+    "w": "relative to",
+    "tr": "-e göre"
+   },
+   {
+    "w": "duration",
+    "tr": "süre"
+   },
+   {
+    "w": "compensate for",
+    "tr": "telafi etmek, dengelemek"
+   },
+   {
+    "w": "vibration",
+    "tr": "titreşim"
+   }
+  ]
+ },
+ {
+  "id": "p072",
+  "title": "Crows That Make Hooks",
+  "topic": "hayvan-davranisi",
+  "level": 3,
+  "words": 189,
+  "text": "Tool use was once regarded as a defining feature of humans, but it has since been documented in a wide range of animals. Among the most sophisticated tool users are New Caledonian crows, which inhabit a group of islands in the South Pacific. These birds fashion hooks from twigs by stripping away leaves and carefully shaping the end, and they cut stepped tools from the stiff edges of pandanus leaves. Such tools are used to extract insect larvae from holes in dead wood, a food source that would otherwise be largely inaccessible.\n\nWhat distinguishes these crows is not merely that they use tools but that the design of their tools varies from one region to another. Since these differences do not appear to reflect local differences in available materials, some researchers interpret them as a form of cultural transmission, in which young birds acquire techniques by observing older ones. Supporting this view, juveniles raised in captivity without adult models do attempt to use sticks, yet their tools are considerably cruder. Thus, although a basic tendency to manipulate objects seems to be inherited, refinement appears to depend on social learning.",
+  "questions": [
+   {
+    "q": "According to the passage, New Caledonian crows use their tools mainly to ----.",
+    "options": [
+     "cut the stiff edges of pandanus leaves into pieces of food",
+     "strip the leaves from twigs in order to feed their young",
+     "defend their territories against rival groups of crows",
+     "dig holes in dead wood in which they can store food for later",
+     "obtain insect larvae hidden in holes in dead wood"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'used to extract insect larvae from holes in dead wood'. Tuzak: pandanus yaprağı aletin malzemesi, yiyecek değil."
+   },
+   {
+    "q": "The passage mentions that young crows raised in captivity without adult models ----.",
+    "options": [
+     "produce tools identical to those made by wild birds in their region",
+     "show no inherited tendency at all to manipulate objects",
+     "learn the regional tool designs by observing their human keepers",
+     "prefer stepped tools to hooks because of the materials they are given",
+     "still try to use sticks, but their tools are less refined"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'do attempt to use sticks, yet their tools are considerably cruder'. Tuzak: 'no tendency at all' metnin tersi (temel eğilim kalıtsal)."
+   },
+   {
+    "q": "The main point of the second paragraph is that ----.",
+    "options": [
+     "crows inherit the complete design of their tools genetically",
+     "regional differences in crow tools are mainly caused by the local materials available",
+     "captive crows become better tool users than wild crows",
+     "crow tool-making seems to combine an inherited tendency with social learning",
+     "tool use should still be regarded as a feature of humans alone"
+    ],
+    "answer": 3,
+    "explain": "Ana fikir son cümlede: temel eğilim kalıtsal, inceltme sosyal öğrenmeye bağlı. Tuzak: farkların malzemeden kaynaklanmadığı açıkça söyleniyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "sophisticated",
+    "tr": "gelişmiş, karmaşık"
+   },
+   {
+    "w": "inhabit",
+    "tr": "-de yaşamak"
+   },
+   {
+    "w": "fashion (v)",
+    "tr": "biçimlendirmek, yapmak"
+   },
+   {
+    "w": "extract",
+    "tr": "çıkarmak"
+   },
+   {
+    "w": "larva (pl. larvae)",
+    "tr": "larva, kurtçuk"
+   },
+   {
+    "w": "inaccessible",
+    "tr": "ulaşılamaz"
+   },
+   {
+    "w": "transmission",
+    "tr": "aktarım"
+   },
+   {
+    "w": "captivity",
+    "tr": "esaret, tutsaklık"
+   },
+   {
+    "w": "crude",
+    "tr": "kaba, işlenmemiş"
+   },
+   {
+    "w": "refinement",
+    "tr": "inceltme, iyileştirme"
+   }
+  ]
+ },
+ {
+  "id": "p073",
+  "title": "Finding the Way South",
+  "topic": "hayvan-davranisi",
+  "level": 2,
+  "words": 190,
+  "text": "Every autumn, billions of songbirds leave their breeding grounds and fly thousands of kilometres to wintering areas, often travelling alone and at night. Many young birds complete this journey without ever having made it before, which shows that at least part of the route information is inherited.\n\nTo stay on course, birds appear to use several compasses. During the day, they can orient themselves by the position of the sun, correcting for its movement across the sky. At night, many species use the pattern of stars around the celestial pole; experiments in planetariums have shown that birds raised under an artificial sky learn to orient by whichever point the stars rotate around. In addition, birds can sense the Earth's magnetic field, even when the sky is cloudy.\n\nHow the magnetic sense works is still debated. One leading hypothesis proposes that light-sensitive molecules in the eye undergo chemical reactions influenced by the magnetic field, so that birds may literally see magnetic lines. Interestingly, experienced adults that are moved to a new location by researchers can correct their route, whereas young birds usually continue in the inherited direction and miss their goal.",
+  "questions": [
+   {
+    "q": "According to the passage, experiments in planetariums showed that birds ----.",
+    "options": [
+     "learn to orient by the point around which the stars rotate",
+     "inherit a fixed map of the stars before they hatch",
+     "are unable to orient at night under an artificial sky",
+     "use the position of the sun even when they fly at night",
+     "sense the magnetic lines of the Earth more clearly under an artificial sky"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'learn to orient by whichever point the stars rotate around'. Tuzak: yıldız noktası öğreniliyor; 'inherit a fixed map' metinle çelişir."
+   },
+   {
+    "q": "It is stated in the passage that the magnetic sense ----.",
+    "options": [
+     "has been fully explained by a chemical reaction in the eye",
+     "is used only by adult birds that have made the journey before",
+     "works only during the day, when the sun can be seen",
+     "completely replaces the star compass in young birds",
+     "allows birds to stay oriented even when the sky is cloudy"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'birds can sense the Earth's magnetic field, even when the sky is cloudy'. Tuzak: mekanizma 'still debated', yani tam açıklanmış değil."
+   },
+   {
+    "q": "It can be inferred from the passage that, unlike young birds, experienced adults ----.",
+    "options": [
+     "do not need to sense the Earth's magnetic field at any point during migration",
+     "always travel in large groups rather than alone at night",
+     "follow only the inherited direction after being moved",
+     "are unable to use the sun as a compass during the day",
+     "have learned information that helps them work out where they are"
+    ],
+    "answer": 4,
+    "explain": "Çıkarım: yerinden oynatılan yetişkinler rotayı düzeltebiliyor, gençler düzeltemiyor; demek ki yetişkinlerde deneyimle öğrenilmiş konum bilgisi var. Tuzak: 'inherited direction' gençlere ait."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "breeding ground",
+    "tr": "üreme alanı"
+   },
+   {
+    "w": "inherited",
+    "tr": "kalıtsal"
+   },
+   {
+    "w": "orient",
+    "tr": "yön bulmak"
+   },
+   {
+    "w": "celestial pole",
+    "tr": "gök kutbu"
+   },
+   {
+    "w": "rotate",
+    "tr": "dönmek"
+   },
+   {
+    "w": "hypothesis",
+    "tr": "hipotez"
+   },
+   {
+    "w": "undergo",
+    "tr": "geçirmek, maruz kalmak"
+   },
+   {
+    "w": "literally",
+    "tr": "kelimenin tam anlamıyla"
+   }
+  ]
+ },
+ {
+  "id": "p074",
+  "title": "Roads Made of Scent",
+  "topic": "hayvan-davranisi",
+  "level": 1,
+  "words": 191,
+  "text": "Ants are tiny and nearly blind, yet a colony can find food quickly and organise thousands of workers without any leader. One of the main tools they use is chemical communication.\n\nWhen a worker ant finds food, it returns to the nest and leaves a trail of a chemical called a pheromone on the ground. Other ants smell the trail and follow it to the food. When they come back, they add more pheromone, so the trail becomes stronger. If the food runs out, the ants stop marking the path, and the scent slowly disappears.\n\nThis simple system has a clever result. Suppose there are two paths to the same food, one short and one long. Ants using the short path finish each trip faster, so they add pheromone to it more often. Soon the short path smells stronger, and most ants choose it. In this way, the colony finds the best route, although no single ant compares the two paths.\n\nComputer scientists have copied this idea. Programs based on the behaviour of ant colonies are now used to plan routes for delivery trucks and to send data through computer networks.",
+  "questions": [
+   {
+    "q": "According to the passage, a pheromone trail slowly disappears when ----.",
+    "options": [
+     "too many ants follow it to the food at the same time",
+     "the colony chooses a longer path to the same food",
+     "ants stop marking it because the food has run out",
+     "a leader ant decides that the route is too long",
+     "ants add more of the chemical on their way back"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'If the food runs out, the ants stop marking the path, and the scent slowly disappears'. Tuzak: kolonide lider yok."
+   },
+   {
+    "q": "The passage mentions that the short path becomes stronger because the ants using it ----.",
+    "options": [
+     "produce a different chemical from the ants on the long path",
+     "can see the food from a greater distance",
+     "compare the two paths carefully before they choose one",
+     "finish their trips faster and so mark it more often",
+     "leave the nest earlier than the other workers do"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'finish each trip faster, so they add pheromone to it more often'. Tuzak: 'no single ant compares the two paths'."
+   },
+   {
+    "q": "The passage is mainly about ----.",
+    "options": [
+     "why ants are nearly blind and cannot see their food",
+     "how computer programs plan routes for delivery trucks",
+     "the role of a leader in organising an ant colony",
+     "how a simple chemical signal helps ants find good routes",
+     "the different kinds of food that worker ants collect"
+    ],
+    "answer": 3,
+    "explain": "Metnin çoğu feromon izinin en kısa yolu nasıl bulduğunu anlatıyor. Tuzak: bilgisayar programları sadece son paragrafta geçen bir yan bilgi."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "colony",
+    "tr": "koloni"
+   },
+   {
+    "w": "trail",
+    "tr": "iz, patika"
+   },
+   {
+    "w": "pheromone",
+    "tr": "feromon (koku sinyali)"
+   },
+   {
+    "w": "run out",
+    "tr": "tükenmek"
+   },
+   {
+    "w": "mark",
+    "tr": "işaretlemek"
+   },
+   {
+    "w": "route",
+    "tr": "güzergâh, rota"
+   },
+   {
+    "w": "delivery",
+    "tr": "teslimat"
+   }
+  ]
+ },
+ {
+  "id": "p075",
+  "title": "Nets Made of Bubbles",
+  "topic": "hayvan-davranisi",
+  "level": 3,
+  "words": 190,
+  "text": "Humpback whales, despite their enormous size, feed largely on small prey such as krill and schooling fish, and some populations have developed a striking method of concentrating them. In bubble-net feeding, one or more whales dive beneath a school and swim upwards in a spiral while releasing air from their blowholes. The rising bubbles form a cylindrical curtain that the fish are reluctant to cross, so the school is compressed into a tight mass near the surface. The whales then lunge upwards through the centre with their mouths wide open, engulfing a large portion of the prey in a single gulp.\n\nIn south-east Alaska, groups of whales have been observed coordinating this behaviour, with particular individuals apparently taking specific roles: one blows the bubbles, while others produce loud calls that may help to drive the fish together. Such groups sometimes remain stable over several years. Elsewhere, humpbacks employ different techniques, including slapping the water with their tails before releasing bubbles, a variant that spread through one population within a few decades. Its rapid spread, far too fast to be explained by genetic change, is regarded as evidence of social learning.",
+  "questions": [
+   {
+    "q": "According to the passage, the curtain of bubbles ----.",
+    "options": [
+     "is released from the whales' mouths as they lunge upwards through the school",
+     "attracts krill from deep water towards the surface",
+     "keeps the fish together because they avoid swimming through it",
+     "is produced when whales slap the water with their tails",
+     "breaks the school of fish into several smaller groups"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'a cylindrical curtain that the fish are reluctant to cross, so the school is compressed'. Tuzak: hava ağızdan değil 'blowholes'tan çıkıyor; sürü bölünmüyor, sıkışıyor."
+   },
+   {
+    "q": "It is stated in the passage that, in south-east Alaska, ----.",
+    "options": [
+     "some whales seem to perform particular roles within a feeding group",
+     "humpbacks hunt alone because their groups are rarely stable",
+     "the tail-slapping technique first appeared through genetic change",
+     "loud calls are used mainly to warn other whales of approaching predators",
+     "whale groups change their members every few days"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'particular individuals apparently taking specific roles'. Tuzak: gruplar 'stable over several years'; sesler balığı toplamak için, uyarı için değil."
+   },
+   {
+    "q": "The author mentions the rapid spread of the tail-slapping variant in order to ----.",
+    "options": [
+     "show that bubble-net feeding is found only in Alaska",
+     "explain why humpback whales feed mainly on small prey",
+     "support the view that humpbacks learn hunting methods from each other",
+     "suggest that genetic change in whales is unusually fast",
+     "argue that tail slapping is a more efficient hunting method than bubble nets"
+    ],
+    "answer": 2,
+    "explain": "Yazarın amacı: yayılma genetikle açıklanamayacak kadar hızlı, yani sosyal öğrenmeye kanıt. Tuzak: 'genetic change' metinde reddediliyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "prey",
+    "tr": "av"
+   },
+   {
+    "w": "school (of fish)",
+    "tr": "balık sürüsü"
+   },
+   {
+    "w": "blowhole",
+    "tr": "püskürtme deliği"
+   },
+   {
+    "w": "reluctant",
+    "tr": "isteksiz"
+   },
+   {
+    "w": "compress",
+    "tr": "sıkıştırmak"
+   },
+   {
+    "w": "lunge",
+    "tr": "atılmak, hamle yapmak"
+   },
+   {
+    "w": "engulf",
+    "tr": "yutmak, içine almak"
+   },
+   {
+    "w": "coordinate",
+    "tr": "eşgüdümlemek"
+   },
+   {
+    "w": "variant",
+    "tr": "çeşit, varyant"
+   }
+  ]
+ },
+ {
+  "id": "p076",
+  "title": "Learning to Sing",
+  "topic": "hayvan-davranisi",
+  "level": 2,
+  "words": 188,
+  "text": "Many songbirds are not born knowing their songs. In species such as the zebra finch, a young male must learn to sing by listening to an adult, usually his father, in a process that resembles the way human infants learn to speak.\n\nLearning takes place in two stages. First, during a sensitive period early in life, the young bird listens and forms a memory of the adult song, even though he does not yet sing it himself. Later, he begins to produce quiet, unstructured sounds, which are often compared to the babbling of babies. By practising and comparing his own output with the stored memory, he gradually improves until his song closely matches the model. If a young bird is raised in isolation, he still sings, but his song is simple and abnormal.\n\nHearing is essential throughout this process. Birds that are deafened after memorising a song but before practising it fail to develop a normal song, because they cannot compare what they produce with what they remember. For these reasons, songbirds have become important models for studying how the brain learns complex sequences of sounds, including speech.",
+  "questions": [
+   {
+    "q": "According to the passage, during the sensitive period, a young zebra finch ----.",
+    "options": [
+     "forms a memory of the adult song without singing it yet",
+     "produces quiet sounds similar to the babbling of babies",
+     "compares his own song carefully with the song that his father sings",
+     "teaches the song he has learned to other young males",
+     "gradually loses his ability to hear adult songs"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'forms a memory of the adult song, even though he does not yet sing it'. Tuzak: babıldama (babbling) sonraki aşama."
+   },
+   {
+    "q": "The passage mentions that birds deafened before they start practising ----.",
+    "options": [
+     "never form a memory of an adult bird's song",
+     "cannot check their own sounds against the song they remember",
+     "develop a normal song, although more slowly than birds that can hear",
+     "learn to sing by watching the movements of an adult",
+     "produce a song that closely matches the adult model"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'they cannot compare what they produce with what they remember'. Tuzak: şarkıyı zaten ezberlemişler; normal şarkı gelişmiyor."
+   },
+   {
+    "q": "Which of the following best expresses the main idea of the passage?",
+    "options": [
+     "Songbirds are born with complete songs that they cannot change.",
+     "Song learning in birds depends on memory, practice and hearing.",
+     "Young birds raised alone sing more complex songs than other birds.",
+     "Zebra finches usually learn their songs from their mothers.",
+     "Hearing matters only after a bird has fully learned its song."
+    ],
+    "answer": 1,
+    "explain": "Ana fikir: ezberleme + pratik + işitme ile öğrenme, insanın konuşmayı öğrenmesine benziyor. Tuzak: işitme 'throughout this process' gerekli."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "resemble",
+    "tr": "benzemek"
+   },
+   {
+    "w": "infant",
+    "tr": "bebek"
+   },
+   {
+    "w": "sensitive period",
+    "tr": "hassas dönem"
+   },
+   {
+    "w": "unstructured",
+    "tr": "düzensiz, yapısız"
+   },
+   {
+    "w": "babbling",
+    "tr": "bebek agulaması"
+   },
+   {
+    "w": "isolation",
+    "tr": "yalnızlık, yalıtım"
+   },
+   {
+    "w": "deafen",
+    "tr": "sağırlaştırmak"
+   },
+   {
+    "w": "sequence",
+    "tr": "dizi, sıra"
+   }
+  ]
+ },
+ {
+  "id": "p077",
+  "title": "Words for Danger",
+  "topic": "hayvan-davranisi",
+  "level": 1,
+  "words": 181,
+  "text": "Vervet monkeys live in groups in the grasslands and forests of eastern and southern Africa. They are hunted by several kinds of predators, and they have developed different alarm calls for different dangers.\n\nWhen a monkey sees a leopard, it gives a loud barking call. The other monkeys then run up into the trees, where the leopard cannot easily follow them. When an eagle appears, a different, coughing call is given, and the monkeys look up and hide in bushes. A third call warns of snakes; on hearing it, the monkeys stand up on their back legs and look carefully at the ground around them.\n\nIn the 1970s, researchers tested these calls by hiding a loudspeaker and playing recorded calls when no predator was present. The monkeys still reacted in the correct way for each call. This showed that the sound alone, and not the sight of the predator, carried the information.\n\nYoung vervets are not perfect at first. They sometimes give eagle calls for harmless birds, such as pigeons. With experience, however, they learn to call only for real threats.",
+  "questions": [
+   {
+    "q": "According to the passage, when vervet monkeys hear the snake call, they ----.",
+    "options": [
+     "run up into the trees to escape quickly",
+     "stand up and look carefully at the ground",
+     "look up at the sky and hide in bushes",
+     "give a loud barking call to the rest of the group",
+     "move to open grassland, where snakes are easier to see"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'stand up on their back legs and look carefully at the ground'. Tuzak: ağaca kaçmak leoparda, çalıya saklanmak kartala verilen tepki."
+   },
+   {
+    "q": "It is stated in the passage that the loudspeaker experiments ----.",
+    "options": [
+     "showed that monkeys must see a predator before they react",
+     "used the cries of eagles rather than the calls of monkeys",
+     "made the monkeys react in the same way to every call",
+     "were carried out when no predator was present",
+     "were designed to teach young monkeys the correct calls"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'playing recorded calls when no predator was present'. Tuzak: sonuç tersini gösterdi: bilgiyi ses taşıyor, görüntü değil."
+   },
+   {
+    "q": "It can be inferred from the passage that young vervets ----.",
+    "options": [
+     "are not able to produce any alarm calls at all",
+     "never react to the alarm calls given by adults",
+     "give eagle calls only when they see real eagles",
+     "learn with experience which animals are dangerous",
+     "are hunted mainly by pigeons and other small birds"
+    ],
+    "answer": 3,
+    "explain": "Çıkarım: gençler güvercine de kartal alarmı veriyor, deneyimle düzeltiyor. Tuzak: güvercin 'harmless', avcı değil."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "predator",
+    "tr": "yırtıcı, avcı hayvan"
+   },
+   {
+    "w": "alarm call",
+    "tr": "alarm (uyarı) çağrısı"
+   },
+   {
+    "w": "leopard",
+    "tr": "leopar"
+   },
+   {
+    "w": "eagle",
+    "tr": "kartal"
+   },
+   {
+    "w": "loudspeaker",
+    "tr": "hoparlör"
+   },
+   {
+    "w": "record",
+    "tr": "kaydetmek"
+   },
+   {
+    "w": "harmless",
+    "tr": "zararsız"
+   },
+   {
+    "w": "threat",
+    "tr": "tehdit"
+   }
+  ]
+ },
+ {
+  "id": "p078",
+  "title": "Plants That Feed the Soil",
+  "topic": "tarim-gida",
+  "level": 1,
+  "words": 186,
+  "text": "Plants need nitrogen to grow, and farmers often add it to their fields as chemical fertiliser. Producing this fertiliser, however, uses a lot of energy, and when too much is applied, the extra nitrogen can wash into rivers and harm the life in them. For this reason, many farmers also use an old and natural method: they grow legumes.\n\nLegumes are plants such as beans, peas, lentils and clover. On their roots, they have small swellings called nodules. Inside these nodules live bacteria that can take nitrogen gas from the air and change it into a form that plants can use. The plant gives the bacteria sugar, and in return the bacteria supply nitrogen.\n\nWhen a legume crop is harvested, its roots and other leftover parts stay in the soil and slowly break down. The nitrogen they contain then becomes available to the next crop. This is one reason why farmers rotate crops, for example by growing wheat in a field one year and beans the next. Crop rotation also helps to reduce pests and diseases, because many of them attack only one type of plant.",
+  "questions": [
+   {
+    "q": "According to the passage, the bacteria in root nodules ----.",
+    "options": [
+     "change nitrogen gas from the air into a usable form",
+     "give sugar to the plant in return for nitrogen",
+     "wash the extra nitrogen into nearby rivers",
+     "attack only one type of plant, such as wheat",
+     "are added to fields as a kind of chemical fertiliser"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'bacteria that can take nitrogen gas from the air and change it into a form that plants can use'. Tuzak: şekeri bitki verir, bakteri değil (rol değişimi)."
+   },
+   {
+    "q": "The passage mentions that crop rotation reduces pests and diseases because ----.",
+    "options": [
+     "legumes produce chemicals that kill most insects",
+     "farmers use more fertiliser in rotated fields",
+     "the roots of beans stay in the soil for many years",
+     "many of them attack only a single type of plant",
+     "wheat grows faster than legumes in the second year"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: son cümle 'because many of them attack only one type of plant'. Tuzak: baklagillerin böcek öldürdüğü metinde yok."
+   },
+   {
+    "q": "It can be inferred from the passage that a wheat crop grown after beans ----.",
+    "options": [
+     "will be attacked by the same pests as the beans",
+     "cannot use the nitrogen left by the bean roots",
+     "will have bacteria in nodules on its own roots",
+     "should be harvested early to protect the rivers",
+     "may need less chemical fertiliser than usual"
+    ],
+    "answer": 4,
+    "explain": "Çıkarım: fasulye köklerinden kalan azot sonraki ürüne geçiyor, demek ki buğdaya daha az gübre gerekebilir. Tuzak: nodül baklagillere özgü."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "fertiliser",
+    "tr": "gübre"
+   },
+   {
+    "w": "apply",
+    "tr": "uygulamak"
+   },
+   {
+    "w": "legume",
+    "tr": "baklagil"
+   },
+   {
+    "w": "swelling",
+    "tr": "şişlik"
+   },
+   {
+    "w": "nodule",
+    "tr": "nodül, yumru"
+   },
+   {
+    "w": "in return",
+    "tr": "karşılığında"
+   },
+   {
+    "w": "harvest",
+    "tr": "hasat etmek"
+   },
+   {
+    "w": "rotate crops",
+    "tr": "ekim nöbeti yapmak"
+   },
+   {
+    "w": "pest",
+    "tr": "zararlı (böcek vb.)"
+   }
+  ]
+ },
+ {
+  "id": "p079",
+  "title": "Water Drop by Drop",
+  "topic": "tarim-gida",
+  "level": 2,
+  "words": 200,
+  "text": "Agriculture accounts for roughly 70 percent of the fresh water withdrawn by humans, and in many dry regions the supply is already under severe pressure. Traditional flood irrigation, in which water is allowed to flow across the surface of a field, is cheap and simple, but much of the water evaporates or drains below the reach of the roots before plants can use it.\n\nDrip irrigation offers an alternative. Water is delivered through a network of plastic pipes and released slowly, drop by drop, from small openings called emitters placed close to each plant. Because the water goes directly to the root zone, losses are greatly reduced, and farmers can often grow the same crop with considerably less water. Fertiliser can also be dissolved in the water and supplied in precise amounts, a practice known as fertigation.\n\nThe method has drawbacks, however. Installation is expensive, which puts it out of reach for many small farmers unless subsidies are available. Emitters can become blocked by sediment or mineral deposits, so the water often needs filtering. Moreover, studies have shown that saving water on each field does not always reduce total use in a region, since farmers may expand the irrigated area.",
+  "questions": [
+   {
+    "q": "According to the passage, flood irrigation wastes water because ----.",
+    "options": [
+     "it requires an expensive network of plastic pipes",
+     "much of it evaporates or drains too deep before roots can use it",
+     "its emitters are often blocked by mineral deposits",
+     "the fertiliser dissolved in it must first be filtered to remove sediment",
+     "it is used only in regions with plenty of rainfall"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'much of the water evaporates or drains below the reach of the roots'. Tuzak: boru, damlatıcı ve filtre damla sulamaya ait."
+   },
+   {
+    "q": "It is stated in the passage that fertigation ----.",
+    "options": [
+     "is a method of removing sediment from blocked emitters",
+     "allows farmers to expand the area they irrigate",
+     "is the traditional way of watering fields by flooding",
+     "reduces the cost of installing a drip system",
+     "means supplying fertiliser dissolved in irrigation water"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'Fertiliser can also be dissolved in the water ... known as fertigation'. Tuzak: alanı genişletmek su kullanımıyla ilgili, fertigasyonla değil."
+   },
+   {
+    "q": "The last sentence of the passage suggests that ----.",
+    "options": [
+     "drip irrigation uses more water per field than traditional flood irrigation",
+     "farmers in dry regions should return to flood irrigation",
+     "subsidies always lead to a reduction in total water use",
+     "more efficient irrigation may not ease regional water shortages",
+     "small farmers are responsible for most of the water lost"
+    ],
+    "answer": 3,
+    "explain": "Çıkarım: tarla başına tasarruf, alan genişleyince bölgesel kullanımı azaltmayabilir. Tuzak: 'always' gibi kesin ifadeler metinde yok."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "withdraw",
+    "tr": "çekmek (su)"
+   },
+   {
+    "w": "irrigation",
+    "tr": "sulama"
+   },
+   {
+    "w": "evaporate",
+    "tr": "buharlaşmak"
+   },
+   {
+    "w": "drain",
+    "tr": "süzülmek, akıp gitmek"
+   },
+   {
+    "w": "emitter",
+    "tr": "damlatıcı"
+   },
+   {
+    "w": "dissolve",
+    "tr": "çözmek, eritmek"
+   },
+   {
+    "w": "drawback",
+    "tr": "dezavantaj"
+   },
+   {
+    "w": "subsidy",
+    "tr": "sübvansiyon, devlet desteği"
+   },
+   {
+    "w": "sediment",
+    "tr": "tortu"
+   },
+   {
+    "w": "expand",
+    "tr": "genişletmek"
+   }
+  ]
+ },
+ {
+  "id": "p080",
+  "title": "Why Bread Goes Stale",
+  "topic": "tarim-gida",
+  "level": 3,
+  "words": 186,
+  "text": "It is commonly assumed that bread becomes stale because it dries out, yet bread sealed in an airtight bag still hardens within a few days, and stale bread may contain nearly as much water as fresh bread. The principal cause, in fact, lies in changes to starch, the main component of flour.\n\nIn raw flour, starch exists as tightly packed granules with a partly crystalline structure. During baking, these granules absorb water and swell, and the long starch molecules lose their ordered arrangement; this process, known as gelatinisation, gives fresh bread its soft texture. Once the loaf cools, however, the molecules gradually begin to realign and form crystalline regions again, a process termed retrogradation. As they do so, water is expelled from the starch and moves into other parts of the crumb, which consequently becomes firm and crumbly.\n\nRetrogradation proceeds fastest at temperatures just above freezing, which explains why bread kept in a refrigerator tends to stale more rapidly than bread kept at room temperature. Freezing, by contrast, slows the process almost to a halt. Gentle reheating can temporarily reverse staling, though the effect is short-lived.",
+  "questions": [
+   {
+    "q": "According to the passage, gelatinisation ----.",
+    "options": [
+     "occurs during baking as starch granules take up water and swell",
+     "causes water to be expelled from the starch after cooling",
+     "is the main reason why bread dries out in an airtight bag",
+     "makes the starch molecules form crystalline regions again",
+     "takes place most quickly at temperatures just above the freezing point"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'During baking, these granules absorb water and swell ... known as gelatinisation'. Tuzak: suyun dışarı atılması ve yeniden kristalleşme 'retrogradation'a ait."
+   },
+   {
+    "q": "It is stated in the passage that, during retrogradation, ----.",
+    "options": [
+     "starch granules absorb water and lose their ordered structure",
+     "water leaves the starch and moves into other parts of the crumb",
+     "bread loses most of its water to the surrounding air",
+     "starch is converted into a different component of flour",
+     "the crumb of the loaf becomes softer as it cools"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'water is expelled from the starch and moves into other parts of the crumb'. Tuzak: su havaya kaçmıyor; bayat ekmekte su neredeyse aynı."
+   },
+   {
+    "q": "It can be inferred from the passage that a person who wants to keep bread fresh for several weeks should ----.",
+    "options": [
+     "keep it in a refrigerator, just above freezing point",
+     "seal it in an airtight bag and keep it at room temperature",
+     "reheat it every day to reverse the staling process",
+     "store it in a freezer rather than in a refrigerator",
+     "add more water to the dough before it is baked"
+    ],
+    "answer": 3,
+    "explain": "Çıkarım: dondurma süreci neredeyse durduruyor, buzdolabı ise hızlandırıyor. Tuzak: yeniden ısıtmanın etkisi 'short-lived'."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "stale",
+    "tr": "bayat"
+   },
+   {
+    "w": "airtight",
+    "tr": "hava geçirmez"
+   },
+   {
+    "w": "starch",
+    "tr": "nişasta"
+   },
+   {
+    "w": "granule",
+    "tr": "tanecik"
+   },
+   {
+    "w": "crystalline",
+    "tr": "kristal yapılı"
+   },
+   {
+    "w": "swell",
+    "tr": "şişmek"
+   },
+   {
+    "w": "realign",
+    "tr": "yeniden dizilmek"
+   },
+   {
+    "w": "expel",
+    "tr": "dışarı atmak"
+   },
+   {
+    "w": "crumb",
+    "tr": "ekmek içi"
+   },
+   {
+    "w": "reverse",
+    "tr": "tersine çevirmek"
+   }
+  ]
+ },
+ {
+  "id": "p081",
+  "title": "Enemies of the Enemy",
+  "topic": "tarim-gida",
+  "level": 2,
+  "words": 195,
+  "text": "Chemical pesticides have helped to raise crop yields, but their heavy use has brought problems. Many pests have become resistant, and the chemicals can kill beneficial insects, such as pollinators and the natural enemies of the pests themselves. One response to these problems is biological control, the use of living organisms to suppress pest populations.\n\nA well-known early example comes from California in the 1880s, when an insect called the cottony cushion scale threatened to destroy the state's citrus industry. A ladybird beetle was brought from Australia, where the scale had originated, and within a few years the pest was largely under control. Today, greenhouse growers routinely release tiny parasitic wasps, which lay their eggs inside whiteflies; the developing wasp larvae kill their hosts.\n\nBiological control is not free of risk, however. Introduced species have sometimes attacked native organisms instead of the intended pest. The cane toad, released in Australia in the 1930s to control beetles in sugar cane, failed to do so and became a serious pest itself. For this reason, candidate species are now tested carefully, often for years, to make sure that they feed only on their target before they are released.",
+  "questions": [
+   {
+    "q": "According to the passage, the ladybird beetle brought to California ----.",
+    "options": [
+     "attacked native organisms instead of the cottony cushion scale",
+     "laid its eggs inside whiteflies in citrus greenhouses",
+     "was tested for several years before it was released",
+     "was resistant to the chemical pesticides used on citrus",
+     "came from the same region as the scale insect it controlled"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'brought from Australia, where the scale had originated'. Tuzak: yıllarca test etmek bugünkü uygulama, 1880'lerdeki değil."
+   },
+   {
+    "q": "The passage mentions that the parasitic wasps used in greenhouses ----.",
+    "options": [
+     "feed on the plants that are grown in greenhouses",
+     "were first brought from Australia in the 1880s",
+     "kill whiteflies by means of larvae developing inside them",
+     "pollinate the crops while they control the pests",
+     "are often killed by the whiteflies that they attack"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'lay their eggs inside whiteflies; the developing wasp larvae kill their hosts'. Tuzak: Avustralya'dan getirilen uğur böceği."
+   },
+   {
+    "q": "The author mentions the cane toad in order to ----.",
+    "options": [
+     "show how beetles in sugar cane were finally controlled",
+     "explain why chemical pesticides have become less effective",
+     "give an example of a successful introduction in Australia",
+     "argue that biological control should be abandoned entirely",
+     "illustrate a risk that biological control can involve"
+    ],
+    "answer": 4,
+    "explain": "Yazarın amacı: 'not free of risk' iddiasına örnek. Kara kurbağası işe yaramadı, kendisi zararlı oldu. Tuzak: yazar yöntemi bırakmayı değil, dikkatli test etmeyi öneriyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "pesticide",
+    "tr": "böcek ilacı"
+   },
+   {
+    "w": "resistant",
+    "tr": "dirençli"
+   },
+   {
+    "w": "beneficial",
+    "tr": "yararlı"
+   },
+   {
+    "w": "pollinator",
+    "tr": "tozlayıcı"
+   },
+   {
+    "w": "suppress",
+    "tr": "bastırmak"
+   },
+   {
+    "w": "originate",
+    "tr": "kaynaklanmak, ortaya çıkmak"
+   },
+   {
+    "w": "parasitic",
+    "tr": "asalak"
+   },
+   {
+    "w": "host",
+    "tr": "konak"
+   },
+   {
+    "w": "native",
+    "tr": "yerli"
+   }
+  ]
+ },
+ {
+  "id": "p082",
+  "title": "The Daily Sea Breeze",
+  "topic": "meteoroloji",
+  "level": 2,
+  "words": 192,
+  "text": "People who live on coasts are familiar with a cool wind that often blows from the sea on sunny afternoons. This sea breeze results from the fact that land and water heat up at different rates.\n\nWater has a high heat capacity, which means that it must absorb a large amount of energy to raise its temperature. In addition, sunlight penetrates some distance into the sea, and waves and currents mix the warmed surface water with cooler water below. Land, by contrast, heats quickly because the energy is concentrated in a thin surface layer. As a result, by late morning the air above the land becomes warmer than the air above the sea. The warm air expands and rises, lowering the pressure near the ground, and cooler, denser air from the sea flows in to replace it.\n\nAt night, the pattern is reversed. The land loses heat more quickly than the water, so the air over the sea becomes relatively warm, and a weaker land breeze blows offshore. Sea breezes can bring welcome relief during hot weather, and where the incoming air meets rising air inland, they can also trigger afternoon thunderstorms.",
+  "questions": [
+   {
+    "q": "According to the passage, land heats up more quickly than the sea because ----.",
+    "options": [
+     "it has a higher heat capacity than water does",
+     "sunlight penetrates more deeply into soil than into water",
+     "waves and currents mix warm air with the cooler air above",
+     "the energy it absorbs stays in a thin surface layer",
+     "the air above it is cooler and denser in the morning"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'Land ... heats quickly because the energy is concentrated in a thin surface layer'. Tuzak: yüksek ısı kapasitesi suya ait."
+   },
+   {
+    "q": "It is stated in the passage that the land breeze ----.",
+    "options": [
+     "is usually stronger than the afternoon sea breeze",
+     "develops when the land becomes warmer than the sea",
+     "brings cool air from the sea in the afternoon",
+     "is the main cause of thunderstorms over the sea",
+     "blows from the land towards the sea at night"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'At night ... a weaker land breeze blows offshore'. Tuzak: 'weaker' yerine 'stronger' (anlam çarpıtma)."
+   },
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "why thunderstorms are more common inland than on coasts",
+     "how the uneven heating of land and sea produces coastal winds",
+     "the high heat capacity of water and its practical uses",
+     "how ocean currents mix warm and cool water",
+     "the effects of hot weather on people living on coasts"
+    ],
+    "answer": 1,
+    "explain": "Ana fikir: kara ve deniz farklı hızda ısındığı için gündüz deniz, gece kara meltemi oluşuyor. Tuzak: fırtına ve akıntılar ayrıntı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "breeze",
+    "tr": "meltem, esinti"
+   },
+   {
+    "w": "heat capacity",
+    "tr": "ısı kapasitesi"
+   },
+   {
+    "w": "penetrate",
+    "tr": "içine işlemek"
+   },
+   {
+    "w": "current",
+    "tr": "akıntı"
+   },
+   {
+    "w": "concentrate",
+    "tr": "yoğunlaşmak, toplamak"
+   },
+   {
+    "w": "dense",
+    "tr": "yoğun"
+   },
+   {
+    "w": "offshore",
+    "tr": "karadan denize doğru"
+   },
+   {
+    "w": "relief",
+    "tr": "rahatlama"
+   },
+   {
+    "w": "trigger",
+    "tr": "tetiklemek"
+   }
+  ]
+ },
+ {
+  "id": "p083",
+  "title": "Ice from a Summer Sky",
+  "topic": "meteoroloji",
+  "level": 3,
+  "words": 201,
+  "text": "Hail, paradoxically, is most common in late spring and summer, when surface temperatures are high. This is because hailstones form only within cumulonimbus clouds containing powerful updrafts, and such updrafts are fuelled by warm, moist air rising from a heated surface.\n\nA hailstone begins as a small embryo, often a frozen raindrop or a pellet of soft ice, carried upwards into a region of the cloud where the temperature is well below freezing. There, it collides with supercooled water droplets, which remain liquid despite the low temperature but freeze on contact with a solid surface. Where droplets are sparse and freeze instantly, they trap tiny air bubbles and produce cloudy ice; where they are abundant, the water spreads over the stone before freezing, forming clear ice. The alternating layers visible when a hailstone is cut open therefore record the varying conditions it has passed through, rather than, as was once believed, a corresponding number of trips up and down the cloud.\n\nA stone continues to grow for as long as the updraft can support its weight. Updrafts exceeding 160 kilometres per hour are required to hold stones the size of a tennis ball, which can severely damage crops, vehicles and roofs.",
+  "questions": [
+   {
+    "q": "According to the passage, supercooled water droplets ----.",
+    "options": [
+     "form the frozen embryo at the centre of every hailstone",
+     "are carried upwards only by updrafts faster than 160 km per hour",
+     "stay liquid below freezing but freeze when they touch a solid",
+     "trap the air bubbles that make a hailstone transparent",
+     "are most common near a heated surface during summer"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'remain liquid despite the low temperature but freeze on contact with a solid surface'. Tuzak: hava kabarcığı buzu bulanık yapar, şeffaf değil."
+   },
+   {
+    "q": "The passage mentions that clear ice forms when ----.",
+    "options": [
+     "sparse droplets freeze immediately on contact with the stone",
+     "tiny air bubbles are trapped within the outer layers",
+     "the hailstone falls below the freezing level of the cloud",
+     "the updraft becomes too weak to support the stone",
+     "plentiful droplets spread over the stone before they freeze"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'where they are abundant, the water spreads over the stone before freezing, forming clear ice'. Tuzak: seyrek damlacık + anlık donma = bulanık buz."
+   },
+   {
+    "q": "It can be inferred from the passage that the number of layers in a hailstone ----.",
+    "options": [
+     "does not reliably show how many times it rose and fell",
+     "depends mainly on the surface temperature below the cloud",
+     "is always equal to the number of trips it made in the cloud",
+     "determines how strong the updraft supporting it must be",
+     "is greater in clear ice than in cloudy ice"
+    ],
+    "answer": 0,
+    "explain": "Çıkarım: katmanlar değişen koşulları kaydediyor, 'as was once believed' sayıda iniş-çıkışı değil. Tuzak: eski görüş 'always equal' olarak sunulmuş."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "paradoxically",
+    "tr": "paradoks olarak, çelişkili biçimde"
+   },
+   {
+    "w": "updraft",
+    "tr": "yukarı hava akımı"
+   },
+   {
+    "w": "embryo",
+    "tr": "çekirdek, başlangıç"
+   },
+   {
+    "w": "pellet",
+    "tr": "küçük top, tane"
+   },
+   {
+    "w": "supercooled",
+    "tr": "aşırı soğumuş"
+   },
+   {
+    "w": "sparse",
+    "tr": "seyrek"
+   },
+   {
+    "w": "abundant",
+    "tr": "bol"
+   },
+   {
+    "w": "alternating",
+    "tr": "ardışık, değişen"
+   },
+   {
+    "w": "exceed",
+    "tr": "aşmak"
+   }
+  ]
+ },
+ {
+  "id": "p084",
+  "title": "Rivers of Wind",
+  "topic": "meteoroloji",
+  "level": 3,
+  "words": 203,
+  "text": "Several kilometres above the Earth's surface, narrow bands of strong wind flow from west to east around the globe. These jet streams, which can reach speeds of more than 300 kilometres per hour, form along boundaries where air masses of very different temperatures meet. The polar front jet, which separates cold polar air from warmer air to the south, is the most influential for weather in the middle latitudes.\n\nThe jet stream rarely flows in a straight line. Instead, it meanders in large waves, and the low- and high-pressure systems that bring changeable weather to Europe and North America tend to develop and travel along its path. Airlines also take it into account: eastbound transatlantic flights are often considerably shorter than westbound ones because aircraft can ride the jet.\n\nOccasionally, the waves become greatly amplified and almost stationary, a situation described as blocking. Weather patterns then persist over the same region for days or weeks, potentially producing prolonged heatwaves, droughts or floods. Some researchers have argued that rapid warming of the Arctic, by reducing the temperature contrast that drives the jet, may make such patterns more frequent; others contend that the evidence remains inconclusive, partly because natural variability in the jet is large.",
+  "questions": [
+   {
+    "q": "According to the passage, jet streams form ----.",
+    "options": [
+     "only above the Arctic, where warming is most rapid",
+     "when aircraft fly eastwards across the Atlantic",
+     "where air masses with very different temperatures meet",
+     "in regions where weather patterns remain stationary for weeks",
+     "wherever low-pressure systems travel from east to west"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'form along boundaries where air masses of very different temperatures meet'. Tuzak: uçaklar jet akımını kullanır, oluşturmaz."
+   },
+   {
+    "q": "It is stated in the passage that, during blocking, ----.",
+    "options": [
+     "the jet stream flows in an almost perfectly straight line",
+     "the same weather may continue over one region for a long time",
+     "eastbound flights take longer than westbound flights",
+     "the temperature contrast between air masses rises sharply",
+     "high-pressure systems move quickly from west to east"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'Weather patterns then persist over the same region for days or weeks'. Tuzak: blokajda dalgalar büyür ve durağanlaşır, düz akış değil."
+   },
+   {
+    "q": "It can be understood from the passage that the link between Arctic warming and blocking ----.",
+    "options": [
+     "has been firmly established by recent evidence",
+     "is still a matter of disagreement among researchers",
+     "explains why eastbound flights are shorter than westbound ones",
+     "has been rejected because the jet stream never changes",
+     "is the main reason why jet streams exist at all"
+    ],
+    "answer": 1,
+    "explain": "Çıkarım: 'Some researchers have argued ... others contend that the evidence remains inconclusive' = tartışmalı. Tuzak: 'firmly established' tersini söyler."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "air mass",
+    "tr": "hava kütlesi"
+   },
+   {
+    "w": "latitude",
+    "tr": "enlem"
+   },
+   {
+    "w": "meander",
+    "tr": "kıvrılarak akmak"
+   },
+   {
+    "w": "eastbound",
+    "tr": "doğuya giden"
+   },
+   {
+    "w": "amplify",
+    "tr": "büyütmek, şiddetlendirmek"
+   },
+   {
+    "w": "stationary",
+    "tr": "durağan"
+   },
+   {
+    "w": "persist",
+    "tr": "sürmek, devam etmek"
+   },
+   {
+    "w": "prolonged",
+    "tr": "uzun süreli"
+   },
+   {
+    "w": "contend",
+    "tr": "ileri sürmek"
+   },
+   {
+    "w": "inconclusive",
+    "tr": "kesin olmayan"
+   }
+  ]
+ },
+ {
+  "id": "p085",
+  "title": "Food for Our Microbes",
+  "topic": "saglik",
+  "level": 2,
+  "words": 196,
+  "text": "The human large intestine is home to trillions of bacteria, collectively known as the gut microbiota. Many of these microbes depend on a part of our diet that we ourselves cannot digest: dietary fibre, found in vegetables, fruit, whole grains and legumes.\n\nBecause human enzymes cannot break fibre down, it passes through the small intestine largely unchanged. In the colon, however, bacteria ferment it and produce short-chain fatty acids, such as butyrate. Butyrate serves as the main energy source for the cells lining the colon, and it appears to help maintain the barrier that prevents harmful substances from passing from the gut into the blood. These fatty acids may also reduce inflammation.\n\nDiets in many industrialised countries contain far less fibre than is recommended. In experiments with mice, low-fibre diets reduced the diversity of gut bacteria, and some microbes began to feed on the protective mucus layer of the intestine instead. Moreover, when such diets continued over several generations, some bacterial species disappeared and did not return even after fibre was added again. Although results from mice cannot be applied directly to humans, they suggest that long-term dietary habits may shape the microbiota in lasting ways.",
+  "questions": [
+   {
+    "q": "According to the passage, butyrate ----.",
+    "options": [
+     "is an enzyme that humans use to digest dietary fibre",
+     "is the main source of energy for the cells lining the colon",
+     "is produced in the small intestine from whole grains",
+     "feeds on the protective mucus layer of the intestine",
+     "allows harmful substances to pass from the gut into the blood"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'Butyrate serves as the main energy source for the cells lining the colon'. Tuzak: bariyerin geçişi engellediği söyleniyor, tersine izin verdiği değil."
+   },
+   {
+    "q": "The passage mentions that, in mice fed low-fibre diets for several generations, ----.",
+    "options": [
+     "the diversity of gut bacteria increased considerably",
+     "all of the bacteria began to feed on the mucus layer",
+     "some bacterial species did not return when fibre was added back",
+     "inflammation in the intestine disappeared completely",
+     "fibre began to be digested directly by the mice's own enzymes in the colon"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'some bacterial species disappeared and did not return even after fibre was added again'. Tuzak: mukusla beslenen 'some microbes', hepsi değil."
+   },
+   {
+    "q": "It can be inferred from the passage that the author regards the findings in mice as ----.",
+    "options": [
+     "irrelevant, because mice digest fibre in a different way",
+     "proof that modern human diets have destroyed the microbiota",
+     "suggestive for humans, though not directly applicable to them",
+     "evidence that fibre damages the barrier of the intestine",
+     "a reason to remove fibre from diets in industrialised countries"
+    ],
+    "answer": 2,
+    "explain": "Çıkarım: 'cannot be applied directly to humans' ama 'they suggest ...' = yol gösterici, doğrudan uygulanamaz. Tuzak: 'proof' fazla kesin."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "intestine",
+    "tr": "bağırsak"
+   },
+   {
+    "w": "collectively",
+    "tr": "topluca"
+   },
+   {
+    "w": "digest",
+    "tr": "sindirmek"
+   },
+   {
+    "w": "enzyme",
+    "tr": "enzim"
+   },
+   {
+    "w": "ferment",
+    "tr": "mayalamak, fermente etmek"
+   },
+   {
+    "w": "lining",
+    "tr": "iç yüzey, astar"
+   },
+   {
+    "w": "barrier",
+    "tr": "bariyer, engel"
+   },
+   {
+    "w": "inflammation",
+    "tr": "iltihaplanma"
+   },
+   {
+    "w": "diversity",
+    "tr": "çeşitlilik"
+   },
+   {
+    "w": "mucus",
+    "tr": "mukus, sümüksü salgı"
+   }
+  ]
+ },
+ {
+  "id": "p086",
+  "title": "Cooling Down",
+  "topic": "saglik",
+  "level": 1,
+  "words": 194,
+  "text": "The human body works best at a core temperature of about 37 °C. When we exercise or the weather is hot, the body produces or gains extra heat, and it must lose this heat to stay healthy. The most important way it does this is by sweating.\n\nOur skin contains millions of sweat glands. When the brain detects that the body is getting too warm, it sends signals to these glands, and they release a salty liquid onto the skin. The sweat itself does not cool us. Cooling happens when the sweat evaporates, because evaporation takes heat from the skin.\n\nFor this reason, sweating works well in dry air but poorly in humid air. When the air already contains a lot of water vapour, sweat evaporates slowly and simply runs off the body. This is why a hot, humid day can feel more uncomfortable, and be more dangerous, than a hotter but drier one.\n\nDuring long exercise in the heat, a person can lose more than a litre of sweat per hour. If this water and salt are not replaced, the person may become dehydrated, and the body's cooling system can start to fail.",
+  "questions": [
+   {
+    "q": "According to the passage, the body is cooled when ----.",
+    "options": [
+     "the sweat glands release a liquid that is colder than the skin",
+     "sweat on the skin evaporates and takes heat away",
+     "the brain stops sending signals to the sweat glands",
+     "sweat runs off the body quickly in humid air",
+     "the core temperature rises above 37 °C"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'Cooling happens when the sweat evaporates'. Tuzak: 'The sweat itself does not cool us'; nemli havada akıp giden ter serinletmez."
+   },
+   {
+    "q": "It is stated in the passage that, in humid air, ----.",
+    "options": [
+     "the body produces less sweat than it does in dry air",
+     "the sweat glands release more salt than water",
+     "people always lose more than a litre of sweat per hour",
+     "sweat evaporates slowly and so cools the body less",
+     "evaporation takes more heat from the skin than usual"
+    ],
+    "answer": 3,
+    "explain": "Dayanak: 'sweat evaporates slowly and simply runs off the body'. Tuzak: litre bilgisi uzun egzersize ait, nemle ilgili değil."
+   },
+   {
+    "q": "It can be inferred from the passage that a runner on a long, hot day should ----.",
+    "options": [
+     "drink fluids and replace lost salt during the run",
+     "try not to sweat so that no salt is lost",
+     "choose humid weather so that sweat stays on the skin",
+     "keep the core temperature above 37 °C",
+     "stop drinking so that sweat evaporates faster"
+    ],
+    "answer": 0,
+    "explain": "Çıkarım: su ve tuz yerine konmazsa vücut susuz kalır ve soğutma sistemi bozulur. Tuzak: terlemeyi engellemek soğutmayı da engeller."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "core temperature",
+    "tr": "iç (çekirdek) sıcaklık"
+   },
+   {
+    "w": "sweat gland",
+    "tr": "ter bezi"
+   },
+   {
+    "w": "detect",
+    "tr": "algılamak"
+   },
+   {
+    "w": "release",
+    "tr": "salmak"
+   },
+   {
+    "w": "evaporate",
+    "tr": "buharlaşmak"
+   },
+   {
+    "w": "humid",
+    "tr": "nemli"
+   },
+   {
+    "w": "water vapour",
+    "tr": "su buharı"
+   },
+   {
+    "w": "dehydrated",
+    "tr": "susuz kalmış"
+   }
+  ]
+ },
+ {
+  "id": "p087",
+  "title": "Breathing Thin Air",
+  "topic": "saglik",
+  "level": 3,
+  "words": 202,
+  "text": "At an altitude of 4,000 metres, each breath contains roughly 40 percent less oxygen than at sea level, because the air pressure is lower, although the proportion of oxygen in the air remains the same. Lowlanders who ascend rapidly to such heights often experience headaches, nausea and fatigue, and in severe cases fluid may accumulate in the lungs or brain.\n\nOver days and weeks, the body acclimatises. Breathing becomes deeper and faster, and the kidneys release a hormone called erythropoietin, which stimulates the production of red blood cells and so increases the blood's capacity to carry oxygen. This response, however, has a cost: blood containing too many red cells becomes thicker, placing additional strain on the heart.\n\nPopulations that have lived at high altitude for thousands of years have adapted in different ways. Many Andean highlanders have relatively high haemoglobin concentrations, whereas Tibetans typically maintain concentrations close to those of lowlanders and instead compensate partly through increased breathing and blood flow. Genetic studies have linked the Tibetan pattern to a variant of a gene called EPAS1, which is involved in the body's response to low oxygen; strikingly, this variant appears to have been inherited from Denisovans, an extinct group of archaic humans.",
+  "questions": [
+   {
+    "q": "According to the passage, each breath at 4,000 metres contains less oxygen because ----.",
+    "options": [
+     "the air pressure there is lower than at sea level",
+     "the proportion of oxygen in the air falls by 40 percent",
+     "fluid accumulates in the lungs of most lowlanders",
+     "the kidneys release less erythropoietin at that height",
+     "breathing becomes deeper and faster after a few days"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'because the air pressure is lower, although the proportion of oxygen ... remains the same'. Tuzak: oran değişmiyor, basınç düşüyor."
+   },
+   {
+    "q": "The passage mentions that an increase in red blood cells ----.",
+    "options": [
+     "can make the blood thicker and put extra strain on the heart",
+     "is stimulated by a hormone that the lungs release",
+     "is the main way in which Tibetans adapt to altitude",
+     "occurs immediately after a lowlander first arrives at a high altitude",
+     "reduces the capacity of the blood to carry oxygen"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'blood containing too many red cells becomes thicker, placing additional strain on the heart'. Tuzak: hormonu böbrekler salgılıyor; Tibetliler hemoglobini yüksek tutmuyor."
+   },
+   {
+    "q": "It can be inferred from the passage that Tibetans and Andean highlanders ----.",
+    "options": [
+     "both depend mainly on high haemoglobin concentrations",
+     "have met the same challenge through partly different mechanisms",
+     "inherited the EPAS1 variant from the same archaic group",
+     "suffer from altitude sickness more often than lowlanders",
+     "have lived at high altitude for only a few generations"
+    ],
+    "answer": 1,
+    "explain": "Çıkarım: ikisi de düşük oksijene uyum sağlamış ama yolları farklı (And: yüksek hemoglobin; Tibet: solunum ve kan akışı). Tuzak: EPAS1 sadece Tibet için anılıyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "altitude",
+    "tr": "rakım, yükseklik"
+   },
+   {
+    "w": "ascend",
+    "tr": "yükselmek, tırmanmak"
+   },
+   {
+    "w": "nausea",
+    "tr": "mide bulantısı"
+   },
+   {
+    "w": "accumulate",
+    "tr": "birikmek"
+   },
+   {
+    "w": "acclimatise",
+    "tr": "iklime alışmak"
+   },
+   {
+    "w": "stimulate",
+    "tr": "uyarmak"
+   },
+   {
+    "w": "strain",
+    "tr": "yük, zorlanma"
+   },
+   {
+    "w": "compensate",
+    "tr": "telafi etmek"
+   },
+   {
+    "w": "extinct",
+    "tr": "nesli tükenmiş"
+   },
+   {
+    "w": "archaic",
+    "tr": "arkaik, eski"
+   }
+  ]
+ },
+ {
+  "id": "p088",
+  "title": "Clocks in Carbon",
+  "topic": "arkeoloji",
+  "level": 3,
+  "words": 188,
+  "text": "Radiocarbon dating, developed by the American chemist Willard Libby in the late 1940s, transformed archaeology by allowing organic remains to be dated independently of written records. The method relies on carbon-14, a radioactive form of carbon produced continuously in the upper atmosphere when cosmic rays strike nitrogen atoms. Living organisms take up carbon-14 along with ordinary carbon, through photosynthesis or by eating plants, so their tissues reflect the atmospheric ratio. Once an organism dies, however, no new carbon is absorbed, and the carbon-14 it contains decays at a known rate, halving roughly every 5,730 years. Measuring the remaining proportion therefore indicates how long ago death occurred.\n\nLibby assumed that the atmospheric level of carbon-14 had been constant, but this later proved incorrect: it has varied with changes in solar activity and in the Earth's magnetic field. Raw radiocarbon ages must therefore be calibrated against records of known age, such as annual tree rings. Furthermore, because so little carbon-14 remains after about 50,000 years, the technique cannot be applied to older material, and samples must be protected from contamination by modern carbon, which can make them appear considerably younger.",
+  "questions": [
+   {
+    "q": "According to the passage, the amount of carbon-14 in an organism begins to fall ----.",
+    "options": [
+     "while it is alive and still eating plants",
+     "when cosmic rays strike nitrogen atoms in its tissues",
+     "only after about 50,000 years have passed",
+     "when modern carbon contaminates its remains",
+     "after death, when the organism no longer takes in new carbon"
+    ],
+    "answer": 4,
+    "explain": "Dayanak: 'Once an organism dies ... no new carbon is absorbed, and the carbon-14 it contains decays'. Tuzak: kozmik ışın C-14'ü atmosferde üretir."
+   },
+   {
+    "q": "It is stated in the passage that raw radiocarbon ages need to be calibrated because ----.",
+    "options": [
+     "the decay rate of carbon-14 changes with solar activity",
+     "annual tree rings contain no carbon-14 at all",
+     "the level of carbon-14 in the atmosphere has not always been the same",
+     "Libby measured the half-life of carbon-14 incorrectly",
+     "organisms continue to absorb carbon-14 at different rates after their death"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: Libby'nin 'sabit seviye' varsayımı yanlış çıktı, seviye değişti. Tuzak: değişen bozunma hızı değil, atmosferdeki seviye."
+   },
+   {
+    "q": "It can be inferred from the passage that radiocarbon dating would NOT be suitable for ----.",
+    "options": [
+     "seeds found at a site occupied 3,000 years ago",
+     "bones of an animal that died 20,000 years ago",
+     "charcoal from a fire lit about 10,000 years ago",
+     "cloth produced in a medieval workshop",
+     "a piece of wood thought to be about 100,000 years old"
+    ],
+    "answer": 4,
+    "explain": "Çıkarım: yaklaşık 50.000 yıldan eski malzemede C-14 kalmıyor; 100.000 yıllık ahşap ölçülemez. Diğerleri sınırın içinde ve organik."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "organic remains",
+    "tr": "organik kalıntılar"
+   },
+   {
+    "w": "radioactive",
+    "tr": "radyoaktif"
+   },
+   {
+    "w": "cosmic ray",
+    "tr": "kozmik ışın"
+   },
+   {
+    "w": "tissue",
+    "tr": "doku"
+   },
+   {
+    "w": "ratio",
+    "tr": "oran"
+   },
+   {
+    "w": "decay",
+    "tr": "bozunmak"
+   },
+   {
+    "w": "assume",
+    "tr": "varsaymak"
+   },
+   {
+    "w": "calibrate",
+    "tr": "kalibre etmek, ayarlamak"
+   },
+   {
+    "w": "tree ring",
+    "tr": "ağaç halkası"
+   },
+   {
+    "w": "contamination",
+    "tr": "kirlenme, bulaşma"
+   }
+  ]
+ },
+ {
+  "id": "p089",
+  "title": "What Teeth Remember",
+  "topic": "arkeoloji",
+  "level": 3,
+  "words": 198,
+  "text": "Archaeologists have traditionally reconstructed ancient diets from animal bones, charred seeds and cooking vessels found at settlements. Such evidence reveals what was available at a site, but not necessarily what particular individuals ate. Increasingly, researchers are turning to a less obvious source: dental calculus, the hardened plaque that builds up on teeth when they are not cleaned.\n\nAs plaque mineralises during a person's lifetime, it traps tiny particles of food, such as starch grains and plant fragments, together with bacteria from the mouth. Because calculus is extremely durable, these remains can survive for thousands of years, protected inside a mineral shell. Analyses of calculus from Neanderthals, for example, have revealed traces of cooked plant foods, challenging the once common view that their diet consisted almost entirely of meat.\n\nCalculus also preserves DNA and proteins. Researchers have identified milk proteins in the calculus of prehistoric herders, providing direct evidence of dairy consumption, and have tracked changes in oral bacteria associated with the adoption of farming. The method has limitations, however: not every food leaves recognisable traces, and the amount of calculus varies greatly between individuals, so the absence of evidence does not prove that a food was not eaten.",
+  "questions": [
+   {
+    "q": "According to the passage, traditional evidence such as animal bones and seeds ----.",
+    "options": [
+     "cannot survive at settlements for thousands of years",
+     "has proved that the diet of Neanderthals consisted almost entirely of meat",
+     "shows what food was available at a site rather than who ate it",
+     "contains the DNA and proteins of particular individuals",
+     "is trapped inside calculus as plaque becomes mineralised"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'reveals what was available at a site, but not necessarily what particular individuals ate'. Tuzak: DNA/protein diş taşında korunuyor."
+   },
+   {
+    "q": "The passage mentions that the milk proteins found in calculus ----.",
+    "options": [
+     "show that Neanderthals cooked plant foods",
+     "were produced by bacteria that appeared with farming",
+     "show directly that prehistoric herders consumed dairy",
+     "prevent plaque from hardening on the teeth",
+     "are the only food remains that calculus can preserve"
+    ],
+    "answer": 2,
+    "explain": "Dayanak: 'milk proteins in the calculus of prehistoric herders, providing direct evidence of dairy consumption'. Tuzak: pişmiş bitki Neandertal örneği."
+   },
+   {
+    "q": "The passage mainly focuses on ----.",
+    "options": [
+     "how hardened plaque on teeth can reveal details of past diets",
+     "why Neanderthals were believed to eat mostly meat",
+     "the role of oral bacteria in the spread of farming",
+     "the ways teeth were cleaned in prehistoric times",
+     "why animal bones are the best evidence of ancient diets"
+    ],
+    "answer": 0,
+    "explain": "Ana fikir: diş taşı (dental calculus) eski beslenme hakkında bireysel bilgi veriyor. Tuzak: Neandertal ve bakteriler örnek/ayrıntı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "reconstruct",
+    "tr": "yeniden oluşturmak"
+   },
+   {
+    "w": "charred",
+    "tr": "kömürleşmiş"
+   },
+   {
+    "w": "vessel",
+    "tr": "kap"
+   },
+   {
+    "w": "settlement",
+    "tr": "yerleşim yeri"
+   },
+   {
+    "w": "dental calculus",
+    "tr": "diş taşı"
+   },
+   {
+    "w": "plaque",
+    "tr": "diş plağı"
+   },
+   {
+    "w": "durable",
+    "tr": "dayanıklı"
+   },
+   {
+    "w": "trace",
+    "tr": "iz"
+   },
+   {
+    "w": "herder",
+    "tr": "çoban, sürü sahibi"
+   },
+   {
+    "w": "adoption",
+    "tr": "benimseme"
+   }
+  ]
+ },
+ {
+  "id": "p090",
+  "title": "Spacing Out to Remember",
+  "topic": "psikoloji",
+  "level": 2,
+  "words": 193,
+  "text": "Students preparing for an exam often study a topic intensively in a single long session, a strategy commonly called cramming. Cramming can produce good results on a test the following day, but much of the material is forgotten soon afterwards. A large body of research shows that the same amount of study time is far more effective when it is spread over several sessions separated by intervals, a phenomenon known as the spacing effect.\n\nThe effect was first described in the 1880s by the German psychologist Hermann Ebbinghaus, who tested his own memory for lists of nonsense syllables. Since then, it has been confirmed for many kinds of material, from vocabulary to motor skills, and in learners of all ages.\n\nWhy spacing helps is not entirely clear. One explanation is that, when some forgetting has occurred between sessions, recalling the information requires more effort, and this effort strengthens the memory. Another suggests that studying at different times links the material to a wider range of contexts, which later serve as retrieval cues. Interestingly, learners frequently judge massed study to be more effective, probably because information feels familiar when it has just been reviewed.",
+  "questions": [
+   {
+    "q": "According to the passage, cramming ----.",
+    "options": [
+     "can give good short-term results but is followed by rapid forgetting",
+     "is more effective than spacing for learning motor skills",
+     "was recommended by Ebbinghaus as the best way to learn lists of nonsense syllables",
+     "links the material to a wider range of contexts",
+     "requires more effort, which strengthens the memory"
+    ],
+    "answer": 0,
+    "explain": "Dayanak: 'good results on a test the following day, but much of the material is forgotten soon afterwards'. Tuzak: bağlam ve çaba açıklamaları aralıklı çalışmaya ait."
+   },
+   {
+    "q": "It is stated in the passage that Ebbinghaus ----.",
+    "options": [
+     "showed that spacing works only for nonsense syllables",
+     "first described the spacing effect by testing his own memory",
+     "explained exactly why spacing improves memory",
+     "tested the memories of learners of all ages",
+     "developed the idea of retrieval cues in the 1880s"
+    ],
+    "answer": 1,
+    "explain": "Dayanak: 'first described in the 1880s by ... Ebbinghaus, who tested his own memory'. Tuzak: 'why spacing helps is not entirely clear'; tüm yaşlarda doğrulama sonradan yapıldı."
+   },
+   {
+    "q": "It can be inferred from the passage that a student with three weeks to learn a word list for an exam would benefit most from ----.",
+    "options": [
+     "studying all of the words in one long, intensive session on the day before the exam",
+     "reviewing the words only until they start to feel familiar",
+     "reviewing the words in several short sessions over the three weeks",
+     "learning lists of nonsense syllables before the real words",
+     "avoiding any forgetting at all between study sessions"
+    ],
+    "answer": 2,
+    "explain": "Çıkarım: aynı süre aralıklı oturumlara yayılınca daha etkili. Tuzak: 'tanıdık gelmesi' yanıltıcı; aralarda biraz unutmak aslında hafızayı güçlendiriyor."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "intensively",
+    "tr": "yoğun biçimde"
+   },
+   {
+    "w": "cramming",
+    "tr": "sınav öncesi yığarak çalışma"
+   },
+   {
+    "w": "interval",
+    "tr": "aralık"
+   },
+   {
+    "w": "phenomenon",
+    "tr": "olgu"
+   },
+   {
+    "w": "nonsense syllable",
+    "tr": "anlamsız hece"
+   },
+   {
+    "w": "confirm",
+    "tr": "doğrulamak"
+   },
+   {
+    "w": "recall",
+    "tr": "hatırlamak"
+   },
+   {
+    "w": "retrieval cue",
+    "tr": "hatırlama ipucu"
+   },
+   {
+    "w": "massed study",
+    "tr": "toplu (yığarak) çalışma"
+   },
+   {
+    "w": "familiar",
+    "tr": "tanıdık"
    }
   ]
  }

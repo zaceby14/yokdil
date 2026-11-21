@@ -108,7 +108,12 @@ export const TOPICS = {
   'zaman-uyumu': 'Zaman uyumu', 'relative': 'Relative clause', 'gerund-infinitive': 'Gerund / infinitive',
   'passive': 'Passive', 'kosul-wish': 'If / wish', 'noun-clause': 'Noun clause', 'karsilastirma': 'Karşılaştırma',
   'either-neither': 'Either / neither', 'quantifier': 'Quantifier', 'modal': 'Modal', 'participle': 'Participle',
-  'inversion': 'Inversion', 'referans': 'Referans', 'kelime': 'Kelime'
+  'inversion': 'Inversion', 'referans': 'Referans', 'kelime': 'Kelime',
+  'zaman-ifadeleri': 'Zaman ifadeleri', 'baglac-master': 'Bağlaç master', 'despite-although': 'Despite / although',
+  'so-such-too-enough': 'so/such · too/enough', 'edat-ving': 'Edat + Ving', 'sifat-fiil-edat': 'Sıfat/fiil + edat',
+  'preposition-which': 'Edat + which', 'subjunctive': 'Subjunctive', 'cumle-tamamlama-kurallari': 'Cümle tamamlama kuralları',
+  'as-like-such-as': 'as / like / such as', 'kelime-turu': 'Kelime türü', 'onek-sonek': 'Ön ek / son ek', 'cift-bosluk': 'Çift boşluk',
+  'phrasal-verbs': 'Phrasal verb'
 };
 
 export const DRILL_TYPES = {
@@ -129,7 +134,38 @@ export const typeName = t => TYPES[t] || t;
 export const TOPIC_ORDER = ['baglac-zitlik', 'baglac-neden-amac', 'edat-esdizim', 'zaman-uyumu', 'relative', 'gerund-infinitive',
   'passive', 'kosul-wish', 'noun-clause', 'karsilastirma', 'either-neither', 'quantifier', 'modal', 'participle', 'inversion', 'referans'];
 
-export const topicName = t => TOPICS[t] || TYPES[t] || t;
+// Okuma parçası konuları (passages.json topic)
+export const PASSAGE_TOPICS = {
+  'hayvan-davranisi': 'Hayvan davranışı', 'tarim-gida': 'Tarım-gıda', 'meteoroloji': 'Meteoroloji', 'saglik': 'Sağlık',
+  'arkeoloji': 'Arkeoloji', 'psikoloji': 'Psikoloji', 'tarim': 'Tarım'
+};
+
+// Bilinmeyen anahtar: tire → boşluk, baş harf büyük
+export const prettyKey = t => { const s = String(t || '').replace(/-/g, ' ').trim(); return s ? s[0].toLocaleUpperCase('tr-TR') + s.slice(1) : ''; };
+export const topicName = t => TOPICS[t] || TYPES[t] || PASSAGE_TOPICS[t] || prettyKey(t);
+
+// Düşük getirili konular: günlük sette en fazla 1 soru (sınav uzmanı raporu)
+export const LOW_TOPICS = ['quantifier', 'inversion', 'referans', 'modal', 'karsilastirma', 'passive', 'noun-clause'];
+// Konu ağırlığı (sınavdaki pay)
+export const TOPIC_W = { 'baglac-zitlik': 3, 'baglac-neden-amac': 3, 'edat-esdizim': 2.5, 'relative': 2, 'zaman-uyumu': 2, 'kelime': 2,
+  'participle': 1.2, 'gerund-infinitive': 1, 'kosul-wish': 1, 'either-neither': 1,
+  'despite-although': 3, 'baglac-master': 2.5, 'edat-ving': 2, 'sifat-fiil-edat': 2, 'zaman-ifadeleri': 2, 'preposition-which': 1.5,
+  'cumle-tamamlama-kurallari': 1.5, 'so-such-too-enough': 1, 'as-like-such-as': 1, 'kelime-turu': 1.2, 'onek-sonek': 0.8, 'subjunctive': 0.5 };
+
+// Soru tipi → taktik dersi
+export const TYPE_LESSON = {
+  'bosluk': 'taktik-bosluk', 'cloze': 'taktik-cloze', 'cumle-tamamlama': 'taktik-cumle-tamamlama', 'ceviri-en-tr': 'taktik-ceviri',
+  'ceviri-tr-en': 'taktik-ceviri', 'paragraf-tamamlama': 'taktik-paragraf-tamamlama', 'ilgisiz': 'taktik-ilgisiz', 'paragraf': 'taktik-paragraf',
+  'okuma': 'taktik-paragraf', 'yakin-anlam': 'taktik-ceviri'
+};
+// Konu → ek ders adayları (konu dersi yoksa)
+export const TOPIC_LESSON = { 'kelime': 'kelime-turu', 'cift-bosluk': 'cift-bosluk' };
+
+// Açıklama gerçekten açıklama mı? ("Cevap: B." gibi tek satırlar sayılmaz)
+export const realExplain = s => { const t = String(s || '').trim(); return t && !/^cevap\s*[:：]?\s*\(?[A-E]\)?\s*[.)]?\s*$/i.test(t) ? t : ''; };
+
+// Şık metni: dizi ise "x / y"
+export const optText = o => Array.isArray(o) ? o.join(' / ') : String(o ?? '');
 
 // append: null/false atla, dizileri düzleştir
 export function add(el, ...kids) {

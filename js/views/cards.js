@@ -13,6 +13,7 @@ import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
 import { inLadder } from '../srs.js';
 import { setCtx } from '../ctx.js';
+import { nextTaskBtn, cardMin, NEW_VIEWS } from '../tasks.js';
 
 const SRC = ['Ikigai', 'More to Read', 'Diğer'];
 const POS_TR = { n: 'isim', v: 'fiil', adj: 'sıfat', adv: 'zarf', conj: 'bağlaç', prep: 'edat', phr: 'öbek' };
@@ -20,7 +21,7 @@ const STATE_TR = { new: 'Yeni', learning: 'Öğreniliyor', relearn: 'Tekrar öğ
 const stateTr = c => isGraduated(c) ? 'Öğrenildi' : STATE_TR[c.state || 'new'] || c.state;
 
 function tabs(active) {
-  return h('div.seg', [['', 'Tekrar'], ['liste', 'Liste'], ['ekle', '+ Ekle']].map(([k, l]) =>
+  return h('div.seg', [['', 'Çalış'], ['liste', 'Liste'], ['ekle', '+ Ekle']].map(([k, l]) =>
     h('a' + (active === k ? '.active' : ''), { href: '#/kartlar' + (k ? '/' + k : '') }, l)));
 }
 
@@ -28,15 +29,15 @@ export default async function render(root, [mode, id]) {
   if (mode === 'liste') return list(root);
   if (mode === 'ekle') return form(root, null);
   if (mode === 'duzenle') return form(root, store.get('cards', id));
-  if (mode === 'calis') return session(root);
+  if (mode === 'calis') return session(root, 'tekrar');
   if (mode === 'tara') return scan(root, tabs(''));
   if (mode === 'bosluk') return gap(root, tabs(''));
   if (EX[mode]) return memory(root, mode, tabs(''));
-  return home(root, mode === 'yeni');
+  if (mode === 'yeni') return session(root, 'yeni');
+  return home(root);
 }
 
-async function home(root, autostart) {
-  if (autostart) return session(root);
+async function home(root) {
   const due = dueCards().length;
   const nq = (await newQueue()).length;
   const st = stats();
@@ -48,7 +49,9 @@ async function home(root, autostart) {
   root.append(tabs(''),
     h('div.stats3', h('div', h('b', due), h('span', 'tekrar')), h('div', h('b', nq), h('span', 'yeni (bugün)')),
       h('div', h('b', store.all('cards').length), h('span', 'toplam'))),
-    h('a.btn.primary.wide.big-btn' + (due + nq ? '' : '.disabled'), { href: '#/kartlar/calis' }, due + nq ? 'Başla' : 'Bugünlük bitti'),
+    h('div.row2',
+      h('a.btn.primary.wide.big-btn' + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
+      h('a.btn.wide.big-btn' + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'günlük limit doldu')))),
     h('p.small.muted.center', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Olgun ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
     h('div.row2',
       h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini ele'))),
@@ -68,17 +71,18 @@ function hl(ctx, word) {
   return esc(ctx).replace(re, '<mark>$1</mark>');
 }
 
-async function session(root) {
-  const queue = dueCards().map(c => ({ card: c }));
-  queue.push(...await newQueue());
+// kind: 'tekrar' (yalnız bekleyen tekrarlar) | 'yeni' (yalnız yeni kartlar)
+async function session(root, kind = 'tekrar') {
+  const queue = kind === 'yeni' ? await newQueue() : dueCards().map(c => ({ card: c }));
   const reverseOn = store.settings().reverse;
   let done = 0, keyH = null, unsw = null;
+  const again = [];
   const seen = new Set(queue.map(q => q.card?.id || 'w:' + q.word.id));
   // "Biliyorum": kotayı yemez, sıradaki yeni kelime gelir
   const knowIt = async card => {
     markKnown(card);
     toast('Bildiklerine eklendi');
-    for (const q of await newQueue()) {
+    if (kind === 'yeni') for (const q of await newQueue()) {
       const id = q.card?.id || 'w:' + q.word.id;
       if (!seen.has(id)) { seen.add(id); queue.push(q); }
     }
@@ -94,10 +98,15 @@ async function session(root) {
     root.innerHTML = '';
     root.append(tabs(''));
     if (!queue.length) {
+      document.body.classList.remove('qmode');
       if (!dueCards().length) tick('kart');
-      root.append(h('div.card.center', h('div.big', done), h('p', 'kart çalışıldı'), h('a.btn', { href: '#/bugun' }, 'Bugün')));
+      root.append(h('div.card.center.endcard', h('div.big', done), h('p', kind === 'yeni' ? 'yeni kart çalışıldı' : 'tekrar kartı çalışıldı'),
+        again.length ? h('p.small.muted', `Zorlandıkların: ${[...new Set(again)].slice(0, 8).join(', ')}`) : null));
+      const slot = h('div.endnext'); root.append(slot);
+      nextTaskBtn(kind === 'yeni' ? 'yeni' : 'kart').then(b => slot.append(b));
       return;
     }
+    document.body.classList.add('qmode');
     const item = queue.shift();
     let card = item.card;
     if (!card) { card = cardFromWord(item.word); }
@@ -131,6 +140,7 @@ async function session(root) {
       const wasLearning = ['new', 'learning'].includes(prev.state || 'new') && !inLadder(prev);
       const next = review(prev, g);
       done++;
+      if (g === 'again') again.push(card.word);
       if (next.due < Date.now() + 20 * 60000) queue.push({ card: next });
       else if (g === 'hard' && wasLearning) queue.splice(Math.min(3, queue.length), 0, { card: next, practice: true });
       show();
@@ -258,7 +268,7 @@ function form(root, c) {
         const dup = !c && store.all('cards').find(x => (x.word || '').toLowerCase() === w.toLowerCase());
         if (dup) { toast('Bu kelime zaten var'); location.hash = '#/kartlar/duzenle/' + encodeURIComponent(dup.id); return; }
         store.put('cards', {
-          ...(c || { id: uid('c'), state: 'new', createdAt: Date.now() }),
+          ...(c || { id: uid('c'), state: 'new', createdAt: Date.now(), mine: Date.now() }),
           word: w, tr: tr.value.trim(), syn: syn.value.split(',').map(s => s.trim()).filter(Boolean),
           coll: coll.value.trim(), note: note.value.trim(), source: src.value, page: page.value.trim(),
           ...(c && (c.userEdited || tr.value.trim() !== (c.tr || '') || syn.value.split(',').map(s => s.trim()).filter(Boolean).join(',') !== (c.syn || []).join(',')

@@ -1,13 +1,25 @@
 // Çoktan seçmeli soru oturumu (gramer, alıştırma, hata kutusu, okuma, ders, çıkmış, kelime oyunları)
 // - Oturum ilerlemesi 'sessions' koleksiyonuna yazılır (sid): sayfadan çıkıp dönünce "Kaldığın yerden devam et".
 // - Soru kökündeki kelimeye dokun = kelime paneli; şık satırına dokun = seç; şıktaki kelimeye UZUN bas = kelime paneli.
-import { h, add } from './util.js';
+import { h, add, realExplain, topicName } from './util.js';
 import * as store from './store.js';
 import { fromWrong, fillContext } from './autocard.js';
 import { tappable } from './tappable.js';
 import { setCtx } from './ctx.js';
-import { openLesson } from './side.js';
-import { resolve as resolveKey } from './qbank.js';
+import { openFor } from './side.js';
+import { resolve as resolveKey, hintFor } from './qbank.js';
+import { aids } from './data.js';
+import { nextTaskBtn } from './tasks.js';
+
+// Kişisel kural kartı: ilgili konuda yanlış yapınca otomatik gösterilir
+export async function ruleFor(topic) {
+  if (!topic) return null;
+  const a = await aids().catch(() => null);
+  return (a?.personalRules || []).find(r => r && r.topic === topic) || null;
+}
+export const ruleBox = r => h('div.rulecard', h('div.small.muted', 'Senin kuralın · ' + topicName(r.topic)), h('b', r.rule),
+  r.ex ? h('div.small', { lang: 'en' }, r.ex) : null,
+  r.wrong || r.right ? h('div.small', r.wrong ? h('span.bad-t', '✗ ' + r.wrong + ' ') : null, r.right ? h('span.good-t', '✓ ' + r.right) : null) : null);
 
 const L = 'ABCDE';
 
@@ -45,10 +57,11 @@ export function runQuiz(root, items, opts = {}) {
   function start(items, st) {
     let i = st?.i || 0, right = st?.right || 0;
     const picks = { ...(st?.picks || {}) };
+    const hints = { ...(st?.hints || {}) };
     const persist = () => {
       if (!sid) return;
       store.put('sessions', {
-        id: sid, name: opts.name || opts.title || '', route: location.hash, i, right, picks, total: items.length,
+        id: sid, name: opts.name || opts.title || '', route: location.hash, i, right, picks, hints, total: items.length,
         keys: items.map(x => x.key), inline: opts.inline ? items : null, at: Date.now(), done: false
       });
     };
@@ -60,12 +73,12 @@ export function runQuiz(root, items, opts = {}) {
       if (i >= items.length) {
         if (sid) store.del('sessions', sid);
         setCtx(null);
-        root.append(h('div.card.center',
-          h('div.big', `${right} / ${items.length}`),
-          h('p.muted', right === items.length ? 'Tamamı doğru' : 'Bitti')));
+        document.body.classList.remove('qmode');
+        endScreen(root, items, picks, right, opts);
         onEndOnce();
         return;
       }
+      document.body.classList.add('qmode');
       const it = items[i];
       const ctxLabel = [opts.name || opts.title, `${i + 1}/${items.length}`, it.label].filter(Boolean).join(' · ');
       setCtx({ type: 'soru', key: it.key, label: ctxLabel });
@@ -90,17 +103,20 @@ export function runQuiz(root, items, opts = {}) {
         if (!ok) opts_[k].classList.add('wrong');
         exp.classList.remove('hidden');
         exp.innerHTML = '';
-        exp.append(h('b', ok ? 'Doğru. ' : `Cevap: ${L[it.answer]}. `), it.explain || '');
+        const ex = realExplain(it.explain);
+        exp.append(h('b', ok ? 'Doğru. ' : 'Yanlış. '), ex);
         if (it.tip) exp.append(h('div.tip', 'Taktik: ' + it.tip));
+        hintBtn?.remove();
+        if (!ok) ruleFor(it.info?.topic).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
         const x = opts.extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && exp.append(n));
         exp.append(h('div.small.muted.tap-hint', 'Kelimeye dokun → karta ekle'));
         next.classList.remove('hidden');
         if (!replay) {
           if (ok) right++;
           picks[i] = k; persist();
-          opts.onAnswer?.(it, ok, k);
+          opts.onAnswer?.(it, ok, k, { hint: !!hints[i] });
           if (!ok && opts.auto !== false) fromWrong(it, k).catch(e => console.warn(e));
-          next.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
+          exp.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
         }
       };
       const optNode = o => trOpts(it) ? h('span.otext', o) : h('span.otext', tappable(String(o), { ...src, inline: true, tapOpens: false, ctx: octx }).el);
@@ -110,12 +126,21 @@ export function runQuiz(root, items, opts = {}) {
       }, h('span.ol', L[k]), optNode(o)));
       const stem = it.stemNode ? h('div.stem.tap', it.stemNode()) : it.stem ? h('div.stem.tap', tappable(it.stem, { ...src, ctx }).el) : null;
       const q = it.qNode ? h('div.q.tap', it.qNode()) : it.q ? (trQ(it) ? h('div.q', it.q) : h('div.q.tap', tappable(it.q, { ...src, ctx }).el)) : null;
+      // İpucu: cevaptan önce; kullanıldığı kaydedilir
+      const hintBox = h('div.hintbox.hidden');
+      let hintBtn = null;
+      const showHint = txt => { hintBox.innerHTML = ''; hintBox.append(h('b', 'İpucu: '), txt); hintBox.classList.remove('hidden'); hintBtn?.remove(); };
+      if (picks[i] == null) {
+        hintBtn = h('button.chip.hint-btn.hidden', { type: 'button', onclick: async () => { const t = await hintFor(it); hints[i] = true; persist(); showHint(t); } }, 'İpucu');
+        hintFor(it).then(t => { if (!t || !hintBtn) return; if (hints[i]) showHint(t); else hintBtn.classList.remove('hidden'); }).catch(() => {});
+      }
       add(root,
         h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${i + 1}/${items.length}`),
-          h('span.qtools', it.unverified ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, it.label ? h('span.chip', it.label) : null,
-            h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openLesson(it.info?.topic || '') }, 'Ders'))),
-        stem, q,
-        h('div.opts', opts_), exp, next
+          h('span.qtools', it.unverified ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
+        h('div.qbar', hintBtn,
+          h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
+        hintBox, stem, q,
+        h('div.opts', opts_), exp, h('div.actbar', next)
       );
       if (picks[i] != null) reveal(picks[i], true);
       if (i === 0 || picks[i] == null) window.scrollTo(0, 0);
@@ -124,6 +149,32 @@ export function runQuiz(root, items, opts = {}) {
     const onEndOnce = () => { if (ended) return; ended = true; opts.onEnd?.({ right, total: items.length }, root); };
     show();
   }
+}
+
+// Bitiş ekranı: sonuç + yanlışların kısa listesi (dokun → açıklama) + "Yanlışları tekrar çöz" + sıradaki görev
+function endScreen(root, items, picks, right, opts) {
+  const wrong = items.map((it, k) => ({ it, k, pick: picks[k] })).filter(x => x.pick != null && x.pick !== x.it.answer);
+  const short = s => { const t = String(s || '').replace(/\s+/g, ' ').trim(); return t.length > 90 ? t.slice(0, 88) + '…' : t; };
+  root.append(h('div.card.center.endcard',
+    h('div.big', `${right} / ${items.length}`),
+    h('p.muted', right === items.length ? 'Tamamı doğru' : `${wrong.length} yanlış`)));
+  if (wrong.length) {
+    root.append(h('section.card.wronglist', h('h3', 'Yanlışların'),
+      ...wrong.map(({ it, pick }) => h('details',
+        h('summary', h('span.small.muted', (it.label || '') + ' '), short(it.q && !/^\s*\(\d+\)\s*$/.test(it.q) ? it.q : it.stem || it.label)),
+        h('div.small', h('span.bad-t', `Senin: ${L[pick]}) ${it.options[pick]}`), ' · ', h('span.good-t', `Doğru: ${L[it.answer]}) ${it.options[it.answer]}`)),
+        realExplain(it.explain) ? h('div.explain', realExplain(it.explain)) : null)),
+      h('button.btn.wide.retry-wrong', {
+        onclick: () => {
+          root.innerHTML = '';
+          runQuiz(root, wrong.map(x => x.it), { ...opts, sid: null, title: 'Yanlışlar', name: 'Yanlışlar', onEnd: null, task: opts.task });
+        }
+      }, `Yanlışları tekrar çöz (${wrong.length})`)));
+  }
+  const slot = h('div.endnext');
+  root.append(slot);
+  if (opts.noNext) return;
+  nextTaskBtn(opts.task).then(b => slot.append(b));
 }
 
 // Yarım kalan oturumlar (Bugün ekranı için)

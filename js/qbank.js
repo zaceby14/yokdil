@@ -1,7 +1,7 @@
 // Soru bankası: anahtar → oturum öğesi
 //  gramer: g0001 · alıştırma: d001#0 · ders: ders:<id>#0 · çıkmış: <examId>:<n>
 import { grammar, drills, lessons, passages } from './data.js';
-import { topicName, typeName, TOPICS, TOPIC_ORDER } from './util.js';
+import { topicName, typeName, TOPICS, optText } from './util.js';
 import { getPack, groupOf } from './pack.js';
 import { tappable } from './tappable.js';
 
@@ -20,7 +20,7 @@ export function lessonTopic(l) {
   if (!l) return '';
   if (l.topic) return l.topic;
   if (TOPICS[l.id]) return l.id;
-  return TOPIC_ORDER.find(t => String(l.id).includes(t)) || TOPIC_ORDER[(l.order || 0) - 1] || '';
+  return '';
 }
 
 export async function lessonFor(topic) {
@@ -29,13 +29,15 @@ export async function lessonFor(topic) {
 }
 
 export function gItem(q) {
-  return { key: q.id, q: q.q, options: q.options, answer: q.answer, explain: q.explain, tip: q.tip, label: topicName(q.topic), info: { kind: 'gramer', topic: q.topic, dtype: q.type || 'bosluk' } };
+  const dbl = !!q.double || (String(q.q || '').match(/-{2,}/g) || []).length >= 2;
+  return { key: q.id, q: q.q, options: (q.options || []).map(optText), answer: q.answer, explain: q.explain, tip: q.tip, hint: q.hint || '', double: dbl,
+    label: topicName(q.topic) + (dbl ? ' · çift boşluk' : ''), info: { kind: 'gramer', topic: q.topic, dtype: q.type || 'bosluk', level: q.level || 0 } };
 }
 
 export function dItem(d, i) {
   const it = d.items[i];
   return {
-    key: `${d.id}#${i}`, stem: d.stem, q: it.q, options: it.options, answer: it.answer, explain: it.explain, tip: it.tip,
+    key: `${d.id}#${i}`, stem: d.stem, q: it.q, options: (it.options || []).map(optText), answer: it.answer, explain: it.explain, tip: it.tip, hint: it.hint || '',
     label: typeName(d.type) + (d.items.length > 1 ? ` (${i + 1})` : ''),
     info: { kind: 'drill', topic: d.topic || '', dtype: d.type }
   };
@@ -43,7 +45,7 @@ export function dItem(d, i) {
 
 export function lItem(l, i) {
   const c = l.checks[i];
-  return { key: `ders:${l.id}#${i}`, q: c.q, options: c.options, answer: c.answer, explain: c.explain, label: l.title, info: { kind: 'ders', topic: lessonTopic(l), dtype: 'bosluk' } };
+  return { key: `ders:${l.id}#${i}`, q: c.q, options: (c.options || []).map(optText), hint: c.hint || l.formula || '', answer: c.answer, explain: c.explain, label: l.title, info: { kind: 'ders', topic: lessonTopic(l), dtype: 'bosluk' } };
 }
 
 export function pItem(p, i) {
@@ -60,7 +62,7 @@ export function xItem(e, q) {
   return {
     key: `${e.id}:${q.n}`, stemNode: g?.text ? () => tappable(g.text, src).el : null,
     qNode: long ? () => tappable(q.q, src).el : null, q: q.q,
-    options: q.options, answer: q.answer, explain: q.explain || '',
+    options: (q.options || []).map(optText), answer: q.answer, explain: q.explain || '',
     label: `${e.title || e.id} · ${q.n}`, unverified: q.keySource === 'claude',
     info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' }
   };
@@ -90,4 +92,12 @@ export async function resolve(key) {
     if (q) return xItem(e, q);
   }
   return null;
+}
+
+// İpucu: sorunun kendi "hint" alanı, yoksa konunun (ya da soru tipinin) dersindeki 30 saniyelik formül
+export async function hintFor(it) {
+  if (it.hint) return it.hint;
+  const { findLesson, lessonCands } = await import('./side.js');
+  const l = await findLesson(lessonCands(it));
+  return l?.formula || '';
 }

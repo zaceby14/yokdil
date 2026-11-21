@@ -21,11 +21,17 @@ export function parseLines(text) {
 }
 
 // Saf: nottaki İngilizce kelime adayları (tekrarsız, işlev kelimeleri hariç)
+// Türkçe kelimeler bölünmesin: Unicode harf dizilerine ayır, Türkçe harf içerenleri ve sık Türkçe kelimeleri atla
+const TR_CH = /[çğıöşüâîûÇĞİÖŞÜ]/;
+const TR_WORDS = new Set(('ve ile ama bir bu da de daha gibi kadar sonra once yani mi mu ne neden zaman olan olarak icin hep yine tam ' +
+  'anlam anlami kelime soru cevap dogru yanlis ders not kural ornek yap yapma degil var yok bile hem ya ise bazen sanki karistir').split(' '));
 export function noteWords(text) {
   const seen = new Set(), out = [];
-  for (const m of String(text || '').matchAll(/[A-Za-z][A-Za-z'’-]+/g)) {
-    const w = m[0].toLowerCase();
-    if (w.length < 3 || STOP.has(w) || seen.has(w)) continue;
+  for (const m of String(text || '').matchAll(/[\p{L}][\p{L}'’-]*/gu)) {
+    const raw = m[0];
+    if (TR_CH.test(raw) || !/^[A-Za-z][A-Za-z'’-]*$/.test(raw)) continue;
+    const w = raw.toLowerCase().replace(/['’-]+$/, '');
+    if (w.length < 3 || STOP.has(w) || TR_WORDS.has(w) || seen.has(w)) continue;
     seen.add(w); out.push(w);
   }
   return out;
@@ -45,7 +51,7 @@ export async function addWords(list, note) {
     store.put('cards', {
       id: core && !store.raw('cards', 'w:' + core.id)?.word ? 'w:' + core.id : uid('c'), wid: core?.id || null, word: w,
       tr: tr || core?.tr || '', syn: core?.syn || [], coll: core?.coll || '', ex: core?.ex || '', pos: core?.pos || '',
-      source: 'Not', note: note?.ctx?.label || '', state: 'new', createdAt: Date.now(), front: Date.now()
+      source: 'Not', note: note?.ctx?.label || '', state: 'new', createdAt: Date.now(), front: Date.now(), mine: Date.now()
     });
     have.add(w); n++;
   }
@@ -65,7 +71,10 @@ export function saveNote(text, ctx = getCtx(), id) {
 let sheet = null, pushed = false;
 const open = () => sheet && !sheet.classList.contains('hidden');
 
+export const openNote = () => open() ? close() : show();
+
 export function initNotes() {
+  document.getElementById('noteTop')?.addEventListener('click', openNote);
   const fab = h('button.fab', { id: 'noteFab', type: 'button', 'aria-label': 'Not al', onclick: () => open() ? close() : show() },
     h('span', { html: '<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>' }), h('span', 'Not'));
   sheet = h('div.sheet.notesheet.hidden', { id: 'noteSheet' });

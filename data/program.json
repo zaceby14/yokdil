@@ -18,28 +18,39 @@
  "daily": {
   "normal": [
    {
+    "key": "kart",
     "task": "Kart tekrarı",
     "min": 10
    },
    {
-    "task": "Günlük gramer (5–8 soru + hata tekrarı)",
-    "min": 10
-   },
-   {
-    "task": "Okuma + bilinmeyen kelime notu",
-    "min": 20
-   },
-   {
-    "task": "Yeni kartlar",
+    "key": "yeni",
+    "task": "Yeni kelime",
     "min": 5
+   },
+   {
+    "key": "gramer",
+    "task": "Günlük gramer (8 soru)",
+    "min": 8
+   },
+   {
+    "key": "hata",
+    "task": "Hata tekrarı (en fazla 8)",
+    "min": 6
+   },
+   {
+    "key": "okuma",
+    "task": "Okuma + bilinmeyen kelime",
+    "min": 20
    }
   ],
   "busy": [
    {
+    "key": "kart",
     "task": "Kart tekrarı",
     "min": 12
    },
    {
+    "key": "gramer",
     "task": "3 gramer sorusu",
     "min": 3
    }
@@ -57,9 +68,14 @@
    "grammar": [
     "baglac-zitlik"
    ],
+   "lessons": [
+    "baglac-zitlik",
+    "despite-although",
+    "taktik-bosluk"
+   ],
    "drills": [],
-   "goal": "Zıtlık bağlaçlarını kutup mantığıyla (yeni↔eski dahil) tanı.",
-   "weekend": "Cmt: 1 uzun okuma (More to Read) · Paz: hafif kart tekrarı"
+   "goal": "Zıtlık kutbunu bul: although + cümle, despite + isim, ; however,.",
+   "weekend": "Cmt: uzun okuma · Paz: hafif kart tekrarı"
   },
   {
    "n": 2,
@@ -72,9 +88,22 @@
    "grammar": [
     "baglac-neden-amac"
    ],
-   "drills": [],
-   "goal": "Neden-sonuç-amaç bağlaçlarını ve in order to / with a view to + Ving farkını otur.",
-   "weekend": "Cmt: uzun okuma + kelime notu · Paz: hafif tekrar"
+   "lessons": [
+    "baglac-neden-amac",
+    "so-such-too-enough"
+   ],
+   "drills": [
+    "cumle-tamamlama"
+   ],
+   "goal": "Neden-sonuç-amaç: because / due to / in order to / with a view to + Ving.",
+   "weekend": "Cmt: tanı denemesi (yarım, 40 soru) · Paz: hata tekrarı",
+   "mock": {
+    "kind": "yarim",
+    "n": 40,
+    "day": "Cmt",
+    "exam": "yds-2019-1",
+    "title": "Tanı: 2019-YDS/1 ilk 40 soru (boşluk, cloze, cümle tamamlama)"
+   }
   },
   {
    "n": 3,
@@ -85,12 +114,18 @@
    ],
    "newWords": 15,
    "grammar": [
-    "edat-esdizim",
-    "zaman-uyumu"
+    "edat-esdizim"
    ],
-   "drills": [],
-   "goal": "at + temperature/rate/level ve lead to + isim kalıplarını otomatikleştir.",
-   "weekend": "Cmt: uzun okuma · Paz: hata kutusu tekrarı"
+   "lessons": [
+    "edat-esdizim",
+    "edat-ving",
+    "sifat-fiil-edat"
+   ],
+   "drills": [
+    "cloze"
+   ],
+   "goal": "at + değer, lead to + isim, edat + Ving kalıplarını otomatikleştir.",
+   "weekend": "Cmt: uzun okuma · Paz: hata tekrarı"
   },
   {
    "n": 4,
@@ -101,11 +136,16 @@
    ],
    "newWords": 15,
    "grammar": [
-    "relative",
-    "gerund-infinitive"
+    "zaman-uyumu"
    ],
-   "drills": [],
-   "goal": "which/that ayrımını ve mean/with + N + Ving yapılarını çöz.",
+   "lessons": [
+    "zaman-uyumu",
+    "zaman-ifadeleri"
+   ],
+   "drills": [
+    "cloze"
+   ],
+   "goal": "Zaman ifadesini bul (since, by the time, over the past) → fiil biçimi.",
    "weekend": "Cmt: uzun okuma (Ikigai) · Paz: hafif tekrar"
   },
   {
@@ -117,13 +157,18 @@
    ],
    "newWords": 15,
    "grammar": [
-    "passive",
-    "kosul-wish"
+    "relative",
+    "participle"
+   ],
+   "lessons": [
+    "relative",
+    "preposition-which",
+    "participle"
    ],
    "drills": [
-    "cumle-tamamlama"
+    "ceviri-en-tr"
    ],
-   "goal": "Pasif ve koşul yapılarını cümlede hızlı tanı; 1. fazı bitir.",
+   "goal": "which/that/whose/where ve edat + which; çeviride relative'i bul.",
    "weekend": "Cmt: 20 soruluk karışık gramer · Paz: kart tekrarı"
   },
   {
@@ -135,15 +180,30 @@
    ],
    "newWords": 10,
    "grammar": [
-    "noun-clause",
-    "karsilastirma"
+    "edat-esdizim",
+    "zaman-uyumu"
+   ],
+   "lessons": [
+    "cift-bosluk",
+    "taktik-cloze"
    ],
    "drills": [
     "cloze",
     "cumle-tamamlama"
    ],
-   "goal": "Cloze ve cümle tamamlamada bağlaç + zaman ipucunu kullan.",
-   "weekend": "Cmt: 10 cloze + 11 cümle tamamlama (süreli) · Paz: hafif tekrar"
+   "goal": "Çift boşluk: zaman + zaman ve edat + edat çiftleri (soru 7–11).",
+   "weekend": "Cmt: yarım deneme (40 soru) · Paz: hafif tekrar",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   },
+   "mock": {
+    "kind": "yarim",
+    "n": 40,
+    "day": "Cmt",
+    "exam": "yds-2019-2",
+    "title": "2019-YDS/2 ilk 40 soru"
+   }
   },
   {
    "n": 7,
@@ -154,15 +214,24 @@
    ],
    "newWords": 10,
    "grammar": [
-    "either-neither",
-    "quantifier"
+    "baglac-zitlik",
+    "baglac-neden-amac"
+   ],
+   "lessons": [
+    "baglac-master",
+    "cumle-tamamlama-kurallari",
+    "taktik-cumle-tamamlama"
    ],
    "drills": [
-    "ceviri-en-tr",
+    "cumle-tamamlama",
     "ceviri-tr-en"
    ],
-   "goal": "Çeviride ana yapıyı (zaman, bağlaç, özne) eşleştirerek ele.",
-   "weekend": "Cmt: 12 çeviri sorusu (süreli) · Paz: hafif tekrar"
+   "goal": "Bağlaç MASTER: ekleme, örnek, zaman, koşul grupları; cümle tamamlama yapı kuralları.",
+   "weekend": "Cmt: 11 cümle tamamlama (süreli) · Paz: hata tekrarı",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   }
   },
   {
    "n": 8,
@@ -173,15 +242,26 @@
    ],
    "newWords": 10,
    "grammar": [
-    "modal",
-    "participle"
+    "gerund-infinitive",
+    "participle",
+    "either-neither"
+   ],
+   "lessons": [
+    "gerund-infinitive",
+    "as-like-such-as",
+    "either-neither",
+    "taktik-ceviri"
    ],
    "drills": [
-    "paragraf-tamamlama",
-    "ilgisiz"
+    "ceviri-en-tr",
+    "ceviri-tr-en"
    ],
-   "goal": "İlgisiz cümlede konu ve kutup kaymasını yakala.",
-   "weekend": "Cmt: 6 paragraf tamamlama + 6 ilgisiz cümle · Paz: hafif tekrar"
+   "goal": "Ving / to V, ikili bağlaçlar (either/or, not only/but also); çeviride ana yapı.",
+   "weekend": "Cmt: 12 çeviri sorusu · Paz: hafif tekrar",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   }
   },
   {
    "n": 9,
@@ -192,15 +272,43 @@
    ],
    "newWords": 10,
    "grammar": [
+    "noun-clause",
+    "passive",
+    "karsilastirma",
+    "modal",
     "inversion",
-    "referans"
+    "referans",
+    "quantifier",
+    "kosul-wish"
+   ],
+   "lessons": [
+    "noun-clause",
+    "passive",
+    "karsilastirma",
+    "modal",
+    "inversion",
+    "referans",
+    "quantifier",
+    "kosul-wish",
+    "subjunctive"
    ],
    "drills": [
-    "yakin-anlam",
-    "cloze"
+    "paragraf-tamamlama",
+    "ilgisiz"
    ],
-   "goal": "Referans zamirleri ile paragraf akışını takip et. Başvuru açılıyor!",
-   "weekend": "Cmt: 1 uzun okuma + 5 parça soru · Paz: başvuruyu yap (12–20 Ocak)"
+   "goal": "Az çıkan 7 konu tek haftada: tanı, kuralı gör, geç (sınavın %4'ü).",
+   "weekend": "Cmt: yarım deneme (40 soru) · Paz: hafif tekrar",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   },
+   "mock": {
+    "kind": "yarim",
+    "n": 40,
+    "day": "Cmt",
+    "exam": "yds-2020-1",
+    "title": "2020-YDS/1 ilk 40 soru"
+   }
   },
   {
    "n": 10,
@@ -211,16 +319,31 @@
    ],
    "newWords": 10,
    "grammar": [
-    "baglac-zitlik",
-    "relative"
+    "relative",
+    "baglac-zitlik"
+   ],
+   "lessons": [
+    "taktik-ilgisiz",
+    "taktik-paragraf-tamamlama",
+    "taktik-paragraf"
    ],
    "drills": [
     "ilgisiz",
     "paragraf-tamamlama",
-    "cumle-tamamlama"
+    "paragraf"
    ],
-   "goal": "Zayıf konuları (bağlaç, which/that) tekrar et; başvurunun son günü 20 Ocak.",
-   "weekend": "Cmt: karışık soru tipi seti (40 soru) · Paz: hafif tekrar"
+   "goal": "İlgisiz cümle ve paragraf tamamlama: konu kayması ve bağlayıcı.",
+   "weekend": "Cmt: TAM deneme 1 (180 dk) · Paz: sonucu incele",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   },
+   "mock": {
+    "kind": "tam",
+    "day": "Cmt",
+    "exam": "yokdil-fen-2019",
+    "title": "2019-YÖKDİL Fen"
+   }
   },
   {
    "n": 11,
@@ -232,8 +355,12 @@
    "newWords": 10,
    "grammar": [
     "edat-esdizim",
-    "gerund-infinitive",
-    "either-neither"
+    "baglac-neden-amac",
+    "zaman-uyumu"
+   ],
+   "lessons": [
+    "cift-bosluk",
+    "baglac-master"
    ],
    "drills": [
     "cloze",
@@ -241,11 +368,20 @@
     "ceviri-en-tr",
     "ceviri-tr-en",
     "paragraf-tamamlama",
-    "ilgisiz",
-    "yakin-anlam"
+    "ilgisiz"
    ],
-   "goal": "Tüm soru tiplerini karışık çöz; zaman yönetimini dene.",
-   "weekend": "Cmt: yarım deneme (40 soru, 90 dk) · Paz: hata analizi"
+   "goal": "Zayıf bölümleri tekrar: çift boşluk, bağlaç, edat.",
+   "weekend": "Cmt: TAM deneme 2 (180 dk) · Paz: yanlışları bölüm bölüm çöz",
+   "min": {
+    "kart": 15,
+    "okuma": 15
+   },
+   "mock": {
+    "kind": "tam",
+    "day": "Cmt",
+    "exam": "yokdil-fen-2020-1",
+    "title": "2020-YÖKDİL/1 Fen"
+   }
   },
   {
    "n": 12,
@@ -257,8 +393,12 @@
    "newWords": 5,
    "grammar": [
     "kelime",
-    "baglac-zitlik",
-    "edat-esdizim"
+    "relative",
+    "zaman-uyumu"
+   ],
+   "lessons": [
+    "taktik-bosluk",
+    "zaman-ifadeleri"
    ],
    "drills": [
     "cloze",
@@ -266,11 +406,16 @@
     "ceviri-en-tr",
     "ceviri-tr-en",
     "paragraf-tamamlama",
-    "ilgisiz",
-    "yakin-anlam"
+    "ilgisiz"
    ],
-   "goal": "İlk tam denemeyi çöz ve hatalarını konulara ayır.",
-   "weekend": "Cmt: ÖSYM çıkmış kitapçık tam deneme (180 dk) · Paz: hata analizi"
+   "goal": "Deneme haftası: süre yönetimi, okumaya en az 50 dk.",
+   "weekend": "Cmt: TAM deneme 3 · Paz: yanlışlar",
+   "mock": {
+    "kind": "tam",
+    "day": "Cmt",
+    "exam": "yokdil-fen-2020-2",
+    "title": "2020-YÖKDİL/2 Fen"
+   }
   },
   {
    "n": 13,
@@ -282,8 +427,12 @@
    "newWords": 5,
    "grammar": [
     "kelime",
-    "relative",
-    "gerund-infinitive"
+    "baglac-neden-amac",
+    "edat-esdizim"
+   ],
+   "lessons": [
+    "baglac-master",
+    "edat-ving"
    ],
    "drills": [
     "cloze",
@@ -291,11 +440,16 @@
     "ceviri-en-tr",
     "ceviri-tr-en",
     "paragraf-tamamlama",
-    "ilgisiz",
-    "yakin-anlam"
+    "ilgisiz"
    ],
-   "goal": "En zayıf 3 alana ağırlık ver, kelime tekrarını artır.",
-   "weekend": "Cmt: tam deneme (180 dk) · Paz: hata analizi + kart tekrarı"
+   "goal": "Deneme: en zayıf 2 bölümün dersini aç, yanlışları tekrar çöz.",
+   "weekend": "Cmt: TAM deneme 4 · Paz: yanlışlar",
+   "mock": {
+    "kind": "tam",
+    "day": "Cmt",
+    "exam": "yokdil-fen-2021-1",
+    "title": "2021-YÖKDİL/1 Fen"
+   }
   },
   {
    "n": 14,
@@ -307,8 +461,12 @@
    "newWords": 5,
    "grammar": [
     "kelime",
-    "either-neither",
-    "baglac-neden-amac"
+    "baglac-zitlik",
+    "edat-esdizim"
+   ],
+   "lessons": [
+    "despite-although",
+    "cift-bosluk"
    ],
    "drills": [
     "cloze",
@@ -316,11 +474,16 @@
     "ceviri-en-tr",
     "ceviri-tr-en",
     "paragraf-tamamlama",
-    "ilgisiz",
-    "yakin-anlam"
+    "ilgisiz"
    ],
-   "goal": "Süre hedefi: okuma bölümüne en az 50 dk ayır.",
-   "weekend": "Cmt: tam deneme (180 dk) · Paz: hata analizi"
+   "goal": "Son tam deneme + 2022–2025 kısa setler.",
+   "weekend": "Cmt: TAM deneme 5 · Paz: 2024–2025 kısa setler",
+   "mock": {
+    "kind": "tam",
+    "day": "Cmt",
+    "exam": "yokdil-fen-2021-2",
+    "title": "2021-YÖKDİL/2 Fen"
+   }
   },
   {
    "n": 15,
@@ -333,14 +496,17 @@
    "grammar": [
     "kelime"
    ],
+   "lessons": [
+    "taktik-bosluk",
+    "taktik-paragraf"
+   ],
    "drills": [
     "cloze",
     "cumle-tamamlama",
-    "ilgisiz",
-    "yakin-anlam"
+    "ilgisiz"
    ],
-   "goal": "Hafif tekrar, yeni konu yok; sınava dinç gir.",
-   "weekend": "Cmt: sadece kart tekrarı + 1 kısa okuma · Paz 28 Şubat: SINAV"
+   "goal": "Sınav haftası: hafif tekrar, 2024–2025 kısa setler, erken uyu.",
+   "weekend": "Pazar: SINAV"
   }
  ],
  "notes": [
@@ -373,5 +539,11 @@
    "text": "YÖKDİL/1 sonuç günü."
   }
  ],
- "osymLink": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html"
+ "osymLink": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html",
+ "mockPlan": {
+  "tam": 5,
+  "yarim": 3,
+  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 3 yarım (40 soru) hafta 2, 6, 9 · 2022–2025 kısa setler son iki hafta"
+ },
+ "timeNote": "Faz 2'de günlük tekrar ≈ 80–110 kart × 8 sn ≈ 11–15 dk → kart tekrarı 15 dk, yeni kelime 10/gün."
 }

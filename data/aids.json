@@ -1,0 +1,734 @@
+{
+ "decisionTree": {
+  "title": "Boşlukta ne arıyorum?",
+  "nodes": [
+   {
+    "id": "start",
+    "q": "Şıklara bak: ne soruluyor?",
+    "options": [
+     {
+      "label": "Bağlaç / edat karışık",
+      "next": "baglac"
+     },
+     {
+      "label": "Fiil biçimleri (zaman)",
+      "next": "zaman"
+     },
+     {
+      "label": "which / that / whose / where",
+      "result": "Virgül veya edat → which. Sonrası tam cümle → where/when. Sonrası isim → whose. Edat + that ✗."
+     },
+     {
+      "label": "Ving / to V / V1",
+      "next": "fiil"
+     },
+     {
+      "label": "İki boşluk ( x / y )",
+      "result": "Önce kolay boşluğu çöz (zaman ifadesi / kesin kalıp), şıkların yarısını sil, sonra ikinci boşluk."
+     },
+     {
+      "label": "Kelimeler",
+      "next": "kelime"
+     }
+    ]
+   },
+   {
+    "id": "baglac",
+    "q": "Boşluktan sonra ne var?",
+    "options": [
+     {
+      "label": "Özne + fiil (tam cümle)",
+      "next": "cumle"
+     },
+     {
+      "label": "İsim / Ving (fiil yok)",
+      "next": "isim"
+     },
+     {
+      "label": "V1 (yalın fiil)",
+      "result": "in order to / so as to + V1 · rather than + V1"
+     },
+     {
+      "label": "; ---- , veya . ---- ,",
+      "next": "zarf"
+     }
+    ]
+   },
+   {
+    "id": "cumle",
+    "q": "İki taraf arasındaki ilişki?",
+    "options": [
+     {
+      "label": "Ters yön (+/−)",
+      "result": "although, even though, while, whereas, but, yet"
+     },
+     {
+      "label": "Neden → sonuç",
+      "result": "because, since, as, now that · sonuç: so"
+     },
+     {
+      "label": "Amaç (-sın diye)",
+      "result": "so that + can/could/will"
+     },
+     {
+      "label": "Koşul (-se / -mezse)",
+      "result": "if, unless, as long as, provided that, in case"
+     },
+     {
+      "label": "Zaman",
+      "result": "when, once, until, by the time, ever since (bağlaçtan sonra will ✗)"
+     }
+    ]
+   },
+   {
+    "id": "isim",
+    "q": "Anlam ne?",
+    "options": [
+     {
+      "label": "Ters yön",
+      "result": "despite, in spite of, notwithstanding, unlike, regardless of"
+     },
+     {
+      "label": "Neden",
+      "result": "because of, due to, owing to, thanks to, as a result of"
+     },
+     {
+      "label": "Amaç",
+      "result": "with a view to / with the aim of + Ving"
+     },
+     {
+      "label": "Ekleme",
+      "result": "in addition to, besides, apart from, as well as"
+     },
+     {
+      "label": "Yerine / tercih",
+      "result": "instead of, rather than"
+     }
+    ]
+   },
+   {
+    "id": "zarf",
+    "q": "İkinci cümle birinciye göre ne yapıyor?",
+    "options": [
+     {
+      "label": "Ters yön",
+      "result": "however, nevertheless, nonetheless, on the other hand, in contrast"
+     },
+     {
+      "label": "Sonuç",
+      "result": "therefore, thus, hence, consequently, as a result"
+     },
+     {
+      "label": "Ekleme",
+      "result": "moreover, furthermore, in addition"
+     },
+     {
+      "label": "Örnek",
+      "result": "for example, for instance"
+     },
+     {
+      "label": "Reddedip tersini söylüyor",
+      "result": "on the contrary (aksine)"
+     },
+     {
+      "label": "Açıklıyor (yani)",
+      "result": "that is, namely, in other words"
+     }
+    ]
+   },
+   {
+    "id": "zaman",
+    "q": "Zaman ifadesi var mı?",
+    "options": [
+     {
+      "label": "since / over the past / so far",
+      "result": "has / have V3"
+     },
+     {
+      "label": "ago / in 1990 / last year",
+      "result": "V2 (past simple)"
+     },
+     {
+      "label": "by the time + V2 / by 1900",
+      "result": "had V3"
+     },
+     {
+      "label": "by 2050 / by the time + V1",
+      "result": "will have V3"
+     },
+     {
+      "label": "when / until / once / as soon as",
+      "result": "Gelecek anlamı: bağlaçlı tarafta present (will ✗), öbür taraf will. Geçmişte: iki taraf V2."
+     },
+     {
+      "label": "İfade yok",
+      "next": "zaman2"
+     }
+    ]
+   },
+   {
+    "id": "zaman2",
+    "q": "Diğer fiilin zamanı ne?",
+    "options": [
+     {
+      "label": "Geçmiş",
+      "result": "Geçmiş ailesi: V2; daha önceyse had V3"
+     },
+     {
+      "label": "Şimdi / gelecek",
+      "result": "present / will"
+     },
+     {
+      "label": "Hiç yok, genel bilgi",
+      "result": "Present simple (genel gerçek)"
+     },
+     {
+      "label": "Özne eylemi yapamıyor",
+      "result": "Edilgen: be + V3 (zaman yukarıdaki gibi)"
+     }
+    ]
+   },
+   {
+    "id": "fiil",
+    "q": "Boşluktan hemen önce ne var?",
+    "options": [
+     {
+      "label": "Edat (of, by, without, to = edat)",
+      "result": "Ving · \"to'ya isim sığıyorsa -ing\""
+     },
+     {
+      "label": "enable / allow / cause + nesne",
+      "result": "to V"
+     },
+     {
+      "label": "let / make + nesne",
+      "result": "V1"
+     },
+     {
+      "label": "avoid / consider / involve",
+      "result": "Ving"
+     },
+     {
+      "label": "aim / decide / fail / manage",
+      "result": "to V"
+     }
+    ]
+   },
+   {
+    "id": "kelime",
+    "q": "Boşluğun yeri neresi?",
+    "options": [
+     {
+      "label": "the ---- of",
+      "result": "isim (-tion, -ity, -ment, -ness)"
+     },
+     {
+      "label": "---- + isim",
+      "result": "sıfat (-al, -ive, -ous, -able)"
+     },
+     {
+      "label": "Fiil veya sıfatı niteliyor",
+      "result": "zarf (-ly)"
+     },
+     {
+      "label": "modal / to + ----",
+      "result": "fiil (yalın)"
+     },
+     {
+      "label": "Şıklar aynı türde",
+      "result": "Anlam + eşdizim: boşluğun önü ve arkası"
+     }
+    ]
+   }
+  ]
+ },
+ "polarityCards": [
+  {
+   "group": "Zıtlık",
+   "color": "red",
+   "words": [
+    "although",
+    "even though",
+    "though"
+   ],
+   "structure": "+ cümle · (+) ↔ (−)",
+   "ex": "Although it is light, it is strong.",
+   "trap": "Although … , but ✗"
+  },
+  {
+   "group": "Zıtlık",
+   "color": "red",
+   "words": [
+    "despite",
+    "in spite of"
+   ],
+   "structure": "+ isim / Ving / the fact that",
+   "ex": "Despite its weight, it floats.",
+   "trap": "despite of ✗"
+  },
+  {
+   "group": "Zıtlık",
+   "color": "red",
+   "words": [
+    "whereas",
+    "while"
+   ],
+   "structure": "+ cümle · iki şeyi karşılaştırır (oysa)",
+   "ex": "Iron rusts, whereas gold does not.",
+   "trap": "while = -iken de olabilir: önce anlam"
+  },
+  {
+   "group": "Zıtlık",
+   "color": "red",
+   "words": [
+    "however",
+    "nevertheless",
+    "nonetheless"
+   ],
+   "structure": "; X, veya . X, + cümle",
+   "ex": "It is cheap; however, it is weak.",
+   "trap": "X, however Y ✗ (virgülle iki cümle bağlamaz)"
+  },
+  {
+   "group": "Zıtlık",
+   "color": "red",
+   "words": [
+    "on the contrary"
+   ],
+   "structure": ". On the contrary, … (önceki fikri reddeder)",
+   "ex": "It did not fail. On the contrary, it improved.",
+   "trap": "on the other hand (karşılaştırır) ile karıştırma"
+  },
+  {
+   "group": "Neden-sonuç",
+   "color": "green",
+   "words": [
+    "because",
+    "since",
+    "as"
+   ],
+   "structure": "+ cümle · aynı yön",
+   "ex": "Since it was wet, the test stopped.",
+   "trap": "since: zaman ifadesi yoksa 'çünkü'"
+  },
+  {
+   "group": "Neden-sonuç",
+   "color": "green",
+   "words": [
+    "due to",
+    "because of",
+    "owing to",
+    "thanks to"
+   ],
+   "structure": "+ isim",
+   "ex": "Due to the rain, it was delayed.",
+   "trap": "due to it rained ✗"
+  },
+  {
+   "group": "Neden-sonuç",
+   "color": "green",
+   "words": [
+    "therefore",
+    "thus",
+    "hence",
+    "consequently"
+   ],
+   "structure": "; X, + cümle (sonuç)",
+   "ex": "It is light; therefore, it is used in planes.",
+   "trap": "thus/thereby + Ving de olur"
+  },
+  {
+   "group": "Amaç",
+   "color": "green",
+   "words": [
+    "so that"
+   ],
+   "structure": "+ özne + can/could/will",
+   "ex": "Coat it so that it can resist rust.",
+   "trap": "so … that (sonuç) ile karıştırma"
+  },
+  {
+   "group": "Amaç",
+   "color": "green",
+   "words": [
+    "in order to",
+    "so as to"
+   ],
+   "structure": "+ V1",
+   "ex": "in order to reduce",
+   "trap": "in order to reducing ✗"
+  },
+  {
+   "group": "Amaç",
+   "color": "green",
+   "words": [
+    "with a view to",
+    "with the aim of"
+   ],
+   "structure": "+ Ving (to edat)",
+   "ex": "with a view to reducing",
+   "trap": "with a view to reduce ✗"
+  },
+  {
+   "group": "Ekleme",
+   "color": "green",
+   "words": [
+    "moreover",
+    "furthermore",
+    "in addition"
+   ],
+   "structure": "; X, + cümle (artıya artı)",
+   "ex": "It is cheap; moreover, it is light.",
+   "trap": "Yön değişiyorsa ekleme değil"
+  },
+  {
+   "group": "Zaman",
+   "color": "blue",
+   "words": [
+    "once",
+    "as soon as",
+    "when"
+   ],
+   "structure": "+ cümle (present = gelecek)",
+   "ex": "Once it cools, it will harden.",
+   "trap": "once it will cool ✗"
+  },
+  {
+   "group": "Zaman",
+   "color": "blue",
+   "words": [
+    "until",
+    "by the time"
+   ],
+   "structure": "until + V1 → will · by the time + V2 → had V3",
+   "ex": "By the time we arrived, it had ended.",
+   "trap": "until … will ✗"
+  },
+  {
+   "group": "Koşul",
+   "color": "purple",
+   "words": [
+    "unless"
+   ],
+   "structure": "+ olumlu cümle = if not",
+   "ex": "It dies unless it gets water.",
+   "trap": "unless … not genelde ✗ (unless zaten olumsuz)"
+  },
+  {
+   "group": "Koşul",
+   "color": "purple",
+   "words": [
+    "as long as",
+    "provided that",
+    "in case"
+   ],
+   "structure": "+ cümle · şartıyla / ihtimaline karşı",
+   "ex": "Take a coat in case it rains.",
+   "trap": "in case ≠ if"
+  },
+  {
+   "group": "Örnek-açıklama",
+   "color": "gray",
+   "words": [
+    "such as",
+    "for example",
+    "for instance"
+   ],
+   "structure": "such as + liste · for example: ; X, + cümle",
+   "ex": "metals such as copper",
+   "trap": "such as + cümle ✗"
+  },
+  {
+   "group": "Örnek-açıklama",
+   "color": "gray",
+   "words": [
+    "namely",
+    "that is",
+    "in other words"
+   ],
+   "structure": "önceki şeyi adlandırır / açıklar (yani)",
+   "ex": "one cause, namely heat",
+   "trap": "Yeni bilgi eklemez"
+  }
+ ],
+ "tenseTable": {
+  "cols": [
+   "İfade",
+   "Ana cümle",
+   "Örnek"
+  ],
+  "rows": [
+   [
+    "since + geçmiş an",
+    "has V3 (cont.)",
+    "Since it was built, it has carried …"
+   ],
+   [
+    "ever since + V2",
+    "has V3",
+    "Ever since lasers appeared, they have been …"
+   ],
+   [
+    "for + süre",
+    "has V3 (sürüyor) / V2 (bitti)",
+    "for ten years"
+   ],
+   [
+    "over the past / so far / to date",
+    "has V3",
+    "So far it has saved …"
+   ],
+   [
+    "ago / in 1990 / last year",
+    "V2",
+    "It opened in 1990."
+   ],
+   [
+    "recently",
+    "has V3 veya V2",
+    "It was recently discovered."
+   ],
+   [
+    "by the time + V2",
+    "had V3",
+    "By the time they arrived, it had spread."
+   ],
+   [
+    "by the time + V1",
+    "will have V3",
+    "By the time it arrives, it will have travelled …"
+   ],
+   [
+    "when / once / as soon as + V1",
+    "will (bağlaçta will ✗)",
+    "As soon as it cools, it will harden."
+   ],
+   [
+    "until + V1",
+    "will",
+    "The test will continue until it breaks."
+   ],
+   [
+    "until + V2",
+    "V2 (didn't … until)",
+    "It didn't start until we fixed it."
+   ],
+   [
+    "while / as + was Ving",
+    "V2",
+    "While it was cooling, it cracked."
+   ],
+   [
+    "No sooner had … than",
+    "V2",
+    "No sooner had it started than it stopped."
+   ],
+   [
+    "Hardly had … when",
+    "V2",
+    "Hardly had it stopped when it rained."
+   ],
+   [
+    "by 2040",
+    "will have V3",
+    "By 2040 they will have built …"
+   ],
+   [
+    "by 1900",
+    "had V3",
+    "By 1900 it had spread."
+   ],
+   [
+    "It is the first time",
+    "has V3",
+    "It is the first time it has failed."
+   ],
+   [
+    "currently / at present / now",
+    "is Ving",
+    "Scientists are studying …"
+   ],
+   [
+    "genel gerçek / ifade yok",
+    "V1",
+    "Water boils at 100 °C."
+   ]
+  ]
+ },
+ "cheatSheets": [
+  {
+   "id": "baglac-master",
+   "title": "Bağlaç MASTER",
+   "md": "| Anlam | + cümle | + isim/Ving · zarf |\n|---|---|---|\n| Zıtlık | although, while, whereas, but, yet | despite, unlike · however, nevertheless |\n| Neden | because, since, as, given that | due to, owing to, thanks to |\n| Sonuç | so, so…that | thus + Ving · therefore, hence |\n| Amaç | so that | in order to + V1 · with a view to + Ving |\n| Olmasın diye | lest, for fear that | so as not to + V1 |\n| Koşul | if, unless, as long as, in case | but for, in case of · otherwise |\n| Zaman | when, once, until, by the time | during, prior to · meanwhile |\n| Ekleme | not only…but also | besides, in addition to · moreover |\n| Benzerlik | just as | like, similar to · similarly |\n| Örnek | – | such as · for example |\n| Açıklama | – | namely, that is |\n| Tercih | rather than | instead of · instead |\n| İstisna | except that | except (for), other than |\n| Özet | – | in short, overall |"
+  },
+  {
+   "id": "to-ving",
+   "title": "to + Ving ailesi",
+   "md": "**to = edat → Ving**\n- with a view to · look forward to · be used to\n- contribute to · lead to · object to\n- be devoted to · be committed to · the key to\n- in addition to · when it comes to\n\n**Test:** to'dan sonra isim koy. Oluyorsa → Ving.\n- contribute to **success** ✓ → contribute to **reducing**\n- in order to **success** ✗ → in order to **reduce**"
+  },
+  {
+   "id": "fen-edat",
+   "title": "Fen edatları",
+   "md": "| Edat | Ne ile |\n|---|---|\n| **at** | temperature, rate, speed, level, depth |\n| **under** | pressure, conditions, control |\n| **by** | % miktar, yöntem (by Ving) |\n| **in** | rise in, increase in, in terms of |\n| **from … to** | aralık |\n| **between … and** | iki değer |\n\n- **to**: resistant, exposed, prone, similar\n- **of**: consist, capable, composed\n- **for**: responsible, suitable, account for"
+  },
+  {
+   "id": "devrik",
+   "title": "Devrik tetikleyiciler",
+   "md": "**Başta gelirse → yardımcı fiil + özne**\n- Never · Rarely · Seldom · Little\n- Hardly … when · No sooner … than\n- Not only · Not until\n- Only after / when / by / if\n- Under no circumstances · At no time\n- So + sıfat · Such + be\n- Had / Were / Should (koşul)\n\n- It was not until X **that** Y (devriksiz)"
+  },
+  {
+   "id": "cift-esler",
+   "title": "Çift eşler",
+   "md": "| Bir eş | Öbür eş |\n|---|---|\n| both | and |\n| either | or |\n| neither | nor |\n| not only | but also |\n| whether | or |\n| so / such | that |\n| as | as |\n| the -er | the -er |\n| no sooner | than |\n| hardly | when |\n| between | and |\n| from | to |\n| rather | than |"
+  }
+ ],
+ "eliminationTips": [
+  {
+   "title": "Yapı önce",
+   "text": "Sonrası isimse cümle bağlaçlarını sil; sonrası cümleyse edatları sil.",
+   "ex": "---- strong winds → because/although/while gider; due to/despite kalır."
+  },
+  {
+   "title": "Noktalama",
+   "text": "; ---- , veya . ---- , görürsen sadece zarf kalır (however, therefore…).",
+   "ex": "It is cheap; ----, it is weak. → however ✓, although ✗"
+  },
+  {
+   "title": "İkiz şık",
+   "text": "Aynı işlevli iki şık (because/since) varsa ve cevap tekse çoğu zaman ikisi de yanlış. Son çare.",
+   "ex": "since / because birlikte → üçüncü yol ara."
+  },
+  {
+   "title": "Bağlaç + will",
+   "text": "Zaman/koşul bağlacından sonra will olan şıkkı sil.",
+   "ex": "When the ice will melt ✗"
+  },
+  {
+   "title": "Çift boşluk",
+   "text": "Kolay yarıyı çöz, eşleşmeyen şıkları sil.",
+   "ex": "\"in 2019\" → was installed olmayan şıklar gider."
+  },
+  {
+   "title": "Eşi olan bağlaç",
+   "text": "Cümlede nor → neither; or → either; than → comparative / no sooner.",
+   "ex": "---- the pump nor the valve → Neither"
+  },
+  {
+   "title": "Devrik",
+   "text": "Başta Never / Only after / Not until varsa düz sıralı şıkları sil.",
+   "ex": "Rarely ---- → \"scientists have found\" ✗"
+  },
+  {
+   "title": "Çeviri",
+   "text": "Bağlacı ve zamanı tutmayan şıkkı anlama bakmadan sil.",
+   "ex": "although ↔ -mesine rağmen olmayan şık gider."
+  }
+ ],
+ "personalRules": [
+  {
+   "topic": "edat-esdizim",
+   "rule": "Değer → AT: at 100 °C, at a rate of, at high speed. Ama: under pressure · rise IN · increased BY 20%.",
+   "ex": "Water boils at 100 °C.",
+   "wrong": "Water boils in 100 °C.",
+   "right": "Water boils at 100 °C."
+  },
+  {
+   "topic": "baglac-zitlik",
+   "rule": "Although (+), (−). İki taraf aynı yöndeyse although ✗ → because/so. while: önce \"iken\" mi \"oysa\" mı?",
+   "ex": "Although it is new, it is widely used.",
+   "wrong": "Although it is cheap, many people buy it.",
+   "right": "Because it is cheap, many people buy it."
+  },
+  {
+   "topic": "gerund-infinitive",
+   "rule": "With + isim + Ving/V3, ana cümle. Arada çekimli fiil yok.",
+   "ex": "With prices rising, demand fell.",
+   "wrong": "With prices are rising, demand fell.",
+   "right": "With prices rising, demand fell."
+  },
+  {
+   "topic": "relative",
+   "rule": "Virgül veya edat → which. İkisi de yoksa which/that ikisi de olur.",
+   "ex": "Steel, which is strong, …",
+   "wrong": "Steel, that is strong, …",
+   "right": "Steel, which is strong, …"
+  },
+  {
+   "topic": "either-neither",
+   "rule": "neither–nor · either–or. Bir eş varsa diğerini ara.",
+   "ex": "Neither the pump nor the valve failed.",
+   "wrong": "Neither the pump or the valve failed.",
+   "right": "Neither the pump nor the valve failed."
+  },
+  {
+   "topic": "baglac-neden-amac",
+   "rule": "\"to\" testi: sonrasına isim koy. Olursa edat → Ving (with a view to reducing). Olmazsa → V1 (in order to reduce).",
+   "ex": "with a view to reducing noise",
+   "wrong": "with a view to reduce noise",
+   "right": "with a view to reducing noise"
+  },
+  {
+   "topic": "edat-esdizim",
+   "rule": "lead to = yol açmak → + isim: lead to an increase / the formation of.",
+   "ex": "Heat leads to the formation of cracks.",
+   "wrong": "Heat leads to form cracks.",
+   "right": "Heat leads to the formation of cracks."
+  },
+  {
+   "topic": "gerund-infinitive",
+   "rule": "mean + Ving = gerektirir / anlamına gelir. mean + to V = niyet etti (\"meant to … but\").",
+   "ex": "Saving energy means changing habits.",
+   "wrong": "We meant repeating the test, but it broke.",
+   "right": "We meant to repeat the test, but it broke."
+  },
+  {
+   "topic": "ilgisiz",
+   "rule": "3 soru: Aynı konu mu? Aynı alt konu mu? Aynı bakış (neden/tarih/yer) mı? Ortak kelime ≠ ilgili.",
+   "ex": "Konu: bakırın iletkenliği → Özgürlük Heykeli cümlesi ilgisiz.",
+   "wrong": "\"copper\" geçiyor, o halde ilgili.",
+   "right": "Alt konu farklı → ilgisiz."
+  }
+ ],
+ "mnemonics": [
+  {
+   "topic": "despite-although",
+   "text": "Despite'ın OF'u yok (in spite of'un var)."
+  },
+  {
+   "topic": "relative",
+   "text": "Virgülden sonra THAT yatar (, that ✗)."
+  },
+  {
+   "topic": "zaman-ifadeleri",
+   "text": "H-W, N-T: Hardly–When, No sooner–Than."
+  },
+  {
+   "topic": "zaman-uyumu",
+   "text": "Bağlaçtan sonra will yok."
+  },
+  {
+   "topic": "edat-ving",
+   "text": "to'ya isim sığıyorsa -ing."
+  },
+  {
+   "topic": "gerund-infinitive",
+   "text": "used to V1 = eskiden yapardı · be used to Ving = alışkın · be used to V1 = için kullanılır."
+  },
+  {
+   "topic": "so-such-too-enough",
+   "text": "Too = olmuyor, enough = oluyor."
+  },
+  {
+   "topic": "quantifier",
+   "text": "FEWER sayılır, LESS sayılmaz."
+  },
+  {
+   "topic": "subjunctive",
+   "text": "Önermek → V1, göstermek → normal zaman."
+  },
+  {
+   "topic": "edat-esdizim",
+   "text": "Değer AT'ta, basınç UNDER'da."
+  }
+ ]
+}

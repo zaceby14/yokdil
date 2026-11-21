@@ -11,6 +11,14 @@ import { setCtx } from '../ctx.js';
 import { saveNote, quickNotes } from '../notes.js';
 import { emptyData } from './hub.js';
 
+// Saf: okuma görevi sayılır mı? Makul hız (< 400 kelime/dk) ve (en az 1 doğru ya da sorusuz tamamlanmış okuma)
+export const MAX_WPM = 400;
+export function readCounts({ words, secs, right = 0, total = 0 }) {
+  if (!secs || !words) return false;
+  const wpm = words / (secs / 60);
+  return wpm < MAX_WPM && (total ? right >= 1 : true);
+}
+
 // Okuma hızı + doğruluk → önerilen seviye (saf)
 export function suggestLevel(recs, maxL = 3) {
   const r = recs.filter(x => x.total).sort((a, b) => (b.at || 0) - (a.at || 0)).slice(0, 3);
@@ -157,8 +165,11 @@ function reader(root, doc) {
           sid: 'okuma:' + doc.id, name: 'Okuma · ' + doc.title, source: 'Okuma', inline: !!doc.mine,
           resolve: async key => { const k = +key.split('#').pop(); const q = doc.questions[k]; return q ? { ...q, key, info: { kind: 'okuma', dtype: 'paragraf' } } : null; },
           onAnswer: (it, ok) => answer(it.key, ok, { kind: 'okuma', topic: doc.passage?.topic || '', dtype: 'okuma' }),
-          onEnd: ({ right, total }) => {
-            flush(); tick('okuma');
+          task: 'okuma',
+          onEnd: ({ right, total }, el) => {
+            flush();
+            if (readCounts({ words: nWords, secs, right, total })) tick('okuma');
+            else el.querySelector('.endcard')?.append(h('p.small.warn-t.shortread', 'Kısa okuma: görev sayılmadı (metni okuyup en az 1 doğru gerekir).'));
             const r = store.get('progress', rid);
             if (r) store.put('progress', { ...r, right, total });
             showNew();
@@ -177,7 +188,7 @@ function reader(root, doc) {
       doc.passage ? h('div.small.muted', `${topicName(doc.passage.topic || '')} · seviye ${doc.passage.level || '-'}`) : null,
     h('p.small.muted', 'Dokun: kelime · Uzun bas/Öbek: başlangıç → bitiş'),
     gloss, body,
-    doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); showNew(); } }, 'Okumayı bitirdim'),
+    doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); if (readCounts({ words: nWords, secs })) tick('okuma'); else speed.textContent = 'Kısa okuma: görev sayılmadı.'; showNew(); } }, 'Okumayı bitirdim'),
     speed, qsec, summary
   );
   const onVis = () => document.visibilityState === 'hidden' && flush();
@@ -191,7 +202,7 @@ function newWordsBox(list, doc, after) {
   if (!list.length) { box.append(h('p.small.muted', 'Bu parçada yeni çekirdek kelime yok.')); return box; }
   const on = new Set();
   const add = items => {
-    for (const x of items) store.put('cards', { ...cardFromWord(x.entry), ctx: x.ctx || '', source: 'Okuma', note: doc.title || '', front: Date.now() });
+    for (const x of items) store.put('cards', { ...cardFromWord(x.entry), ctx: x.ctx || '', source: 'Okuma', note: doc.title || '', front: Date.now(), mine: Date.now() });
     box.innerHTML = '';
     box.append(h('p', h('b', `+${items.length} kelime karta eklendi`)));
     toast(`+${items.length} kelime karta eklendi`);

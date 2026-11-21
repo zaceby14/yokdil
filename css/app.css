@@ -374,3 +374,84 @@ button.card.link { width: 100%; text-align: left; font: inherit; cursor: pointer
 .view { padding-bottom: 72px; }
 .settings-btn { width: auto; gap: 4px; padding: 0 10px; display: inline-flex; align-items: center; }
 .settings-btn .btn-label { font-size: .8rem; font-weight: 600; }
+
+/* ===== v6 ===== */
+.good-t { color: var(--good); }
+.warn-t { color: var(--mid); }
+/* Soru/sınav ekranları: Not FAB gizli, Not üst çubukta; ana eylem düğmesi yapışkan altta */
+.note-top { display: none; }
+body.qmode .fab, body[data-route^="kartlar-tara"] .fab, body[data-route^="cikmis-sinav"] .fab { display: none; }
+body.qmode .note-top, body[data-route^="kartlar-tara"] .note-top, body[data-route^="cikmis-sinav"] .note-top { display: inline-flex; }
+.note-top .btn-label { font-size: .8rem; margin-left: 2px; }
+.actbar { position: sticky; bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 6px); z-index: 12; display: flex; gap: 8px; flex-wrap: wrap;
+  background: var(--bg); padding: 6px 0; margin-top: 8px; }
+.actbar:empty, .actbar:has(> .hidden:only-child) { padding: 0; margin: 0; }
+.actbar > .btn { margin: 0; }
+.actbar > .btn.wide { flex: 1 1 100%; }
+.exam-nav > .btn { flex: 1 1 0; }
+@media (min-width: 900px) { .actbar { bottom: 8px; } }
+body.kb .actbar { bottom: 0; }
+/* Bildirim üstte, tıklamayı engellemez */
+#toast { top: calc(var(--top-h) + 10px); bottom: auto !important; transform: translate(-50%, -12px); pointer-events: none; z-index: 60; }
+#toast.show { transform: translate(-50%, 0); }
+.evetip { top: calc(var(--top-h) + 8px) !important; bottom: auto !important; }
+/* Dokunma hedefleri ≥ 44 px */
+.btn.small { min-height: 44px; min-width: 44px; }
+.btn.play { min-width: 44px; min-height: 44px; }
+.icon-x.small { width: 44px; height: 44px; }
+.seg.small > * { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+button.chip, a.chip.pick { min-height: 44px; display: inline-flex; align-items: center; }
+.reader details.idea summary { min-height: 44px; display: flex; align-items: center; }
+.sync-dot { border: 0; padding: 0; cursor: pointer; }
+/* Soru araç çubuğu: İpucu · Ders */
+.qbar { display: flex; gap: 6px; justify-content: flex-end; margin: -2px 0 6px; }
+.qbar .chip { margin: 0; }
+.chip.hint-btn { border: 1px solid var(--mid); color: var(--text); background: transparent; }
+.hintbox { background: var(--hl); border-radius: 12px; padding: 10px 12px; margin: 0 0 10px; }
+.rulecard { border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 10px; padding: 10px 12px; margin: 8px 0; }
+.formula { background: var(--hl); border-radius: 12px; padding: 10px 12px; margin: 8px 0 10px; }
+.formula-line { display: block; color: var(--text); opacity: .85; }
+.span.blank, .reader .blank { display: inline-block; min-width: 2.6em; border-bottom: 2px solid var(--accent); color: transparent; line-height: 1; margin: 0 2px; position: relative; }
+.reader .blank::after { content: attr(data-b); position: absolute; left: 50%; top: -.1em; transform: translateX(-50%); font-size: .65em; color: var(--muted); }
+.reader.inline .blank::after { content: ''; }
+/* Bitiş ekranı */
+.wronglist details { border-top: 1px solid var(--line); padding: 8px 0; }
+.wronglist summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.endnext { margin-top: 10px; }
+.daysum { margin: 4px 0 10px; }
+/* Çıkmış: bölüm şeridi, optik başlıkları, ara sonuç, sonuç grupları */
+.secstrip { display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 8px; margin-bottom: 4px; -webkit-overflow-scrolling: touch; }
+.secstrip .chip { white-space: nowrap; flex: 0 0 auto; margin: 0; }
+.secstrip .chip.on { background: var(--accent); color: var(--accent-t); }
+.secstrip .chip.ok:not(.on) { background: var(--good-soft); }
+.optik .optik-h { grid-column: 1 / -1; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+.opts.locked .opt { cursor: default; }
+.secgroup summary, .qwrong summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.qwrong { border-top: 1px solid var(--line); padding: 4px 0; }
+tr.secrow { cursor: pointer; }
+.secpick summary { font-size: .85rem; color: var(--accent); cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+/* Araçlar */
+.tools { margin-bottom: 10px; }
+.toolstrip { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0; -webkit-overflow-scrolling: touch; }
+.tool { flex: 0 0 auto; min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.tree-opts { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.tree-opt { justify-content: flex-start; text-align: left; }
+.treepath { margin-bottom: 6px; }
+.polcards { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.polcard { flex: 0 0 82%; scroll-snap-align: start; border-radius: var(--r); padding: 14px; border-top: 6px solid; background: var(--surface); }
+.pc-red { border-color: #d0453a; } .pc-green { border-color: #2e8a57; } .pc-blue { border-color: #2f6fb8; } .pc-purple { border-color: #7b4bb3; } .pc-gray { border-color: #8a918e; } .pc-orange { border-color: #d98a1c; }
+.polcard .trap { color: var(--bad); }
+ol.elim li { margin-bottom: 10px; }
+/* Dar ekranda tablolar kart görünümü */
+@media (max-width: 600px) {
+  .tbl.cardify table, .tbl.cardify tbody, .tbl.cardify tr, .tbl.cardify td { display: block; width: 100%; }
+  .tbl.cardify tr:first-child:has(th) { display: none; }
+  .tbl.cardify tr { border: 1px solid var(--line); border-radius: 10px; margin: 0 0 8px; padding: 4px 0; background: var(--surface); }
+  .tbl.cardify td { border: 0; min-width: 0; padding: 3px 10px; }
+  .tbl.cardify td[data-th]:not([data-th=""])::before { content: attr(data-th) ': '; font-weight: 600; color: var(--muted); }
+  .tbl:not(.cardify) td:first-child, .tbl:not(.cardify) th:first-child { position: sticky; left: 0; background: var(--surface2); z-index: 1; }
+}
+/* Telefonda Not her zaman üst çubukta (yüzen düğme kartları/düğmeleri kapatmasın) */
+@media (max-width: 899px) { .fab { display: none !important; } .note-top { display: inline-flex; } }
+body.qmode .evetip, body[data-route^="cikmis-sinav"] .evetip { display: none; }
+.note-top { border: 0; background: none; color: inherit; align-items: center; gap: 2px; padding: 0 8px; min-height: 44px; cursor: pointer; font: inherit; }

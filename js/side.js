@@ -1,7 +1,7 @@
 // Ders yan paneli: soru çözerken sayfadan AYRILMADAN ders açılır.
 // Masaüstü (≥1100px): sağda sabit panel, soru ekranı solda kalır. Mobil: tam ekran kayan panel; geri tuşu / × kapatır.
 import { lessons } from './data.js';
-import { h, topicName } from './util.js';
+import { h, topicName, TYPE_LESSON, TOPIC_LESSON } from './util.js';
 import { md } from './md.js';
 import { lessonTopic } from './qbank.js';
 import * as store from './store.js';
@@ -46,10 +46,27 @@ export async function openLesson(idOrTopic) {
   store.patch('progress', 'ders:' + l.id, { opened: Date.now() });
   show(l.title, [
     h('div.small.muted', [topicName(lessonTopic(l)), l.minutes ? l.minutes + ' dk' : ''].filter(Boolean).join(' · ')),
+    l.formula ? h('div.formula', h('b', '30 sn: '), l.formula) : null,
     l.summary ? h('div.note', l.summary) : null,
     ...lessonBlocks(l),
     h('button.btn.wide', { onclick: closeSide }, 'Kapat ve soruya dön')
   ], h('button.btn.small', { onclick: openLessonList, 'aria-label': 'tüm dersler' }, '‹'));
+}
+
+// Soru öğesi için ders adayları: konu dersi → konuya bağlı ek ders → (çift boşluk) → soru tipi taktik dersi → genel taktik
+export function lessonCands(it) {
+  const t = it?.info?.topic || '', d = it?.info?.dtype || '';
+  const dbl = it?.double || (String(it?.q || '').match(/-{2,}/g) || []).length >= 2;
+  return [t, TOPIC_LESSON[t], dbl ? 'cift-bosluk' : '', TYPE_LESSON[d], d === 'bosluk' || !d ? '' : 'soru-tipi-taktikleri'].filter(Boolean);
+}
+export async function findLesson(cands) {
+  const ls = await lessons();
+  for (const c of cands) { const l = ls.find(x => x.id === c) || ls.find(x => lessonTopic(x) === c); if (l) return l; }
+  return null;
+}
+export async function openFor(it) {
+  const l = await findLesson(lessonCands(it));
+  return l ? openLesson(l.id) : openLessonList();
 }
 
 export async function openLessonList() {

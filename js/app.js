@@ -1,8 +1,9 @@
 // Uygulama kabuğu: tema, tohum veri, router
 import * as store from './store.js';
 import * as sync from './sync.js';
-import { loadAll, seedUser, usedSample } from './data.js';
-import { h } from './util.js';
+import { loadAll, seedUser, usedSample, wordIndex } from './data.js';
+import { MIGRATIONS } from './migrations.js';
+import { h, toast } from './util.js';
 import { applyTheme } from './theme.js';
 import { migrateContent } from './contentrev.js';
 import today from './views/today.js';
@@ -59,6 +60,7 @@ async function route() {
   try { cleanup?.(); } catch {}
   cleanup = null; current = r;
   setCtx(null);
+  document.body.classList.remove('qmode');
   document.body.dataset.route = [r, ...rest].join('-');
   setActive(r);
   view.innerHTML = '';
@@ -74,7 +76,7 @@ async function route() {
 function syncDot(s) {
   const d = document.getElementById('syncDot');
   d.className = 'sync-dot ' + s.state;
-  d.title = { off: 'Senkron kapalı', idle: 'Senkron hazır', pending: 'Gönderilecek', syncing: 'Senkronlanıyor', ok: 'Senkron tamam', error: 'Senkron hatası: ' + s.msg }[s.state] || '';
+  d.title = { off: 'Senkron kapalı (anahtar yok)', idle: 'Senkron hazır', pending: 'Senkron: gönderilecek değişiklik var', syncing: 'Senkronlanıyor…', ok: 'Senkron tamam', error: 'Senkron yapılamadı (bağlantı?): ' + s.msg }[s.state] || '';
 }
 
 async function main() {
@@ -84,9 +86,11 @@ async function main() {
   await loadAll();
   await seed();
   await migrateContent().catch(e => console.warn('içerik güncelleme', e));
+  try { store.migrate(MIGRATIONS, { idx: await wordIndex() }); } catch (e) { console.warn('göç', e); }
   sync.onStatus(syncDot);
   sync.init();
   syncDot(sync.status);
+  document.getElementById('syncDot').addEventListener('click', e => toast(e.currentTarget.title || 'Senkron'));
   store.subscribe(info => {
     if (info.merged && ['bugun', 'eksikler', 'ayarlar'].includes(current)) route();
   });
