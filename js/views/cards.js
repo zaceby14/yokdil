@@ -15,6 +15,7 @@ import { SPK } from '../tappable.js';
 import { inLadder } from '../srs.js';
 import { setCtx } from '../ctx.js';
 import { nextTaskBtn, cardMin, NEW_VIEWS } from '../tasks.js';
+import { loadStars, hasStars, starOf, starsEl, starRow, STAR_TIP } from '../stars.js';
 
 const SRC = ['Ikigai', 'More to Read', 'Diğer'];
 const POS_TR = { n: 'isim', v: 'fiil', adj: 'sıfat', adv: 'zarf', conj: 'bağlaç', prep: 'edat', phr: 'öbek' };
@@ -27,6 +28,7 @@ function tabs(active) {
 }
 
 export default async function render(root, [mode, id]) {
+  await loadStars();
   if (mode === 'liste') return list(root);
   if (mode === 'ekle') return form(root, null);
   if (mode === 'duzenle') return form(root, store.get('cards', id));
@@ -122,6 +124,7 @@ async function session(root, kind = 'tekrar') {
       h('div.small.muted', `${queue.length + 1} kaldı · ${stateTr(card)}`),
       rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word,
         canSpeak() ? h('button.icon-btn.say', { type: 'button', 'aria-label': 'dinle', onclick: e => { e.stopPropagation(); speak(card.word); } }, SPK()) : null),
+      starRow(card.word),
       inLadder(card) ? h('span.chip.small.warn', 'merdiven') : null,
       (card.ctx || en?.ex?.[0]?.en) ? h('div.ctx', { lang: 'en', html: rev ? esc(card.ctx || en.ex[0].en).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(card.ctx || en.ex[0].en, card.word) }) : null
     );
@@ -213,6 +216,9 @@ function list(root) {
     Object.entries(LV).map(([k, v]) => h('option', { value: k }, v)));
   const stOk = c => !fst.value || (fst.value === 'grad' ? level(c) === 'grad' : fst.value === 'eksik' ? !(c.tr || '').trim()
     : fst.value === 'review' ? c.state === 'review' && !isGraduated(c) : (c.state || 'new') === fst.value);
+  const stars = hasStars();
+  const sort = h('select', { 'aria-label': 'Sırala' }, h('option', { value: '' }, 'A–Z'), h('option', { value: 'star' }, '★ çok çıkan önce'));
+  const top = h('input', { type: 'checkbox' });
   const ul = h('ul.list.compact');
   const count = h('div.small.muted');
   const draw = () => {
@@ -220,19 +226,22 @@ function list(root) {
     let cs = store.all('cards').filter(c =>
       (!s || (c.word || '').toLowerCase().includes(s) || (c.tr || '').toLowerCase().includes(s)) &&
       (!fs.value || (c.source || '').startsWith(fs.value)) &&
-      stOk(c));
-    cs.sort((a, b) => (a.word || '').localeCompare(b.word || '', 'en'));
+      stOk(c) && (!top.checked || (starOf(c.word) || 0) >= 4));
+    cs.sort((a, b) => (sort.value === 'star' ? (starOf(b.word) || 0) - (starOf(a.word) || 0) : 0) || (a.word || '').localeCompare(b.word || '', 'en'));
     count.textContent = cs.length + ' kart';
     ul.innerHTML = '';
     for (const c of cs.slice(0, 300)) ul.append(h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) },
-      h('b', { lang: 'en' }, c.word), h('span.small.muted', `${c.tr || ''}`),
+      h('b', { lang: 'en' }, c.word), stars ? starsEl(c.word, { tag: 'span' }) : null, h('span.small.muted', `${c.tr || ''}`),
       !(c.tr || '').trim() ? h('span.chip.bad.small', 'anlam eksik') : null,
       h('span.chip.small', stateTr(c))),
       c.state === 'known' ? h('button.btn.small.undo', { onclick: () => { unKnow(c); toast('Yeni kuyruğa alındı'); draw(); } }, 'Geri al') : null));
     if (cs.length > 300) ul.append(h('li.muted.small', 'İlk 300 gösteriliyor, aramayı daralt'));
   };
-  q.oninput = draw; fs.onchange = draw; fst.onchange = draw;
-  root.append(tabs('liste'), q, h('div.row', fs, fst), count, ul);
+  q.oninput = draw; fs.onchange = draw; fst.onchange = draw; sort.onchange = draw; top.onchange = draw;
+  root.append(tabs('liste'), q, h('div.row', fs, fst),
+    stars ? h('div.row.starbar', sort, h('label.switch.inline', top, h('span', '4★ ve üstü')),
+      h('button.stars.info', { type: 'button', 'aria-label': STAR_TIP, onclick: () => toast(STAR_TIP) }, '?')) : null,
+    count, ul);
   draw();
 }
 

@@ -7,9 +7,20 @@ import { hbars, heatmap, line, stacked, weekBars } from '../charts.js';
 import { coreSeen, weeklyWpm, READ_GOAL } from '../strategy.js';
 import { reasonSummary } from '../reasons.js';
 import { daysToExam, newLimit } from '../plan.js';
+import { loadStars, starOf } from '../stars.js';
+import { isKnownLevel } from '../vocab.js';
 
 // Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
-function vocabBox(st, goal, left, limit, core) {
+// Saf: çekirdek listedeki 5★ kelimelerden kaçını biliyor (biliyorum + öğrenildi + olgun)
+export function topStarKnown(words, cards, m, known = isKnownLevel) {
+  const top = (words || []).filter(w => w?.word && starOf(w.word, m) === 5);
+  if (!top.length) return null;
+  const k = new Set();
+  for (const c of cards || []) if (c && !c.deleted && known(c)) { if (c.wid) k.add(c.wid); if (c.word) k.add(String(c.word).toLowerCase().trim()); }
+  return { known: top.filter(w => k.has(w.id) || k.has(w.word.toLowerCase())).length, total: top.length };
+}
+
+function vocabBox(st, goal, left, limit, core, top5) {
   const scale = Math.max(goal * 1.15, st.knowTotal);
   const need = Math.max(0, goal - st.knowTotal);
   return h('div.vocab',
@@ -20,6 +31,7 @@ function vocabBox(st, goal, left, limit, core) {
     h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature}`),
     core?.total ? h('div.core-seen', h('div.small', 'Çekirdek liste: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
       h('div.goalbar.thin', h('i', { style: `width:${(core.seen / core.total * 100).toFixed(1)}%` }))) : null,
+    top5 ? h('div.small.star5', '5★ kelimeler: ', h('b', `${top5.known}/${top5.total}`), ' biliyor') : null,
     need && left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${st.knowTotal + limit * left} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
 }
 
@@ -94,13 +106,14 @@ export default async function render(root) {
 
   const mockBox = h('div');
   const core = coreSeen(await words(), store.all('cards'));
+  const top5 = topStarKnown(await words(), store.all('cards'), await loadStars());
   const A = await aids().catch(() => null);
   const reasonBox = A?.errorReasons?.length ? reasonSummary(A.errorReasons) : null;
   root.append(
     h('h2', 'Eksiklerim'),
     sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.')))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
       h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.')))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
     readLine(),
     sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) }),
       hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),

@@ -554,3 +554,19 @@ table.timetable td:first-child, table.nettable td:first-child { width: 44%; }
 .reasons .chip.reason { font-size: .78rem; padding: 0 9px; min-height: 40px; }
 .reasons > .small.muted { flex-basis: 100%; margin-bottom: -2px; }
 .analysis ul.checklist b { font-weight: 500; }
+
+/* Kelime yıldızı (1–5) — tek satır, küçük */
+.stars { display: inline-flex; align-items: center; gap: 1px; white-space: nowrap; flex: 0 0 auto; font-size: .85rem; line-height: 1;
+  letter-spacing: 0; color: var(--line); background: none; border: 0; padding: 0; margin: 0; font-family: inherit; }
+.stars i { font-style: normal; }
+.stars i.on { color: var(--mid); }
+button.stars { cursor: pointer; min-height: 32px; padding: 0 6px; border-radius: 8px; }
+button.stars:active { background: var(--surface2); }
+.starrow { margin: -6px 0 6px; white-space: nowrap; overflow: hidden; }
+.starrow .stars { font-size: 1rem; }
+.list.compact li > a > .stars { font-size: .72rem; }
+.starbar { flex-wrap: nowrap; }
+.starbar select { flex: 1; min-width: 0; }
+.starbar .switch { flex: 0 0 auto; font-size: .9rem; gap: 6px; }
+.starbar .stars.info { min-width: 44px; min-height: 44px; justify-content: center; color: var(--muted); font-weight: 700; border: 1px solid var(--line); border-radius: 999px; }
+.star5 { margin-top: 6px; }

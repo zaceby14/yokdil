@@ -3,7 +3,7 @@ import json, sys, os, re
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('BASE', 'http://localhost:8765/')
-SHOTS = '/home/claude/shots/v7'
+SHOTS = '/home/claude/shots/v8'
 os.makedirs(SHOTS, exist_ok=True)
 ROUTES = ['bugun', 'okuma', 'kartlar', 'kartlar/liste', 'kartlar/ekle', 'gramer', 'alistirma', 'cikmis', 'dersler', 'eksikler', 'ayarlar', 'notlar', 'kartlar/yaz', 'kartlar/hafiza']
 errors = []
@@ -1458,6 +1458,120 @@ with sync_playwright() as p:
             page.screenshot(path=f'{SHOTS}/qa-{name}-{r.replace("/", "_")}.png', full_page=True)
         check(not bad, f'QA {vp["width"]}x{vp["height"]}: {len(QA)} rota — taşma / kesilen metin / boş sayfa yok' + (' → ' + ' | '.join(bad) if bad else ''))
         ctx.close()
+
+    # --- v8) Kelime yıldızı (data/stars.json)
+    STARS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'stars.json'), encoding='utf-8'))['words']
+    WORDS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'words.json'), encoding='utf-8'))
+    check(STARS and all(isinstance(v, int) and 1 <= v <= 5 for v in STARS.values()) and set(json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'stars.json'), encoding='utf-8')).keys()) == {'v', 'method', 'words'},
+          f'stars.json: yalnız kelime → 1–5 ({len(STARS)} kelime)')
+    check(all('star' not in w for w in WORDS), 'words.json değişmedi (star alanı yok)')
+    ctx, page = v7ctx({'width': 390, 'height': 844}, True, 'v8')
+    def ev(js): return page.evaluate(js)
+    def shot(n, full=False): page.screenshot(path=f'{SHOTS}/{n}.png', full_page=full)
+    def go(r, t=500): page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
+    go('bugun', 800)
+    # Seed kartlarını ele (yeni kuyrukta çekirdek liste görünsün), eski biçimli ayar kaydı (starFirst yok)
+    ev("""import('./js/store.js').then(m => { for (const c of m.all('cards')) m.put('cards', { ...c, state: 'known', knownAt: 1 }); m.put('settings', { id: 'main', theme: 'system', grammarCount: 8, newLimit: 30 }); })""")
+    page.wait_for_timeout(300)
+    star = lambda w: STARS.get(w.lower())
+    have = set(ev("import('./js/store.js').then(m => m.all('cards').map(c => (c.word || '').toLowerCase()))"))
+    base = [w['word'] for _, w in sorted(enumerate(WORDS), key=lambda x: (-(x[1].get('freq') or 0), x[0])) if w['word'].lower() not in have]
+    q_off = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.word ? x.word.word : '#' + x.card.word))")
+    check(q_off == base[:30], f'ayar kapalı (varsayılan): yeni kelime sırası değişmedi ({q_off[:4]})')
+    # Yeni oturum: ön yüzde yıldız, dokununca açıklama, kart açılmaz
+    go('kartlar/yeni', 600)
+    w0 = page.locator('.flash .fword').inner_text().strip()
+    st0 = page.locator('.flash .starrow .stars')
+    check(st0.count() == 1 and int(st0.get_attribute('data-n')) == star(w0) and st0.locator('i.on').count() == star(w0), f'yeni kelime ön yüzünde yıldız: {w0} → {star(w0)}★')
+    h = st0.bounding_box()['height']; rowh = page.locator('.flash .starrow').bounding_box()['height']
+    check(rowh < 34, f'yıldız satırı tek satır ({rowh:.0f}px)')
+    shot('v8-kart-on')
+    st0.click(); page.wait_for_timeout(250)
+    check('geçme sıklığına göre tahmin' in page.locator('#toast').inner_text() and page.locator('.back.hidden').count() == 1, 'yıldıza dokun → kısa açıklama; kart açılmadı')
+    shot('v8-kart-aciklama')
+    page.click('button:has-text("Göster")'); page.wait_for_timeout(200)
+    check(page.locator('.back .stars').count() == 0, 'arka yüzde ek yıldız yok (kalabalık değil)')
+    shot('v8-kart-arka')
+    # Ayar açık → sıra yıldıza göre; kendi eklediğin kelime yine en önde
+    go('ayarlar', 500)
+    sw_ = page.locator('label.switch:has-text("çok çıkanları öne al") input')
+    check(sw_.count() == 1 and not sw_.is_checked(), 'Ayarlar: "Yeni kelimelerde çok çıkanları öne al" var, varsayılan kapalı')
+    shot('v8-ayarlar', True)
+    sw_.check(); page.wait_for_timeout(300)
+    on = [w['word'] for _, w in sorted(enumerate(WORDS), key=lambda x: (-(star(x[1]['word']) or 0), -(x[1].get('freq') or 0), x[0])) if w['word'].lower() not in have]
+    q_on = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.word ? x.word.word : '#' + x.card.word))")
+    check(q_on == on[:30] and q_on != q_off and all(star(w) == 5 for w in q_on[:10]), f'ayar açık: yıldız yüksek olan önce ({q_on[:4]})')
+    ev("import('./js/store.js').then(m => m.put('cards', { id: 'mine1', word: 'zzmyword', tr: 'benim', state: 'new', createdAt: Date.now(), mine: Date.now(), source: 'Okuma' }))"); page.wait_for_timeout(200)
+    q2 = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.word ? x.word.word : '#' + x.card.word))")
+    check(q2[0] == '#zzmyword' and q2[1:] == on[:29], 'ayar açıkken de kendi eklediğin kelime en önde')
+    go('kartlar/yeni', 600)
+    check(page.locator('.flash .fword').inner_text().strip() == 'zzmyword' and page.locator('.flash .stars').count() == 0, 'yıldızı olmayan (kendi) kelimede yıldız gösterilmiyor')
+    page.click('button:has-text("Göster")'); page.click('.g-good'); page.wait_for_timeout(300)
+    w1 = page.locator('.flash .fword').inner_text().strip()
+    check(star(w1) == 5 and page.locator('.flash .stars').get_attribute('data-n') == '5', f'ayar açık: sıradaki çekirdek kelime 5★ ({w1})')
+    shot('v8-yeni-5yildiz')
+    # Kelime tarama
+    go('kartlar/tara', 600)
+    sw0 = page.locator('.scan-card .fword').inner_text().strip()
+    check(page.locator('.scan-card .stars').count() == 1 and int(page.locator('.scan-card .stars').get_attribute('data-n')) == star(sw0) == 5, f'kelime taramada yıldız ({sw0})')
+    shot('v8-tara')
+    sw_on = ev("import('./js/views/scan.js').then(m => m.unseenCore(5)).then(l => l.map(w => w.word))")
+    ev("import('./js/store.js').then(m => m.setSetting('starFirst', false))"); page.wait_for_timeout(200)
+    sw_off = ev("import('./js/views/scan.js').then(m => m.unseenCore(5)).then(l => l.map(w => w.word))")
+    have2 = set(ev("import('./js/store.js').then(m => m.all('cards').map(c => (c.word || '').toLowerCase()))"))
+    exp_off = [w['word'] for _, w in sorted(enumerate(WORDS), key=lambda x: (-(x[1].get('freq') or 0), x[0])) if w['word'].lower() not in have2][:5]
+    exp_on = [w['word'] for _, w in sorted(enumerate(WORDS), key=lambda x: (-(star(x[1]['word']) or 0), -(x[1].get('freq') or 0), x[0])) if w['word'].lower() not in have2][:5]
+    check(sw_on == exp_on and sw_off == exp_off, f'tarama sırası yeni kuyrukla aynı (ayara bağlı) {sw_on} / {sw_off}')
+    # Kart listesi: yıldız, sıralama, 4★ filtresi
+    ev("""import('./js/store.js').then(m => { const now = Date.now(); const ws = ['albeit', 'cell', 'yield', 'abandon', 'abundant', 'qqnostar'];
+      ws.forEach((w, i) => m.put('cards', { id: 'v8c' + i, word: w, tr: 't' + i, state: 'review', interval: 3, ease: 2.5, reps: 2, due: now + 86400000 * 3, hist: ['g', 'g'], source: 'Diğer' })); })""")
+    go('kartlar/liste', 600)
+    page.locator('main select').nth(0).select_option('Diğer'); page.wait_for_timeout(200)
+    names = lambda: [x.strip() for x in page.locator('ul.list li a b').all_inner_texts()]
+    nst = lambda: [(page.locator('ul.list li').nth(i).locator('.stars').get_attribute('data-n') if page.locator('ul.list li').nth(i).locator('.stars').count() else None) for i in range(page.locator('ul.list li').count())]
+    nm = names(); ns = nst()
+    check(nm == sorted(nm, key=str.lower) and ns[nm.index('qqnostar')] is None and ns[nm.index('cell')] == str(star('cell')), f'listede yıldız; yıldızı olmayanda yok {list(zip(nm, ns))}')
+    page.locator('.starbar select').select_option('star'); page.wait_for_timeout(200)
+    vals = [int(x) if x else 0 for x in nst()]
+    check(vals == sorted(vals, reverse=True) and vals[0] == 5, f'listede yıldıza göre sırala {list(zip(names(), vals))}')
+    shot('v8-liste-sirali', True)
+    page.locator('.starbar input[type=checkbox]').check(); page.wait_for_timeout(200)
+    vals4 = [int(x) if x else 0 for x in nst()]
+    exp4 = sum(1 for w in ['albeit', 'cell', 'yield', 'abandon', 'abundant', 'qqnostar'] if (star(w) or 0) >= 4)
+    check(vals4 and all(v >= 4 for v in vals4) and len(vals4) == exp4, f'"4★ ve üstü" filtresi ({len(vals4)}/{exp4})')
+    shot('v8-liste-4yildiz', True)
+    check(ev("document.documentElement.scrollWidth") <= 392, 'liste ekranı taşmıyor (yıldız çubuğu)')
+    # Okuma kelime paneli
+    go('okuma/p/p001', 700)
+    idx = ev("""(() => { const S = %s; const ws = [...document.querySelectorAll('.reader .w')]; return ws.findIndex(e => S[e.textContent.toLowerCase()] >= 3); })()""" % json.dumps({k: v for k, v in STARS.items() if ' ' not in k}))
+    tw = page.locator('.reader .w').nth(idx); twt = tw.inner_text().lower()
+    tw.click(); page.wait_for_timeout(900)
+    check(page.locator('#wordSheet:not(.hidden) .stars').count() == 1 and int(page.locator('#wordSheet .stars').get_attribute('data-n')) == star(twt), f'okuma kelime panelinde yıldız ({twt} → {star(twt)}★)')
+    shot('v8-okuma-panel')
+    page.locator('#wordSheet .stars').click(); page.wait_for_timeout(200)
+    check('geçme sıklığına göre tahmin' in page.locator('#toast').inner_text() and page.locator('#wordSheet:not(.hidden)').count() == 1, 'panelde yıldıza dokun → açıklama, panel açık kalır')
+    # Eksikler: 5★ satırı
+    top5 = [w for w in WORDS if star(w['word']) == 5]
+    go('eksikler', 700)
+    t5 = page.locator('.star5').inner_text() if page.locator('.star5').count() else ''
+    m5 = re.search(r'5★ kelimeler: (\d+)/(\d+) biliyor', t5)
+    check(m5 and int(m5.group(2)) == len(top5) and int(m5.group(1)) >= 1, f'Eksikler: "{t5.strip()}" (5★ çekirdek {len(top5)})')
+    shot('v8-eksikler', True)
+    ctx.close()
+
+    # v8) stars.json yoksa özellik sessizce gizlenir
+    ctx, page = v7ctx({'width': 390, 'height': 844}, True, 'v8-yok')
+    ctx.route('**/data/stars.json', lambda r: r.fulfill(status=404, body=''))
+    def go(r, t=500): page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
+    go('bugun', 800)
+    page.evaluate("import('./js/store.js').then(m => m.setSetting('starFirst', true))"); page.wait_for_timeout(200)
+    n_st = 0
+    for r in ['kartlar/yeni', 'kartlar/liste', 'kartlar/tara', 'eksikler', 'ayarlar']:
+        go(r, 600); n_st += page.locator('.stars, .starbar, .star5').count()
+    check(n_st == 0 and page.locator('label.switch:has-text("çok çıkanları")').count() == 0, f'stars.json yok: yıldız / filtre / ayar görünmüyor ({n_st})')
+    go('kartlar/yeni', 600)
+    check(page.locator('button:text-is("Göster")').count() == 1 and page.locator('.flash .fword').count() == 1, 'stars.json yok: yeni kelime oturumu yine çalışıyor')
+    ctx.close()
 
     # Service worker kaydı (ayrı bağlam)
     ctx = b.new_context(viewport={'width': 390, 'height': 844})

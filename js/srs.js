@@ -4,6 +4,7 @@ import { words } from './data.js';
 import { endOfToday, dayKey, DAY } from './util.js';
 import { newLimit, bumpDay, dayRec, tick } from './plan.js';
 import { isGraduated, weeklyChecks, counts, STUDY_STATES } from './vocab.js';
+import { loadStars, starOf } from './stars.js';
 
 const MIN = 60000;
 export const GRADES = ['again', 'hard', 'good', 'easy'];
@@ -93,11 +94,23 @@ export async function newQueue() {
   if (q.length < left) {
     const have = new Set(Object.values(store.snapshot().cards).map(c => c.wid).filter(Boolean));
     const known = new Set(store.all('cards').map(c => (c.word || '').toLowerCase()));
-    const core = (await words()).filter(w => !have.has(w.id) && !known.has(w.word.toLowerCase()))
-      .sort((a, b) => (b.freq || 0) - (a.freq || 0));
+    const core = coreOrder((await words()).filter(w => !have.has(w.id) && !known.has(w.word.toLowerCase())), await starFirst());
     for (const w of core.slice(0, left - q.length)) q.push({ word: w });
   }
   return q;
+}
+
+// Ayar açıksa (varsayılan kapalı) ve yıldız verisi varsa: çok çıkanlar önce
+export async function starFirst() {
+  if (!store.settings().starFirst) return null;
+  const m = await loadStars();
+  return m.size ? m : null;
+}
+
+// Saf: çekirdek kelime sırası — sık olan önce; m (yıldız haritası) verilirse önce yıldız, eşitlikte sıklık. Kararlı.
+export function coreOrder(list, m = null) {
+  const st = w => (m ? starOf(w.word, m) || 0 : 0);
+  return list.map((w, i) => [w, i]).sort(([a, i], [b, j]) => (st(b) - st(a)) || ((b.freq || 0) - (a.freq || 0)) || (i - j)).map(x => x[0]);
 }
 
 // Yeni kuyruk sırası: "front" (tarama/hata ile eklenen) en önde

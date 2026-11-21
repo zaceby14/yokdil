@@ -5,6 +5,7 @@ import { local, online } from './lookup.js';
 import { enrich, wordIndex } from './data.js';
 import { coreHits, unknownHit } from './vocab.js';
 import { speak, canSpeak } from './speak.js';
+import { loadStars, starsEl } from './stars.js';
 
 // Metni parçala: paragraf > cümle > token
 export function tokenize(text) {
@@ -122,6 +123,9 @@ export function tappable(text, opts = {}) {
       for (const f of en.family || []) parts.push(`${f.w} (${f.pos})`);
       if (parts.length) forms.append(h('b', 'Halleri: '), parts.join(' · '));
     });
+    await loadStars();
+    const stEl = starsEl(card?.word || entry?.word || base);
+    if (stEl) info.append(stEl, ' ');
     if (card) info.append(h('span.chip.ok', 'Kartta var'), ' ');
     if (entry) info.append(h('span.chip', 'Çekirdek liste'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Eşdizim: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
     sheet.append(
@@ -135,11 +139,13 @@ export function tappable(text, opts = {}) {
       h('button.btn.primary.wide', { onclick: save }, card ? 'Kartı güncelle' : 'Karta ekle')
     );
     if (!entry && !card) {
-      if (!navigator.onLine) info.append('Çevrimdışı: anlamı sen yaz (kart yine kaydedilir).');
-      else info.append('Öneri aranıyor…');
+      const msg = h('span');
+      info.append(msg);
+      if (!navigator.onLine) msg.textContent = 'Çevrimdışı: anlamı sen yaz (kart yine kaydedilir).';
+      else msg.textContent = 'Öneri aranıyor…';
       if (navigator.onLine) online(base).then(o => {
         if (sheet.classList.contains('hidden') || wIn.value !== base) return;
-        info.textContent = o.def || (o.tr ? '' : 'Öneri bulunamadı (bağlantı yok olabilir): anlamı sen yaz.');
+        msg.textContent = o.def || (o.tr ? '' : 'Öneri bulunamadı (bağlantı yok olabilir): anlamı sen yaz.');
         if (o.tr) { if (!trIn.value) trIn.value = o.tr; sugg.append(h('button.chip', { onclick: () => trIn.value = o.tr }, o.tr)); }
         if (o.syn?.length && !synIn.value) synIn.value = o.syn.join(', ');
       });

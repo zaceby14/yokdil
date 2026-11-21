@@ -6,12 +6,14 @@ import { applyTheme } from '../theme.js';
 import { usedSample } from '../data.js';
 import { week } from '../plan.js';
 import { fetchPrivate, meta as pmeta, status as pstat } from '../private.js';
+import { loadStars, hasStars } from '../stars.js';
 
 const TOKEN_URL = 'https://github.com/settings/tokens/new?scopes=gist,repo&description=yokdil';
 
 export default async function render(root) {
   const s = store.settings();
   const w = await week();
+  await loadStars();
 
   // Senkron
   const tok = h('input', { type: 'password', placeholder: 'ghp_…', value: sync.getToken(), autocomplete: 'off' });
@@ -78,6 +80,7 @@ export default async function render(root) {
     h('section.card',
       h('h3', 'Çalışma'),
       h('div.field', h('span', 'Günlük yeni kelime'), limit), h('p.small.muted', `Boş = programdan (${w.newWords ?? 15}).`),
+      hasStars() ? h('label.switch', h('input', { type: 'checkbox', name: 'starFirst', checked: !!s.starFirst, onchange: e => store.setSetting('starFirst', e.target.checked) }), h('span', 'Yeni kelimelerde çok çıkanları öne al')) : null,
       h('div.field', h('span', 'Günlük gramer sorusu'), gc),
       h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),

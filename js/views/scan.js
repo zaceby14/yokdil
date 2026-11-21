@@ -2,7 +2,8 @@
 import * as store from '../store.js';
 import { words } from '../data.js';
 import { h, add } from '../util.js';
-import { cardFromWord } from '../srs.js';
+import { cardFromWord, coreOrder, starFirst } from '../srs.js';
+import { loadStars, starRow } from '../stars.js';
 import { markKnown, counts } from '../vocab.js';
 import { swipe } from '../swipe.js';
 
@@ -13,11 +14,11 @@ export async function unseenCore(n = BATCH) {
   const snap = store.snapshot().cards || {};
   const have = new Set(Object.values(snap).map(c => c.wid).filter(Boolean));
   const known = new Set(store.all('cards').map(c => (c.word || '').toLowerCase()));
-  return (await words()).filter(w => w?.word && !have.has(w.id) && !known.has(w.word.toLowerCase()))
-    .sort((a, b) => (b.freq || 0) - (a.freq || 0)).slice(0, n);
+  return coreOrder((await words()).filter(w => w?.word && !have.has(w.id) && !known.has(w.word.toLowerCase())), await starFirst()).slice(0, n);
 }
 
 export default async function scan(root, tabs) {
+  await loadStars();
   let list = await unseenCore();
   let i = 0, yes = 0, no = 0, unsw = null;
   const hist = [];
@@ -61,6 +62,7 @@ export default async function scan(root, tabs) {
     const card = h('div.card.scan-card',
       h('div.small.muted', `${i + 1} / ${list.length}`),
       h('div.fword', { lang: 'en' }, w.word),
+      starRow(w.word),
       w.pos ? h('div.small.muted', w.pos) : null,
       tr, show);
     unsw = swipe(card, { right: () => act(true), left: () => act(false) });

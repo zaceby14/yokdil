@@ -16,6 +16,7 @@
 - **Deneme:** her bölümde "Bu bölüm: 12/22 dk" göstergesi (× ile kapanır). Sonuçta bölüm başına net / dk / hedef / sn-soru, her yanlışa tek dokunuşla *neden*, 20 dk analiz listesi. *Yarım deneme:* ilk 40 soru / 90 dk, süre bitince kendiliğinden biter.
 - **Çeviri:** "Parçala" → cümle renkli bloklara ayrılır; cevaptan sonra blokların karşılıkları.
 - **Bağlamdan tahmin (Kartlar / Okuma):** cümledeki sarı kelimenin anlamını 4 şıktan seç.
+- **Kelime yıldızı (★1–5):** çıkmış YDS/YÖKDİL sorularında geçme sıklığına göre tahmin; kartta, listede (sırala + 4★ filtresi), okuma panelinde. *Ayarlar → Yeni kelimelerde çok çıkanları öne al* (varsayılan kapalı).
 - **Son 14 gün:** yeni kelime en fazla 5 (son 3 gün 0), Bugün tekrar + hata + deneme ağırlıklı, sınav günü maddeleri bantta. Başvuru (12–20 Ocak) yaklaşınca bant çıkar.
 
 Yarım kalan her oturum kaydedilir: başka sekmeye geçip dönünce *Kaldığın yerden devam et*.
@@ -39,4 +40,4 @@ Resmi sayfa: https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html
 
 ## Geliştirici
 Derleme yok. `python3 -m http.server 8765` ile çalıştır. Testler: `node tests/merge.test.mjs`, `python3 tests/e2e.py`.
-İçerik `data/*.json`; bir dosya yoksa `data/dev-sample/` kullanılır (yalnız geliştirmede). `aids.json`'da bir bölüm (timePlan, targets, examDay, errorReasons, mockAnalysis, resources) yoksa ilgili araç gizlenir.
+İçerik `data/*.json`; `data/stars.json` gizli paketten `python3 tools/build_stars.py <paket.json>` ile üretilir (yalnız kelime → yıldız). Bir dosya yoksa `data/dev-sample/` kullanılır (yalnız geliştirmede). `aids.json`'da bir bölüm (timePlan, targets, examDay, errorReasons, mockAnalysis, resources) yoksa ilgili araç gizlenir.

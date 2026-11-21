@@ -563,4 +563,21 @@ t('Bağlamdan tahmin: 4 şık, doğru anlam içinde, çeldiriciler aynı türden
   assert.equal(GU.buildGuess({ word: 'yield', tr: 'verim', pos: 'n' }, [{ en: 'It yields.' }], pool.slice(0, 2)), null); // çeldirici yetmez
 });
 
+const STR = await import('../js/stars.js');
+t('Yıldız: veri okuma, kök eşleşmesi, bozuk veri', () => {
+  const m = STR.parseStars({ v: 1, words: { yield: 5, study: 3, 'carry out': 4, bad: 9, zero: 0, 'Hand Down': 2 } });
+  assert.equal(STR.starOf('Yield', m), 5); assert.equal(STR.starOf('yields', m), 5); assert.equal(STR.starOf('studies', m), 3);
+  assert.equal(STR.starOf('carry  out', m), 4); assert.equal(STR.starOf('hand down', m), 2);
+  assert.equal(STR.starOf('bad', m), null); assert.equal(STR.starOf('zero', m), null); assert.equal(STR.starOf('mitigate', m), null);
+  assert.equal(STR.parseStars(null).size, 0); assert.equal(STR.parseStars({ words: 'x' }).size, 0);
+  assert.equal(STR.starOf('yield', new Map()), null);
+});
+
+t('Yıldız sırası: kapalıyken sıklık sırası aynen; açıkken önce yıldız, eşitlikte sıklık', () => {
+  const ws = [{ id: 'a', word: 'alpha', freq: 3 }, { id: 'b', word: 'beta', freq: 2 }, { id: 'c', word: 'gamma', freq: 3 }, { id: 'd', word: 'delta', freq: 1 }, { id: 'e', word: 'eps', freq: 2 }];
+  assert.deepEqual(SR.coreOrder(ws).map(w => w.id), ['a', 'c', 'b', 'e', 'd']);
+  const m = STR.parseStars({ words: { delta: 5, beta: 4, alpha: 2, gamma: 4 } });
+  assert.deepEqual(SR.coreOrder(ws, m).map(w => w.id), ['delta', 'gamma', 'beta', 'alpha', 'eps'].map(x => ws.find(w => w.word === x).id));
+});
+
 console.log(`\n${n} test geçti`);

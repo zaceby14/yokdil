@@ -3,7 +3,8 @@ export function swipe(el, { left, right, tap, min = 70 } = {}) {
   let x0 = null, y0 = 0, dx = 0, id = null;
   const reset = () => { el.style.transform = ''; el.style.transition = ''; el.classList.remove('sw-l', 'sw-r'); };
   const down = e => {
-    if (e.target.closest('button, a, input, textarea, select')) return;
+    // Yıldız düğmesinin üstünden de kaydırılabilir (dokunmak yalnız açıklama gösterir)
+    if (e.target.closest('button:not(.stars), a, input, textarea, select')) return;
     x0 = e.clientX; y0 = e.clientY; dx = 0; id = e.pointerId;
   };
   const move = e => {

@@ -1,5 +1,12 @@
 # Yol haritası
 
+## v8'de yapılanlar (kelime yıldızı)
+- [x] `data/stars.json` (yalnız kelime → 1–5 yıldız; soru metni yok), `tools/build_stars.py PAKET.json` ile üretilir: ÖSYM YDS ağırlık 1, YÖKDİL Fen 0,8, yayınevi 0,3; şık +1, kelime sorusunun doğru şıkkı +3; geçenler içinde yüzdelik (%90+ → 5, %70 → 4, %40 → 3, gerisi 2), hiç geçmeyen 1
+- [x] Yıldız: kart ön yüzü, Yeni kelime, kart listesi, okuma kelime paneli, kelime tarama; dokununca kısa açıklama; yıldızı olmayan kelimede gösterilmez
+- [x] Liste: "★ çok çıkan önce" sıralaması + "4★ ve üstü" filtresi; Eksikler'de "5★ kelimeler: X/Y biliyor"
+- [x] Ayarlar → "Yeni kelimelerde çok çıkanları öne al" (varsayılan kapalı; kendi kelimelerin yine en önde)
+- [x] `stars.json` yoksa özellik gizli; SW v8 dosyayı önbelleğe alır
+
 ## v7'de yapılanlar (sınav stratejisi + QA)
 - [x] Araçlar: Süre planı, Hedef net (Ayarlar → Hedef puan), Sınav günü (tiklenebilir), Kaynaklar
 - [x] Deneme: bölüm bazlı süre kaydı (`secTime`), "Bu bölüm: x/y dk" göstergesi (aşınca kırmızı, kapatılabilir); sonuçta net / dk / hedef / sn-soru
@@ -14,8 +21,8 @@
 - [x] Dersler: 8 katlanır grup + arama; yeni konu adları (Strateji, Kelime tahmini)
 - [x] QA: klavye odak halkası; ham anahtarlar Türkçe ada çevrildi (okuma konusu, soru tipi); deneme grafiğinde kesilen etiket; kısa set/yarım denemede olmayan bölüm %0 sayılmıyor
 
-## Kullanıcının istediği (ileride)
-- Kelimelere YDS'de çıkma ihtimaline göre 5 üzerinden yıldız (çıkmış YDS/YÖKDİL sıklığına göre)
+## Kullanıcının istediği
+- [x] Kelimelere YDS'de çıkma ihtimaline göre 5 üzerinden yıldız (çıkmış YDS/YÖKDİL sıklığına göre) — v8'de yapıldı
 
 ## v7 sonrası fikirler
 - Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
