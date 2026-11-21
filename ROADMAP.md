@@ -14,6 +14,9 @@
 - [x] Dersler: 8 katlanır grup + arama; yeni konu adları (Strateji, Kelime tahmini)
 - [x] QA: klavye odak halkası; ham anahtarlar Türkçe ada çevrildi (okuma konusu, soru tipi); deneme grafiğinde kesilen etiket; kısa set/yarım denemede olmayan bölüm %0 sayılmıyor
 
+## Kullanıcının istediği (ileride)
+- Kelimelere YDS'de çıkma ihtimaline göre 5 üzerinden yıldız (çıkmış YDS/YÖKDİL sıklığına göre)
+
 ## v7 sonrası fikirler
 - Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
 - Çıkmış çeviri sorularında da Parçala (içerik gerekir)
