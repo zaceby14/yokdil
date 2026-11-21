@@ -11,7 +11,12 @@
 - **Notlar:** telefonda üst çubukta *Not* (masaüstünde sağ altta); bağlam otomatik kaydedilir, notu karta çevir.
 - **Hafıza:** "Tekrar" dediğin kelime 10 dk, 1, 3, 7, 14 gün sonra kesin gelir. Yazarak hatırla, eş anlam, kelime ailesi, hafıza turu.
 - **Odak:** 25 dk çalış / 5 dk ayağa kalk; dakikalar ısı haritasına yazılır.
-- **Eksikler:** doğruluk grafikleri, unutulan kelimeler, 8 haftalık ısı haritası, deneme sonuçları (puan = doğru × 1,25).
+- **Eksikler:** doğruluk grafikleri, hata nedenleri, çekirdek liste ilerlemesi, haftalık okuma hızı (hedef çizgili), 8 haftalık ısı haritası, deneme sonuçları (puan = doğru × 1,25).
+- **Sınav stratejisi (Dersler → Araçlar):** *Süre planı* (bölüm başına dakika + çözme sırası), *Hedef net* (60/70/80 → gereken net, son denemenle fark), *Sınav günü* (kontrol listesi), *Kaynaklar*.
+- **Deneme:** her bölümde "Bu bölüm: 12/22 dk" göstergesi (× ile kapanır). Sonuçta bölüm başına net / dk / hedef / sn-soru, her yanlışa tek dokunuşla *neden*, 20 dk analiz listesi. *Yarım deneme:* ilk 40 soru / 90 dk, süre bitince kendiliğinden biter.
+- **Çeviri:** "Parçala" → cümle renkli bloklara ayrılır; cevaptan sonra blokların karşılıkları.
+- **Bağlamdan tahmin (Kartlar / Okuma):** cümledeki sarı kelimenin anlamını 4 şıktan seç.
+- **Son 14 gün:** yeni kelime en fazla 5 (son 3 gün 0), Bugün tekrar + hata + deneme ağırlıklı, sınav günü maddeleri bantta. Başvuru (12–20 Ocak) yaklaşınca bant çıkar.
 
 Yarım kalan her oturum kaydedilir: başka sekmeye geçip dönünce *Kaldığın yerden devam et*.
 
@@ -33,4 +38,5 @@ Anahtar olmadan da her şey çalışır (çıkmış sorular hariç; istersen *Ç
 Resmi sayfa: https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html
 
 ## Geliştirici
-Derleme yok. `python3 -m http.server` ile çalıştır. Testler: `node tests/merge.test.mjs`, `python3 tests/e2e.py`.
+Derleme yok. `python3 -m http.server 8765` ile çalıştır. Testler: `node tests/merge.test.mjs`, `python3 tests/e2e.py`.
+İçerik `data/*.json`; bir dosya yoksa `data/dev-sample/` kullanılır (yalnız geliştirmede). `aids.json`'da bir bölüm (timePlan, targets, examDay, errorReasons, mockAnalysis, resources) yoksa ilgili araç gizlenir.

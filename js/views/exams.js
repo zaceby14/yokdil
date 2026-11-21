@@ -13,15 +13,12 @@ import { fetchPrivate, status as pstat, resetMeta } from '../private.js';
 import { setCtx } from '../ctx.js';
 import { openLesson, openFor, findLesson } from '../side.js';
 import { updateDay } from '../plan.js';
+import { aids } from '../data.js';
+import { SECTION_OF, SEC_LBL, HALF_N, HALF_MIN, secClock, planRows, stepOf } from '../strategy.js';
+import { reasonList, reasonChips, reasonSummary } from '../reasons.js';
+export { SECTION_OF, SEC_LBL };
 
 const OSYM = 'https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html';
-// Soru tipi → deneme bölümü
-export const SECTION_OF = {
-  'bosluk': 'bosluk', 'cloze': 'cloze', 'cumle-tamamlama': 'tamamlama', 'ceviri-en-tr': 'en-tr', 'ceviri-tr-en': 'tr-en',
-  'paragraf-tamamlama': 'paragraf', 'ilgisiz': 'ilgisiz', 'paragraf': 'okuma', 'yakin-anlam': 'yakin', 'diyalog': 'diyalog'
-};
-export const SEC_LBL = { bosluk: 'Cümlede boşluk', cloze: 'Cloze test', tamamlama: 'Cümle tamamlama', 'en-tr': 'Çeviri İng→Tr', 'tr-en': 'Çeviri Tr→İng',
-  paragraf: 'Paragraf tamamlama', ilgisiz: 'İlgisiz cümle', okuma: 'Okuma', yakin: 'Yakın anlam', diyalog: 'Diyalog', diger: 'Diğer' };
 const SEC_TYPE = { bosluk: 'bosluk', cloze: 'cloze', tamamlama: 'cumle-tamamlama', 'en-tr': 'ceviri-en-tr', 'tr-en': 'ceviri-tr-en',
   paragraf: 'paragraf-tamamlama', ilgisiz: 'ilgisiz', okuma: 'paragraf', yakin: 'yakin-anlam', diyalog: 'diyalog' };
 // Saf: soru dizisini ardışık bölümlere ayır → [{k, idx:[sıra], from, to}]
@@ -38,10 +35,16 @@ export const isOsym = e => e.kind !== 'yayinevi';
 const showDialog = () => !!store.settings().showDialog;
 const visibleQs = e => (e.questions || []).filter(q => showDialog() || q.type !== 'diyalog').sort((a, b) => a.n - b.n);
 
-export default async function render(root, [mode, id, arg]) {
+// Yarım deneme: ilk 40 soru / 90 dk; ilerleme ayrı kayıtta (exam:<id>~yarim)
+const HALF = 'yarim';
+const pidOf = (e, half) => 'exam:' + e.id + (half ? '~' + HALF : '');
+const halfQs = (e, half) => half ? visibleQs(e).slice(0, HALF_N) : visibleQs(e);
+const sfx = half => half ? '/' + HALF : '';
+
+export default async function render(root, [mode, id, arg, a2]) {
   if (mode === 'sinav') { const e = await getExam(id); if (e) return examMode(root, e, arg); }
-  if (mode === 'sonuc') { const e = await getExam(id); if (e) return result(root, e); }
-  if (mode === 'yanlis') { const e = await getExam(id); if (e) return wrongMode(root, e, arg); }
+  if (mode === 'sonuc') { const e = await getExam(id); if (e) return result(root, e, arg === HALF); }
+  if (mode === 'yanlis') { const e = await getExam(id); if (e) return wrongMode(root, e, arg, a2 === HALF); }
   if (mode === 'tip') return typeMode(root, id, arg);
   return home(root);
 }
@@ -86,8 +89,12 @@ async function home(root) {
       const pr = store.get('progress', 'exam:' + e.id);
       const status = pr?.done ? `Son: ${pr.score?.toLocaleString('tr-TR')} puan` : pr?.startedAt ? 'Devam ediyor' : '';
       const secs = e.full ? sectionsOf(visibleQs(e)) : [];
-      const secRow = secs.length > 1 ? h('details.secpick', h('summary', 'Bölüm bölüm çöz'),
-        h('div.chips', secs.map(sc => h('a.chip.pick', { href: `#/cikmis/sinav/${encodeURIComponent(e.id)}/${sc.k}` }, `${SEC_LBL[sc.k] || sc.k} ${sc.from}–${sc.to}`)))) : null;
+      const hp = store.get('progress', pidOf(e, true));
+      const secRow = secs.length > 1 ? h('details.secpick', h('summary', 'Yarım deneme · bölüm bölüm çöz'),
+        h('div.chips',
+          h('a.chip.pick.half-link', { href: `#/cikmis/sinav/${encodeURIComponent(e.id)}/${HALF}` }, hp?.startedAt && !hp.done ? `Yarım deneme: devam` : `Yarım deneme: ilk ${HALF_N} soru · ${HALF_MIN} dk`),
+          hp?.done ? h('a.chip.pick', { href: `#/cikmis/sonuc/${encodeURIComponent(e.id)}/${HALF}` }, 'Yarım sonucu') : null,
+          secs.map(sc => h('a.chip.pick', { href: `#/cikmis/sinav/${encodeURIComponent(e.id)}/${sc.k}` }, `${SEC_LBL[sc.k] || sc.k} ${sc.from}–${sc.to}`)))) : null;
       return h('li', h('div.exam-row',
         h('div.grow', h('b', e.title || e.id), h('div.small.muted', [isOsym(e) ? 'ÖSYM' : 'Yayınevi', e.date, visibleQs(e).length + ' soru', status].filter(Boolean).join(' · '))),
         pr?.done ? h('a.btn.small', { href: '#/cikmis/sonuc/' + encodeURIComponent(e.id) }, 'Sonuç') : null,
@@ -105,15 +112,18 @@ async function home(root) {
 
 // --- Tam deneme / sınav modu (bölüm bölüm de çözülebilir: bölüm sonu ara sonuç, bölüm kilitlenir)
 function examMode(root, e, startSec) {
-  const qs = visibleQs(e);
+  const half = startSec === HALF;
+  const qs = halfQs(e, half);
   const secs = sectionsOf(qs);
   const secOf = i => secs.findIndex(sc => sc.idx.includes(i));
-  const pid = 'exam:' + e.id;
+  const pid = pidOf(e, half);
   let pr = store.get('progress', pid);
-  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), elapsed: 0, done: false, attempts: pr?.attempts || 0 };
+  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), elapsed: 0, done: false, attempts: pr?.attempts || 0, secTime: {}, ...(half ? { half: true } : {}) };
   pr.locked ||= {};
-  if (startSec) { const si = secs.findIndex(sc => sc.k === startSec); if (si >= 0) pr.cur = secs[si].idx[0]; }
-  const total = (e.durationMin || 180) * 60;
+  pr.secTime ||= {};
+  if (startSec && !half) { const si = secs.findIndex(sc => sc.k === startSec); if (si >= 0) pr.cur = secs[si].idx[0]; }
+  if (pr.cur >= qs.length) pr.cur = 0;
+  const total = (half ? HALF_MIN : (e.durationMin || 180)) * 60;
   if (pr.elapsed == null) pr.elapsed = Math.min(total - 60, Math.floor((Date.now() - pr.startedAt) / 1000));
   const save = (silent = false) => { pr = store.put('progress', pr, { silent }); };
   save();
@@ -122,8 +132,15 @@ function examMode(root, e, startSec) {
   let lastT = Date.now(), sinceSave = 0, interim = null;
   const tick = () => {
     const now = Date.now();
-    if (document.visibilityState === 'visible') { const d = Math.round((now - lastT) / 1000); pr.elapsed += Math.min(d, 5); sinceSave += d; }
+    if (document.visibilityState === 'visible') {
+      const d = Math.round((now - lastT) / 1000), dd = Math.min(d, 5);
+      pr.elapsed += dd; sinceSave += d;
+      // Bölüm bazlı süre (bölüm sonu ekranı o bölüme yazılır)
+      const k = secs[interim ?? secOf(pr.cur)]?.k;
+      if (k && dd > 0) pr.secTime[k] = (pr.secTime[k] || 0) + dd;
+    }
     lastT = now;
+    drawClock();
     if (sinceSave >= 15) { sinceSave = 0; save(true); }
     const left = Math.max(0, total - pr.elapsed);
     timer.textContent = `${Math.floor(left / 3600)}:${String(Math.floor(left / 60) % 60).padStart(2, '0')}:${String(left % 60).padStart(2, '0')}`;
@@ -134,11 +151,28 @@ function examMode(root, e, startSec) {
   const grid = h('div.optik.hidden');
   const strip = h('div.secstrip');
   const main = h('div');
+  // Bölüm süre göstergesi: "Bu bölüm: 12/20 dk" (süre planına göre; aşınca renk değişir; × ile kapanır)
+  const clock = h('div.secclock.hidden', { role: 'status' });
+  let plan = null;
+  function drawClock() {
+    const c = plan && store.settings().secClock !== false ? secClock(plan, secs[interim ?? secOf(pr.cur)]?.k, pr.secTime) : null;
+    clock.classList.toggle('hidden', !c);
+    if (!c) return;
+    const txt = `Bu bölüm: ${c.used}/${c.target} dk`;
+    clock.classList.toggle('over', c.over);
+    if (clock.dataset.k !== txt + c.over) {
+      clock.dataset.k = txt + c.over;
+      clock.innerHTML = '';
+      add(clock, h('span', txt), c.over ? h('span.small', ' · süre aşıldı') : null,
+        h('button.icon-x.small', { type: 'button', 'aria-label': 'bölüm süresini gizle', onclick: () => { store.setSetting('secClock', false); toast('Gizlendi · Ayarlar → Çalışma\'dan açılır'); drawClock(); } }, '×'));
+    }
+  }
+  aids().then(a => { plan = a?.timePlan && planRows(a.timePlan).length ? a.timePlan : null; drawClock(); }).catch(() => {});
   const bar = h('div.readbar',
     h('a.btn.small', { href: '#/cikmis', 'aria-label': 'geri' }, '‹'), h('b.grow.ellipsis', e.title || e.id), timer,
     h('button.btn.small', { onclick: () => { grid.classList.toggle('hidden'); drawGrid(); } }, 'Optik'),
     h('button.btn.small.primary', { onclick: () => finish(false) }, 'Bitir'));
-  root.append(bar, secs.length > 1 ? strip : null, grid, main);
+  root.append(bar, half ? h('div.small.muted.half-note', `Yarım deneme: ilk ${qs.length} soru · ${HALF_MIN} dk · süre bitince kendiliğinden biter`) : null, secs.length > 1 ? strip : null, clock, grid, main);
 
   const secStat = si => {
     const st = { d: 0, y: 0, b: 0, n: 0, a: 0 };
@@ -200,7 +234,7 @@ function examMode(root, e, startSec) {
         next ? h('button.btn.wide' + (pr.locked[si] ? '.primary.main-act' : ''), { onclick: () => { interim = null; pr.cur = next.idx[0]; save(); draw(); } }, `Sonraki bölüm: ${SEC_LBL[next.k] || next.k} ›`)
           : h('button.btn.wide' + (pr.locked[si] ? '.primary.main-act' : ''), { onclick: () => finish(false) }, 'Sınavı bitir'),
         h('a.btn.wide', { href: '#/bugun' }, 'Ara ver (kaydedildi)'))));
-    drawStrip();
+    drawStrip(); drawClock();
     window.scrollTo(0, 0);
   }
 
@@ -235,9 +269,10 @@ function examMode(root, e, startSec) {
         h('button.btn', { disabled: pr.cur === 0, onclick: () => { pr.cur--; save(); draw(); drawGrid(); } }, '‹ Önceki'),
         h('button.btn.grow' + (pr.flags[q.n] ? '.primary' : ''), { onclick: () => { pr.flags[q.n] = !pr.flags[q.n]; if (!pr.flags[q.n]) delete pr.flags[q.n]; save(); draw(); drawGrid(); } }, pr.flags[q.n] ? 'İşaretli' : 'İşaretle'),
         lastOfSec && secs.length > 1 ? h('button.btn.primary.main-act', { onclick: () => showInterim(si) }, 'Bölüm sonu ›')
+          : pr.cur >= qs.length - 1 && half ? h('button.btn.primary.main-act', { onclick: () => finish(false) }, 'Bitir ›')
           : h('button.btn.main-act', { disabled: pr.cur >= qs.length - 1, onclick: () => { pr.cur++; save(); draw(); drawGrid(); } }, 'Sonraki ›'))
     );
-    drawStrip();
+    drawStrip(); drawClock();
     window.scrollTo(0, 0);
   }
 
@@ -267,12 +302,14 @@ function examMode(root, e, startSec) {
       if (!done) answer(`${e.id}:${q.n}`, ok, { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' });
     });
     Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
-    const score = +(right * 1.25).toFixed(2);
-    store.put('mocks', { id: uid('m'), date: dayKey(), name: e.title || e.id, sections, src: 'cikmis', examId: e.id, score });
+    // Yarım deneme: puan 80 soruya oranlanır (40 soruda doğru × 2,5)
+    const score = +(right * 1.25 * (half ? 80 / Math.max(1, qs.length) : 1)).toFixed(2);
+    store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: 'cikmis', examId: e.id, score,
+      times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right } : {}) });
     updateDay({ mock: true });
-    pr = { ...pr, done: true, finishedAt: Date.now(), score, sections, attempts: (pr.attempts || 0) + 1 };
+    pr = { ...pr, done: true, finishedAt: Date.now(), score, right, sections, attempts: (pr.attempts || 0) + 1 };
     pr = store.put('progress', pr);
-    location.hash = '#/cikmis/sonuc/' + encodeURIComponent(e.id);
+    location.hash = '#/cikmis/sonuc/' + encodeURIComponent(e.id) + sfx(half);
   }
 
   tick(); draw();
@@ -285,11 +322,13 @@ async function weakLessonBtn(secKey) {
   return l ? h('button.btn.wide.weak-lesson', { onclick: () => openLesson(l.id) }, `En zayıf bölüm: ${SEC_LBL[secKey] || secKey} → Ders: ${l.title}`) : null;
 }
 
-function result(root, e) {
-  const pr = store.get('progress', 'exam:' + e.id);
-  const qs = visibleQs(e);
+function result(root, e, half = false) {
+  const pid = pidOf(e, half);
+  const pr = store.get('progress', pid);
+  const qs = halfQs(e, half);
   if (!pr?.done) { location.hash = '#/cikmis'; return; }
   const wrong = qs.filter(q => pr.answers[q.n] !== q.answer);
+  const keyOf = q => `${e.id}:${q.n}`;
   const bySec = {};
   for (const q of wrong) (bySec[SECTION_OF[q.type] || 'diger'] ||= []).push(q);
   const order = Object.keys(pr.sections || {});
@@ -297,40 +336,105 @@ function result(root, e) {
   const lessonSlot = h('div');
   if (weak && weak.s.d / weak.s.n < 0.7) weakLessonBtn(weak.k).then(b => b && lessonSlot.append(b));
   const groups = h('div.secgroups');
+  const timeSlot = h('div'), sumSlot = h('div'), stepSlot = h('div');
+  const right = pr.right ?? order.reduce((a, k) => a + (pr.sections[k].d || 0), 0);
   root.append(
     h('a.btn.small', { href: '#/cikmis' }, '‹ Çıkmış'),
-    h('h2', e.title || e.id),
-    h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')), h('div.hero-r', 'Doğru × 1,25')),
+    h('h2', (e.title || e.id) + (half ? ` · ilk ${qs.length} soru` : '')),
+    h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')),
+      h('div.hero-r', half ? `${right}/${qs.length} doğru · 80 soruya oranlandı` : 'Doğru × 1,25')),
     h('table.mock', h('tr', h('th', 'Bölüm'), h('th', 'D'), h('th', 'Y'), h('th', 'B')),
       order.map(k => { const s = pr.sections[k]; return h('tr.secrow', { onclick: () => { const d = groups.querySelector(`[data-sec="${k}"]`); if (d) { d.open = true; d.scrollIntoView({ block: 'start', behavior: 'smooth' }); } } },
         h('td', SEC_LBL[k] || k, h('span.small.muted', ` ${s.n}`)), h('td', s.d), h('td', s.y), h('td', s.b)); })),
+    timeSlot,
     lessonSlot,
     h('p.small.muted', 'Bölüme dokun → o bölümün yanlışları. Sonuç Eksiklerim → deneme geçmişine yazıldı.'),
+    stepSlot,
     h('h3', `Yanlış / boş (${wrong.length})`),
+    sumSlot,
     groups,
-    h('a.btn.primary.wide', { href: '#/cikmis/sinav/' + encodeURIComponent(e.id) }, 'Tüm sınavı tekrar çöz')
+    h('a.btn.primary.wide', { href: '#/cikmis/sinav/' + encodeURIComponent(e.id) + sfx(half) }, half ? 'Yarım denemeyi tekrar çöz' : 'Tüm sınavı tekrar çöz')
   );
-  for (const k of order) {
-    const list = bySec[k];
-    if (!list?.length) continue;
-    groups.append(h('details.card.secgroup', { 'data-sec': k },
-      h('summary', h('b', SEC_LBL[k] || k), h('span.small.muted', ` · ${list.length} yanlış/boş`)),
-      h('a.btn.wide.retry-sec', { href: `#/cikmis/yanlis/${encodeURIComponent(e.id)}/${k}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
-      ...list.map(q => h('details.qwrong',
-        h('summary', h('b', `Soru ${q.n}`), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
-        groupOf(e, q)?.text ? h('div.stem.small', groupOf(e, q).text) : null,
-        h('div.q', q.q),
-        h('div.small', `Doğru: ${'ABCDE'[q.answer]}) ${q.options[q.answer]}`),
-        realExplain(q.explain) ? h('div.explain', realExplain(q.explain)) : null))));
-  }
+  const drawGroups = reasons => {
+    groups.innerHTML = '';
+    const drawSum = () => {
+      sumSlot.innerHTML = '';
+      if (!reasons.length || !wrong.length) return;
+      const marked = wrong.filter(q => store.get('reasons', keyOf(q))).length;
+      sumSlot.append(h('section.card.reason-card', h('h3', 'Neden yanlış?'),
+        h('p.small.muted', `Bölümü aç, her yanlışın altında nedenine dokun (${marked}/${wrong.length} işaretli).`),
+        reasonSummary(reasons, wrong.map(keyOf))));
+    };
+    let first = true;
+    for (const k of order) {
+      const list = bySec[k];
+      if (!list?.length) continue;
+      groups.append(h('details.card.secgroup', { 'data-sec': k },
+        h('summary', h('b', SEC_LBL[k] || k), h('span.small.muted', ` · ${list.length} yanlış/boş`)),
+        h('a.btn.wide.retry-sec', { href: `#/cikmis/yanlis/${encodeURIComponent(e.id)}/${k}${sfx(half)}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
+        ...list.map(q => h('div.qwrong-wrap', h('details.qwrong',
+          h('summary', h('b', `Soru ${q.n}`), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
+          groupOf(e, q)?.text ? h('div.stem.small', groupOf(e, q).text) : null,
+          h('div.q', q.q),
+          h('div.small', `Doğru: ${'ABCDE'[q.answer]}) ${q.options[q.answer]}`),
+          realExplain(q.explain) ? h('div.explain', realExplain(q.explain)) : null),
+          reasonChips(reasons, keyOf(q), { src: 'cikmis', dtype: q.type || '', topic: q.topic || '' }, drawSum)))));
+      first = false;
+    }
+    drawSum();
+  };
+  drawGroups([]);
+  aids().then(async a => {
+    if (!root.isConnected) return;
+    // Bölüm başına: net, harcanan dk, hedef dk, soru başı sn
+    const times = pr.secTime || {};
+    if (Object.values(times).some(v => v > 0)) {
+      const plan = a?.timePlan ? planRows(a.timePlan) : [];
+      const used = new Set(), rows = [];
+      for (const k of order) {
+        if (used.has(k)) continue;
+        const p = plan.find(r => r.secs.includes(k));
+        const ks = (p ? p.secs : [k]).filter(x => pr.sections[x]);
+        ks.forEach(x => used.add(x));
+        const n = ks.reduce((s, x) => s + pr.sections[x].n, 0), d = ks.reduce((s, x) => s + pr.sections[x].d, 0), t = ks.reduce((s, x) => s + (times[x] || 0), 0);
+        rows.push({ label: ks.length > 1 ? p.label : SEC_LBL[k] || k, n, d, t, target: p?.minutes || 0 });
+      }
+      const min = t => t ? Math.max(1, Math.round(t / 60)) : 0;
+      timeSlot.append(h('h3', 'Süre'), h('div.tblwrap', h('table.mock.timetable',
+        h('tr', h('th', 'Bölüm'), h('th', 'Net'), h('th', 'dk'), plan.length ? h('th', 'Hedef') : null, h('th', 'sn/soru')),
+        rows.map(r => h('tr', h('td', r.label.replace(/\s*\(\d+[–-]\d+\)\s*$/, '')), h('td', r.d),
+          h('td' + (r.target && r.t > r.target * 60 ? '.bad-t' : ''), r.t ? min(r.t) : '–'), plan.length ? h('td', r.target || '–') : null, h('td', r.t ? Math.max(1, Math.round(r.t / r.n)) : '–'))),
+        h('tr.total', h('td', 'Toplam'), h('td', right), h('td', min(pr.elapsed || 0)), plan.length ? h('td', half ? HALF_MIN : (a?.timePlan?.total || e.durationMin || 180)) : null, h('td', pr.elapsed ? Math.round(pr.elapsed / qs.length) : '–')))),
+        h('p.small.muted', plan.length ? 'Kırmızı: hedef süre aşıldı.' : null));
+    }
+    // 20 dk analiz adımları (kontrol listesi)
+    const steps = (Array.isArray(a?.mockAnalysis) ? a.mockAnalysis : []).map(stepOf).filter(x => x?.title);
+    if (steps.length) {
+      const sid = `analiz:${pid}:${pr.attempts || 1}`;
+      const tot = steps.reduce((s, x) => s + x.min, 0) || Math.max(0, ...steps.map(x => x.end || 0));
+      const box = h('section.card.analysis');
+      const drawSteps = () => {
+        const done = store.get('progress', sid)?.done || {};
+        box.innerHTML = '';
+        box.append(h('h3', tot ? `${tot} dk analiz` : 'Deneme analizi', h('span.small.muted', ` · ${steps.filter((_, i) => done[i]).length}/${steps.length}`)),
+          h('ul.checklist', steps.map((x, i) => h('li' + (done[i] ? '.done' : ''),
+            h('button.check', { type: 'button', role: 'checkbox', 'aria-checked': done[i] ? 'true' : 'false', 'aria-label': x.title, onclick: () => { store.patch('progress', sid, { done: { ...done, [i]: !done[i] } }); drawSteps(); } }, done[i] ? '✓' : ''),
+            h('div.grow', h('b', x.title), x.min ? h('span.small.muted', ` · ${x.min} dk`) : null, x.text ? h('div.small.muted', x.text) : null)))));
+      };
+      drawSteps();
+      stepSlot.append(box);
+    }
+    const reasons = await reasonList();
+    if (reasons.length) drawGroups(reasons);
+  }).catch(err => console.warn('analiz', err));
 }
 
 // Sonuç ekranından: bir bölümün yanlışlarını tekrar çöz
-function wrongMode(root, e, sec) {
-  const pr = store.get('progress', 'exam:' + e.id);
-  const qs = visibleQs(e).filter(q => (SECTION_OF[q.type] || 'diger') === sec && pr?.answers?.[q.n] !== q.answer);
+function wrongMode(root, e, sec, half = false) {
+  const pr = store.get('progress', pidOf(e, half));
+  const qs = halfQs(e, half).filter(q => (SECTION_OF[q.type] || 'diger') === sec && pr?.answers?.[q.n] !== q.answer);
   const el = h('div');
-  root.append(h('a.btn.small', { href: '#/cikmis/sonuc/' + encodeURIComponent(e.id) }, '‹ Sonuç'), h('h2', `${SEC_LBL[sec] || sec} · yanlışlar`), el);
+  root.append(h('a.btn.small', { href: '#/cikmis/sonuc/' + encodeURIComponent(e.id) + sfx(half) }, '‹ Sonuç'), h('h2', `${SEC_LBL[sec] || sec} · yanlışlar`), el);
   if (!qs.length) { el.append(h('p.muted', 'Bu bölümde yanlış yok.')); return; }
   runQuiz(el, qs.map(q => xItem(e, q)), { extra: lessonLink, name: `${e.title || e.id} · ${SEC_LBL[sec] || sec}`, source: 'Çıkmış',
     onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m) });

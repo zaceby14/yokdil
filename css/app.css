@@ -455,3 +455,102 @@ ol.elim li { margin-bottom: 10px; }
 @media (max-width: 899px) { .fab { display: none !important; } .note-top { display: inline-flex; } }
 body.qmode .evetip, body[data-route^="cikmis-sinav"] .evetip { display: none; }
 .note-top { border: 0; background: none; color: inherit; align-items: center; gap: 2px; padding: 0 8px; min-height: 44px; cursor: pointer; font: inherit; }
+
+/* ===== v7: sınav stratejisi, çeviri parçalama, bağlamdan tahmin ===== */
+/* Erişilebilirlik: klavye odağı her yerde görünür */
+:focus-visible { outline: 3px solid var(--focus, #1a5fd0); outline-offset: 2px; border-radius: 6px; }
+:root { --focus: #1a5fd0; }
+:root[data-theme=dark] { --focus: #9cc4ff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --focus: #9cc4ff; } }
+.opt:focus-visible, .btn:focus-visible, .tool:focus-visible, .chip:focus-visible, .tabs a:focus-visible { outline-offset: 2px; }
+.good-t { color: var(--good); }
+.tblwrap { overflow-x: auto; }
+ul.plain { margin: 0; padding-left: 1.1rem; } ul.plain li { margin-bottom: 6px; }
+/* Süre planı */
+ol.tplan { list-style: none; padding: 0; margin: 0 0 12px; }
+ol.tplan li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.tp-n { flex: 0 0 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--accent-t); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+.tp-min { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tp-bar { height: 8px; border-radius: 4px; background: var(--surface2); margin: 4px 0; }
+.tp-bar i { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+/* Hedef net / süre tabloları */
+table.mock tr.total td { font-weight: 700; border-top: 2px solid var(--line); }
+table.nettable td:not(:first-child), table.nettable th:not(:first-child), table.timetable td:not(:first-child), table.timetable th:not(:first-child) { text-align: center; font-variant-numeric: tabular-nums; }
+.target-seg > .active { background: var(--accent); color: var(--accent-t); }
+/* Kontrol listesi */
+ul.checklist { list-style: none; padding: 0; margin: 0; }
+ul.checklist li { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+ul.checklist li:last-child { border-bottom: 0; }
+ul.checklist .check { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; border: 2px solid var(--muted); background: transparent; color: var(--accent-t); font-size: 1.2rem; cursor: pointer; }
+ul.checklist li.done .check { background: var(--good); border-color: var(--good); }
+ul.checklist li.done > .grow, ul.checklist li.done > .grow b { color: var(--muted); text-decoration: line-through; }
+ul.checklist.compact .check { width: 36px; height: 36px; flex-basis: 36px; position: relative; }
+ul.checklist.compact .check::after { content: ''; position: absolute; inset: -5px; }
+.tasks .check { border-color: var(--muted); }
+.tasks .check.ghost { display: flex; align-items: center; justify-content: center; border-style: dashed; color: var(--mid); font-weight: 800; cursor: default; }
+/* Kaynaklar */
+.reslist .ext { flex-basis: auto !important; margin-left: auto; }
+/* Bantlar */
+.banner.apply { border: 2px solid var(--mid); }
+.banner.apply.open, .banner.apply.late { background: var(--bad-soft); border-color: var(--bad); color: var(--text); }
+.banner.final { background: var(--accent); color: var(--accent-t); font-weight: 500; }
+.examday-band { border-left: 4px solid var(--accent); }
+.examday-band a.small { min-height: 32px; display: inline-flex; align-items: center; }
+/* Deneme: bölüm süresi */
+.secclock { display: flex; align-items: center; gap: 4px; width: fit-content; margin: 0 0 8px auto; padding: 2px 4px 2px 12px; border-radius: 999px; background: var(--surface2); font-size: .85rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.secclock.over { background: var(--bad-soft); color: var(--bad); }
+.secclock .icon-x { min-width: 36px; min-height: 36px; }
+.half-note { margin: -2px 0 6px; }
+/* Hata nedenleri */
+.reasons { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 10px; }
+.reasons .chip { margin: 0; border: 1px solid var(--line); background: var(--surface); color: var(--text); }
+.reasons .chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-t); font-weight: 600; }
+.explain .reasons { margin-top: 10px; }
+.qwrong-wrap { border-top: 1px solid var(--line); }
+.qwrong-wrap .qwrong { border-top: 0; }
+.cbar { display: grid; grid-template-columns: minmax(90px, 38%) 1fr 28px; align-items: center; gap: 8px; margin: 5px 0; font-size: .9rem; }
+.cbar-t { height: 14px; border-radius: 4px; background: var(--surface2); }
+.cbar-t i { display: block; height: 100%; border-radius: 4px; background: var(--mid); }
+.cbar-n { text-align: right; font-variant-numeric: tabular-nums; }
+.reason-advice { margin-top: 8px; }
+/* Çeviri: parçala */
+.chip.parts-btn { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+.chip.parts-btn.on { background: var(--accent-soft); }
+.partsbox { margin: 8px 0 12px; }
+.parts { display: flex; flex-wrap: wrap; gap: 6px; }
+.part { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border-radius: 10px; border-left: 4px solid; background: var(--surface); max-width: 100%; overflow-wrap: anywhere; }
+.part-role { font-size: .7rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.part-src { font-size: .95rem; }
+.part-tgt { font-size: .9rem; border-top: 1px dashed var(--line); padding-top: 3px; font-weight: 600; }
+.part.c1 { border-color: #c2453a; background: color-mix(in srgb, #c2453a 10%, var(--surface)); } .part.c1 .part-role { color: #a5362d; }
+.part.c2 { border-color: #2f6fb8; background: color-mix(in srgb, #2f6fb8 10%, var(--surface)); } .part.c2 .part-role { color: #24588f; }
+.part.c3 { border-color: #2e8a57; background: color-mix(in srgb, #2e8a57 10%, var(--surface)); } .part.c3 .part-role { color: #216b42; }
+.part.c4 { border-color: #7b4bb3; background: color-mix(in srgb, #7b4bb3 10%, var(--surface)); } .part.c4 .part-role { color: #663a9c; }
+.part.c5 { border-color: #b3720f; background: color-mix(in srgb, #b3720f 10%, var(--surface)); } .part.c5 .part-role { color: #855408; }
+.part.c6 { border-color: #5d6b66; background: color-mix(in srgb, #5d6b66 10%, var(--surface)); } .part.c6 .part-role { color: #4b5752; }
+:root[data-theme=dark] .part .part-role { color: var(--text); opacity: .85; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme=light]) .part .part-role { color: var(--text); opacity: .85; } }
+ul.part-check { margin: 8px 0 0; padding-left: 1.1rem; font-size: .9rem; }
+/* Bağlamdan tahmin */
+.q.hlq { font-size: 1.05rem; line-height: 1.6; }
+.q.hlq mark, .hlq mark { background: var(--hl); color: var(--text); padding: 1px 4px; border-radius: 4px; font-weight: 700; }
+.goalbar.thin { height: 6px; margin: 4px 0 0; }
+.core-seen { margin-top: 8px; }
+/* Dersler: gruplar + arama */
+.lsearch { width: 100%; margin: 0 0 10px; }
+details.lgroup { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); margin-bottom: 8px; padding: 0 10px; }
+details.lgroup > summary { min-height: 48px; display: flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; }
+details.lgroup > summary::-webkit-details-marker { display: none; }
+details.lgroup > summary::after { content: '›'; margin-left: auto; font-size: 1.3rem; color: var(--muted); transition: transform .15s; }
+details.lgroup[open] > summary::after { transform: rotate(90deg); }
+details.lgroup .list { margin-bottom: 4px; }
+details.lgroup .list li:last-child { border-bottom: 0; }
+.rulecard.focus { border-left-width: 6px; box-shadow: 0 0 0 2px var(--accent); }
+/* Okuma hızı grafiği */
+.chart .goalL { stroke: var(--bad); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.chart .val.small { font-size: 9px; }
+table.timetable, table.nettable { font-size: .92rem; }
+table.timetable td:first-child, table.nettable td:first-child { width: 44%; }
+.reasons .chip.reason { font-size: .78rem; padding: 0 9px; min-height: 40px; }
+.reasons > .small.muted { flex-basis: 100%; margin-bottom: -2px; }
+.analysis ul.checklist b { font-weight: 500; }

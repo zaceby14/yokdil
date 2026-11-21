@@ -1,6 +1,6 @@
 // Saf birleştirme fonksiyonları (DOM yok — node ile test edilir)
 
-export const COLLECTIONS = ['cards', 'texts', 'grammarLog', 'mistakes', 'mocks', 'notes', 'days', 'settings', 'progress', 'sessions'];
+export const COLLECTIONS = ['cards', 'texts', 'grammarLog', 'mistakes', 'mocks', 'notes', 'days', 'settings', 'progress', 'sessions', 'reasons'];
 
 // İki kaydı birleştir: updatedAt büyük olan kazanır; eşitlikte silinmiş (tombstone) kazanır, sonra a.
 export function pickRecord(a, b) {

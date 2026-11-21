@@ -169,5 +169,105 @@
     "explain": "Neither…nor = ikisi de değil."
    }
   ]
+ },
+ {
+  "id": "dp01",
+  "type": "ceviri-en-tr",
+  "topic": "baglac-zitlik",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "Although the new alloy is expensive, it is widely used in aircraft engines because it resists high temperatures.",
+    "options": [
+     "Yeni alaşım pahalı olmasına rağmen, yüksek sıcaklıklara dayandığı için uçak motorlarında yaygın olarak kullanılır.",
+     "Yeni alaşım pahalı olduğu için uçak motorlarında yaygın olarak kullanılmaz ve yüksek sıcaklıklara dayanmaz.",
+     "Yeni alaşım yüksek sıcaklıklara dayanmasına rağmen pahalıdır ve uçak motorlarında az kullanılır.",
+     "Uçak motorlarında yaygın olarak kullanılan yeni alaşım, pahalı olsa da yüksek sıcaklıklara dayanamaz.",
+     "Yeni alaşım pahalıdır; çünkü uçak motorlarında yüksek sıcaklıklara dayanması gerekir."
+    ],
+    "answer": 0,
+    "explain": "although = -e rağmen; because = -dığı için.",
+    "parts": [
+     {
+      "src": "Although the new alloy is expensive,",
+      "role": "bağlaç",
+      "tgt": "Yeni alaşım pahalı olmasına rağmen"
+     },
+     {
+      "src": "it",
+      "role": "özne",
+      "tgt": "(o)"
+     },
+     {
+      "src": "is widely used",
+      "role": "yüklem",
+      "tgt": "yaygın olarak kullanılır"
+     },
+     {
+      "src": "in aircraft engines",
+      "role": "yer",
+      "tgt": "uçak motorlarında"
+     },
+     {
+      "src": "because it resists high temperatures.",
+      "role": "neden",
+      "tgt": "yüksek sıcaklıklara dayandığı için"
+     }
+    ],
+    "check": [
+     "although → -e rağmen (zıtlık korunmuş mu?)",
+     "is used → edilgen: kullanılır",
+     "because → -dığı için (neden doğru yerde mi?)"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dp02",
+  "type": "ceviri-tr-en",
+  "topic": "baglac-neden-amac",
+  "level": 2,
+  "stem": "",
+  "items": [
+   {
+    "q": "Çelik korozyonu önlemek için çinkoyla kaplanır.",
+    "options": [
+     "Steel is coated with zinc in order to prevent corrosion.",
+     "Steel coats zinc so that corrosion is prevented.",
+     "Zinc is coated with steel to prevent corrosion.",
+     "Steel was coated with zinc because of corrosion.",
+     "Steel is coated with zinc despite corrosion."
+    ],
+    "answer": 0,
+    "explain": "için → in order to; kaplanır → is coated.",
+    "parts": [
+     {
+      "src": "Çelik",
+      "role": "özne",
+      "tgt": "Steel"
+     },
+     {
+      "src": "korozyonu önlemek için",
+      "role": "amaç",
+      "tgt": "in order to prevent corrosion"
+     },
+     {
+      "src": "çinkoyla",
+      "role": "nesne",
+      "tgt": "with zinc"
+     },
+     {
+      "src": "kaplanır.",
+      "role": "yüklem",
+      "tgt": "is coated"
+     }
+    ],
+    "check": [
+     "kaplanır → edilgen, geniş zaman: is coated",
+     "için → in order to + V1"
+    ]
+   }
+  ]
  }
 ]

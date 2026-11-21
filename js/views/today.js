@@ -1,21 +1,28 @@
 // Bugün: geri sayım, hafta/faz, görevler, yoğun gün, seri
 import * as store from '../store.js';
-import { h, dayKey, fmtDate, diffDays, addDays } from '../util.js';
+import { h, dayKey, fmtDate, diffDays, addDays, topicName, typeName } from '../util.js';
 import { isStudied } from '../vocab.js';
-import { week, daysToExam, dayRec, tick, updateDay, streakInfo, weekdayHint } from '../plan.js';
+import { week, daysToExam, dayRec, tick, updateDay, streakInfo, weekdayHint, finalMode, newLimit } from '../plan.js';
 import { dueCount } from '../srs.js';
 import { openSessions } from '../quiz.js';
 import { tourCards } from '../memory.js';
-import { todayTasks } from '../tasks.js';
+import { todayTasks, mockHref } from '../tasks.js';
+import { aids } from '../data.js';
+import { applyState, examDayFor, ruleTasks } from '../strategy.js';
 import { getPack } from '../pack.js';
 import { startFocus, running, lens } from '../focus.js';
 import { getToken } from '../sync.js';
+
+const rr0busy = () => !!dayRec().busy;
 
 export default async function render(root) {
   const today = dayKey();
   const w = await week();
   const left = await daysToExam();
+  const A = await aids().catch(() => null);
   const draw = async () => {
+    const fin = await finalMode();
+    if (fin.on && !dayRec().final) updateDay({ final: true });
     const r = dayRec();
     const due = dueCount();
     if (!due && !r.tasks?.kart && store.all('cards').some(isStudied)) tick('kart');
@@ -28,8 +35,17 @@ export default async function render(root) {
     const exOpen = store.all('progress').filter(p => p.id?.startsWith('exam:') && p.startedAt && !p.done).sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0)).slice(0, 1);
     const pack = exOpen.length ? await getPack().catch(() => null) : null;
     const apply = w.prog.apply || [];
-    const toApply = apply[0] ? diffDays(today, apply[0]) : 99;
-    const applyOn = apply[1] && toApply <= 7 && today <= apply[1];
+    const ap = applyState(apply, w.prog.lateApply, today);
+    const apText = !ap ? '' : ap.kind === 'soon' ? `Başvuruya ${ap.days} gün: ${fmtDate(apply[0])}–${fmtDate(apply[1])}`
+      : ap.kind === 'open' ? `Başvuru açık · ${ap.days ? 'son ' + ap.days + ' gün' : 'BUGÜN son gün'} (${fmtDate(apply[1])})`
+      : `Geç başvuru · ${ap.days ? ap.days + ' gün kaldı' : 'BUGÜN son gün'} (${fmtDate(w.prog.lateApply)})`;
+    // Son 14 gün: sınav günü listesinden bugüne uyan maddeler
+    const edGroups = fin.on ? examDayFor(A?.examDay, left) : [];
+    const edDone = store.get('progress', 'examday')?.done || {};
+    // Aynı kişisel kuraldan 2+ yanlış → kural kartı görevi
+    const acks = Object.fromEntries(store.all('progress').filter(p => p.id?.startsWith('kural:')).map(p => [p.id.slice(6), p.ackAt || 0]));
+    const rTasks = rr0busy() ? [] : ruleTasks(store.all('grammarLog'), A?.personalRules, acks, today).slice(0, 2);
+    const nlNow = fin.on ? await newLimit() : 0;
     // Faz geçişi: yeni fazın ilk 3 günü kısa bildirim
     const prevW = (w.prog.weeks || []).find(x => x.n === w.n - 1);
     const phaseNew = !w.beforeStart && prevW && prevW.phase !== w.phase && diffDays(addDays(w.prog.start, (w.n - 1) * 7), today) < 3;
@@ -48,13 +64,23 @@ export default async function render(root) {
       ),
       !getToken() ? h('a.banner', { href: '#/ayarlar' }, 'Çıkmış sorular + senkron için GitHub anahtarını gir → Ayarlar') : null,
       phaseNew ? h('div.banner.phase', `Yeni faz: ${w.phase} · günde ${w.newWords ?? '-'} yeni kelime`) : null,
-      applyOn ? h('a.banner', { href: 'https://ais.osym.gov.tr', target: '_blank', rel: 'noopener' }, `Başvuru: ${fmtDate(apply[0])}–${fmtDate(apply[1])} · ÖSYM AİS`) : null,
+      ap ? h('a.banner.apply.' + ap.kind, { href: 'https://ais.osym.gov.tr', target: '_blank', rel: 'noopener' }, h('b', apText), h('span.small', ' · ÖSYM AİS ↗')) : null,
+      fin.on ? h('div.banner.final', h('b', left === 0 ? 'Bugün sınav.' : `Son ${left} gün.`), ` Tekrar + deneme + hata tekrarı. Yeni kelime: ${nlNow ? 'en fazla ' + nlNow : 'yok'}.`) : null,
+      ...edGroups.map(g => {
+        const gi = (A.examDay || []).filter(x => x?.items?.length).indexOf(g);
+        return h('section.card.examday-band', h('div.row.between', h('b', g.when || 'Sınav günü'), h('a.small', { href: '#/dersler/arac/gun' }, 'Tüm liste ›')),
+          h('ul.checklist.compact', g.items.slice(0, 5).map((x, ii) => {
+            const k = gi + ':' + ii, on = !!edDone[k], txt = typeof x === 'string' ? x : x?.text || x?.label || '';
+            return h('li' + (on ? '.done' : ''), h('button.check', { type: 'button', role: 'checkbox', 'aria-checked': String(on), 'aria-label': txt,
+              onclick: () => { store.patch('progress', 'examday', { done: { ...edDone, [k]: !on } }); draw(); } }, on ? '✓' : ''), h('span.grow', txt));
+          })));
+      }),
       ...(w.prog.notes || []).filter(n => n.date === today).map(n => h('div.banner', `${fmtDate(n.date)}: ${n.text}`)),
       weekdayHint() ? h('div.note', w.weekend || weekdayHint()) : null,
       ...exOpen.map(p => {
         const e = pack?.exams?.find(x => x.id === p.examId);
         const n = Object.keys(p.answers || {}).length;
-        return h('a.banner.resume.exam-resume', { href: '#/cikmis/sinav/' + encodeURIComponent(p.examId) }, `Yarım kaldı: ${e?.title || p.examId} · ${n} cevap → Devam`);
+        return h('a.banner.resume.exam-resume', { href: '#/cikmis/sinav/' + encodeURIComponent(p.examId) + (p.half ? '/yarim' : '') }, `Yarım kaldı: ${e?.title || p.examId}${p.half ? ' (ilk 40)' : ''} · ${n} cevap → Devam`);
       }),
       ...open.map(o => h('a.banner.resume', { href: o.route }, `Yarım kaldı: ${o.name || 'Oturum'} · ${Math.min((o.i || 0) + 1, o.total || 1)}/${o.total || '?'} → Devam`)),
       h('div.row.between',
@@ -72,16 +98,21 @@ export default async function render(root) {
           t.min ? h('span.small.muted.tmin', '~' + t.min + ' dk') : null, done ? h('span.chev', '›') : focusBtn(k));
       })),
       (rr.reviews || rr.answered || rr.focusMin) ? h('p.small.muted.daysum', `Bugün: ${rr.reviews || 0} kart · ${rr.correct || 0}/${rr.answered || 0} soru doğru · ${Math.round((rr.readSec || 0) / 60)} dk okuma${rr.focusMin ? ` · ${rr.focusMin} dk odak` : ''}`) : null,
+      rTasks.length ? h('ul.tasks.extra.rule-tasks', rTasks.map(t => h('li', { 'data-rule': t.topic },
+        h('span.check.ghost', { 'aria-hidden': 'true' }, '!'),
+        h('a.task', { href: '#/dersler/arac/kural/' + encodeURIComponent(t.topic) }, h('b', 'Kural kartı: ' + topicName(t.topic)), h('span.small.muted', `${t.n} yanlış · kartı oku`)),
+        h('span.small.muted.tmin', '~1 dk'), h('span.chev', '›')))) : null,
       tour ? h('ul.tasks.extra', h('li' + (rr.tasks?.hafiza ? '.done' : ''),
         h('button.check', { 'aria-label': 'tamamlandı', onclick: () => { tick('hafiza', !rr.tasks?.hafiza); draw(); } }, rr.tasks?.hafiza ? '✓' : ''),
         h('a.task', { href: '#/kartlar/hafiza' }, h('b', 'Hafıza turu'), h('span.small.muted', `${tour} kelime · seçmeli`)),
         h('span.small.muted', '3–5 dk'), h('span.chev', '›'))) : null,
       running() ? null : h('button.card.link.focus-start', { onclick: () => { startFocus('', 'Serbest'); draw(); } },
         h('b', `Odak oturumu · ${work} dk`), h('span.small.muted', ` çalış, ${brk} dk ayağa kalk`)),
-      !rr.busy ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiklerini 20\'şer ele')) : null,
-      w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).join(', ') || 'karışık'))) : null,
-      w.mock ? h('a.card.link.mock-plan', { href: w.mock.exam ? '#/cikmis/sinav/' + encodeURIComponent(w.mock.exam) : '#/cikmis' },
-        h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru)`),
+      !rr.busy && !fin.on ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiklerini 20\'şer ele')) : null,
+      fin.on && !rr.busy ? h('a.card.link', { href: '#/okuma' }, h('b', 'Okuma'), h('span.small.muted', ' isteğe bağlı · bir parça')) : null,
+      w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).map(typeName).join(' · ') || 'karışık'))) : null,
+      w.mock ? h('a.card.link.mock-plan', { href: mockHref(w.mock) },
+        h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · 90 dk)`),
         h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · '))) : null,
       h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' doğruluk, ısı haritası, deneme')),
       h('div.small.muted.center.pad', `Sınav: ${fmtDate(w.prog.exam)} · Puan ≈ doğru × 1,25`)

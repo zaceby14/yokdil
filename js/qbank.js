@@ -39,6 +39,7 @@ export function dItem(d, i) {
   return {
     key: `${d.id}#${i}`, stem: d.stem, q: it.q, options: (it.options || []).map(optText), answer: it.answer, explain: it.explain, tip: it.tip, hint: it.hint || '',
     label: typeName(d.type) + (d.items.length > 1 ? ` (${i + 1})` : ''),
+    ...(Array.isArray(it.parts) && it.parts.length ? { parts: it.parts, check: it.check || [] } : {}),
     info: { kind: 'drill', topic: d.topic || '', dtype: d.type }
   };
 }

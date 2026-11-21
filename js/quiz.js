@@ -10,6 +10,21 @@ import { openFor } from './side.js';
 import { resolve as resolveKey, hintFor } from './qbank.js';
 import { aids } from './data.js';
 import { nextTaskBtn } from './tasks.js';
+import { reasonList, reasonChips } from './reasons.js';
+
+// Çeviri yardımı: kaynak cümleyi renkli bloklara böl (rol etiketli). reveal=true → karşılıklar (tgt) + kontrol maddeleri
+const ROLE_C = [[/bağlaç|baglac|conj/i, 'c1'], [/özne|ozne|subj/i, 'c2'], [/yüklem|yuklem|fiil|verb/i, 'c3'], [/nesne|obj/i, 'c4'], [/zaman|yer|zarf|edat|adv|prep/i, 'c5'], [/relative|sıfat|sifat|niteleme|tamlama/i, 'c6']];
+const roleCls = (role, i) => ROLE_C.find(([re]) => re.test(role || ''))?.[1] || 'c' + (i % 6 + 1);
+export function partsBox(it, reveal) {
+  const parts = (Array.isArray(it.parts) ? it.parts : []).filter(p => p && p.src);
+  if (!parts.length) return null;
+  const checks = (Array.isArray(it.check) ? it.check : []).map(c => typeof c === 'string' ? c : c?.text || c?.label || '').filter(Boolean);
+  return h('div.partsbox' + (reveal ? '.revealed' : ''),
+    h('div.parts', parts.map((p, i) => h('div.part.' + roleCls(p.role, i),
+      p.role ? h('span.part-role', p.role) : null, h('span.part-src', p.src), reveal && p.tgt ? h('span.part-tgt', p.tgt) : null))),
+    reveal && checks.length ? h('ul.part-check', checks.map(c => h('li', c))) : null);
+}
+const markHl = (q, w) => { const i = String(q).indexOf(w); return i < 0 ? [q] : [q.slice(0, i), h('mark', w), q.slice(i + w.length)]; };
 
 // Kişisel kural kartı: ilgili konuda yanlış yapınca otomatik gösterilir
 export async function ruleFor(topic) {
@@ -25,7 +40,7 @@ const L = 'ABCDE';
 
 // Türkçe metin dokunulabilir olmasın
 const trQ = it => it.info?.dtype === 'ceviri-tr-en';
-const trOpts = it => it.info?.dtype === 'ceviri-en-tr';
+const trOpts = it => it.info?.dtype === 'ceviri-en-tr' || !!it.plainOpts;
 
 // items: [{key, stem, q, options, answer, explain, tip, label, info}]
 // opts: onAnswer(item, ok) · onEnd({right,total}, root) · title · extra(it, ok) · auto (yanlışta otomatik kart)
@@ -108,6 +123,10 @@ export function runQuiz(root, items, opts = {}) {
         if (it.tip) exp.append(h('div.tip', 'Taktik: ' + it.tip));
         hintBtn?.remove();
         if (!ok) ruleFor(it.info?.topic).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
+        // Çeviri: blokların karşılıkları + kontrol maddeleri
+        if (it.parts?.length) { partsBtn?.remove(); partsSlot.innerHTML = ''; const pb = partsBox(it, true); if (pb) exp.append(h('div.small.muted', 'Parça parça:'), pb); }
+        // Yanlışta küçük "neden" çipleri (isteğe bağlı)
+        if (!ok && it.info?.kind && opts.reasons !== false) reasonList().then(rs => { const row = reasonChips(rs, it.key, { src: it.info.kind, dtype: it.info.dtype || '', topic: it.info.topic || '' }); if (row && exp.isConnected) exp.insertBefore(row, exp.querySelector('.tap-hint')); }).catch(() => {});
         const x = opts.extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && exp.append(n));
         exp.append(h('div.small.muted.tap-hint', 'Kelimeye dokun → karta ekle'));
         next.classList.remove('hidden');
@@ -125,7 +144,13 @@ export function runQuiz(root, items, opts = {}) {
         onclick: () => { if (answered) return; reveal(k, false); }
       }, h('span.ol', L[k]), optNode(o)));
       const stem = it.stemNode ? h('div.stem.tap', it.stemNode()) : it.stem ? h('div.stem.tap', tappable(it.stem, { ...src, ctx }).el) : null;
-      const q = it.qNode ? h('div.q.tap', it.qNode()) : it.q ? (trQ(it) ? h('div.q', it.q) : h('div.q.tap', tappable(it.q, { ...src, ctx }).el)) : null;
+      const q = it.qNode ? h('div.q.tap', it.qNode()) : it.q ? (it.hl ? h('div.q.hlq', { lang: 'en' }, markHl(it.q, it.hl)) : trQ(it) ? h('div.q', it.q) : h('div.q.tap', tappable(it.q, { ...src, ctx }).el)) : null;
+      // Parçala: cevaptan önce kaynak cümle blokları (karşılıklar gizli)
+      const partsSlot = h('div');
+      let partsBtn = null;
+      if (it.parts?.length && picks[i] == null) partsBtn = h('button.chip.parts-btn', { type: 'button', 'aria-expanded': 'false', onclick: () => {
+        const open = !partsSlot.firstChild; partsSlot.innerHTML = ''; if (open) add(partsSlot, partsBox(it, false)); partsBtn.setAttribute('aria-expanded', String(open)); partsBtn.classList.toggle('on', open);
+      } }, 'Parçala');
       // İpucu: cevaptan önce; kullanıldığı kaydedilir
       const hintBox = h('div.hintbox.hidden');
       let hintBtn = null;
@@ -137,9 +162,9 @@ export function runQuiz(root, items, opts = {}) {
       add(root,
         h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${i + 1}/${items.length}`),
           h('span.qtools', it.unverified ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
-        h('div.qbar', hintBtn,
-          h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
-        hintBox, stem, q,
+        h('div.qbar', hintBtn, partsBtn,
+          opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
+        hintBox, stem, q, partsSlot,
         h('div.opts', opts_), exp, h('div.actbar', next)
       );
       if (picks[i] != null) reveal(picks[i], true);

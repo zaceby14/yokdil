@@ -413,4 +413,154 @@ t('Yardımcılar: açıklama "Cevap: X" sayılmaz, bilinmeyen konu adı, çift b
   assert.equal(U.TYPE_LESSON['ceviri-tr-en'], 'taktik-ceviri');
 });
 
+// ===== v7: sınav stratejisi =====
+const SG = await import('../js/strategy.js');
+const GU = await import('../js/views/guess.js');
+const { COLLECTIONS } = await import('../js/merge.js');
+
+t('Senkron: yeni alanlar (reasons, bölüm süreleri, yarım deneme) birleşir; eski veri bozulmaz', () => {
+  assert.ok(COLLECTIONS.includes('reasons'));
+  const old = { cards: { a: { id: 'a', word: 'x', updatedAt: 1 } }, progress: { 'exam:e1': { id: 'exam:e1', answers: { 1: 0 }, updatedAt: 5 } }, settings: { main: { id: 'main', theme: 'dark', updatedAt: 2 } } };
+  const neu = { progress: { 'exam:e1': { id: 'exam:e1', answers: { 1: 0, 2: 1 }, secTime: { bosluk: 300 }, updatedAt: 9 }, 'exam:e1~yarim': { id: 'exam:e1~yarim', half: true, updatedAt: 7 } },
+    reasons: { 'e1:2': { id: 'e1:2', reason: 'kelime', updatedAt: 8 } }, mocks: { m1: { id: 'm1', times: { bosluk: 300 }, half: true, updatedAt: 9 } } };
+  const ab = mergeState(old, neu), ba = mergeState(neu, old);
+  assert.ok(sameState(ab, ba));
+  assert.equal(ab.progress['exam:e1'].secTime.bosluk, 300);
+  assert.equal(ab.reasons['e1:2'].reason, 'kelime');
+  assert.equal(ab.cards.a.word, 'x'); assert.equal(ab.settings.main.theme, 'dark');
+  assert.deepEqual(ab.reasons, mergeState(ab, old).reasons);
+  // silinen neden (tombstone) geri gelmez
+  assert.equal(mergeState(ab, { reasons: { 'e1:2': { id: 'e1:2', deleted: true, updatedAt: 20 } } }).reasons['e1:2'].deleted, true);
+  // eski ayar kaydında yeni anahtarlar yok → varsayılanlar
+  ST.load(); ST.put('settings', { id: 'main', theme: 'dark' });
+  const set = ST.settings();
+  assert.equal(set.secClock, true); assert.equal(set.finalMode, true); assert.equal(set.readGoal, 120); assert.equal(set.vocabGoal, 2000); assert.equal(set.theme, 'dark');
+});
+
+const TP = { total: 180, sections: [
+  { type: 'paragraf', label: 'Okuma', count: 15, minutes: 60, order: 3 }, { type: 'bosluk', label: 'Boşluk', count: 20, minutes: 20, order: 1 },
+  { type: 'ceviri', label: 'Çeviri', count: 12, minutes: 18, order: 2 }, { type: 'paragraf', label: 'Paragraf tamamlama', count: 6, minutes: 14, order: 4 }, { type: 'x', minutes: 0 }] };
+t('Süre planı: sıralama, tip → bölüm eşlemesi, bölüm göstergesi', () => {
+  const rows = SG.planRows(TP);
+  assert.deepEqual(rows.map(r => r.label), ['Boşluk', 'Çeviri', 'Okuma', 'Paragraf tamamlama']);
+  assert.deepEqual(rows[1].secs, ['en-tr', 'tr-en']);
+  assert.deepEqual(rows[2].secs, ['okuma']); assert.deepEqual(rows[3].secs, ['paragraf']);
+  assert.deepEqual(SG.secClock(TP, 'bosluk', { bosluk: 12 * 60 + 30 }), { label: 'Boşluk', used: 12, target: 20, over: false, secs: 750 });
+  assert.equal(SG.secClock(TP, 'bosluk', { bosluk: 20 * 60 + 1 }).over, true);
+  // birleşik satır: iki çeviri bölümünün süresi toplanır
+  const c = SG.secClock(TP, 'tr-en', { 'en-tr': 600, 'tr-en': 500 });
+  assert.equal(c.used, 18); assert.equal(c.target, 18); assert.equal(c.over, true);
+  assert.equal(SG.secClock(TP, 'cloze', {}), null);
+  assert.deepEqual(SG.planRows(null), []); assert.deepEqual(SG.planRows({ sections: 'x' }), []);
+});
+
+t('Hedef net: puana göre satır, son deneme ile fark, yarım deneme sayılmaz', () => {
+  const targets = [{ score: 60, nets: { bosluk: 12, ceviri: 9, paragraf: 8 } }, { score: 80, nets: { bosluk: 16, 'ceviri-en-tr': 6, 'ceviri-tr-en': 5, okuma: 11, bilinmeyen: 3 } }];
+  assert.equal(SG.targetFor(targets, 70).score, 60);
+  assert.equal(SG.targetFor(targets, 40).score, 60);
+  const t80 = SG.targetFor(targets, 85);
+  assert.equal(t80.score, 80); assert.equal(t80.total, 38); assert.deepEqual(t80.rows.map(r => r.secs[0]), ['bosluk', 'en-tr', 'tr-en', 'okuma']);
+  assert.equal(SG.targetFor([], 70), null); assert.equal(SG.targetFor(undefined, 70), null);
+  const mocks = [{ id: 'a', date: '2026-12-01', sections: { bosluk: { d: 10 }, 'en-tr': { d: 5 }, 'tr-en': { d: 2 }, okuma: { d: 9 } } }, { id: 'h', date: '2026-12-05', half: true, sections: { bosluk: { d: 20 } } }];
+  const last = SG.lastFullMock(mocks);
+  assert.equal(last.id, 'a');
+  const rows = SG.netRows(SG.targetFor(targets, 60), last);
+  assert.deepEqual(rows.map(r => [r.need, r.mine, r.diff]), [[12, 10, -2], [9, 7, -2], [8, 9, 1]]);
+  assert.equal(SG.netRows(SG.targetFor(targets, 60), null)[0].mine, null);
+  assert.equal(SG.lastFullMock([]), null);
+});
+
+t('Hata nedenleri: dağılım (çoktan aza), bilinmeyen neden atlanır; analiz adımı biçimleri', () => {
+  const reasons = [{ id: 'kelime', label: 'Kelime', advice: 'Kart ekle' }, { id: 'sure', label: 'Süre' }, { id: 'dikkat', label: 'Dikkat' }];
+  const rows = SG.reasonCounts([{ reason: 'sure' }, { reason: 'kelime' }, { reason: 'sure' }, { reason: 'yok' }, {}], reasons);
+  assert.deepEqual(rows.map(r => [r.id, r.n]), [['sure', 2], ['kelime', 1]]);
+  assert.deepEqual(SG.reasonCounts([], reasons), []); assert.deepEqual(SG.reasonCounts([{ reason: 'x' }], null), []);
+  assert.deepEqual(SG.stepOf('Yanlışları işaretle'), { title: 'Yanlışları işaretle', text: '', min: 0, end: 0 });
+  assert.equal(SG.stepOf('19–20 dk: Tek hedef yaz.').end, 20);
+  assert.equal(SG.targetFor([{ score: 60, total: 48, nets: { bosluk: 12, ceviri: 10 } }], 60).total, 48);
+  assert.deepEqual(SG.planRows({ sections: [{ type: 'kontrol', label: '2. tur', count: 0, minutes: 20, order: 8 }] })[0], { label: '2. tur', secs: [], count: 0, minutes: 20, order: 8, tip: '' });
+  assert.deepEqual(SG.stepOf({ title: 'A', text: 'b', min: 5 }), { title: 'A', text: 'b', min: 5 });
+  assert.deepEqual(SG.stepOf({ text: 'Sadece metin', minutes: 3 }), { title: 'Sadece metin', text: '', min: 3 });
+});
+
+t('Son 14 gün: yeni kelime 0–5, sınav günü grubu, başvuru bandı', () => {
+  assert.equal(SG.isFinal(14), true); assert.equal(SG.isFinal(15), false); assert.equal(SG.isFinal(0), true); assert.equal(SG.isFinal(-1), false);
+  assert.equal(SG.finalNewLimit(15, 20), 15); assert.equal(SG.finalNewLimit(15, 14), 5); assert.equal(SG.finalNewLimit(3, 10), 3);
+  assert.equal(SG.finalNewLimit(15, 3), 0); assert.equal(SG.finalNewLimit(0, 9), 0);
+  const ed = [{ when: 'Son hafta', items: ['a'] }, { when: 'Bir gün önce', items: ['b'] }, { when: 'Sınav sabahı', items: ['c'] }, { when: 'Sınavda', items: ['d'] }, { when: 'Boş', items: [] }];
+  assert.deepEqual(SG.examDayFor(ed, 12).map(g => g.when), ['Son hafta']);
+  assert.deepEqual(SG.examDayFor(ed, 5).map(g => g.when), ['Son hafta']);
+  assert.deepEqual(SG.examDayFor(ed, 1).map(g => g.when), ['Bir gün önce']);
+  assert.deepEqual(SG.examDayFor(ed, 0).map(g => g.when), ['Sınav sabahı', 'Sınavda']);
+  assert.deepEqual(SG.examDayFor(ed, 20), []); assert.deepEqual(SG.examDayFor(null, 3), []);
+  assert.deepEqual(SG.examDayFor([{ when: 'A', days: 10, items: ['x'] }, { when: 'B', days: 2, items: ['y'] }], 2).map(g => g.when), ['B']);
+  assert.equal(SG.whenDays({ when: '3 gün önce' }), 3); assert.equal(SG.whenDays({ when: '2 hafta kala' }), 14); assert.equal(SG.whenDays({ when: 'Genel' }), null);
+  const ap = ['2027-01-12', '2027-01-20'];
+  assert.equal(SG.applyState(ap, '2027-01-28', '2026-12-20'), null);
+  assert.deepEqual(SG.applyState(ap, '2027-01-28', '2027-01-05'), { kind: 'soon', days: 7 });
+  assert.deepEqual(SG.applyState(ap, '2027-01-28', '2027-01-12'), { kind: 'open', days: 8 });
+  assert.deepEqual(SG.applyState(ap, '2027-01-28', '2027-01-20'), { kind: 'open', days: 0 });
+  assert.deepEqual(SG.applyState(ap, '2027-01-28', '2027-01-21'), { kind: 'late', days: 7 });
+  assert.equal(SG.applyState(ap, '2027-01-28', '2027-01-29'), null); assert.equal(SG.applyState(ap, null, '2027-01-21'), null); assert.equal(SG.applyState([], null, '2027-01-13'), null);
+  // görev listesi: son 14 günde okuma yok, deneme var
+  assert.deepEqual(PL.taskList(false, true), ['kart', 'hata', 'deneme', 'gramer', 'yeni']);
+  assert.deepEqual(PL.taskList(false), ['kart', 'yeni', 'gramer', 'hata', 'okuma']);
+  assert.deepEqual(PL.taskList(true, true), ['kart', 'gramer']);
+  assert.equal(PL.dayDone({ final: true, tasks: { kart: true, gramer: true }, mock: true }), true);
+  assert.equal(PL.dayDone({ final: true, tasks: { kart: true, gramer: true } }), false);
+});
+
+t('Kural kartı görevi: aynı kuraldan 2 yanlış → görev; "Okudum" sonrası sıfırlanır', () => {
+  const rules = [{ topic: 'edat-esdizim', rule: 'at' }, { topic: 'relative', rule: 'which' }, { topic: 'edat-esdizim', rule: 'at 2' }];
+  const L = (topic, correct, at, day = '2026-12-10') => ({ topic, correct, at, day });
+  const logs = [L('edat-esdizim', false, 100), L('edat-esdizim', true, 150), L('edat-esdizim', false, 200), L('relative', false, 210), L('modal', false, 220), L('modal', false, 230)];
+  assert.deepEqual(SG.ruleTasks(logs, rules, {}, '2026-12-10'), [{ topic: 'edat-esdizim', n: 2 }]);
+  assert.deepEqual(SG.ruleTasks(logs, rules, { 'edat-esdizim': 150 }, '2026-12-10'), []); // onaydan sonra yalnız 1 yanlış
+  assert.deepEqual(SG.ruleTasks([...logs, L('edat-esdizim', false, 300)], rules, { 'edat-esdizim': 150 }, '2026-12-10'), [{ topic: 'edat-esdizim', n: 2 }]);
+  assert.deepEqual(SG.ruleTasks(logs, rules, {}, '2027-01-20'), []); // 14 günden eski yanlışlar sayılmaz
+  assert.deepEqual(SG.ruleTasks(logs, null), []); assert.deepEqual(SG.ruleTasks(null, rules), []);
+});
+
+t('Okuma hızı: haftalık ortalama (pazartesi başlangıçlı), boş hafta null', () => {
+  const at = k => new Date(k + 'T12:00:00').getTime();
+  const recs = [{ wpm: 100, at: at('2026-12-07') }, { wpm: 120, at: at('2026-12-13') }, { wpm: 90, at: at('2026-12-01') }, { wpm: 0, at: at('2026-12-09') }, { wpm: 200 }];
+  const w = SG.weeklyWpm(recs, '2026-12-10', 4);
+  assert.deepEqual(w.map(x => x.wk), ['2026-11-16', '2026-11-23', '2026-11-30', '2026-12-07']);
+  assert.deepEqual(w.map(x => x.v), [null, null, 90, 110]);
+  assert.equal(w[3].label, '7.12'); assert.equal(SG.weeklyWpm([], '2026-12-10').length, 8);
+});
+
+t('Çekirdek liste ilerlemesi + ders grupları + cümlede kelime bulma', () => {
+  const words = [{ id: 'w1', word: 'yield' }, { id: 'w2', word: 'robust' }, { id: 'w3', word: 'decline' }, { id: 'w4', word: 'obtain' }];
+  const cards = [{ id: 'w:w1', wid: 'w1', word: 'yield', state: 'review' }, { id: 'c2', word: 'Robust', state: 'known' }, { id: 'w:w3', wid: 'w3', word: 'decline', state: 'new' }, { id: 'x', word: 'obtain', state: 'review', deleted: true }];
+  assert.deepEqual(SG.coreSeen(words, cards), { seen: 2, total: 4 });
+  assert.deepEqual(SG.coreSeen([], []), { seen: 0, total: 0 });
+  const g = (id, topic) => SG.lessonGroup({ id, topic: topic ?? id });
+  assert.equal(g('baglac-zitlik'), 'baglac'); assert.equal(g('despite-although'), 'baglac'); assert.equal(g('edat-ving'), 'edat'); assert.equal(g('preposition-which'), 'edat');
+  assert.equal(g('zaman-ifadeleri'), 'zaman'); assert.equal(g('cift-bosluk'), 'zaman'); assert.equal(g('relative'), 'yapi'); assert.equal(g('yepyeni-konu'), 'yapi');
+  assert.equal(g('phrasal-verbs', 'kelime'), 'kelime'); assert.equal(g('taktik-kelime-tahmini', 'kelime-tahmini'), 'kelime');
+  assert.equal(g('taktik-cloze', 'cloze'), 'taktik'); assert.equal(g('taktik-sure', 'strateji'), 'strateji'); assert.equal(g('yeni-strateji-dersi', 'strateji'), 'strateji');
+  assert.deepEqual(SG.LESSON_GROUPS.map(x => x[1]), ['Bağlaçlar', 'Edatlar', 'Zaman', 'Cümle yapıları', 'Kelime', 'Soru tipi taktikleri', 'Strateji']);
+  assert.equal(U.topicName('strateji'), 'Strateji'); assert.equal(U.topicName('kelime-tahmini'), 'Kelime tahmini');
+  assert.deepEqual(SG.splitAt('The coating prevents corrosion.', 'prevent'), ['The coating ', 'prevents', ' corrosion.']);
+  assert.deepEqual(SG.splitAt('Steel is coated with zinc.', 'coat'), ['Steel is ', 'coated', ' with zinc.']);
+  assert.equal(SG.splitAt('They are reducing emissions.', 'reduce')[1], 'reducing');
+  assert.equal(SG.splitAt('No match here.', 'yield'), null); assert.equal(SG.splitAt('', 'x'), null);
+  assert.equal(SG.splitAt('The format is new.', 'form'), null); // başka kelime (format) vurgulanmaz
+  assert.equal(SG.splitAt('It stopped; easily carried.', 'stop')[1], 'stopped'); assert.equal(SG.splitAt('It is easily carried.', 'carry')[1], 'carried');
+});
+
+t('Bağlamdan tahmin: 4 şık, doğru anlam içinde, çeldiriciler aynı türden ve farklı', () => {
+  const pool = [{ word: 'yield', tr: 'verim; ürün vermek', pos: 'n' }, { word: 'layer', tr: 'katman', pos: 'n' }, { word: 'alloy', tr: 'alaşım', pos: 'n' }, { word: 'beam', tr: 'kiriş', pos: 'n' },
+    { word: 'gear', tr: 'dişli', pos: 'n' }, { word: 'rapid', tr: 'hızlı', pos: 'adj' }, { word: 'copy', tr: 'verim', pos: 'n' }];
+  const it = GU.buildGuess({ word: 'yield', tr: 'verim; ürün vermek', pos: 'n', cardId: 'c1' }, [{ en: 'No hit.' }, { en: 'The process yields pure iron.', tr: 'Süreç saf demir verir.' }], pool, () => 0.3);
+  assert.equal(it.options.length, 4); assert.equal(new Set(it.options).size, 4);
+  assert.equal(it.options[it.answer], 'verim'); assert.equal(it.hl, 'yields'); assert.equal(it.q, 'The process yields pure iron.');
+  assert.ok(!it.options.includes('hızlı')); // farklı tür: aynı türden yeterince varken alınmaz
+  assert.ok(it.explain.includes('Süreç saf demir verir.')); assert.equal(it.cardId, 'c1'); assert.equal(it.plainOpts, true);
+  assert.equal(GU.buildGuess({ word: 'yield', tr: 'verim', pos: 'n' }, [{ en: 'No hit.' }], pool), null);       // cümlede yok
+  assert.equal(GU.buildGuess({ word: 'yield', tr: '', pos: 'n' }, [{ en: 'It yields.' }], pool), null);            // anlam yok
+  assert.equal(GU.buildGuess({ word: 'yield', tr: 'verim', pos: 'n' }, [{ en: 'It yields.' }], pool.slice(0, 2)), null); // çeldirici yetmez
+});
+
 console.log(`\n${n} test geçti`);

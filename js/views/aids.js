@@ -4,6 +4,9 @@ import { aids } from '../data.js';
 import { h, add, topicName } from '../util.js';
 import { md } from '../md.js';
 import { setCtx } from '../ctx.js';
+import * as store from '../store.js';
+import { planRows } from '../strategy.js';
+import { timePlanView, targetView, examDayView, resourcesView } from './strategy.js';
 
 const TOOLS = [
   ['agac', 'Karar ağacı', a => a.decisionTree?.nodes?.length],
@@ -11,8 +14,14 @@ const TOOLS = [
   ['zaman', 'Zaman tablosu', a => a.tenseTable?.rows?.length],
   ['kopya', 'Kopya kağıtları', a => a.cheatSheets?.length || a.mnemonics?.length],
   ['eleme', 'Şık eleme', a => a.eliminationTips?.length],
-  ['kural', 'Kişisel kurallarım', a => a.personalRules?.length]
+  ['kural', 'Kişisel kurallarım', a => a.personalRules?.length],
+  ['sure', 'Süre planı', a => planRows(a.timePlan).length],
+  ['net', 'Hedef net', a => a.targets?.some?.(t => t?.nets && t.score)],
+  ['gun', 'Sınav günü', a => a.examDay?.some?.(g => g?.items?.length)],
+  ['kaynak', 'Kaynaklar', a => a.resources?.some?.(r => r?.title)]
 ];
+// Strateji araçları şeridin başında
+const STRIP = ['sure', 'net', 'gun', 'agac', 'kutup', 'zaman', 'kopya', 'eleme', 'kural', 'kaynak'];
 const COLORS = { kirmizi: 'red', 'kırmızı': 'red', red: 'red', yesil: 'green', 'yeşil': 'green', green: 'green', mavi: 'blue', blue: 'blue',
   mor: 'purple', purple: 'purple', gri: 'gray', gray: 'gray', grey: 'gray', turuncu: 'orange', orange: 'orange' };
 
@@ -21,8 +30,9 @@ export async function toolsStrip() {
   if (!a) return null;
   const on = TOOLS.filter(([, , ok]) => { try { return ok(a); } catch { return false; } });
   if (!on.length) return null;
-  return h('section.tools', h('div.small.muted', 'Araçlar'),
-    h('div.toolstrip', on.map(([k, l]) => h('a.tool', { href: '#/dersler/arac/' + k }, l))));
+  on.sort((x, y) => STRIP.indexOf(x[0]) - STRIP.indexOf(y[0]));
+  return h('section.tools', h('div.small.muted', 'Araçlar', on.length > 3 ? ' · kaydır →' : ''),
+    h('div.toolstrip', { tabindex: '0', role: 'group', 'aria-label': 'Araçlar' }, on.map(([k, l]) => h('a.tool', { href: '#/dersler/arac/' + k }, l))));
 }
 
 const back = () => h('a.btn.small', { href: '#/dersler' }, '‹ Dersler');
@@ -35,7 +45,7 @@ export async function toolView(root, kind, id) {
   if (!a || !t || !(() => { try { return t[2](a); } catch { return false; } })()) { root.append(h('p.muted', 'Bu araç için içerik yok.')); return; }
   root.append(h('h2', t[1]));
   setCtx({ type: 'ders', key: 'arac:' + kind, label: 'Araç · ' + t[1] });
-  ({ agac: tree, kutup: polarity, zaman: tense, kopya: sheets, eleme: elim, kural: rules })[kind](root, a, id);
+  ({ agac: tree, kutup: polarity, zaman: tense, kopya: sheets, eleme: elim, kural: rules, sure: timePlanView, net: targetView, gun: examDayView, kaynak: resourcesView })[kind](root, a, id);
 }
 
 // Karar ağacı: adım adım soru → seçenek → sonraki düğüm / sonuç
@@ -95,9 +105,15 @@ function elim(root, a) {
   root.append(h('ol.elim', arr(a.eliminationTips).map(t => h('li', h('b', t.title), h('div', t.text), t.ex ? h('div.small.muted', { lang: 'en' }, t.ex) : null))));
 }
 
-function rules(root, a) {
-  root.append(h('p.small.muted', 'İlgili konuda yanlış yapınca bu kart soru açıklamasında kendiliğinden çıkar.'),
-    h('div', arr(a.personalRules).map(r => h('div.rulecard', h('div.small.muted', topicName(r.topic || '')), h('b', r.rule),
+// id = konu: Bugün'deki "Kural kartı" görevinden gelinir → o kart üstte + "Okudum" (görev kapanır)
+function rules(root, a, id) {
+  const list = arr(a.personalRules);
+  const cur = id ? list.filter(r => r.topic === id) : [];
+  if (cur.length) root.append(h('div.note', 'Bu kuraldan son günlerde 2+ yanlış yaptın. Kartı oku, örneği sesli söyle.'));
+  root.append(cur.length ? null : h('p.small.muted', 'İlgili konuda yanlış yapınca bu kart soru açıklamasında kendiliğinden çıkar.'),
+    h('div', [...cur, ...list.filter(r => !cur.includes(r))].map(r => h('div.rulecard' + (cur.includes(r) ? '.focus' : ''), h('div.small.muted', topicName(r.topic || '')), h('b', r.rule),
       r.ex ? h('div.small', { lang: 'en' }, r.ex) : null,
-      r.wrong || r.right ? h('div.small', r.wrong ? h('span.bad-t', '✗ ' + r.wrong + ' ') : null, r.right ? h('span.good-t', '✓ ' + r.right) : null) : null))));
+      r.wrong || r.right ? h('div.small', r.wrong ? h('span.bad-t', '✗ ' + r.wrong + ' ') : null, r.right ? h('span.good-t', '✓ ' + r.right) : null) : null,
+      cur.includes(r) && r === cur.at(-1) ? h('div.row', h('button.btn.primary.grow.rule-ack', { onclick: () => { store.patch('progress', 'kural:' + id, { ackAt: Date.now() }); location.hash = '#/bugun'; } }, 'Okudum'),
+        h('a.btn', { href: '#/gramer/konu/' + encodeURIComponent(id) }, 'Bu konudan çöz')) : null))));
 }

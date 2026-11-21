@@ -730,5 +730,250 @@
    "topic": "edat-esdizim",
    "text": "Değer AT'ta, basınç UNDER'da."
   }
+ ],
+ "timePlan": {
+  "total": 180,
+  "note": "80 soru, 180 dk. Önce hızlı netler, okuma sona yakın ama 60 dk ile. Son 20 dk ikinci tur ve kontrol.",
+  "sections": [
+   {
+    "type": "ceviri",
+    "label": "Çeviri (42–53)",
+    "count": 12,
+    "minutes": 15,
+    "order": 1,
+    "tip": "Buradan başla: en hızlı net. Bağlaç ve zaman tutmayanı sil."
+   },
+   {
+    "type": "bosluk",
+    "label": "Cümlede boşluk (1–20)",
+    "count": 20,
+    "minutes": 22,
+    "order": 2,
+    "tip": "Soru başı 1 dk. Kelimeyi bilmiyorsan işaretle, geç."
+   },
+   {
+    "type": "cloze",
+    "label": "Cloze (21–30)",
+    "count": 10,
+    "minutes": 14,
+    "order": 3,
+    "tip": "Önce metni 1 dk oku, sonra boşlukları sırayla doldur."
+   },
+   {
+    "type": "cumle-tamamlama",
+    "label": "Cümle tamamlama (31–41)",
+    "count": 11,
+    "minutes": 22,
+    "order": 4,
+    "tip": "Soru başı 2 dk. Bağlaç, zaman ve özne uyumuna bak."
+   },
+   {
+    "type": "ilgisiz",
+    "label": "Anlamı bozan cümle (60–65)",
+    "count": 6,
+    "minutes": 12,
+    "order": 5,
+    "tip": "Konusu kayan cümleyi ara; I. cümle nadiren cevaptır."
+   },
+   {
+    "type": "paragraf-tamamlama",
+    "label": "Paragraf tamamlama (54–59)",
+    "count": 6,
+    "minutes": 15,
+    "order": 6,
+    "tip": "Boşluğun önündeki ve arkasındaki cümleyi oku: zamir, bağlaç."
+   },
+   {
+    "type": "paragraf",
+    "label": "Okuma parçaları (66–80)",
+    "count": 15,
+    "minutes": 60,
+    "order": 7,
+    "tip": "Parça başı 12 dk. Önce soruyu oku, cevabı metinde bul."
+   },
+   {
+    "type": "kontrol",
+    "label": "2. tur + optik kontrol",
+    "count": 0,
+    "minutes": 20,
+    "order": 8,
+    "tip": "İşaretli sorulara dön, boşları doldur, kaydırma var mı bak."
+   }
+  ],
+  "rules": [
+   "Takıldığın soruyu kitapçıkta işaretle, geç. 1 dakikadan fazla bekleme.",
+   "2 tur çöz: 1. turda emin oldukların, 2. turda işaretliler.",
+   "Boş bırakma: YÖKDİL'de yanlış doğruyu götürmez.",
+   "Optiği her bölüm bitince kodla; sona bırakma.",
+   "Bölüm süresi dolduysa bırak, sıradaki bölüme geç.",
+   "Her bölüm sonunda saate bak; 5 dk'dan fazla gerideysen hızlan.",
+   "Son 5 dk: yeni soru çözme. Boş kalanları kodla, soru numarası kaymış mı bak."
+  ]
+ },
+ "targets": [
+  {
+   "score": 60,
+   "total": 48,
+   "nets": {
+    "bosluk": 12,
+    "cloze": 6,
+    "cumle-tamamlama": 6,
+    "ceviri": 10,
+    "paragraf-tamamlama": 3,
+    "ilgisiz": 3,
+    "paragraf": 8
+   }
+  },
+  {
+   "score": 70,
+   "total": 56,
+   "nets": {
+    "bosluk": 14,
+    "cloze": 7,
+    "cumle-tamamlama": 7,
+    "ceviri": 11,
+    "paragraf-tamamlama": 4,
+    "ilgisiz": 4,
+    "paragraf": 9
+   }
+  },
+  {
+   "score": 80,
+   "total": 64,
+   "nets": {
+    "bosluk": 16,
+    "cloze": 8,
+    "cumle-tamamlama": 9,
+    "ceviri": 11,
+    "paragraf-tamamlama": 4,
+    "ilgisiz": 5,
+    "paragraf": 11
+   }
+  }
+ ],
+ "examDay": [
+  {
+   "when": "2 hafta kala",
+   "items": [
+    "Denemeleri sınav saatinde çöz: 10.15'te başla, 180 dk ara verme.",
+    "Yeni kaynak açma. Hata kutusu + kart tekrarı.",
+    "Giriş belgesini ÖSYM AİS'ten al, sınav yerini haritada bul.",
+    "Uykuyu sınav sabahına göre ayarla."
+   ]
+  },
+  {
+   "when": "1 hafta kala",
+   "items": [
+    "Son tam deneme en geç 3–4 gün önce.",
+    "Yeni konu yok. Bağlaç tablosu, edat eşdizimleri, kendi kuralların.",
+    "Süre planını ezberle: çeviri → boşluk → cloze → cümle → ilgisiz → paragraf tamamlama → okuma.",
+    "Kimliğin geçerli mi bak; kabul edilen belgeler giriş belgesinde yazar."
+   ]
+  },
+  {
+   "when": "1 gün kala",
+   "items": [
+    "En fazla 30 dk hafif tekrar. Deneme çözme.",
+    "Giriş belgesi + kimlik çantada. Yasak eşya listesini belgeden oku.",
+    "Yolu ve çıkış saatini planla.",
+    "Erken yat."
+   ]
+  },
+  {
+   "when": "Sınav sabahı",
+   "items": [
+    "Hafif kahvaltı. Su iç ama abartma.",
+    "Binaya erken var; son giriş saati giriş belgesinde yazar.",
+    "Yanında sadece giriş belgesi ve kimlik olsun.",
+    "Kapıda soru çözme, kelime bakma."
+   ]
+  },
+  {
+   "when": "Sınavda",
+   "items": [
+    "Çeviriyle başla, plana uy.",
+    "Takıldın mı? İşaretle, geç.",
+    "Optiği bölüm bölüm kodla.",
+    "Zor parça moral bozmasın: herkese zor.",
+    "Son 5 dk: boş bırakma, kaydırma kontrolü."
+   ]
+  }
+ ],
+ "errorReasons": [
+  {
+   "id": "kelime",
+   "label": "Kelimeyi bilmiyordum",
+   "advice": "Kelimeyi cümlesiyle birlikte hemen karta ekle; ertesi gün karşına çıksın."
+  },
+  {
+   "id": "gramer",
+   "label": "Gramer kuralını bilmiyordum",
+   "advice": "Konunun dersini aç, formülü oku ve aynı konudan 5 soru çöz."
+  },
+  {
+   "id": "dikkat",
+   "label": "Dikkatsizlik",
+   "advice": "Soruda not, most, only gibi küçük kelimelerin altını çiz ve şıkkı işaretlemeden önce bir kez daha oku."
+  },
+  {
+   "id": "sure",
+   "label": "Süre yetmedi",
+   "advice": "Sıradaki denemede bölüm sürelerini saatle tut ve takıldığın soruyu 1 dakikada bırak."
+  },
+  {
+   "id": "iki-sik",
+   "label": "İki şık arasında kaldım",
+   "advice": "İki şıkkın farkını tek cümleyle yaz; doğru şıkkı doğru yapan kelimeyi metinde göster."
+  },
+  {
+   "id": "metin",
+   "label": "Metni anlayamadım",
+   "advice": "Parçayı süresiz yeniden oku, bilmediğin kelimeleri karta ekle ve her paragrafı tek cümleyle özetle."
+  }
+ ],
+ "mockAnalysis": [
+  "0–3 dk: Bölüm bölüm doğru / yanlış / boş sayılarını siteye gir.",
+  "3–5 dk: Hedef net tablosuyla karşılaştır; en çok net kaybettiren 2 bölümü seç.",
+  "5–13 dk: Bu 2 bölümdeki her yanlışa bir hata nedeni seç (kelime, gramer, dikkat, süre, iki şık, metin).",
+  "13–17 dk: Bilmediğin kelimeleri karta, gramer hatalarını hata kutusuna ekle.",
+  "17–19 dk: Süre planına bak: hangi bölüm süreyi aştı?",
+  "19–20 dk: Bir sonraki deneme için tek bir hedef yaz (ör. \"okumaya 60 dk kalsın\")."
+ ],
+ "resources": [
+  {
+   "title": "ÖSYM – YÖKDİL çıkmış sorular",
+   "url": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html",
+   "kind": "resmi"
+  },
+  {
+   "title": "ÖSYM AİS (başvuru, giriş belgesi)",
+   "url": "https://ais.osym.gov.tr",
+   "kind": "resmi"
+  },
+  {
+   "title": "Academic Word List (Victoria Univ.)",
+   "url": "https://www.wgtn.ac.nz/lals/resources/academicwordlist",
+   "kind": "kelime"
+  },
+  {
+   "title": "Sınav günü ve süre yönetimi rehberi",
+   "url": "https://rehberpanda.com/blog/2026-yokdil-sinav-gunu-strateji-zaman-yonetimi/",
+   "kind": "rehber",
+   "note": "ticari site"
+  },
+  {
+   "title": "Deneme zaman yönetimi",
+   "url": "https://lemonacademy.co.uk/yokdil-deneme-zaman-yonetimi-hiz-ve-dogruluk-rehberi",
+   "kind": "rehber",
+   "note": "ticari site"
+  },
+  {
+   "title": "More to Read / Ikigai (kendi kitapların)",
+   "note": "Okuma ekranına yapıştır, kelimeleri karta ekle"
+  },
+  {
+   "title": "Scientific American / Nature News kısa haberler",
+   "note": "haftada 2 kısa haber: metni yapıştır"
+  }
  ]
 }

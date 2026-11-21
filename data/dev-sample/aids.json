@@ -1,66 +1,491 @@
 {
-  "decisionTree": {
-    "title": "Boşlukta ne arıyorum?",
-    "nodes": [
-      { "id": "n1", "q": "Şıklara bak: ne soruluyor?", "options": [
-        { "label": "Bağlaç / edat karışık", "next": "n2" },
-        { "label": "Fiil biçimleri (tense)", "next": "n3" },
-        { "label": "which / that / whose / where", "result": "Virgül ya da edat varsa **which**; sonrası tam cümle → **where/when**; sonrası isim → **whose**." },
-        { "label": "Ving / to V / V1", "next": "n4" },
-        { "label": "Kelimeler", "result": "Anlam + eşdizim: boşluğun iki yanındaki kelimeye bak." }
-      ] },
-      { "id": "n2", "q": "Boşluktan sonra ne var?", "options": [
-        { "label": "Özne + fiil (tam cümle)", "result": "Bağlaç: although / because / when / if… Sonra anlam: iki taraf aynı yön mü, ters mi?" },
-        { "label": "İsim / Ving (fiil yok)", "result": "Edat: despite / due to / instead of / by…" },
-        { "label": "V1", "result": "in order to / so as to" },
-        { "label": "; ---- , ya da . ---- ,", "result": "Geçiş zarfı: however / therefore / moreover…" }
-      ] },
-      { "id": "n3", "q": "Zaman ifadesi var mı? (since, by, ago, over the past)", "options": [
-        { "label": "Evet", "result": "İfadeye uy: since → have V3 · by the time + past → had V3 · ago → V2" },
-        { "label": "Hayır", "result": "Diğer fiilin zamanına bak; o da yoksa genel gerçek = Present." }
-      ] },
-      { "id": "n4", "q": "Boşluktan önce ne var?", "options": [
-        { "label": "Edat (of, by, without, to=edat)", "result": "Ving" },
-        { "label": "enable / allow / cause + nesne", "result": "to V" },
-        { "label": "let / make + nesne", "result": "V1" }
-      ] }
+ "decisionTree": {
+  "title": "Boşlukta ne arıyorum?",
+  "nodes": [
+   {
+    "id": "n1",
+    "q": "Şıklara bak: ne soruluyor?",
+    "options": [
+     {
+      "label": "Bağlaç / edat karışık",
+      "next": "n2"
+     },
+     {
+      "label": "Fiil biçimleri (tense)",
+      "next": "n3"
+     },
+     {
+      "label": "which / that / whose / where",
+      "result": "Virgül ya da edat varsa **which**; sonrası tam cümle → **where/when**; sonrası isim → **whose**."
+     },
+     {
+      "label": "Ving / to V / V1",
+      "next": "n4"
+     },
+     {
+      "label": "Kelimeler",
+      "result": "Anlam + eşdizim: boşluğun iki yanındaki kelimeye bak."
+     }
     ]
-  },
-  "polarityCards": [
-    { "group": "Zıtlık", "color": "kirmizi", "words": ["although", "while", "whereas", "despite", "however"], "structure": "although + cümle · despite + isim", "ex": "Although it was cheap, the alloy was strong.", "trap": "despite of ✗" },
-    { "group": "Neden-sonuç", "color": "yesil", "words": ["because", "since", "due to", "therefore", "thanks to"], "structure": "because + cümle · due to + isim", "ex": "Due to the heat, the glue failed.", "trap": "because of + cümle ✗" },
-    { "group": "Zaman", "color": "mavi", "words": ["when", "until", "once", "as soon as", "by the time"], "structure": "bağlaç + V1 (will ✗)", "ex": "Once it cools, the metal hardens.", "trap": "when it will cool ✗" },
-    { "group": "Koşul", "color": "mor", "words": ["if", "unless", "provided that", "in case"], "structure": "unless = if not", "ex": "Unless it is sealed, it rusts.", "trap": "unless … not ✗" },
-    { "group": "Örnek / açıklama", "color": "gri", "words": ["such as", "for instance", "namely"], "structure": "such as + isim", "ex": "Metals such as iron rust.", "trap": "such as + cümle ✗" }
-  ],
-  "tenseTable": {
-    "cols": ["İpucu", "Zaman", "Örnek"],
-    "rows": [
-      ["since / for + süre", "have V3", "It has risen since 2010."],
-      ["over the past decade", "have V3", "Prices have fallen over the past decade."],
-      ["by the time + V2", "had V3", "By the time we arrived, it had stopped."],
-      ["ago / in 1990", "V2", "It was built in 1990."],
-      ["by + gelecek zaman", "will have V3", "By 2030 we will have built it."]
+   },
+   {
+    "id": "n2",
+    "q": "Boşluktan sonra ne var?",
+    "options": [
+     {
+      "label": "Özne + fiil (tam cümle)",
+      "result": "Bağlaç: although / because / when / if… Sonra anlam: iki taraf aynı yön mü, ters mi?"
+     },
+     {
+      "label": "İsim / Ving (fiil yok)",
+      "result": "Edat: despite / due to / instead of / by…"
+     },
+     {
+      "label": "V1",
+      "result": "in order to / so as to"
+     },
+     {
+      "label": "; ---- , ya da . ---- ,",
+      "result": "Geçiş zarfı: however / therefore / moreover…"
+     }
     ]
-  },
-  "cheatSheets": [
-    { "id": "baglac", "title": "Bağlaç tek bakış", "md": "- **Zıtlık:** although + cümle · despite + isim · ; however,\n- **Neden:** because + cümle · due to + isim\n- **Amaç:** in order to + V1 · with a view to + Ving" },
-    { "id": "edat", "title": "Edat tek bakış", "md": "| Durum | Edat |\n|---|---|\n| sayı / değer | at |\n| sonuç | lead to / result in |\n| neden | result from |" }
-  ],
-  "eliminationTips": [
-    { "title": "1. Yapıyı ele", "text": "Boşluktan sonra tam cümle varsa edatları ele.", "ex": "---- the heat, … → despite (isim)" },
-    { "title": "2. Kutbu bul", "text": "İki taraf ters yöndeyse aynı yön bağlaçlarını ele." },
-    { "title": "3. Zamanı eşle", "text": "Zaman ifadesine uymayan fiil biçimlerini ele." }
-  ],
-  "personalRules": [
-    { "topic": "edat-esdizim", "rule": "Değer → AT: at 100 °C, at a rate of", "ex": "at high speed", "wrong": "in 100 °C", "right": "at 100 °C" },
-    { "topic": "baglac-zitlik", "rule": "Although (+), (−). Aynı yönse although ✗", "ex": "Although cheap, it is strong.", "wrong": "Although cheap, it is weak.", "right": "Because cheap, …" },
-    { "topic": "baglac-neden-amac", "rule": "\"to\" testi: sonrasına isim gelirse Ving", "ex": "with a view to reducing", "wrong": "with a view to reduce", "right": "with a view to reducing" },
-    { "topic": "relative", "rule": "Virgül veya edat → which", "ex": "…, which is…", "wrong": ", that", "right": ", which" }
-  ],
-  "mnemonics": [
-    { "topic": "baglac-zitlik", "text": "Despite'ın OF'u yok." },
-    { "topic": "relative", "text": "Virgülden sonra THAT yatar." },
-    { "topic": "zaman-uyumu", "text": "Bağlaçtan sonra will yok." }
+   },
+   {
+    "id": "n3",
+    "q": "Zaman ifadesi var mı? (since, by, ago, over the past)",
+    "options": [
+     {
+      "label": "Evet",
+      "result": "İfadeye uy: since → have V3 · by the time + past → had V3 · ago → V2"
+     },
+     {
+      "label": "Hayır",
+      "result": "Diğer fiilin zamanına bak; o da yoksa genel gerçek = Present."
+     }
+    ]
+   },
+   {
+    "id": "n4",
+    "q": "Boşluktan önce ne var?",
+    "options": [
+     {
+      "label": "Edat (of, by, without, to=edat)",
+      "result": "Ving"
+     },
+     {
+      "label": "enable / allow / cause + nesne",
+      "result": "to V"
+     },
+     {
+      "label": "let / make + nesne",
+      "result": "V1"
+     }
+    ]
+   }
   ]
+ },
+ "polarityCards": [
+  {
+   "group": "Zıtlık",
+   "color": "kirmizi",
+   "words": [
+    "although",
+    "while",
+    "whereas",
+    "despite",
+    "however"
+   ],
+   "structure": "although + cümle · despite + isim",
+   "ex": "Although it was cheap, the alloy was strong.",
+   "trap": "despite of ✗"
+  },
+  {
+   "group": "Neden-sonuç",
+   "color": "yesil",
+   "words": [
+    "because",
+    "since",
+    "due to",
+    "therefore",
+    "thanks to"
+   ],
+   "structure": "because + cümle · due to + isim",
+   "ex": "Due to the heat, the glue failed.",
+   "trap": "because of + cümle ✗"
+  },
+  {
+   "group": "Zaman",
+   "color": "mavi",
+   "words": [
+    "when",
+    "until",
+    "once",
+    "as soon as",
+    "by the time"
+   ],
+   "structure": "bağlaç + V1 (will ✗)",
+   "ex": "Once it cools, the metal hardens.",
+   "trap": "when it will cool ✗"
+  },
+  {
+   "group": "Koşul",
+   "color": "mor",
+   "words": [
+    "if",
+    "unless",
+    "provided that",
+    "in case"
+   ],
+   "structure": "unless = if not",
+   "ex": "Unless it is sealed, it rusts.",
+   "trap": "unless … not ✗"
+  },
+  {
+   "group": "Örnek / açıklama",
+   "color": "gri",
+   "words": [
+    "such as",
+    "for instance",
+    "namely"
+   ],
+   "structure": "such as + isim",
+   "ex": "Metals such as iron rust.",
+   "trap": "such as + cümle ✗"
+  }
+ ],
+ "tenseTable": {
+  "cols": [
+   "İpucu",
+   "Zaman",
+   "Örnek"
+  ],
+  "rows": [
+   [
+    "since / for + süre",
+    "have V3",
+    "It has risen since 2010."
+   ],
+   [
+    "over the past decade",
+    "have V3",
+    "Prices have fallen over the past decade."
+   ],
+   [
+    "by the time + V2",
+    "had V3",
+    "By the time we arrived, it had stopped."
+   ],
+   [
+    "ago / in 1990",
+    "V2",
+    "It was built in 1990."
+   ],
+   [
+    "by + gelecek zaman",
+    "will have V3",
+    "By 2030 we will have built it."
+   ]
+  ]
+ },
+ "cheatSheets": [
+  {
+   "id": "baglac",
+   "title": "Bağlaç tek bakış",
+   "md": "- **Zıtlık:** although + cümle · despite + isim · ; however,\n- **Neden:** because + cümle · due to + isim\n- **Amaç:** in order to + V1 · with a view to + Ving"
+  },
+  {
+   "id": "edat",
+   "title": "Edat tek bakış",
+   "md": "| Durum | Edat |\n|---|---|\n| sayı / değer | at |\n| sonuç | lead to / result in |\n| neden | result from |"
+  }
+ ],
+ "eliminationTips": [
+  {
+   "title": "1. Yapıyı ele",
+   "text": "Boşluktan sonra tam cümle varsa edatları ele.",
+   "ex": "---- the heat, … → despite (isim)"
+  },
+  {
+   "title": "2. Kutbu bul",
+   "text": "İki taraf ters yöndeyse aynı yön bağlaçlarını ele."
+  },
+  {
+   "title": "3. Zamanı eşle",
+   "text": "Zaman ifadesine uymayan fiil biçimlerini ele."
+  }
+ ],
+ "personalRules": [
+  {
+   "topic": "edat-esdizim",
+   "rule": "Değer → AT: at 100 °C, at a rate of",
+   "ex": "at high speed",
+   "wrong": "in 100 °C",
+   "right": "at 100 °C"
+  },
+  {
+   "topic": "baglac-zitlik",
+   "rule": "Although (+), (−). Aynı yönse although ✗",
+   "ex": "Although cheap, it is strong.",
+   "wrong": "Although cheap, it is weak.",
+   "right": "Because cheap, …"
+  },
+  {
+   "topic": "baglac-neden-amac",
+   "rule": "\"to\" testi: sonrasına isim gelirse Ving",
+   "ex": "with a view to reducing",
+   "wrong": "with a view to reduce",
+   "right": "with a view to reducing"
+  },
+  {
+   "topic": "relative",
+   "rule": "Virgül veya edat → which",
+   "ex": "…, which is…",
+   "wrong": ", that",
+   "right": ", which"
+  }
+ ],
+ "mnemonics": [
+  {
+   "topic": "baglac-zitlik",
+   "text": "Despite'ın OF'u yok."
+  },
+  {
+   "topic": "relative",
+   "text": "Virgülden sonra THAT yatar."
+  },
+  {
+   "topic": "zaman-uyumu",
+   "text": "Bağlaçtan sonra will yok."
+  }
+ ],
+ "timePlan": {
+  "total": 180,
+  "note": "Örnek plan (geliştirme verisi).",
+  "sections": [
+   {
+    "type": "bosluk",
+    "label": "Cümlede boşluk",
+    "count": 20,
+    "minutes": 20,
+    "order": 1,
+    "tip": "30 sn'de çıkmayanı işaretle, geç."
+   },
+   {
+    "type": "cloze",
+    "label": "Cloze test",
+    "count": 10,
+    "minutes": 12,
+    "order": 2,
+    "tip": "Önce bağlaç ve edat boşlukları."
+   },
+   {
+    "type": "cumle-tamamlama",
+    "label": "Cümle tamamlama",
+    "count": 11,
+    "minutes": 22,
+    "order": 3,
+    "tip": "Bağlacın kutbu + zaman uyumu."
+   },
+   {
+    "type": "ceviri-en-tr",
+    "label": "Çeviri İng→Tr",
+    "count": 6,
+    "minutes": 9,
+    "order": 4,
+    "tip": "Ana bağlaç ve yüklemi eşle."
+   },
+   {
+    "type": "ceviri-tr-en",
+    "label": "Çeviri Tr→İng",
+    "count": 6,
+    "minutes": 9,
+    "order": 5,
+    "tip": "Zaman ve özneyi kontrol et."
+   },
+   {
+    "type": "ilgisiz",
+    "label": "İlgisiz cümle",
+    "count": 6,
+    "minutes": 12,
+    "order": 6,
+    "tip": "Konuyu tek kelimeyle yaz."
+   },
+   {
+    "type": "paragraf-tamamlama",
+    "label": "Paragraf tamamlama",
+    "count": 6,
+    "minutes": 14,
+    "order": 7,
+    "tip": "Önceki–sonraki cümle bağı."
+   },
+   {
+    "type": "paragraf",
+    "label": "Okuma",
+    "count": 15,
+    "minutes": 60,
+    "order": 8,
+    "tip": "Önce soru kökü, sonra metin."
+   },
+   {
+    "type": "kontrol",
+    "label": "2. tur + optik kontrol",
+    "count": 0,
+    "minutes": 22,
+    "order": 9,
+    "tip": "İşaretli sorulara dön."
+   }
+  ],
+  "rules": [
+   "Bir soruda 2 dk'yı geçme; işaretle, devam et.",
+   "Optiği bölüm bölüm doldur.",
+   "Boş bırakma: yanlış doğruyu götürmez."
+  ]
+ },
+ "targets": [
+  {
+   "score": 60,
+   "nets": {
+    "bosluk": 12,
+    "cloze": 6,
+    "cumle-tamamlama": 7,
+    "ceviri-en-tr": 5,
+    "ceviri-tr-en": 4,
+    "paragraf-tamamlama": 3,
+    "ilgisiz": 3,
+    "paragraf": 8
+   },
+   "total": 48
+  },
+  {
+   "score": 70,
+   "nets": {
+    "bosluk": 14,
+    "cloze": 7,
+    "cumle-tamamlama": 8,
+    "ceviri-en-tr": 5,
+    "ceviri-tr-en": 5,
+    "paragraf-tamamlama": 4,
+    "ilgisiz": 4,
+    "paragraf": 9
+   },
+   "total": 56
+  },
+  {
+   "score": 80,
+   "nets": {
+    "bosluk": 16,
+    "cloze": 8,
+    "cumle-tamamlama": 9,
+    "ceviri-en-tr": 6,
+    "ceviri-tr-en": 5,
+    "paragraf-tamamlama": 5,
+    "ilgisiz": 4,
+    "paragraf": 11
+   },
+   "total": 64
+  }
+ ],
+ "examDay": [
+  {
+   "when": "Son hafta",
+   "items": [
+    "Yeni konu açma; sadece tekrar.",
+    "Giriş belgesini yazdır.",
+    "Sınav yerine nasıl gideceğine bak."
+   ]
+  },
+  {
+   "when": "Bir gün önce",
+   "items": [
+    "Kimlik + giriş belgesini çantaya koy.",
+    "Hafif tekrar: kopya kağıtları.",
+    "Erken yat."
+   ]
+  },
+  {
+   "when": "Sınav sabahı",
+   "items": [
+    "Hafif kahvaltı.",
+    "Salona 1 saat önce var.",
+    "Telefon / saat yok."
+   ]
+  },
+  {
+   "when": "Sınavda",
+   "items": [
+    "Süre planına uy.",
+    "Takılırsan işaretle, geç.",
+    "Son 10 dk: optik kontrol."
+   ]
+  }
+ ],
+ "errorReasons": [
+  {
+   "id": "kelime",
+   "label": "Kelime bilmiyordum",
+   "advice": "Yanlıştaki kelimeleri karta ekle; günlük tekrarı aksatma."
+  },
+  {
+   "id": "gramer",
+   "label": "Gramer kuralını bilmiyordum",
+   "advice": "Konunun 30 sn formülünü oku, 8 soru çöz."
+  },
+  {
+   "id": "dikkat",
+   "label": "Dikkatsizlik",
+   "advice": "Şıkkı işaretlemeden önce boşluğun iki yanını tekrar oku."
+  },
+  {
+   "id": "sure",
+   "label": "Süre yetmedi",
+   "advice": "Süre planını aç; uzun bölümü sona bırak."
+  },
+  {
+   "id": "iki-sik",
+   "label": "İki şık arasında kaldım",
+   "advice": "Şık eleme adımlarını uygula: yapı → kutup → zaman."
+  },
+  {
+   "id": "metin",
+   "label": "Metni anlayamadım",
+   "advice": "Parçayı süresiz yeniden oku, her paragrafı tek cümleyle özetle."
+  }
+ ],
+ "mockAnalysis": [
+  {
+   "title": "Yanlışlara neden işaretle",
+   "min": 8
+  },
+  {
+   "title": "En sık nedenin tavsiyesini oku",
+   "min": 2
+  },
+  {
+   "title": "En zayıf bölümün dersini aç",
+   "min": 6
+  },
+  {
+   "title": "Bilmediğin 5 kelimeyi karta ekle",
+   "min": 4
+  }
+ ],
+ "resources": [
+  {
+   "title": "ÖSYM YÖKDİL çıkmış sorular",
+   "url": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html",
+   "kind": "resmi",
+   "note": "Soru kitapçıkları ve cevap anahtarları"
+  },
+  {
+   "title": "ÖSYM AİS",
+   "url": "https://ais.osym.gov.tr",
+   "kind": "resmi",
+   "note": "Başvuru ve giriş belgesi"
+  },
+  {
+   "title": "More to Read",
+   "kind": "kitap",
+   "note": "Okuma parçaları"
+  }
+ ]
 }

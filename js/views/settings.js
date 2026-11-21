@@ -41,6 +41,10 @@ export default async function render(root) {
   const gc = h('input.num', { type: 'number', min: 3, max: 20, value: s.grammarCount });
   gc.onchange = () => { store.setSetting('grammarCount', Math.min(20, Math.max(3, +gc.value || 8))); toast('Kaydedildi'); };
 
+  const tgt = h('input.num', { type: 'number', min: 40, max: 100, step: 5, placeholder: '70', value: s.targetScore ?? '', 'aria-label': 'Hedef puan' });
+  tgt.onchange = () => { store.setSetting('targetScore', tgt.value === '' ? null : Math.min(100, Math.max(40, +tgt.value))); toast('Kaydedildi'); };
+  const rg = h('input.num', { type: 'number', min: 60, max: 300, step: 10, value: s.readGoal || 120, 'aria-label': 'Okuma hızı hedefi' });
+  rg.onchange = () => { store.setSetting('readGoal', Math.min(300, Math.max(60, +rg.value || 120))); toast('Kaydedildi'); };
   const file = h('input', { type: 'file', accept: 'application/json,.json', class: 'hidden' });
   file.onchange = async () => {
     try {
@@ -78,6 +82,10 @@ export default async function render(root) {
       h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),
       h('div.field', h('span', 'Kelime hedefi'), goal),
+      h('div.field', h('span', 'Hedef puan'), tgt), h('p.small.muted', h('a', { href: '#/dersler/arac/net' }, 'Hedef net tablosu ›')),
+      h('div.field', h('span', 'Okuma hızı hedefi (kelime/dk)'), rg),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.secClock !== false, onchange: e => store.setSetting('secClock', e.target.checked) }), h('span', 'Denemede bölüm süresi göstergesi')),
+      h('label.switch', h('input', { type: 'checkbox', checked: s.finalMode !== false, onchange: e => store.setSetting('finalMode', e.target.checked) }), h('span', 'Son 14 gün modu (yeni kelime azalır)')),
       h('label.switch', h('input', { type: 'checkbox', checked: !!s.showDialog, onchange: e => store.setSetting('showDialog', e.target.checked) }), h('span', 'Diyalog sorularını göster (YDS)')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.activeRead !== false, onchange: e => store.setSetting('activeRead', e.target.checked) }), h('span', 'Okumada "ana fikir" kutuları'))
     ),

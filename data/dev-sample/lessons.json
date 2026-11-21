@@ -68,5 +68,50 @@
     "explain": "at a rate."
    }
   ]
+ },
+ {
+  "id": "taktik-sure",
+  "title": "Süre yönetimi",
+  "order": 90,
+  "topic": "strateji",
+  "minutes": 4,
+  "summary": "180 dk'yı bölümlere dağıt.",
+  "formula": "Kısa sorular önce · okuma sona · 2 dk kuralı",
+  "blocks": [
+   {
+    "h": "Plan",
+    "md": "- Önce **boşluk + cloze**\n- Takılınca **işaretle, geç**\n- Son 10 dk optik"
+   }
+  ]
+ },
+ {
+  "id": "taktik-deneme-analizi",
+  "title": "Deneme analizi",
+  "order": 91,
+  "topic": "strateji",
+  "minutes": 4,
+  "summary": "Her denemeden sonra 20 dk analiz.",
+  "formula": "Yanlış → neden → tavsiye → ders",
+  "blocks": [
+   {
+    "h": "Adımlar",
+    "md": "- Her yanlışa **neden** işaretle\n- En sık nedene göre çalış"
+   }
+  ]
+ },
+ {
+  "id": "taktik-kelime-tahmini",
+  "title": "Bağlamdan kelime tahmini",
+  "order": 92,
+  "topic": "kelime-tahmini",
+  "minutes": 5,
+  "summary": "Bilmediğin kelimeyi cümleden çıkar.",
+  "formula": "Tür → kutup (+/−) → ek → cümleye uyan anlam",
+  "blocks": [
+   {
+    "h": "Adımlar",
+    "md": "- Kelimenin **türü** ne?\n- Cümle **olumlu mu olumsuz mu**?\n- Ön ek / son ek ipucu"
+   }
+  ]
  }
 ]

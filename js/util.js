@@ -113,7 +113,7 @@ export const TOPICS = {
   'so-such-too-enough': 'so/such · too/enough', 'edat-ving': 'Edat + Ving', 'sifat-fiil-edat': 'Sıfat/fiil + edat',
   'preposition-which': 'Edat + which', 'subjunctive': 'Subjunctive', 'cumle-tamamlama-kurallari': 'Cümle tamamlama kuralları',
   'as-like-such-as': 'as / like / such as', 'kelime-turu': 'Kelime türü', 'onek-sonek': 'Ön ek / son ek', 'cift-bosluk': 'Çift boşluk',
-  'phrasal-verbs': 'Phrasal verb'
+  'phrasal-verbs': 'Phrasal verb', 'strateji': 'Strateji', 'kelime-tahmini': 'Kelime tahmini', 'karisik': 'Karışık'
 };
 
 export const DRILL_TYPES = {
@@ -156,7 +156,7 @@ export const TOPIC_W = { 'baglac-zitlik': 3, 'baglac-neden-amac': 3, 'edat-esdiz
 export const TYPE_LESSON = {
   'bosluk': 'taktik-bosluk', 'cloze': 'taktik-cloze', 'cumle-tamamlama': 'taktik-cumle-tamamlama', 'ceviri-en-tr': 'taktik-ceviri',
   'ceviri-tr-en': 'taktik-ceviri', 'paragraf-tamamlama': 'taktik-paragraf-tamamlama', 'ilgisiz': 'taktik-ilgisiz', 'paragraf': 'taktik-paragraf',
-  'okuma': 'taktik-paragraf', 'yakin-anlam': 'taktik-ceviri'
+  'okuma': 'taktik-paragraf', 'yakin-anlam': 'taktik-ceviri', 'tahmin': 'taktik-kelime-tahmini'
 };
 // Konu → ek ders adayları (konu dersi yoksa)
 export const TOPIC_LESSON = { 'kelime': 'kelime-turu', 'cift-bosluk': 'cift-bosluk' };

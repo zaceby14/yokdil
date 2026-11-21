@@ -6,6 +6,7 @@ import { markKnown, unKnow, level, isGraduated } from '../vocab.js';
 import { swipe } from '../swipe.js';
 import scan from './scan.js';
 import gap, { gapPool, GAP_MIN } from './gap.js';
+import guess from './guess.js';
 import { tick } from '../plan.js';
 import { enrich } from '../data.js';
 import memory, { EX, counts as exCounts } from './memory.js';
@@ -32,6 +33,7 @@ export default async function render(root, [mode, id]) {
   if (mode === 'calis') return session(root, 'tekrar');
   if (mode === 'tara') return scan(root, tabs(''));
   if (mode === 'bosluk') return gap(root, tabs(''));
+  if (mode === 'tahmin') return guess(root, tabs(''));
   if (EX[mode]) return memory(root, mode, tabs(''));
   if (mode === 'yeni') return session(root, 'yeni');
   return home(root);
@@ -57,6 +59,7 @@ async function home(root) {
       h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini ele'))),
       gp >= GAP_MIN ? h('a.btn.wide', { href: '#/kartlar/bosluk' }, h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', 'kendi kartlarınla')))
         : h('span.btn.wide.disabled', h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', `${gp}/${GAP_MIN} kartta açılır`)))),
+    h('a.btn.wide.guess-link', { href: '#/kartlar/tahmin' }, h('span', h('b', 'Bağlamdan tahmin'), h('br'), h('span.small.muted', 'cümleden anlamı çıkar · 10 soru'))),
     h('h3', 'Alıştırmalar', ladder ? h('span.small.muted', ` · merdivende ${ladder} kart`) : null),
     h('div.row2', exBtn('yaz', 'anlamdan kelimeyi yaz'), exBtn('es', 'eş anlamlısını bul'), exBtn('aile', 'doğru biçimi seç'), exBtn('hafiza', 'merdiven + bugünkü yanlışlar')),
     h('a.card.link.small', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ' hızlı notlar, karta çevir'))

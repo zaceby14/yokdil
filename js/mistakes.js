@@ -1,7 +1,7 @@
 // Cevap kaydı + Hata kutusu (1-3-7-14 gün; üst üste 2 doğru → çözüldü)
 import * as store from './store.js';
 import { dayKey, addDays, uid } from './util.js';
-import { bumpDay } from './plan.js';
+import { bumpDay, FINAL } from './plan.js';
 
 export const STEPS = [1, 3, 7, 14];
 
@@ -37,7 +37,7 @@ export function dueMistakes(kind) {
 export function openMistakes() { return store.all('mistakes').filter(m => !m.solved); }
 
 // Günlük hata tekrarı: en fazla 8 soru (en eski vade, sonra en çok yanlış). Tüm kaynaklar (gramer, alıştırma, okuma, çıkmış, ders).
-export const DAILY_MISTAKES = 8;
+export const DAILY_MISTAKES = 8, FINAL_MISTAKES = 12; // son 14 günde 12
 export function pickMistakes(list, today = dayKey(), n = DAILY_MISTAKES) {
   return list.filter(m => !m.solved && m.due && m.due <= today && m.kind !== 'hafiza')
     .sort((a, b) => a.due.localeCompare(b.due) || (b.wrongs || 0) - (a.wrongs || 0) || String(a.id).localeCompare(String(b.id)))
@@ -48,7 +48,7 @@ export function pickMistakes(list, today = dayKey(), n = DAILY_MISTAKES) {
 export function mistakeSet(key = dayKey()) {
   const r = store.get('days', key) || { id: key, tasks: {} };
   if (Array.isArray(r.hset)) return r.hset;
-  const ids = pickMistakes(store.all('mistakes'), key);
+  const ids = pickMistakes(store.all('mistakes'), key, FINAL.on ? FINAL_MISTAKES : DAILY_MISTAKES);
   store.put('days', { ...r, id: key, hset: ids }, { silent: true });
   return ids;
 }

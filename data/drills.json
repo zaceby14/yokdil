@@ -3471,7 +3471,34 @@
     ],
     "answer": 1,
     "explain": "Although = -se de; 'most forms' = çoğu türü; 'rich in chloride' = klorür bakımından zengin; 'can suffer' = maruz kalabilir. Tuzaklar: 'için' (bağlaç kayması), 'bütün' (most≠all), 'hiç maruz kalmaz' (olumsuzluk), 'fakir' (zengin'in tersi).",
-    "tip": "Önce ana bağlacı eşleştir, sonra niceleyici (most/all)."
+    "tip": "Önce ana bağlacı eşleştir, sonra niceleyici (most/all).",
+    "parts": [
+     {
+      "src": "Although stainless steel is resistant to most forms of corrosion,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Paslanmaz çelik korozyonun çoğu türüne karşı dirençli olsa da"
+     },
+     {
+      "src": "it",
+      "role": "özne",
+      "tgt": "(paslanmaz çelik)"
+     },
+     {
+      "src": "can suffer from pitting",
+      "role": "yüklem",
+      "tgt": "oyuklanmaya maruz kalabilir"
+     },
+     {
+      "src": "in environments rich in chloride.",
+      "role": "zarf/edat öbeği",
+      "tgt": "klorür bakımından zengin ortamlarda"
+     }
+    ],
+    "check": [
+     "bağlaç: zıtlık (-se de)",
+     "niceleyici: most = çoğu",
+     "kip: can = -ebilir"
+    ]
    }
   ],
   "topic": "malzeme",
@@ -3493,7 +3520,33 @@
     ],
     "answer": 3,
     "explain": "'produced from' edilgen sıfat-fiil: 'üretilen'. Tuzaklar: 'üreten' etken (özne kayması), 'fosil yakıtlardan' (kaynak yanlış), 'gri' (yanlış ad), kavramların yer değiştirmesi.",
-    "tip": "V3 sıfat → '-ilen/-ılan'."
+    "tip": "V3 sıfat → '-ilen/-ılan'.",
+    "parts": [
+     {
+      "src": "Hydrogen",
+      "role": "özne",
+      "tgt": "hidrojene"
+     },
+     {
+      "src": "produced from renewable electricity",
+      "role": "sıfat cümlesi",
+      "tgt": "Yenilenebilir elektrikten üretilen"
+     },
+     {
+      "src": "is called",
+      "role": "yüklem",
+      "tgt": "denir"
+     },
+     {
+      "src": "green hydrogen.",
+      "role": "nesne",
+      "tgt": "yeşil hidrojen"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: produced = üretilen",
+     "yüklem: edilgen (denir)"
+    ]
    }
   ],
   "topic": "enerji",
@@ -3515,7 +3568,34 @@
     ],
     "answer": 4,
     "explain": "The ...-er, the ...-er = ne kadar ...sa o kadar. Tuzaklar: 'uzunsa' ve 'zayıf' (kutup ters), 'olduğu için ... hiç saçılmaz' (yapı ve olumsuzluk), özne değişimi.",
-    "tip": "Karşılaştırmalı yapıyı birebir eşle."
+    "tip": "Karşılaştırmalı yapıyı birebir eşle.",
+    "parts": [
+     {
+      "src": "The shorter the wavelength of light,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Işığın dalga boyu ne kadar kısaysa"
+     },
+     {
+      "src": "the more strongly",
+      "role": "zarf/edat öbeği",
+      "tgt": "o kadar güçlü"
+     },
+     {
+      "src": "it is scattered",
+      "role": "yüklem",
+      "tgt": "saçılır"
+     },
+     {
+      "src": "by gas molecules in the atmosphere.",
+      "role": "zarf/edat öbeği",
+      "tgt": "atmosferdeki gaz molekülleri tarafından"
+     }
+    ],
+    "check": [
+     "kalıp: ne kadar… o kadar",
+     "yüklem: edilgen (saçılır)",
+     "sıfat: shorter = kısa"
+    ]
    }
   ],
   "topic": "fizik",
@@ -3537,7 +3617,39 @@
     ],
     "answer": 0,
     "explain": "It was not until X that Y = Y ancak X'te oldu. Tuzaklar: 'çok önce ... öğrenmişti' ve 'kadar ... kullandılar' (anlam ters), sistemi bakterilerin kullanması ve sistemin 'öğrenmesi' (özne kayması).",
-    "tip": "not until = ancak ... -de/-dıktan sonra."
+    "tip": "not until = ancak ... -de/-dıktan sonra.",
+    "parts": [
+     {
+      "src": "It was not until the 2010s that",
+      "role": "zaman",
+      "tgt": "ancak 2010'larda"
+     },
+     {
+      "src": "scientists",
+      "role": "özne",
+      "tgt": "Bilim insanları"
+     },
+     {
+      "src": "learned",
+      "role": "yüklem",
+      "tgt": "öğrendi"
+     },
+     {
+      "src": "how to use a bacterial defence system",
+      "role": "nesne",
+      "tgt": "bakteriyel bir savunma sistemini kullanmayı"
+     },
+     {
+      "src": "to edit genes precisely.",
+      "role": "zarf/edat öbeği",
+      "tgt": "genleri hassas biçimde düzenlemek için"
+     }
+    ],
+    "check": [
+     "zaman: ancak 2010'larda",
+     "yüklem: geçmiş (öğrendi)",
+     "amaç: to V = -mek için"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -3559,7 +3671,39 @@
     ],
     "answer": 1,
     "explain": "If = -se/-sa; may = -ebilir; remain high = yüksek kalmak. Tuzaklar: 'kaldığı için ... atmıştır' (neden + zaman), koşul-sonuç yer değişimi, 'bile ... asla' (olumsuzluk), 'düşük' (kutup ters).",
-    "tip": "Koşul hangi yarıda? Yerini koru."
+    "tip": "Koşul hangi yarıda? Yerini koru.",
+    "parts": [
+     {
+      "src": "If ocean temperatures remain high for several weeks,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Okyanus sıcaklıkları birkaç hafta boyunca yüksek kalırsa"
+     },
+     {
+      "src": "corals",
+      "role": "özne",
+      "tgt": "mercanlar"
+     },
+     {
+      "src": "may expel",
+      "role": "yüklem",
+      "tgt": "dışarı atabilir"
+     },
+     {
+      "src": "the algae",
+      "role": "nesne",
+      "tgt": "algleri"
+     },
+     {
+      "src": "living in their tissues.",
+      "role": "sıfat cümlesi",
+      "tgt": "dokularında yaşayan"
+     }
+    ],
+    "check": [
+     "bağlaç: koşul (-rsa)",
+     "kip: may = -ebilir",
+     "süre: birkaç hafta"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -3581,7 +3725,34 @@
     ],
     "answer": 2,
     "explain": "not X but Y = X ile değil Y ile. Tuzaklar: 'hem...hem' (both), yer değiştirmiş not...but, 'hepsi' (most≠all), gelecek zaman.",
-    "tip": "Yapıyı birebir eşle: not...but."
+    "tip": "Yapıyı birebir eşle: not...but.",
+    "parts": [
+     {
+      "src": "Most exoplanets",
+      "role": "özne",
+      "tgt": "Ötegezegenlerin çoğu"
+     },
+     {
+      "src": "have been detected",
+      "role": "yüklem",
+      "tgt": "saptanmıştır"
+     },
+     {
+      "src": "not by direct observation",
+      "role": "zarf/edat öbeği",
+      "tgt": "doğrudan gözlemle değil,"
+     },
+     {
+      "src": "but by the effects they have on their host stars.",
+      "role": "zarf/edat öbeği",
+      "tgt": "ev sahibi yıldızlarına yaptıkları etkiler sayesinde"
+     }
+    ],
+    "check": [
+     "özne: most = çoğu",
+     "kalıp: not A but B = A değil, B",
+     "yüklem: edilgen (-mıştır)"
+    ]
    }
   ],
   "topic": "astronomi",
@@ -3603,7 +3774,39 @@
     ],
     "answer": 3,
     "explain": "after + had V3: önce zorlandı, sonra icat etti. Tuzaklar: olay sırası tersine çevrilmiş ('ettikten sonra', 'zorlanmadan önce'), 'beri', özne-nesne değişimi.",
-    "tip": "Olay sırasını kontrol et."
+    "tip": "Olay sırasını kontrol et.",
+    "parts": [
+     {
+      "src": "Laennec",
+      "role": "özne",
+      "tgt": "Laennec"
+     },
+     {
+      "src": "invented",
+      "role": "yüklem",
+      "tgt": "icat etti"
+     },
+     {
+      "src": "the stethoscope",
+      "role": "nesne",
+      "tgt": "stetoskobu"
+     },
+     {
+      "src": "in 1816",
+      "role": "zaman",
+      "tgt": "1816'da"
+     },
+     {
+      "src": "after he had struggled to examine a patient.",
+      "role": "bağlaç cümlesi",
+      "tgt": "bir hastayı muayene etmekte zorlandıktan sonra"
+     }
+    ],
+    "check": [
+     "bağlaç: after = -dıktan sonra",
+     "zaman: geçmiş (etti)",
+     "özne: Laennec"
+    ]
    }
   ],
   "topic": "tip",
@@ -3625,7 +3828,39 @@
     ],
     "answer": 4,
     "explain": "because = -dığından; may = -ebilir; no simulation = hiçbir simülasyon. Tuzaklar: 'gösterebilse de' (zıtlık), ortamların yer değiştirmesi, 'her zaman iyi' (kutup), 'bazı ... kusursuz' (nicelik).",
-    "tip": "Neden-sonuç ilişkisini koru."
+    "tip": "Neden-sonuç ilişkisini koru.",
+    "parts": [
+     {
+      "src": "Robots",
+      "role": "özne",
+      "tgt": "robotlar"
+     },
+     {
+      "src": "trained in simulations",
+      "role": "sıfat cümlesi",
+      "tgt": "simülasyonda eğitilen"
+     },
+     {
+      "src": "may perform poorly",
+      "role": "yüklem",
+      "tgt": "kötü performans gösterebilir"
+     },
+     {
+      "src": "in the real world",
+      "role": "zarf/edat öbeği",
+      "tgt": "gerçek dünyada"
+     },
+     {
+      "src": "because no simulation is perfect.",
+      "role": "bağlaç cümlesi",
+      "tgt": "Hiçbir simülasyon mükemmel olmadığından,"
+     }
+    ],
+    "check": [
+     "bağlaç: neden (-dığından)",
+     "kip: may = -ebilir",
+     "olumsuz: no = hiçbir"
+    ]
    }
   ],
   "topic": "yapay-zeka",
@@ -3647,7 +3882,34 @@
     ],
     "answer": 0,
     "explain": "without being consumed = tüketilmeden (edilgen + olumsuz). Tuzaklar: 'tüketilerek' ve 'tüketildikleri için' (olumsuzluk kaybı), 'yavaşlatır' (kutup), özne-nesne değişimi.",
-    "tip": "without + Ving = -meden."
+    "tip": "without + Ving = -meden.",
+    "parts": [
+     {
+      "src": "Catalysts",
+      "role": "özne",
+      "tgt": "Katalizörler"
+     },
+     {
+      "src": "speed up",
+      "role": "yüklem",
+      "tgt": "hızlandırır"
+     },
+     {
+      "src": "chemical reactions",
+      "role": "nesne",
+      "tgt": "kimyasal tepkimeleri"
+     },
+     {
+      "src": "without being consumed in the process.",
+      "role": "zarf/edat öbeği",
+      "tgt": "süreçte tüketilmeden"
+     }
+    ],
+    "check": [
+     "without + Ving = -meden",
+     "edilgen: tüketilmeden",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "kimya",
@@ -3669,7 +3931,39 @@
     ],
     "answer": 0,
     "explain": "Even though = -se de; 'predict' = öngörmek; 'probability' = olasılık (kesinlik değil); 'within a few decades' = birkaç on yıl içinde. Tuzaklar: 'edebildiği için ... kesin olarak bilir', 'edemediği için ... hesaplayamaz', kutupların ters çevrilmesi, 'birkaç gün'.",
-    "tip": "Olumsuz + olumlu kutuplarını sırayla eşle."
+    "tip": "Olumsuz + olumlu kutuplarını sırayla eşle.",
+    "parts": [
+     {
+      "src": "Even though scientists cannot predict earthquakes,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Bilim insanları depremleri öngöremese de"
+     },
+     {
+      "src": "they",
+      "role": "özne",
+      "tgt": "(bilim insanları)"
+     },
+     {
+      "src": "can estimate",
+      "role": "yüklem",
+      "tgt": "hesaplayabilir"
+     },
+     {
+      "src": "the probability",
+      "role": "nesne",
+      "tgt": "olasılığını"
+     },
+     {
+      "src": "that a fault will produce a large one within a few decades.",
+      "role": "sıfat cümlesi",
+      "tgt": "bir fayın birkaç on yıl içinde büyük bir deprem üretme"
+     }
+    ],
+    "check": [
+     "bağlaç: zıtlık (-se de)",
+     "kip: cannot / can",
+     "süre: birkaç on yıl içinde"
+    ]
    }
   ],
   "topic": "yerbilimi",
@@ -3691,7 +3985,39 @@
     ],
     "answer": 4,
     "explain": "Özne 'a current started in...' = başlatılan akım; without any = hiçbir ... olmadan. Tuzaklar: 'ancak ... bağlıyken' (anlam ters), halkanın akım başlatması (özne kayması), 'en fazla birkaç gün' (süre), ısıtma (anlam kayması).",
-    "tip": "Öznenin uzun isim öbeğini doğru kur."
+    "tip": "Öznenin uzun isim öbeğini doğru kur.",
+    "parts": [
+     {
+      "src": "A current",
+      "role": "özne",
+      "tgt": "akım"
+     },
+     {
+      "src": "started in a superconducting loop",
+      "role": "sıfat cümlesi",
+      "tgt": "Süper iletken bir halkada başlatılan"
+     },
+     {
+      "src": "can flow",
+      "role": "yüklem",
+      "tgt": "akabilir"
+     },
+     {
+      "src": "for years",
+      "role": "zaman",
+      "tgt": "yıllarca"
+     },
+     {
+      "src": "without any power source.",
+      "role": "zarf/edat öbeği",
+      "tgt": "hiçbir güç kaynağı olmadan"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: started = başlatılan",
+     "kip: can = -ebilir",
+     "without = olmadan"
+    ]
    }
   ],
   "topic": "fizik",
@@ -3713,7 +4039,34 @@
     ],
     "answer": 0,
     "explain": "so ... that = o kadar ... ki; before = -meden önce; mainly = çoğunlukla. Tuzaklar: 'tanıtıldıktan sonra' (before/after), neden-sonuç tersine, 'ucuzdu' (kutup), 'hiç kullanılmıyordu' (olumsuzluk).",
-    "tip": "so...that sonuç yapısını koru."
+    "tip": "so...that sonuç yapısını koru.",
+    "parts": [
+     {
+      "src": "Before Bessemer's process was introduced,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Bessemer'in yöntemi tanıtılmadan önce"
+     },
+     {
+      "src": "steel",
+      "role": "özne",
+      "tgt": "çelik"
+     },
+     {
+      "src": "was so expensive",
+      "role": "yüklem",
+      "tgt": "o kadar pahalıydı ki"
+     },
+     {
+      "src": "that it was used mainly for tools and weapons.",
+      "role": "bağlaç cümlesi",
+      "tgt": "çoğunlukla alet ve silah yapımında kullanılırdı"
+     }
+    ],
+    "check": [
+     "bağlaç: before = -meden önce",
+     "kalıp: so…that = o kadar…ki",
+     "zaman: geçmiş"
+    ]
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -3735,7 +4088,34 @@
     ],
     "answer": 1,
     "explain": "as = -dığından (neden); only = sadece; can be updated = güncellenebilir. Tuzaklar: neden-sonuç tersine, 'gerekse de ... güncellenemez' (zıtlık + olumsuzluk), 'tamamının ... yavaş', 'üretilmelidir' (fiil ve kip değişimi).",
-    "tip": "as'in anlamı: çünkü / -dikçe / gibi — bağlama bak."
+    "tip": "as'in anlamı: çünkü / -dikçe / gibi — bağlama bak.",
+    "parts": [
+     {
+      "src": "mRNA vaccines",
+      "role": "özne",
+      "tgt": "mRNA aşıları"
+     },
+     {
+      "src": "can be updated",
+      "role": "yüklem",
+      "tgt": "güncellenebilir"
+     },
+     {
+      "src": "quickly,",
+      "role": "zarf/edat öbeği",
+      "tgt": "hızla"
+     },
+     {
+      "src": "as only the genetic instructions need to be changed.",
+      "role": "bağlaç cümlesi",
+      "tgt": "Sadece genetik talimatların değişmesi gerektiğinden"
+     }
+    ],
+    "check": [
+     "bağlaç: as = neden (-diğinden)",
+     "yüklem: edilgen + can",
+     "only = sadece"
+    ]
    }
   ],
   "topic": "tip",
@@ -3757,7 +4137,39 @@
     ],
     "answer": 3,
     "explain": "Unless = -mezse; ', which' = bu da. Tuzaklar: 'azaltılırsa' (olumsuzluk kaybı), 'azaltılmadığı için ... salmış' (neden + geçmiş zaman), 'daha az ... yavaşlatacaktır' (kutup), koşulun yer değiştirmesi.",
-    "tip": "Unless = if not; olumsuzluğu koru."
+    "tip": "Unless = if not; olumsuzluğu koru.",
+    "parts": [
+     {
+      "src": "Unless emissions are reduced,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Emisyonlar azaltılmazsa,"
+     },
+     {
+      "src": "thawing permafrost",
+      "role": "özne",
+      "tgt": "çözülen donmuş toprak"
+     },
+     {
+      "src": "will release",
+      "role": "yüklem",
+      "tgt": "salacak,"
+     },
+     {
+      "src": "more greenhouse gases,",
+      "role": "nesne",
+      "tgt": "daha fazla sera gazı"
+     },
+     {
+      "src": "which will in turn accelerate warming.",
+      "role": "sıfat cümlesi",
+      "tgt": "bu da ısınmayı hızlandıracaktır"
+     }
+    ],
+    "check": [
+     "bağlaç: unless = -mazsa",
+     "zaman: gelecek",
+     ", which = bu da"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -3779,7 +4191,34 @@
     ],
     "answer": 2,
     "explain": "Devrik Type 3 koşul (gerçek dışı geçmiş) = '-saydı ... -irdi'. Tuzaklar: 'olduğu için' (gerçek kabul), 'hiç ... olmasaydı ... hızlı' (olumsuzluk + kutup), koşul-sonuç yer değişimi, 'iç kısımlarındaki ... hızlı'.",
-    "tip": "Had + S + V3 = If S had V3."
+    "tip": "Had + S + V3 = If S had V3.",
+    "parts": [
+     {
+      "src": "Had only visible matter been present,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Yalnızca görünür madde bulunsaydı,"
+     },
+     {
+      "src": "the outer stars of spiral galaxies",
+      "role": "özne",
+      "tgt": "sarmal gökadaların dış kısımlarındaki yıldızlar"
+     },
+     {
+      "src": "would have orbited",
+      "role": "yüklem",
+      "tgt": "dolanırdı"
+     },
+     {
+      "src": "much more slowly.",
+      "role": "zarf/edat öbeği",
+      "tgt": "çok daha yavaş"
+     }
+    ],
+    "check": [
+     "devrik koşul: Had… = -saydı",
+     "yüklem: would have V3 = -ırdı",
+     "only = yalnızca"
+    ]
    }
   ],
   "topic": "astronomi",
@@ -3801,7 +4240,34 @@
     ],
     "answer": 2,
     "explain": "the ...-er, the more susceptible = ne kadar ... o kadar yatkın; 'tends to' = eğilimindedir. Tuzaklar: 'düşükse' ve 'dirençli' (kutup ters), neden-sonuç yer değişimi, 'hiçbir zaman' (olumsuzluk).",
-    "tip": "Hedge kelimelerini (tend to, may) atma."
+    "tip": "Hedge kelimelerini (tend to, may) atma.",
+    "parts": [
+     {
+      "src": "The higher the strength of a steel,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Bir çeliğin dayanımı ne kadar yüksekse"
+     },
+     {
+      "src": "the more susceptible",
+      "role": "zarf/edat öbeği",
+      "tgt": "o kadar yatkın"
+     },
+     {
+      "src": "it tends to be",
+      "role": "yüklem",
+      "tgt": "olma eğilimindedir"
+     },
+     {
+      "src": "to hydrogen embrittlement.",
+      "role": "zarf/edat öbeği",
+      "tgt": "hidrojen gevrekleşmesine"
+     }
+    ],
+    "check": [
+     "kalıp: ne kadar… o kadar",
+     "tend to = eğilimindedir",
+     "sıfat: higher = yüksek"
+    ]
    }
   ],
   "topic": "malzeme",
@@ -3823,7 +4289,34 @@
     ],
     "answer": 3,
     "explain": "Not only ... but also = sadece ... değil, ... de. Tuzaklar: 'rağmen ... kötü' (zıtlık + kutup), neither...nor, pil türlerinin yer değiştirmesi, neden ekleme.",
-    "tip": "Çift bağlaçların eşini ara."
+    "tip": "Çift bağlaçların eşini ara.",
+    "parts": [
+     {
+      "src": "Not only are sodium-ion batteries cheaper,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Sodyum iyon piller sadece daha ucuz olmakla kalmaz,"
+     },
+     {
+      "src": "but they also perform better",
+      "role": "yüklem",
+      "tgt": "daha iyi de çalışır"
+     },
+     {
+      "src": "than lithium-ion batteries",
+      "role": "zarf/edat öbeği",
+      "tgt": "lityum iyon pillerden"
+     },
+     {
+      "src": "at low temperatures.",
+      "role": "zarf/edat öbeği",
+      "tgt": "düşük sıcaklıklarda"
+     }
+    ],
+    "check": [
+     "kalıp: not only… but also",
+     "karşılaştırma: daha ucuz / daha iyi",
+     "edat: at low temperatures"
+    ]
    }
   ],
   "topic": "enerji",
@@ -3845,7 +4338,34 @@
     ],
     "answer": 1,
     "explain": "where = orada (yer); can/may = -ebilir. Tuzaklar: 'önleyebilir' (anlam ters), özne-nesne değişimi, 'karışmadığı sürece' (koşul ters), 'her zaman' (modal kaybı).",
-    "tip": "Modal derecesini koru (may ≠ always)."
+    "tip": "Modal derecesini koru (may ≠ always).",
+    "parts": [
+     {
+      "src": "Excess fertiliser",
+      "role": "özne",
+      "tgt": "Fazla gübre"
+     },
+     {
+      "src": "can wash into rivers,",
+      "role": "yüklem",
+      "tgt": "nehirlere karışabilir"
+     },
+     {
+      "src": "where it may cause",
+      "role": "sıfat cümlesi",
+      "tgt": "ve orada … neden olabilir"
+     },
+     {
+      "src": "harmful algal blooms.",
+      "role": "nesne",
+      "tgt": "zararlı alg patlamalarına"
+     }
+    ],
+    "check": [
+     "where = (ve) orada",
+     "kip: can / may = -ebilir",
+     "özne: fazla gübre"
+    ]
    }
   ],
   "topic": "kimya",
@@ -3867,7 +4387,39 @@
     ],
     "answer": 4,
     "explain": "Virgüllü which = 'üretilebilen' sıfat; still = hâlâ; depend on = dayanmak. Tuzaklar: 'artık ... dayanmaz' (still kaybı + olumsuzluk), özne değişimi, eklenmiş neden-sonuç, 'bir saatte'.",
-    "tip": "Ana yüklem ve özneyi önce bul."
+    "tip": "Ana yüklem ve özneyi önce bul.",
+    "parts": [
+     {
+      "src": "Machine-learning forecasts,",
+      "role": "özne",
+      "tgt": "makine öğrenmesi tahminleri,"
+     },
+     {
+      "src": "which can be produced in about a minute,",
+      "role": "sıfat cümlesi",
+      "tgt": "Yaklaşık bir dakikada üretilebilen"
+     },
+     {
+      "src": "still depend on",
+      "role": "yüklem",
+      "tgt": "hâlâ … dayanır"
+     },
+     {
+      "src": "data",
+      "role": "nesne",
+      "tgt": "verilere"
+     },
+     {
+      "src": "generated with the help of traditional models.",
+      "role": "sıfat cümlesi",
+      "tgt": "geleneksel modellerin yardımıyla elde edilen"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: which = -ebilen",
+     "still = hâlâ",
+     "depend on = -e dayanır"
+    ]
    }
   ],
   "topic": "yapay-zeka",
@@ -3889,7 +4441,34 @@
     ],
     "answer": 3,
     "explain": "by + Ving = -erek; almost all = neredeyse tamamı. Tuzaklar: 'hiçbirini' ve 'küçük bir kısmını' (nicelik), 'ölür' (anlam ters), neden-sonuç tersine.",
-    "tip": "by Ving = yöntem: -erek/-arak."
+    "tip": "by Ving = yöntem: -erek/-arak.",
+    "parts": [
+     {
+      "src": "Tardigrades",
+      "role": "özne",
+      "tgt": "Su ayıları,"
+     },
+     {
+      "src": "can survive",
+      "role": "yüklem",
+      "tgt": "hayatta kalabilir"
+     },
+     {
+      "src": "extreme conditions",
+      "role": "nesne",
+      "tgt": "aşırı koşullarda"
+     },
+     {
+      "src": "by losing almost all the water in their bodies.",
+      "role": "zarf/edat öbeği",
+      "tgt": "vücutlarındaki suyun neredeyse tamamını kaybederek"
+     }
+    ],
+    "check": [
+     "by + Ving = -erek",
+     "almost all = neredeyse tamamı",
+     "kip: can"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -3911,7 +4490,39 @@
     ],
     "answer": 0,
     "explain": "regard X as incomplete = X'i eksik saymak; simply = sırf/yalnızca; now = artık. Tuzaklar: 'eksiksiz' (ters), 'çökmediğini ... kanıtlamıştır' (aşırı iddia), 'önceden de' (zaman), köprünün açıklama yüzünden çökmesi (neden-sonuç karışıklığı).",
-    "tip": "regard/consider X as Y yapısını yakala."
+    "tip": "regard/consider X as Y yapısını yakala.",
+    "parts": [
+     {
+      "src": "Engineers",
+      "role": "özne",
+      "tgt": "Mühendisler,"
+     },
+     {
+      "src": "now regard",
+      "role": "yüklem",
+      "tgt": "artık … buluyor"
+     },
+     {
+      "src": "the explanation",
+      "role": "nesne",
+      "tgt": "açıklamasını"
+     },
+     {
+      "src": "that the Tacoma Narrows Bridge collapsed simply because of resonance",
+      "role": "sıfat cümlesi",
+      "tgt": "Tacoma Narrows Köprüsü'nün sırf rezonans yüzünden çöktüğü"
+     },
+     {
+      "src": "as incomplete.",
+      "role": "zarf/edat öbeği",
+      "tgt": "eksik"
+     }
+    ],
+    "check": [
+     "regard A as B = A'yı B bulmak",
+     "now = artık",
+     "because of = yüzünden"
+    ]
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -3933,7 +4544,34 @@
     ],
     "answer": 2,
     "explain": "to + V1 (amaç) = -mek için; 'lost during rolling' = haddelemede yitirilen. Tuzaklar: 'hiç tavlanmaz' (olumsuzluk), tavlama-haddeleme yer değişimi, 'sertliği artırmak' (amaç ters), 'kaybetmediği için' (neden + olumsuzluk).",
-    "tip": "Amaç yapısı: to/in order to = -mek için."
+    "tip": "Amaç yapısı: to/in order to = -mek için.",
+    "parts": [
+     {
+      "src": "Cold-rolled strip",
+      "role": "özne",
+      "tgt": "Soğuk haddelenmiş şerit,"
+     },
+     {
+      "src": "is usually annealed",
+      "role": "yüklem",
+      "tgt": "genellikle tavlanır"
+     },
+     {
+      "src": "to restore the ductility",
+      "role": "zarf/edat öbeği",
+      "tgt": "sünekliği geri kazanmak için"
+     },
+     {
+      "src": "lost during rolling.",
+      "role": "sıfat cümlesi",
+      "tgt": "haddelemede yitirilen"
+     }
+    ],
+    "check": [
+     "yüklem: edilgen (tavlanır)",
+     "amaç: to V = -mek için",
+     "usually = genellikle"
+    ]
    }
   ],
   "topic": "malzeme",
@@ -3955,7 +4593,34 @@
     ],
     "answer": 1,
     "explain": "many of = birçoğu (most of = çoğu); 'that we depend on' = bağımlı olduğumuz. Tuzaklar: 'hepsini' ve 'azını' (nicelik), ilgi cümlesinde özne değişimi ('bize bağımlı olan'), özne-nesne değişimi.",
-    "tip": "İlgi cümlesini isme bağla."
+    "tip": "İlgi cümlesini isme bağla.",
+    "parts": [
+     {
+      "src": "Bees",
+      "role": "özne",
+      "tgt": "Arılar,"
+     },
+     {
+      "src": "pollinate",
+      "role": "yüklem",
+      "tgt": "tozlaştırır"
+     },
+     {
+      "src": "many of the crops",
+      "role": "nesne",
+      "tgt": "ürünlerin birçoğunu"
+     },
+     {
+      "src": "that we depend on for food.",
+      "role": "sıfat cümlesi",
+      "tgt": "besin için bağımlı olduğumuz"
+     }
+    ],
+    "check": [
+     "many of = birçoğu",
+     "sıfat cümlesi: that… = -duğumuz",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -3977,7 +4642,34 @@
     ],
     "answer": 2,
     "explain": "not X but Y = X'e değil Y'ye. Tuzaklar: both, yer değiştirmiş not...but, özne kayması, 'etmediler' (olumsuzluk).",
-    "tip": "not...but eşleşmesi."
+    "tip": "not...but eşleşmesi.",
+    "parts": [
+     {
+      "src": "Wegener's critics",
+      "role": "özne",
+      "tgt": "Wegener'i eleştirenler,"
+     },
+     {
+      "src": "objected",
+      "role": "yüklem",
+      "tgt": "itiraz ettiler"
+     },
+     {
+      "src": "not to his observations",
+      "role": "zarf/edat öbeği",
+      "tgt": "onun gözlemlerine değil,"
+     },
+     {
+      "src": "but to the mechanism he proposed for continental drift.",
+      "role": "zarf/edat öbeği",
+      "tgt": "kıtaların kayması için önerdiği mekanizmaya"
+     }
+    ],
+    "check": [
+     "kalıp: not A but B = A değil, B",
+     "zaman: geçmiş",
+     "özne: eleştirenler"
+    ]
    }
   ],
   "topic": "yerbilimi",
@@ -3999,7 +4691,34 @@
     ],
     "answer": 2,
     "explain": "'oluşan' = formed (V3); '-dığında' = when; '-ebilir' = can. Tuzaklar: unless/olumsuzluk, 'becomes thinner' (anlam kayması), before, although + present perfect.",
-    "tip": "Önce yüklemi bul: onarabilir = can repair."
+    "tip": "Önce yüklemi bul: onarabilir = can repair.",
+    "parts": [
+     {
+      "src": "Kromun eklenmesiyle oluşan",
+      "role": "sıfat cümlesi",
+      "tgt": "Formed by adding chromium,"
+     },
+     {
+      "src": "ince oksit tabakası,",
+      "role": "özne",
+      "tgt": "the thin oxide layer"
+     },
+     {
+      "src": "yüzey çizildiğinde",
+      "role": "bağlaç cümlesi",
+      "tgt": "when the surface is scratched"
+     },
+     {
+      "src": "kendini onarabilir.",
+      "role": "yüklem",
+      "tgt": "can repair itself"
+     }
+    ],
+    "check": [
+     "oluşan = Formed (V3)",
+     "-dığında = when",
+     "-abilir = can"
+    ]
    }
   ],
   "topic": "malzeme",
@@ -4021,7 +4740,34 @@
     ],
     "answer": 3,
     "explain": "'-dığı yüksek kuleler' = towers where...; edilgen geniş zaman 'are mounted'. Tuzaklar: although, 'short' (kutup), geçmiş zaman, özne-nesne değişimi.",
-    "tip": "Yer bildiren ilgi cümlesi: where."
+    "tip": "Yer bildiren ilgi cümlesi: where.",
+    "parts": [
+     {
+      "src": "Rüzgâr türbinleri,",
+      "role": "özne",
+      "tgt": "Wind turbines"
+     },
+     {
+      "src": "rüzgârın daha güçlü ve düzenli olduğu",
+      "role": "sıfat cümlesi",
+      "tgt": "where the wind is stronger and steadier"
+     },
+     {
+      "src": "yüksek kulelere",
+      "role": "zarf/edat öbeği",
+      "tgt": "on tall towers,"
+     },
+     {
+      "src": "yerleştirilir.",
+      "role": "yüklem",
+      "tgt": "are mounted"
+     }
+    ],
+    "check": [
+     "yüklem: edilgen (are mounted)",
+     "-duğu (yer) = where",
+     "karşılaştırma: stronger"
+    ]
    }
   ],
   "topic": "enerji",
@@ -4043,7 +4789,34 @@
     ],
     "answer": 3,
     "explain": "Karşılaştırma yönü: katı > gaz; çünkü = because. Tuzaklar: kıyas ters, although, 'farther apart' (bilgi ters), so that.",
-    "tip": "Karşılaştırmanın yönünü kontrol et."
+    "tip": "Karşılaştırmanın yönünü kontrol et.",
+    "parts": [
+     {
+      "src": "Ses,",
+      "role": "özne",
+      "tgt": "Sound"
+     },
+     {
+      "src": "katılarda gazlardan çok daha hızlı",
+      "role": "zarf/edat öbeği",
+      "tgt": "much faster in solids than in gases"
+     },
+     {
+      "src": "yayılır",
+      "role": "yüklem",
+      "tgt": "travels"
+     },
+     {
+      "src": "çünkü katılardaki parçacıklar birbirine daha yakındır.",
+      "role": "bağlaç cümlesi",
+      "tgt": "because the particles in solids are closer together"
+     }
+    ],
+    "check": [
+     "bağlaç: çünkü = because",
+     "çok daha hızlı = much faster",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "fizik",
@@ -4065,7 +4838,39 @@
     ],
     "answer": 1,
     "explain": "'yalnızca ... değil ... da' = not only ... but also; 'bilinmektedir' = It is known that. Tuzaklar: only (anlam daralması), neither/nor, özne kayması, 'was once believed' (zaman ve fiil değişimi).",
-    "tip": "Çift bağlacı birebir eşle."
+    "tip": "Çift bağlacı birebir eşle.",
+    "parts": [
+     {
+      "src": "Bakterilerin",
+      "role": "özne",
+      "tgt": "bacteria"
+     },
+     {
+      "src": "genetik materyali",
+      "role": "nesne",
+      "tgt": "genetic material"
+     },
+     {
+      "src": "yalnızca yavrularına değil, akraba olmayan komşularına da",
+      "role": "zarf/edat öbeği",
+      "tgt": "not only to their offspring but also to unrelated neighbours"
+     },
+     {
+      "src": "aktarabildiği",
+      "role": "yüklem",
+      "tgt": "can transfer"
+     },
+     {
+      "src": "bilinmektedir.",
+      "role": "yüklem",
+      "tgt": "It is known that"
+     }
+    ],
+    "check": [
+     "bilinmektedir = It is known that",
+     "yalnızca… değil… da = not only… but also",
+     "-abildiği = can"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -4087,7 +4892,34 @@
     ],
     "answer": 4,
     "explain": "Gerund özne: Planting ... and using ...; '-ebilir' = can. Tuzaklar: darker/increase (kutup), 'no effect at all' (olumsuzluk), unless, ekstra karşılaştırma.",
-    "tip": "Fazladan bilgi ekleyen şıkkı ele."
+    "tip": "Fazladan bilgi ekleyen şıkkı ele.",
+    "parts": [
+     {
+      "src": "Ağaç dikmek ve açık renkli malzemeler kullanmak,",
+      "role": "özne",
+      "tgt": "Planting trees and using lighter-coloured materials"
+     },
+     {
+      "src": "kentsel ısı adası etkisini",
+      "role": "nesne",
+      "tgt": "the urban heat island effect"
+     },
+     {
+      "src": "azaltmaya",
+      "role": "zarf/edat öbeği",
+      "tgt": "to reduce"
+     },
+     {
+      "src": "yardımcı olabilir.",
+      "role": "yüklem",
+      "tgt": "can help"
+     }
+    ],
+    "check": [
+     "özne: Ving and Ving",
+     "-abilir = can",
+     "yardımcı olmak = help to V"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -4109,7 +4941,34 @@
     ],
     "answer": 1,
     "explain": "'tarafından itildiği için' = as/because the solar wind pushes it (neden). Tuzaklar: towards, özne-nesne değişimi ('it pushes the solar wind'), although, geçmiş zaman + only after.",
-    "tip": "Edilgen çatıyı (tarafından) kaçırma."
+    "tip": "Edilgen çatıyı (tarafından) kaçırma.",
+    "parts": [
+     {
+      "src": "Kuyruklu yıldızın kuyruğu,",
+      "role": "özne",
+      "tgt": "A comet's tail"
+     },
+     {
+      "src": "güneş rüzgârı tarafından itildiği için",
+      "role": "bağlaç cümlesi",
+      "tgt": "as the solar wind pushes it"
+     },
+     {
+      "src": "her zaman",
+      "role": "zaman",
+      "tgt": "always"
+     },
+     {
+      "src": "Güneş'in tersini gösterir.",
+      "role": "yüklem",
+      "tgt": "faces away from the Sun"
+     }
+    ],
+    "check": [
+     "-diği için = as (neden)",
+     "her zaman = always",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "astronomi",
@@ -4131,7 +4990,44 @@
     ],
     "answer": 1,
     "explain": "prefer A to B = A'yı B'ye tercih etmek; nedeniyle = because of. Tuzaklar: tercih ters, in spite of, 'only when it is slower', so that.",
-    "tip": "prefer A to B yönüne dikkat."
+    "tip": "prefer A to B yönüne dikkat.",
+    "parts": [
+     {
+      "src": "Doktorlar,",
+      "role": "özne",
+      "tgt": "Doctors"
+     },
+     {
+      "src": "hızı nedeniyle",
+      "role": "zarf/edat öbeği",
+      "tgt": "because of its speed"
+     },
+     {
+      "src": "acil durumlarda",
+      "role": "zarf/edat öbeği",
+      "tgt": "in emergencies"
+     },
+     {
+      "src": "genellikle",
+      "role": "zarf/edat öbeği",
+      "tgt": "usually"
+     },
+     {
+      "src": "MR yerine BT'yi",
+      "role": "nesne",
+      "tgt": "CT to MRI"
+     },
+     {
+      "src": "tercih eder.",
+      "role": "yüklem",
+      "tgt": "prefer"
+     }
+    ],
+    "check": [
+     "nedeniyle = because of + isim",
+     "tercih: prefer A to B",
+     "genellikle = usually"
+    ]
    }
   ],
   "topic": "tip",
@@ -4153,7 +5049,34 @@
     ],
     "answer": 3,
     "explain": "'görünen ancak yanlış olan ifadeler' = statements that sound ... but are false. Tuzaklar: kutup ters, neden ekleme, geçmiş zaman, olumsuzluk (cannot).",
-    "tip": "İlgi cümlesi içindeki zıtlığı koru."
+    "tip": "İlgi cümlesi içindeki zıtlığı koru.",
+    "parts": [
+     {
+      "src": "Dil modelleri",
+      "role": "özne",
+      "tgt": "Language models"
+     },
+     {
+      "src": "kendinden emin görünen ancak yanlış olan",
+      "role": "sıfat cümlesi",
+      "tgt": "that sound confident but are false"
+     },
+     {
+      "src": "ifadeler",
+      "role": "nesne",
+      "tgt": "statements"
+     },
+     {
+      "src": "üretebilir.",
+      "role": "yüklem",
+      "tgt": "can produce"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: -en = that…",
+     "ancak = but",
+     "-ebilir = can"
+    ]
    }
   ],
   "topic": "yapay-zeka",
@@ -4175,7 +5098,29 @@
     ],
     "answer": 2,
     "explain": "'-miş olsa da' = Although/While + present perfect; tüketmektedir = uses/consumes. Tuzaklar: because, unless, zaman ve kutup değişimi, anlam kayması (energy supply).",
-    "tip": "Bağlaç + zaman ikilisini birlikte eşle."
+    "tip": "Bağlaç + zaman ikilisini birlikte eşle.",
+    "parts": [
+     {
+      "src": "Haber-Bosch süreci gıda üretimini büyük ölçüde artırmış olsa da",
+      "role": "bağlaç cümlesi",
+      "tgt": "While the Haber-Bosch process has greatly boosted food production,"
+     },
+     {
+      "src": "dünya enerjisinin önemli bir bölümünü",
+      "role": "nesne",
+      "tgt": "a large part of the world's energy"
+     },
+     {
+      "src": "tüketmektedir.",
+      "role": "yüklem",
+      "tgt": "it uses"
+     }
+    ],
+    "check": [
+     "bağlaç: -sa da = While (zıtlık)",
+     "artırmış = has boosted",
+     "önemli bir bölüm = a large part"
+    ]
    }
   ],
   "topic": "kimya",
@@ -4197,7 +5142,34 @@
     ],
     "answer": 3,
     "explain": "'almayabilir' = may receive no ...; 'çok yakın' = very close. Tuzaklar: far, must have, always.",
-    "tip": "Modal derecesi: may ≠ must."
+    "tip": "Modal derecesi: may ≠ must.",
+    "parts": [
+     {
+      "src": "Depremin merkezine çok yakın",
+      "role": "sıfat cümlesi",
+      "tgt": "very close to the epicentre of an earthquake"
+     },
+     {
+      "src": "yerler",
+      "role": "özne",
+      "tgt": "Places"
+     },
+     {
+      "src": "hiçbir uyarı",
+      "role": "nesne",
+      "tgt": "no warning at all"
+     },
+     {
+      "src": "almayabilir.",
+      "role": "yüklem",
+      "tgt": "may receive"
+     }
+    ],
+    "check": [
+     "-mayabilir = may (+ no)",
+     "hiçbir = no … at all",
+     "özne: Places"
+    ]
    }
   ],
   "topic": "yerbilimi",
@@ -4219,7 +5191,34 @@
     ],
     "answer": 2,
     "explain": "'-sağlayarak' = by keeping/allowing; geçmiş zaman 'cut'. Tuzaklar: increased, neden-sonuç tersine, present perfect + although, özne değişimi.",
-    "tip": "-erek = by + Ving."
+    "tip": "-erek = by + Ving.",
+    "parts": [
+     {
+      "src": "Watt'ın ayrı yoğuşturucusu,",
+      "role": "özne",
+      "tgt": "Watt's separate condenser"
+     },
+     {
+      "src": "silindirin her zaman sıcak kalmasını sağlayarak",
+      "role": "zarf/edat öbeği",
+      "tgt": "By keeping the cylinder hot at all times,"
+     },
+     {
+      "src": "yakıt tüketimini",
+      "role": "nesne",
+      "tgt": "fuel consumption"
+     },
+     {
+      "src": "önemli ölçüde azalttı.",
+      "role": "yüklem",
+      "tgt": "cut … sharply"
+     }
+    ],
+    "check": [
+     "-arak = By + Ving",
+     "zaman: geçmiş (cut)",
+     "önemli ölçüde = sharply"
+    ]
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -4241,7 +5240,34 @@
     ],
     "answer": 0,
     "explain": "so ... that = o kadar ... ki; 'bile' = even; 'yol açabilir' = can make/cause. Tuzaklar: kutup ters (robust), although + 'helps', so that (amaç), özne değişimi.",
-    "tip": "so + adj + that = sonuç."
+    "tip": "so + adj + that = sonuç.",
+    "parts": [
+     {
+      "src": "Kuantum bitleri",
+      "role": "özne",
+      "tgt": "Qubits"
+     },
+     {
+      "src": "o kadar kırılgandır ki",
+      "role": "yüklem",
+      "tgt": "are so fragile that"
+     },
+     {
+      "src": "çevreyle istenmeyen en küçük etkileşim bile",
+      "role": "özne",
+      "tgt": "even the smallest unwanted contact with their surroundings"
+     },
+     {
+      "src": "bilgilerini kaybetmelerine yol açabilir.",
+      "role": "yüklem",
+      "tgt": "can make them lose their information"
+     }
+    ],
+    "check": [
+     "o kadar… ki = so… that",
+     "bile = even",
+     "-abilir = can"
+    ]
    }
   ],
   "topic": "fizik",
@@ -4263,7 +5289,39 @@
     ],
     "answer": 1,
     "explain": "'yol açmadan' = without causing; 'tanıması için' = to recognise. Tuzaklar: 'cause the illness itself' / 'by causing' (olumsuzluk kaybı), özne-nesne değişimi, geçmiş zaman + only after.",
-    "tip": "-meden = without + Ving."
+    "tip": "-meden = without + Ving.",
+    "parts": [
+     {
+      "src": "Aşılar,",
+      "role": "özne",
+      "tgt": "Vaccines"
+     },
+     {
+      "src": "bağışıklık sistemini",
+      "role": "nesne",
+      "tgt": "the immune system"
+     },
+     {
+      "src": "hastalığın kendisine yol açmadan",
+      "role": "zarf/edat öbeği",
+      "tgt": "without causing the illness itself"
+     },
+     {
+      "src": "bir hastalığı tanıması için",
+      "role": "zarf/edat öbeği",
+      "tgt": "to recognise a disease"
+     },
+     {
+      "src": "eğitir.",
+      "role": "yüklem",
+      "tgt": "train"
+     }
+    ],
+    "check": [
+     "-madan = without + Ving",
+     "-ması için = to V",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "tip",
@@ -4285,7 +5343,39 @@
     ],
     "answer": 4,
     "explain": "if = -se; otherwise / if not = aksi takdirde; can/may. Tuzaklar: olumsuzluk ('cannot ... even if'), koşul tersine, geçmiş zaman, before/unless.",
-    "tip": "otherwise = aksi takdirde."
+    "tip": "otherwise = aksi takdirde.",
+    "parts": [
+     {
+      "src": "Mercanlar,",
+      "role": "özne",
+      "tgt": "Corals"
+     },
+     {
+      "src": "sıcaklık normale hızla dönerse",
+      "role": "bağlaç cümlesi",
+      "tgt": "if the temperature quickly returns to normal;"
+     },
+     {
+      "src": "ağarmadan sonra",
+      "role": "zaman",
+      "tgt": "after bleaching"
+     },
+     {
+      "src": "toparlanabilir;",
+      "role": "yüklem",
+      "tgt": "can recover"
+     },
+     {
+      "src": "aksi takdirde geniş resif alanları ölebilir.",
+      "role": "bağlaç cümlesi",
+      "tgt": "if not, large reef areas may die"
+     }
+    ],
+    "check": [
+     "-rse = if",
+     "aksi takdirde = if not",
+     "-abilir = can / may"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -4307,7 +5397,39 @@
     ],
     "answer": 2,
     "explain": "before = -meden önce; several transits = birkaç geçiş; another method = başka bir yöntem. Tuzaklar: sıra değişimi, 'same method', 'never', 'a single transit' (nicelik).",
-    "tip": "Zaman sırası: before/after."
+    "tip": "Zaman sırası: before/after.",
+    "parts": [
+     {
+      "src": "Gökbilimciler",
+      "role": "özne",
+      "tgt": "Astronomers"
+     },
+     {
+      "src": "bir keşfi kabul etmeden önce",
+      "role": "bağlaç cümlesi",
+      "tgt": "before they accept a discovery"
+     },
+     {
+      "src": "genellikle",
+      "role": "zarf/edat öbeği",
+      "tgt": "usually"
+     },
+     {
+      "src": "birkaç geçiş gözlemlemeyi ve başka bir yöntemle doğrulamayı",
+      "role": "nesne",
+      "tgt": "to observe several transits and to confirm the result with another method"
+     },
+     {
+      "src": "beklerler.",
+      "role": "yüklem",
+      "tgt": "wait"
+     }
+    ],
+    "check": [
+     "-meden önce = before",
+     "genellikle = usually",
+     "beklemek = wait + to V"
+    ]
    }
   ],
   "topic": "astronomi",
@@ -4329,7 +5451,34 @@
     ],
     "answer": 3,
     "explain": "'-dığından' = since (neden); 'sıkıldıktan sonra' = after it has been tightened; 'kırılabilir' = may fracture. Tuzaklar: although/never, sıra tersine ('weeks after ... appears', 'before'), 'always ... immediately'.",
-    "tip": "Neden bağlacı + edilgen yan cümle."
+    "tip": "Neden bağlacı + edilgen yan cümle.",
+    "parts": [
+     {
+      "src": "Hidrojen gevrekleşmesi çoğu zaman gecikmeli ortaya çıktığından,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Since hydrogen embrittlement often appears with a delay,"
+     },
+     {
+      "src": "bir cıvata",
+      "role": "özne",
+      "tgt": "a bolt"
+     },
+     {
+      "src": "sıkıldıktan haftalar sonra bile",
+      "role": "zaman",
+      "tgt": "even weeks after it has been tightened"
+     },
+     {
+      "src": "kırılabilir.",
+      "role": "yüklem",
+      "tgt": "may fracture"
+     }
+    ],
+    "check": [
+     "-dığından = Since (neden)",
+     "-dıktan sonra = after",
+     "-abilir = may"
+    ]
    }
   ],
   "topic": "malzeme",
@@ -4351,7 +5500,34 @@
     ],
     "answer": 0,
     "explain": "'zor olan sektörler' = sectors that are difficult to...; 'en değerli olacaktır' = will be most valuable. Tuzaklar: least, easy, present perfect (has been), uydurma neden-sonuç.",
-    "tip": "Üstünlük derecesi: most ↔ least."
+    "tip": "Üstünlük derecesi: most ↔ least.",
+    "parts": [
+     {
+      "src": "Yeşil hidrojen,",
+      "role": "özne",
+      "tgt": "Green hydrogen"
+     },
+     {
+      "src": "doğrudan elektrikle çalıştırılması zor olan",
+      "role": "sıfat cümlesi",
+      "tgt": "that are difficult to electrify directly"
+     },
+     {
+      "src": "sektörlerde",
+      "role": "zarf/edat öbeği",
+      "tgt": "in sectors"
+     },
+     {
+      "src": "en değerli olacaktır.",
+      "role": "yüklem",
+      "tgt": "will be most valuable"
+     }
+    ],
+    "check": [
+     "zaman: gelecek (will)",
+     "en değerli = most valuable",
+     "-an = that…"
+    ]
    }
   ],
   "topic": "enerji",
@@ -4373,7 +5549,29 @@
     ],
     "answer": 4,
     "explain": "'tutulduğu için' = because ... are held (edilgen + neden). Tuzaklar: low/although, özne değişimi, so that, unless.",
-    "tip": "Edilgen + neden."
+    "tip": "Edilgen + neden.",
+    "parts": [
+     {
+      "src": "Su molekülleri hidrojen bağlarıyla bir arada tutulduğu için",
+      "role": "bağlaç cümlesi",
+      "tgt": "because its molecules are held together by hydrogen bonds"
+     },
+     {
+      "src": "suyun",
+      "role": "özne",
+      "tgt": "Water"
+     },
+     {
+      "src": "kaynama noktası yüksektir.",
+      "role": "yüklem",
+      "tgt": "has a high boiling point"
+     }
+    ],
+    "check": [
+     "-duğu için = because",
+     "edilgen: are held",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "kimya",
@@ -4395,7 +5593,34 @@
     ],
     "answer": 4,
     "explain": "'-dığından' = since; 'eğitmeyi tercih eder' = prefer to train. Tuzaklar: although, ortamların yer değiştirmesi, özne değişimi, neden-sonuç tersine.",
-    "tip": "Neden yan cümlesinin iki parçasını da kontrol et."
+    "tip": "Neden yan cümlesinin iki parçasını da kontrol et.",
+    "parts": [
+     {
+      "src": "Gerçek robotlar yavaş olduğundan ve bozulabildiğinden,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Since real robots are slow and can break,"
+     },
+     {
+      "src": "araştırmacılar",
+      "role": "özne",
+      "tgt": "researchers"
+     },
+     {
+      "src": "onları önce bilgisayar simülasyonlarında eğitmeyi",
+      "role": "nesne",
+      "tgt": "to train them first in computer simulations"
+     },
+     {
+      "src": "tercih eder.",
+      "role": "yüklem",
+      "tgt": "prefer"
+     }
+    ],
+    "check": [
+     "-duğundan = Since (neden)",
+     "tercih etmek = prefer + to V",
+     "önce = first"
+    ]
    }
   ],
   "topic": "yapay-zeka",
@@ -4417,7 +5642,39 @@
     ],
     "answer": 0,
     "explain": "'ancak ... -dıktan sonra' = only after; 'tasarruf yapmak için' = to save. Tuzaklar: before/waste, sıra tersine, all/never, geçmiş zaman + so that.",
-    "tip": "only after = ancak ...-den sonra."
+    "tip": "only after = ancak ...-den sonra.",
+    "parts": [
+     {
+      "src": "Bazı bitkiler,",
+      "role": "özne",
+      "tgt": "some plants"
+     },
+     {
+      "src": "enerji tasarrufu yapmak için",
+      "role": "zarf/edat öbeği",
+      "tgt": "To save energy,"
+     },
+     {
+      "src": "savunma kimyasallarını",
+      "role": "nesne",
+      "tgt": "defensive chemicals"
+     },
+     {
+      "src": "ancak saldırıya uğradıktan sonra",
+      "role": "zaman",
+      "tgt": "only after being attacked"
+     },
+     {
+      "src": "büyük miktarda üretir.",
+      "role": "yüklem",
+      "tgt": "make large amounts of"
+     }
+    ],
+    "check": [
+     "-mak için = To V",
+     "ancak… sonra = only after",
+     "edilgen: being attacked"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -4439,7 +5696,29 @@
     ],
     "answer": 1,
     "explain": "'-e yol açtı' = led to + N. Tuzaklar: neden-sonuç tersine, rejection, since.",
-    "tip": "lead to + isim; yönü kontrol et."
+    "tip": "lead to + isim; yönü kontrol et.",
+    "parts": [
+     {
+      "src": "Okyanus tabanındaki manyetik şeritlerin keşfi,",
+      "role": "özne",
+      "tgt": "The discovery of magnetic stripes on the ocean floor"
+     },
+     {
+      "src": "kıtaların kayması fikrinin sonunda kabul görmesine",
+      "role": "nesne",
+      "tgt": "the eventual acceptance of the idea of continental drift"
+     },
+     {
+      "src": "yol açtı.",
+      "role": "yüklem",
+      "tgt": "led to"
+     }
+    ],
+    "check": [
+     "yol açtı = led to + isim",
+     "zaman: geçmiş",
+     "sonunda = eventual"
+    ]
    }
   ],
   "topic": "yerbilimi",
@@ -4461,7 +5740,29 @@
     ],
     "answer": 2,
     "explain": "'açıldıktan ... sonra' = after it had been opened; 'yalnızca dört ay' = only four months. Tuzaklar: sıra, since, before, days.",
-    "tip": "Sayı ve birimleri kontrol et."
+    "tip": "Sayı ve birimleri kontrol et.",
+    "parts": [
+     {
+      "src": "Tacoma Narrows Köprüsü,",
+      "role": "özne",
+      "tgt": "The Tacoma Narrows Bridge"
+     },
+     {
+      "src": "trafiğe açıldıktan yalnızca dört ay sonra",
+      "role": "zaman",
+      "tgt": "only four months after it had been opened to traffic"
+     },
+     {
+      "src": "çöktü.",
+      "role": "yüklem",
+      "tgt": "collapsed"
+     }
+    ],
+    "check": [
+     "-dıktan sonra = after + had been V3",
+     "yalnızca = only",
+     "zaman: geçmiş"
+    ]
    }
   ],
   "topic": "muhendislik-tarihi",
@@ -4483,7 +5784,39 @@
     ],
     "answer": 0,
     "explain": "spend time + Ving = -erek zaman harcamak; 'later found' = daha sonra bulduğu. Tuzaklar: so that, özne değişimi, süre, sıra.",
-    "tip": "spend + time + Ving."
+    "tip": "spend + time + Ving.",
+    "parts": [
+     {
+      "src": "Laennec,",
+      "role": "özne",
+      "tgt": "Laennec"
+     },
+     {
+      "src": "duyduğu sesleri",
+      "role": "nesne",
+      "tgt": "the sounds he heard"
+     },
+     {
+      "src": "hastalarda daha sonra bulduğu hastalıklarla",
+      "role": "zarf/edat öbeği",
+      "tgt": "to the diseases he later found in patients"
+     },
+     {
+      "src": "ilişkilendirmek için",
+      "role": "zarf/edat öbeği",
+      "tgt": "linking"
+     },
+     {
+      "src": "yıllarını harcadı.",
+      "role": "yüklem",
+      "tgt": "spent years"
+     }
+    ],
+    "check": [
+     "yıllarını harcadı = spent years + Ving",
+     "ilişkilendirmek = link A to B",
+     "zaman: geçmiş"
+    ]
    }
   ],
   "topic": "tip",
@@ -4505,7 +5838,34 @@
     ],
     "answer": 0,
     "explain": "'saldığı karbondioksit' = carbon dioxide released by; 'yaklaşık dörtte biri' = roughly a quarter. Tuzaklar: fiil yönü, özne, oran.",
-    "tip": "Oran ve sayıları birebir kontrol et."
+    "tip": "Oran ve sayıları birebir kontrol et.",
+    "parts": [
+     {
+      "src": "Okyanuslar,",
+      "role": "özne",
+      "tgt": "The oceans"
+     },
+     {
+      "src": "insan faaliyetlerinin saldığı",
+      "role": "sıfat cümlesi",
+      "tgt": "released by human activities"
+     },
+     {
+      "src": "karbondioksitin yaklaşık dörtte birini",
+      "role": "nesne",
+      "tgt": "roughly a quarter of the carbon dioxide"
+     },
+     {
+      "src": "emer.",
+      "role": "yüklem",
+      "tgt": "absorb"
+     }
+    ],
+    "check": [
+     "yaklaşık dörtte bir = roughly a quarter",
+     "saldığı = released by",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -5548,7 +6908,34 @@
     "answer": 1,
     "explain": "'which hunt in packs' = sürüler halinde avlanan; 'can bring down' = yere serebilir; 'larger' = daha büyük. Tuzaklar: küçük (karşıt), avlanmayan (olumsuz), avlar tarafından (edilgen), sermiştir (zaman).",
     "tip": "Virgüllü which → Türkçede '-an' sıfat-fiil olur.",
-    "hint": "Önce yüklemi eşleştir: 'can bring down' hangi kipte?"
+    "hint": "Önce yüklemi eşleştir: 'can bring down' hangi kipte?",
+    "parts": [
+     {
+      "src": "Wolves,",
+      "role": "özne",
+      "tgt": "kurtlar,"
+     },
+     {
+      "src": "which hunt in packs,",
+      "role": "sıfat cümlesi",
+      "tgt": "Sürüler halinde avlanan"
+     },
+     {
+      "src": "can bring down",
+      "role": "yüklem",
+      "tgt": "yere serebilir"
+     },
+     {
+      "src": "prey much larger than themselves.",
+      "role": "nesne",
+      "tgt": "kendilerinden çok daha büyük avları"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: which = -an",
+     "kip: can = -ebilir",
+     "much larger = çok daha büyük"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5571,7 +6958,34 @@
     "answer": 2,
     "explain": "Although = -se de; 'has increased' = artmış; 'continued to fall' = düşmeye devam etmiş. Tuzaklar: 'için' (bağlaç), azalmış ve artmaya (yön), artacak/edecektir (zaman).",
     "tip": "Ana bağlacı eşle: although ↔ -se de / -mesine rağmen.",
-    "hint": "İngilizce cümlede iki fiilin yönü (artmak/düşmek) ne? Şıklarda koru."
+    "hint": "İngilizce cümlede iki fiilin yönü (artmak/düşmek) ne? Şıklarda koru.",
+    "parts": [
+     {
+      "src": "Although rainfall in the region has increased,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Bölgedeki yağış miktarı artmış olsa da"
+     },
+     {
+      "src": "crop yields",
+      "role": "özne",
+      "tgt": "ürün verimi"
+     },
+     {
+      "src": "have continued",
+      "role": "yüklem",
+      "tgt": "devam etmektedir"
+     },
+     {
+      "src": "to fall.",
+      "role": "nesne",
+      "tgt": "düşmeye"
+     }
+    ],
+    "check": [
+     "bağlaç: zıtlık (-sa da)",
+     "zaman: has/have V3",
+     "fall = düşmek"
+    ]
    }
   ],
   "topic": "tarim",
@@ -5594,7 +7008,39 @@
     "answer": 3,
     "explain": "'that are exposed' = maruz bırakılan; 'several weeks' = birkaç hafta; 'more quickly' = daha hızlı; geniş zaman. Tuzaklar: bırakılmayan, yavaş, ay, çimlenmiştir.",
     "tip": "that + edilgen → '-ılan/-ilen' sıfat-fiili.",
-    "hint": "Süre (weeks), yön (quickly) ve zaman (present): üçünü tek tek kontrol et."
+    "hint": "Süre (weeks), yön (quickly) ve zaman (present): üçünü tek tek kontrol et.",
+    "parts": [
+     {
+      "src": "Seeds",
+      "role": "özne",
+      "tgt": "tohumlar"
+     },
+     {
+      "src": "that are exposed to cold for several weeks",
+      "role": "sıfat cümlesi",
+      "tgt": "Birkaç hafta boyunca soğuğa maruz bırakılan"
+     },
+     {
+      "src": "germinate",
+      "role": "yüklem",
+      "tgt": "çimlenir"
+     },
+     {
+      "src": "more quickly",
+      "role": "zarf/edat öbeği",
+      "tgt": "daha hızlı"
+     },
+     {
+      "src": "in spring.",
+      "role": "zaman",
+      "tgt": "ilkbaharda"
+     }
+    ],
+    "check": [
+     "sıfat cümlesi: edilgen (bırakılan)",
+     "karşılaştırma: daha hızlı",
+     "süre: birkaç hafta"
+    ]
    }
   ],
   "topic": "tarim",
@@ -5617,7 +7063,34 @@
     "answer": 3,
     "explain": "Having lost = kaybettikleri için (neden anlamı); 'many forests' = birçok orman; 'have grown' = artmıştır. Tuzaklar: rağmen (bağlaç), azalmış (yön), bütün (nicelik), artacaktır (zaman).",
     "tip": "Having V3, … → önce olan eylem, çoğu zaman 'için/-dıktan sonra'.",
-    "hint": "Avcı kaybı ile nüfus artışı arasındaki ilişki neden mi zıtlık mı?"
+    "hint": "Avcı kaybı ile nüfus artışı arasındaki ilişki neden mi zıtlık mı?",
+    "parts": [
+     {
+      "src": "Having lost their natural predators,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Doğal avcılarını kaybettikleri için"
+     },
+     {
+      "src": "deer populations in many forests",
+      "role": "özne",
+      "tgt": "birçok ormandaki geyik nüfusu"
+     },
+     {
+      "src": "have grown",
+      "role": "yüklem",
+      "tgt": "artmıştır"
+     },
+     {
+      "src": "rapidly.",
+      "role": "zarf/edat öbeği",
+      "tgt": "hızla"
+     }
+    ],
+    "check": [
+     "Having V3 = -dikleri için",
+     "zaman: have grown = artmıştır",
+     "many = birçok"
+    ]
    }
   ],
   "topic": "ekoloji",
@@ -5640,7 +7113,34 @@
     "answer": 0,
     "explain": "whose winds = rüzgârlarının; 'most of' = büyük bölümü; 'destroyed' = yok etti (kesin geçmiş). Tuzaklar: küçük bir bölüm (nicelik), ulaşmayan (olumsuz), edecek (zaman), etmiş olabilir (kesinlik).",
     "tip": "whose + isim → '-ının/-inin … -an' yapısı.",
-    "hint": "Niceleyici 'most of' ve kesin geçmiş 'destroyed'ı şıklarda ara."
+    "hint": "Niceleyici 'most of' ve kesin geçmiş 'destroyed'ı şıklarda ara.",
+    "parts": [
+     {
+      "src": "The storm,",
+      "role": "özne",
+      "tgt": "fırtına,"
+     },
+     {
+      "src": "whose winds reached 200 kilometres per hour,",
+      "role": "sıfat cümlesi",
+      "tgt": "Rüzgârlarının hızı saatte 200 kilometreye ulaşan"
+     },
+     {
+      "src": "destroyed",
+      "role": "yüklem",
+      "tgt": "yok etti"
+     },
+     {
+      "src": "most of the harvest.",
+      "role": "nesne",
+      "tgt": "hasadın büyük bölümünü"
+     }
+    ],
+    "check": [
+     "whose = -ı … ulaşan",
+     "most of = büyük bölümü",
+     "zaman: geçmiş"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5663,7 +7163,39 @@
     "answer": 2,
     "explain": "Unlike = -ın aksine; lack = yoktur; to avoid sinking = batmamak için; most = çoğu. Tuzaklar: gibi (unlike≠like), vardır (olumsuzluk), batmak için, bütün (nicelik).",
     "tip": "unlike ↔ -ın aksine / -dan farklı olarak; like ↔ gibi.",
-    "hint": "'Unlike' ve 'lack' iki olumsuzluk taşır: şıklarda ikisini de koru."
+    "hint": "'Unlike' ve 'lack' iki olumsuzluk taşır: şıklarda ikisini de koru.",
+    "parts": [
+     {
+      "src": "Unlike most fish,",
+      "role": "zarf/edat öbeği",
+      "tgt": "Çoğu balığın aksine"
+     },
+     {
+      "src": "sharks",
+      "role": "özne",
+      "tgt": "köpekbalıklarında"
+     },
+     {
+      "src": "lack a swim bladder",
+      "role": "yüklem",
+      "tgt": "yüzme kesesi yoktur"
+     },
+     {
+      "src": "and must keep moving",
+      "role": "yüklem",
+      "tgt": "ve … hareket etmeleri gerekir"
+     },
+     {
+      "src": "to avoid sinking.",
+      "role": "zarf/edat öbeği",
+      "tgt": "batmamak için"
+     }
+    ],
+    "check": [
+     "Unlike = aksine",
+     "must = gerekir",
+     "lack = yoktur"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5686,7 +7218,34 @@
     "answer": 3,
     "explain": "'rather than' = -den çok / yerine: buz > su. Tuzaklar: sıralama ters, alçak, 'kadar … de' (as well as), dönüşmüştür (fiil/zaman).",
     "tip": "A rather than B → B'den çok A (vurgu A'da).",
-    "hint": "'rather than'dan sonraki öğe hangisi? Türkçede onun yerine hangisi vurgulanmalı?"
+    "hint": "'rather than'dan sonraki öğe hangisi? Türkçede onun yerine hangisi vurgulanmalı?",
+    "parts": [
+     {
+      "src": "Clouds",
+      "role": "özne",
+      "tgt": "bulutlar,"
+     },
+     {
+      "src": "that form at high altitudes",
+      "role": "sıfat cümlesi",
+      "tgt": "Yüksek irtifalarda oluşan"
+     },
+     {
+      "src": "are composed mainly of ice crystals",
+      "role": "yüklem",
+      "tgt": "buz kristallerinden oluşur"
+     },
+     {
+      "src": "rather than water droplets.",
+      "role": "zarf/edat öbeği",
+      "tgt": "su damlacıklarından çok"
+     }
+    ],
+    "check": [
+     "rather than = -den çok",
+     "be composed of = -den oluşur",
+     "that form = oluşan"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5709,7 +7268,39 @@
     "answer": 0,
     "explain": "who plant = eken; can reduce = azaltabilir; considerably = önemli ölçüde. Tuzaklar: ekmeyen, artırabilir, çok az, azaltmıştır.",
     "tip": "who + fiil → '-en/-an' sıfat-fiili; can → '-ebilir'.",
-    "hint": "Yüklem 'can reduce': kip ve yön. Zarf 'considerably': miktar."
+    "hint": "Yüklem 'can reduce': kip ve yön. Zarf 'considerably': miktar.",
+    "parts": [
+     {
+      "src": "Farmers",
+      "role": "özne",
+      "tgt": "çiftçiler"
+     },
+     {
+      "src": "who plant cover crops between seasons",
+      "role": "sıfat cümlesi",
+      "tgt": "Mevsimler arasında örtü bitkisi eken"
+     },
+     {
+      "src": "can reduce",
+      "role": "yüklem",
+      "tgt": "azaltabilir"
+     },
+     {
+      "src": "soil erosion",
+      "role": "nesne",
+      "tgt": "toprak erozyonunu"
+     },
+     {
+      "src": "considerably.",
+      "role": "zarf/edat öbeği",
+      "tgt": "önemli ölçüde"
+     }
+    ],
+    "check": [
+     "who = -en",
+     "kip: can = -ebilir",
+     "considerably = önemli ölçüde"
+    ]
    }
   ],
   "topic": "tarim",
@@ -5732,7 +7323,39 @@
     "answer": 3,
     "explain": "While (karşılaştırma) = -ken; 'large flocks that follow the same route' = aynı rotayı izleyen büyük sürüler. Tuzaklar: 'için' (bağlaç), farklı rotalar, küçük gruplar (nicelik), etmiştir (zaman).",
     "tip": "Karşılaştırma while ↔ '-ken / oysa'.",
-    "hint": "İlgi cümlesi (that follow …) hangi isme bağlı? Şıklarda o ismin sıfatlarını kontrol et."
+    "hint": "İlgi cümlesi (that follow …) hangi isme bağlı? Şıklarda o ismin sıfatlarını kontrol et.",
+    "parts": [
+     {
+      "src": "While some birds migrate alone,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Bazı kuşlar tek başına göç ederken,"
+     },
+     {
+      "src": "others",
+      "role": "özne",
+      "tgt": "diğerleri"
+     },
+     {
+      "src": "travel",
+      "role": "yüklem",
+      "tgt": "yolculuk eder"
+     },
+     {
+      "src": "in large flocks",
+      "role": "zarf/edat öbeği",
+      "tgt": "büyük sürüler halinde"
+     },
+     {
+      "src": "that follow the same route each year.",
+      "role": "sıfat cümlesi",
+      "tgt": "her yıl aynı rotayı izleyen"
+     }
+    ],
+    "check": [
+     "While = -ken (karşıtlık)",
+     "some… others = bazı… diğerleri",
+     "that = -en"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5755,7 +7378,34 @@
     "answer": 4,
     "explain": "Heated by = tarafından ısıtılan (edilgen); rises = yükselir; cooler = daha serin. Tuzaklar: Güneşi ısıtan (etken), alçalır, daha sıcak, almıştı (zaman).",
     "tip": "V3 + by ile başlayan cümle → edilgen sıfat-fiil '-ılan … tarafından'.",
-    "hint": "'Heated by the Sun': kim kimi ısıtıyor? Etken-edilgen yönünü koru."
+    "hint": "'Heated by the Sun': kim kimi ısıtıyor? Etken-edilgen yönünü koru.",
+    "parts": [
+     {
+      "src": "Heated by the Sun,",
+      "role": "sıfat cümlesi",
+      "tgt": "Güneş tarafından ısıtılan"
+     },
+     {
+      "src": "the air near the ground",
+      "role": "özne",
+      "tgt": "yere yakın hava"
+     },
+     {
+      "src": "rises",
+      "role": "yüklem",
+      "tgt": "yükselir"
+     },
+     {
+      "src": "and is replaced by cooler air.",
+      "role": "yüklem",
+      "tgt": "ve yerini daha serin hava alır"
+     }
+    ],
+    "check": [
+     "baştaki V3 = -ılan (edilgen)",
+     "is replaced by = yerini … alır",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5778,7 +7428,34 @@
     "answer": 4,
     "explain": "Most of = çoğu; that plants need = bitkilerin ihtiyaç duyduğu; supplied by bacteria = bakteriler tarafından sağlanır. Tuzaklar: tamamı (nicelik), sağlayan-alan yer değiştirmiş (özne), duymadığı (olumsuz), sağlanmıştı (zaman).",
     "tip": "is supplied by X → X tarafından sağlanır; 'living' = yaşayan.",
-    "hint": "Azotu kim sağlıyor, kim alıyor? Önce bu iki rolü eşleştir."
+    "hint": "Azotu kim sağlıyor, kim alıyor? Önce bu iki rolü eşleştir.",
+    "parts": [
+     {
+      "src": "Most of the nitrogen",
+      "role": "özne",
+      "tgt": "azotun çoğu,"
+     },
+     {
+      "src": "that plants need",
+      "role": "sıfat cümlesi",
+      "tgt": "Bitkilerin ihtiyaç duyduğu"
+     },
+     {
+      "src": "is supplied",
+      "role": "yüklem",
+      "tgt": "sağlanır"
+     },
+     {
+      "src": "by bacteria living in the soil.",
+      "role": "zarf/edat öbeği",
+      "tgt": "toprakta yaşayan bakteriler tarafından"
+     }
+    ],
+    "check": [
+     "Most of = çoğu",
+     "edilgen: is supplied by",
+     "living = yaşayan"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -5801,7 +7478,39 @@
     "answer": 2,
     "explain": "Despite having = sahip olmasına rağmen; that challenge many larger animals = daha büyük birçok hayvanı zorlayan; can solve = çözebilir. Tuzaklar: 'için', çözemez, bütün, çözebilmişti.",
     "tip": "despite + Ving ↔ '-mesine rağmen'.",
-    "hint": "Bağlaç, niceleyici (many) ve kip (can): üç kontrol noktası."
+    "hint": "Bağlaç, niceleyici (many) ve kip (can): üç kontrol noktası.",
+    "parts": [
+     {
+      "src": "Despite having a small brain,",
+      "role": "zarf/edat öbeği",
+      "tgt": "Küçük bir beyne sahip olmasına rağmen"
+     },
+     {
+      "src": "the octopus",
+      "role": "özne",
+      "tgt": "ahtapot,"
+     },
+     {
+      "src": "can solve",
+      "role": "yüklem",
+      "tgt": "çözebilir"
+     },
+     {
+      "src": "puzzles",
+      "role": "nesne",
+      "tgt": "bulmacaları"
+     },
+     {
+      "src": "that challenge many larger animals.",
+      "role": "sıfat cümlesi",
+      "tgt": "daha büyük birçok hayvanı zorlayan"
+     }
+    ],
+    "check": [
+     "Despite + Ving = -masına rağmen",
+     "kip: can = -ebilir",
+     "that = -an"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5824,7 +7533,39 @@
     "answer": 2,
     "explain": "-dıkça = as; yansıtan = that reflect; daha fazla = more; geniş zaman. Tuzaklar: less, although, do not reflect, geçmiş zaman.",
     "tip": "-dıkça ↔ as (… -dıkça …); 'the more …, the more' de olabilir.",
-    "hint": "'eridikçe' hangi bağlaçla karşılanır? Sonra 'yansıtan'ın olumlu olduğunu kontrol et."
+    "hint": "'eridikçe' hangi bağlaçla karşılanır? Sonra 'yansıtan'ın olumlu olduğunu kontrol et.",
+    "parts": [
+     {
+      "src": "Güneş ışığını yansıtan",
+      "role": "sıfat cümlesi",
+      "tgt": "that reflect sunlight"
+     },
+     {
+      "src": "buzullar eridikçe,",
+      "role": "bağlaç cümlesi",
+      "tgt": "As the glaciers … melt,"
+     },
+     {
+      "src": "Dünya",
+      "role": "özne",
+      "tgt": "the Earth"
+     },
+     {
+      "src": "daha fazla ısı",
+      "role": "nesne",
+      "tgt": "more heat"
+     },
+     {
+      "src": "emer.",
+      "role": "yüklem",
+      "tgt": "absorbs"
+     }
+    ],
+    "check": [
+     "-dikçe = As",
+     "-an = that…",
+     "daha fazla = more"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5847,7 +7588,39 @@
     "answer": 0,
     "explain": "dayanıklı olan = which is resistant to; az yağış alan = that receive little rain; verir = gives. Tuzaklar: a lot of, vulnerable, low, geçmiş zaman.",
     "tip": "resistant to (dayanıklı) ↔ vulnerable to (savunmasız): edat aynı, kutup ters.",
-    "hint": "Üç sıfatı tek tek eşle: dayanıklı, az, yüksek."
+    "hint": "Üç sıfatı tek tek eşle: dayanıklı, az, yüksek.",
+    "parts": [
+     {
+      "src": "Kuraklığa dayanıklı olan",
+      "role": "sıfat cümlesi",
+      "tgt": ", which is resistant to drought,"
+     },
+     {
+      "src": "bu buğday çeşidi,",
+      "role": "özne",
+      "tgt": "This wheat variety"
+     },
+     {
+      "src": "az yağış alan bölgelerde bile",
+      "role": "zarf/edat öbeği",
+      "tgt": "even in regions that receive little rain"
+     },
+     {
+      "src": "yüksek verim",
+      "role": "nesne",
+      "tgt": "high yields"
+     },
+     {
+      "src": "verir.",
+      "role": "yüklem",
+      "tgt": "gives"
+     }
+    ],
+    "check": [
+     "virgüllü sıfat cümlesi: , which … ,",
+     "bile = even",
+     "az = little (sayılamaz)"
+    ]
    }
   ],
   "topic": "tarim",
@@ -5870,7 +7643,34 @@
     "answer": 4,
     "explain": "-arak (yöntem) = by + Ving; bulur = find (geniş zaman). Tuzaklar: without (-madan), low, found (geçmiş), although (zıtlık).",
     "tip": "-arak/-erek (yöntem) ↔ by + Ving; -madan ↔ without + Ving.",
-    "hint": "'çıkararak' yöntem bildiriyor: hangi edat + Ving yöntemi verir?"
+    "hint": "'çıkararak' yöntem bildiriyor: hangi edat + Ving yöntemi verir?",
+    "parts": [
+     {
+      "src": "Yarasalar,",
+      "role": "özne",
+      "tgt": "Bats"
+     },
+     {
+      "src": "yüksek frekanslı sesler çıkararak",
+      "role": "zarf/edat öbeği",
+      "tgt": "by producing high-frequency sounds"
+     },
+     {
+      "src": "karanlıkta",
+      "role": "zarf/edat öbeği",
+      "tgt": "in the dark"
+     },
+     {
+      "src": "yollarını bulur.",
+      "role": "yüklem",
+      "tgt": "find their way"
+     }
+    ],
+    "check": [
+     "-arak = by + Ving",
+     "zaman: geniş",
+     "özne: Bats"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5893,7 +7693,29 @@
     "answer": 1,
     "explain": "-se de = although; bazı = some; azalmış = has decreased; değişmemiştir = has not changed. Tuzaklar: since, all, increased, olumlu 'has changed'.",
     "tip": "-se de / -mesine rağmen ↔ although / even though.",
-    "hint": "Bağlaç, niceleyici (bazı) ve olumsuzluk (değişmemiş): üçünü de ara."
+    "hint": "Bağlaç, niceleyici (bazı) ve olumsuzluk (değişmemiş): üçünü de ara.",
+    "parts": [
+     {
+      "src": "Bazı bölgelerde kar yağışı azalmış olsa da",
+      "role": "bağlaç cümlesi",
+      "tgt": "Although snowfall has decreased in some regions,"
+     },
+     {
+      "src": "toplam yağış miktarı",
+      "role": "özne",
+      "tgt": "total precipitation"
+     },
+     {
+      "src": "değişmemiştir.",
+      "role": "yüklem",
+      "tgt": "has not changed"
+     }
+    ],
+    "check": [
+     "-sa da = Although",
+     "zaman: has (not) V3",
+     "olumsuz: not"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5916,7 +7738,34 @@
     "answer": 3,
     "explain": "tarafından salgılanan = released by (V3 edilgen); kontrol eder = control. Tuzaklar: kraliçe/işçi yer değişimi (özne), releasing (etken), controlled (zaman), do not (olumsuz).",
     "tip": "'X tarafından -ılan' ↔ V3 + by X (indirgenmiş edilgen relative).",
-    "hint": "Kimyasalı kim salgılıyor, kim etkileniyor? Önce rolleri yerleştir."
+    "hint": "Kimyasalı kim salgılıyor, kim etkileniyor? Önce rolleri yerleştir.",
+    "parts": [
+     {
+      "src": "Kraliçe arı tarafından salgılanan",
+      "role": "sıfat cümlesi",
+      "tgt": "released by the queen bee"
+     },
+     {
+      "src": "kimyasallar,",
+      "role": "özne",
+      "tgt": "The chemicals"
+     },
+     {
+      "src": "işçi arıların davranışını",
+      "role": "nesne",
+      "tgt": "the behaviour of the worker bees"
+     },
+     {
+      "src": "kontrol eder.",
+      "role": "yüklem",
+      "tgt": "control"
+     }
+    ],
+    "check": [
+     "-ılan = V3 + by",
+     "özne çoğul → control",
+     "zaman: geniş"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -5939,7 +7788,34 @@
     "answer": 1,
     "explain": "sürmeden = without ploughing; yapan çiftçiler = farmers who sow; az = less; azaltır = reduce. Tuzaklar: after, more, increase, geçmiş zaman.",
     "tip": "-madan ↔ without + Ving; -dıktan sonra ↔ after + Ving.",
-    "hint": "'-madan' eki hangi edatla verilir? Sonra iki sonucun yönünü koru."
+    "hint": "'-madan' eki hangi edatla verilir? Sonra iki sonucun yönünü koru.",
+    "parts": [
+     {
+      "src": "Toprağı sürmeden ekim yapan",
+      "role": "sıfat cümlesi",
+      "tgt": "who sow without ploughing the soil"
+     },
+     {
+      "src": "çiftçiler",
+      "role": "özne",
+      "tgt": "Farmers"
+     },
+     {
+      "src": "daha az yakıt kullanır",
+      "role": "yüklem",
+      "tgt": "use less fuel"
+     },
+     {
+      "src": "ve erozyonu azaltır.",
+      "role": "yüklem",
+      "tgt": "and reduce erosion"
+     }
+    ],
+    "check": [
+     "-meden = without + Ving",
+     "daha az = less (sayılamaz)",
+     "-an = who"
+    ]
    }
   ],
   "topic": "tarim",
@@ -5962,7 +7838,34 @@
     "answer": 0,
     "explain": "at a temperature above = … üzerindeki bir sıcaklıkta; gereklidir = is necessary; for X to V = X'in -mesi için. Tuzaklar: below, unnecessary, prevents (anlam ters), was (zaman).",
     "tip": "at + temperature/rate/level; for + özne + to V = '-mesi için'.",
-    "hint": "'üzerindeki' ve 'gereklidir': ikisinin de yönünü şıkta kontrol et."
+    "hint": "'üzerindeki' ve 'gereklidir': ikisinin de yönünü şıkta kontrol et.",
+    "parts": [
+     {
+      "src": "26 °C'nin üzerindeki bir sıcaklıkta bulunan",
+      "role": "zarf/edat öbeği",
+      "tgt": "at a temperature above 26 °C"
+     },
+     {
+      "src": "okyanus suyu,",
+      "role": "özne",
+      "tgt": "Ocean water"
+     },
+     {
+      "src": "tropikal fırtınaların oluşması için",
+      "role": "zarf/edat öbeği",
+      "tgt": "for tropical storms to form"
+     },
+     {
+      "src": "gereklidir.",
+      "role": "yüklem",
+      "tgt": "is necessary"
+     }
+    ],
+    "check": [
+     "edat: at a temperature",
+     "için = for + isim + to V",
+     "üzerinde = above"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -5985,7 +7888,34 @@
     "answer": 2,
     "explain": "çoğu = most; iki katına çıkarır = double; önce = before; geniş zaman. Tuzaklar: few (nicelik), halve, after, had doubled.",
     "tip": "Niceleyici eşle: çoğu = most, azı = few.",
-    "hint": "Niceleyici, fiil (iki kat) ve zaman edatı (önce): üç nokta."
+    "hint": "Niceleyici, fiil (iki kat) ve zaman edatı (önce): üç nokta.",
+    "parts": [
+     {
+      "src": "Göç eden kuşların çoğu,",
+      "role": "özne",
+      "tgt": "Most migrating birds"
+     },
+     {
+      "src": "yolculuklarından önce",
+      "role": "zaman",
+      "tgt": "before their journey"
+     },
+     {
+      "src": "vücut ağırlıklarını",
+      "role": "nesne",
+      "tgt": "their body weight"
+     },
+     {
+      "src": "neredeyse iki katına çıkarır.",
+      "role": "yüklem",
+      "tgt": "nearly double"
+     }
+    ],
+    "check": [
+     "çoğu = Most",
+     "neredeyse = nearly",
+     "-den önce = before"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -6008,7 +7938,34 @@
     "answer": 3,
     "explain": "-ın aksine = unlike; yetişen = that grow; geniş = broad. Tuzaklar: like, thin, kurak/nemli yer değişimi, because.",
     "tip": "-ın aksine ↔ unlike / in contrast to.",
-    "hint": "Karşılaştırma bağlacını bul; sonra hangi bölgenin hangi bitkiye ait olduğunu kontrol et."
+    "hint": "Karşılaştırma bağlacını bul; sonra hangi bölgenin hangi bitkiye ait olduğunu kontrol et.",
+    "parts": [
+     {
+      "src": "Kurak bölgelerde yetişen bitkilerin aksine,",
+      "role": "zarf/edat öbeği",
+      "tgt": "Unlike plants that grow in dry regions,"
+     },
+     {
+      "src": "nemli ormanlardaki bitkilerin",
+      "role": "özne",
+      "tgt": "plants in humid forests"
+     },
+     {
+      "src": "geniş yaprakları",
+      "role": "nesne",
+      "tgt": "broad leaves"
+     },
+     {
+      "src": "vardır.",
+      "role": "yüklem",
+      "tgt": "have"
+     }
+    ],
+    "check": [
+     "aksine = Unlike",
+     "-en = that grow",
+     "vardır = have"
+    ]
    }
   ],
   "topic": "biyoloji",
@@ -6031,7 +7988,34 @@
     "answer": 3,
     "explain": "ardından yapılan = taken after; iki metre yükseldi = had risen by two metres (artış miktarı). Tuzaklar: before, fallen, 'to two metres' (seviye iki metreye çıktı ≠ iki metre arttı), will show.",
     "tip": "rise BY X = X kadar artmak · rise TO X = X'e çıkmak.",
-    "hint": "'iki metre yükseldiğini': artış miktarı mı, varılan seviye mi? Edatı buna göre seç."
+    "hint": "'iki metre yükseldiğini': artış miktarı mı, varılan seviye mi? Edatı buna göre seç.",
+    "parts": [
+     {
+      "src": "Fırtınanın ardından yapılan",
+      "role": "sıfat cümlesi",
+      "tgt": "taken after the storm"
+     },
+     {
+      "src": "ölçümler,",
+      "role": "özne",
+      "tgt": "Measurements"
+     },
+     {
+      "src": "nehir seviyesinin iki metre yükseldiğini",
+      "role": "nesne",
+      "tgt": "that the river level had risen by two metres"
+     },
+     {
+      "src": "gösterdi.",
+      "role": "yüklem",
+      "tgt": "showed"
+     }
+    ],
+    "check": [
+     "zaman uyumu: showed → had risen",
+     "-ılan = taken (V3)",
+     "iki metre = by two metres"
+    ]
    }
   ],
   "topic": "meteoroloji",
@@ -6054,7 +8038,39 @@
     "answer": 1,
     "explain": "terk eden = that leaves; bulabilir = can find; kullanarak = by using. Tuzaklar: cannot, without, could have found (zaman/kip), enters (anlam ters).",
     "tip": "who/that + present → '-en/-an'; can → '-ebilir'.",
-    "hint": "Yüklemin kipi (-ebilir) ve '-arak' ekinin karşılığını ara."
+    "hint": "Yüklemin kipi (-ebilir) ve '-arak' ekinin karşılığını ara.",
+    "parts": [
+     {
+      "src": "Yuvasını terk eden",
+      "role": "sıfat cümlesi",
+      "tgt": "that leaves its nest"
+     },
+     {
+      "src": "bir karınca,",
+      "role": "özne",
+      "tgt": "An ant"
+     },
+     {
+      "src": "geri dönüş yolunu",
+      "role": "nesne",
+      "tgt": "its way back"
+     },
+     {
+      "src": "güneşin konumunu kullanarak",
+      "role": "zarf/edat öbeği",
+      "tgt": "by using the position of the Sun"
+     },
+     {
+      "src": "bulabilir.",
+      "role": "yüklem",
+      "tgt": "can find"
+     }
+    ],
+    "check": [
+     "-arak = by + Ving",
+     "-ebilir = can",
+     "-en = that"
+    ]
    }
   ],
   "topic": "hayvan-davranisi",
@@ -6077,7 +8093,34 @@
     "answer": 2,
     "explain": "amacıyla = with a view to + Ving; değiştirmiştir = have modified. Tuzaklar: 'with a view to increase' (to burada edat → Ving), despite (bağlaç), will (zaman), reducing (anlam).",
     "tip": "with a view to + Ving · in order to + V1.",
-    "hint": "'amacıyla' için 'with a view to' seçildiyse arkasından hangi fiil biçimi gelir?"
+    "hint": "'amacıyla' için 'with a view to' seçildiyse arkasından hangi fiil biçimi gelir?",
+    "parts": [
+     {
+      "src": "Bilim insanları,",
+      "role": "özne",
+      "tgt": "Scientists"
+     },
+     {
+      "src": "mısırın verimini artırmak amacıyla",
+      "role": "zarf/edat öbeği",
+      "tgt": "with a view to increasing its yield"
+     },
+     {
+      "src": "genlerini",
+      "role": "nesne",
+      "tgt": "the genes of maize"
+     },
+     {
+      "src": "değiştirmiştir.",
+      "role": "yüklem",
+      "tgt": "have modified"
+     }
+    ],
+    "check": [
+     "amacıyla = with a view to + Ving",
+     "-miştir = have V3",
+     "özne: Scientists"
+    ]
    }
   ],
   "topic": "tarim",
@@ -7332,5 +9375,825 @@
   ],
   "topic": "biyoloji",
   "level": 2
+ },
+ {
+  "id": "d272",
+  "type": "ceviri-en-tr",
+  "stem": "Annealing is a process by which the hardness of a metal is reduced through controlled heating and slow cooling.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Tavlama, bir metalin sertliğinin kontrollü ısıtma ve yavaş soğutma yoluyla artırıldığı bir işlemdir.",
+     "Tavlama, bir metalin sertliğinin kontrollü ısıtma ve hızlı soğutma yoluyla azaltıldığı bir işlemdir.",
+     "Tavlama, bir metalin sertliğinin kontrollü ısıtma ve yavaş soğutma yoluyla azaltıldığı bir işlemdir.",
+     "Tavlama, bir metalin sertliğinin kontrollü ısıtma ve yavaş soğutma yoluyla azaltılacağı bir işlemdir.",
+     "Tavlama, bir metalin sünekliğinin kontrollü ısıtma ve yavaş soğutma yoluyla azaltıldığı bir işlemdir."
+    ],
+    "answer": 2,
+    "explain": "by which … is reduced = (onunla) azaltıldığı; slow cooling = yavaş soğutma; hardness = sertlik. Tuzaklar: 'artırıldığı' (reduced'ın tersi), 'hızlı' (slow'un tersi), 'azaltılacağı' (zaman: gelecek), 'süneklik' (hardness değil).",
+    "tip": "by which + edilgen = '-ıldığı' sıfat cümlesi.",
+    "hint": "'is reduced' Türkçede artış mı, azalış mı; hangi zamanda?",
+    "parts": [
+     {
+      "src": "Annealing",
+      "role": "özne",
+      "tgt": "Tavlama,"
+     },
+     {
+      "src": "is a process",
+      "role": "yüklem",
+      "tgt": "bir işlemdir"
+     },
+     {
+      "src": "by which the hardness of a metal is reduced",
+      "role": "sıfat cümlesi",
+      "tgt": "bir metalin sertliğinin … azaltıldığı"
+     },
+     {
+      "src": "through controlled heating and slow cooling.",
+      "role": "zarf/edat öbeği",
+      "tgt": "kontrollü ısıtma ve yavaş soğutma yoluyla"
+     }
+    ],
+    "check": [
+     "by which = -ıldığı (sıfat cümlesi)",
+     "fiil: reduced = azaltılmak",
+     "zaman: geniş"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d273",
+  "type": "ceviri-en-tr",
+  "stem": "Plants whose leaves are covered with a thick layer of wax lose less water in hot, dry weather.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Yaprakları kalın bir mum tabakasıyla kaplı olan bitkiler, sıcak ve kuru havada daha az su kaybeder.",
+     "Yaprakları kalın bir mum tabakasıyla kaplı olan bitkiler, sıcak ve kuru havada daha çok su kaybeder.",
+     "Yaprakları ince bir mum tabakasıyla kaplı olan bitkiler, sıcak ve kuru havada daha az su kaybeder.",
+     "Yaprakları kalın bir mum tabakasıyla kaplı olan bitkiler, sıcak ve nemli havada daha az su kaybeder.",
+     "Yaprakları kalın bir mum tabakasıyla kaplı olan bitkiler, sıcak ve kuru havada daha az su kaybetmiştir."
+    ],
+    "answer": 0,
+    "explain": "whose leaves = yaprakları … olan; thick = kalın; less water = daha az su; lose = kaybeder (geniş zaman). Tuzaklar: 'daha çok' (less'in tersi), 'ince' (thick'in tersi), 'nemli' (dry değil), 'kaybetmiştir' (zaman).",
+    "tip": "whose + isim = 'isim-ı … olan'.",
+    "hint": "'less' ve 'thick' sözcüklerinin karşılıklarını şıklarda tek tek ara.",
+    "parts": [
+     {
+      "src": "Plants",
+      "role": "özne",
+      "tgt": "bitkiler,"
+     },
+     {
+      "src": "whose leaves are covered with a thick layer of wax",
+      "role": "sıfat cümlesi",
+      "tgt": "Yaprakları kalın bir mum tabakasıyla kaplı olan"
+     },
+     {
+      "src": "lose less water",
+      "role": "yüklem",
+      "tgt": "daha az su kaybeder"
+     },
+     {
+      "src": "in hot, dry weather.",
+      "role": "zarf/edat öbeği",
+      "tgt": "sıcak ve kuru havada"
+     }
+    ],
+    "check": [
+     "whose = -ı … olan",
+     "karşılaştırma: less = daha az",
+     "zaman: geniş"
+    ]
+   }
+  ],
+  "topic": "biyoloji",
+  "level": 2
+ },
+ {
+  "id": "d274",
+  "type": "ceviri-en-tr",
+  "stem": "Discovered by accident in 1928, penicillin has saved millions of lives since it came into general use.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "1928'de kasıtlı olarak keşfedilen penisilin, genel kullanıma girdiğinden beri milyonlarca hayat kurtarmıştır.",
+     "1928'de tesadüfen keşfedilen penisilin, genel kullanıma girmeden önce milyonlarca hayat kurtarmıştır.",
+     "1928'de tesadüfen keşfedilen penisilin, genel kullanıma girdiğinden beri binlerce hayat kurtarmıştır.",
+     "1928'de tesadüfen keşfedilen penisilin, genel kullanıma girdiğinden beri milyonlarca hayat kurtarmıştır.",
+     "1928'de tesadüfen keşfedilen penisilin, genel kullanıma girdiğinden beri milyonlarca hayat kurtaracaktır."
+    ],
+    "answer": 3,
+    "explain": "Discovered (V3) = keşfedilen; by accident = tesadüfen; since = -den beri; has saved = kurtarmıştır. Tuzaklar: 'kasıtlı olarak' (by accident'ın tersi), 'girmeden önce' (since ≠ before), 'binlerce' (millions değil), 'kurtaracaktır' (zaman: gelecek).",
+    "tip": "Baştaki V3 = '-ılan' (edilgen sıfat-fiil); since = -den beri.",
+    "hint": "'since' zaman olarak öncesini mi, sonrasını mı anlatır? Yüklem hangi zamanda?",
+    "parts": [
+     {
+      "src": "Discovered by accident in 1928,",
+      "role": "sıfat cümlesi",
+      "tgt": "1928'de tesadüfen keşfedilen"
+     },
+     {
+      "src": "penicillin",
+      "role": "özne",
+      "tgt": "penisilin,"
+     },
+     {
+      "src": "has saved",
+      "role": "yüklem",
+      "tgt": "kurtarmıştır"
+     },
+     {
+      "src": "millions of lives",
+      "role": "nesne",
+      "tgt": "milyonlarca hayat"
+     },
+     {
+      "src": "since it came into general use.",
+      "role": "bağlaç cümlesi",
+      "tgt": "genel kullanıma girdiğinden beri"
+     }
+    ],
+    "check": [
+     "baştaki V3 = keşfedilen",
+     "bağlaç: since = -den beri",
+     "zaman: has saved = -mıştır"
+    ]
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d275",
+  "type": "ceviri-en-tr",
+  "stem": "Whereas conventional power plants waste most of their heat, combined systems use it to warm nearby buildings.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Geleneksel santraller ısılarının çoğunu boşa harcadığı için, birleşik sistemler bu ısıyı yakındaki binaları ısıtmak için kullanır.",
+     "Geleneksel santraller ısılarının çoğunu boşa harcarken, birleşik sistemler bu ısıyı yakındaki binaları ısıtmak için kullanır.",
+     "Geleneksel santraller ısılarının azını boşa harcarken, birleşik sistemler bu ısıyı yakındaki binaları ısıtmak için kullanır.",
+     "Geleneksel santraller ısılarının çoğunu boşa harcarken, birleşik sistemler bu ısıyı uzaktaki binaları ısıtmak için kullanır.",
+     "Geleneksel santraller ısılarının çoğunu boşa harcarken, birleşik sistemler bu ısıyı yakındaki binaları soğutmak için kullanır."
+    ],
+    "answer": 1,
+    "explain": "Whereas = -ken (karşıtlık); most of = çoğu; nearby = yakındaki; to warm = ısıtmak için. Tuzaklar: 'harcadığı için' (bağlaç: neden), 'azını' (most değil), 'uzaktaki' (nearby'nin tersi), 'soğutmak' (warm'un tersi).",
+    "tip": "Whereas / while (karşıtlık) = '-ken'; 'için / -dığından' gelirse sil.",
+    "hint": "'Whereas' neden mi bildirir, karşıtlık mı?",
+    "parts": [
+     {
+      "src": "Whereas conventional power plants waste most of their heat,",
+      "role": "bağlaç cümlesi",
+      "tgt": "Geleneksel santraller ısılarının çoğunu boşa harcarken,"
+     },
+     {
+      "src": "combined systems",
+      "role": "özne",
+      "tgt": "birleşik sistemler"
+     },
+     {
+      "src": "use it",
+      "role": "yüklem",
+      "tgt": "bu ısıyı … kullanır"
+     },
+     {
+      "src": "to warm nearby buildings.",
+      "role": "zarf/edat öbeği",
+      "tgt": "yakındaki binaları ısıtmak için"
+     }
+    ],
+    "check": [
+     "bağlaç: Whereas = -ken (karşıtlık)",
+     "most of = çoğu",
+     "amaç: to warm = ısıtmak için"
+    ]
+   }
+  ],
+  "topic": "enerji",
+  "level": 2
+ },
+ {
+  "id": "d276",
+  "type": "ceviri-en-tr",
+  "stem": "Despite being exposed to salt water for decades, the titanium parts showed no sign of corrosion.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Titanyum parçalar, onlarca yıl tuzlu suya maruz kaldığı için hiçbir korozyon belirtisi göstermedi.",
+     "Titanyum parçalar, onlarca yıl tatlı suya maruz kalmasına rağmen hiçbir korozyon belirtisi göstermedi.",
+     "Titanyum parçalar, onlarca yıl tuzlu suya maruz kalmasına rağmen belirgin korozyon belirtisi gösterdi.",
+     "Titanyum parçalar, yalnızca bir yıl tuzlu suya maruz kalmasına rağmen hiçbir korozyon belirtisi göstermedi.",
+     "Titanyum parçalar, onlarca yıl tuzlu suya maruz kalmasına rağmen hiçbir korozyon belirtisi göstermedi."
+    ],
+    "answer": 4,
+    "explain": "Despite + Ving = -masına rağmen; for decades = onlarca yıl; no sign = hiçbir belirti; showed = göstermedi (no ile olumsuz). Tuzaklar: 'kaldığı için' (bağlaç: neden), 'tatlı su' (salt değil), 'belirgin … gösterdi' (olumsuzluk kayıp), 'yalnızca bir yıl' (decades değil).",
+    "tip": "Despite / in spite of = rağmen; 'için' görürsen sil.",
+    "hint": "'Despite' zıtlık mı bildirir, neden mi? 'no sign' yüklemi olumlu mu yapar, olumsuz mu?",
+    "parts": [
+     {
+      "src": "Despite being exposed to salt water for decades,",
+      "role": "zarf/edat öbeği",
+      "tgt": "onlarca yıl tuzlu suya maruz kalmasına rağmen"
+     },
+     {
+      "src": "the titanium parts",
+      "role": "özne",
+      "tgt": "Titanyum parçalar,"
+     },
+     {
+      "src": "showed",
+      "role": "yüklem",
+      "tgt": "göstermedi"
+     },
+     {
+      "src": "no sign of corrosion.",
+      "role": "nesne",
+      "tgt": "hiçbir korozyon belirtisi"
+     }
+    ],
+    "check": [
+     "Despite + Ving = -masına rağmen",
+     "olumsuz: no = hiçbir",
+     "zaman: geçmiş"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d277",
+  "type": "ceviri-en-tr",
+  "stem": "The valve failed to close, which allowed hot steam to escape into the turbine hall.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Vana kapanmadı, bu da sıcak buharın türbin salonuna kaçmasına olanak verdi.",
+     "Vana kapanmadı, bu da sıcak buharın türbin salonuna kaçmasına engel oldu.",
+     "Vana açılmadı, bu da sıcak buharın türbin salonuna kaçmasına olanak verdi.",
+     "Vana kapanmadı, bu da sıcak suyun türbin salonuna kaçmasına olanak verdi.",
+     "Vana kapanmayacak, bu da sıcak buharın türbin salonuna kaçmasına olanak verecek."
+    ],
+    "answer": 0,
+    "explain": "failed to close = kapanmadı; ', which' = bu da (önceki cümlenin tamamı); allowed = olanak verdi; steam = buhar. Tuzaklar: 'engel oldu' (allowed'ın tersi), 'açılmadı' (close değil), 'sıcak su' (steam değil), 'kapanmayacak… verecek' (zaman: gelecek).",
+    "tip": "', which' bütün cümleyi gösteriyorsa Türkçesi 'bu da'.",
+    "hint": "'fail to V' olumlu mu, olumsuz mu çevrilir? Zaman hangisi?",
+    "parts": [
+     {
+      "src": "The valve",
+      "role": "özne",
+      "tgt": "Vana"
+     },
+     {
+      "src": "failed to close,",
+      "role": "yüklem",
+      "tgt": "kapanmadı,"
+     },
+     {
+      "src": "which allowed hot steam to escape",
+      "role": "sıfat cümlesi",
+      "tgt": "bu da sıcak buharın … kaçmasına olanak verdi"
+     },
+     {
+      "src": "into the turbine hall.",
+      "role": "zarf/edat öbeği",
+      "tgt": "türbin salonuna"
+     }
+    ],
+    "check": [
+     "fail to V = olumsuz (kapanmadı)",
+     ", which = bu da",
+     "zaman: geçmiş"
+    ]
+   }
+  ],
+  "topic": "fizik",
+  "level": 2
+ },
+ {
+  "id": "d278",
+  "type": "ceviri-en-tr",
+  "stem": "Only when the soil temperature rises above ten degrees do the seeds of this plant begin to germinate.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Bu bitkinin tohumları ancak toprak sıcaklığı on derecenin altına düştüğünde çimlenmeye başlar.",
+     "Bu bitkinin tohumları ancak hava sıcaklığı on derecenin üzerine çıktığında çimlenmeye başlar.",
+     "Bu bitkinin tohumları ancak toprak sıcaklığı on derecenin üzerine çıktığında çimlenmeye başlar.",
+     "Bu bitkinin tohumları toprak sıcaklığı on derecenin üzerine çıksa bile çimlenmeye başlamaz.",
+     "Bu bitkinin tohumları ancak toprak sıcaklığı on derecenin üzerine çıktığında çimlenmeyi bırakır."
+    ],
+    "answer": 2,
+    "explain": "Only when … do = ancak … -dığında (devrik yapı, anlam olumlu); rises above = üzerine çıkar; soil = toprak; begin = başlar. Tuzaklar: 'altına düştüğünde' (above'un tersi), 'hava sıcaklığı' (soil değil), 'çıksa bile … başlamaz' (bağlaç ve olumsuzluk), 'bırakır' (begin'in tersi).",
+    "tip": "Only when + devrik (do/does + özne) = 'ancak … -dığında'; anlam olumsuz olmaz.",
+    "hint": "Cümle başındaki 'Only when' devrik yapıyı olumsuz mu yapar?",
+    "parts": [
+     {
+      "src": "Only when the soil temperature rises above ten degrees",
+      "role": "bağlaç cümlesi",
+      "tgt": "ancak toprak sıcaklığı on derecenin üzerine çıktığında"
+     },
+     {
+      "src": "do the seeds of this plant",
+      "role": "özne",
+      "tgt": "Bu bitkinin tohumları"
+     },
+     {
+      "src": "begin",
+      "role": "yüklem",
+      "tgt": "başlar"
+     },
+     {
+      "src": "to germinate.",
+      "role": "nesne",
+      "tgt": "çimlenmeye"
+     }
+    ],
+    "check": [
+     "Only when = ancak … -dığında",
+     "edat: above = üzerine",
+     "yüklem: olumlu, geniş zaman"
+    ]
+   }
+  ],
+  "topic": "tarim",
+  "level": 3
+ },
+ {
+  "id": "d279",
+  "type": "ceviri-en-tr",
+  "stem": "Engineers coat the blades with a ceramic layer so that they can withstand temperatures at which steel would melt.",
+  "items": [
+   {
+    "q": "İngilizce cümlenin en yakın Türkçe çevirisini seçin.",
+    "options": [
+     "Mühendisler, kanatları çeliğin eriyeceği sıcaklıklara dayanabildikleri için seramik bir tabakayla kaplar.",
+     "Mühendisler, kanatları çeliğin donacağı sıcaklıklara dayanabilsinler diye seramik bir tabakayla kaplar.",
+     "Mühendisler, kanatları çeliğin eriyeceği sıcaklıklara dayanabilsinler diye plastik bir tabakayla kaplar.",
+     "Mühendisler, kanatları çeliğin eriyeceği sıcaklıklara dayanabilsinler diye seramik bir tabakayla kaplar.",
+     "Mühendisler, kanatları çeliğin eriyeceği sıcaklıklara dayanabilsinler diye seramik bir tabakayla kaplamıştı."
+    ],
+    "answer": 3,
+    "explain": "so that … can = -ebilsinler diye (amaç); at which steel would melt = çeliğin eriyeceği; coat = kaplar (geniş zaman). Tuzaklar: 'dayanabildikleri için' (amaç değil neden), 'donacağı' (melt değil), 'plastik' (ceramic değil), 'kaplamıştı' (zaman: geçmiş).",
+    "tip": "so that + can = amaç ('-sin diye / -mesi için'); 'için = çünkü' anlamına kayarsa sil.",
+    "hint": "'so that' amaç mı bildirir, neden mi? Ana fiil 'coat' hangi zamanda?",
+    "parts": [
+     {
+      "src": "Engineers",
+      "role": "özne",
+      "tgt": "Mühendisler,"
+     },
+     {
+      "src": "coat the blades",
+      "role": "yüklem",
+      "tgt": "kanatları … kaplar"
+     },
+     {
+      "src": "with a ceramic layer",
+      "role": "zarf/edat öbeği",
+      "tgt": "seramik bir tabakayla"
+     },
+     {
+      "src": "so that they can withstand temperatures",
+      "role": "bağlaç cümlesi",
+      "tgt": "sıcaklıklara dayanabilsinler diye"
+     },
+     {
+      "src": "at which steel would melt.",
+      "role": "sıfat cümlesi",
+      "tgt": "çeliğin eriyeceği"
+     }
+    ],
+    "check": [
+     "bağlaç: so that = -sin diye (amaç)",
+     "at which = -eceği (sıfat cümlesi)",
+     "zaman: geniş"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
+ },
+ {
+  "id": "d280",
+  "type": "ceviri-tr-en",
+  "stem": "Kabuğu sertleşmemiş olan genç yengeçler, avcılara karşı özellikle savunmasızdır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Young crabs which shells have not hardened are especially vulnerable to predators.",
+     "Young crabs whose shells have not hardened are especially vulnerable to predators.",
+     "Young crabs whose shells have not hardened are especially resistant to predators.",
+     "Young crabs whose shells have not hardened were especially vulnerable to predators.",
+     "Young crabs whose shells have already hardened are especially vulnerable to predators."
+    ],
+    "answer": 1,
+    "explain": "kabuğu … olan = whose shells; sertleşmemiş = have not hardened; savunmasız = vulnerable to. Tuzaklar: 'which shells' (iyelik için whose gerekir), 'resistant' (savunmasızın tersi), 'were' (zaman: geçmiş), 'have already hardened' (olumsuzluk kayıp).",
+    "tip": "'isim-ı … olan' = whose + isim.",
+    "hint": "'Kabuğu' sözcüğündeki iyelik eki İngilizcede hangi ilgi zamiriyle verilir?",
+    "parts": [
+     {
+      "src": "Kabuğu sertleşmemiş olan",
+      "role": "sıfat cümlesi",
+      "tgt": "whose shells have not hardened"
+     },
+     {
+      "src": "genç yengeçler,",
+      "role": "özne",
+      "tgt": "Young crabs"
+     },
+     {
+      "src": "avcılara karşı",
+      "role": "zarf/edat öbeği",
+      "tgt": "to predators"
+     },
+     {
+      "src": "özellikle savunmasızdır.",
+      "role": "yüklem",
+      "tgt": "are especially vulnerable"
+     }
+    ],
+    "check": [
+     "-ı … olan = whose",
+     "olumsuz: have not hardened",
+     "zaman: geniş (are)"
+    ]
+   }
+  ],
+  "topic": "hayvan-davranisi",
+  "level": 2
+ },
+ {
+  "id": "d281",
+  "type": "ceviri-tr-en",
+  "stem": "Deniz seviyesinde ölçülen atmosfer basıncı, dağların tepesinde ölçülenden çok daha yüksektir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Atmospheric pressure measuring at sea level is much higher than that measured on mountain tops.",
+     "Atmospheric pressure measured at sea level is much lower than that measured on mountain tops.",
+     "Atmospheric pressure measured at sea level is slightly higher than that measured on mountain tops.",
+     "Atmospheric pressure measured at sea level was much higher than that measured on mountain tops.",
+     "Atmospheric pressure measured at sea level is much higher than that measured on mountain tops."
+    ],
+    "answer": 4,
+    "explain": "ölçülen = measured (V3, edilgen); çok daha yüksek = much higher; yüksektir = is. Tuzaklar: 'measuring' (basınç ölçmez, ölçülür → V3), 'lower' (tersi), 'slightly' (çok daha ≠ biraz), 'was' (zaman: geçmiş).",
+    "tip": "'-ılan' = V3; '-an' = Ving. Önce edilgen mi etken mi bak.",
+    "hint": "Basınç ölçer mi, ölçülür mü? Buna göre Ving mi V3 mü gelir?",
+    "parts": [
+     {
+      "src": "Deniz seviyesinde ölçülen",
+      "role": "sıfat cümlesi",
+      "tgt": "measured at sea level"
+     },
+     {
+      "src": "atmosfer basıncı,",
+      "role": "özne",
+      "tgt": "Atmospheric pressure"
+     },
+     {
+      "src": "dağların tepesinde ölçülenden",
+      "role": "zarf/edat öbeği",
+      "tgt": "than that measured on mountain tops"
+     },
+     {
+      "src": "çok daha yüksektir.",
+      "role": "yüklem",
+      "tgt": "is much higher"
+     }
+    ],
+    "check": [
+     "-ılan = measured (V3)",
+     "çok daha = much + -er",
+     "zaman: geniş (is)"
+    ]
+   }
+  ],
+  "topic": "meteoroloji",
+  "level": 2
+ },
+ {
+  "id": "d282",
+  "type": "ceviri-tr-en",
+  "stem": "Yüksek maliyetine rağmen karbon elyaf, hafifliği nedeniyle uçak yapımında yaygın olarak kullanılmaktadır.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Despite its high cost, carbon fibre is widely used in aircraft construction because of its lightness.",
+     "Although its high cost, carbon fibre is widely used in aircraft construction because of its lightness.",
+     "Despite its high cost, carbon fibre is rarely used in aircraft construction because of its lightness.",
+     "Despite its high cost, carbon fibre is widely used in aircraft construction in spite of its lightness.",
+     "Despite its high cost, carbon fibre was widely used in aircraft construction because of its lightness."
+    ],
+    "answer": 0,
+    "explain": "-e rağmen + isim = Despite + isim; nedeniyle = because of; yaygın olarak = widely; kullanılmaktadır = is used. Tuzaklar: 'Although its high cost' (Although + cümle ister), 'rarely' (yaygının tersi), 'in spite of its lightness' (nedeniyle ≠ rağmen), 'was' (zaman: geçmiş).",
+    "tip": "Despite + isim/Ving · Although + cümle.",
+    "hint": "'Yüksek maliyetine' bir isim öbeği mi, cümle mi? Hangi bağlaç isim alır?",
+    "parts": [
+     {
+      "src": "Yüksek maliyetine rağmen",
+      "role": "zarf/edat öbeği",
+      "tgt": "Despite its high cost,"
+     },
+     {
+      "src": "karbon elyaf,",
+      "role": "özne",
+      "tgt": "carbon fibre"
+     },
+     {
+      "src": "hafifliği nedeniyle",
+      "role": "zarf/edat öbeği",
+      "tgt": "because of its lightness"
+     },
+     {
+      "src": "uçak yapımında",
+      "role": "zarf/edat öbeği",
+      "tgt": "in aircraft construction"
+     },
+     {
+      "src": "yaygın olarak kullanılmaktadır.",
+      "role": "yüklem",
+      "tgt": "is widely used"
+     }
+    ],
+    "check": [
+     "rağmen + isim = Despite",
+     "nedeniyle = because of",
+     "yüklem: edilgen, geniş (is used)"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d283",
+  "type": "ceviri-tr-en",
+  "stem": "Numuneler, dakikada beş derecelik bir hızla 900 °C'lik bir sıcaklığa kadar ısıtıldı.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "The samples were heated to a temperature of 900 °C in a rate of five degrees per minute.",
+     "The samples were cooled to a temperature of 900 °C at a rate of five degrees per minute.",
+     "The samples were heated to a temperature of 900 °C at a rate of five degrees per minute.",
+     "The samples are heated to a temperature of 900 °C at a rate of five degrees per minute.",
+     "The samples were heated to a temperature of 900 °C at a rate of fifty degrees per minute."
+    ],
+    "answer": 2,
+    "explain": "… bir hızla = at a rate of; ısıtıldı = were heated (geçmiş, edilgen); beş = five. Tuzaklar: 'in a rate' (edat: at a rate), 'cooled' (ısıtmanın tersi), 'are heated' (zaman: geniş), 'fifty' (beş ≠ elli).",
+    "tip": "at a rate / at a temperature / at a speed → hep AT.",
+    "hint": "'hızla' (rate) hangi edatla kullanılır? Yüklem geçmiş mi?",
+    "parts": [
+     {
+      "src": "Numuneler,",
+      "role": "özne",
+      "tgt": "The samples"
+     },
+     {
+      "src": "dakikada beş derecelik bir hızla",
+      "role": "zarf/edat öbeği",
+      "tgt": "at a rate of five degrees per minute"
+     },
+     {
+      "src": "900 °C'lik bir sıcaklığa kadar",
+      "role": "zarf/edat öbeği",
+      "tgt": "to a temperature of 900 °C"
+     },
+     {
+      "src": "ısıtıldı.",
+      "role": "yüklem",
+      "tgt": "were heated"
+     }
+    ],
+    "check": [
+     "edat: at a rate of",
+     "yüklem: edilgen, geçmiş (were heated)",
+     "sayı: five"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 2
+ },
+ {
+  "id": "d284",
+  "type": "ceviri-tr-en",
+  "stem": "Aşırı sulama, toprakta tuz birikmesine yol açarak ürün verimini düşürebilir.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Excessive irrigation can lower crop yields by leading to build up salt in the soil.",
+     "Excessive irrigation can raise crop yields by leading to a build-up of salt in the soil.",
+     "Excessive irrigation must lower crop yields by leading to a build-up of salt in the soil.",
+     "Excessive irrigation can lower crop yields by leading to a build-up of salt in the soil.",
+     "Insufficient irrigation can lower crop yields by leading to a build-up of salt in the soil."
+    ],
+    "answer": 3,
+    "explain": "yol açarak = by leading to + isim; düşürebilir = can lower; aşırı = excessive. Tuzaklar: 'leading to build up' (lead to + isim/Ving, V1 olmaz), 'raise' (düşürmenin tersi), 'must' (kip: -ebilir ≠ zorunluluk), 'Insufficient' (aşırının tersi).",
+    "tip": "lead to + isim (to burada edat).",
+    "hint": "'lead to'dan sonra isim mi gelir, yalın fiil mi?",
+    "parts": [
+     {
+      "src": "Aşırı sulama,",
+      "role": "özne",
+      "tgt": "Excessive irrigation"
+     },
+     {
+      "src": "toprakta tuz birikmesine yol açarak",
+      "role": "zarf/edat öbeği",
+      "tgt": "by leading to a build-up of salt in the soil"
+     },
+     {
+      "src": "ürün verimini",
+      "role": "nesne",
+      "tgt": "crop yields"
+     },
+     {
+      "src": "düşürebilir.",
+      "role": "yüklem",
+      "tgt": "can lower"
+     }
+    ],
+    "check": [
+     "-arak = by + Ving",
+     "lead to + isim",
+     "-ebilir = can"
+    ]
+   }
+  ],
+  "topic": "tarim",
+  "level": 2
+ },
+ {
+  "id": "d285",
+  "type": "ceviri-tr-en",
+  "stem": "Demirden çok daha hafif olan alüminyum, ilk kez 1825'te saf hâlde elde edildi.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Aluminium, that is much lighter than iron, was first obtained in pure form in 1825.",
+     "Aluminium, which is much lighter than iron, was first obtained in pure form in 1825.",
+     "Aluminium, which is much heavier than iron, was first obtained in pure form in 1825.",
+     "Aluminium, which is much lighter than iron, was last obtained in pure form in 1825.",
+     "Aluminium, which is much lighter than iron, has first been obtained in pure form in 1825."
+    ],
+    "answer": 1,
+    "explain": "… olan alüminyum = Aluminium, which is …, (virgüllü → which); daha hafif = lighter; ilk kez = first; 1825'te → Simple Past. Tuzaklar: ', that' (virgülden sonra that olmaz), 'heavier' (tersi), 'last' (ilk ≠ son), 'has been obtained … in 1825' (belirli geçmiş tarihle Present Perfect olmaz).",
+    "tip": "Virgülden sonra that olmaz; 'in + yıl' → Simple Past.",
+    "hint": "Virgülle ayrılmış sıfat cümlesinde hangi zamir kullanılamaz? 'in 1825' hangi zamanı ister?",
+    "parts": [
+     {
+      "src": "Demirden çok daha hafif olan",
+      "role": "sıfat cümlesi",
+      "tgt": ", which is much lighter than iron,"
+     },
+     {
+      "src": "alüminyum,",
+      "role": "özne",
+      "tgt": "Aluminium"
+     },
+     {
+      "src": "ilk kez",
+      "role": "zaman",
+      "tgt": "first"
+     },
+     {
+      "src": "1825'te",
+      "role": "zaman",
+      "tgt": "in 1825"
+     },
+     {
+      "src": "saf hâlde elde edildi.",
+      "role": "yüklem",
+      "tgt": "was … obtained in pure form"
+     }
+    ],
+    "check": [
+     "virgüllü sıfat cümlesi: , which",
+     "zaman: in 1825 → Simple Past",
+     "karşılaştırma: lighter"
+    ]
+   }
+  ],
+  "topic": "kimya",
+  "level": 3
+ },
+ {
+  "id": "d286",
+  "type": "ceviri-tr-en",
+  "stem": "Ne ilaç ne de ameliyat, hastalığın ilerlemesini tamamen durdurabildi.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Neither the drug or surgery was able to stop the progress of the disease completely.",
+     "Either the drug or surgery was able to stop the progress of the disease completely.",
+     "Neither the drug nor surgery was able to stop the progress of the disease temporarily.",
+     "Neither the drug nor surgery was able to slow the progress of the disease completely.",
+     "Neither the drug nor surgery was able to stop the progress of the disease completely."
+    ],
+    "answer": 4,
+    "explain": "ne … ne de = neither … nor (fiil olumlu yazılır); durdurabildi = was able to stop; tamamen = completely. Tuzaklar: 'Neither … or' (neither'ın eşi nor), 'Either … or' (anlam: ya … ya da), 'temporarily' (tamamen ≠ geçici olarak), 'slow' (durdurmak ≠ yavaşlatmak).",
+    "tip": "neither → nor · either → or · both → and.",
+    "hint": "'ne … ne de' kalıbında neither'ın eşi hangisidir?",
+    "parts": [
+     {
+      "src": "Ne ilaç ne de ameliyat,",
+      "role": "özne",
+      "tgt": "Neither the drug nor surgery"
+     },
+     {
+      "src": "hastalığın ilerlemesini",
+      "role": "nesne",
+      "tgt": "the progress of the disease"
+     },
+     {
+      "src": "tamamen",
+      "role": "zarf/edat öbeği",
+      "tgt": "completely"
+     },
+     {
+      "src": "durdurabildi.",
+      "role": "yüklem",
+      "tgt": "was able to stop"
+     }
+    ],
+    "check": [
+     "ne … ne de = neither … nor",
+     "fiil olumlu yazılır",
+     "zaman: geçmiş (was able to)"
+    ]
+   }
+  ],
+  "topic": "tip",
+  "level": 2
+ },
+ {
+  "id": "d287",
+  "type": "ceviri-tr-en",
+  "stem": "Sıcaklık çok hızlı düşürülmediği sürece cam, soğurken çatlamaz.",
+  "items": [
+   {
+    "q": "Türkçe cümlenin en yakın İngilizce çevirisini seçin.",
+    "options": [
+     "Glass does not crack as it cools unless the temperature is lowered too quickly.",
+     "Glass does not crack as it cools if the temperature is lowered too quickly.",
+     "Glass does not crack as it cools unless the temperature is raised too quickly.",
+     "Glass does not crack as it heats unless the temperature is lowered too quickly.",
+     "Glass did not crack as it cooled unless the temperature was lowered too quickly."
+    ],
+    "answer": 0,
+    "explain": "-mediği sürece = unless (= if … not); soğurken = as it cools; düşürül- = is lowered; çatlamaz = does not crack. Tuzaklar: 'if' (olumsuzluk kayboldu, anlam tersine döndü), 'raised' (düşürmenin tersi), 'heats' (soğumanın tersi), 'did not… was' (zaman: geçmiş).",
+    "tip": "-medikçe / -mediği sürece = unless; unless'ten sonra fiil olumlu yazılır.",
+    "hint": "'-mediği sürece' içindeki olumsuzluğu tek başına hangi bağlaç taşır?",
+    "parts": [
+     {
+      "src": "Sıcaklık çok hızlı düşürülmediği sürece",
+      "role": "bağlaç cümlesi",
+      "tgt": "unless the temperature is lowered too quickly"
+     },
+     {
+      "src": "cam,",
+      "role": "özne",
+      "tgt": "Glass"
+     },
+     {
+      "src": "soğurken",
+      "role": "bağlaç cümlesi",
+      "tgt": "as it cools"
+     },
+     {
+      "src": "çatlamaz.",
+      "role": "yüklem",
+      "tgt": "does not crack"
+     }
+    ],
+    "check": [
+     "-mediği sürece = unless",
+     "-ken = as",
+     "zaman: geniş (does not crack)"
+    ]
+   }
+  ],
+  "topic": "malzeme",
+  "level": 3
  }
 ]

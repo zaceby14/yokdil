@@ -19731,5 +19731,6531 @@
    "fen",
    "awl"
   ]
+ },
+ {
+  "id": "w1126",
+  "word": "area",
+  "pos": "n",
+  "tr": "alan, bölge; yüzölçümü",
+  "syn": [
+   "region",
+   "zone",
+   "field"
+  ],
+  "coll": "surface area; an area of research",
+  "ex": "The surface area of the catalyst was doubled.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1127",
+  "word": "create",
+  "pos": "v",
+  "tr": "yaratmak, oluşturmak",
+  "syn": [
+   "produce",
+   "form",
+   "generate"
+  ],
+  "coll": "create a model/conditions",
+  "ex": "The collision created a cloud of hot gas.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1128",
+  "word": "distribute",
+  "pos": "v",
+  "tr": "dağıtmak, yaymak",
+  "syn": [
+   "spread",
+   "disperse",
+   "allocate"
+  ],
+  "coll": "be evenly distributed",
+  "ex": "The load is distributed evenly across the beam.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1129",
+  "word": "proceed",
+  "pos": "v",
+  "tr": "ilerlemek, devam etmek",
+  "syn": [
+   "continue",
+   "advance",
+   "progress"
+  ],
+  "coll": "proceed to + V1; proceed with",
+  "ex": "The reaction proceeds slowly at room temperature.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1130",
+  "word": "major",
+  "pos": "adj",
+  "tr": "büyük, başlıca, önemli",
+  "syn": [
+   "main",
+   "chief",
+   "significant"
+  ],
+  "coll": "a major cause/role/problem",
+  "ex": "Friction is a major cause of energy loss in engines.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1131",
+  "word": "minor",
+  "pos": "adj",
+  "tr": "küçük, önemsiz",
+  "syn": [
+   "small",
+   "slight",
+   "insignificant"
+  ],
+  "coll": "a minor change/role/problem",
+  "ex": "Even a minor crack can grow under repeated loading.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1132",
+  "word": "period",
+  "pos": "n",
+  "tr": "dönem, süre",
+  "syn": [
+   "time",
+   "span",
+   "phase"
+  ],
+  "coll": "over a period of; a long period",
+  "ex": "The samples were heated over a period of six hours.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1133",
+  "word": "individual",
+  "pos": "adj",
+  "tr": "bireysel, tek tek, ayrı",
+  "syn": [
+   "single",
+   "separate",
+   "particular"
+  ],
+  "coll": "individual cells/differences",
+  "ex": "The microscope can show individual atoms on the surface.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1134",
+  "word": "section",
+  "pos": "n",
+  "tr": "bölüm, kesit",
+  "syn": [
+   "part",
+   "segment",
+   "portion"
+  ],
+  "coll": "a cross section; a section of",
+  "ex": "A thin section of the rock was examined under the microscope.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1135",
+  "word": "assist",
+  "pos": "v",
+  "tr": "yardım etmek, desteklemek",
+  "syn": [
+   "help",
+   "aid",
+   "support"
+  ],
+  "coll": "assist in + Ving; assist with",
+  "ex": "Robots assist surgeons in delicate operations.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1136",
+  "word": "compute",
+  "pos": "v",
+  "tr": "hesaplamak",
+  "syn": [
+   "calculate",
+   "determine",
+   "work out"
+  ],
+  "coll": "compute a value/the cost",
+  "ex": "The program computes the stress at each point.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1137",
+  "word": "consequent",
+  "pos": "adj",
+  "tr": "sonucu olarak ortaya çıkan, bunu izleyen",
+  "syn": [
+   "resulting",
+   "resultant",
+   "ensuing"
+  ],
+  "coll": "the consequent rise/loss",
+  "ex": "The drought and the consequent crop failure caused famine.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1138",
+  "word": "design",
+  "pos": "v",
+  "tr": "tasarlamak",
+  "syn": [
+   "plan",
+   "devise",
+   "develop"
+  ],
+  "coll": "be designed to + V1",
+  "ex": "The bridge was designed to withstand strong winds.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1139",
+  "word": "equate",
+  "pos": "v",
+  "tr": "eşit saymak, bir tutmak",
+  "syn": [
+   "identify",
+   "liken",
+   "associate"
+  ],
+  "coll": "equate A with B",
+  "ex": "Heat should not be equated with temperature.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1140",
+  "word": "injure",
+  "pos": "v",
+  "tr": "yaralamak, zarar vermek",
+  "syn": [
+   "hurt",
+   "harm",
+   "wound"
+  ],
+  "coll": "be seriously injured",
+  "ex": "Strong ultraviolet light can injure the eyes.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1141",
+  "word": "invest",
+  "pos": "v",
+  "tr": "yatırım yapmak; (zaman, emek) harcamak",
+  "syn": [
+   "fund",
+   "spend",
+   "devote"
+  ],
+  "coll": "invest in + isim",
+  "ex": "Many countries invest heavily in solar power.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1142",
+  "word": "primary",
+  "pos": "adj",
+  "tr": "birincil, temel, ana",
+  "syn": [
+   "main",
+   "chief",
+   "principal"
+  ],
+  "coll": "the primary cause/source",
+  "ex": "The Sun is the primary source of energy for life on Earth.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1143",
+  "word": "purchase",
+  "pos": "v",
+  "tr": "satın almak",
+  "syn": [
+   "buy",
+   "acquire",
+   "obtain"
+  ],
+  "coll": "purchase equipment/land",
+  "ex": "The laboratory purchased a new electron microscope.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1144",
+  "word": "region",
+  "pos": "n",
+  "tr": "bölge",
+  "syn": [
+   "area",
+   "zone",
+   "territory"
+  ],
+  "coll": "in the region; polar regions",
+  "ex": "Earthquakes are common in this region.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1145",
+  "word": "reside",
+  "pos": "v",
+  "tr": "ikamet etmek, bulunmak, yer almak",
+  "syn": [
+   "live",
+   "dwell",
+   "lie"
+  ],
+  "coll": "reside in + yer",
+  "ex": "Most of the atom's mass resides in the nucleus.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1146",
+  "word": "restrict",
+  "pos": "v",
+  "tr": "sınırlamak, kısıtlamak",
+  "syn": [
+   "limit",
+   "confine",
+   "constrain"
+  ],
+  "coll": "restrict A to B; restrict access",
+  "ex": "Low temperatures restrict the growth of bacteria.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1147",
+  "word": "site",
+  "pos": "n",
+  "tr": "yer, alan, saha",
+  "syn": [
+   "location",
+   "place",
+   "spot"
+  ],
+  "coll": "a construction/landing site; on site",
+  "ex": "The fossils were found at a site in East Africa.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1148",
+  "word": "circumstance",
+  "pos": "n",
+  "tr": "koşul, durum",
+  "syn": [
+   "condition",
+   "situation",
+   "state"
+  ],
+  "coll": "under certain circumstances",
+  "ex": "Under normal circumstances, the gas is stable.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1149",
+  "word": "constrain",
+  "pos": "v",
+  "tr": "kısıtlamak, sınırlamak",
+  "syn": [
+   "restrict",
+   "limit",
+   "restrain"
+  ],
+  "coll": "be constrained by",
+  "ex": "The design was constrained by the weight limit.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1150",
+  "word": "instance",
+  "pos": "n",
+  "tr": "örnek, durum",
+  "syn": [
+   "example",
+   "case",
+   "occasion"
+  ],
+  "coll": "for instance; in this instance",
+  "ex": "There are several instances of this failure in old pipelines.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1151",
+  "word": "locate",
+  "pos": "v",
+  "tr": "yerini saptamak, bulmak; yerleştirmek",
+  "syn": [
+   "find",
+   "detect",
+   "position"
+  ],
+  "coll": "be located in/at/near",
+  "ex": "Bats locate insects by sound.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1152",
+  "word": "negate",
+  "pos": "v",
+  "tr": "etkisiz kılmak, geçersiz kılmak",
+  "syn": [
+   "cancel out",
+   "nullify",
+   "invalidate"
+  ],
+  "coll": "negate the effect/benefit of",
+  "ex": "The extra weight negated the benefit of the larger engine.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1153",
+  "word": "physical",
+  "pos": "adj",
+  "tr": "fiziksel, maddi; bedensel",
+  "syn": [
+   "material",
+   "bodily",
+   "tangible"
+  ],
+  "coll": "physical properties/activity",
+  "ex": "The physical properties of the metal change at high temperatures.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1154",
+  "word": "publish",
+  "pos": "v",
+  "tr": "yayımlamak",
+  "syn": [
+   "issue",
+   "release",
+   "print"
+  ],
+  "coll": "publish a paper/results",
+  "ex": "The team published its findings last year.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1155",
+  "word": "register",
+  "pos": "v",
+  "tr": "kaydetmek; (alet) göstermek",
+  "syn": [
+   "record",
+   "log",
+   "show"
+  ],
+  "coll": "register a rise/change",
+  "ex": "The sensor registered a sudden rise in pressure.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1156",
+  "word": "scheme",
+  "pos": "n",
+  "tr": "plan, düzen, sistem",
+  "syn": [
+   "plan",
+   "programme",
+   "system"
+  ],
+  "coll": "a scheme for + Ving; a classification scheme",
+  "ex": "A new scheme for recycling plastics was introduced.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1157",
+  "word": "specify",
+  "pos": "v",
+  "tr": "belirtmek, açıkça tanımlamak",
+  "syn": [
+   "state",
+   "define",
+   "stipulate"
+  ],
+  "coll": "specify the size/conditions; as specified",
+  "ex": "The standard specifies the minimum thickness of the wall.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1158",
+  "word": "task",
+  "pos": "n",
+  "tr": "görev, iş",
+  "syn": [
+   "job",
+   "duty",
+   "assignment"
+  ],
+  "coll": "perform/carry out a task",
+  "ex": "The robot can perform simple tasks without human help.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1159",
+  "word": "approximate",
+  "pos": "adj",
+  "tr": "yaklaşık",
+  "syn": [
+   "rough",
+   "estimated",
+   "close"
+  ],
+  "coll": "an approximate value/number",
+  "ex": "The table gives the approximate age of each sample.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1160",
+  "word": "attitude",
+  "pos": "n",
+  "tr": "tutum, tavır",
+  "syn": [
+   "view",
+   "outlook",
+   "stance"
+  ],
+  "coll": "attitude to/towards",
+  "ex": "Public attitudes towards nuclear power have changed.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1161",
+  "word": "commit",
+  "pos": "v",
+  "tr": "adamak, taahhüt etmek; (hata) yapmak",
+  "syn": [
+   "pledge",
+   "devote",
+   "dedicate"
+  ],
+  "coll": "be committed to + Ving/isim",
+  "ex": "The government is committed to reducing emissions.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1162",
+  "word": "communicate",
+  "pos": "v",
+  "tr": "iletişim kurmak, iletmek",
+  "syn": [
+   "convey",
+   "transmit",
+   "correspond"
+  ],
+  "coll": "communicate with; communicate by",
+  "ex": "Whales communicate with each other by sound.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1163",
+  "word": "confer",
+  "pos": "v",
+  "tr": "kazandırmak, vermek; görüşmek",
+  "syn": [
+   "give",
+   "grant",
+   "bestow"
+  ],
+  "coll": "confer an advantage/resistance on",
+  "ex": "The gene confers resistance to the disease.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1164",
+  "word": "contrast",
+  "pos": "n",
+  "tr": "zıtlık, karşıtlık, fark",
+  "syn": [
+   "difference",
+   "disparity",
+   "distinction"
+  ],
+  "coll": "in contrast to; a sharp contrast between",
+  "ex": "There is a sharp contrast between the two climates.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1165",
+  "word": "error",
+  "pos": "n",
+  "tr": "hata, yanılgı",
+  "syn": [
+   "mistake",
+   "fault",
+   "inaccuracy"
+  ],
+  "coll": "a margin of error; human error",
+  "ex": "The measurement error was less than one per cent.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1166",
+  "word": "grant",
+  "pos": "v",
+  "tr": "vermek, tanımak; kabul etmek",
+  "syn": [
+   "give",
+   "award",
+   "allow"
+  ],
+  "coll": "grant permission/a patent",
+  "ex": "The team was granted access to the telescope.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1167",
+  "word": "implicate",
+  "pos": "v",
+  "tr": "(bir şeyin) sorumlusu olarak göstermek, ilişkilendirmek",
+  "syn": [
+   "involve",
+   "incriminate",
+   "associate"
+  ],
+  "coll": "be implicated in + isim",
+  "ex": "This gene has been implicated in several cancers.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1168",
+  "word": "internal",
+  "pos": "adj",
+  "tr": "iç, dahili",
+  "syn": [
+   "inner",
+   "inside",
+   "interior"
+  ],
+  "coll": "internal structure/organs",
+  "ex": "X-rays reveal the internal structure of the weld.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1169",
+  "word": "option",
+  "pos": "n",
+  "tr": "seçenek",
+  "syn": [
+   "choice",
+   "alternative",
+   "possibility"
+  ],
+  "coll": "a cheaper/viable option",
+  "ex": "Wind power is the cheapest option in this region.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1170",
+  "word": "prior",
+  "pos": "adj",
+  "tr": "önceki, daha önceki",
+  "syn": [
+   "previous",
+   "earlier",
+   "preceding"
+  ],
+  "coll": "prior knowledge/experience; prior to",
+  "ex": "No prior treatment of the surface is needed.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1171",
+  "word": "project",
+  "pos": "v",
+  "tr": "öngörmek, tahmin etmek; yansıtmak",
+  "syn": [
+   "forecast",
+   "predict",
+   "estimate"
+  ],
+  "coll": "be projected to + V1",
+  "ex": "Sea levels are projected to rise by half a metre.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1172",
+  "word": "retain",
+  "pos": "v",
+  "tr": "tutmak, korumak, muhafaza etmek",
+  "syn": [
+   "keep",
+   "hold",
+   "preserve"
+  ],
+  "coll": "retain heat/water/its shape",
+  "ex": "Clay soils retain water longer than sandy soils.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1173",
+  "word": "series",
+  "pos": "n",
+  "tr": "dizi, seri",
+  "syn": [
+   "sequence",
+   "succession",
+   "chain"
+  ],
+  "coll": "a series of experiments/tests",
+  "ex": "A series of tests was carried out on the new alloy.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1174",
+  "word": "status",
+  "pos": "n",
+  "tr": "durum, konum, statü",
+  "syn": [
+   "state",
+   "condition",
+   "standing"
+  ],
+  "coll": "the current status of; health status",
+  "ex": "The screen shows the current status of each pump.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1175",
+  "word": "summary",
+  "pos": "n",
+  "tr": "özet",
+  "syn": [
+   "outline",
+   "abstract",
+   "overview"
+  ],
+  "coll": "a brief summary; in summary",
+  "ex": "A brief summary of the results is given in Table 2.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1176",
+  "word": "amend",
+  "pos": "v",
+  "tr": "değiştirmek, düzeltmek",
+  "syn": [
+   "revise",
+   "alter",
+   "correct"
+  ],
+  "coll": "amend a law/design",
+  "ex": "The safety rules were amended after the accident.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1177",
+  "word": "aware",
+  "pos": "adj",
+  "tr": "farkında, haberdar",
+  "syn": [
+   "conscious",
+   "informed",
+   "mindful"
+  ],
+  "coll": "be aware of / aware that",
+  "ex": "Few people are aware of the risks of radon gas.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1178",
+  "word": "contact",
+  "pos": "n",
+  "tr": "temas, bağlantı",
+  "syn": [
+   "touch",
+   "connection",
+   "exposure"
+  ],
+  "coll": "in contact with; come into contact with",
+  "ex": "The metal reacts when it comes into contact with water.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1179",
+  "word": "draft",
+  "pos": "n",
+  "tr": "taslak",
+  "syn": [
+   "outline",
+   "sketch",
+   "version"
+  ],
+  "coll": "a first/final draft of",
+  "ex": "The first draft of the report was finished in May.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1180",
+  "word": "entity",
+  "pos": "n",
+  "tr": "varlık, birim",
+  "syn": [
+   "unit",
+   "body",
+   "object"
+  ],
+  "coll": "a separate/single entity",
+  "ex": "A virus is not a living entity outside a host cell.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1181",
+  "word": "evolve",
+  "pos": "v",
+  "tr": "evrimleşmek, gelişmek",
+  "syn": [
+   "develop",
+   "progress",
+   "adapt"
+  ],
+  "coll": "evolve from/into; evolve over time",
+  "ex": "Birds evolved from small dinosaurs.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1182",
+  "word": "generation",
+  "pos": "n",
+  "tr": "kuşak, nesil; üretim",
+  "syn": [
+   "age group",
+   "production",
+   "creation"
+  ],
+  "coll": "the next generation; power generation",
+  "ex": "The trait is passed from one generation to the next.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1183",
+  "word": "image",
+  "pos": "n",
+  "tr": "görüntü",
+  "syn": [
+   "picture",
+   "photograph",
+   "representation"
+  ],
+  "coll": "produce/capture an image of",
+  "ex": "The telescope produced a clear image of the planet.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1184",
+  "word": "mental",
+  "pos": "adj",
+  "tr": "zihinsel, ruhsal",
+  "syn": [
+   "psychological",
+   "cognitive",
+   "intellectual"
+  ],
+  "coll": "mental health/ability",
+  "ex": "Sleep is important for mental health.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1185",
+  "word": "network",
+  "pos": "n",
+  "tr": "ağ, şebeke",
+  "syn": [
+   "system",
+   "grid",
+   "web"
+  ],
+  "coll": "a network of + çoğul isim",
+  "ex": "A network of sensors monitors the bridge.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1186",
+  "word": "orient",
+  "pos": "v",
+  "tr": "yönlendirmek, yön bulmak",
+  "syn": [
+   "direct",
+   "align",
+   "position"
+  ],
+  "coll": "be oriented towards; orient oneself",
+  "ex": "Migrating birds orient themselves by the stars.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1187",
+  "word": "precise",
+  "pos": "adj",
+  "tr": "kesin, tam, hassas",
+  "syn": [
+   "exact",
+   "accurate",
+   "specific"
+  ],
+  "coll": "a precise measurement/location",
+  "ex": "Lasers allow precise measurement of distance.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1188",
+  "word": "prime",
+  "pos": "adj",
+  "tr": "başlıca, en önemli",
+  "syn": [
+   "main",
+   "chief",
+   "primary"
+  ],
+  "coll": "a prime example/cause of",
+  "ex": "Rust is a prime example of slow oxidation.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1189",
+  "word": "revenue",
+  "pos": "n",
+  "tr": "gelir, hasılat",
+  "syn": [
+   "income",
+   "earnings",
+   "proceeds"
+  ],
+  "coll": "generate revenue; annual revenue",
+  "ex": "The plant's revenue fell when steel prices dropped.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1190",
+  "word": "cite",
+  "pos": "v",
+  "tr": "kaynak göstermek, anmak",
+  "syn": [
+   "quote",
+   "mention",
+   "refer to"
+  ],
+  "coll": "cite a study/an example",
+  "ex": "The paper cites several earlier studies.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1191",
+  "word": "cooperate",
+  "pos": "v",
+  "tr": "iş birliği yapmak",
+  "syn": [
+   "collaborate",
+   "work together",
+   "team up"
+  ],
+  "coll": "cooperate with; cooperate in + Ving",
+  "ex": "Wolves cooperate to hunt large prey.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1192",
+  "word": "discriminate",
+  "pos": "v",
+  "tr": "ayırt etmek; ayrımcılık yapmak",
+  "syn": [
+   "distinguish",
+   "differentiate",
+   "tell apart"
+  ],
+  "coll": "discriminate between A and B",
+  "ex": "The sensor can discriminate between two similar gases.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1193",
+  "word": "edit",
+  "pos": "v",
+  "tr": "düzenlemek, düzeltmek",
+  "syn": [
+   "revise",
+   "correct",
+   "modify"
+  ],
+  "coll": "edit a gene/text",
+  "ex": "New tools allow scientists to edit genes precisely.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1194",
+  "word": "expert",
+  "pos": "n",
+  "tr": "uzman",
+  "syn": [
+   "specialist",
+   "authority",
+   "professional"
+  ],
+  "coll": "an expert in/on",
+  "ex": "Experts in the field disagree about the cause.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1195",
+  "word": "index",
+  "pos": "n",
+  "tr": "gösterge, endeks; dizin",
+  "syn": [
+   "indicator",
+   "measure",
+   "guide"
+  ],
+  "coll": "an index of; body mass index",
+  "ex": "Leaf colour is a useful index of plant health.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1196",
+  "word": "instruct",
+  "pos": "v",
+  "tr": "talimat vermek; öğretmek",
+  "syn": [
+   "direct",
+   "order",
+   "teach"
+  ],
+  "coll": "instruct sb to + V1",
+  "ex": "The software instructs the robot to stop.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1197",
+  "word": "minimum",
+  "pos": "adj",
+  "tr": "en az, asgari",
+  "syn": [
+   "least",
+   "lowest",
+   "smallest"
+  ],
+  "coll": "the minimum amount/temperature",
+  "ex": "The minimum thickness of the plate is five millimetres.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1198",
+  "word": "neutral",
+  "pos": "adj",
+  "tr": "nötr, tarafsız",
+  "syn": [
+   "impartial",
+   "unbiased",
+   "uncharged"
+  ],
+  "coll": "a neutral solution/atom",
+  "ex": "Pure water is neutral, with a pH of seven.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1199",
+  "word": "overseas",
+  "pos": "adj",
+  "tr": "denizaşırı, yurt dışı",
+  "syn": [
+   "foreign",
+   "international",
+   "external"
+  ],
+  "coll": "overseas markets/trade",
+  "ex": "Most of the ore comes from overseas mines.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1200",
+  "word": "presume",
+  "pos": "v",
+  "tr": "varsaymak, sanmak",
+  "syn": [
+   "assume",
+   "suppose",
+   "believe"
+  ],
+  "coll": "be presumed to + V1",
+  "ex": "The species was presumed to be extinct.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1201",
+  "word": "transport",
+  "pos": "v",
+  "tr": "taşımak, nakletmek",
+  "syn": [
+   "carry",
+   "convey",
+   "move"
+  ],
+  "coll": "transport A to B; be transported by",
+  "ex": "Red blood cells transport oxygen to the tissues.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1202",
+  "word": "adult",
+  "pos": "n",
+  "tr": "yetişkin, ergin",
+  "syn": [
+   "grown-up",
+   "mature individual"
+  ],
+  "coll": "a healthy adult; in adults",
+  "ex": "In adults, the disease is usually mild.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1203",
+  "word": "contrary",
+  "pos": "adj",
+  "tr": "zıt, aykırı, ters",
+  "syn": [
+   "opposite",
+   "opposing",
+   "conflicting"
+  ],
+  "coll": "contrary to; contrary evidence",
+  "ex": "The new results are contrary to earlier findings.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1204",
+  "word": "couple",
+  "pos": "v",
+  "tr": "bağlamak, birleştirmek",
+  "syn": [
+   "connect",
+   "link",
+   "join"
+  ],
+  "coll": "be coupled with/to",
+  "ex": "The motor is coupled to the pump by a short shaft.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1205",
+  "word": "decade",
+  "pos": "n",
+  "tr": "on yıl",
+  "syn": [
+   "ten years",
+   "ten-year period"
+  ],
+  "coll": "over the past decade; for decades",
+  "ex": "Solar panel prices have fallen sharply over the past decade.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1206",
+  "word": "definite",
+  "pos": "adj",
+  "tr": "kesin, belirli",
+  "syn": [
+   "certain",
+   "clear",
+   "precise"
+  ],
+  "coll": "a definite answer/shape",
+  "ex": "Solids have a definite shape, whereas gases do not.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1207",
+  "word": "equip",
+  "pos": "v",
+  "tr": "donatmak",
+  "syn": [
+   "supply",
+   "provide",
+   "fit out"
+  ],
+  "coll": "be equipped with",
+  "ex": "The probe is equipped with two cameras.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1208",
+  "word": "globe",
+  "pos": "n",
+  "tr": "yerküre, dünya; küre",
+  "syn": [
+   "world",
+   "earth",
+   "planet"
+  ],
+  "coll": "across/around the globe",
+  "ex": "The virus spread across the globe within months.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1209",
+  "word": "grade",
+  "pos": "n",
+  "tr": "kalite sınıfı, derece",
+  "syn": [
+   "quality",
+   "class",
+   "level"
+  ],
+  "coll": "a high/low grade of; steel grade",
+  "ex": "This grade of steel is used for car bodies.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1210",
+  "word": "innovate",
+  "pos": "v",
+  "tr": "yenilik yapmak",
+  "syn": [
+   "pioneer",
+   "modernise",
+   "break new ground"
+  ],
+  "coll": "innovate in + alan",
+  "ex": "Firms must innovate to remain competitive.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1211",
+  "word": "mode",
+  "pos": "n",
+  "tr": "biçim, tarz, mod",
+  "syn": [
+   "manner",
+   "form",
+   "method"
+  ],
+  "coll": "a mode of transport/operation",
+  "ex": "The device has two modes of operation.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1212",
+  "word": "publication",
+  "pos": "n",
+  "tr": "yayın, yayımlama",
+  "syn": [
+   "issue",
+   "release",
+   "printing"
+  ],
+  "coll": "the publication of; a scientific publication",
+  "ex": "The publication of the report was delayed.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1213",
+  "word": "quote",
+  "pos": "v",
+  "tr": "alıntı yapmak; (fiyat, değer) vermek",
+  "syn": [
+   "cite",
+   "repeat",
+   "mention"
+  ],
+  "coll": "quote a figure/source",
+  "ex": "The report quotes figures from a 2019 survey.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1214",
+  "word": "reverse",
+  "pos": "v",
+  "tr": "tersine çevirmek",
+  "syn": [
+   "undo",
+   "invert",
+   "overturn"
+  ],
+  "coll": "reverse the trend/process/damage",
+  "ex": "The damage to the nerve cannot be reversed.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1215",
+  "word": "sole",
+  "pos": "adj",
+  "tr": "tek, yegâne",
+  "syn": [
+   "only",
+   "single",
+   "lone"
+  ],
+  "coll": "the sole source/cause/purpose",
+  "ex": "Bamboo is almost the sole food of the giant panda.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1216",
+  "word": "submit",
+  "pos": "v",
+  "tr": "sunmak, teslim etmek; boyun eğmek",
+  "syn": [
+   "present",
+   "hand in",
+   "put forward"
+  ],
+  "coll": "submit a paper/report to",
+  "ex": "The team submitted its report to the safety board.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1217",
+  "word": "successor",
+  "pos": "n",
+  "tr": "ardıl, halef",
+  "syn": [
+   "replacement",
+   "heir",
+   "follower"
+  ],
+  "coll": "the successor to",
+  "ex": "The new telescope is the successor to Hubble.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1218",
+  "word": "ultimate",
+  "pos": "adj",
+  "tr": "nihai, son; en üst",
+  "syn": [
+   "final",
+   "eventual",
+   "supreme"
+  ],
+  "coll": "the ultimate goal/source/cause",
+  "ex": "The Sun is the ultimate source of most energy on Earth.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1219",
+  "word": "append",
+  "pos": "v",
+  "tr": "eklemek, iliştirmek",
+  "syn": [
+   "add",
+   "attach",
+   "annex"
+  ],
+  "coll": "append A to B",
+  "ex": "A list of the samples is appended to the report.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1220",
+  "word": "automate",
+  "pos": "v",
+  "tr": "otomatikleştirmek",
+  "syn": [
+   "mechanise",
+   "computerise",
+   "robotise"
+  ],
+  "coll": "a fully automated process",
+  "ex": "The whole welding line has been automated.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1221",
+  "word": "chart",
+  "pos": "n",
+  "tr": "çizelge, grafik; harita",
+  "syn": [
+   "graph",
+   "diagram",
+   "table"
+  ],
+  "coll": "a chart showing; a flow chart",
+  "ex": "The chart shows the change in temperature over time.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1222",
+  "word": "eventual",
+  "pos": "adj",
+  "tr": "nihai, sonunda gerçekleşen",
+  "syn": [
+   "final",
+   "ultimate",
+   "resulting"
+  ],
+  "coll": "the eventual outcome/failure",
+  "ex": "Small cracks led to the eventual failure of the shaft.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1223",
+  "word": "guideline",
+  "pos": "n",
+  "tr": "yönerge, kılavuz ilke",
+  "syn": [
+   "rule",
+   "recommendation",
+   "instruction"
+  ],
+  "coll": "follow/issue guidelines on",
+  "ex": "New guidelines on salt intake were issued last year.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1224",
+  "word": "implicit",
+  "pos": "adj",
+  "tr": "örtük, üstü kapalı",
+  "syn": [
+   "implied",
+   "unstated",
+   "indirect"
+  ],
+  "coll": "an implicit assumption; implicit in",
+  "ex": "The model contains an implicit assumption about friction.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1225",
+  "word": "intense",
+  "pos": "adj",
+  "tr": "yoğun, şiddetli",
+  "syn": [
+   "strong",
+   "extreme",
+   "powerful"
+  ],
+  "coll": "intense heat/pressure/light",
+  "ex": "The intense heat melted the surface of the rock.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1226",
+  "word": "practitioner",
+  "pos": "n",
+  "tr": "uygulayıcı; hekim",
+  "syn": [
+   "professional",
+   "specialist",
+   "doctor"
+  ],
+  "coll": "a medical/general practitioner",
+  "ex": "Medical practitioners must report such cases.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1227",
+  "word": "schedule",
+  "pos": "n",
+  "tr": "program, takvim, çizelge",
+  "syn": [
+   "timetable",
+   "plan",
+   "programme"
+  ],
+  "coll": "on schedule; ahead of/behind schedule",
+  "ex": "The project was completed ahead of schedule.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1228",
+  "word": "tense",
+  "pos": "adj",
+  "tr": "gergin",
+  "syn": [
+   "tight",
+   "taut",
+   "strained"
+  ],
+  "coll": "tense muscles; a tense situation",
+  "ex": "Tense muscles use more energy than relaxed ones.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1229",
+  "word": "vehicle",
+  "pos": "n",
+  "tr": "taşıt, araç",
+  "syn": [
+   "car",
+   "craft",
+   "conveyance"
+  ],
+  "coll": "an electric/a motor vehicle",
+  "ex": "Electric vehicles produce no exhaust gases.",
+  "freq": 3,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1230",
+  "word": "virtual",
+  "pos": "adj",
+  "tr": "sanal; fiilî, neredeyse tam",
+  "syn": [
+   "simulated",
+   "digital",
+   "practical"
+  ],
+  "coll": "a virtual model/environment",
+  "ex": "Engineers tested the design in a virtual wind tunnel.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1231",
+  "word": "assure",
+  "pos": "v",
+  "tr": "güvence vermek, temin etmek",
+  "syn": [
+   "guarantee",
+   "promise",
+   "ensure"
+  ],
+  "coll": "assure sb that; assure quality",
+  "ex": "Regular tests assure the quality of the product.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1232",
+  "word": "converse",
+  "pos": "n",
+  "tr": "tersi, zıddı",
+  "syn": [
+   "opposite",
+   "reverse",
+   "contrary"
+  ],
+  "coll": "the converse is true",
+  "ex": "Metals expand when heated; the converse occurs on cooling.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1233",
+  "word": "devote",
+  "pos": "v",
+  "tr": "adamak, ayırmak",
+  "syn": [
+   "dedicate",
+   "commit",
+   "allocate"
+  ],
+  "coll": "devote time/effort to + Ving",
+  "ex": "She devoted her career to studying volcanoes.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1234",
+  "word": "found",
+  "pos": "v",
+  "tr": "kurmak, temelini atmak",
+  "syn": [
+   "establish",
+   "set up",
+   "start"
+  ],
+  "coll": "be founded in + yıl; be founded on",
+  "ex": "The institute was founded in 1920.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1235",
+  "word": "inherent",
+  "pos": "adj",
+  "tr": "doğasında olan, yapısal",
+  "syn": [
+   "intrinsic",
+   "built-in",
+   "innate"
+  ],
+  "coll": "be inherent in; an inherent risk",
+  "ex": "Some risk is inherent in every surgical operation.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1236",
+  "word": "mediate",
+  "pos": "v",
+  "tr": "aracılık etmek, aracı olmak",
+  "syn": [
+   "convey",
+   "transmit",
+   "arbitrate"
+  ],
+  "coll": "be mediated by",
+  "ex": "The response is mediated by hormones.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1237",
+  "word": "minimal",
+  "pos": "adj",
+  "tr": "çok az, asgari",
+  "syn": [
+   "slight",
+   "negligible",
+   "minimum"
+  ],
+  "coll": "minimal damage/effect/risk",
+  "ex": "The new process causes minimal damage to the surface.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1238",
+  "word": "norm",
+  "pos": "n",
+  "tr": "norm, olağan durum; standart",
+  "syn": [
+   "standard",
+   "rule",
+   "convention"
+  ],
+  "coll": "become the norm; above the norm",
+  "ex": "Electric motors have become the norm in new trains.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1239",
+  "word": "qualitative",
+  "pos": "adj",
+  "tr": "nitel",
+  "syn": [
+   "descriptive",
+   "non-numerical"
+  ],
+  "coll": "qualitative data/analysis",
+  "ex": "The first tests gave only qualitative results.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1240",
+  "word": "relax",
+  "pos": "v",
+  "tr": "gevşemek, gevşetmek; rahatlamak",
+  "syn": [
+   "loosen",
+   "slacken",
+   "ease"
+  ],
+  "coll": "relax a muscle/the rules",
+  "ex": "The heart muscle contracts and then relaxes.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1241",
+  "word": "route",
+  "pos": "n",
+  "tr": "yol, rota, güzergâh",
+  "syn": [
+   "path",
+   "way",
+   "course"
+  ],
+  "coll": "a route to/from; a migration route",
+  "ex": "Many birds follow the same migration route every year.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1242",
+  "word": "sphere",
+  "pos": "n",
+  "tr": "küre; alan",
+  "syn": [
+   "ball",
+   "globe",
+   "field"
+  ],
+  "coll": "a hollow sphere; in the sphere of",
+  "ex": "A liquid drop in space forms a perfect sphere.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1243",
+  "word": "subordinate",
+  "pos": "adj",
+  "tr": "ikincil, alt, bağlı",
+  "syn": [
+   "secondary",
+   "lesser",
+   "minor"
+  ],
+  "coll": "subordinate to; a subordinate role",
+  "ex": "In this design, speed is subordinate to safety.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1244",
+  "word": "unify",
+  "pos": "v",
+  "tr": "birleştirmek",
+  "syn": [
+   "unite",
+   "combine",
+   "merge"
+  ],
+  "coll": "unify A and B; a unified theory",
+  "ex": "Maxwell unified electricity and magnetism in one theory.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1245",
+  "word": "vision",
+  "pos": "n",
+  "tr": "görme (duyusu); öngörü",
+  "syn": [
+   "sight",
+   "eyesight",
+   "foresight"
+  ],
+  "coll": "night/colour vision; poor vision",
+  "ex": "Owls have excellent night vision.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1246",
+  "word": "conceive",
+  "pos": "v",
+  "tr": "tasarlamak, aklına getirmek; gebe kalmak",
+  "syn": [
+   "imagine",
+   "devise",
+   "think up"
+  ],
+  "coll": "conceive of; conceive an idea",
+  "ex": "The idea was first conceived in the 1960s.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1247",
+  "word": "convince",
+  "pos": "v",
+  "tr": "ikna etmek",
+  "syn": [
+   "persuade",
+   "satisfy",
+   "assure"
+  ],
+  "coll": "convince sb that/of",
+  "ex": "The data convinced most scientists that the theory was right.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1248",
+  "word": "depress",
+  "pos": "v",
+  "tr": "düşürmek, bastırmak; moralini bozmak",
+  "syn": [
+   "lower",
+   "reduce",
+   "weaken"
+  ],
+  "coll": "depress prices/activity",
+  "ex": "The drug depresses the activity of the nervous system.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1249",
+  "word": "forthcoming",
+  "pos": "adj",
+  "tr": "yakında çıkacak, önümüzdeki",
+  "syn": [
+   "upcoming",
+   "approaching",
+   "imminent"
+  ],
+  "coll": "a forthcoming study/mission",
+  "ex": "The forthcoming mission will study the moons of Jupiter.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1250",
+  "word": "incline",
+  "pos": "v",
+  "tr": "eğmek, eğilmek; eğilimli olmak",
+  "syn": [
+   "tilt",
+   "slope",
+   "tend"
+  ],
+  "coll": "be inclined at an angle; be inclined to",
+  "ex": "The Earth's axis is inclined at about 23 degrees.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1251",
+  "word": "intrinsic",
+  "pos": "adj",
+  "tr": "özünde olan, içsel",
+  "syn": [
+   "inherent",
+   "innate",
+   "built-in"
+  ],
+  "coll": "an intrinsic property/part of",
+  "ex": "Hardness is an intrinsic property of diamond.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1252",
+  "word": "invoke",
+  "pos": "v",
+  "tr": "başvurmak, öne sürmek, dayanmak",
+  "syn": [
+   "cite",
+   "appeal to",
+   "call on"
+  ],
+  "coll": "invoke a theory/law to explain",
+  "ex": "Scientists invoke dark matter to explain the motion of galaxies.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1253",
+  "word": "odd",
+  "pos": "adj",
+  "tr": "tuhaf; tek (sayı)",
+  "syn": [
+   "strange",
+   "unusual",
+   "peculiar"
+  ],
+  "coll": "an odd result/number",
+  "ex": "The team noticed an odd pattern in the data.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1254",
+  "word": "reluctance",
+  "pos": "n",
+  "tr": "isteksizlik",
+  "syn": [
+   "unwillingness",
+   "hesitation",
+   "disinclination"
+  ],
+  "coll": "reluctance to + V1",
+  "ex": "There is some reluctance to adopt the new method.",
+  "freq": 1,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1255",
+  "word": "so-called",
+  "pos": "adj",
+  "tr": "… denilen, … diye adlandırılan; sözde",
+  "syn": [
+   "supposed",
+   "alleged",
+   "self-styled"
+  ],
+  "coll": "the so-called + isim",
+  "ex": "The so-called greenhouse gases trap heat in the atmosphere.",
+  "freq": 2,
+  "tags": [
+   "fen",
+   "awl"
+  ]
+ },
+ {
+  "id": "w1256",
+  "word": "shrink",
+  "pos": "v",
+  "tr": "küçülmek, büzülmek, daralmak",
+  "syn": [
+   "contract",
+   "diminish",
+   "decrease"
+  ],
+  "coll": "shrink by + %; shrink in size",
+  "ex": "Most metals shrink slightly as they cool.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1257",
+  "word": "swell",
+  "pos": "v",
+  "tr": "şişmek, kabarmak",
+  "syn": [
+   "expand",
+   "enlarge",
+   "bulge"
+  ],
+  "coll": "swell with water; swell up",
+  "ex": "Wood swells when it absorbs water.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1258",
+  "word": "melt",
+  "pos": "v",
+  "tr": "erimek, eritmek",
+  "syn": [
+   "thaw",
+   "liquefy",
+   "dissolve"
+  ],
+  "coll": "melt at + sıcaklık; melting point",
+  "ex": "Pure iron melts at 1538 °C.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1259",
+  "word": "freeze",
+  "pos": "v",
+  "tr": "donmak, dondurmak",
+  "syn": [
+   "ice over",
+   "solidify",
+   "chill"
+  ],
+  "coll": "freeze at 0 °C; freezing point",
+  "ex": "Sea water freezes at about minus two degrees.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1260",
+  "word": "sink",
+  "pos": "v",
+  "tr": "batmak, çökmek; düşmek",
+  "syn": [
+   "submerge",
+   "descend",
+   "drop"
+  ],
+  "coll": "sink to the bottom; sink into",
+  "ex": "Dense cold water sinks to the ocean floor.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1261",
+  "word": "leak",
+  "pos": "v",
+  "tr": "sızmak, sızdırmak",
+  "syn": [
+   "seep",
+   "escape",
+   "drip"
+  ],
+  "coll": "leak from/into; leak out",
+  "ex": "Oil was leaking from a damaged seal.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1262",
+  "word": "drain",
+  "pos": "v",
+  "tr": "boşaltmak, akıtmak, kurutmak",
+  "syn": [
+   "empty",
+   "discharge",
+   "draw off"
+  ],
+  "coll": "drain water from; drain into",
+  "ex": "The wetland was drained to create farmland.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1263",
+  "word": "bend",
+  "pos": "v",
+  "tr": "eğmek, bükmek, eğilmek",
+  "syn": [
+   "curve",
+   "flex",
+   "bow"
+  ],
+  "coll": "bend light; bend without breaking",
+  "ex": "A lens bends the light that passes through it.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1264",
+  "word": "crack",
+  "pos": "v",
+  "tr": "çatlamak, çatlatmak",
+  "syn": [
+   "fracture",
+   "split",
+   "break"
+  ],
+  "coll": "crack under stress/pressure",
+  "ex": "Glass cracks if it is cooled too quickly.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1265",
+  "word": "coat",
+  "pos": "v",
+  "tr": "kaplamak",
+  "syn": [
+   "cover",
+   "plate",
+   "paint"
+  ],
+  "coll": "be coated with + malzeme",
+  "ex": "The steel sheet is coated with zinc to prevent rust.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1266",
+  "word": "seal",
+  "pos": "v",
+  "tr": "sızdırmaz hâle getirmek, mühürlemek, kapatmak",
+  "syn": [
+   "close",
+   "plug",
+   "fasten"
+  ],
+  "coll": "seal a gap/container; be sealed in",
+  "ex": "The samples were sealed in glass tubes.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1267",
+  "word": "grind",
+  "pos": "v",
+  "tr": "öğütmek; taşlamak",
+  "syn": [
+   "crush",
+   "mill",
+   "polish"
+  ],
+  "coll": "grind into powder; grind a surface",
+  "ex": "The ore is ground into a fine powder.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1268",
+  "word": "purify",
+  "pos": "v",
+  "tr": "arıtmak, saflaştırmak",
+  "syn": [
+   "clean",
+   "refine",
+   "filter"
+  ],
+  "coll": "purify water/air/a metal",
+  "ex": "The water is purified before it reaches homes.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1269",
+  "word": "merge",
+  "pos": "v",
+  "tr": "birleşmek, birleştirmek",
+  "syn": [
+   "combine",
+   "join",
+   "unite"
+  ],
+  "coll": "merge with; merge into",
+  "ex": "The two rivers merge near the coast.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1270",
+  "word": "split",
+  "pos": "v",
+  "tr": "bölmek, ayırmak, yarılmak",
+  "syn": [
+   "divide",
+   "separate",
+   "break up"
+  ],
+  "coll": "split into; split apart",
+  "ex": "A prism splits white light into colours.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1271",
+  "word": "divide",
+  "pos": "v",
+  "tr": "bölmek, ayırmak; bölünmek",
+  "syn": [
+   "split",
+   "separate",
+   "partition"
+  ],
+  "coll": "divide into; divide A by B",
+  "ex": "Bacteria divide every twenty minutes under ideal conditions.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1272",
+  "word": "multiply",
+  "pos": "v",
+  "tr": "çoğalmak; çarpmak",
+  "syn": [
+   "increase",
+   "reproduce",
+   "proliferate"
+  ],
+  "coll": "multiply rapidly; multiply A by B",
+  "ex": "Bacteria multiply rapidly in warm food.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1273",
+  "word": "outweigh",
+  "pos": "v",
+  "tr": "ağır basmak, daha önemli olmak",
+  "syn": [
+   "exceed",
+   "surpass",
+   "override"
+  ],
+  "coll": "the benefits outweigh the risks",
+  "ex": "The benefits of the vaccine far outweigh its risks.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1274",
+  "word": "outnumber",
+  "pos": "v",
+  "tr": "sayıca üstün olmak",
+  "syn": [
+   "exceed",
+   "surpass",
+   "outstrip"
+  ],
+  "coll": "outnumber A by two to one",
+  "ex": "Bacterial cells outnumber human cells in the gut.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1275",
+  "word": "delay",
+  "pos": "v",
+  "tr": "geciktirmek, ertelemek",
+  "syn": [
+   "postpone",
+   "hold up",
+   "slow"
+  ],
+  "coll": "delay + Ving; be delayed by",
+  "ex": "Bad weather delayed the launch by two days.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1276",
+  "word": "postpone",
+  "pos": "v",
+  "tr": "ertelemek",
+  "syn": [
+   "delay",
+   "put off",
+   "defer"
+  ],
+  "coll": "postpone sth until; postpone + Ving",
+  "ex": "The test was postponed until the new sensor arrived.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1277",
+  "word": "lessen",
+  "pos": "v",
+  "tr": "azaltmak, hafifletmek",
+  "syn": [
+   "reduce",
+   "decrease",
+   "ease"
+  ],
+  "coll": "lessen the risk/impact/pain",
+  "ex": "Wearing a helmet lessens the risk of head injury.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1278",
+  "word": "extend",
+  "pos": "v",
+  "tr": "uzatmak, genişletmek; uzanmak",
+  "syn": [
+   "lengthen",
+   "expand",
+   "stretch"
+  ],
+  "coll": "extend the life of; extend from A to B",
+  "ex": "Regular maintenance extends the life of the machine.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1279",
+  "word": "strengthen",
+  "pos": "v",
+  "tr": "güçlendirmek",
+  "syn": [
+   "reinforce",
+   "fortify",
+   "toughen"
+  ],
+  "coll": "strengthen a structure/the bond",
+  "ex": "Small amounts of carbon strengthen iron.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1280",
+  "word": "weaken",
+  "pos": "v",
+  "tr": "zayıflatmak, zayıflamak",
+  "syn": [
+   "undermine",
+   "impair",
+   "reduce"
+  ],
+  "coll": "weaken the structure/immune system",
+  "ex": "Repeated heating weakens the metal.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1281",
+  "word": "harden",
+  "pos": "v",
+  "tr": "sertleşmek, sertleştirmek",
+  "syn": [
+   "solidify",
+   "stiffen",
+   "set"
+  ],
+  "coll": "harden steel; harden on cooling",
+  "ex": "The steel is hardened by rapid cooling.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1282",
+  "word": "narrow",
+  "pos": "v",
+  "tr": "daraltmak, daralmak",
+  "syn": [
+   "reduce",
+   "tighten",
+   "limit"
+  ],
+  "coll": "narrow the gap; narrow down",
+  "ex": "Fat deposits narrow the blood vessels.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1283",
+  "word": "worsen",
+  "pos": "v",
+  "tr": "kötüleşmek, kötüleştirmek",
+  "syn": [
+   "deteriorate",
+   "aggravate",
+   "decline"
+  ],
+  "coll": "worsen the problem; conditions worsen",
+  "ex": "Air pollution worsens asthma symptoms.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1284",
+  "word": "stabilise",
+  "pos": "v",
+  "tr": "dengelemek, sabitlemek, kararlı hâle getirmek",
+  "syn": [
+   "steady",
+   "balance",
+   "fix"
+  ],
+  "coll": "stabilise the temperature/structure",
+  "ex": "Small fins stabilise the rocket during flight.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1285",
+  "word": "activate",
+  "pos": "v",
+  "tr": "etkinleştirmek, harekete geçirmek",
+  "syn": [
+   "trigger",
+   "start",
+   "switch on"
+  ],
+  "coll": "activate a sensor/gene/an alarm",
+  "ex": "Smoke activates the alarm within seconds.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1286",
+  "word": "stimulate",
+  "pos": "v",
+  "tr": "uyarmak, teşvik etmek",
+  "syn": [
+   "encourage",
+   "trigger",
+   "promote"
+  ],
+  "coll": "stimulate growth/the production of",
+  "ex": "Sunlight stimulates the production of vitamin D.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1287",
+  "word": "provoke",
+  "pos": "v",
+  "tr": "yol açmak, kışkırtmak, uyandırmak",
+  "syn": [
+   "cause",
+   "trigger",
+   "arouse"
+  ],
+  "coll": "provoke a reaction/response",
+  "ex": "The vaccine provokes a strong immune response.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1288",
+  "word": "discharge",
+  "pos": "v",
+  "tr": "boşaltmak, deşarj etmek, salmak",
+  "syn": [
+   "release",
+   "emit",
+   "empty"
+  ],
+  "coll": "discharge waste into; discharge a battery",
+  "ex": "The factory discharged waste water into the river.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1289",
+  "word": "surround",
+  "pos": "v",
+  "tr": "çevrelemek, kuşatmak",
+  "syn": [
+   "encircle",
+   "enclose",
+   "envelop"
+  ],
+  "coll": "be surrounded by",
+  "ex": "The nucleus is surrounded by a cloud of electrons.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1290",
+  "word": "enclose",
+  "pos": "v",
+  "tr": "içine almak, çevrelemek, kapatmak",
+  "syn": [
+   "surround",
+   "contain",
+   "encase"
+  ],
+  "coll": "be enclosed in/by",
+  "ex": "The reactor core is enclosed in thick concrete.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1291",
+  "word": "uncover",
+  "pos": "v",
+  "tr": "ortaya çıkarmak, açığa çıkarmak",
+  "syn": [
+   "reveal",
+   "expose",
+   "discover"
+  ],
+  "coll": "uncover evidence/a link",
+  "ex": "The dig uncovered tools made 40,000 years ago.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1292",
+  "word": "conceal",
+  "pos": "v",
+  "tr": "gizlemek, saklamak",
+  "syn": [
+   "hide",
+   "cover",
+   "mask"
+  ],
+  "coll": "conceal sth from; be concealed by",
+  "ex": "Thick clouds conceal the surface of Venus.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1293",
+  "word": "mimic",
+  "pos": "v",
+  "tr": "taklit etmek, benzemek",
+  "syn": [
+   "imitate",
+   "copy",
+   "simulate"
+  ],
+  "coll": "mimic the behaviour/structure of",
+  "ex": "Some harmless flies mimic wasps.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1294",
+  "word": "inherit",
+  "pos": "v",
+  "tr": "kalıtım yoluyla almak, miras almak",
+  "syn": [
+   "receive",
+   "acquire",
+   "be left"
+  ],
+  "coll": "inherit a gene/trait from",
+  "ex": "Children inherit half of their genes from each parent.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1295",
+  "word": "descend",
+  "pos": "v",
+  "tr": "inmek, alçalmak; soyundan gelmek",
+  "syn": [
+   "go down",
+   "drop",
+   "fall"
+  ],
+  "coll": "descend from; descend to",
+  "ex": "The probe descended slowly through the atmosphere.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1296",
+  "word": "thrive",
+  "pos": "v",
+  "tr": "gelişmek, iyi büyümek, serpilmek",
+  "syn": [
+   "flourish",
+   "prosper",
+   "grow"
+  ],
+  "coll": "thrive in/on + koşul",
+  "ex": "Some bacteria thrive in very hot water.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1297",
+  "word": "flourish",
+  "pos": "v",
+  "tr": "gelişmek, serpilmek, bolca yetişmek",
+  "syn": [
+   "thrive",
+   "prosper",
+   "bloom"
+  ],
+  "coll": "flourish in + ortam",
+  "ex": "Algae flourish in water rich in nitrogen.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1298",
+  "word": "vanish",
+  "pos": "v",
+  "tr": "ortadan kaybolmak, yok olmak",
+  "syn": [
+   "disappear",
+   "fade",
+   "die out"
+  ],
+  "coll": "vanish from; vanish completely",
+  "ex": "Many frog species have vanished from the region.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1299",
+  "word": "fade",
+  "pos": "v",
+  "tr": "solmak, zayıflamak, kaybolmak",
+  "syn": [
+   "dim",
+   "weaken",
+   "decline"
+  ],
+  "coll": "fade away; fade with time",
+  "ex": "The paint fades when it is exposed to sunlight.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1300",
+  "word": "decay",
+  "pos": "v",
+  "tr": "çürümek, bozunmak",
+  "syn": [
+   "rot",
+   "decompose",
+   "break down"
+  ],
+  "coll": "decay into; radioactive decay",
+  "ex": "Uranium decays very slowly into lead.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1301",
+  "word": "nourish",
+  "pos": "v",
+  "tr": "beslemek",
+  "syn": [
+   "feed",
+   "sustain",
+   "nurture"
+  ],
+  "coll": "nourish cells/the soil",
+  "ex": "Blood nourishes every cell in the body.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1302",
+  "word": "digest",
+  "pos": "v",
+  "tr": "sindirmek",
+  "syn": [
+   "break down",
+   "absorb",
+   "process"
+  ],
+  "coll": "digest food/protein",
+  "ex": "Cows can digest grass with the help of bacteria.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1303",
+  "word": "secrete",
+  "pos": "v",
+  "tr": "salgılamak",
+  "syn": [
+   "release",
+   "produce",
+   "discharge"
+  ],
+  "coll": "secrete a hormone/an enzyme",
+  "ex": "The stomach secretes acid to break down food.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1304",
+  "word": "circulate",
+  "pos": "v",
+  "tr": "dolaşmak, dolaştırmak",
+  "syn": [
+   "flow",
+   "move round",
+   "spread"
+  ],
+  "coll": "circulate through/around",
+  "ex": "Cooling water circulates through the engine.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1305",
+  "word": "invade",
+  "pos": "v",
+  "tr": "istila etmek",
+  "syn": [
+   "occupy",
+   "overrun",
+   "enter"
+  ],
+  "coll": "invade a habitat/tissue",
+  "ex": "Cancer cells can invade nearby tissue.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1306",
+  "word": "inhabit",
+  "pos": "v",
+  "tr": "(bir yerde) yaşamak, mesken tutmak",
+  "syn": [
+   "live in",
+   "occupy",
+   "populate"
+  ],
+  "coll": "inhabit a region/forest",
+  "ex": "Few animals inhabit the deep ocean floor.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1307",
+  "word": "cultivate",
+  "pos": "v",
+  "tr": "ekip biçmek, yetiştirmek",
+  "syn": [
+   "grow",
+   "farm",
+   "raise"
+  ],
+  "coll": "cultivate crops/land",
+  "ex": "Rice has been cultivated in Asia for thousands of years.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1308",
+  "word": "irrigate",
+  "pos": "v",
+  "tr": "sulamak",
+  "syn": [
+   "water",
+   "flood",
+   "supply with water"
+  ],
+  "coll": "irrigate fields/crops",
+  "ex": "Farmers irrigate their fields with river water.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1309",
+  "word": "fertilise",
+  "pos": "v",
+  "tr": "gübrelemek; döllemek",
+  "syn": [
+   "enrich",
+   "feed",
+   "pollinate"
+  ],
+  "coll": "fertilise the soil/an egg",
+  "ex": "The fields are fertilised in early spring.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1310",
+  "word": "diagnose",
+  "pos": "v",
+  "tr": "teşhis etmek, tanı koymak",
+  "syn": [
+   "identify",
+   "detect",
+   "determine"
+  ],
+  "coll": "be diagnosed with; diagnose a fault",
+  "ex": "The disease is difficult to diagnose at an early stage.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1311",
+  "word": "administer",
+  "pos": "v",
+  "tr": "(ilaç) vermek, uygulamak; yönetmek",
+  "syn": [
+   "give",
+   "apply",
+   "manage"
+  ],
+  "coll": "administer a drug/dose to",
+  "ex": "The drug was administered to fifty patients.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1312",
+  "word": "combat",
+  "pos": "v",
+  "tr": "mücadele etmek, savaşmak",
+  "syn": [
+   "fight",
+   "tackle",
+   "counter"
+  ],
+  "coll": "combat disease/climate change",
+  "ex": "New drugs are needed to combat resistant bacteria.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1313",
+  "word": "tackle",
+  "pos": "v",
+  "tr": "ele almak, üstesinden gelmeye çalışmak",
+  "syn": [
+   "address",
+   "deal with",
+   "confront"
+  ],
+  "coll": "tackle a problem/an issue",
+  "ex": "Engineers are tackling the problem of battery weight.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1314",
+  "word": "address",
+  "pos": "v",
+  "tr": "ele almak, çözüm aramak",
+  "syn": [
+   "tackle",
+   "deal with",
+   "attend to"
+  ],
+  "coll": "address a problem/question/need",
+  "ex": "The study addresses the question of how birds navigate.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1315",
+  "word": "postulate",
+  "pos": "v",
+  "tr": "varsaymak, öne sürmek",
+  "syn": [
+   "propose",
+   "hypothesise",
+   "suggest"
+  ],
+  "coll": "postulate that; postulate the existence of",
+  "ex": "Physicists postulated the existence of a new particle.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1316",
+  "word": "speculate",
+  "pos": "v",
+  "tr": "tahmin yürütmek, kuram yürütmek",
+  "syn": [
+   "guess",
+   "theorise",
+   "suppose"
+  ],
+  "coll": "speculate that/about/on",
+  "ex": "Scientists speculate that the lake was once much larger.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1317",
+  "word": "forecast",
+  "pos": "v",
+  "tr": "tahmin etmek (hava, gelecek)",
+  "syn": [
+   "predict",
+   "project",
+   "foresee"
+  ],
+  "coll": "forecast the weather/demand",
+  "ex": "Meteorologists forecast heavy rain for the weekend.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1318",
+  "word": "foresee",
+  "pos": "v",
+  "tr": "öngörmek",
+  "syn": [
+   "predict",
+   "anticipate",
+   "expect"
+  ],
+  "coll": "foresee a problem; in the foreseeable future",
+  "ex": "Nobody foresaw the rapid spread of the virus.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1319",
+  "word": "envisage",
+  "pos": "v",
+  "tr": "öngörmek, tasavvur etmek",
+  "syn": [
+   "imagine",
+   "foresee",
+   "picture"
+  ],
+  "coll": "envisage a future/use",
+  "ex": "The plan envisages a network of wind farms.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1320",
+  "word": "dispute",
+  "pos": "v",
+  "tr": "itiraz etmek, tartışmak",
+  "syn": [
+   "challenge",
+   "question",
+   "contest"
+  ],
+  "coll": "dispute a claim/finding",
+  "ex": "Some researchers dispute the results of the trial.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1321",
+  "word": "endorse",
+  "pos": "v",
+  "tr": "onaylamak, desteklemek",
+  "syn": [
+   "approve",
+   "support",
+   "back"
+  ],
+  "coll": "endorse a plan/product",
+  "ex": "The committee endorsed the new safety standard.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1322",
+  "word": "ban",
+  "pos": "v",
+  "tr": "yasaklamak",
+  "syn": [
+   "prohibit",
+   "forbid",
+   "outlaw"
+  ],
+  "coll": "ban the use of; ban sb from",
+  "ex": "Many countries have banned the use of asbestos.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1323",
+  "word": "compel",
+  "pos": "v",
+  "tr": "zorlamak, mecbur etmek",
+  "syn": [
+   "force",
+   "oblige",
+   "require"
+  ],
+  "coll": "compel sb to + V1",
+  "ex": "The drought compelled farmers to abandon their land.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1324",
+  "word": "urge",
+  "pos": "v",
+  "tr": "ısrarla istemek, teşvik etmek",
+  "syn": [
+   "encourage",
+   "press",
+   "advise"
+  ],
+  "coll": "urge sb to + V1",
+  "ex": "Doctors urge patients to finish the full course of treatment.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1325",
+  "word": "prompt",
+  "pos": "v",
+  "tr": "yol açmak, harekete geçirmek",
+  "syn": [
+   "cause",
+   "trigger",
+   "encourage"
+  ],
+  "coll": "prompt sb to + V1; prompt a change",
+  "ex": "The accident prompted a review of safety rules.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1326",
+  "word": "attract",
+  "pos": "v",
+  "tr": "çekmek, cezbetmek",
+  "syn": [
+   "draw",
+   "pull",
+   "lure"
+  ],
+  "coll": "attract insects/attention",
+  "ex": "A magnet attracts iron and nickel.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1327",
+  "word": "repel",
+  "pos": "v",
+  "tr": "itmek, uzaklaştırmak",
+  "syn": [
+   "push away",
+   "drive away",
+   "ward off"
+  ],
+  "coll": "repel water/insects; repel each other",
+  "ex": "Like charges repel each other.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1328",
+  "word": "elevate",
+  "pos": "v",
+  "tr": "yükseltmek, artırmak",
+  "syn": [
+   "raise",
+   "lift",
+   "increase"
+  ],
+  "coll": "elevated levels/temperature",
+  "ex": "Stress elevates blood pressure.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1329",
+  "word": "soar",
+  "pos": "v",
+  "tr": "hızla yükselmek; süzülmek",
+  "syn": [
+   "rocket",
+   "rise",
+   "climb"
+  ],
+  "coll": "soar to + değer; prices soar",
+  "ex": "Temperatures soared to 45 °C during the heat wave.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1330",
+  "word": "surge",
+  "pos": "v",
+  "tr": "aniden yükselmek, hızla artmak",
+  "syn": [
+   "rush",
+   "rise",
+   "jump"
+  ],
+  "coll": "surge by + %; surge through",
+  "ex": "Demand for electricity surges in the evening.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1331",
+  "word": "span",
+  "pos": "v",
+  "tr": "kapsamak, boyunca uzanmak",
+  "syn": [
+   "cover",
+   "extend across",
+   "bridge"
+  ],
+  "coll": "span + süre/mesafe",
+  "ex": "The study spanned a period of thirty years.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1332",
+  "word": "exemplify",
+  "pos": "v",
+  "tr": "örneklemek, tipik örneği olmak",
+  "syn": [
+   "illustrate",
+   "typify",
+   "represent"
+  ],
+  "coll": "be exemplified by",
+  "ex": "This trend is exemplified by the rise of electric cars.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1333",
+  "word": "entail",
+  "pos": "v",
+  "tr": "gerektirmek, beraberinde getirmek",
+  "syn": [
+   "involve",
+   "require",
+   "necessitate"
+  ],
+  "coll": "entail a risk/cost; entail + Ving",
+  "ex": "Deep-sea mining entails serious environmental risks.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1334",
+  "word": "necessitate",
+  "pos": "v",
+  "tr": "zorunlu kılmak, gerektirmek",
+  "syn": [
+   "require",
+   "demand",
+   "entail"
+  ],
+  "coll": "necessitate a change/+ Ving",
+  "ex": "The damage necessitated the replacement of the whole pipe.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1335",
+  "word": "characterise",
+  "pos": "v",
+  "tr": "karakterize etmek, ayırt edici özelliği olmak; nitelendirmek",
+  "syn": [
+   "typify",
+   "distinguish",
+   "define"
+  ],
+  "coll": "be characterised by",
+  "ex": "Deserts are characterised by very low rainfall.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1336",
+  "word": "depict",
+  "pos": "v",
+  "tr": "tasvir etmek, göstermek",
+  "syn": [
+   "portray",
+   "show",
+   "illustrate"
+  ],
+  "coll": "depict sth as; be depicted in",
+  "ex": "The cave paintings depict animals that are now extinct.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1337",
+  "word": "outline",
+  "pos": "v",
+  "tr": "ana hatlarıyla anlatmak, özetlemek",
+  "syn": [
+   "summarise",
+   "sketch",
+   "describe"
+  ],
+  "coll": "outline a plan/method",
+  "ex": "The report outlines three ways to cut emissions.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1338",
+  "word": "pioneer",
+  "pos": "v",
+  "tr": "öncülük etmek, ilk kez geliştirmek",
+  "syn": [
+   "introduce",
+   "develop",
+   "initiate"
+  ],
+  "coll": "pioneer a technique/the use of",
+  "ex": "She pioneered the use of X-rays in medicine.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1339",
+  "word": "manufacture",
+  "pos": "v",
+  "tr": "üretmek, imal etmek",
+  "syn": [
+   "produce",
+   "make",
+   "fabricate"
+  ],
+  "coll": "manufacture goods/parts",
+  "ex": "The blades are manufactured from a single piece of metal.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1340",
+  "word": "install",
+  "pos": "v",
+  "tr": "kurmak, monte etmek, yerleştirmek",
+  "syn": [
+   "fit",
+   "set up",
+   "mount"
+  ],
+  "coll": "install a system/sensor",
+  "ex": "Solar panels were installed on the roof.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1341",
+  "word": "convey",
+  "pos": "v",
+  "tr": "iletmek, taşımak, aktarmak",
+  "syn": [
+   "carry",
+   "transmit",
+   "communicate"
+  ],
+  "coll": "convey information/a signal to",
+  "ex": "Nerves convey signals from the skin to the brain.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1342",
+  "word": "conserve",
+  "pos": "v",
+  "tr": "korumak, tasarruflu kullanmak",
+  "syn": [
+   "preserve",
+   "save",
+   "protect"
+  ],
+  "coll": "conserve energy/water/wildlife",
+  "ex": "Desert plants have thick leaves to conserve water.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1343",
+  "word": "waste",
+  "pos": "v",
+  "tr": "israf etmek, boşa harcamak",
+  "syn": [
+   "squander",
+   "misuse",
+   "throw away"
+  ],
+  "coll": "waste energy/time/water",
+  "ex": "Old engines waste most of their fuel as heat.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1344",
+  "word": "probe",
+  "pos": "v",
+  "tr": "araştırmak, incelemek",
+  "syn": [
+   "investigate",
+   "examine",
+   "explore"
+  ],
+  "coll": "probe the structure of; probe into",
+  "ex": "Scientists use X-rays to probe the structure of crystals.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1345",
+  "word": "calibrate",
+  "pos": "v",
+  "tr": "kalibre etmek, ayarlamak",
+  "syn": [
+   "adjust",
+   "tune",
+   "standardise"
+  ],
+  "coll": "calibrate an instrument against",
+  "ex": "The sensor must be calibrated before each test.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1346",
+  "word": "remedy",
+  "pos": "v",
+  "tr": "gidermek, düzeltmek",
+  "syn": [
+   "correct",
+   "fix",
+   "cure"
+  ],
+  "coll": "remedy a problem/fault",
+  "ex": "The fault was remedied by replacing the valve.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1347",
+  "word": "propagate",
+  "pos": "v",
+  "tr": "yayılmak, yaymak; çoğaltmak",
+  "syn": [
+   "spread",
+   "transmit",
+   "reproduce"
+  ],
+  "coll": "propagate through; a crack propagates",
+  "ex": "Sound waves propagate faster in water than in air.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1348",
+  "word": "radiate",
+  "pos": "v",
+  "tr": "ışımak, yaymak",
+  "syn": [
+   "emit",
+   "give off",
+   "send out"
+  ],
+  "coll": "radiate heat/energy; radiate from",
+  "ex": "The Earth radiates heat into space at night.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1349",
+  "word": "deflect",
+  "pos": "v",
+  "tr": "saptırmak, yönünü değiştirmek; sehim yapmak",
+  "syn": [
+   "divert",
+   "turn aside",
+   "bend"
+  ],
+  "coll": "deflect light/a beam/particles",
+  "ex": "The Earth's magnetic field deflects charged particles.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1350",
+  "word": "divert",
+  "pos": "v",
+  "tr": "yönünü değiştirmek, başka yöne çevirmek",
+  "syn": [
+   "redirect",
+   "deflect",
+   "reroute"
+  ],
+  "coll": "divert water/traffic/resources from",
+  "ex": "The river was diverted to supply the new dam.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1351",
+  "word": "govern",
+  "pos": "v",
+  "tr": "yönetmek, belirlemek",
+  "syn": [
+   "control",
+   "determine",
+   "regulate"
+  ],
+  "coll": "the laws that govern; be governed by",
+  "ex": "The same laws govern the motion of planets and falling apples.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1352",
+  "word": "oversee",
+  "pos": "v",
+  "tr": "denetlemek, gözetmek",
+  "syn": [
+   "supervise",
+   "monitor",
+   "manage"
+  ],
+  "coll": "oversee a project/the work",
+  "ex": "An independent board oversees the safety tests.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1353",
+  "word": "embed",
+  "pos": "v",
+  "tr": "gömmek, içine yerleştirmek",
+  "syn": [
+   "implant",
+   "fix",
+   "set"
+  ],
+  "coll": "be embedded in",
+  "ex": "Sensors are embedded in the concrete of the bridge.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1354",
+  "word": "submerge",
+  "pos": "v",
+  "tr": "suya batırmak, batmak",
+  "syn": [
+   "immerse",
+   "sink",
+   "flood"
+  ],
+  "coll": "be submerged in/under water",
+  "ex": "The sample was submerged in salt water for a month.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1355",
+  "word": "align",
+  "pos": "v",
+  "tr": "hizalamak, aynı hizaya getirmek",
+  "syn": [
+   "line up",
+   "straighten",
+   "arrange"
+  ],
+  "coll": "align A with B; be aligned with",
+  "ex": "The two shafts must be aligned with great care.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1356",
+  "word": "ample",
+  "pos": "adj",
+  "tr": "bol, fazlasıyla yeterli",
+  "syn": [
+   "plentiful",
+   "abundant",
+   "sufficient"
+  ],
+  "coll": "ample evidence/time/space",
+  "ex": "There is ample evidence that the climate is warming.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1357",
+  "word": "shallow",
+  "pos": "adj",
+  "tr": "sığ",
+  "syn": [
+   "superficial",
+   "low",
+   "thin"
+  ],
+  "coll": "shallow water/roots",
+  "ex": "Corals grow in warm, shallow water.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1358",
+  "word": "steep",
+  "pos": "adj",
+  "tr": "dik; sert (artış/düşüş)",
+  "syn": [
+   "sharp",
+   "abrupt",
+   "sheer"
+  ],
+  "coll": "a steep slope/rise/decline",
+  "ex": "There was a steep rise in temperature after noon.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1359",
+  "word": "coarse",
+  "pos": "adj",
+  "tr": "kaba, iri taneli",
+  "syn": [
+   "rough",
+   "granular",
+   "crude"
+  ],
+  "coll": "coarse grains/sand",
+  "ex": "Slow cooling produces a coarse grain structure.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1360",
+  "word": "hollow",
+  "pos": "adj",
+  "tr": "içi boş, oyuk",
+  "syn": [
+   "empty",
+   "void",
+   "unfilled"
+  ],
+  "coll": "a hollow tube/shaft",
+  "ex": "Bird bones are hollow, which makes them light.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1361",
+  "word": "porous",
+  "pos": "adj",
+  "tr": "gözenekli",
+  "syn": [
+   "permeable",
+   "spongy",
+   "absorbent"
+  ],
+  "coll": "porous rock/material",
+  "ex": "Water passes easily through porous rock.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1362",
+  "word": "transparent",
+  "pos": "adj",
+  "tr": "saydam, şeffaf",
+  "syn": [
+   "clear",
+   "see-through",
+   "translucent"
+  ],
+  "coll": "transparent to light; a transparent layer",
+  "ex": "Glass is transparent to visible light but not to ultraviolet.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1363",
+  "word": "opaque",
+  "pos": "adj",
+  "tr": "ışık geçirmez, opak",
+  "syn": [
+   "non-transparent",
+   "cloudy",
+   "dark"
+  ],
+  "coll": "opaque to light/X-rays",
+  "ex": "Lead is opaque to X-rays.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1364",
+  "word": "moderate",
+  "pos": "adj",
+  "tr": "orta düzeyde, ılımlı",
+  "syn": [
+   "average",
+   "medium",
+   "modest"
+  ],
+  "coll": "moderate heat/exercise/temperatures",
+  "ex": "Moderate exercise lowers the risk of heart disease.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1365",
+  "word": "harsh",
+  "pos": "adj",
+  "tr": "sert, zorlu, acımasız",
+  "syn": [
+   "severe",
+   "extreme",
+   "hostile"
+  ],
+  "coll": "harsh conditions/climate/environment",
+  "ex": "Few plants survive the harsh conditions of the desert.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1366",
+  "word": "hostile",
+  "pos": "adj",
+  "tr": "elverişsiz, düşmanca",
+  "syn": [
+   "unfavourable",
+   "harsh",
+   "adverse"
+  ],
+  "coll": "a hostile environment; hostile to",
+  "ex": "The surface of Venus is hostile to life.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1367",
+  "word": "arid",
+  "pos": "adj",
+  "tr": "kurak",
+  "syn": [
+   "dry",
+   "parched",
+   "desert-like"
+  ],
+  "coll": "arid regions/land/climate",
+  "ex": "Only a few crops can be grown in arid regions.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1368",
+  "word": "remote",
+  "pos": "adj",
+  "tr": "uzak, ücra; uzaktan",
+  "syn": [
+   "distant",
+   "isolated",
+   "far-off"
+  ],
+  "coll": "a remote area/island; remote sensing",
+  "ex": "The species survives only on a few remote islands.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1369",
+  "word": "dormant",
+  "pos": "adj",
+  "tr": "uykuda, etkin olmayan",
+  "syn": [
+   "inactive",
+   "sleeping",
+   "latent"
+  ],
+  "coll": "a dormant volcano/seed; lie dormant",
+  "ex": "The seeds can lie dormant in the soil for years.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1370",
+  "word": "extinct",
+  "pos": "adj",
+  "tr": "soyu tükenmiş; sönmüş",
+  "syn": [
+   "died out",
+   "vanished",
+   "lost"
+  ],
+  "coll": "become extinct; an extinct species/volcano",
+  "ex": "The dodo became extinct in the 17th century.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1371",
+  "word": "lethal",
+  "pos": "adj",
+  "tr": "öldürücü",
+  "syn": [
+   "deadly",
+   "fatal",
+   "mortal"
+  ],
+  "coll": "a lethal dose; lethal to",
+  "ex": "Even a small dose of the poison is lethal to insects.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1372",
+  "word": "persistent",
+  "pos": "adj",
+  "tr": "kalıcı, inatçı, sürekli",
+  "syn": [
+   "lasting",
+   "continuing",
+   "stubborn"
+  ],
+  "coll": "a persistent problem/cough/chemical",
+  "ex": "Some pesticides are persistent and stay in the soil for years.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1373",
+  "word": "acute",
+  "pos": "adj",
+  "tr": "akut, şiddetli, ani; keskin",
+  "syn": [
+   "severe",
+   "sharp",
+   "intense"
+  ],
+  "coll": "acute pain/shortage; an acute sense of",
+  "ex": "Dogs have an acute sense of smell.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1374",
+  "word": "contagious",
+  "pos": "adj",
+  "tr": "bulaşıcı",
+  "syn": [
+   "infectious",
+   "transmissible",
+   "catching"
+  ],
+  "coll": "a highly contagious disease",
+  "ex": "Measles is one of the most contagious diseases known.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1375",
+  "word": "hereditary",
+  "pos": "adj",
+  "tr": "kalıtsal",
+  "syn": [
+   "inherited",
+   "genetic",
+   "inborn"
+  ],
+  "coll": "a hereditary disease/trait",
+  "ex": "Colour blindness is a hereditary condition.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1376",
+  "word": "innate",
+  "pos": "adj",
+  "tr": "doğuştan gelen",
+  "syn": [
+   "inborn",
+   "natural",
+   "inherent"
+  ],
+  "coll": "an innate ability/behaviour",
+  "ex": "Web building is an innate behaviour in spiders.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1377",
+  "word": "hazardous",
+  "pos": "adj",
+  "tr": "tehlikeli, zararlı",
+  "syn": [
+   "dangerous",
+   "risky",
+   "unsafe"
+  ],
+  "coll": "hazardous waste/chemicals; hazardous to",
+  "ex": "Hazardous waste must be stored in sealed containers.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1378",
+  "word": "feasible",
+  "pos": "adj",
+  "tr": "uygulanabilir, yapılabilir",
+  "syn": [
+   "practicable",
+   "achievable",
+   "viable"
+  ],
+  "coll": "technically/economically feasible",
+  "ex": "It is not yet feasible to store electricity on such a large scale.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1379",
+  "word": "affordable",
+  "pos": "adj",
+  "tr": "uygun fiyatlı, karşılanabilir",
+  "syn": [
+   "inexpensive",
+   "reasonable",
+   "low-cost"
+  ],
+  "coll": "affordable energy/housing",
+  "ex": "Mass production made solar panels affordable.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1380",
+  "word": "invaluable",
+  "pos": "adj",
+  "tr": "paha biçilmez, çok değerli",
+  "syn": [
+   "priceless",
+   "precious",
+   "indispensable"
+  ],
+  "coll": "invaluable information/help; invaluable to",
+  "ex": "Ice cores provide invaluable information about past climates.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1381",
+  "word": "futile",
+  "pos": "adj",
+  "tr": "boşuna, sonuçsuz",
+  "syn": [
+   "pointless",
+   "useless",
+   "vain"
+  ],
+  "coll": "a futile attempt/effort",
+  "ex": "Attempts to stop the leak proved futile.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1382",
+  "word": "prolific",
+  "pos": "adj",
+  "tr": "üretken, verimli, çok ürün veren",
+  "syn": [
+   "productive",
+   "fertile",
+   "fruitful"
+  ],
+  "coll": "a prolific writer/breeder",
+  "ex": "Rabbits are prolific breeders.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1383",
+  "word": "stagnant",
+  "pos": "adj",
+  "tr": "durgun",
+  "syn": [
+   "still",
+   "motionless",
+   "sluggish"
+  ],
+  "coll": "stagnant water/air; a stagnant economy",
+  "ex": "Mosquitoes lay their eggs in stagnant water.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1384",
+  "word": "stationary",
+  "pos": "adj",
+  "tr": "sabit, hareketsiz",
+  "syn": [
+   "motionless",
+   "still",
+   "fixed"
+  ],
+  "coll": "remain stationary; a stationary object",
+  "ex": "A stationary object stays at rest unless a force acts on it.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1385",
+  "word": "portable",
+  "pos": "adj",
+  "tr": "taşınabilir",
+  "syn": [
+   "mobile",
+   "movable",
+   "compact"
+  ],
+  "coll": "a portable device/platform",
+  "ex": "A portable scanner allows tests to be done in the field.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1386",
+  "word": "resilient",
+  "pos": "adj",
+  "tr": "dayanıklı, çabuk toparlanan; esnek",
+  "syn": [
+   "tough",
+   "hardy",
+   "robust"
+  ],
+  "coll": "resilient to stress/drought",
+  "ex": "Some corals are more resilient to heat than others.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1387",
+  "word": "cutting-edge",
+  "pos": "adj",
+  "tr": "en ileri, son teknoloji",
+  "syn": [
+   "advanced",
+   "state-of-the-art",
+   "leading-edge"
+  ],
+  "coll": "cutting-edge technology/research",
+  "ex": "The plant uses cutting-edge technology to recycle steel.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1388",
+  "word": "obsolete",
+  "pos": "adj",
+  "tr": "eskimiş, kullanımdan kalkmış",
+  "syn": [
+   "outdated",
+   "out of date",
+   "old-fashioned"
+  ],
+  "coll": "become obsolete; obsolete equipment",
+  "ex": "Digital cameras made film almost obsolete.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1389",
+  "word": "groundbreaking",
+  "pos": "adj",
+  "tr": "çığır açan",
+  "syn": [
+   "pioneering",
+   "revolutionary",
+   "innovative"
+  ],
+  "coll": "groundbreaking research/a groundbreaking discovery",
+  "ex": "Her groundbreaking work on radioactivity won two Nobel Prizes.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1390",
+  "word": "remarkable",
+  "pos": "adj",
+  "tr": "dikkate değer, olağanüstü",
+  "syn": [
+   "striking",
+   "extraordinary",
+   "notable"
+  ],
+  "coll": "a remarkable ability/achievement",
+  "ex": "Octopuses have a remarkable ability to change colour.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1391",
+  "word": "notable",
+  "pos": "adj",
+  "tr": "kayda değer, dikkat çekici",
+  "syn": [
+   "noteworthy",
+   "significant",
+   "remarkable"
+  ],
+  "coll": "a notable exception/feature",
+  "ex": "Mercury is a notable exception among metals, being liquid at room temperature.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1392",
+  "word": "outstanding",
+  "pos": "adj",
+  "tr": "üstün, olağanüstü; çözülmemiş",
+  "syn": [
+   "excellent",
+   "exceptional",
+   "superb"
+  ],
+  "coll": "outstanding performance; an outstanding problem",
+  "ex": "The alloy has outstanding resistance to heat.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1393",
+  "word": "exceptional",
+  "pos": "adj",
+  "tr": "olağanüstü, istisnai",
+  "syn": [
+   "extraordinary",
+   "outstanding",
+   "unusual"
+  ],
+  "coll": "exceptional strength/circumstances",
+  "ex": "Spider silk has exceptional strength for its weight.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1394",
+  "word": "unprecedented",
+  "pos": "adj",
+  "tr": "eşi görülmemiş",
+  "syn": [
+   "unparalleled",
+   "unheard-of",
+   "exceptional"
+  ],
+  "coll": "at an unprecedented rate/scale",
+  "ex": "Arctic ice is melting at an unprecedented rate.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1395",
+  "word": "superior",
+  "pos": "adj",
+  "tr": "üstün, daha iyi",
+  "syn": [
+   "better",
+   "greater",
+   "higher"
+  ],
+  "coll": "be superior to",
+  "ex": "The new alloy is superior to steel in resisting corrosion.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1396",
+  "word": "sturdy",
+  "pos": "adj",
+  "tr": "sağlam, dayanıklı",
+  "syn": [
+   "strong",
+   "robust",
+   "solid"
+  ],
+  "coll": "a sturdy frame/structure",
+  "ex": "The instrument is mounted on a sturdy steel frame.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1397",
+  "word": "favourable",
+  "pos": "adj",
+  "tr": "elverişli, olumlu",
+  "syn": [
+   "advantageous",
+   "suitable",
+   "positive"
+  ],
+  "coll": "favourable conditions/weather for",
+  "ex": "Warm, wet weather is favourable for the growth of fungi.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1398",
+  "word": "comparable",
+  "pos": "adj",
+  "tr": "benzer, karşılaştırılabilir",
+  "syn": [
+   "similar",
+   "equivalent",
+   "alike"
+  ],
+  "coll": "be comparable to/with; comparable in size",
+  "ex": "The planet is comparable to Earth in size.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1399",
+  "word": "analogous",
+  "pos": "adj",
+  "tr": "benzer, benzeşen",
+  "syn": [
+   "similar",
+   "comparable",
+   "parallel"
+  ],
+  "coll": "be analogous to",
+  "ex": "The flow of heat is analogous to the flow of electric current.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1400",
+  "word": "erratic",
+  "pos": "adj",
+  "tr": "düzensiz, kararsız",
+  "syn": [
+   "irregular",
+   "unpredictable",
+   "inconsistent"
+  ],
+  "coll": "erratic rainfall/behaviour",
+  "ex": "Erratic rainfall makes farming difficult in the region.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1401",
+  "word": "unpredictable",
+  "pos": "adj",
+  "tr": "öngörülemez",
+  "syn": [
+   "erratic",
+   "uncertain",
+   "changeable"
+  ],
+  "coll": "unpredictable weather/behaviour",
+  "ex": "Earthquakes remain largely unpredictable.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1402",
+  "word": "conclusive",
+  "pos": "adj",
+  "tr": "kesin, ikna edici",
+  "syn": [
+   "decisive",
+   "definitive",
+   "convincing"
+  ],
+  "coll": "conclusive evidence/proof",
+  "ex": "There is no conclusive evidence that the drug works.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1403",
+  "word": "tentative",
+  "pos": "adj",
+  "tr": "geçici, kesin olmayan, deneme niteliğinde",
+  "syn": [
+   "provisional",
+   "preliminary",
+   "uncertain"
+  ],
+  "coll": "a tentative conclusion/plan",
+  "ex": "These are only tentative conclusions based on a small sample.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1404",
+  "word": "flawed",
+  "pos": "adj",
+  "tr": "kusurlu, hatalı",
+  "syn": [
+   "faulty",
+   "defective",
+   "imperfect"
+  ],
+  "coll": "a flawed design/method/argument",
+  "ex": "The study was flawed because the sample was too small.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1405",
+  "word": "genuine",
+  "pos": "adj",
+  "tr": "gerçek, hakiki",
+  "syn": [
+   "real",
+   "authentic",
+   "true"
+  ],
+  "coll": "a genuine problem/sample",
+  "ex": "Tests showed that the fossil was genuine.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1406",
+  "word": "misleading",
+  "pos": "adj",
+  "tr": "yanıltıcı",
+  "syn": [
+   "deceptive",
+   "confusing",
+   "false"
+  ],
+  "coll": "misleading information/results",
+  "ex": "Average values can be misleading when the data vary widely.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1407",
+  "word": "intricate",
+  "pos": "adj",
+  "tr": "karmaşık, girift, ince işlenmiş",
+  "syn": [
+   "complex",
+   "elaborate",
+   "complicated"
+  ],
+  "coll": "an intricate pattern/network",
+  "ex": "Snowflakes form intricate six-sided patterns.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1408",
+  "word": "subtle",
+  "pos": "adj",
+  "tr": "ince, zor fark edilen, hafif",
+  "syn": [
+   "slight",
+   "fine",
+   "faint"
+  ],
+  "coll": "a subtle difference/change",
+  "ex": "There are subtle differences between the two species.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1409",
+  "word": "marginal",
+  "pos": "adj",
+  "tr": "çok az, önemsiz; sınırda",
+  "syn": [
+   "slight",
+   "minimal",
+   "negligible"
+  ],
+  "coll": "a marginal effect/improvement",
+  "ex": "The new fuel gave only a marginal improvement in efficiency.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1410",
+  "word": "negligible",
+  "pos": "adj",
+  "tr": "ihmal edilebilir, önemsiz",
+  "syn": [
+   "insignificant",
+   "trivial",
+   "minimal"
+  ],
+  "coll": "a negligible amount/effect",
+  "ex": "Air resistance is negligible at such low speeds.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1411",
+  "word": "modest",
+  "pos": "adj",
+  "tr": "küçük, sınırlı, mütevazı",
+  "syn": [
+   "small",
+   "moderate",
+   "limited"
+  ],
+  "coll": "a modest increase/improvement",
+  "ex": "The drug produced only a modest reduction in blood pressure.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1412",
+  "word": "extensive",
+  "pos": "adj",
+  "tr": "kapsamlı, geniş çaplı",
+  "syn": [
+   "wide",
+   "comprehensive",
+   "large-scale"
+  ],
+  "coll": "extensive damage/research/use",
+  "ex": "The fire caused extensive damage to the forest.",
+  "freq": 3,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1413",
+  "word": "intensive",
+  "pos": "adj",
+  "tr": "yoğun",
+  "syn": [
+   "concentrated",
+   "thorough",
+   "heavy"
+  ],
+  "coll": "intensive farming/care/research",
+  "ex": "Intensive farming can exhaust the soil.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1414",
+  "word": "rigorous",
+  "pos": "adj",
+  "tr": "titiz, sıkı",
+  "syn": [
+   "thorough",
+   "strict",
+   "meticulous"
+  ],
+  "coll": "rigorous testing/analysis",
+  "ex": "New aircraft parts undergo rigorous testing.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1415",
+  "word": "stringent",
+  "pos": "adj",
+  "tr": "sıkı, katı (kural)",
+  "syn": [
+   "strict",
+   "rigorous",
+   "tight"
+  ],
+  "coll": "stringent rules/standards/limits",
+  "ex": "Stringent limits on emissions were introduced.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1416",
+  "word": "vague",
+  "pos": "adj",
+  "tr": "belirsiz, muğlak",
+  "syn": [
+   "unclear",
+   "imprecise",
+   "indefinite"
+  ],
+  "coll": "a vague idea/description",
+  "ex": "Early descriptions of the disease were vague.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1417",
+  "word": "noticeable",
+  "pos": "adj",
+  "tr": "fark edilir, belirgin",
+  "syn": [
+   "perceptible",
+   "visible",
+   "marked"
+  ],
+  "coll": "a noticeable difference/effect",
+  "ex": "There was a noticeable drop in noise after the repair.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1418",
+  "word": "prevailing",
+  "pos": "adj",
+  "tr": "yaygın, hâkim, geçerli",
+  "syn": [
+   "dominant",
+   "current",
+   "widespread"
+  ],
+  "coll": "the prevailing view/winds/conditions",
+  "ex": "The prevailing winds in the region blow from the west.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1419",
+  "word": "prevalent",
+  "pos": "adj",
+  "tr": "yaygın",
+  "syn": [
+   "widespread",
+   "common",
+   "frequent"
+  ],
+  "coll": "be prevalent in/among",
+  "ex": "The disease is prevalent in tropical regions.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1420",
+  "word": "ubiquitous",
+  "pos": "adj",
+  "tr": "her yerde bulunan",
+  "syn": [
+   "omnipresent",
+   "pervasive",
+   "universal"
+  ],
+  "coll": "be ubiquitous in + ortam",
+  "ex": "Plastic waste has become ubiquitous in the oceans.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1421",
+  "word": "partial",
+  "pos": "adj",
+  "tr": "kısmi",
+  "syn": [
+   "incomplete",
+   "limited",
+   "fractional"
+  ],
+  "coll": "a partial solution/eclipse",
+  "ex": "The treatment brought only partial relief.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1422",
+  "word": "devoid",
+  "pos": "adj",
+  "tr": "yoksun",
+  "syn": [
+   "lacking",
+   "empty",
+   "bereft"
+  ],
+  "coll": "be devoid of + isim",
+  "ex": "The surface of the Moon is devoid of water.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1423",
+  "word": "plentiful",
+  "pos": "adj",
+  "tr": "bol",
+  "syn": [
+   "abundant",
+   "ample",
+   "copious"
+  ],
+  "coll": "a plentiful supply of; be plentiful",
+  "ex": "Fish were once plentiful in the lake.",
+  "freq": 2,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1424",
+  "word": "renowned",
+  "pos": "adj",
+  "tr": "ünlü, tanınmış",
+  "syn": [
+   "famous",
+   "celebrated",
+   "well-known"
+  ],
+  "coll": "be renowned for; a renowned scientist",
+  "ex": "The region is renowned for its hot springs.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1425",
+  "word": "concise",
+  "pos": "adj",
+  "tr": "kısa ve öz",
+  "syn": [
+   "brief",
+   "succinct",
+   "compact"
+  ],
+  "coll": "a concise summary/explanation",
+  "ex": "The report gives a concise summary of the findings.",
+  "freq": 1,
+  "tags": [
+   "fen"
+  ]
+ },
+ {
+  "id": "w1426",
+  "word": "set out",
+  "pos": "phr",
+  "tr": "yola çıkmak; (amaçla) işe koyulmak; ortaya koymak",
+  "syn": [
+   "aim",
+   "begin",
+   "embark"
+  ],
+  "coll": "set out to + V1",
+  "ex": "The team set out to measure the age of the rock.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1427",
+  "word": "set aside",
+  "pos": "phr",
+  "tr": "ayırmak, bir kenara koymak",
+  "syn": [
+   "reserve",
+   "save",
+   "put aside"
+  ],
+  "coll": "set aside land/time/money for",
+  "ex": "Part of the forest was set aside as a nature reserve.",
+  "freq": 1,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1428",
+  "word": "turn out",
+  "pos": "phr",
+  "tr": "ortaya çıkmak, (sonuçta) ... olmak",
+  "syn": [
+   "prove",
+   "emerge",
+   "happen"
+  ],
+  "coll": "turn out to be; it turned out that",
+  "ex": "The signal turned out to be an error in the instrument.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1429",
+  "word": "turn to",
+  "pos": "phr",
+  "tr": "-e yönelmek, başvurmak",
+  "syn": [
+   "resort to",
+   "rely on",
+   "look to"
+  ],
+  "coll": "turn to + isim (for help)",
+  "ex": "As oil prices rose, many countries turned to wind power.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1430",
+  "word": "point to",
+  "pos": "phr",
+  "tr": "-e işaret etmek, göstermek",
+  "syn": [
+   "indicate",
+   "suggest",
+   "signal"
+  ],
+  "coll": "evidence points to",
+  "ex": "All the evidence points to a leak in the cooling system.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1431",
+  "word": "break through",
+  "pos": "phr",
+  "tr": "aşmak, yarıp geçmek",
+  "syn": [
+   "penetrate",
+   "overcome",
+   "pierce"
+  ],
+  "coll": "break through a barrier/layer",
+  "ex": "The drill broke through the ice after three days.",
+  "freq": 1,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1432",
+  "word": "die out",
+  "pos": "phr",
+  "tr": "soyu tükenmek, yok olmak",
+  "syn": [
+   "become extinct",
+   "vanish",
+   "disappear"
+  ],
+  "coll": "species die out",
+  "ex": "Dinosaurs died out about 66 million years ago.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1433",
+  "word": "do away with",
+  "pos": "phr",
+  "tr": "ortadan kaldırmak, son vermek",
+  "syn": [
+   "abolish",
+   "eliminate",
+   "get rid of"
+  ],
+  "coll": "do away with the need for",
+  "ex": "The new design does away with the need for a gearbox.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1434",
+  "word": "end up",
+  "pos": "phr",
+  "tr": "sonunda ... olmak, kendini ... bulmak",
+  "syn": [
+   "finish",
+   "wind up",
+   "result"
+  ],
+  "coll": "end up in/as; end up + Ving",
+  "ex": "Much plastic waste ends up in the oceans.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1435",
+  "word": "get rid of",
+  "pos": "phr",
+  "tr": "-den kurtulmak, atmak",
+  "syn": [
+   "remove",
+   "eliminate",
+   "dispose of"
+  ],
+  "coll": "get rid of waste/heat",
+  "ex": "The body gets rid of excess heat by sweating.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1436",
+  "word": "give way to",
+  "pos": "phr",
+  "tr": "yerini -e bırakmak",
+  "syn": [
+   "be replaced by",
+   "yield to",
+   "make way for"
+  ],
+  "coll": "A gives way to B",
+  "ex": "Further north, forest gives way to open grassland.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1437",
+  "word": "go beyond",
+  "pos": "phr",
+  "tr": "ötesine geçmek, aşmak",
+  "syn": [
+   "exceed",
+   "surpass",
+   "transcend"
+  ],
+  "coll": "go beyond the limit/scope of",
+  "ex": "The effects of the spill go beyond the local area.",
+  "freq": 1,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1438",
+  "word": "hold back",
+  "pos": "phr",
+  "tr": "engellemek, tutmak, geciktirmek",
+  "syn": [
+   "restrain",
+   "hinder",
+   "block"
+  ],
+  "coll": "hold back progress/water",
+  "ex": "High costs have held back the use of hydrogen.",
+  "freq": 1,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1439",
+  "word": "keep track of",
+  "pos": "phr",
+  "tr": "takip etmek, izini sürmek",
+  "syn": [
+   "monitor",
+   "follow",
+   "record"
+  ],
+  "coll": "keep track of changes/the number of",
+  "ex": "Satellites keep track of changes in sea ice.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1440",
+  "word": "leave out",
+  "pos": "phr",
+  "tr": "dışarıda bırakmak, atlamak",
+  "syn": [
+   "omit",
+   "exclude",
+   "skip"
+  ],
+  "coll": "leave out a step/detail",
+  "ex": "The model leaves out the effect of friction.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1441",
+  "word": "make up for",
+  "pos": "phr",
+  "tr": "telafi etmek",
+  "syn": [
+   "compensate for",
+   "offset",
+   "balance"
+  ],
+  "coll": "make up for a loss/lack of",
+  "ex": "Higher speed cannot make up for poor accuracy.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1442",
+  "word": "pick up",
+  "pos": "phr",
+  "tr": "algılamak, yakalamak; hızlanmak, toparlanmak",
+  "syn": [
+   "detect",
+   "receive",
+   "improve"
+  ],
+  "coll": "pick up a signal/speed",
+  "ex": "The antenna picked up a weak radio signal.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1443",
+  "word": "put together",
+  "pos": "phr",
+  "tr": "bir araya getirmek, monte etmek",
+  "syn": [
+   "assemble",
+   "compile",
+   "build"
+  ],
+  "coll": "put together a model/report",
+  "ex": "The telescope was put together in orbit.",
+  "freq": 1,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1444",
+  "word": "slow down",
+  "pos": "phr",
+  "tr": "yavaşlamak, yavaşlatmak",
+  "syn": [
+   "decelerate",
+   "reduce speed",
+   "brake"
+  ],
+  "coll": "slow down the rate/process of",
+  "ex": "Low temperatures slow down chemical reactions.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1445",
+  "word": "speed up",
+  "pos": "phr",
+  "tr": "hızlanmak, hızlandırmak",
+  "syn": [
+   "accelerate",
+   "quicken",
+   "hasten"
+  ],
+  "coll": "speed up a reaction/process",
+  "ex": "Enzymes speed up reactions in living cells.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1446",
+  "word": "stand for",
+  "pos": "phr",
+  "tr": "anlamına gelmek, simgelemek; kısaltması olmak",
+  "syn": [
+   "represent",
+   "mean",
+   "symbolise"
+  ],
+  "coll": "X stands for",
+  "ex": "DNA stands for deoxyribonucleic acid.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1447",
+  "word": "stand out",
+  "pos": "phr",
+  "tr": "göze çarpmak, öne çıkmak",
+  "syn": [
+   "be noticeable",
+   "be prominent",
+   "excel"
+  ],
+  "coll": "stand out from/among",
+  "ex": "One result stands out from the rest of the data.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1448",
+  "word": "take in",
+  "pos": "phr",
+  "tr": "içine almak, emmek; kavramak",
+  "syn": [
+   "absorb",
+   "ingest",
+   "understand"
+  ],
+  "coll": "take in oxygen/water/food",
+  "ex": "Plants take in carbon dioxide through their leaves.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1449",
+  "word": "take part in",
+  "pos": "phr",
+  "tr": "-e katılmak, yer almak",
+  "syn": [
+   "participate in",
+   "join in",
+   "be involved in"
+  ],
+  "coll": "take part in a study/trial",
+  "ex": "Over 2,000 volunteers took part in the trial.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1450",
+  "word": "wear out",
+  "pos": "phr",
+  "tr": "aşınmak, eskimek; yıpratmak",
+  "syn": [
+   "erode",
+   "deteriorate",
+   "exhaust"
+  ],
+  "coll": "parts wear out",
+  "ex": "Bearings wear out quickly without oil.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1451",
+  "word": "bear in mind",
+  "pos": "phr",
+  "tr": "akılda tutmak, göz önünde bulundurmak",
+  "syn": [
+   "remember",
+   "keep in mind",
+   "take into account"
+  ],
+  "coll": "bear in mind that; bear sth in mind",
+  "ex": "It should be borne in mind that the sample was small.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1452",
+  "word": "pay attention to",
+  "pos": "phr",
+  "tr": "-e dikkat etmek",
+  "syn": [
+   "notice",
+   "heed",
+   "focus on"
+  ],
+  "coll": "pay close/little attention to",
+  "ex": "Engineers pay close attention to the quality of the welds.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1453",
+  "word": "play a role in",
+  "pos": "phr",
+  "tr": "-de rol oynamak",
+  "syn": [
+   "contribute to",
+   "be a factor in",
+   "take part in"
+  ],
+  "coll": "play a key/major role in",
+  "ex": "Oceans play a key role in regulating the climate.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1454",
+  "word": "shed light on",
+  "pos": "phr",
+  "tr": "-e ışık tutmak, aydınlatmak",
+  "syn": [
+   "clarify",
+   "explain",
+   "illuminate"
+  ],
+  "coll": "shed (new) light on",
+  "ex": "The fossils shed new light on the origin of birds.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1455",
+  "word": "pave the way for",
+  "pos": "phr",
+  "tr": "-in yolunu açmak, zemin hazırlamak",
+  "syn": [
+   "prepare for",
+   "lead to",
+   "enable"
+  ],
+  "coll": "pave the way for + isim",
+  "ex": "The discovery paved the way for modern electronics.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1456",
+  "word": "keep pace with",
+  "pos": "phr",
+  "tr": "-e ayak uydurmak, aynı hızda ilerlemek",
+  "syn": [
+   "keep up with",
+   "match",
+   "stay level with"
+  ],
+  "coll": "keep pace with demand/change",
+  "ex": "Food production has not kept pace with population growth.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1457",
+  "word": "be made of",
+  "pos": "phr",
+  "tr": "-den yapılmış olmak",
+  "syn": [
+   "consist of",
+   "be composed of",
+   "be built from"
+  ],
+  "coll": "be made of + malzeme",
+  "ex": "The blades are made of a nickel alloy.",
+  "freq": 3,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1458",
+  "word": "be based on",
+  "pos": "phr",
+  "tr": "-e dayanmak",
+  "syn": [
+   "rest on",
+   "be founded on",
+   "depend on"
+  ],
+  "coll": "be based on data/evidence",
+  "ex": "The model is based on thirty years of weather data.",
+  "freq": 3,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1459",
+  "word": "be derived from",
+  "pos": "phr",
+  "tr": "-den elde edilmek, türemek",
+  "syn": [
+   "come from",
+   "originate from",
+   "be obtained from"
+  ],
+  "coll": "be derived from + kaynak",
+  "ex": "Many medicines are derived from plants.",
+  "freq": 3,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1460",
+  "word": "be dependent on",
+  "pos": "phr",
+  "tr": "-e bağımlı/bağlı olmak",
+  "syn": [
+   "rely on",
+   "depend on",
+   "be reliant on"
+  ],
+  "coll": "be heavily dependent on",
+  "ex": "The region is heavily dependent on a single river for water.",
+  "freq": 2,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1461",
+  "word": "be responsible for",
+  "pos": "phr",
+  "tr": "-den sorumlu olmak, -in nedeni olmak",
+  "syn": [
+   "cause",
+   "account for",
+   "be in charge of"
+  ],
+  "coll": "be responsible for + sonuç",
+  "ex": "A single gene is responsible for the disease.",
+  "freq": 3,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1462",
+  "word": "be rich in",
+  "pos": "phr",
+  "tr": "bakımından zengin olmak",
+  "syn": [
+   "abound in",
+   "be full of",
+   "be high in"
+  ],
+  "coll": "be rich in + madde",
+  "ex": "The soil near the volcano is rich in minerals.",
+  "freq": 3,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1463",
+  "word": "be faced with",
+  "pos": "phr",
+  "tr": "ile karşı karşıya olmak",
+  "syn": [
+   "confront",
+   "encounter",
+   "be up against"
+  ],
+  "coll": "be faced with a problem/choice",
+  "ex": "Farmers are faced with a shortage of water.",
+  "freq": 2,
+  "tags": [
+   "phrasal",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1464",
+  "word": "be thought to",
+  "pos": "phr",
+  "tr": "sanılmak, düşünülmek",
+  "syn": [
+   "be believed to",
+   "be considered to",
+   "be assumed to"
+  ],
+  "coll": "be thought to + V1 / to have V3",
+  "ex": "The Moon is thought to have formed after a giant collision.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1465",
+  "word": "be likely to",
+  "pos": "phr",
+  "tr": "olası olmak, muhtemelen ...-mek",
+  "syn": [
+   "be expected to",
+   "be liable to",
+   "tend to"
+  ],
+  "coll": "be likely to + V1",
+  "ex": "Dry forests are more likely to catch fire.",
+  "freq": 3,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1466",
+  "word": "be bound to",
+  "pos": "phr",
+  "tr": "kesinlikle ...-ecek olmak, kaçınılmaz olmak",
+  "syn": [
+   "be certain to",
+   "be sure to",
+   "be destined to"
+  ],
+  "coll": "be bound to + V1",
+  "ex": "Without maintenance, the pump is bound to fail.",
+  "freq": 2,
+  "tags": [
+   "phrasal"
+  ]
+ },
+ {
+  "id": "w1467",
+  "word": "on the basis of",
+  "pos": "prep",
+  "tr": "-e dayanarak, temelinde",
+  "syn": [
+   "according to",
+   "based on",
+   "on the grounds of"
+  ],
+  "coll": "on the basis of + kanıt/veri",
+  "ex": "The fossils were dated on the basis of the rock layers around them.",
+  "freq": 3,
+  "tags": [
+   "baglac",
+   "edat"
+  ]
+ },
+ {
+  "id": "w1468",
+  "word": "in view of",
+  "pos": "prep",
+  "tr": "göz önüne alındığında, -den dolayı",
+  "syn": [
+   "considering",
+   "given",
+   "in light of"
+  ],
+  "coll": "in view of + isim",
+  "ex": "In view of the high cost, the project was cancelled.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "edat",
+   "neden"
+  ]
+ },
+ {
+  "id": "w1469",
+  "word": "in light of",
+  "pos": "prep",
+  "tr": "ışığında, göz önüne alındığında",
+  "syn": [
+   "considering",
+   "in view of",
+   "given"
+  ],
+  "coll": "in (the) light of + isim",
+  "ex": "The design was changed in light of the test results.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "edat",
+   "neden"
+  ]
+ },
+ {
+  "id": "w1470",
+  "word": "on the verge of",
+  "pos": "prep",
+  "tr": "eşiğinde, -mek üzere",
+  "syn": [
+   "on the brink of",
+   "close to",
+   "about to"
+  ],
+  "coll": "on the verge of extinction/collapse",
+  "ex": "The species is on the verge of extinction.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1471",
+  "word": "on the grounds that",
+  "pos": "conj",
+  "tr": "gerekçesiyle, -diği için",
+  "syn": [
+   "because",
+   "since",
+   "on the basis that"
+  ],
+  "coll": "on the grounds that + cümle",
+  "ex": "The theory was rejected on the grounds that it lacked evidence.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "neden"
+  ]
+ },
+ {
+  "id": "w1472",
+  "word": "in conjunction with",
+  "pos": "prep",
+  "tr": "ile birlikte, bağlantılı olarak",
+  "syn": [
+   "together with",
+   "along with",
+   "combined with"
+  ],
+  "coll": "be used in conjunction with",
+  "ex": "The drug is used in conjunction with a special diet.",
+  "freq": 2,
+  "tags": [
+   "edat",
+   "ekleme"
+  ]
+ },
+ {
+  "id": "w1473",
+  "word": "in relation to",
+  "pos": "prep",
+  "tr": "ile ilgili olarak; -e oranla",
+  "syn": [
+   "regarding",
+   "concerning",
+   "compared with"
+  ],
+  "coll": "in relation to + isim",
+  "ex": "The brain is large in relation to the size of the body.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1474",
+  "word": "in proportion to",
+  "pos": "prep",
+  "tr": "ile orantılı olarak",
+  "syn": [
+   "relative to",
+   "according to",
+   "in line with"
+  ],
+  "coll": "rise/vary in proportion to",
+  "ex": "The force increases in proportion to the square of the speed.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1475",
+  "word": "in excess of",
+  "pos": "prep",
+  "tr": "-den fazla, -in üzerinde",
+  "syn": [
+   "more than",
+   "over",
+   "above"
+  ],
+  "coll": "in excess of + miktar",
+  "ex": "The furnace reaches temperatures in excess of 1,500 °C.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1476",
+  "word": "in the course of",
+  "pos": "prep",
+  "tr": "sırasında, süresince",
+  "syn": [
+   "during",
+   "throughout",
+   "in the process of"
+  ],
+  "coll": "in the course of + isim",
+  "ex": "Several errors were found in the course of the study.",
+  "freq": 2,
+  "tags": [
+   "edat",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1477",
+  "word": "in the wake of",
+  "pos": "prep",
+  "tr": "-in ardından, sonucunda",
+  "syn": [
+   "following",
+   "after",
+   "as a result of"
+  ],
+  "coll": "in the wake of + olay",
+  "ex": "Safety rules were tightened in the wake of the accident.",
+  "freq": 2,
+  "tags": [
+   "edat",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1478",
+  "word": "at the cost of",
+  "pos": "prep",
+  "tr": "pahasına",
+  "syn": [
+   "at the expense of",
+   "at the price of",
+   "with the loss of"
+  ],
+  "coll": "at the cost of + isim",
+  "ex": "Higher strength is often gained at the cost of ductility.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1479",
+  "word": "at risk of",
+  "pos": "prep",
+  "tr": "riski altında",
+  "syn": [
+   "in danger of",
+   "threatened by",
+   "exposed to"
+  ],
+  "coll": "be at risk of + isim/Ving",
+  "ex": "Low coasts are at risk of flooding.",
+  "freq": 2,
+  "tags": [
+   "edat"
+  ]
+ },
+ {
+  "id": "w1480",
+  "word": "by far",
+  "pos": "adv",
+  "tr": "açık ara, fersah fersah",
+  "syn": [
+   "easily",
+   "much",
+   "considerably"
+  ],
+  "coll": "by far the + en üstünlük",
+  "ex": "Hydrogen is by far the most abundant element in the universe.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1481",
+  "word": "to some extent",
+  "pos": "adv",
+  "tr": "bir ölçüde",
+  "syn": [
+   "partly",
+   "somewhat",
+   "to a degree"
+  ],
+  "coll": "to some extent, + cümle",
+  "ex": "All metals expand to some extent when heated.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1482",
+  "word": "to a large extent",
+  "pos": "adv",
+  "tr": "büyük ölçüde",
+  "syn": [
+   "largely",
+   "mostly",
+   "mainly"
+  ],
+  "coll": "depend to a large extent on",
+  "ex": "Crop yields depend to a large extent on rainfall.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1483",
+  "word": "as far as",
+  "pos": "conj",
+  "tr": "-e kadar; -diği kadarıyla",
+  "syn": [
+   "to the extent that",
+   "insofar as",
+   "up to"
+  ],
+  "coll": "as far as is known; as far as + yer",
+  "ex": "As far as is known, the species lives only on this island.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1484",
+  "word": "as of",
+  "pos": "prep",
+  "tr": "itibarıyla",
+  "syn": [
+   "from",
+   "starting from",
+   "beginning"
+  ],
+  "coll": "as of + tarih",
+  "ex": "As of 2020, more than 4,000 exoplanets had been found.",
+  "freq": 2,
+  "tags": [
+   "edat",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1485",
+  "word": "in the long run",
+  "pos": "adv",
+  "tr": "uzun vadede",
+  "syn": [
+   "eventually",
+   "ultimately",
+   "in the long term"
+  ],
+  "coll": "in the long run, + cümle",
+  "ex": "In the long run, solar power is cheaper than coal.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1486",
+  "word": "in the short term",
+  "pos": "adv",
+  "tr": "kısa vadede",
+  "syn": [
+   "for now",
+   "temporarily",
+   "in the short run"
+  ],
+  "coll": "in the short term, + cümle",
+  "ex": "In the short term, the drug relieves pain.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1487",
+  "word": "on average",
+  "pos": "adv",
+  "tr": "ortalama olarak",
+  "syn": [
+   "typically",
+   "normally",
+   "as a rule"
+  ],
+  "coll": "on average, + cümle",
+  "ex": "On average, the region receives 300 mm of rain a year.",
+  "freq": 3,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1488",
+  "word": "as a whole",
+  "pos": "adv",
+  "tr": "bütün olarak, genel olarak",
+  "syn": [
+   "altogether",
+   "overall",
+   "in total"
+  ],
+  "coll": "the + isim + as a whole",
+  "ex": "The change affects the ecosystem as a whole.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1489",
+  "word": "in practice",
+  "pos": "adv",
+  "tr": "uygulamada, pratikte",
+  "syn": [
+   "in reality",
+   "actually",
+   "in effect"
+  ],
+  "coll": "in practice, + cümle",
+  "ex": "In theory the engine is simple; in practice it is hard to build.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "zitlik"
+  ]
+ },
+ {
+  "id": "w1490",
+  "word": "in theory",
+  "pos": "adv",
+  "tr": "kuramsal olarak, teoride",
+  "syn": [
+   "theoretically",
+   "in principle",
+   "on paper"
+  ],
+  "coll": "in theory, + cümle",
+  "ex": "In theory, the process could run without any waste.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "zitlik"
+  ]
+ },
+ {
+  "id": "w1491",
+  "word": "in turn",
+  "pos": "adv",
+  "tr": "sırasıyla; bunun sonucunda da",
+  "syn": [
+   "consequently",
+   "subsequently",
+   "successively"
+  ],
+  "coll": "which in turn + fiil",
+  "ex": "Warmer air holds more water, which in turn causes heavier rain.",
+  "freq": 3,
+  "tags": [
+   "baglac",
+   "sonuc"
+  ]
+ },
+ {
+  "id": "w1492",
+  "word": "in vain",
+  "pos": "adv",
+  "tr": "boşuna, sonuç alamadan",
+  "syn": [
+   "unsuccessfully",
+   "fruitlessly",
+   "to no avail"
+  ],
+  "coll": "try/search in vain",
+  "ex": "Engineers tried in vain to stop the leak.",
+  "freq": 1,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1493",
+  "word": "in advance",
+  "pos": "adv",
+  "tr": "önceden",
+  "syn": [
+   "beforehand",
+   "ahead",
+   "earlier"
+  ],
+  "coll": "well in advance; in advance of",
+  "ex": "Storms can now be predicted several days in advance.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "zaman"
+  ]
+ },
+ {
+  "id": "w1494",
+  "word": "by no means",
+  "pos": "adv",
+  "tr": "hiçbir şekilde, asla",
+  "syn": [
+   "not at all",
+   "in no way",
+   "certainly not"
+  ],
+  "coll": "be by no means + sıfat",
+  "ex": "The problem is by no means new.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1495",
+  "word": "by and large",
+  "pos": "adv",
+  "tr": "genel olarak, çoğunlukla",
+  "syn": [
+   "on the whole",
+   "generally",
+   "mostly"
+  ],
+  "coll": "by and large, + cümle",
+  "ex": "By and large, the new system has worked well.",
+  "freq": 1,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1496",
+  "word": "on the whole",
+  "pos": "adv",
+  "tr": "genel olarak, bütüne bakıldığında",
+  "syn": [
+   "generally",
+   "overall",
+   "by and large"
+  ],
+  "coll": "on the whole, + cümle",
+  "ex": "On the whole, the results support the theory.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1497",
+  "word": "to this end",
+  "pos": "adv",
+  "tr": "bu amaçla",
+  "syn": [
+   "for this purpose",
+   "to that end",
+   "with this aim"
+  ],
+  "coll": "To this end, + cümle",
+  "ex": "The team wanted lighter parts. To this end, they used carbon fibre.",
+  "freq": 2,
+  "tags": [
+   "baglac",
+   "amac"
+  ]
+ },
+ {
+  "id": "w1498",
+  "word": "in this respect",
+  "pos": "adv",
+  "tr": "bu bakımdan",
+  "syn": [
+   "in this regard",
+   "on this point",
+   "in this sense"
+  ],
+  "coll": "in this respect, + cümle",
+  "ex": "Bats use sound to find food; in this respect they resemble dolphins.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1499",
+  "word": "above all",
+  "pos": "adv",
+  "tr": "her şeyden önce, özellikle",
+  "syn": [
+   "especially",
+   "chiefly",
+   "most importantly"
+  ],
+  "coll": "above all, + cümle",
+  "ex": "A good bridge must be, above all, safe.",
+  "freq": 2,
+  "tags": [
+   "baglac"
+  ]
+ },
+ {
+  "id": "w1500",
+  "word": "in essence",
+  "pos": "adv",
+  "tr": "özünde, esasen",
+  "syn": [
+   "basically",
+   "essentially",
+   "fundamentally"
+  ],
+  "coll": "in essence, + cümle",
+  "ex": "In essence, a battery turns chemical energy into electricity.",
+  "freq": 1,
+  "tags": [
+   "baglac"
+  ]
  }
 ]

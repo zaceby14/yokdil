@@ -2,12 +2,14 @@
 import * as store from '../store.js';
 import { h, dayKey, uid, toast, topicName, typeName, TOPICS, fmtDate } from '../util.js';
 import { stats } from '../srs.js';
-import { seedUser } from '../data.js';
-import { hbars, heatmap, line, stacked } from '../charts.js';
+import { seedUser, words, aids } from '../data.js';
+import { hbars, heatmap, line, stacked, weekBars } from '../charts.js';
+import { coreSeen, weeklyWpm, READ_GOAL } from '../strategy.js';
+import { reasonSummary } from '../reasons.js';
 import { daysToExam, newLimit } from '../plan.js';
 
 // Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
-function vocabBox(st, goal, left, limit) {
+function vocabBox(st, goal, left, limit, core) {
   const scale = Math.max(goal * 1.15, st.knowTotal);
   const need = Math.max(0, goal - st.knowTotal);
   return h('div.vocab',
@@ -16,6 +18,8 @@ function vocabBox(st, goal, left, limit) {
     h('div.goalbar', h('i', { style: `width:${(st.knowTotal / scale * 100).toFixed(1)}%` }),
       h('span.goal-line', { style: `left:${(goal / scale * 100).toFixed(1)}%`, title: 'hedef' })),
     h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature}`),
+    core?.total ? h('div.core-seen', h('div.small', 'Çekirdek liste: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
+      h('div.goalbar.thin', h('i', { style: `width:${(core.seen / core.total * 100).toFixed(1)}%` }))) : null,
     need && left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${st.knowTotal + limit * left} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
 }
 
@@ -84,19 +88,25 @@ export default async function render(root) {
     ...rows(types, typeName).filter(r => r.n >= 3 && r.k !== 'bosluk')
   ];
   const last = mocks.at(-1);
-  if (last) for (const [k, l, n0] of MOCK) { const s = last.sections?.[k]; const n = s?.n ?? n0; if (n) areas.push({ k, label: 'Deneme: ' + l, value: (+s?.d || 0) / n }); }
+  // Çıkmış (kısa set / yarım deneme) kaydında olmayan bölüm %0 sayılmaz
+  if (last) for (const [k, l, n0] of MOCK) { const s = last.sections?.[k]; if (!s && last.src === 'cikmis') continue; const n = s?.n ?? n0; if (n >= 3) areas.push({ k, label: 'Deneme: ' + l, value: (+s?.d || 0) / n }); }
   const weak = areas.sort((a, b) => a.value - b.value).filter((a, i, arr) => arr.findIndex(x => x.label === a.label) === i).slice(0, 3);
 
   const mockBox = h('div');
+  const core = coreSeen(await words(), store.all('cards'));
+  const A = await aids().catch(() => null);
+  const reasonBox = A?.errorReasons?.length ? reasonSummary(A.errorReasons) : null;
   root.append(
     h('h2', 'Eksiklerim'),
     sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.')))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
       h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.')))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
     readLine(),
     sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) }),
       hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),
     sec('Soru tipi doğruluğu', typeBox(rows)),
+    A?.errorReasons?.length ? h('section.card.reasons-all', h('h3', 'Hata nedenleri'),
+      reasonBox || h('p.small.muted', 'Yanlış bir sorunun altında "Neden?" çipine dokun; dağılım burada birikir.')) : null,
     sec('En çok unutulan', lapsed.length ? h('ul.list.compact', lapsed.map(c => h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×'))))) : h('p.muted.small', 'Henüz yok')),
     sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Odak: son 7 günde ${focusWeek} dk`)),
     h('a.card.link', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ` ${store.all('notes').filter(n => n.kind === 'quick' && !n.done).length} açık not`)),
@@ -169,11 +179,16 @@ function form(box) {
       }, 'Kaydet')));
 }
 
-// Okuma hızı + doğruluk özeti
+// Okuma hızı + doğruluk özeti + haftalık grafik (hedef hız çizgisi)
 function readLine() {
   const r = store.all('progress').filter(x => x.kind === 'read' && x.wpm);
   if (!r.length) return null;
   const wpm = Math.round(r.reduce((a, x) => a + x.wpm, 0) / r.length);
   const q = r.filter(x => x.total), acc = q.length ? q.reduce((a, x) => a + x.right, 0) / q.reduce((a, x) => a + x.total, 0) : null;
-  return sec('Okuma', h('p', h('b', wpm), ' kelime/dk ortalama', acc != null ? ` · doğruluk %${Math.round(acc * 100)}` : '', h('span.small.muted', ` (${r.length} okuma)`)));
+  const goal = +store.settings().readGoal || READ_GOAL;
+  const wk = weeklyWpm(r);
+  const lastW = wk.filter(x => x.v != null).at(-1);
+  return sec('Okuma', h('p', h('b', wpm), ' kelime/dk ortalama', acc != null ? ` · doğruluk %${Math.round(acc * 100)}` : '', h('span.small.muted', ` (${r.length} okuma)`)),
+    h('div.readchart', { html: weekBars(wk.map(x => ({ label: x.label, v: x.v })), { goal, unit: ' kelime/dk' }) }),
+    h('p.small.muted', `Haftalık ortalama · kesik çizgi hedef: ${goal} kelime/dk`, lastW ? (lastW.v >= goal ? ' · son hafta hedefte' : ` · son hafta ${goal - lastW.v} eksik`) : ''));
 }

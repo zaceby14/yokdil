@@ -2,6 +2,7 @@
 import { program, seedUser } from './data.js';
 import * as store from './store.js';
 import { dayKey, diffDays, addDays, parseDay } from './util.js';
+import { isFinal, finalNewLimit } from './strategy.js';
 
 export async function week(today = dayKey()) {
   const p = await program();
@@ -16,10 +17,25 @@ export async function daysToExam(today = dayKey()) {
   return diffDays(today, p.exam);
 }
 
-export async function newLimit() {
+// Son 14 gün modu (Ayarlar'dan kapatılabilir). FINAL.on açılışta hesaplanır (eşzamanlı kullanım için).
+export const FINAL = { on: false, left: 999 };
+export async function finalMode(today = dayKey()) {
+  const left = await daysToExam(today);
+  const on = store.settings().finalMode !== false && isFinal(left);
+  FINAL.on = on; FINAL.left = left;
+  return { on, left };
+}
+
+// Program / ayar limiti (son 14 gün kısıtı olmadan)
+export async function baseNewLimit() {
   const s = store.settings();
   if (s.newLimit != null && s.newLimit !== '') return Number(s.newLimit);
   return (await week()).newWords ?? 15;
+}
+export async function newLimit() {
+  const base = await baseNewLimit();
+  const f = await finalMode();
+  return f.on ? finalNewLimit(base, f.left) : base;
 }
 
 export function dayRec(key = dayKey()) {
@@ -42,11 +58,13 @@ export function tick(task, val = true, key = dayKey()) {
 }
 
 // Görev anahtarları (Bugün sırası). 'hata' yalnız bugünkü hata seti doluysa görünür (tasks.js)
-export const taskList = busy => busy ? ['kart', 'gramer'] : ['kart', 'yeni', 'gramer', 'hata', 'okuma'];
+// Son 14 gün: tekrar + hata + deneme ağırlıklı (okuma görevi yok; yeni kelime limit 0 ise gizlenir)
+export const taskList = (busy, final) => busy ? ['kart', 'gramer'] : final ? ['kart', 'hata', 'deneme', 'gramer', 'yeni'] : ['kart', 'yeni', 'gramer', 'hata', 'okuma'];
 
 export function dayDone(r) {
   if (!r) return false;
-  return taskList(r.busy).filter(t => t !== 'hata' || (r.hset || []).length).every(t => r.tasks?.[t]);
+  return taskList(r.busy, r.final).filter(t => t !== 'hata' || (r.hset || []).length).filter(t => !(r.final && t === 'yeni'))
+    .every(t => r.tasks?.[t] || (t === 'deneme' && r.mock));
 }
 
 // Saf: anlamlı çalışma günü mü? (≥10 dk odak, ≥1 görev ya da deneme)

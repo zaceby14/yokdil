@@ -3375,5 +3375,275 @@
     "hint": "\"most\" ve \"a few\" kelimelerini şıklarda eşle."
    }
   ]
+ },
+ {
+  "id": "taktik-sure",
+  "title": "Taktik: Süre planı ve çözme sırası",
+  "order": 38,
+  "topic": "strateji",
+  "minutes": 4,
+  "summary": "80 soru, 180 dk. Hızlı bölümlerle başla, okumaya 60 dk bırak, son 20 dk ikinci tur.",
+  "formula": "çeviri → boşluk → cloze → cümle tamamlama → ilgisiz → paragraf tamamlama → okuma → 2. tur",
+  "blocks": [
+   {
+    "h": "Neden bu sıra?",
+    "md": "- Çeviri ve boşluk **kısa** sorulardır: az okuma, hızlı net.\n- Okuma parçaları en çok süre ister; **yorulmadan** ama netleri topladıktan sonra gel.\n- Sırayı denemelerde dene; sınav günü **değiştirme**."
+   },
+   {
+    "h": "Dakika planı",
+    "md": "| Bölüm | Soru | Dk |\n|---|---|---|\n| Çeviri | 12 | 15 |\n| Cümlede boşluk | 20 | 22 |\n| Cloze | 10 | 14 |\n| Cümle tamamlama | 11 | 22 |\n| Anlamı bozan cümle | 6 | 12 |\n| Paragraf tamamlama | 6 | 15 |\n| Okuma (5 parça) | 15 | 60 |\n| 2. tur + kontrol | – | 20 |"
+   },
+   {
+    "h": "3 kural",
+    "md": "- **İşaretle, geç:** 1 dakikada çözülmeyen soru 2. tura kalır.\n- **Boş bırakma:** yanlış doğruyu götürmez; son 5 dk'da hepsini kodla.\n- **Optik:** her bölüm bitince kodla, sona bırakma."
+   }
+  ],
+  "checks": [
+   {
+    "q": "180 dakikada 80 soru: soru başına ortalama süre kaç dakikadır?",
+    "options": [
+     "1,5",
+     "2",
+     "2,25",
+     "2,5",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "180 ÷ 80 = 2,25 dk. Kısa sorularda (çeviri, boşluk) bunun altında kal ki okumaya süre artsın.",
+    "hint": "180'i 80'e böl."
+   },
+   {
+    "q": "Bir boşluk sorusunda 1 dakikadır takıldın. En doğru hamle hangisidir?",
+    "options": [
+     "Çözene kadar devam etmek",
+     "Rastgele kodlayıp bir daha bakmamak",
+     "Soruyu boş bırakıp unutmak",
+     "Kitapçıkta işaretleyip geçmek, 2. turda dönmek",
+     "Bölümü baştan okumak"
+    ],
+    "answer": 3,
+    "explain": "İşaretle-geç: süreyi korur, 2. turda taze gözle dönersin.",
+    "hint": "İki tur kuralını hatırla."
+   },
+   {
+    "q": "YÖKDİL'de yanlış doğruyu götürmez. Buna göre son 5 dakikada boş kalan sorular için ne yapılır?",
+    "options": [
+     "Hepsi kodlanır",
+     "Boş bırakılır",
+     "Sadece emin olunanlar kodlanır",
+     "Yarısı kodlanır",
+     "Optik teslim edilir"
+    ],
+    "answer": 0,
+    "explain": "Yanlışın cezası yok; boş bırakmak sadece puan kaybettirir.",
+    "hint": "Yanlış cevap puan düşürüyor mu?"
+   },
+   {
+    "q": "Okuması zayıf bir aday sınava hangi bölümle başlamalıdır?",
+    "options": [
+     "Okuma parçaları",
+     "Paragraf tamamlama",
+     "Anlamı bozan cümle",
+     "Cümle tamamlama",
+     "Çeviri"
+    ],
+    "answer": 4,
+    "explain": "Çeviri kısa ve hızlıdır; önce kolay netler toplanır, okumaya 60 dk bırakılır.",
+    "hint": "En az okuma isteyen, en hızlı bölüm hangisi?"
+   },
+   {
+    "q": "Plana göre 3 soruluk bir okuma parçasına ayrılan süre kaç dakikadır?",
+    "options": [
+     "4",
+     "6",
+     "12",
+     "20",
+     "25"
+    ],
+    "answer": 2,
+    "explain": "5 parça × 12 dk = 60 dk.",
+    "hint": "Okumaya toplam 60 dk var ve 5 parça var."
+   }
+  ]
+ },
+ {
+  "id": "taktik-deneme-analizi",
+  "title": "Taktik: Deneme sonrası 20 dakikalık analiz",
+  "order": 39,
+  "topic": "strateji",
+  "minutes": 3,
+  "summary": "Deneme çözmek yetmez; puanı yanlışların analizi artırır. Aynı gün 20 dakika ayır.",
+  "formula": "say → en zayıf 2 bölüm → her yanlışa neden → karta / hata kutusuna → tek hedef",
+  "blocks": [
+   {
+    "h": "Adımlar",
+    "md": "1. Bölüm bölüm **doğru / yanlış / boş** say, siteye gir.\n2. Hedef netle karşılaştır; **en çok kaybettiren 2 bölümü** seç.\n3. Her yanlışa **tek neden** seç.\n4. Kelimeler → **kart**. Gramer → **hata kutusu**.\n5. Sonraki deneme için **tek hedef** yaz."
+   },
+   {
+    "h": "6 hata nedeni",
+    "md": "| Neden | Ne yap |\n|---|---|\n| Kelime | Cümlesiyle karta ekle |\n| Gramer | Dersi aç, 5 soru çöz |\n| Dikkat | Küçük kelimelerin altını çiz |\n| Süre | Bölüm sürelerini saatle tut |\n| İki şık | Farkı tek cümleyle yaz |\n| Metin | Süresiz yeniden oku, özetle |"
+   },
+   {
+    "h": "Dikkat",
+    "md": "- Analizi **aynı gün** yap; ertesi güne kalırsa neden yanlış yaptığını unutursun.\n- Doğru yaptığın ama **emin olmadığın** soruları da yanlış say.\n- Toplam puana değil, **nedenlerin dağılımına** bak."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Deneme biter bitmez yapılacak ilk iş hangisidir?",
+    "options": [
+     "Yeni bir denemeye başlamak",
+     "Sadece toplam puana bakmak",
+     "Bölüm bölüm doğru/yanlış/boş saymak",
+     "Bütün soruları baştan çözmek",
+     "Kelime listesi ezberlemek"
+    ],
+    "answer": 2,
+    "explain": "Önce tablo: hangi bölüm net kaybettiriyor, o görülür.",
+    "hint": "Analizin ilk adımı sayım."
+   },
+   {
+    "q": "Yanlışın nedeni \"kelimeyi bilmiyordum\" ise ne yapılır?",
+    "options": [
+     "Kelime cümlesiyle karta eklenir",
+     "Soru silinir",
+     "Gramer dersi açılır",
+     "Süre planı değiştirilir",
+     "Hiçbir şey yapılmaz"
+    ],
+    "answer": 0,
+    "explain": "Kelime hatasının ilacı kart: cümlesiyle ekle, ertesi gün tekrar gelsin.",
+    "hint": "Kelimeler nerede tekrar edilir?"
+   },
+   {
+    "q": "İki şık arasında kalıp yanlışı seçtin. En yararlı çalışma hangisidir?",
+    "options": [
+     "Doğru cevabı ezberlemek",
+     "Şansa bağlamak",
+     "Soruyu atlamak",
+     "Aynı denemeyi yarın tekrar çözmek",
+     "İki şıkkın farkını tek cümleyle yazmak"
+    ],
+    "answer": 4,
+    "explain": "Farkı yazınca tuzağın türünü görürsün (bağlaç, zaman, niceleyici…).",
+    "hint": "Amaç cevabı değil, farkı görmek."
+   },
+   {
+    "q": "Deneme analizi ne zaman yapılmalıdır?",
+    "options": [
+     "Bir hafta sonra",
+     "Denemeyle aynı gün",
+     "Sınavdan sonra",
+     "Bir sonraki denemeden sonra",
+     "Hiç gerekmez"
+    ],
+    "answer": 1,
+    "explain": "Aynı gün: neden o şıkkı seçtiğini hâlâ hatırlarsın.",
+    "hint": "Düşünce zincirini ne zaman hatırlarsın?"
+   },
+   {
+    "q": "Yanlışlarının çoğunda neden \"süre yetmedi\" çıktı. Sonraki denemenin hedefi ne olmalı?",
+    "options": [
+     "Daha çok kelime ezberlemek",
+     "Okumayı tamamen boş bırakmak",
+     "Denemeyi iki güne bölmek",
+     "Bölüm sürelerini saatle tutmak",
+     "Çeviriyi sona almak"
+    ],
+    "answer": 3,
+    "explain": "Süre hatası bilgi değil plan sorunudur: bölüm bölüm saat tut, takılınca geç.",
+    "hint": "Sorun bilgi mi, plan mı?"
+   }
+  ]
+ },
+ {
+  "id": "taktik-kelime-tahmini",
+  "title": "Taktik: Bilmediğin kelimeyi bağlamdan tahmin et",
+  "order": 40,
+  "topic": "kelime-tahmini",
+  "minutes": 4,
+  "summary": "Bilmediğin kelimede durma. Cümledeki zıtlık, örnek, tanım ve ek ipuçları anlamı verir.",
+  "formula": "kelime türü → ipucu (zıtlık / örnek / tanım) → önek-sonek → olumlu mu olumsuz mu?",
+  "blocks": [
+   {
+    "h": "4 ipucu",
+    "md": "| İpucu | İşaret | Örnek |\n|---|---|---|\n| Zıtlık | but, although, unlike, whereas | *Unlike the **arid** south, the north is wet.* → kurak |\n| Örnek | such as, for example, including | ***Rodents** such as mice and rats* → kemirgen |\n| Tanım | that is, i.e., or, – , ( ) | ***Erosion**, or the wearing away of soil,* → aşınma |\n| Neden-sonuç | because, so, therefore | *It was so **brittle** that it broke.* → kırılgan |"
+   },
+   {
+    "h": "Önek – sonek",
+    "md": "- **un-, in-, im-, ir-, non-** → değil (*impermeable* = geçirmez)\n- **re-** → yeniden · **pre-** → önce · **over-** → aşırı · **under-** → yetersiz\n- **-less** → -sız · **-able** → -ebilir · **-ify / -ise** → fiil yapar"
+   },
+   {
+    "h": "Yeterli olan",
+    "md": "- Tam anlam şart değil: **olumlu mu, olumsuz mu?** çoğu soruyu çözer.\n- Önce **kelime türünü** bul (isim, fiil, sıfat).\n- Tahmin et, **devam et**; 10 saniyeden fazla durma."
+   }
+  ],
+  "checks": [
+   {
+    "q": "\"Unlike its sluggish predecessor, the new processor is remarkably fast.\" Cümlesine göre \"sluggish\" en yakın hangi anlama gelir?",
+    "options": [
+     "expensive",
+     "slow",
+     "modern",
+     "small",
+     "reliable"
+    ],
+    "answer": 1,
+    "explain": "Unlike zıtlık kurar: yeni işlemci hızlı ↔ eskisi yavaş.",
+    "hint": "\"Unlike\" hangi iki şeyi karşılaştırıyor? \"fast\"in tersi ne?"
+   },
+   {
+    "q": "\"Many arboreal animals, such as monkeys and squirrels, rarely come down to the ground.\" Cümlesine göre \"arboreal\" ne demektir?",
+    "options": [
+     "living in water",
+     "active at night",
+     "feeding on meat",
+     "living in trees",
+     "sleeping all winter"
+    ],
+    "answer": 3,
+    "explain": "Örnek ipucu: maymun ve sincap; ayrıca \"yere nadiren inerler\" → ağaçta yaşayan.",
+    "hint": "Verilen iki örnek hayvanın ortak yanı ne?"
+   },
+   {
+    "q": "\"Desiccation, that is, the complete loss of water, kills most seeds.\" Cümlesine göre \"desiccation\" nedir?",
+    "options": [
+     "drying out",
+     "freezing",
+     "rapid growth",
+     "infection",
+     "flooding"
+    ],
+    "answer": 0,
+    "explain": "Tanım ipucu: \"that is\"ten sonra anlam verilmiş → tamamen su kaybı = kuruma.",
+    "hint": "\"that is\" ifadesinden sonra ne yazıyor?"
+   },
+   {
+    "q": "\"The membrane is impermeable: not a single drop of water passed through it.\" Cümlesine göre \"impermeable\" ne demektir?",
+    "options": [
+     "very thin and light",
+     "easy to break",
+     "full of small holes",
+     "made of metal",
+     "not letting liquid pass"
+    ],
+    "answer": 4,
+    "explain": "im- = değil; iki noktadan sonraki açıklama: tek damla su geçmedi → geçirmez.",
+    "hint": "Öneke ve iki noktadan sonraki açıklamaya bak."
+   },
+   {
+    "q": "\"Although the first results were promising, later trials were dismal: the drug helped almost nobody.\" Cümlesine göre \"dismal\" en yakın hangi anlama gelir?",
+    "options": [
+     "surprising",
+     "expensive",
+     "very bad",
+     "very quick",
+     "successful"
+    ],
+    "answer": 2,
+    "explain": "Although zıtlık kurar: ilk sonuçlar umut verici ↔ sonrakiler çok kötü; \"neredeyse kimseye yaramadı\" da bunu destekler.",
+    "hint": "\"promising\" olumlu. \"Although\" sonrası hangi yönde olmalı?"
+   }
+  ]
  }
 ]

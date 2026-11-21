@@ -1,5 +1,25 @@
 # Yol haritası
 
+## v7'de yapılanlar (sınav stratejisi + QA)
+- [x] Araçlar: Süre planı, Hedef net (Ayarlar → Hedef puan), Sınav günü (tiklenebilir), Kaynaklar
+- [x] Deneme: bölüm bazlı süre kaydı (`secTime`), "Bu bölüm: x/y dk" göstergesi (aşınca kırmızı, kapatılabilir); sonuçta net / dk / hedef / sn-soru
+- [x] Deneme analizi: her yanlış/boş için neden çipi (`reasons` koleksiyonu, senkrona girer), dağılım + en sık nedenin tavsiyesi, 20 dk analiz listesi; Eksikler'de birikimli; alıştırma/gramer yanlışında da çip
+- [x] Yarım deneme: ilk 40 soru / 90 dk (`#/cikmis/sinav/<id>/yarim`), ayrı kayıt, puan 80 soruya oranlı; programdaki yarım denemeler buna bağlı
+- [x] Son 14 gün modu: yeni kelime ≤5 (son 3 gün 0), görevler kart + hata (12'ye kadar) + deneme + gramer, sınav günü bandı; Ayarlar'dan kapatılır
+- [x] Başvuru bandı: 14 gün kala → açık (son gün sayacı) → geç başvuru
+- [x] Çeviri: "Parçala" (rol renkli bloklar; cevaptan sonra karşılık + kontrol maddeleri)
+- [x] Bağlamdan tahmin alıştırması; Eksikler'de "Çekirdek liste: X/1500 görüldü"
+- [x] Aynı kişisel kuraldan 2 yanlış → Bugün'e kural kartı görevi ("Okudum" ile kapanır)
+- [x] Okuma hızı haftalık grafiği + hedef hız çizgisi (Ayarlar → Okuma hızı hedefi, varsayılan 120)
+- [x] Dersler: 8 katlanır grup + arama; yeni konu adları (Strateji, Kelime tahmini)
+- [x] QA: klavye odak halkası; ham anahtarlar Türkçe ada çevrildi (okuma konusu, soru tipi); deneme grafiğinde kesilen etiket; kısa set/yarım denemede olmayan bölüm %0 sayılmıyor
+
+## v7 sonrası fikirler
+- Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
+- Çıkmış çeviri sorularında da Parçala (içerik gerekir)
+- Yarım deneme için bölüm hedef sürelerini 90 dk'ya göre ölçekleme
+- Neden çiplerine göre otomatik görev (ör. "süre" çoksa süre planı kartı)
+
 ## v6'da yapılanlar (kurul raporu: öğrenci, gramer öğretmeni, sınav uzmanı)
 - [x] Soru/sınav ekranlarında ana düğme hep erişilebilir: Not telefonda üst çubukta, bildirim üstte ve tıklamayı engellemez, Sonraki/Kontrol yapışkan alt çubukta (e2e: elementFromPoint)
 - [x] Okurken/elle/nottan eklenen kelimeler (mine) yeni kuyruğun önünde; dünden kalanlar limit dolsa da gelir (en fazla +10)
@@ -17,11 +37,6 @@
 - [x] Günlük gramer: konu ağırlığı (bağlaç/edat/çift boşluk/relative/zaman), az çıkan 7 konudan en fazla 1, seviye L1 → L2 → L3 (konu bazında %70)
 - [x] program.json: az çıkan 7 konu 9. haftada; çift boşluk / bağlaç master / edat / relative / zaman ifadeleri haftaları; yakın anlam çıktı; 3 yarım (h2, h6, h9) + 5 tam ÖSYM (h10–14); faz 2'de kart 15 dk
 - [x] Okuma paneli: çevrimdışı uyarısı, çoğul → kök
-
-## v6 sonrası fikirler
-- Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
-- Aynı kişisel kuraldan 2 yanlış → Bugün'e kural kartı görevi
-- Yarım deneme için soru sayısı sınırı (ilk 40 soruda otomatik bitir)
 
 ## v4'te yapılanlar
 - [x] Çıkmış sorular gizli repodan (zaceby14/yokdil-ozel/paket.json) anahtarla otomatik: açılışta günde 1, "Soruları güncelle", ETag/304; manuel dosya yükleme duruyor
@@ -55,9 +70,6 @@
 
 ## Sonraki fikirler
 - Günlük gramer setini Eksikler'deki soru tipi doğruluğuna göre de ağırlıklandır
-- Çeviri sorularında cümle parçalama yardımı (ana bağlaç / özne / fiil renkli)
-- Sınava son 14 gün: yeni kelime otomatik azalt, tekrar + deneme modu
-- Okuma hızı grafiği (haftalık) ve hedef hız çizgisi
 - Tarama listesine kendi notlarındaki kelimeleri de katma seçeneği
 - Boşluk oyununda kelimenin çekimli halleri (forms.json family) ile şık üretme
 - Otomatik kartlarda çevrimdışı eklenen boş anlamları çevrimiçi olunca toplu doldurma

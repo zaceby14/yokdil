@@ -59,13 +59,14 @@ async function list(root) {
     next ? h('a.card.link.suggest', { href: '#/okuma/p/' + next.id },
       h('div.small.muted', 'Sıradaki önerilen · seviye ' + (next.level || '-')), h('b', next.title),
       sg.acc != null ? h('div.small.muted', `Son okumalar: ${sg.wpm} kelime/dk · doğruluk %${Math.round(sg.acc * 100)}`) : null) : null,
+    h('a.card.link.guess-link', { href: '#/kartlar/tahmin' }, h('b', 'Bağlamdan tahmin'), h('span.small.muted', ' bilmediğin kelimeyi cümleden çıkar')),
     mine.length ? h('h3', 'Metinlerim') : null,
     h('ul.list', mine.map(t => h('li', h('a', { href: '#/okuma/t/' + t.id },
       h('b', t.title || 'Başlıksız'), h('span.small.muted', `${t.source || ''}${t.page ? ' · s. ' + t.page : ''}`))))),
     h('h3', 'Hazır parçalar'),
     ps.length ? h('ul.list', ps.map(p => h('li' + (done.has(p.id) ? '.done' : ''), h('a', { href: '#/okuma/p/' + p.id },
       h('b', (done.has(p.id) ? '✓ ' : '') + p.title),
-      h('span.small.muted', `${p.topic || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : emptyData('Okuma parçaları')
+      h('span.small.muted', `${topicName(p.topic) || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : emptyData('Okuma parçaları')
   );
 }
 

@@ -20,6 +20,7 @@ import { setCtx } from './ctx.js';
 import { initNotes } from './notes.js';
 import { initFocus, eveTip } from './focus.js';
 import { dailyFetch } from './private.js';
+import { finalMode } from './plan.js';
 
 const routes = { bugun: today, okuma: reading, kartlar: cards, gramer: grammar, alistirma: drills, eksikler: panel, ayarlar: settings, cikmis: exams, dersler: lessons, notlar: notes };
 const TAB = { gramer: 'sorular', alistirma: 'sorular', cikmis: 'sorular' };
@@ -85,6 +86,7 @@ async function main() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
   await loadAll();
   await seed();
+  await finalMode().catch(() => {}); // son 14 gün modu (hata seti boyutu için açılışta)
   await migrateContent().catch(e => console.warn('içerik güncelleme', e));
   try { store.migrate(MIGRATIONS, { idx: await wordIndex() }); } catch (e) { console.warn('göç', e); }
   sync.onStatus(syncDot);

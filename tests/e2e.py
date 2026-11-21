@@ -1,9 +1,9 @@
 # Uçtan uca duman testi: python3 tests/e2e.py (sunucu: python3 -m http.server 8765)
-import json, sys, os
+import json, sys, os, re
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('BASE', 'http://localhost:8765/')
-SHOTS = '/home/claude/shots/v6'
+SHOTS = '/home/claude/shots/v7'
 os.makedirs(SHOTS, exist_ok=True)
 ROUTES = ['bugun', 'okuma', 'kartlar', 'kartlar/liste', 'kartlar/ekle', 'gramer', 'alistirma', 'cikmis', 'dersler', 'eksikler', 'ayarlar', 'notlar', 'kartlar/yaz', 'kartlar/hafiza']
 errors = []
@@ -984,7 +984,7 @@ with sync_playwright() as p:
 
     # Araçlar ve formula
     page.goto(BASE + '#/dersler'); page.wait_for_timeout(500)
-    check(page.locator('.toolstrip .tool').count() == 6, f'Dersler: Araçlar şeridi ({page.locator(".toolstrip .tool").count()})')
+    check(page.locator('.toolstrip .tool').count() >= 6, f'Dersler: Araçlar şeridi ({page.locator(".toolstrip .tool").count()})')
     check(page.locator('.formula-line').count() >= 10, 'ders listesinde formül satırı')
     shot('v6-dersler', True)
     page.click('.tool:has-text("Karar ağacı")'); page.wait_for_timeout(400)
@@ -1114,6 +1114,350 @@ with sync_playwright() as p:
     tb = page.locator('#toast').bounding_box()
     check(tb and tb['y'] < 150, 'bildirim üstte')
     ctx.close()
+
+    # ================= v7: sınav stratejisi, çeviri parçalama, bağlamdan tahmin, QA =================
+    ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    NEW_AIDS = ['timePlan', 'targets', 'examDay', 'errorReasons', 'mockAnalysis', 'resources']
+    def merged(name):
+        # Gerçek içerik yeni alanları henüz içermiyorsa data/dev-sample ile tamamla (içerik gelince gerçek veri kullanılır)
+        real = json.load(open(f'{ROOT}/data/{name}.json', encoding='utf-8')); samp = json.load(open(f'{ROOT}/data/dev-sample/{name}.json', encoding='utf-8'))
+        if name == 'aids': return {**{k: samp[k] for k in NEW_AIDS}, **real}
+        if name == 'drills': return real if any('parts' in it for d in real for it in d['items']) else real + [d for d in samp if d['id'].startswith('dp')]
+        ids = {l['id'] for l in real}
+        return real + [l for l in samp if l['id'].startswith('taktik-') and l['id'] not in ids]
+    DATEJS = """(() => { const off = +(localStorage.getItem('test.dateoff') || 0); if (!off) return; const D = Date;
+      class FD extends D { constructor(...a) { if (a.length) super(...a); else super(D.now() + off); } static now() { return D.now() + off; } }
+      window.Date = FD; })();"""
+    def v7ctx(vp, mobile, tag):
+        c = b.new_context(viewport=vp, is_mobile=mobile, has_touch=mobile, service_workers='block')
+        c.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
+        c.route(API, gh_route)
+        for n in ['aids', 'drills', 'lessons']:
+            c.route(f'**/data/{n}.json', (lambda n: lambda r: r.fulfill(json=merged(n)))(n))
+        c.add_init_script(DATEJS)
+        pg = c.new_page(); attach(pg, tag)
+        pg.on('dialog', lambda d: d.accept())
+        return c, pg
+    ctx, page = v7ctx({'width': 390, 'height': 844}, True, 'v7')
+    def st():
+        page.wait_for_timeout(250)
+        return page.evaluate("JSON.parse(localStorage.getItem('yokdil.v1')||'{}')")
+    def ev(js): return page.evaluate(js)
+    def shot(n, full=False): page.screenshot(path=f'{SHOTS}/{n}.png', full_page=full)
+    def go(r, t=500): page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
+    def set_date(day):  # 'YYYY-MM-DD' öğlen; None → gerçek tarih
+        if day is None: ev("localStorage.removeItem('test.dateoff')")
+        else: ev(f"localStorage.setItem('test.dateoff', String(new Date('{day}T12:00:00').getTime() - (Date.now() - (+(localStorage.getItem('test.dateoff')||0)))))")
+        page.reload(); page.wait_for_timeout(700)
+    go('bugun', 800)
+    ev("localStorage.setItem('yokdil.token', 'ghp_x')")
+    # Eski (v6) biçimli veri: yeni alanlar yok → bozulmamalı
+    ev("""import('./js/store.js').then(m => {
+      m.put('progress', { id: 'exam:yokdil-fen-2020-1', examId: 'yokdil-fen-2020-1', answers: { 1: 0 }, flags: {}, cur: 0, startedAt: Date.now() - 60000, elapsed: 100, done: false });
+      m.put('mocks', { id: 'mold', date: '2026-11-10', name: 'Eski deneme', sections: { bosluk: { d: 12, y: 6, b: 2 }, cloze: { d: 5, y: 4, b: 1 }, tamamlama: { d: 6, y: 4, b: 1 }, 'en-tr': { d: 4, y: 2, b: 0 }, 'tr-en': { d: 4, y: 2, b: 0 }, paragraf: { d: 3, y: 3, b: 0 }, ilgisiz: { d: 2, y: 4, b: 0 }, okuma: { d: 8, y: 6, b: 1 } } });
+      m.put('settings', { id: 'main', theme: 'system', grammarCount: 8 }); })""")
+    go('ayarlar', 400)
+    page.click('button:has-text("Soruları güncelle")'); page.wait_for_timeout(2200)
+
+    # A1) Araçlar: Süre planı · Hedef net · Sınav günü · Kaynaklar
+    go('dersler')
+    tools = [page.locator('.toolstrip .tool').nth(i).inner_text() for i in range(page.locator('.toolstrip .tool').count())]
+    check(all(t in tools for t in ['Süre planı', 'Hedef net', 'Sınav günü', 'Kaynaklar']) and len(tools) == 10, f'Araçlar şeridi: 4 yeni araç ({len(tools)})')
+    go('dersler/arac/sure')
+    aids_m = merged('aids')
+    n_sec = len([x for x in aids_m['timePlan']['sections'] if x.get('minutes')])
+    check(not re.search(r'(?<!\d)0 soru', page.inner_text('main')) and '80 soru' in page.inner_text('main'), 'Süre planı: kontrol satırı "0 soru" yazmıyor, toplam 80 soru')
+    check(page.locator('ol.tplan li').count() == n_sec and page.locator('.tp-bar i').count() == n_sec and 'dk' in page.locator('.tp-min').first.inner_text(), f'Süre planı: {n_sec} bölüm, dakika + çubuk')
+    check(ev("document.documentElement.scrollWidth") <= 392, 'Süre planı ekrana sığıyor')
+    shot('v7-sure-plani', True)
+    go('dersler/arac/net')
+    scores = sorted({t['score'] for t in aids_m['targets']})
+    check(page.locator('.target-seg button').count() == len(scores), f'Hedef net: puan seçenekleri {scores}')
+    page.click(f'.target-seg button:has-text("{scores[-1]} puan")'); page.wait_for_timeout(250)
+    check(st()['settings']['main'].get('targetScore') == scores[-1] and page.locator('.target-seg .active').inner_text().startswith(str(scores[-1])), 'Hedef net: seçim Ayarlar\'a kaydedildi')
+    hdr = [page.locator('.nettable th').nth(i).inner_text() for i in range(page.locator('.nettable th').count())]
+    need_tot = next((t.get('total') or sum(t['nets'].values())) for t in aids_m['targets'] if t['score'] == scores[-1])
+    tot_row = [page.locator('.nettable tr.total td').nth(i).inner_text() for i in range(4)]
+    check(hdr == ['Bölüm', 'Gereken', 'Senin', 'Fark'] and tot_row[2] == '44', f'Hedef net: son deneme netlerin + fark sütunu ({tot_row})')
+    check(need_tot is None or (tot_row[1] == str(need_tot) and tot_row[3] == '−' + str(need_tot - 44)), f'Hedef net: toplam gereken {need_tot}, fark doğru')
+    check(page.locator('.nettable td.bad-t').count() >= 1, 'Hedef net: eksik bölüm kırmızı')
+    shot('v7-hedef-net', True)
+    go('ayarlar', 300)
+    check(page.locator('input[aria-label="Hedef puan"]').input_value() == str(scores[-1]), 'Ayarlar: hedef puan alanı')
+    go('dersler/arac/gun')
+    n_chk = page.locator('ul.checklist .check').count()
+    page.locator('ul.checklist .check').first.click(); page.wait_for_timeout(250)
+    page.reload(); page.wait_for_timeout(600)
+    check(n_chk >= 4 and page.locator('ul.checklist li.done').count() == 1 and page.locator('ul.checklist .check[aria-checked=true]').count() == 1, f'Sınav günü: tik kalıcı ({n_chk} madde)')
+    shot('v7-sinav-gunu', True)
+    go('dersler/arac/kaynak')
+    links = page.locator('.reslist a')
+    check(links.count() >= 1 and all(links.nth(i).get_attribute('target') == '_blank' and 'noopener' in links.nth(i).get_attribute('rel') for i in range(links.count())), f'Kaynaklar: bağlantılar yeni sekmede ({links.count()})')
+    shot('v7-kaynaklar', True)
+
+    # A2) Deneme: bölüm süresi göstergesi (eski kayıtta secTime yoktu)
+    go('cikmis/sinav/yokdil-fen-2020-1', 900)
+    plan_bos = next(x['minutes'] for x in aids_m['timePlan']['sections'] if x['type'] == 'bosluk')
+    check(page.locator('.secclock:visible').count() == 1 and f'/{plan_bos} dk' in page.locator('.secclock').inner_text(), f'Deneme: "Bu bölüm: x/{plan_bos} dk" göstergesi ({page.locator(".secclock").inner_text()!r})')
+    check(page.locator('.opt.chosen').count() == 1, 'eski deneme kaydı (secTime yok) bozulmadan açıldı')
+    go('bugun', 300)
+    ev(f"""import('./js/store.js').then(m => {{ const p = m.get('progress', 'exam:yokdil-fen-2020-1'); m.put('progress', {{ ...p, elapsed: {plan_bos * 60 + 100}, secTime: {{ bosluk: {plan_bos * 60 + 55} }} }}); }})""")
+    page.wait_for_timeout(300)
+    go('cikmis/sinav/yokdil-fen-2020-1', 2300)
+    check(page.locator('.secclock.over').count() == 1 and f'{plan_bos}/{plan_bos} dk' in page.locator('.secclock').inner_text(), f'Deneme: süre aşılınca renk değişir ({page.locator(".secclock").inner_text()!r})')
+    shot('v7-deneme-bolum-suresi')
+    page.click('.secclock .icon-x'); page.wait_for_timeout(300)
+    check(page.locator('.secclock:visible').count() == 0 and st()['settings']['main'].get('secClock') is False, 'bölüm süresi göstergesi kapatılabilir')
+    ev("import('./js/store.js').then(m => m.setSetting('secClock', true))"); page.wait_for_timeout(1500)
+    check(page.locator('.secclock:visible').count() == 1, 'gösterge ayardan geri açılır')
+    # Birkaç soru cevapla (yanlış + doğru), cloze bölümünde biraz bekle, bitir
+    for n in range(3):
+        page.locator('.opt').nth(n % 5).click(); page.wait_for_timeout(120)
+        page.click('.exam-nav .main-act'); page.wait_for_timeout(150)
+    page.click('.secstrip .chip:has-text("Cloze")'); page.wait_for_timeout(2300)
+    page.locator('.opt').nth(1).click(); page.wait_for_timeout(150)
+    page.click('.readbar button:has-text("Bitir")'); page.wait_for_timeout(900)
+    check('#/cikmis/sonuc/yokdil-fen-2020-1' in page.url, 'deneme bitti → sonuç')
+    page.wait_for_timeout(500)
+    pr = st()['progress']['exam:yokdil-fen-2020-1']
+    check(pr.get('secTime', {}).get('bosluk', 0) >= plan_bos * 60 and pr['secTime'].get('cloze', 0) >= 2, f'bölüm süreleri kaydedildi ({pr.get("secTime")})')
+    mk = [m for m in st()['mocks'].values() if m.get('examId') == 'yokdil-fen-2020-1'][-1]
+    check(mk.get('times', {}).get('bosluk', 0) >= plan_bos * 60, 'deneme kaydında bölüm süreleri (senkrona girer)')
+    th = [page.locator('.timetable th').nth(i).inner_text() for i in range(page.locator('.timetable th').count())]
+    row0 = [page.locator('.timetable tr').nth(1).locator('td').nth(i).inner_text() for i in range(5)]
+    check(th == ['Bölüm', 'Net', 'dk', 'Hedef', 'sn/soru'] and row0[3] == str(plan_bos) and int(row0[2]) > plan_bos and int(row0[4]) >= plan_bos * 3, f'Sonuç: bölüm başına net / dk / hedef / sn-soru ({row0})')
+    check(page.locator('.timetable td.bad-t').count() >= 1, 'Sonuç: hedefi aşan süre kırmızı')
+    # A3) Deneme analizi: neden çipleri + özet + analiz adımları
+    n_reason = len(aids_m['errorReasons'])
+    check(page.locator('.secgroup[open]').count() == 0, 'sonuç: bölümler kapalı gelir')
+    page.locator('.secgroup summary').first.click(); page.wait_for_timeout(250)
+    first_wrap = page.locator('.secgroup[open] .qwrong-wrap').first
+    check(first_wrap.locator('.reasons .chip').count() == n_reason, f'Sonuç: her yanlış/boş için {n_reason} neden çipi')
+    wraps = page.locator('.secgroup[open] .qwrong-wrap')
+    wraps.nth(0).locator('.reasons .chip').nth(0).click(); page.wait_for_timeout(150)
+    wraps.nth(1).locator('.reasons .chip').nth(0).click(); page.wait_for_timeout(150)
+    wraps.nth(2).locator('.reasons .chip').nth(1).click(); page.wait_for_timeout(250)
+    rs = st().get('reasons', {})
+    r0 = aids_m['errorReasons'][0]
+    check(len([r for r in rs.values() if not r.get('deleted')]) == 3 and sum(1 for r in rs.values() if r.get('reason') == r0['id']) == 2, 'neden seçimi tek dokunuşla kaydedildi (reasons)')
+    check(page.locator('.reason-card .cbar').count() == 2 and r0['label'] in page.locator('.reason-advice').inner_text() and r0['advice'][:20] in page.locator('.reason-advice').inner_text(), 'özet: neden dağılımı + en sık nedenin tavsiyesi')
+    check(page.locator('.reasons .chip.on[aria-pressed=true]').count() == 3, 'seçili çipler işaretli')
+    n_steps = len(aids_m['mockAnalysis'])
+    check(page.locator('.analysis ul.checklist li').count() == n_steps and ('20 dk analiz' in page.inner_text('.analysis h3') or 'analiz' in page.inner_text('.analysis h3').lower()), f'analiz adımları kontrol listesi ({n_steps}): {page.inner_text(".analysis h3")}')
+    page.locator('.analysis .check').first.click(); page.wait_for_timeout(250)
+    check(page.locator('.analysis li.done').count() == 1 and any(k.startswith('analiz:exam:yokdil-fen-2020-1') for k in st()['progress']), 'analiz adımı işaretlendi')
+    check(ev("document.documentElement.scrollWidth") <= 392, 'sonuç ekranı taşmıyor')
+    shot('v7-deneme-sonuc', True)
+    # Nedenler Eksikler'de birikimli
+    go('eksikler', 600)
+    check(page.locator('.reasons-all .cbar').count() == 2 and '3 işaretli' in page.inner_text('.reasons-all'), 'Eksikler: hata nedenleri birikimli grafik')
+    txt = page.inner_text('main')
+    mcs = re.search(r'Çekirdek liste: (\d+)/(\d+) görüldü', txt)
+    n_words = len(json.load(open(f'{ROOT}/data/words.json', encoding='utf-8')))
+    check(mcs is not None and int(mcs.group(2)) == n_words and '/ 2000 bildiğin kelime' in txt, f'Eksikler: çekirdek liste ilerlemesi ({mcs.group(0) if mcs else None}), hedef 2000 duruyor')
+    # D2) Okuma hızı haftalık grafik + hedef çizgisi
+    ev("""import('./js/store.js').then(m => { const now = Date.now(), d = 86400000;
+      [[1, 95], [2, 105], [9, 88], [16, 80], [17, 84]].forEach(([ago, wpm], i) => m.put('progress', { id: 'read:t' + i, kind: 'read', words: 200, secs: 120, wpm, level: 1, at: now - ago * d, right: 2, total: 3 })); })""")
+    page.wait_for_timeout(300); page.reload(); page.wait_for_timeout(800)
+    check(page.locator('svg.weekbars rect.bar').count() >= 3 and page.locator('svg.weekbars .goalL').count() == 1 and 'hedef: 120 kelime/dk' in page.inner_text('main'), f'Eksikler: okuma hızı haftalık grafik + hedef çizgisi ({page.locator("svg.weekbars rect.bar").count()} hafta)')
+    shot('v7-eksikler', True)
+
+    # A4) Yarım deneme: ilk 40 soru / 90 dk, süre bitince otomatik biter
+    go('cikmis', 600)
+    page.locator('details.secpick summary').first.click(); page.wait_for_timeout(200)
+    check(page.locator('a.half-link').first.inner_text() == 'Yarım deneme: ilk 40 soru · 90 dk', 'Çıkmış: yarım deneme bağlantısı')
+    go('cikmis/sinav/yds-2019-1/yarim', 900)
+    check('1/40' in page.locator('.qhead').inner_text() and page.locator('.timer').inner_text() in ('1:30:00', '1:29:59', '1:29:58', '1:29:57'), f'Yarım deneme: 40 soru, 90 dk ({page.locator(".timer").inner_text()})')
+    page.click('.readbar button:has-text("Optik")'); page.wait_for_timeout(200)
+    check(page.locator('.optik button').count() == 40, 'Yarım deneme: optikte 40 soru')
+    page.locator('.opt').nth(0).click(); page.wait_for_timeout(150)
+    shot('v7-yarim-deneme')
+    go('bugun', 400)
+    check(page.locator('a.exam-resume[href$="/yarim"]').count() == 1, 'Bugün: yarım kalan yarım deneme bandı (/yarim)')
+    ev("import('./js/store.js').then(m => { const p = m.get('progress', 'exam:yds-2019-1~yarim'); m.put('progress', { ...p, elapsed: 90 * 60 - 2 }); })"); page.wait_for_timeout(300)
+    go('cikmis/sinav/yds-2019-1/yarim', 3800)
+    check(page.url.endswith('#/cikmis/sonuc/yds-2019-1/yarim'), f'Yarım deneme: süre bitince otomatik biter ({page.url.split("#")[-1]})')
+    hm = [m for m in st()['mocks'].values() if m.get('half')]
+    check(len(hm) == 1 and hm[0]['score'] in (0, 2.5) and 'ilk 40' in hm[0]['name'], f'Yarım deneme kaydı: 80 soruya oranlı puan ({hm[0]["score"] if hm else None})')
+    check('ilk 40 soru' in page.inner_text('h2') and '/40 doğru' in page.inner_text('.hero'), 'Yarım sonuç ekranı')
+    check(st()['progress'].get('exam:yds-2019-1') is None, 'yarım deneme tam deneme kaydını etkilemedi')
+    shot('v7-yarim-sonuc', True)
+    go('eksikler', 600)
+    check('Deneme: Okuma' not in page.inner_text('main') and 'ilk 40' in page.inner_text('main'), 'Eksikler: yarım denemede olmayan bölüm %0 sayılmıyor')
+
+    # B) Çeviri: Parçala
+    ev("""Promise.all([import('./js/store.js'), import('./js/data.js')]).then(async ([m, d]) => { let n = 0;
+      for (const x of await d.drills()) if (x.type.startsWith('ceviri')) x.items.forEach((it, i) => { if (!it.parts) m.put('grammarLog', { id: 'seen' + (n++), q: x.id + '#' + i, correct: true, kind: 'drill', dtype: x.type, day: '2026-01-01', at: 1 }); }); })""")
+    page.wait_for_timeout(500)
+    go('alistirma/ceviri-en-tr', 700)
+    check(page.locator('.parts-btn:visible').count() == 1 and page.locator('.part').count() == 0, 'Çeviri: "Parçala" düğmesi cevaptan önce')
+    page.click('.parts-btn'); page.wait_for_timeout(200)
+    n_parts = page.locator('.part').count()
+    check(n_parts >= 3 and page.locator('.part-role').count() >= 3 and page.locator('.part-tgt').count() == 0, f'Parçala: {n_parts} renkli blok + rol etiketi, karşılık gizli')
+    check(len(set(page.locator('.part').nth(i).get_attribute('class') for i in range(n_parts))) >= 3, 'Parçala: bloklar farklı renkte')
+    check(ev("document.documentElement.scrollWidth") <= 392, 'Parçala: taşma yok')
+    shot('v7-ceviri-parcala')
+    k0 = st()['sessions']['alistirma:ceviri-en-tr']['keys'][0].split('#')
+    ans0 = next(d for d in merged('drills') if d['id'] == k0[0])['items'][int(k0[1])]['answer']
+    page.locator('.opt').nth((ans0 + 1) % 5).click(); page.wait_for_timeout(400)
+    check(page.locator('.explain .partsbox.revealed .part-tgt').count() >= 3 and page.locator('.explain .part-check li').count() >= 1 and page.locator('.parts-btn').count() == 0, 'Cevaptan sonra: karşılıklar (tgt) + kontrol maddeleri')
+    # A3) alıştırma yanlışında küçük neden çipi
+    check(page.locator('.explain .reasons .chip').count() == n_reason, 'Alıştırma yanlışında neden çipleri')
+    page.locator('.explain .reasons .chip').nth(2).click(); page.wait_for_timeout(250)
+    check(any(r.get('src') == 'drill' and r.get('reason') == aids_m['errorReasons'][2]['id'] for r in st()['reasons'].values()), 'alıştırma nedeni kaydedildi')
+    check(reachable('.actbar .btn.primary:not(.hidden)', False), 'Parçala sonrası "Sonraki" erişilebilir')
+    shot('v7-ceviri-cevap', True)
+    go('alistirma/ceviri-tr-en', 700)
+    if page.locator('button:has-text("Baştan başla")').count(): page.click('button:has-text("Baştan başla")'); page.wait_for_timeout(200)
+    page.click('.parts-btn'); page.wait_for_timeout(200)
+    check(page.locator('.part').count() >= 3, 'Parçala: Tr→İng sorusunda da çalışır')
+    go('alistirma/cloze', 600)
+    check(page.locator('.parts-btn').count() == 0, 'parts olmayan soruda "Parçala" yok')
+
+    # C) Bağlamdan tahmin
+    go('kartlar', 500)
+    check(page.locator('a.guess-link').count() == 1, 'Kartlar: Bağlamdan tahmin girişi')
+    go('okuma', 500)
+    check(page.locator('a.guess-link').count() == 1, 'Okuma: Bağlamdan tahmin girişi')
+    page.click('a.guess-link'); page.wait_for_timeout(900)
+    mk_ = page.locator('.hlq mark')
+    check(mk_.count() == 1 and page.locator('.opt').count() == 4, f'Tahmin: cümlede vurgulu kelime + 4 şık ({mk_.inner_text() if mk_.count() else None})')
+    opts_t = [page.locator('.opt .otext').nth(i).inner_text() for i in range(4)]
+    check(len(set(opts_t)) == 4 and all(o.strip() for o in opts_t), f'Tahmin: şıklar farklı Türkçe anlamlar {opts_t}')
+    shot('v7-tahmin')
+    page.locator('.opt').nth(0).click(); page.wait_for_timeout(300)
+    check(page.locator('.opt.right').count() == 1 and ' = ' in page.locator('.explain').inner_text(), 'Tahmin: cevap + anlam açıklaması')
+    check(reachable('.actbar .btn.primary:not(.hidden)', False), 'Tahmin: "Sonraki" erişilebilir')
+    for i in range(12):
+        if page.locator('.endcard').count(): break
+        if page.locator('.opt:not(.done)').count(): page.locator('.opt').nth(1).click(); page.wait_for_timeout(120)
+        page.click('.actbar .btn.primary'); page.wait_for_timeout(150)
+    check(page.locator('.endcard').count() == 1 and page.locator('a:has-text("Yeni tur")').count() == 1, 'Tahmin: tur bitti (10 soru)')
+
+    # D1) Aynı kişisel kuraldan 2 yanlış → Bugün'e kural kartı görevi
+    wrong_topics = {l.get('topic') for l in st()['grammarLog'].values() if not l.get('correct')}
+    rule_topic = next(r['topic'] for r in aids_m['personalRules'] if r['topic'] not in wrong_topics)
+    go('bugun', 500)
+    check(page.locator('.rule-tasks li').count() == 0, 'kural görevi: yanlış yokken yok')
+    ev(f"""import('./js/store.js').then(m => {{ const now = Date.now(); const day = new Date(now).toISOString().slice(0, 10);
+      for (let i = 0; i < 2; i++) m.put('grammarLog', {{ id: 'rw' + i, q: 'g000' + i, correct: false, kind: 'gramer', topic: '{rule_topic}', at: now - i * 1000, day: (() => {{ const d = new Date(now); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }})() }}); }})""")
+    page.wait_for_timeout(300); go('bugun', 300); page.reload(); page.wait_for_timeout(700)
+    check(page.locator(f'.rule-tasks li[data-rule="{rule_topic}"]').count() == 1 and 'Kural kartı' in page.inner_text('.rule-tasks'), 'Bugün: kural kartı görevi (2 yanlış)')
+    shot('v7-bugun-kural-gorevi', True)
+    page.click('.rule-tasks a.task'); page.wait_for_timeout(500)
+    check(page.locator('.rulecard.focus').count() >= 1 and page.locator('.rulecard').first.get_attribute('class').find('focus') >= 0, 'kural kartı üstte ve vurgulu')
+    shot('v7-kural-karti', True)
+    page.click('.rule-ack'); page.wait_for_timeout(600)
+    check(page.url.endswith('#/bugun') and page.locator('.rule-tasks li').count() == 0 and st()['progress'].get('kural:' + rule_topic, {}).get('ackAt'), 'Okudum → görev kapandı')
+
+    # E) Dersler: gruplar + arama + yeni konu adları
+    go('dersler', 600)
+    gnames = [page.locator('details.lgroup > summary b').nth(i).inner_text() for i in range(page.locator('details.lgroup').count())]
+    check(gnames == ['Bu hafta', 'Bağlaçlar', 'Edatlar', 'Zaman', 'Cümle yapıları', 'Kelime', 'Soru tipi taktikleri', 'Strateji'], f'Dersler grupları: {gnames}')
+    n_less = len(merged('lessons'))
+    grouped = sum(page.locator('details.lgroup').nth(i).locator('li').count() for i in range(1, len(gnames)))
+    check(grouped == n_less, f'her ders tam bir grupta ({grouped}/{n_less})')
+    check(page.locator('details.lgroup[open]').count() == 1 and page.locator('details.lgroup').first.get_attribute('open') is not None, 'yalnız "Bu hafta" açık (katlanabilir)')
+    page.locator('details.lgroup > summary').nth(7).click(); page.wait_for_timeout(200)
+    check(page.locator('details.lgroup').nth(7).locator('li:visible').count() >= 2, 'Strateji grubu açılır')
+    page.fill('.lsearch', 'despite'); page.wait_for_timeout(250)
+    vis = page.locator('details.lgroup li:visible').count()
+    check(0 < vis < n_less and all('despite' in (page.locator('details.lgroup li:visible').nth(i).get_attribute('data-q') or '') for i in range(vis)), f'ders arama: "despite" → {vis} ders')
+    shot('v7-dersler-arama', True)
+    page.fill('.lsearch', 'zzzyok'); page.wait_for_timeout(200)
+    check(page.locator('text=Eşleşen ders yok.').is_visible(), 'ders arama: boş durum mesajı')
+    page.fill('.lsearch', ''); page.wait_for_timeout(200)
+    check(page.locator('details.lgroup[open]').count() == 1 and page.locator('details.lgroup.hidden').count() == 0, 'arama temizlenince gruplar eski haline döner')
+    shot('v7-dersler', True)
+    go('dersler/taktik-sure', 500)
+    check('Strateji' in page.inner_text('main') and 'strateji ·' not in page.inner_text('main'), 'yeni konu adı: Strateji')
+    go('dersler/taktik-kelime-tahmini', 500)
+    check('Kelime tahmini' in page.inner_text('main'), 'yeni konu adı: Kelime tahmini')
+
+    # Erişilebilirlik: klavye odağı görünür
+    go('gramer', 500)
+    page.keyboard.press('Tab'); page.keyboard.press('Tab'); page.wait_for_timeout(150)
+    ow = ev("(() => { const e = document.activeElement; const c = getComputedStyle(e); return [e.tagName, c.outlineStyle, parseFloat(c.outlineWidth)]; })()")
+    check(ow[1] != 'none' and ow[2] >= 2, f'klavye odağı: görünür halka {ow}')
+
+    # A5) Son 14 gün modu + başvuru bantları (tarih taklidi)
+    ev("import('./js/store.js').then(m => m.setSetting('newLimit', 15))"); page.wait_for_timeout(300)
+    set_date('2026-11-28')
+    go('bugun', 500)
+    check(page.locator('a.mock-plan').get_attribute('href').endswith('/yarim') and '90 dk' in page.locator('a.mock-plan').inner_text(), 'Bugün: programdaki yarım deneme → ilk 40 soru / 90 dk modu')
+    check(page.locator('.banner.final').count() == 0 and page.locator('.banner.apply').count() == 0 and page.locator('li[data-task=okuma]').count() == 1, 'normal günde son-14-gün / başvuru bandı yok')
+    set_date('2027-01-05'); go('bugun', 500)
+    check(page.locator('.banner.apply.soon').count() == 1 and 'Başvuruya 7 gün' in page.inner_text('.banner.apply') and '12 Oca' in page.inner_text('.banner.apply') and '20 Oca' in page.inner_text('.banner.apply'), f'Başvuru bandı: yaklaşırken ({page.inner_text(".banner.apply") if page.locator(".banner.apply").count() else None})')
+    shot('v7-bugun-basvuru')
+    set_date('2027-01-19'); go('bugun', 500)
+    check(page.locator('.banner.apply.open').count() == 1 and 'son 1 gün' in page.inner_text('.banner.apply'), 'Başvuru bandı: açıkken son gün sayacı')
+    set_date('2027-01-25'); go('bugun', 500)
+    check(page.locator('.banner.apply.late').count() == 1 and '28 Oca' in page.inner_text('.banner.apply'), 'Başvuru bandı: geç başvuru')
+    set_date('2027-02-01'); go('bugun', 500)
+    check(page.locator('.banner.apply').count() == 0 and page.locator('.banner.final').count() == 0, 'başvuru bitince bant yok; 27 gün kala son-14 modu yok')
+    set_date('2027-02-20'); go('bugun', 600)
+    keys = [page.locator('ul.tasks:not(.extra) li').nth(i).get_attribute('data-task') for i in range(page.locator('ul.tasks:not(.extra) li').count())]
+    check(page.locator('.banner.final').count() == 1 and 'Son 8 gün' in page.inner_text('.banner.final') and 'en fazla 5' in page.inner_text('.banner.final'), f'Son 14 gün bandı ({page.inner_text(".banner.final") if page.locator(".banner.final").count() else None})')
+    check('deneme' in keys and 'okuma' not in keys and keys[0] == 'kart', f'Son 14 gün: görevler tekrar + hata + deneme ağırlıklı {keys}')
+    nq = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.length)")
+    check(nq <= 5, f'Son 14 gün: yeni kelime 15 → en fazla 5 ({nq})')
+    ed0 = [g for g in aids_m['examDay'] if g.get('items')]
+    check(page.locator('.examday-band').count() >= 1 and page.locator('.examday-band .check').count() >= 1, f'Son 14 gün: sınav günü maddeleri bant olarak ({page.locator(".examday-band b").first.inner_text() if page.locator(".examday-band").count() else None})')
+    shot('v7-bugun-son14', True)
+    d0 = page.locator('.examday-band li.done').count()
+    page.locator('.examday-band .check').last.click(); page.wait_for_timeout(300)
+    check(page.locator('.examday-band li.done').count() == d0 + 1, 'bant maddesi tiklenebilir')
+    check(ev("document.documentElement.scrollWidth") <= 392, 'son 14 gün ekranı taşmıyor')
+    set_date('2027-02-27'); go('bugun', 600)
+    keys = [page.locator('ul.tasks:not(.extra) li').nth(i).get_attribute('data-task') for i in range(page.locator('ul.tasks:not(.extra) li').count())]
+    nq = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.length)")
+    check(nq == 0 and 'yeni' not in keys and 'Yeni kelime: yok' in page.inner_text('.banner.final'), f'Son 3 gün: yeni kelime 0 {keys}')
+    band1 = page.locator('.examday-band b').first.inner_text() if page.locator('.examday-band').count() else ''
+    check(band1 != '' and (len(ed0) < 2 or band1 != ed0[0]['when']), f'sınava 1 gün kala bant değişti ({band1})')
+    shot('v7-bugun-son1', True)
+    ev("import('./js/store.js').then(m => m.setSetting('finalMode', false))"); page.wait_for_timeout(300); page.reload(); page.wait_for_timeout(700)
+    check(page.locator('.banner.final').count() == 0 and page.locator('li[data-task=okuma]').count() == 1, 'Son 14 gün modu Ayarlar\'dan kapatılabilir')
+    ev("import('./js/store.js').then(m => { m.setSetting('finalMode', true); m.setSetting('newLimit', null); })"); page.wait_for_timeout(300)
+    set_date(None)
+    ctx.close()
+
+    # E) Genel QA: tüm rotalar 390x844 ve 1280x860 — yatay taşma, kesilen düğme metni, boş sayfa
+    QA = ROUTES + ['dersler/arac/sure', 'dersler/arac/net', 'dersler/arac/gun', 'dersler/arac/kaynak', 'dersler/arac/agac', 'dersler/arac/kutup', 'dersler/arac/zaman', 'dersler/arac/kopya',
+                   'dersler/arac/eleme', 'dersler/arac/kural', 'dersler/baglac-zitlik', 'dersler/taktik-sure', 'kartlar/tahmin', 'kartlar/tara', 'kartlar/bosluk', 'kartlar/es', 'kartlar/aile',
+                   'gramer/gunluk', 'gramer/hata', 'gramer/konu/relative', 'alistirma/cloze', 'alistirma/ceviri-en-tr', 'alistirma/paragraf', 'okuma/p/p001', 'okuma/yeni',
+                   'cikmis/sinav/yokdil-fen-2019', 'cikmis/sinav/yds-2019-2/yarim', 'cikmis/tip/cloze', 'cikmis/sonuc/yokdil-fen-2021-1']
+    CLIP = """() => [...document.querySelectorAll('main .btn, main .chip, main .tool, main .seg > *, main h2, main h3, main th, main td, nav.tabs a span, header .btn-label')].filter(e => {
+        if (!e.offsetParent || e.closest('.toolstrip, .secstrip, .polcards, .ellipsis, .list.compact')) return false;
+        return e.scrollWidth > e.clientWidth + 2 && getComputedStyle(e).overflowX !== 'visible'; }).map(e => e.className + ':' + e.textContent.slice(0, 30))"""
+    OVER = """() => { const vw = document.documentElement.clientWidth; return [...document.querySelectorAll('main *')].filter(e => { if (!e.offsetParent || e.closest('.toolstrip, .secstrip, .polcards, .tblwrap, .tbl, svg')) return false;
+        const r = e.getBoundingClientRect(); return r.width > 0 && (r.right > vw + 2 || r.left < -2); }).slice(0, 5).map(e => e.tagName + '.' + e.className); }"""
+    for name, vp, mobile in [('m', {'width': 390, 'height': 844}, True), ('d', {'width': 1280, 'height': 860}, False)]:
+        ctx, page = v7ctx(vp, mobile, 'qa-' + name)
+        page.goto(BASE + '#/bugun'); page.wait_for_timeout(700)
+        page.evaluate("localStorage.setItem('yokdil.token', 'ghp_x')")
+        page.goto(BASE + '#/ayarlar'); page.wait_for_timeout(300)
+        page.click('button:has-text("Soruları güncelle")'); page.wait_for_timeout(2200)
+        # Bitmiş bir deneme (sonuç ekranı için) + biraz veri
+        page.evaluate("""import('./js/store.js').then(m => { const now = Date.now();
+          m.put('progress', { id: 'exam:yokdil-fen-2021-1', examId: 'yokdil-fen-2021-1', answers: { 1: 0, 2: 1, 3: 2, 21: 0 }, flags: {}, cur: 0, startedAt: now, elapsed: 5400, done: true, score: 2.5, attempts: 1,
+            secTime: { bosluk: 1500, cloze: 800, tamamlama: 900, okuma: 2200 }, sections: { bosluk: { d: 1, y: 2, b: 17, n: 20 }, cloze: { d: 1, y: 0, b: 9, n: 10 }, tamamlama: { d: 0, y: 0, b: 11, n: 11 }, 'en-tr': { d: 0, y: 0, b: 6, n: 6 }, 'tr-en': { d: 0, y: 0, b: 6, n: 6 }, paragraf: { d: 0, y: 0, b: 6, n: 6 }, ilgisiz: { d: 0, y: 0, b: 6, n: 6 }, okuma: { d: 0, y: 0, b: 15, n: 15 } } });
+          for (let i = 0; i < 25; i++) m.put('cards', { id: 'qa' + i, word: ['yield', 'robust', 'decline', 'obtain', 'vary'][i % 5] + (i < 5 ? '' : i), tr: 't' + i, state: 'review', interval: 2, ease: 2.5, reps: 2, due: now - 1000, hist: ['g', 'g'] }); })""")
+        page.wait_for_timeout(400)
+        bad = []
+        for r in QA:
+            page.goto(BASE + '#/' + r); page.wait_for_timeout(550)
+            if page.locator('button:has-text("Baştan başla")').count(): page.click('button:has-text("Baştan başla")'); page.wait_for_timeout(250)
+            sw = page.evaluate('document.documentElement.scrollWidth')
+            if sw > vp['width'] + 2: bad.append(f'{r}: yatay taşma {sw}')
+            clip = page.evaluate(CLIP)
+            if clip: bad.append(f'{r}: kesilen metin {clip[:3]}')
+            over = page.evaluate(OVER)
+            if over: bad.append(f'{r}: ekran dışı öğe {over}')
+            if len(page.inner_text('main').strip()) < 20: bad.append(f'{r}: boş sayfa')
+            if 'undefined' in page.inner_text('main') or 'NaN' in page.inner_text('main') or '\nnull\n' in '\n' + page.inner_text('main') + '\n': bad.append(f'{r}: undefined/NaN/null metni')
+            page.screenshot(path=f'{SHOTS}/qa-{name}-{r.replace("/", "_")}.png', full_page=True)
+        check(not bad, f'QA {vp["width"]}x{vp["height"]}: {len(QA)} rota — taşma / kesilen metin / boş sayfa yok' + (' → ' + ' | '.join(bad) if bad else ''))
+        ctx.close()
 
     # Service worker kaydı (ayrı bağlam)
     ctx = b.new_context(viewport={'width': 390, 'height': 844})
