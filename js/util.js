@@ -172,3 +172,14 @@ export function add(el, ...kids) {
   el.append(...kids.flat(Infinity).filter(x => x != null && x !== false));
   return el;
 }
+
+// Kart notu: otomatik (Claude) düzeltme kayıtlarını ayıkla → {own: kullanıcının notu, auto: kısa gri satır | ''}
+export function noteParts(note) {
+  const segs = String(note || '').split(/;\s*/).map(s => s.trim()).filter(Boolean);
+  const isAuto = s => /claude/i.test(s);
+  const own = segs.filter(s => !isAuto(s)).join('; ');
+  const auto = segs.filter(isAuto);
+  if (!auto.length) return { own, auto: '' };
+  const added = auto.some(s => /eklendi/i.test(s)), fixed = auto.some(s => /düzeltildi/i.test(s));
+  return { own, auto: added && fixed ? 'anlam otomatik eklendi, düzeltildi' : added ? 'anlam otomatik eklendi' : 'anlam otomatik düzeltildi' };
+}

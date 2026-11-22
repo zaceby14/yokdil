@@ -74,6 +74,14 @@ export default async function render(root, [mode, id, arg]) {
   if (mode === 'yeni') {
     const size = KISA[id] ? id : 'mini';
     const o = openKisa(size);
+    // Yanlışlıkla dokununca süre başlamasın: yeni denemede tek onay (Kısa deneme ekranındaki "Başla" doğrudan gelir)
+    if (!o && arg !== 'basla' && arg !== 'bastan') {
+      const c = KISA[size];
+      root.append(h('a.btn.small', { href: '#/deneme' }, '‹ Deneme'), h('h2', kisaName(size)),
+        h('section.card.kisa-confirm', h('p', h('b', `${c.n} soru · ${c.min} dk`), ' · ipucu yok'), h('p.small.muted', 'Başlayınca süre işler; sayfadan çıkınca durur.'),
+          h('a.btn.primary.wide.big-btn.kisa-go', { href: `#/deneme/yeni/${size}/basla` }, 'Başla')));
+      return;
+    }
     if (o && arg === 'bastan') store.del('progress', o.id);
     const nid = o && arg !== 'bastan' ? o.examId : await createKisa(size);
     location.replace('#/deneme/sinav/' + encodeURIComponent(nid));
@@ -95,14 +103,14 @@ function home(root) {
       return h('section.card.kisa-card', { 'data-size': size },
         h('b', `${c.label} · ${c.n} soru · ${c.min} dk`), h('div.small.muted', breakdown(size)),
         h('div.row',
-          h('a.btn.primary.grow.kisa-start', { href: '#/deneme/yeni/' + size }, o ? `Devam et (${n} cevap)` : 'Başla'),
+          h('a.btn.primary.grow.kisa-start', { href: '#/deneme/yeni/' + size + (o ? '' : '/basla') }, o ? `Devam et (${n} cevap)` : 'Başla'),
           o ? h('a.btn', { href: `#/deneme/yeni/${size}/bastan`, onclick: ev => { if (!confirm('Yarım kalan deneme silinsin, yenisi başlasın mı?')) ev.preventDefault(); } }, 'Yeni') : null));
     }),
-    h('p.small.muted', 'Süre bitince kendiliğinden biter. Puan = doğru / soru × 100. Aynı soru son 3 kısa denemede tekrar gelmez.'),
+    h('p.small.muted', 'Süre bitince kendiliğinden biter. Sonuç: doğru / soru (sınav puanı değil). Aynı soru son 3 kısa denemede tekrar gelmez.'),
     mocks.length ? h('h3', 'Geçmiş') : null,
     mocks.length ? h('ul.list.compact.kisa-hist', mocks.slice(0, 10).map(m => {
       const done = store.get('progress', 'exam:' + m.examId)?.done && store.get('progress', DEF + m.examId);
       return h('li', done ? h('a.grow', { href: '#/deneme/sonuc/' + encodeURIComponent(m.examId) }, `${fmtDate(m.date)} · ${KISA[m.size]?.label || ''}`) : h('span.grow', `${fmtDate(m.date)} · ${KISA[m.size]?.label || ''}`),
-        h('span.small.muted', `${m.right ?? '?'}/${m.n ?? '?'} `), h('b', (m.score || 0).toLocaleString('tr-TR')));
+        h('b', `${m.right ?? '?'}/${m.n ?? '?'}`), h('span.small.muted', ` %${m.score || 0}`));
     })) : null);
 }

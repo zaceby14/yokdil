@@ -394,7 +394,7 @@ body.kb .actbar { bottom: 0; }
 /* Bildirim üstte, tıklamayı engellemez */
 #toast { top: calc(var(--top-h) + 10px); bottom: auto !important; transform: translate(-50%, -12px); pointer-events: none; z-index: 60; }
 #toast.show { transform: translate(-50%, 0); }
-.evetip { top: calc(var(--top-h) + 8px) !important; bottom: auto !important; }
+/* Akşam ipucu: altta (kalan gün kutusunu kapatmasın) */
 /* Dokunma hedefleri ≥ 44 px */
 .btn.small { min-height: 44px; min-width: 44px; }
 .btn.play { min-width: 44px; min-height: 44px; }
@@ -593,3 +593,73 @@ button.stars:active { background: var(--surface2); }
 .priv-read details.privgroup.other > summary b { color: var(--muted); }
 .priv-read details.privgroup > summary::after { content: '▾'; margin-left: auto; color: var(--muted); }
 .priv-read details.privgroup[open] > summary::after { content: '▴'; }
+
+/* v14: ısınma (kural kartı), oturum içi hatırlatma, Eksikler eylemleri */
+.linkbtn { background: none; border: 0; padding: 6px 0; min-height: 36px; color: var(--accent); font: inherit; cursor: pointer; text-align: left; text-decoration: underline; text-underline-offset: 3px; }
+.warm-head { margin: 2px 0 8px; font-size: 1.05rem; }
+.wcards { display: grid; gap: 10px; }
+.wcard { border-left: 4px solid var(--accent); background: var(--surface); border-radius: 12px; padding: 10px 12px; box-shadow: 0 0 0 1px var(--line) inset; }
+.wc-head { font-size: 1rem; margin-bottom: 4px; }
+.wc-formula { background: var(--hl); border-radius: 8px; padding: 6px 8px; margin: 4px 0; font-size: .92rem; }
+.wc-rule { margin: 4px 0; } .wc-rule > div { margin: 2px 0; }
+.wc-extra { font-size: .86rem; margin: 6px 0 2px; padding-top: 6px; border-top: 1px dashed var(--line); }
+.wc-extra .trap { color: var(--bad); }
+.wc-sheet-full table { font-size: .85rem; }
+.wc-acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.wc-acts .btn { flex: 1 1 auto; }
+.warm .actbar { margin-top: 12px; }
+.side-body .wcard { margin-bottom: 12px; }
+.minirule { background: var(--accent-soft); border-radius: 12px; padding: 4px 4px 4px 12px; margin: 6px 0 8px; font-size: .9rem; }
+.mr-head { display: flex; align-items: center; gap: 6px; }
+.minirule .mr-open { padding: 2px 0; min-height: 32px; }
+.best1 { border-color: var(--accent); border-width: 2px; }
+.best1-row { display: flex; align-items: center; gap: 8px; margin: 4px 0 2px; font-size: 1.1rem; }
+.best1 .btn { margin-bottom: 0; }
+.arows { list-style: none; padding: 0; margin: 0; }
+.arow { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.arow:last-child { border-bottom: 0; }
+.arow-top { display: flex; align-items: center; gap: 8px; min-height: 36px; }
+.arow-l { flex: 1; min-width: 0; font-size: .92rem; }
+.arow-v { font-variant-numeric: tabular-nums; font-size: .9rem; white-space: nowrap; }
+.arow-bar { height: 8px; border-radius: 4px; background: var(--surface2); overflow: hidden; }
+.arow-bar i { display: block; height: 100%; border-radius: 4px; }
+.arow-bar i.good { background: var(--good); } .arow-bar i.mid { background: var(--mid); } .arow-bar i.bad { background: var(--bad); }
+.arow-acts { display: flex; gap: 8px; margin-top: 6px; }
+.arow-acts .btn { flex: 1 1 0; }
+.after-card { margin-top: 2px; }
+details.more { position: relative; }
+details.more > summary { list-style: none; cursor: pointer; width: 40px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.3rem; color: var(--muted); }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more[open] > summary { background: var(--surface2); }
+.more-menu { position: absolute; right: 0; top: 38px; z-index: 15; min-width: 190px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.18); padding: 4px; display: grid; }
+.more-i { display: flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 8px; background: none; border: 0; font: inherit; color: var(--text); text-align: left; text-decoration: none; cursor: pointer; }
+.more-i:hover { background: var(--surface2); }
+.mock-weak { margin: 8px 0; }
+.lap { display: flex; align-items: center; gap: 6px; }
+.lap-cb { width: 22px; height: 22px; flex: 0 0 22px; margin: 0 4px; }
+.lap > a { flex: 1; min-width: 0; }
+.reason-go { margin-top: 8px; }
+.wc-acts { justify-content: space-between; margin-top: 2px; }
+.wc-acts .linkbtn { min-height: 36px; padding: 4px 2px; }
+.wc-acts .wc-snooze { color: var(--muted); }
+.auto-note { font-size: .76rem; opacity: .8; }
+.mock-legend { flex-wrap: wrap; }
+.mock-legend i.goal { border-radius: 0; height: 0; border-top: 2px dashed var(--bad); background: none; vertical-align: 3px; }
+.chart .goalT { fill: var(--bad); }
+.hero-pct .hero-r { font-size: .9rem; }
+.qwrong summary .qw-stem { display: block; color: var(--text); opacity: .85; margin: 2px 0; }
+.kisa-confirm p { margin: 4px 0 10px; }
+details.optional-tasks { margin: 0 0 12px; }
+details.optional-tasks > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 4px; padding: 0 4px; }
+.mockday-note { margin: -4px 0 6px; }
+.goalbar.two i { position: absolute; left: 0; top: 0; }
+.goalbar.two i.studied { background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+/* Sınav/deneme ekranında ve cevaptan önce kartındaki kelime vurgusu yok (ipucu gibi durmasın) */
+body[data-route^="cikmis-sinav"] .reader .w.saved, body[data-route^="deneme-sinav"] .reader .w.saved,
+body.qmode div:not(.answered) > .q .w.saved, body.qmode div:not(.answered) > .stem .w.saved, body.qmode div:not(.answered) > .opts .w.saved { background: none; }
+.chip.nw-chip { gap: 6px; white-space: nowrap; overflow-wrap: normal; max-width: 100%; }
+.chip.nw-chip b { white-space: nowrap; }
+.chip.nw-chip .nw-tr { white-space: normal; overflow-wrap: normal; word-break: normal; }
+.goalline { display: block; margin: -4px 0 10px; padding: 6px 10px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.tasks a.task-go { text-decoration: none; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+.seg button, .seg a { white-space: nowrap; }

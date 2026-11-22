@@ -11,6 +11,7 @@ import { resolve as resolveKey, hintFor } from './qbank.js';
 import { aids } from './data.js';
 import { nextTaskBtn } from './tasks.js';
 import { reasonList, reasonChips } from './reasons.js';
+import { keyOf, ruleMatch } from './warm.js';
 
 // Çeviri yardımı: kaynak cümleyi renkli bloklara böl (rol etiketli). reveal=true → karşılıklar (tgt) + kontrol maddeleri
 const ROLE_C = [[/bağlaç|baglac|conj/i, 'c1'], [/özne|ozne|subj/i, 'c2'], [/yüklem|yuklem|fiil|verb/i, 'c3'], [/nesne|obj/i, 'c4'], [/zaman|yer|zarf|edat|adv|prep/i, 'c5'], [/relative|sıfat|sifat|niteleme|tamlama/i, 'c6']];
@@ -27,10 +28,11 @@ export function partsBox(it, reveal) {
 const markHl = (q, w) => { const i = String(q).indexOf(w); return i < 0 ? [q] : [q.slice(0, i), h('mark', w), q.slice(i + w.length)]; };
 
 // Kişisel kural kartı: ilgili konuda yanlış yapınca otomatik gösterilir
-export async function ruleFor(topic) {
+export async function ruleFor(topic, texts) {
   if (!topic) return null;
   const a = await aids().catch(() => null);
-  return (a?.personalRules || []).find(r => r && r.topic === topic) || null;
+  if (!texts) return (a?.personalRules || []).find(r => r && r.topic === topic) || null;
+  return ruleMatch(a?.personalRules, topic, texts);
 }
 export const ruleBox = r => h('div.rulecard', h('div.small.muted', 'Senin kuralın · ' + topicName(r.topic)), h('b', r.rule),
   r.ex ? h('div.small', { lang: 'en' }, r.ex) : null,
@@ -73,6 +75,9 @@ export function runQuiz(root, items, opts = {}) {
     let i = st?.i || 0, right = st?.right || 0;
     const picks = { ...(st?.picks || {}) };
     const hints = { ...(st?.hints || {}) };
+    // Oturum içi kural hatırlatması (opts.coach): aynı konudan 2. yanlış → sonraki sorunun üstünde tek seferlik kart
+    const wrongN = {}, coached = new Set();
+    let coachKey = null;
     const persist = () => {
       if (!sid) return;
       store.put('sessions', {
@@ -122,7 +127,7 @@ export function runQuiz(root, items, opts = {}) {
         exp.append(h('b', ok ? 'Doğru. ' : 'Yanlış. '), ex);
         if (it.tip) exp.append(h('div.tip', 'Taktik: ' + it.tip));
         hintBtn?.remove();
-        if (!ok) ruleFor(it.info?.topic).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
+        if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
         // Çeviri: blokların karşılıkları + kontrol maddeleri
         if (it.parts?.length) { partsBtn?.remove(); partsSlot.innerHTML = ''; const pb = partsBox(it, true); if (pb) exp.append(h('div.small.muted', 'Parça parça:'), pb); }
         // Yanlışta küçük "neden" çipleri (isteğe bağlı)
@@ -134,6 +139,7 @@ export function runQuiz(root, items, opts = {}) {
           if (ok) right++;
           picks[i] = k; persist();
           opts.onAnswer?.(it, ok, k, { hint: !!hints[i] });
+          if (!ok && opts.coach) { const ck = keyOf(it.info); if (ck) { wrongN[ck] = (wrongN[ck] || 0) + 1; if (wrongN[ck] >= 2 && !coached.has(ck)) { coached.add(ck); coachKey = ck; } } }
           if (!ok && opts.auto !== false) fromWrong(it, k).catch(e => console.warn(e));
           exp.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
         }
@@ -168,6 +174,10 @@ export function runQuiz(root, items, opts = {}) {
         h('div.opts' + (it.tf ? '.tf' : ''), opts_), exp, h('div.actbar', next)
       );
       if (picks[i] != null) reveal(picks[i], true);
+      else if (coachKey) {
+        const ck = coachKey; coachKey = null;
+        import('./views/warmup.js').then(m => m.miniCard(ck)).then(el => { if (el && root.isConnected) root.querySelector('.qbar')?.after(el); }).catch(() => {});
+      }
       if (i === 0 || picks[i] == null) window.scrollTo(0, 0);
     };
     let ended = false;

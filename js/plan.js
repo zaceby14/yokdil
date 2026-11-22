@@ -100,14 +100,20 @@ export function streakInfo(today = dayKey()) {
 // Zayıf konular: seed + doğruluğu düşük konular
 export async function weakTopics() {
   const s = await seedUser();
-  const set = new Set(s.weakTopics || []);
   const acc = {};
   for (const l of store.all('grammarLog')) {
     if (l.kind !== 'gramer') continue;
     const a = acc[l.topic] ||= [0, 0]; a[1]++; if (l.correct) a[0]++;
   }
-  for (const [t, [c, n]] of Object.entries(acc)) if (n >= 4 && c / n < 0.6) set.add(t);
-  return [...set];
+  return weakFrom(s.weakTopics || [], acc);
+}
+
+// Saf: zayıf konu = doğruluk < %60 (en az 5 soru). Tohum (notlardaki) zayıf konu: hiç soru yoksa ya da 20 soruya kadar doğruluk < %60 ise kalır.
+export function weakFrom(seed, acc) {
+  const out = new Set();
+  for (const t of seed) { const [c, n] = acc[t] || [0, 0]; if (!n || (n < 20 && c / n < 0.6)) out.add(t); }
+  for (const [t, [c, n]] of Object.entries(acc)) if (n >= 5 && c / n < 0.6) out.add(t);
+  return [...out];
 }
 
 export function weekdayHint(today = dayKey()) {

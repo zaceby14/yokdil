@@ -7,6 +7,8 @@ import { answer, mistakeToday } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
 import { dItem, gItem, pItem } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
+import { keyOf } from '../warm.js';
+import { warmGate, inProgress } from './warmup.js';
 
 // Tip → tüm öğe anahtarları
 async function bank() {
@@ -65,9 +67,11 @@ function session(root, type, items, seen) {
   const el = h('div');
   root.append(h('a.btn.small', { href: '#/alistirma' }, '‹ Alıştırma'), h('h2', TYPES[type] || type), el);
   if (!pick.length) { el.append(emptyData()); return; }
-  runQuiz(el, pick.map(i => i.make()), {
-    extra: lessonLink, sid: 'alistirma:' + type, name: TYPES[type] || type, source: 'Alıştırma',
+  const qitems = pick.map(i => i.make()), sid = 'alistirma:' + type;
+  const go = () => runQuiz(el, qitems, {
+    extra: lessonLink, sid, name: TYPES[type] || type, source: 'Alıştırma', coach: true,
     onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m),
     onEnd: (_, box) => box.querySelector('.endnext')?.before(h('a.btn.wide', { href: '#/alistirma/' + type, onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Aynı tipten devam'))
   });
+  if (inProgress(sid)) go(); else warmGate(el, qitems.map(it => keyOf(it.info)), go);
 }

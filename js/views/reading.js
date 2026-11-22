@@ -5,7 +5,7 @@ import { h, uid, toast, topicName } from '../util.js';
 import { tappable } from '../tappable.js';
 import { answer } from '../mistakes.js';
 import { runQuiz } from '../quiz.js';
-import { bumpDay, tick } from '../plan.js';
+import { bumpDay, tick, updateDay, dayRec } from '../plan.js';
 import { cardFromWord } from '../srs.js';
 import { setCtx } from '../ctx.js';
 import { saveNote, quickNotes } from '../notes.js';
@@ -13,6 +13,7 @@ import { emptyData } from './hub.js';
 import { getPack, reading as getReading } from '../pack.js';
 import { rItem } from '../qbank.js';
 import { suggestLevel, readRecs, pickReading, readingDone, isOther } from '../readpick.js';
+import { glossMap, chipMeaning } from '../vocab.js';
 export { suggestLevel, readRecs };
 
 // Saf: okuma görevi sayılır mı? Makul hız (< 400 kelime/dk) ve (en az 1 doğru ya da sorusuz tamamlanmış okuma)
@@ -119,10 +120,12 @@ function reader(root, doc) {
     timerEl.textContent = `${String(Math.floor(secs / 60)).padStart(2, '0')}:${String(secs % 60).padStart(2, '0')}`;
     if (pending >= 30) flush();
   }, 1000);
+  // Okuma görevi tamam: okunan parçanın adı görevde kalsın (öneri başka parçaya kaymasın)
+  const tickRead = () => { if (!dayRec().readTitle) updateDay({ readTitle: doc.title || '' }); tick('okuma'); };
   function flush() {
     if (!pending) return;
     const r = bumpDay('readSec', pending); pending = 0;
-    if ((r.readSec || 0) >= 15 * 60 && !r.tasks?.okuma) tick('okuma');
+    if ((r.readSec || 0) >= 15 * 60 && !r.tasks?.okuma) tickRead();
   }
   setCtx({ type: 'okuma', key: 'okuma:' + doc.id, id: doc.id, label: 'Okuma · ' + doc.title });
   // Aktif okuma: her paragraf sonunda katlanabilir "ana fikir" kutusu → notlara düşer
@@ -210,7 +213,7 @@ function reader(root, doc) {
           task: 'okuma',
           onEnd: ({ right, total }, el) => {
             flush();
-            if (readCounts({ words: nWords, secs, right, total })) tick('okuma');
+            if (readCounts({ words: nWords, secs, right, total })) tickRead();
             else el.querySelector('.endcard')?.append(h('p.small.warn-t.shortread', 'Kısa okuma: görev sayılmadı (metni okuyup en az 1 doğru gerekir).'));
             const r = store.get('progress', rid);
             if (r) store.put('progress', { ...r, right, total });
@@ -231,7 +234,7 @@ function reader(root, doc) {
       doc.gizli ? h('div.small.muted.priv-meta', [doc.source, isOther(doc) ? 'genel' : topicName(doc.topic), doc.level ? 'seviye ' + doc.level : ''].filter(Boolean).join(' · ')) : null,
     h('p.small.muted', 'Dokun: kelime · Uzun bas/Öbek: başlangıç → bitiş'),
     gloss, body,
-    doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); if (readCounts({ words: nWords, secs })) tick('okuma'); else speed.textContent = 'Kısa okuma: görev sayılmadı.'; showNew(); } }, 'Okumayı bitirdim'),
+    doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); if (readCounts({ words: nWords, secs })) tickRead(); else speed.textContent = 'Kısa okuma: görev sayılmadı.'; showNew(); } }, 'Okumayı bitirdim'),
     speed, qsec, summary
   );
   const onVis = () => document.visibilityState === 'hidden' && flush();
@@ -240,23 +243,24 @@ function reader(root, doc) {
 }
 
 // Parça sonu: kartı olmayan çekirdek kelimeler → hepsini ekle / seç
-function newWordsBox(list, doc, after) {
+export function newWordsBox(list, doc, after) {
   const box = h('section.card.newwords');
   if (!list.length) { box.append(h('p.small.muted', 'Bu parçada yeni çekirdek kelime yok.')); return box; }
   const on = new Set();
+  const gm = glossMap(doc.gloss);
   const add = items => {
-    for (const x of items) store.put('cards', { ...cardFromWord(x.entry), ctx: x.ctx || '', source: 'Okuma', note: doc.title || '', front: Date.now(), mine: Date.now() });
+    for (const x of items) store.put('cards', { ...cardFromWord(x.entry), ...(gm.has(String(x.entry.word).toLowerCase()) ? { tr: gm.get(String(x.entry.word).toLowerCase()) } : {}), ctx: x.ctx || '', source: 'Okuma', note: doc.title || '', front: Date.now(), mine: Date.now() });
     box.innerHTML = '';
     box.append(h('p', h('b', `+${items.length} kelime karta eklendi`)));
     toast(`+${items.length} kelime karta eklendi`);
     document.querySelectorAll('.reader').forEach(r => r._mark?.());
     after?.();
   };
-  const chips = list.map(x => h('button.chip.pick', {
+  const chips = list.map(x => { const tr = chipMeaning(x.entry, gm); return h('button.chip.pick.nw-chip', { 'data-w': x.entry.word,
     onclick: e => { const b = e.currentTarget; on.has(x) ? on.delete(x) : on.add(x); b.classList.toggle('on', on.has(x)); selBtn.textContent = `Seçilenleri ekle (${on.size})`; }
-  }, h('b', { lang: 'en' }, x.entry.word), ' ', h('span.small', x.entry.tr || '')));
+  }, h('b', { lang: 'en' }, x.entry.word), tr ? h('span.small.nw-tr', tr) : null); });
   const selBtn = h('button.btn.grow', { onclick: () => on.size ? add([...on]) : toast('Önce kelimeye dokun') }, 'Seçilenleri ekle (0)');
-  box.append(h('h3', `Bu parçada ${list.length} yeni kelime vardı`), h('div.chips', chips),
+  box.append(h('h3', `Kartında olmayan ${list.length} kelime`), h('p.small.muted.nw-hint', 'Anlamı yazmayanlar çok anlamlı: metinde kelimeye dokun, bağlamdaki anlamı gör.'), h('div.chips', chips),
     h('div.row', h('button.btn.primary.grow', { onclick: () => add(list) }, 'Hepsini ekle'), selBtn));
   return box;
 }

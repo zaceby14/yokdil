@@ -22,6 +22,12 @@ export function typoOk(input, target) {
   return prev[b.length] <= tol;
 }
 
+// Saf: yazılan kelime kartın eş anlamlılarından biri mi? (yazım toleranslı) → eşleşen eş anlam | null
+export function synHit(input, syn) {
+  for (const x of Array.isArray(syn) ? syn : []) if (typoOk(input, x)) return x;
+  return null;
+}
+
 // Saf: cümlede kelimeyi boşalt
 export function blank(sentence, word) {
   const re = new RegExp(`\\b${reEsc(word)}\\b`, 'i');

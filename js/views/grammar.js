@@ -1,16 +1,20 @@
 // Gramer: günlük set, hata kutusu, konu çalışması, kural notlarım
 import * as store from '../store.js';
-import { grammar, program } from '../data.js';
+import { grammar, program, drills, passages } from '../data.js';
 import { h, dayKey, seeded, uid, toast, TOPICS, topicName } from '../util.js';
 import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
 import { answer, openMistakes, mistakeToday } from '../mistakes.js';
+import { keyOf, isType, matches, practicePick } from '../warm.js';
+import { warmGate, inProgress } from './warmup.js';
 import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
-import { gItem, resolve } from '../qbank.js';
+import { gItem, dItem, pItem, resolve } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
 
-export default async function render(root, [mode, arg]) {
+export default async function render(root, [mode, arg, arg2]) {
   if (mode === 'gunluk') return daily(root);
+  if (mode === 'pratik') return practice(root, arg, arg2 === 'kural');
+  if (mode === 'yanlis') return myWrongs(root, arg);
   if (mode === 'hata') return box(root);
   if (mode === 'konu') return byTopic(root, arg);
   return home(root);
@@ -50,11 +54,56 @@ async function daily(root) {
   const box = h('div');
   root.append(back(), box);
   if (!items.length) { box.append(emptyData()); return; }
-  runQuiz(box, items, {
-    title: 'Günlük', extra: lessonLink, sid: 'gunluk:' + dayKey(), name: 'Günlük gramer', source: 'Gramer', task: 'gramer',
+  const sid = 'gunluk:' + dayKey();
+  const go = () => runQuiz(box, items, {
+    title: 'Günlük', extra: lessonLink, sid, name: 'Günlük gramer', source: 'Gramer', task: 'gramer', coach: true,
     onAnswer: logAns,
     onEnd: () => tick('gramer')
   });
+  // Isınma: setteki zayıf konuların kural kartı (yarım oturuma dönerken gösterilmez)
+  if (inProgress(sid)) go(); else warmGate(box, items.map(it => keyOf(it.info)), go);
+}
+
+// Konu seviyeleri (gramer kayıtlarından)
+async function gLevels() {
+  const lvOf = new Map((await grammar()).map(q => [q.id, q.level || 1]));
+  return topicLevels(store.all('grammarLog').filter(l => l.kind === 'gramer').map(l => ({ ...l, level: l.level || lvOf.get(l.q) || 0 })));
+}
+
+// Konu/soru tipi havuzu: [{key, level, make}]
+export async function poolFor(k) {
+  const out = [];
+  if (!isType(k) || k === 'bosluk') for (const q of await grammar()) if (k === 'bosluk' || q.topic === k) out.push({ key: q.id, level: q.level || 1, make: () => gItem(q) });
+  if (k === 'paragraf') for (const p of await passages()) (p.questions || []).forEach((_, i) => out.push({ key: `${p.id}#${i}`, level: p.level || 1, make: () => pItem(p, i) }));
+  for (const d of await drills()) if (isType(k) ? d.type === k : d.topic === k) (d.items || []).forEach((_, i) => out.push({ key: `${d.id}#${i}`, level: d.level || 1, make: () => dItem(d, i) }));
+  return out;
+}
+
+const backP = () => h('a.btn.small', { href: '#/eksikler' }, '‹ Eksikler');
+
+// "5 soru çöz": önce yanlış yapılanlar, sonra seviyeye uygun yeniler. kural=true → önce kural kartı
+async function practice(root, k, kural) {
+  const pool = await poolFor(k);
+  const levels = await gLevels();
+  const ids = practicePick(pool, { logs: store.all('grammarLog'), mistakes: store.all('mistakes'), allowed: isType(k) ? 3 : levels[k] || 1, n: 5 });
+  const by = new Map(pool.map(p => [p.key, p]));
+  const items = ids.map(id => by.get(id).make());
+  const el = h('div');
+  root.append(backP(), h('h2', topicName(k) + ' · 5 soru'), el);
+  if (!items.length) { el.append(h('p.muted', 'Bu konuda özgün soru yok.')); return; }
+  const sid = 'pratik:' + k;
+  const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns });
+  if (kural) warmGate(el, [k], go, { force: true }); else go();
+}
+
+// "Yanlışlarım": hata kutusunda o konuya / tipe ait açık sorular (tüm kaynaklar)
+async function myWrongs(root, k) {
+  const ms = openMistakes().filter(m => matches(m, k)).sort((a, b) => (a.due || '').localeCompare(b.due || '') || (b.wrongs || 0) - (a.wrongs || 0));
+  const items = (await Promise.all(ms.slice(0, 20).map(m => resolve(m.id)))).filter(Boolean);
+  const el = h('div');
+  root.append(backP(), h('h2', 'Yanlışlarım · ' + topicName(k)), el);
+  if (!items.length) { el.append(h('div.card', h('p', 'Bu konuda açık yanlış yok.'), h('a.btn.wide', { href: '#/gramer/pratik/' + encodeURIComponent(k) }, '5 soru çöz'))); return; }
+  runQuiz(el, items.map(e => ({ ...e, label: 'Yanlış · ' + e.label })), { title: 'Yanlışlarım', extra: lessonLink, name: 'Yanlışlarım · ' + topicName(k), coach: true, onAnswer: logAns });
 }
 
 // Hata tekrarı: bugün en fazla 8 soru (tüm kaynaklar)
@@ -69,7 +118,7 @@ async function box(root) {
     if (hs.total) tick('hata');
     return;
   }
-  runQuiz(el, items.map(e => ({ ...e, label: 'Hata · ' + e.label })), { title: 'Hata', extra: lessonLink, sid: 'hata:' + dayKey(), name: 'Hata tekrarı', task: 'hata',
+  runQuiz(el, items.map(e => ({ ...e, label: 'Hata · ' + e.label })), { title: 'Hata', extra: lessonLink, sid: 'hata:' + dayKey(), name: 'Hata tekrarı', task: 'hata', coach: true,
     onAnswer: logAns, onEnd: () => tick('hata') });
 }
 
@@ -80,7 +129,7 @@ async function byTopic(root, topic) {
   if (!qs.length) { el.append((await grammar()).length ? h('p.muted', 'Bu konuda soru yok') : emptyData()); return; }
   const seenOk = new Set(store.all('grammarLog').filter(l => l.correct).map(l => l.q));
   const order = levelOrder(qs.filter(q => !seenOk.has(q.id))).concat(levelOrder(qs.filter(q => seenOk.has(q.id))));
-  runQuiz(el, order.slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', onAnswer: logAns });
+  runQuiz(el, order.slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', coach: true, onAnswer: logAns });
 }
 
 async function home(root) {

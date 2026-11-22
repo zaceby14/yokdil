@@ -1,5 +1,37 @@
 # Yol haritası
 
+## v14'te yapılanlar (kural kartı önce, Eksikler'den eyleme)
+- [x] Isınma: günlük gramer seti ve Alıştırma (tip seçince) başlamadan önce, setteki zayıf konulardan (son 14 günde doğruluk < %70 [≥3 soru] · hata kutusunda o konudan ≥2 açık soru · kişisel kural konusunda son 14 günde yanlış) en fazla 2 kural kartı: ders formülü + kişisel kural (✗ → ✓) + varsa tek bağlaç kartı / kopya kağıdı. Tek ekran (390×844'te kaydırmasız), "Anladım, sorulara geç", "Dersi aç" (yan panel), "Bir hafta gösterme". Aynı konu aynı gün bir kez; yarım oturuma dönerken çıkmaz. Ayarlar → "Sorulardan önce ısınma" (varsayılan açık)
+- [x] Konu anahtarı: gramer konusu, yoksa soru tipi (alıştırmalardaki "biyoloji" gibi alan adları değil) — `js/warm.js` (saf, birim testli)
+- [x] Oturum içi: aynı konudan 2. yanlışta sonraki sorunun üstünde küçük, kapatılabilir hatırlatma (oturumda tek sefer; günlük, hata tekrarı, konu, alıştırma, 5 soru, Yanlışlarım)
+- [x] Görülme kaydı `progress/kkart:<konu>` (firstAt, lastAt, lastDay, views, snoozeUntil; senkrona girer); Eksikler satırında "Kural kartından sonra: %X (n soru)"
+- [x] Eksikler: en üstte "Bugün en çok kazandıracak 1 şey" (en zayıf konu → kural kartı + 5 soru)
+- [x] Eksikler satırları (gramer konu, soru tipi, en zayıf 3 alan, son denemenin zayıf bölümleri): zayıfsa (< %70) "Kuralı oku" (yan panel: kart + dersin tamamı) + "5 soru çöz"; ⋯ menüsü: Yanlışlarım (n), Dersi tam ekran
+- [x] `#/gramer/pratik/<konu|tip>[/kural]`: 5 soru (önce açık hatalar, sonra önceki yanlışlar, sonra seviyeye uygun yeniler); `#/gramer/yanlis/<konu|tip>`: hata kutusundaki o konunun soruları (tüm kaynaklar)
+- [x] Hata nedenleri: en sık nedene tek bağlantı (kelime → kelime çalış, gramer → en zayıf konunun kuralı, süre → Süre planı, iki şık / dikkat → Şık eleme, metin → Okuma)
+- [x] En çok unutulan: seçim kutuları + "Bu kelimeleri çalış" (`#/kartlar/sec/<id,id>`; vadesi gelmemiş kartın takvimi yalnız "Tekrar" denirse değişir)
+- [x] Kurul (orta seviye B1 kullanıcı, `kurul/orta-seviye.md`) düzeltmeleri:
+  - Kartta iç terim yok ("merdiven" etiketi kalktı; "X kart pekiştiriliyor"); "Claude tarafından eklendi" notu arka yüzde tek kısa gri satır ("ⓘ anlam otomatik eklendi")
+  - Kısa / yarım deneme sonucu: "14/20 doğru (%70)"; tahmini YÖKDİL puanı yalnız tam denemede; yarımda ×2 yok, okuma yoksa "Okuma bölümü yok" (kayıt `score` = doğru %, `pct: true`)
+  - Yarım (çıkmış) denemede bölüm hedef süreleri soru sayısına oranlı (`scalePlan`)
+  - Okuma sonu çipleri: "Kartında olmayan X kelime"; anlam önce sözlükçeden, çok anlamlı sözlük anlamı çipte gösterilmez; found/left gibi çekimler çekirdekle eşleşmez; kelime + anlam arası boşluk, kelime bölünmez; sözlükçe anlamı karta da yazılır
+  - Deneme günü (programdaki çıkmış deneme ya da kısa deneme): ana liste deneme + kart tekrarı, gerisi "İsteğe bağlı" (kapalı), toplam süre yalnız ana liste
+  - Eksikler → Kelimeler: "çalıştığın kelime" + "Sağlam: X · hedef 2000", çizgi = bugünün ara hedefi (programa göre), yetişmiyorsa "günde N yeni ya da Kelime tara"
+  - Deneme grafiği: hedef puan çizgisi (Ayarlar → Hedef puan, yoksa 70), "null" yazısı düzeldi; Bugün'de "Son tam deneme 56 · hedef 70 · fark 11 soru"
+  - Akşam ipucu altta, kısa metin, 6 sn; sınav/deneme ekranında ve cevaptan önce kartındaki kelime vurgusu yok
+  - Gramer yanlışında "Senin kuralın" yalnız konu + anahtar sözcük eşleşirse (soru tipi kuralında konu yeter); %100 konuda "zayıf" yok (zayıf: < %60 ve ≥ 5 soru; tohum konu 20 soruya kadar)
+  - Bugün: en fazla 1 kural kartı ("bu hafta zorlandığın kural", sayı yok); okuma süresi = kelime / hız + soru + çeviri; okunan parçanın adı görevde kalır; seviye 1 + sorusuz + çevirisiz gizli metin önerilmez; ▶ odak varsayılan kapalı (Ayarlar'dan açılır); "Hafta 2/15"
+  - Kısa deneme Bugün'den açılınca tek onay ("Başla"); deneme yanlış listesinde ▸ + soru kökü + senin/doğru şık yazısı; süre tablosunda "Net" → "Doğru"
+  - Yazarak hatırla: kartın eş anlamlısı "Yakın: X da olur. Kart Y istiyordu." olarak kabul
+  - Kart bitişi: farklı kart sayısı ("15 yeni kelime çalışıldı · 13 tekrar gösterim"); Ayarlar sekmeleri bölünmüyor
+- [x] SW v14; testler: `tests/e2e_v14.py` (ekran görüntüleri `/home/claude/shots/v14/`), birim testler `merge.test.mjs`
+
+## v14 sonrası fikirler
+- Kurul (orta seviye) raporundan kalanlar: yeni kartta Zor = İyi (1 g) aynı görünüyor (O3); deneme analizi 6 madde → 3, sonuçta ana düğme "Yanlışlarımı çöz" (O11); neden çiplerini 3'e indirme (O10); başlıkta odak sayacı küçük, logo kısa (O14); Ayarlar Temel / Gelişmiş (D2); okuma ekranı açıklamaları ve "+ Ana fikir yaz" (D3, D4); deneme sonucu bildirimi altta (D6); joker yazısı yalnız kullanıldığı gün (D7); Çıkmış listesinde eksik sınavlar "Örnek sorular", çözülene ✓ (D8); tanı denemesi açıklaması (D9); Kelime tara 50'şer + 1–2★ atla (D10); senkron noktası yerine "Senkron yok" çipi (D11); Eksikler'de ikincil bölümler "Ayrıntı ▸" altında
+- Isınma kartını kısa denemede bölüm başlarken de (ipucu yok kuralına dikkat)
+- "5 soru çöz"de çıkmış (gizli paket) sorulardan da o konuya ait olanları katma
+- Kural kartından sonraki doğruluğu kartı görmeden önceki ile yan yana kıyaslama (veri birikince)
+
 ## v11'de yapılanlar (kısa deneme + gizli okumalar)
 - [x] Kısa deneme (`#/deneme`, Sorular → Deneme): Mini 20 soru · 45 dk (5 boşluk ≥1 çift, 1 cloze metni, 3 cümle tamamlama, 1+1 çeviri, 1 paragraf, 1 ilgisiz, 1 okuma parçası) / Yarım 40 · 90 dk (iki katı)
 - [x] Seçim (`js/kisa.js`, saf): önce hiç görülmemiş, sonra en eski görülen; seviye 1/2/3 ≈ %30/45/25; son 3 kısa denemedeki birimler tekrar etmez (tanım `progress/kisadef:<id>`, yalnız kimlik)

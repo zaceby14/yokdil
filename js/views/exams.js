@@ -44,11 +44,13 @@ const halfQs = (e, half) => half ? visibleQs(e).slice(0, HALF_N) : visibleQs(e);
 const sfx = half => half ? '/' + HALF : '';
 // Kısa deneme (sanal sınav: özgün sorular): aynı motor; anahtar/bilgi sorunun kendisinden, ana sayfa #/deneme
 const baseOf = e => e.kisa ? '#/deneme' : '#/cikmis';
+const shortQ = s => { const t = String(s || '').replace(/\s+/g, ' ').trim(); return /^\(\d+\)$/.test(t) ? '' : t.length > 70 ? t.slice(0, 68) + '…' : t; };
 const qkey = (e, q) => q.key || `${e.id}:${q.n}`;
 const qinfo = (e, q) => q.info ? { ...q.info, src: 'kisa' } : { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' };
 const secCounts = secs => Object.fromEntries(secs.map(sc => [sc.k, sc.idx.length]));
 // Süre planı: kısa denemede bölüm hedefleri soru sayısına oranlanır
-const planOf = (e, tp, counts) => !tp ? null : e.kisa ? scalePlan(tp, counts, planRows) : tp;
+// Süre planı: kısa ve yarım denemede bölüm hedefleri soru sayısına oranlanır (1 çeviri sorusuna 15 dk düşmesin)
+const planOf = (e, tp, counts, half) => !tp ? null : e.kisa || half ? scalePlan(tp, counts, planRows) : tp;
 export { examMode as runExam, result as examResult, wrongMode as examWrong };
 
 export default async function render(root, [mode, id, arg, a2]) {
@@ -177,7 +179,7 @@ function examMode(root, e, startSec) {
         h('button.icon-x.small', { type: 'button', 'aria-label': 'bölüm süresini gizle', onclick: () => { store.setSetting('secClock', false); toast('Gizlendi · Ayarlar → Çalışma\'dan açılır'); drawClock(); } }, '×'));
     }
   }
-  aids().then(a => { const tp = planOf(e, a?.timePlan, secCounts(secs)); plan = tp && planRows(tp).length ? tp : null; drawClock(); }).catch(() => {});
+  aids().then(a => { const tp = planOf(e, a?.timePlan, secCounts(secs), half); plan = tp && planRows(tp).length ? tp : null; drawClock(); }).catch(() => {});
   const bar = h('div.readbar',
     h('a.btn.small', { href: baseOf(e), 'aria-label': 'geri' }, '‹'), h('b.grow.ellipsis', e.title || e.id), timer,
     h('button.btn.small', { onclick: () => { grid.classList.toggle('hidden'); drawGrid(); } }, 'Optik'),
@@ -313,10 +315,10 @@ function examMode(root, e, startSec) {
       if (!done) answer(qkey(e, q), ok, qinfo(e, q));
     });
     Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
-    // Yarım deneme: puan 80 soruya oranlanır (40 soruda doğru × 2,5). Kısa deneme: doğru / soru × 100
-    const score = e.kisa ? kisaScore(right, qs.length) : +(right * 1.25 * (half ? 80 / Math.max(1, qs.length) : 1)).toFixed(2);
+    // Tahmini YÖKDİL puanı yalnız tam denemede (doğru × 1,25). Kısa ve yarım: doğru / soru × 100 (puan değil, yüzde)
+    const score = e.kisa || half ? kisaScore(right, qs.length) : +(right * 1.25).toFixed(2);
     store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: e.kisa ? 'kisa' : 'cikmis', examId: e.id, score,
-      times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right } : {}), ...(e.kisa ? { kind: 'kisa', size: e.kisa.size, right, n: qs.length } : {}) });
+      times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right, n: qs.length, pct: true } : {}), ...(e.kisa ? { kind: 'kisa', size: e.kisa.size, right, n: qs.length } : {}) });
     updateDay({ mock: true });
     if (e.kisa) tick('kisa');
     pr = { ...pr, done: true, finishedAt: Date.now(), score, right, sections, attempts: (pr.attempts || 0) + 1 };
@@ -332,6 +334,15 @@ function examMode(root, e, startSec) {
 async function weakLessonBtn(secKey) {
   const l = await findLesson([TYPE_LESSON[SEC_TYPE[secKey]], 'soru-tipi-taktikleri'].filter(Boolean));
   return l ? h('button.btn.wide.weak-lesson', { onclick: () => openLesson(l.id) }, `En zayıf bölüm: ${SEC_LBL[secKey] || secKey} → Ders: ${l.title}`) : null;
+}
+
+// Sonuç üst kutusu: tam denemede tahmini puan; kısa/yarımda "x/y doğru (%z)" (sınav puanı değil)
+export function heroOf(e, half, right, qs, pr) {
+  if (!e.kisa && !half) return h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')), h('div.hero-r', 'Doğru × 1,25'));
+  const pct = Math.round(right / Math.max(1, qs.length) * 100);
+  const noRead = half && !qs.some(q => SECTION_OF[q.type] === 'okuma');
+  return h('div.hero.hero-pct', h('div', h('div.big', `${right}/${qs.length}`), h('div.small', `doğru (%${pct})`)),
+    h('div.hero-r', e.kisa ? 'Mini deneme sınav puanı değildir.' : 'Tahmini puan yalnız tam denemede.', noRead ? h('div.small.no-read', 'Okuma bölümü yok.') : null));
 }
 
 function result(root, e, half = false) {
@@ -354,8 +365,7 @@ function result(root, e, half = false) {
   root.append(
     h('a.btn.small', { href: base }, e.kisa ? '‹ Deneme' : '‹ Çıkmış'),
     h('h2', (e.title || e.id) + (half ? ` · ilk ${qs.length} soru` : '')),
-    h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')),
-      h('div.hero-r', half ? `${right}/${qs.length} doğru · 80 soruya oranlandı` : e.kisa ? `${right}/${qs.length} doğru` : 'Doğru × 1,25')),
+    heroOf(e, half, right, qs, pr),
     h('table.mock', h('tr', h('th', 'Bölüm'), h('th', 'D'), h('th', 'Y'), h('th', 'B')),
       order.map(k => { const s = pr.sections[k]; return h('tr.secrow', { onclick: () => { const d = groups.querySelector(`[data-sec="${k}"]`); if (d) { d.open = true; d.scrollIntoView({ block: 'start', behavior: 'smooth' }); } } },
         h('td', SEC_LBL[k] || k, h('span.small.muted', ` ${s.n}`)), h('td', s.d), h('td', s.y), h('td', s.b)); })),
@@ -387,10 +397,11 @@ function result(root, e, half = false) {
         h('summary', h('b', SEC_LBL[k] || k), h('span.small.muted', ` · ${list.length} yanlış/boş`)),
         h('a.btn.wide.retry-sec', { href: `${base}/yanlis/${encodeURIComponent(e.id)}/${k}${sfx(half)}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
         ...list.map(q => h('div.qwrong-wrap', h('details.qwrong',
-          h('summary', h('b', `Soru ${q.n}`), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
+          h('summary', h('span.qw-arrow', '▸ '), h('b', `Soru ${q.n}`), ' ', h('span.small.qw-stem', shortQ(q.q)), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
           groupOf(e, q)?.text ? h('div.stem.small', groupOf(e, q).text) : null,
           h('div.q', q.q),
-          h('div.small', `Doğru: ${'ABCDE'[q.answer]}) ${q.options[q.answer]}`),
+          pr.answers[q.n] != null ? h('div.small.bad-t', `Senin: ${'ABCDE'[pr.answers[q.n]]}) ${q.options[pr.answers[q.n]]}`) : null,
+          h('div.small.good-t', `Doğru: ${'ABCDE'[q.answer]}) ${q.options[q.answer]}`),
           realExplain(q.explain) ? h('div.explain', realExplain(q.explain)) : null),
           reasonChips(reasons, keyOf(q), { src: e.kisa ? 'kisa' : 'cikmis', dtype: q.type || '', topic: q.topic || '' }, drawSum)))));
       first = false;
@@ -403,7 +414,7 @@ function result(root, e, half = false) {
     // Bölüm başına: net, harcanan dk, hedef dk, soru başı sn
     const times = pr.secTime || {};
     if (Object.values(times).some(v => v > 0)) {
-      const tp = planOf(e, a?.timePlan, Object.fromEntries(order.map(k => [k, pr.sections[k].n])));
+      const tp = planOf(e, a?.timePlan, Object.fromEntries(order.map(k => [k, pr.sections[k].n])), half);
       const plan = tp ? planRows(tp) : [];
       const used = new Set(), rows = [];
       for (const k of order) {
@@ -416,7 +427,7 @@ function result(root, e, half = false) {
       }
       const min = t => t ? Math.max(1, Math.round(t / 60)) : 0;
       timeSlot.append(h('h3', 'Süre'), h('div.tblwrap', h('table.mock.timetable',
-        h('tr', h('th', 'Bölüm'), h('th', 'Net'), h('th', 'dk'), plan.length ? h('th', 'Hedef') : null, h('th', 'sn/soru')),
+        h('tr', h('th', 'Bölüm'), h('th', 'Doğru'), h('th', 'dk'), plan.length ? h('th', 'Hedef') : null, h('th', 'sn/soru')),
         rows.map(r => h('tr', h('td', r.label.replace(/\s*\(\d+[–-]\d+\)\s*$/, '')), h('td', r.d),
           h('td' + (r.target && r.t > r.target * 60 ? '.bad-t' : ''), r.t ? min(r.t) : '–'), plan.length ? h('td', r.target || '–') : null, h('td', r.t ? Math.max(1, Math.round(r.t / r.n)) : '–'))),
         h('tr.total', h('td', 'Toplam'), h('td', right), h('td', min(pr.elapsed || 0)), plan.length ? h('td', half ? HALF_MIN : e.kisa ? e.durationMin : (a?.timePlan?.total || e.durationMin || 180)) : null, h('td', pr.elapsed ? Math.round(pr.elapsed / qs.length) : '–')))),

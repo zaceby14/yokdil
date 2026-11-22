@@ -374,7 +374,7 @@ with sync_playwright() as p:
     check('gmat' in due, 'olgun (öğrenilmemiş) kart normal kuyrukta')
     page.goto(BASE + '#/eksikler'); page.wait_for_timeout(500)
     txt = page.inner_text('main')
-    check('bildiğin kelime' in txt and '/ 2000' in txt and page.locator('.goal-line').count() == 1, 'Eksikler: bildiğin kelime + hedef çizgisi')
+    check('çalıştığın kelime' in txt and 'hedef 2000' in txt and page.locator('.goal-line').count() == 1, 'Eksikler: çalıştığın kelime + sağlam + ara hedef çizgisi')
     page.screenshot(path=f'{SHOTS}/v3-eksikler-kelime.png', full_page=True)
 
     # 4a) Yanlış cevap → otomatik kart
@@ -435,7 +435,7 @@ with sync_playwright() as p:
         page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(150)
     page.wait_for_timeout(500)
     txt = page.inner_text('main')
-    check('yeni kelime vardı' in txt, 'parça sonu: "Bu parçada X yeni kelime vardı"')
+    check('Kartında olmayan' in txt, 'parça sonu: "Kartında olmayan X kelime"')
     check('kelime/dk' in txt, 'okuma hızı gösterildi')
     rec = [r for r in st()['progress'].values() if r.get('kind') == 'read']
     check(rec and rec[0]['wpm'] > 0 and rec[0]['total'] >= 1, f'okuma kaydı: {rec[0]["wpm"] if rec else None} k/dk, {rec[0]["right"] if rec else ""}/{rec[0]["total"] if rec else ""}')
@@ -789,7 +789,7 @@ with sync_playwright() as p:
     # Akşam ipucu (17:00 sonrası, günde bir) + masaüstü yan panel ve menü
     ctx, page = v4ctx({'width': 1280, 'height': 860}, False, 'v4-masaustu', hour=19)
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(800)
-    check(page.locator('.evetip').count() == 1 and 'kahve' in page.inner_text('.evetip'), 'akşam ipucu gösterildi')
+    check(page.locator('.evetip').count() == 1 and 'Uykun mu geldi' in page.inner_text('.evetip'), 'akşam ipucu gösterildi')
     page.screenshot(path=f'{SHOTS}/d-bugun-aksam.png')
     page.reload(); page.wait_for_timeout(700)
     check(page.locator('.evetip').count() == 0, 'akşam ipucu günde bir kez')
@@ -962,7 +962,7 @@ with sync_playwright() as p:
         check(page.locator('#dq .q .blank').count() == 2 and ' / ' in page.inner_text('#dq .opt >> nth=0'), 'çift boşluk: 2 boşluk + "x / y" şıklar')
         shot('v6-cift-bosluk')
     # Kişisel kural kartı yanlışta otomatik
-    rq = ev("fetch('data/grammar.json').then(r => r.json()).then(g => g.find(q => q.topic === 'edat-esdizim' && !q.double))")
+    rq = ev("fetch('data/grammar.json').then(r => r.json()).then(g => g.find(q => q.topic === 'edat-esdizim' && !q.double && /^(at|in|by|under)$/i.test(String(q.options[q.answer]).trim())))")
     ev(f"""import('./js/quiz.js').then(q => import('./js/qbank.js').then(b => b.resolve('{rq['id']}').then(it => {{
       const m = document.querySelector('main .page'); m.innerHTML = ''; const d = document.createElement('div'); d.id = 'rq'; m.append(d); q.runQuiz(d, [it], {{ auto: false }}); }})))""")
     page.wait_for_timeout(400)
@@ -1065,16 +1065,16 @@ with sync_playwright() as p:
     ev(f"""import('./js/store.js').then(m => {{ for (const id of {json.dumps(ids)}) m.put('mistakes', {{ id, kind: 'gramer', due: '2026-01-01', stage: 0, streak: 0, wrongs: 1 }});
       const k = Object.keys(JSON.parse(localStorage.getItem('yokdil.v1')).days || {{}}); for (const d of m.all('days')) {{ const x = {{ ...d }}; delete x.hset; m.put('days', x); }} }})""")
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(700)
-    ht = page.inner_text('[data-task=hata]') if page.locator('[data-task=hata]').count() else ''
+    ht = page.locator('[data-task=hata]').first.text_content() if page.locator('[data-task=hata]').count() else ''  # deneme gününde 'İsteğe bağlı' (kapalı) içinde
     check('Hata tekrarı (0/8)' in ht, f'Bugün: ayrı görev "Hata tekrarı (0/8)" ({ht.strip()[:40]})')
-    gt = page.inner_text('[data-task=gramer]')
+    gt = page.locator('[data-task=gramer]').first.text_content()
     check('hata' not in gt.lower() and '+' not in gt, f'Gramer görevinde birikmiş hata sayısı yok ({gt.strip()})')
     page.goto(BASE + '#/gramer/hata'); page.wait_for_timeout(700)
     check('1/8' in page.inner_text('.qhead'), 'hata tekrarı oturumu 8 soru')
     for k in range(3):
         page.locator('.opt').nth(0).click(); page.wait_for_timeout(100); page.click('.actbar .btn'); page.wait_for_timeout(100)
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
-    check('(3/8)' in page.inner_text('[data-task=hata]'), 'Hata tekrarı ilerlemesi (3/8)')
+    check('(3/8)' in page.locator('[data-task=hata]').first.text_content(), 'Hata tekrarı ilerlemesi (3/8)')
 
     # A5) Seri: tek atlanan gün + deneme günü
     ev("""import('./js/store.js').then(m => import('./js/util.js').then(u => { const t = u.dayKey();
@@ -1225,7 +1225,7 @@ with sync_playwright() as p:
     check(mk.get('times', {}).get('bosluk', 0) >= plan_bos * 60, 'deneme kaydında bölüm süreleri (senkrona girer)')
     th = [page.locator('.timetable th').nth(i).inner_text() for i in range(page.locator('.timetable th').count())]
     row0 = [page.locator('.timetable tr').nth(1).locator('td').nth(i).inner_text() for i in range(5)]
-    check(th == ['Bölüm', 'Net', 'dk', 'Hedef', 'sn/soru'] and row0[3] == str(plan_bos) and int(row0[2]) > plan_bos and int(row0[4]) >= plan_bos * 3, f'Sonuç: bölüm başına net / dk / hedef / sn-soru ({row0})')
+    check(th == ['Bölüm', 'Doğru', 'dk', 'Hedef', 'sn/soru'] and row0[3] == str(plan_bos) and int(row0[2]) > plan_bos and int(row0[4]) >= plan_bos * 3, f'Sonuç: bölüm başına net / dk / hedef / sn-soru ({row0})')
     check(page.locator('.timetable td.bad-t').count() >= 1, 'Sonuç: hedefi aşan süre kırmızı')
     # A3) Deneme analizi: neden çipleri + özet + analiz adımları
     n_reason = len(aids_m['errorReasons'])
@@ -1254,7 +1254,7 @@ with sync_playwright() as p:
     txt = page.inner_text('main')
     mcs = re.search(r'Çekirdek liste: (\d+)/(\d+) görüldü', txt)
     n_words = len(json.load(open(f'{ROOT}/data/words.json', encoding='utf-8')))
-    check(mcs is not None and int(mcs.group(2)) == n_words and '/ 2000 bildiğin kelime' in txt, f'Eksikler: çekirdek liste ilerlemesi ({mcs.group(0) if mcs else None}), hedef 2000 duruyor')
+    check(mcs is not None and int(mcs.group(2)) == n_words and 'hedef 2000' in txt, f'Eksikler: çekirdek liste ilerlemesi ({mcs.group(0) if mcs else None}), hedef 2000 duruyor')
     # D2) Okuma hızı haftalık grafik + hedef çizgisi
     ev("""import('./js/store.js').then(m => { const now = Date.now(), d = 86400000;
       [[1, 95], [2, 105], [9, 88], [16, 80], [17, 84]].forEach(([ago, wpm], i) => m.put('progress', { id: 'read:t' + i, kind: 'read', words: 200, secs: 120, wpm, level: 1, at: now - ago * d, right: 2, total: 3 })); })""")
@@ -1278,8 +1278,8 @@ with sync_playwright() as p:
     go('cikmis/sinav/yds-2019-1/yarim', 3800)
     check(page.url.endswith('#/cikmis/sonuc/yds-2019-1/yarim'), f'Yarım deneme: süre bitince otomatik biter ({page.url.split("#")[-1]})')
     hm = [m for m in st()['mocks'].values() if m.get('half')]
-    check(len(hm) == 1 and hm[0]['score'] in (0, 2.5) and 'ilk 40' in hm[0]['name'], f'Yarım deneme kaydı: 80 soruya oranlı puan ({hm[0]["score"] if hm else None})')
-    check('ilk 40 soru' in page.inner_text('h2') and '/40 doğru' in page.inner_text('.hero'), 'Yarım sonuç ekranı')
+    check(len(hm) == 1 and hm[0]['score'] in (0, 3) and hm[0].get('pct') and 'ilk 40' in hm[0]['name'], f'Yarım deneme kaydı: doğru yüzdesi, 80 soruya oranlanmıyor ({hm[0]["score"] if hm else None})')
+    check('ilk 40 soru' in page.inner_text('h2') and '/40' in page.inner_text('.hero .big') and 'yalnız tam denemede' in page.inner_text('.hero'), 'Yarım sonuç ekranı: x/40 doğru, tahmini puan yok')
     check(st()['progress'].get('exam:yds-2019-1') is None, 'yarım deneme tam deneme kaydını etkilemedi')
     shot('v7-yarim-sonuc', True)
     go('eksikler', 600)
@@ -1384,7 +1384,8 @@ with sync_playwright() as p:
     ev("import('./js/store.js').then(m => m.setSetting('newLimit', 15))"); page.wait_for_timeout(300)
     set_date('2026-11-28')
     go('bugun', 500)
-    check(page.locator('a.mock-plan').get_attribute('href').endswith('/yarim') and '90 dk' in page.locator('a.mock-plan').inner_text(), 'Bugün: programdaki yarım deneme → ilk 40 soru / 90 dk modu')
+    dl = page.locator('li[data-task=deneme] a.task')
+    check(dl.count() == 1 and dl.get_attribute('href').endswith('/yarim') and '90 dk' in dl.inner_text() and page.locator('details.optional-tasks').count() == 1, 'Bugün: programdaki yarım deneme günü → deneme görevi (ilk 40 / 90 dk), gerisi isteğe bağlı')
     check(page.locator('.banner.final').count() == 0 and page.locator('.banner.apply').count() == 0 and page.locator('li[data-task=okuma]').count() == 1, 'normal günde son-14-gün / başvuru bandı yok')
     set_date('2027-01-05'); go('bugun', 500)
     check(page.locator('.banner.apply.soon').count() == 1 and 'Başvuruya 7 gün' in page.inner_text('.banner.apply') and '12 Oca' in page.inner_text('.banner.apply') and '20 Oca' in page.inner_text('.banner.apply'), f'Başvuru bandı: yaklaşırken ({page.inner_text(".banner.apply") if page.locator(".banner.apply").count() else None})')
@@ -1640,7 +1641,7 @@ with sync_playwright() as p:
     check('Soru 20' in page.inner_text('.qhead') and page.locator('.stem .reader .w').count() > 20, 'optikten son soruya (okuma parçası dokunulabilir)')
     page.locator('.opt').nth(qs[19]['answer']).click()
     page.click('.readbar button:has-text("Bitir")'); page.wait_for_timeout(1000)
-    check('#/deneme/sonuc/' in page.url and '10' == page.inner_text('.hero .big').strip() and '2/20 doğru' in page.inner_text('.hero'), f'sonuç: 2/20 → 10 puan ({page.inner_text(".hero") if page.locator(".hero").count() else None})')
+    check('#/deneme/sonuc/' in page.url and '2/20' == page.inner_text('.hero .big').strip() and '%10' in page.inner_text('.hero') and 'sınav puanı değildir' in page.inner_text('.hero') and 'tahmini puan' not in page.inner_text('.hero'), f'sonuç: 2/20 doğru (%10), puan değil ({page.inner_text(".hero") if page.locator(".hero").count() else None})')
     s = st()
     km = [m for m in s['mocks'].values() if m.get('kind') == 'kisa']
     check(len(km) == 1 and km[0]['score'] == 10 and km[0]['n'] == 20 and km[0]['size'] == 'mini' and km[0]['sections']['bosluk'] == {'d': 1, 'y': 1, 'b': 3, 'n': 5}, f'mocks: kind=kisa, bölüm D/Y/B ({km[0]["sections"].get("bosluk") if km else None})')
@@ -1662,6 +1663,8 @@ with sync_playwright() as p:
     check(ok_rep, f'aynı soru son 3 kısa denemede tekrar etmiyor ({len(defs)} deneme)')
     # Yarıda bırak → Bugün bandı
     go('deneme/yeni/mini', 1000)
+    check(page.locator('.kisa-confirm .kisa-go').count() == 1 and page.locator('.timer').count() == 0, 'Bugün\'den kısa deneme: önce tek onay, süre başlamadı')
+    page.click('.kisa-go'); page.wait_for_timeout(1000)
     page.locator('.opt').nth(0).click(); page.wait_for_timeout(200)
     open_url = page.url
     go('bugun', 800)
@@ -1671,7 +1674,7 @@ with sync_playwright() as p:
     shot('v11-bugun-yarim-kaldi', True)
     band.click(); page.wait_for_timeout(900)
     check(page.url == open_url and page.locator('.opt.chosen').count() == 1, 'bant → aynı deneme, cevap duruyor')
-    go('deneme/yeni/yarim', 1000)
+    go('deneme/yeni/yarim/basla', 1000)
     check('1/40' in page.inner_text('.qhead') and page.locator('.timer').inner_text().startswith(('1:29', '1:30')) and page.locator('.secstrip .chip').count() == 8, 'yarım kısa deneme: 40 soru · 90 dk')
     # Eksikler + hedef net
     go('eksikler', 800)

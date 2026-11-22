@@ -5,7 +5,7 @@ import { h, add, shuffle, dayKey, toast } from '../util.js';
 import { runQuiz } from '../quiz.js';
 import { nextTaskBtn } from '../tasks.js';
 import { tick } from '../plan.js';
-import { pool, tourCards, typoOk, blank, synItem, familyItem, meaningItem, memResult } from '../memory.js';
+import { pool, tourCards, typoOk, synHit, blank, synItem, familyItem, meaningItem, memResult } from '../memory.js';
 import { setCtx } from '../ctx.js';
 import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
@@ -23,7 +23,7 @@ async function typeItems(cards, n) {
   const out = [];
   for (const c of shuffle(cards).filter(c => c.tr && c.word.trim().split(/\s+/).length <= 3)) {
     if (out.length >= n) break;
-    out.push({ key: 'yaz:' + c.id, cardId: c.id, word: c.word, tr: c.tr, s: await sentence(c) });
+    out.push({ key: 'yaz:' + c.id, cardId: c.id, word: c.word, tr: c.tr, syn: Array.isArray(c.syn) ? c.syn : [], s: await sentence(c) });
   }
   return out;
 }
@@ -126,12 +126,15 @@ function typing(box, items, sid, after) {
       if (done) { i++; persist(); return show(); }
       if (!giveUp && !inp.value.trim()) return toast('Kelimeyi yaz');
       done = true;
-      const ok = !giveUp && typoOk(inp.value, it.word);
+      const exact = !giveUp && typoOk(inp.value, it.word);
+      // Eş anlamlı: kısmen kabul ("Yakın" — doğru sayılır, kartın kelimesi gösterilir)
+      const near = !giveUp && !exact ? synHit(inp.value, it.syn) : null;
+      const ok = exact || !!near;
       if (ok) right++; else wrongs.push(it);
       memResult(it.cardId, ok);
       inp.disabled = true; inp.classList.add(ok ? 'right' : 'wrong');
       fb.classList.remove('hidden');
-      add(fb, h('b', ok ? (inp.value.trim().toLowerCase() === it.word.toLowerCase() ? 'Doğru. ' : 'Doğru (küçük yazım farkı). ') : 'Doğrusu: '), h('span', { lang: 'en' }, it.word),
+      add(fb, h('b', near ? `Yakın: ${near} da olur. Kart "` : exact ? (inp.value.trim().toLowerCase() === it.word.toLowerCase() ? 'Doğru. ' : 'Doğru (küçük yazım farkı). ') : 'Doğrusu: '), h('span', { lang: 'en' }, it.word), near ? h('b', '" istiyordu.') : null,
         canSpeak() ? h('button.icon-btn.say', { 'aria-label': 'dinle', onclick: () => speak(it.word) }, SPK()) : null);
       btn.textContent = i + 1 < items.length ? 'Sonraki' : 'Bitir';
       persist();

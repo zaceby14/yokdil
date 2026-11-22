@@ -647,12 +647,106 @@ t('Gizli okumalar: doğrulama (bozuk atlanır, tf) ve exams şeması', () => {
 });
 t('Okuma önerisi: özgün ↔ gizli dönüşümlü, "diğer" önerilmez, seviyeye yakın', () => {
   const ps = [{ id: 'p1', level: 1, title: 'P1' }, { id: 'p2', level: 2, title: 'P2' }];
-  const rs = [{ id: 'o', topic: 'diğer', level: 1 }, { id: 'r2', topic: 'enerji', level: 2 }, { id: 'r1', topic: 'malzeme', level: 1 }];
+  const rs = [{ id: 'o', topic: 'diğer', level: 1 }, { id: 'r2', topic: 'enerji', level: 2 }, { id: 'r1', topic: 'malzeme', level: 1, questions: [{}] }];
   assert.equal(RP.pickReading({ ps, rs }).next.id, 'r:r1');
   assert.equal(RP.pickReading({ ps, rs, lastGizli: true }).next.id, 'p1');
   assert.equal(RP.pickReading({ ps, rs, done: new Set(['r:r1', 'r:r2']) }).next.id, 'p1');
   assert.equal(RP.pickReading({ ps: [], rs: [rs[0]] }).next, null);
   assert.equal(RP.pickReading({ ps, rs, lastGizli: true, recs: [{ at: 1, level: 1, wpm: 150, right: 3, total: 3 }] }).next.id, 'p2');
+});
+
+const W = await import('../js/warm.js');
+t('Isınma: zayıf konu seçimi (doğruluk < %70, ≥2 açık hata, kişisel kural), aynı gün ve erteleme', () => {
+  const today = '2026-11-22';
+  const L = (topic, correct, day = today, kind = 'gramer', dtype = 'bosluk') => ({ q: 'x', topic, correct, day, kind, dtype });
+  const logs = [L('relative', false), L('relative', false), L('relative', true), L('passive', true), L('passive', true), L('passive', true),
+    L('relative', false, '2026-10-01'), L('', false, today, 'drill', 'cloze'), L('', false, today, 'drill', 'cloze'), L('', true, today, 'drill', 'cloze')];
+  const mistakes = [{ id: 'a', topic: 'modal', kind: 'gramer', dtype: 'bosluk' }, { id: 'b', topic: 'modal', kind: 'gramer', dtype: 'bosluk' }, { id: 'c', topic: 'passive', solved: true }];
+  const rules = [{ topic: 'edat-esdizim' }];
+  const ctx = { logs: [...logs, L('edat-esdizim', false)], mistakes, rules, today };
+  assert.equal(W.weakInfo('relative', ctx).n, 3); // 14 günden eski sayılmaz
+  assert.deepEqual(W.pickWarm(['relative', 'passive', 'modal', 'edat-esdizim', 'cloze'], ctx, {}, 9).map(x => x.key).sort(), ['cloze', 'edat-esdizim', 'modal', 'relative']);
+  assert.equal(W.pickWarm(['relative', 'passive', 'modal'], ctx).length, 2);
+  assert.deepEqual(W.pickWarm(['relative', 'modal'], ctx, { relative: { lastDay: today }, modal: { snoozeUntil: '2026-11-25' } }), []);
+  assert.deepEqual(W.pickWarm(['modal'], ctx, { modal: { snoozeUntil: today } }).map(x => x.key), ['modal']);
+  assert.deepEqual(W.pickWarm(['passive'], ctx), []);
+  assert.equal(W.snoozeDay(today), '2026-11-29');
+});
+t('Isınma: konu anahtarı (alan adı değil soru tipi), deneme bölümü eşlemesi, ek kart', () => {
+  assert.equal(W.keyOf({ kind: 'gramer', topic: 'relative', dtype: 'bosluk' }), 'relative');
+  assert.equal(W.keyOf({ kind: 'drill', topic: 'biyoloji', dtype: 'ilgisiz' }), 'ilgisiz');
+  assert.equal(W.keyOf({ kind: 'okuma', topic: 'saglik' }), 'paragraf');
+  assert.equal(W.normKey('tamamlama'), 'cumle-tamamlama');
+  assert.ok(W.matches({ kind: 'gramer', topic: 'x' }, 'bosluk') && W.matches({ kind: 'drill', dtype: 'cloze' }, 'cloze'));
+  const a = { polarityCards: [{ group: 'Zıtlık', words: ['although'] }, { group: 'Z', words: ['despite'] }], cheatSheets: [{ id: 'fen-edat', title: 'F' }] };
+  assert.equal(W.extraFor('baglac-zitlik', a).card.words[0], 'although');
+  assert.equal(W.extraFor('despite-although', a).card.words[0], 'despite');
+  assert.equal(W.extraFor('edat-esdizim', a).kind, 'sheet');
+  assert.equal(W.extraFor('modal', a), null);
+});
+t('5 soru sırası: açık hata → önceki yanlış → seviyeye uygun yeni → üst seviye → doğru bilinen', () => {
+  const pool = [{ key: 'ok', level: 1 }, { key: 'hi', level: 3 }, { key: 'new', level: 1 }, { key: 'wr', level: 1 }, { key: 'op', level: 1 }];
+  const logs = [{ q: 'ok', correct: true, at: 1 }, { q: 'wr', correct: false, at: 2 }];
+  assert.deepEqual(W.practicePick(pool, { logs, mistakes: [{ id: 'op', due: '2026-01-01' }], allowed: 1, n: 5, rnd: () => 0.5 }), ['op', 'wr', 'new', 'hi', 'ok']);
+});
+t('Kural kartından sonraki doğruluk + en çok kazandıracak 1 şey', () => {
+  const r = W.afterCard([{ topic: 'r', correct: true, at: 5 }, { topic: 'r', correct: false, at: 1 }, { topic: 'r', correct: true, hint: true, at: 9 }], 'r', 3);
+  assert.deepEqual([r.after.n, r.after.c, r.before.n], [2, 1, 1]);
+  assert.equal(W.afterCard([], 'r', 0), null);
+  assert.equal(W.bestOne([{ k: 'a', value: 0.6, n: 5 }, { k: 'b', value: 0.4, n: 2 }], [{ k: 'cloze', value: 0.1, n: 9 }]).key, 'a');
+  assert.equal(W.bestOne([], [{ k: 'bosluk', value: 0.1, n: 9 }, { k: 'cloze', value: 0.5, n: 4 }]).key, 'cloze');
+  assert.equal(W.bestOne([], [], ['relative']).key, 'relative');
+});
+
+const V14 = await import('../js/vocab.js'), MEM14 = await import('../js/memory.js'), PL14 = await import('../js/plan.js'), U14 = await import('../js/util.js'), ST14 = await import('../js/strategy.js'), TK14 = await import('../js/tasks.js');
+t('Okuma: öneriye değmeyen gizli metin (seviye 1, sorusuz, çevirisiz) önerilmez; süre tahmini gerçekçi', () => {
+  assert.equal(RP.useful({ level: 1 }), false);
+  assert.equal(RP.useful({ level: 1, tr: ['x'] }), true);
+  assert.equal(RP.useful({ level: 2 }), true);
+  const rs = [{ id: 'kid', topic: 'bitki', level: 1 }];
+  assert.equal(RP.pickReading({ ps: [{ id: 'p1', level: 1, title: 'P' }], rs }).next.id, 'p1');
+  assert.equal(RP.readMin({ words: 240, questions: [1, 2, 3] }, 120), 5);
+  assert.equal(RP.readMin({ words: 240, tr: ['a'] }, 120), 7);
+  assert.equal(RP.readMin({ words: 60 }, 120), 3);
+});
+t('Okuma çipi: sözlükçe anlamı önce, çok anlamlı sözlük anlamı gösterilmez; found/left gibi çekimler eşleşmez', () => {
+  const gm = V14.glossMap([{ w: 'seal (n)', tr: 'fok balığı' }, 'crust: yer kabuğu']);
+  assert.equal(V14.chipMeaning({ word: 'seal', tr: 'sızdırmaz hâle getirmek, mühürlemek' }, gm), 'fok balığı');
+  assert.equal(V14.chipMeaning({ word: 'crust', tr: 'kabuk' }, gm), 'yer kabuğu');
+  assert.equal(V14.chipMeaning({ word: 'plant', tr: 'bitki; tesis, santral' }, gm), '');
+  assert.equal(V14.chipMeaning({ word: 'surface', tr: 'yüzey' }, gm), 'yüzey');
+  const idx = new Map([['found', { word: 'found' }], ['crust', { word: 'crust' }]]);
+  const hits = V14.coreHits([{ t: 'found', w: true, i: 0 }, { t: 'crust', w: true, i: 1 }], idx, new Map());
+  assert.deepEqual(hits.map(x => x.lemma), ['crust']);
+});
+t('Yazarak hatırla: eş anlamlı "yakın" olarak kabul', () => {
+  assert.equal(MEM14.synHit('moreover', ['moreover', 'in addition']), 'moreover');
+  assert.equal(MEM14.synHit('such as', ['for example']), null);
+  assert.equal(MEM14.synHit('x', undefined), null);
+});
+t('Zayıf etiketi: %60 altı ve ≥5 soru; tohum konu doğruluk iyiyse düşer', () => {
+  assert.deepEqual(PL14.weakFrom(['gerund-infinitive', 'relative', 'modal'], { 'gerund-infinitive': [2, 2], relative: [1, 6], passive: [1, 5], quantifier: [1, 4] }).sort(), ['modal', 'passive', 'relative']);
+  assert.deepEqual(PL14.weakFrom(['x'], { x: [24, 25] }), []);
+});
+t('Kart notu: otomatik (Claude) kayıtları kısa gri satır', () => {
+  assert.deepEqual(U14.noteParts('anlam Claude tarafından eklendi; anlam düzeltildi: a → b (Claude)'), { own: '', auto: 'anlam otomatik eklendi, düzeltildi' });
+  assert.deepEqual(U14.noteParts('kendi notum'), { own: 'kendi notum', auto: '' });
+  assert.equal(U14.noteParts('ipucu; anlam düzeltildi: x (Claude)').own, 'ipucu');
+});
+t('Senin kuralın: konu + anahtar sözcük eşleşmesi (ilgisiz kural çıkmaz)', () => {
+  const rules = [{ topic: 'baglac-neden-amac', rule: '"to" testi: sonrasına isim koy (with a view to reducing)', right: 'with a view to reducing noise' }, { topic: 'ilgisiz', rule: '3 soru: Aynı konu mu?', right: 'Alt konu farklı → ilgisiz.' }];
+  assert.equal(W.ruleMatch(rules, 'baglac-neden-amac', ['hence', 'however']), null);
+  assert.ok(W.ruleMatch(rules, 'baglac-neden-amac', ['with a view to', 'so as to']));
+  assert.ok(W.ruleMatch(rules, 'ilgisiz', ['IV']));
+});
+t('Kelime çerçevesi: çalıştığın / sağlam / bugünkü ara hedef / günlük gereken', () => {
+  const v = ST14.vocabPlan({ learning: 150, mature: 30, grad: 2, known: 4, knowTotal: 36 }, 2000, 0.25, 90, 15);
+  assert.deepEqual([v.studied, v.solid, v.todayGoal, v.proj, v.needPerDay], [186, 36, 500, 1536, 21]);
+  assert.equal(ST14.vocabPlan({ learning: 1900, knowTotal: 0 }, 2000, 0.9, 10, 15).needPerDay, 0);
+});
+t('Deneme günü: ana liste deneme + kart, gerisi isteğe bağlı sonda', () => {
+  assert.deepEqual(TK14.orderMockDay(['kart', 'yeni', 'gramer', 'hata', 'okuma', 'kisa'], true), ['kisa', 'kart', 'yeni', 'gramer', 'hata', 'okuma']);
+  assert.deepEqual(TK14.orderMockDay(['kart', 'yeni'], false), ['kart', 'yeni']);
 });
 
 console.log(`\n${n} test geçti`);

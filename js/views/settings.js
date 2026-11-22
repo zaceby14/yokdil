@@ -82,6 +82,7 @@ export default async function render(root) {
       h('div.field', h('span', 'Günlük yeni kelime'), limit), h('p.small.muted', `Boş = programdan (${w.newWords ?? 15}).`),
       hasStars() ? h('label.switch', h('input', { type: 'checkbox', name: 'starFirst', checked: !!s.starFirst, onchange: e => store.setSetting('starFirst', e.target.checked) }), h('span', 'Yeni kelimelerde çok çıkanları öne al')) : null,
       h('div.field', h('span', 'Günlük gramer sorusu'), gc),
+      h('label.switch', h('input', { type: 'checkbox', name: 'warmup', checked: s.warmup !== false, onchange: e => store.setSetting('warmup', e.target.checked) }), h('span', 'Sorulardan önce ısınma (zayıf konunun kural kartı)')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),
       h('div.field', h('span', 'Kelime hedefi'), goal),
@@ -96,6 +97,7 @@ export default async function render(root) {
       h('h3', 'Odak'),
       h('div.field', h('span', 'Çalışma (dk)'), num('focusWork', 25, 5, 90)),
       h('div.field', h('span', 'Mola (dk)'), num('focusBreak', 5, 1, 30)),
+      h('label.switch', h('input', { type: 'checkbox', name: 'focusOnTask', checked: s.focusOnTask === true, onchange: e => store.setSetting('focusOnTask', e.target.checked) }), h('span', 'Bugün\'deki ▶ ile odak sayacı başlasın')),
       h('label.switch', h('input', { type: 'checkbox', checked: s.eveTip !== false, onchange: e => store.setSetting('eveTip', e.target.checked) }), h('span', 'Akşam (17:00 sonrası) uyku ipucu'))
     ),
     h('section.card',

@@ -109,8 +109,8 @@ export function eveTip(force) {
   if (new Date().getHours() < 17 || localStorage.getItem(TK) === dayKey()) return;
   if (!force && document.querySelector('.evetip')) return;
   localStorage.setItem(TK, dayKey());
-  const b = h('div.evetip', h('span.grow', 'Uykun geliyorsa: ayağa kalk, 25 dk blok, kahve 17:00\'den sonra yok.'),
+  const b = h('div.evetip', h('span.grow', 'Uykun mu geldi? 2 dk ayağa kalk, su iç.'),
     h('button.icon-x.small', { 'aria-label': 'kapat', onclick: () => b.remove() }, '×'));
   document.body.append(b);
-  setTimeout(() => b.remove(), 15000);
+  setTimeout(() => b.remove(), 6000);
 }

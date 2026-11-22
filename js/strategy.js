@@ -196,3 +196,16 @@ export function splitAt(sentence, word) {
   const m = new RegExp(`\\b(?:${alts.join('|')})\\b`, 'i').exec(sentence);
   return m ? [sentence.slice(0, m.index), m[0], sentence.slice(m.index + m[0].length)] : null;
 }
+
+// Saf: kelime ilerlemesi çerçevesi. st: counts() · goal · frac: programda geçen süre oranı (0..1) · left: sınava gün · limit: günlük yeni
+// → {studied, solid, todayGoal (bugünkü ara hedef, sağlam), proj (sınavda çalışılmış ≈), needPerDay (hedefe yetişmek için günlük yeni | 0)}
+export function vocabPlan(st, goal, frac, left, limit) {
+  const studied = (st.learning || 0) + (st.mature || 0) + (st.grad || 0) + (st.known || 0);
+  const solid = st.knowTotal || 0;
+  const f = Math.min(1, Math.max(0, frac || 0));
+  const todayGoal = Math.round(goal * f);
+  const L = Math.max(0, left || 0);
+  const proj = studied + (limit || 0) * L;
+  const needPerDay = proj >= goal || !L ? 0 : Math.ceil((goal - studied) / L);
+  return { studied, solid, todayGoal, proj, needPerDay };
+}

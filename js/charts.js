@@ -42,7 +42,7 @@ export function heatmap(value, today = dayKey()) {
 }
 
 // Puan eğilimi (çizgi): points [{label, v}] 0..100
-export function line(points, { width = 340, height = 120, max = 100 } = {}) {
+export function line(points, { width = 340, height = 120, max = 100, goal = 0 } = {}) {
   if (!points.length) return '';
   const pl = 28, pb = 18, w = width - pl - 8, hh = height - pb - 8;
   const x = i => pl + (points.length === 1 ? w / 2 : (i * w) / (points.length - 1));
@@ -50,7 +50,8 @@ export function line(points, { width = 340, height = 120, max = 100 } = {}) {
   const grid = [0, 50, 100].map(v => `<line x1="${pl}" x2="${width - 8}" y1="${y(v)}" y2="${y(v)}" class="grid"/><text x="0" y="${y(v) + 4}" class="lbl small">${v}</text>`).join('');
   const path = points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
   const dots = points.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.v)}" r="4" class="dot${p.cls ? ' ' + p.cls : ''}"/><text x="${x(i)}" y="${height - 4}" class="lbl small${p.cls ? ' ' + p.cls : ''}" text-anchor="middle">${esc(p.label)}</text>`).join('');
-  return `<svg class="chart" viewBox="0 0 ${width} ${height}" width="100%" role="img">${grid}<path d="${path}" class="lineP"/>${dots}</svg>`;
+  const gl = goal > 0 && goal <= max ? `<line x1="${pl}" x2="${width - 8}" y1="${y(goal).toFixed(1)}" y2="${y(goal).toFixed(1)}" class="goalL"/><text x="${width - 8}" y="${(y(goal) - 3).toFixed(1)}" class="lbl small goalT" text-anchor="end">hedef ${goal}</text>` : '';
+  return `<svg class="chart" viewBox="0 0 ${width} ${height}" width="100%" role="img">${grid}${gl}<path d="${path}" class="lineP"/>${dots}</svg>`;
 }
 
 // Yığılmış bölüm çubuğu: rows [{label, d, y, b, n}]

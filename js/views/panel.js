@@ -1,14 +1,22 @@
 // Eksiklerim: doğruluk grafikleri, unutulan kelimeler, ısı haritası, deneme sonuçları, en zayıf 3 alan
 import * as store from '../store.js';
-import { h, dayKey, uid, toast, topicName, typeName, TOPICS, fmtDate } from '../util.js';
+import { h, add, dayKey, uid, toast, topicName, typeName, TOPICS, fmtDate } from '../util.js';
 import { stats } from '../srs.js';
-import { seedUser, words, aids } from '../data.js';
+import { seedUser, words, aids, program } from '../data.js';
+import { diffDays } from '../util.js';
+const progFrac = async () => { const p = await program(); const T = diffDays(p.start, p.exam); return T > 0 ? diffDays(p.start, dayKey()) / T : 0; };
 import { hbars, heatmap, line, stacked, weekBars } from '../charts.js';
-import { coreSeen, weeklyWpm, READ_GOAL } from '../strategy.js';
+import { coreSeen, weeklyWpm, READ_GOAL, vocabPlan } from '../strategy.js';
 import { reasonSummary } from '../reasons.js';
 import { daysToExam, newLimit } from '../plan.js';
 import { loadStars, starOf } from '../stars.js';
 import { isKnownLevel } from '../vocab.js';
+import { typeOf, normKey, matches, afterCard, bestOne } from '../warm.js';
+import { openRule } from './warmup.js';
+import { reasonCounts } from '../strategy.js';
+import { lessons } from '../data.js';
+import { TOPIC_LESSON, TYPE_LESSON } from '../util.js';
+import { lessonTopic } from '../qbank.js';
 
 // Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
 // Saf: çekirdek listedeki 5★ kelimelerden kaçını biliyor (biliyorum + öğrenildi + olgun)
@@ -20,19 +28,23 @@ export function topStarKnown(words, cards, m, known = isKnownLevel) {
   return { known: top.filter(w => k.has(w.id) || k.has(w.word.toLowerCase())).length, total: top.length };
 }
 
-function vocabBox(st, goal, left, limit, core, top5) {
-  const scale = Math.max(goal * 1.15, st.knowTotal);
-  const need = Math.max(0, goal - st.knowTotal);
+function vocabBox(st, goal, left, limit, core, top5, frac) {
+  const v = vocabPlan(st, goal, frac, left, limit);
+  const scale = Math.max(goal, v.studied) * 1.05;
+  const pc = x => (Math.min(x, scale) / scale * 100).toFixed(1);
   return h('div.vocab',
-    h('div.row.between', h('div', h('span.big', st.knowTotal), h('span.muted', ` / ${goal} bildiğin kelime`)),
+    h('div.row.between', h('div', h('span.big', v.studied), h('span.muted', ' çalıştığın kelime')),
       h('a.btn.small', { href: '#/kartlar/tara' }, 'Tara')),
-    h('div.goalbar', h('i', { style: `width:${(st.knowTotal / scale * 100).toFixed(1)}%` }),
-      h('span.goal-line', { style: `left:${(goal / scale * 100).toFixed(1)}%`, title: 'hedef' })),
-    h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature}`),
+    h('div.small.vocab-solid', 'Sağlam: ', h('b', v.solid), ` · hedef ${goal}`),
+    h('div.goalbar.two', h('i.studied', { style: `width:${pc(v.studied)}%` }), h('i', { style: `width:${pc(v.solid)}%` }),
+      v.todayGoal ? h('span.goal-line', { style: `left:${pc(v.todayGoal)}%`, title: 'bugünün ara hedefi' }) : null),
+    v.todayGoal ? h('div.small.muted.vocab-today', `Çizgi: bugünün ara hedefi ${v.todayGoal} sağlam kelime`) : null,
+    h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature} · Öğreniliyor ${st.learning}`),
     core?.total ? h('div.core-seen', h('div.small', 'Çekirdek liste: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
       h('div.goalbar.thin', h('i', { style: `width:${(core.seen / core.total * 100).toFixed(1)}%` }))) : null,
     top5 ? h('div.small.star5', '5★ kelimeler: ', h('b', `${top5.known}/${top5.total}`), ' biliyor') : null,
-    need && left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${st.knowTotal + limit * left} kelime`) : need ? null : h('div.small', 'Hedefe ulaştın'));
+    left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${v.proj} çalışılmış kelime`,
+      v.needPerDay ? h('span', ' · hedefe yetişmek için günde ', h('b', v.needPerDay), ' yeni ya da ', h('a', { href: '#/kartlar/tara' }, 'Kelime tara')) : null) : null);
 }
 
 export const MOCK = [
@@ -42,7 +54,6 @@ export const MOCK = [
 ];
 export const score = m => m.score ?? +(Object.values(m.sections || {}).reduce((s, x) => s + (+x?.d || 0), 0) * 1.25).toFixed(2);
 const EXTRA = { yakin: 'Yakın anlam', diyalog: 'Diyalog', diger: 'Diğer' };
-const typeOf = l => (l.kind === 'gramer' || l.kind === 'ders') ? 'bosluk' : l.kind === 'okuma' ? 'paragraf' : l.dtype;
 const isX = l => l.kind === 'cikmis';
 
 const TIP = {
@@ -80,6 +91,40 @@ function acc(filter, keyOf) {
 
 const sec = (title, ...kids) => h('section.card', h('h3', title), ...kids);
 
+// --- Eylemler: Kuralı oku (yan panel) · 5 soru çöz · ⋯ (Yanlışlarım, Dersi tam ekran)
+const enc = encodeURIComponent;
+const WEAK_AT = 0.7;
+let LES = new Map(); // konu → ders id
+const lessonId = k => LES.get(k) || LES.get(TOPIC_LESSON[k]) || LES.get(TYPE_LESSON[k]) || null;
+const openN = k => store.all('mistakes').filter(m => !m.solved && matches(m, k)).length;
+const ruleBtn = k => h('button.btn.small.act-rule', { type: 'button', onclick: () => openRule(k) }, 'Kuralı oku');
+const practiceBtn = k => h('a.btn.small.act-5', { href: '#/gramer/pratik/' + enc(k) }, '5 soru çöz');
+function moreMenu(k, { full = false } = {}) {
+  const n = openN(k), lid = lessonId(k);
+  const items = [
+    full ? null : h('button.more-i', { type: 'button', onclick: () => openRule(k) }, 'Kuralı oku'),
+    full ? null : h('a.more-i', { href: '#/gramer/pratik/' + enc(k) }, '5 soru çöz'),
+    n ? h('a.more-i.act-wrongs', { href: '#/gramer/yanlis/' + enc(k) }, `Yanlışlarım (${n})`) : h('span.more-i.muted', 'Açık yanlış yok'),
+    lid ? h('a.more-i', { href: '#/dersler/' + enc(lid) }, 'Dersi tam ekran aç') : null
+  ];
+  const d = h('details.more', h('summary', { 'aria-label': 'Diğer eylemler', title: 'Diğer' }, '⋯'), h('div.more-menu', items));
+  d.addEventListener('toggle', () => { if (d.open) document.querySelectorAll('details.more[open]').forEach(x => x !== d && (x.open = false)); });
+  return d;
+}
+const barCls = v => v >= 0.75 ? 'good' : v >= 0.5 ? 'mid' : 'bad';
+// Satır: ad + çubuk + % · zayıfsa (< %70) 2 düğme; diğer eylemler ⋯
+function actRow(r) {
+  const k = normKey(r.k), weak = r.value < WEAK_AT && (r.n == null || r.n >= 3); // 1–2 soruyla zayıf denmez
+  const kk = store.get('progress', 'kkart:' + k);
+  const ac = kk?.firstAt ? afterCard(store.all('grammarLog'), k, kk.firstAt) : null;
+  return h('li.arow' + (weak ? '.weak' : ''), { 'data-key': k },
+    h('div.arow-top', h('span.arow-l', r.label), h('span.arow-v', `%${Math.round(r.value * 100)}`, r.n ? h('span.small.muted', ` (${r.n})`) : null), moreMenu(k, { full: weak })),
+    h('div.arow-bar', h('i.' + barCls(r.value), { style: `width:${Math.max(2, r.value * 100).toFixed(0)}%` })),
+    ac?.after.n ? h('div.small.muted.after-card', `Kural kartından sonra: %${Math.round(ac.after.c / ac.after.n * 100)} (${ac.after.n} soru)`) : null,
+    weak ? h('div.arow-acts', ruleBtn(k), practiceBtn(k)) : null);
+}
+const actList = rs => rs.length ? h('ul.arows', rs.map(actRow)) : h('p.muted.small', 'Veri yok');
+
 export default async function render(root) {
   const seed = await seedUser();
   const st = stats();
@@ -109,18 +154,24 @@ export default async function render(root) {
   const top5 = topStarKnown(await words(), store.all('cards'), await loadStars());
   const A = await aids().catch(() => null);
   const reasonBox = A?.errorReasons?.length ? reasonSummary(A.errorReasons) : null;
+  LES = new Map();
+  for (const l of await lessons()) { LES.set(l.id, l.id); const t = lessonTopic(l); if (t && !LES.has(t)) LES.set(t, l.id); }
+  const best = bestOne(rows(gt, topicName), rows(types, typeName), seed.weakTopics || []);
   root.append(
     h('h2', 'Eksiklerim'),
-    sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.')))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
-      h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.')))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
+    best ? h('div.card.best1', h('div.small.muted', 'Bugün en çok kazandıracak 1 şey'),
+      h('div.best1-row', h('b', topicName(normKey(best.key))), best.value != null ? h('span.chip.bad.small', `%${Math.round(best.value * 100)}`) : null),
+      h('a.btn.primary.wide.best1-go', { href: '#/gramer/pratik/' + enc(normKey(best.key)) + '/kural' }, 'Kural kartı + 5 soru')) : null,
+    sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(normKey(w.k)), practiceBtn(normKey(w.k)))))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
+      h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(k), practiceBtn(k))))))),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5, await progFrac()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
     readLine(),
-    sec('Gramer konu doğruluğu', h('div', { html: hbars(rows(gt, topicName)) }),
+    sec('Gramer konu doğruluğu', actList(rows(gt, topicName)),
       hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),
     sec('Soru tipi doğruluğu', typeBox(rows)),
     A?.errorReasons?.length ? h('section.card.reasons-all', h('h3', 'Hata nedenleri'),
-      reasonBox || h('p.small.muted', 'Yanlış bir sorunun altında "Neden?" çipine dokun; dağılım burada birikir.')) : null,
-    sec('En çok unutulan', lapsed.length ? h('ul.list.compact', lapsed.map(c => h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×'))))) : h('p.muted.small', 'Henüz yok')),
+      reasonBox || h('p.small.muted', 'Yanlış bir sorunun altında "Neden?" çipine dokun; dağılım burada birikir.'), reasonBox ? reasonAct(A.errorReasons, lapsed, best) : null) : null,
+    sec('En çok unutulan', lapsedBox(lapsed)),
     sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Odak: son 7 günde ${focusWeek} dk`)),
     h('a.card.link', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ` ${store.all('notes').filter(n => n.kind === 'quick' && !n.done).length} açık not`)),
     sec('Deneme sonuçları', mockBox)
@@ -134,7 +185,7 @@ function typeBox(rows) {
   let f = 'all';
   const draw = () => {
     const m = acc(l => !!typeOf(l) && (f === 'all' || (f === 'x') === isX(l)), typeOf);
-    chart.innerHTML = hbars(rows(m, typeName));
+    chart.innerHTML = ''; chart.append(actList(rows(m, typeName)));
     seg.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.f === f));
   };
   const seg = h('div.seg.small', [['all', 'Hepsi'], ['own', 'Özgün'], ['x', 'Çıkmış']].map(([k, l]) => h('button', { 'data-f': k, onclick: () => { f = k; draw(); } }, l)));
@@ -147,19 +198,60 @@ function drawMocks(box) {
   const mocks = store.all('mocks').sort((a, b) => (a.date || '').localeCompare(b.date || ''));
   const last = mocks.at(-1);
   if (mocks.length) {
-    box.append(
-      h('div', { html: line(mocks.map(m => ({ label: fmtDate(m.date), v: score(m), cls: m.kind === 'kisa' ? 'kisa' : '' }))) }),
-      mocks.some(m => m.kind === 'kisa') ? h('div.mock-legend', h('span', h('i'), 'Tam / yarım'), h('span', h('i.kisa'), 'Kısa (doğru/soru × 100)')) : null,
-      h('p.small', h('b', 'Son: ' + score(last).toLocaleString('tr-TR')), ` puan · ${fmtDate(last.date)}${last.name ? ' · ' + last.name : ''}`),
+    const goal = +store.settings().targetScore || 70;
+    const pctOf = m => m.kind === 'kisa' || m.pct;
+    add(box,
+      h('div', { html: line(mocks.map(m => ({ label: m.date ? fmtDate(m.date) : '–', v: score(m), cls: pctOf(m) ? 'kisa' : '' })), { goal }) }),
+      h('div.mock-legend', h('span', h('i'), 'Tam deneme (puan)'), mocks.some(pctOf) ? h('span', h('i.kisa'), 'Kısa / yarım (doğru %)') : null, h('span', h('i.goal'), `Hedef ${goal}`)),
+      h('p.small', pctOf(last) ? h('b', `Son: ${last.right ?? '?'}/${last.n ?? '?'} doğru`) : h('b', 'Son: ' + score(last).toLocaleString('tr-TR') + ' puan'), ` · ${last.date ? fmtDate(last.date) : ''}${last.name ? ' · ' + last.name : ''}`),
       h('div', { html: stacked([...MOCK, ...Object.keys(EXTRA).map(k => [k, EXTRA[k], 0])]
         .filter(([k, , n]) => last.src === 'cikmis' || last.kind === 'kisa' ? last.sections?.[k] : (n || last.sections?.[k]))
         .map(([k, l, n]) => ({ label: l, n: last.sections?.[k]?.n ?? n, d: +last.sections?.[k]?.d || 0, y: +last.sections?.[k]?.y || 0 }))
         .filter(r => r.n)) }),
-      h('ul.list.compact', mocks.slice().reverse().map(m => h('li', h('span.grow', `${fmtDate(m.date)} ${m.name || ''}`, m.kind === 'kisa' ? h('span.chip.small.kisa-chip', 'kısa') : m.src === 'cikmis' ? h('span.chip.small', 'çıkmış') : null), h('b', score(m).toLocaleString('tr-TR')),
+      mockWeak(last),
+      h('ul.list.compact', mocks.slice().reverse().map(m => h('li', h('span.grow', `${fmtDate(m.date)} ${m.name || ''}`, m.kind === 'kisa' ? h('span.chip.small.kisa-chip', 'kısa') : m.src === 'cikmis' ? h('span.chip.small', 'çıkmış') : null), h('b', pctOf(m) ? `%${score(m)}` : score(m).toLocaleString('tr-TR')),
         h('button.icon-x.small', { 'aria-label': 'sil', onclick: () => { if (confirm('Silinsin mi?')) { store.del('mocks', m.id); drawMocks(box); } } }, '×'))))
     );
   }
   box.append(h('button.btn.primary.wide', { onclick: () => form(box) }, 'Deneme sonucu gir'));
+}
+
+// Son denemenin zayıf bölümleri (< %70, en az 3 soru): kural + 5 soru
+function mockWeak(last) {
+  const rs = [...MOCK, ...Object.keys(EXTRA).map(k => [k, EXTRA[k], 0])].map(([k, l, n0]) => {
+    const s = last.sections?.[k]; if (!s) return null;
+    const n = s.n ?? n0; return n >= 3 ? { k, label: l, value: (+s.d || 0) / n, n } : null;
+  }).filter(r => r && r.value < WEAK_AT && !EXTRA[r.k]).sort((a, b) => a.value - b.value).slice(0, 3);
+  return rs.length ? h('div.mock-weak', h('div.small.muted', 'Zayıf bölümler'), actList(rs)) : null;
+}
+
+// En sık hata nedenine göre tek bağlantı
+function reasonAct(list, lapsed, best) {
+  const top = reasonCounts(store.all('reasons'), list)[0];
+  if (!top) return null;
+  const wk = best ? normKey(best.key) : null;
+  const go = {
+    kelime: () => h('a.btn.wide.reason-go', { href: lapsed.length ? '#/kartlar/sec/' + enc(lapsed.map(c => c.id).join(',')) : '#/kartlar/calis' }, 'Kelime çalış ›'),
+    gramer: () => wk ? h('button.btn.wide.reason-go', { type: 'button', onclick: () => openRule(wk) }, 'Kuralı oku: ' + topicName(wk) + ' ›') : null,
+    sure: () => h('a.btn.wide.reason-go', { href: '#/dersler/arac/sure' }, 'Süre planı ›'),
+    'iki-sik': () => h('a.btn.wide.reason-go', { href: '#/dersler/arac/eleme' }, 'Şık eleme taktikleri ›'),
+    dikkat: () => h('a.btn.wide.reason-go', { href: '#/dersler/arac/eleme' }, 'Şık eleme taktikleri ›'),
+    metin: () => h('a.btn.wide.reason-go', { href: '#/okuma' }, 'Okuma ›')
+  }[top.id];
+  return go ? go() : null;
+}
+
+// En çok unutulan: seç → "Bu kelimeleri çalış"
+function lapsedBox(lapsed) {
+  if (!lapsed.length) return h('p.muted.small', 'Henüz yok');
+  const sel = new Set(lapsed.map(c => c.id));
+  const btn = h('a.btn.primary.wide.study-sel');
+  const upd = () => { btn.textContent = `Bu kelimeleri çalış (${sel.size})`; btn.href = sel.size ? '#/kartlar/sec/' + enc([...sel].join(',')) : 'javascript:void 0'; btn.classList.toggle('disabled', !sel.size); };
+  const list = h('ul.list.compact.lapsed', lapsed.map(c => h('li.lap',
+    h('input.lap-cb', { type: 'checkbox', checked: true, 'aria-label': c.word + ' seç', onchange: e => { e.target.checked ? sel.add(c.id) : sel.delete(c.id); upd(); } }),
+    h('a', { href: '#/kartlar/duzenle/' + enc(c.id) }, h('b', { lang: 'en' }, c.word), h('span.small.muted', c.tr || ''), h('span.chip.bad.small', c.lapses + '×')))));
+  upd();
+  return h('div', list, btn);
 }
 
 function form(box) {

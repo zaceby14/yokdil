@@ -19,15 +19,25 @@ export const readRecs = () => store.all('progress').filter(x => x.kind === 'read
 // Fen dışı ("diğer") gizli okumalar öneriye girmez
 export const isOther = r => /^di[gğ]er/i.test(String(r?.topic || '').trim());
 
+// Gizli okuma öneriye değer mi? (sorusu ya da çevirisi var, ya da seviye ≥ 2; seviye 1 + sorusuz + çevirisiz çocuk metni önerilmez)
+export const useful = r => !!((r?.questions?.length) || (Array.isArray(r?.tr) ? r.tr.length : r?.tr) || (+r?.level || 1) >= 2);
+// Saf: tahmini okuma süresi (dk) = kelime / hız + soru × 1 dk + çeviri varsa 5 dk (en az 3)
+export function readMin(doc, wpm = 120) {
+  const words = doc?.words || (String(doc?.text || '').match(/[A-Za-z]+/g) || []).length;
+  const q = doc?.questions?.length || 0, tr = (Array.isArray(doc?.tr) ? doc.tr.length : doc?.tr) ? 5 : 0;
+  return Math.max(3, Math.round(words / Math.max(60, wpm || 120) + q + tr));
+}
+
 // Saf: sıradaki parça. ps: özgün, rs: gizli; done: Set (özgün id / 'r:'+gizli id); lastGizli: son okuma gizli miydi
 export function pickReading({ ps = [], rs = [], done = new Set(), recs = [], lastGizli = false }) {
   const maxL = Math.max(1, ...ps.map(p => p.level || 1), ...rs.map(r => +r.level || 1));
   const sg = suggestLevel(recs, maxL);
   const near = list => list.find(x => (+x.level || 1) === sg.level) || [...list].sort((a, b) => Math.abs((+a.level || 1) - sg.level) - Math.abs((+b.level || 1) - sg.level))[0] || null;
   const p = near(ps.filter(x => !done.has(x.id)));
-  const r = near(rs.filter(x => !isOther(x) && !done.has('r:' + x.id)));
-  const P = p && { href: '#/okuma/p/' + p.id, title: p.title, level: p.level || null, gizli: false, id: p.id };
-  const R = r && { href: '#/okuma/g/' + encodeURIComponent(r.id), title: r.title || r.id, level: r.level || null, gizli: true, id: 'r:' + r.id };
+  const r = near(rs.filter(x => !isOther(x) && useful(x) && !done.has('r:' + x.id)));
+  const w = sg.wpm || 120;
+  const P = p && { href: '#/okuma/p/' + p.id, title: p.title, level: p.level || null, gizli: false, id: p.id, min: readMin(p, w) };
+  const R = r && { href: '#/okuma/g/' + encodeURIComponent(r.id), title: r.title || r.id, level: r.level || null, gizli: true, id: 'r:' + r.id, min: readMin(r, w) };
   return { next: (lastGizli ? P || R : R || P) || null, sg };
 }
 

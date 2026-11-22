@@ -113,10 +113,12 @@ export function cardIndex() {
 }
 
 // Metindeki çekirdek kelimeler: [{lemma, entry, card, surface}] — tek kelimelik girişler
+// Çekimli hali başka bir fiile ait olabilen sözcükler (found ← find, left ← leave…): çekirdek eşleşmesi yapılmaz
+export const AMBIG = new Set(['found', 'left', 'saw', 'felt', 'lay', 'ground', 'bound', 'wound', 'rose', 'fell', 'spent', 'meant', 'bore', 'tore', 'lead']);
 export function coreHits(tokens, idx, cards = cardIndex()) {
   const out = new Map();
   for (const t of tokens) {
-    if (!t.w) continue;
+    if (!t.w || AMBIG.has(String(t.t).toLowerCase())) continue;
     for (const l of lemmas(t.t)) {
       const e = idx.get(l);
       if (!e || e.word.includes(' ') || STOP.has(l) || BASIC.has(l)) continue;
@@ -138,4 +140,24 @@ export function counts(cards = store.all('cards')) {
   for (const c of cards) by[level(c)]++;
   by.knowTotal = by.known + by.grad + by.mature;
   return by;
+}
+
+// Saf: sözlükçe → Map(kelime → anlam). {w, tr} ya da "seal (n) fok balığı" / "seal: fok" / "seal — fok"
+export function glossMap(gloss) {
+  const m = new Map();
+  for (const g of Array.isArray(gloss) ? gloss : []) {
+    let w = '', tr = '';
+    if (g && typeof g === 'object') { w = g.w || g.word || g.en || ''; tr = g.tr || g.meaning || ''; }
+    else if (typeof g === 'string') { const x = g.match(/^\s*([A-Za-z][A-Za-z' -]*?)\s*(?:\([^)]*\))?\s*[:—–=-]?\s+(.+)$/); if (x) { w = x[1]; tr = x[2]; } }
+    w = String(w).toLowerCase().replace(/\s*\([^)]*\)\s*/g, '').trim();
+    if (w && tr) m.set(w, String(tr).trim());
+  }
+  return m;
+}
+// Saf: parça sonu çipindeki anlam: sözlükçede varsa o; yoksa tek anlamlıysa sözlük anlamı; çok anlamlıysa boş (bağlamı bilmeden yanlış anlam gösterme)
+export function chipMeaning(entry, gm) {
+  const w = String(entry?.word || '').toLowerCase();
+  if (gm?.has(w)) return gm.get(w);
+  const tr = String(entry?.tr || '').trim();
+  return /[,;/—]/.test(tr) ? '' : tr;
 }

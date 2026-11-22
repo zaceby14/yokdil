@@ -1,6 +1,6 @@
 // Kartlar: SRS tekrarı, liste (ara/filtre/düzenle/sil), manuel ekleme
 import * as store from '../store.js';
-import { h, esc, uid, toast } from '../util.js';
+import { h, esc, uid, toast, noteParts } from '../util.js';
 import { dueCards, newQueue, cardFromWord, review, previewLabel, GRADES, GRADE_TR, stats } from '../srs.js';
 import { markKnown, unKnow, level, isGraduated } from '../vocab.js';
 import { swipe } from '../swipe.js';
@@ -38,6 +38,7 @@ export default async function render(root, [mode, id]) {
   if (mode === 'tahmin') return guess(root, tabs(''));
   if (EX[mode]) return memory(root, mode, tabs(''));
   if (mode === 'yeni') return session(root, 'yeni');
+  if (mode === 'sec') return session(root, 'sec', String(id || '').split(',').filter(Boolean));
   return home(root);
 }
 
@@ -62,8 +63,8 @@ async function home(root) {
       gp >= GAP_MIN ? h('a.btn.wide', { href: '#/kartlar/bosluk' }, h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', 'kendi kartlarınla')))
         : h('span.btn.wide.disabled', h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', `${gp}/${GAP_MIN} kartta açılır`)))),
     h('a.btn.wide.guess-link', { href: '#/kartlar/tahmin' }, h('span', h('b', 'Bağlamdan tahmin'), h('br'), h('span.small.muted', 'cümleden anlamı çıkar · 10 soru'))),
-    h('h3', 'Alıştırmalar', ladder ? h('span.small.muted', ` · merdivende ${ladder} kart`) : null),
-    h('div.row2', exBtn('yaz', 'anlamdan kelimeyi yaz'), exBtn('es', 'eş anlamlısını bul'), exBtn('aile', 'doğru biçimi seç'), exBtn('hafiza', 'merdiven + bugünkü yanlışlar')),
+    h('h3', 'Alıştırmalar', ladder ? h('span.small.muted', ` · ${ladder} kart pekiştiriliyor`) : null),
+    h('div.row2', exBtn('yaz', 'anlamdan kelimeyi yaz'), exBtn('es', 'eş anlamlısını bul'), exBtn('aile', 'doğru biçimi seç'), exBtn('hafiza', 'zorlandıkların + bugünkü yanlışlar')),
     h('a.card.link.small', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ' hızlı notlar, karta çevir'))
   );
 }
@@ -76,11 +77,16 @@ function hl(ctx, word) {
   return esc(ctx).replace(re, '<mark>$1</mark>');
 }
 
-// kind: 'tekrar' (yalnız bekleyen tekrarlar) | 'yeni' (yalnız yeni kartlar)
-async function session(root, kind = 'tekrar') {
-  const queue = kind === 'yeni' ? await newQueue() : dueCards().map(c => ({ card: c }));
+// kind: 'tekrar' (yalnız bekleyen tekrarlar) | 'yeni' (yalnız yeni kartlar) | 'sec' (Eksikler'den seçili kelimeler)
+// 'sec': vadesi gelmemiş kart takvimi bozmaz (yalnız "Tekrar" takvime yazılır)
+async function session(root, kind = 'tekrar', ids = []) {
+  const end = Date.now() + 20 * 60000;
+  const queue = kind === 'yeni' ? await newQueue() : kind === 'sec'
+    ? ids.map(id => store.get('cards', id)).filter(Boolean).map(c => ({ card: c, practice: !(c.due && c.due <= end), sel: true }))
+    : dueCards().map(c => ({ card: c }));
   const reverseOn = store.settings().reverse;
   let done = 0, keyH = null, unsw = null;
+  const seenIds = new Set(); // bitiş sayısı: farklı kart (tekrar gösterimler ayrı)
   const again = [];
   const seen = new Set(queue.map(q => q.card?.id || 'w:' + q.word.id));
   // "Biliyorum": kotayı yemez, sıradaki yeni kelime gelir
@@ -104,8 +110,9 @@ async function session(root, kind = 'tekrar') {
     root.append(tabs(''));
     if (!queue.length) {
       document.body.classList.remove('qmode');
-      if (!dueCards().length) tick('kart');
-      root.append(h('div.card.center.endcard', h('div.big', done), h('p', kind === 'yeni' ? 'yeni kart çalışıldı' : 'tekrar kartı çalışıldı'),
+      if (!dueCards().length && kind !== 'sec') tick('kart');
+      root.append(h('div.card.center.endcard', h('div.big', seenIds.size), h('p', kind === 'yeni' ? 'yeni kelime çalışıldı' : kind === 'sec' ? 'seçili kelime çalışıldı' : 'kart tekrar edildi'),
+        done > seenIds.size ? h('p.small.muted', `${done - seenIds.size} tekrar gösterim`) : null,
         again.length ? h('p.small.muted', `Zorlandıkların: ${[...new Set(again)].slice(0, 8).join(', ')}`) : null));
       const slot = h('div.endnext'); root.append(slot);
       nextTaskBtn(kind === 'yeni' ? 'yeni' : 'kart').then(b => slot.append(b));
@@ -115,9 +122,9 @@ async function session(root, kind = 'tekrar') {
     const item = queue.shift();
     let card = item.card;
     if (!card) { card = cardFromWord(item.word); }
-    enrich(card.word).then(en => paint(card, en, !!item.practice));
+    enrich(card.word).then(en => paint(card, en, !!item.practice, !!item.sel));
   };
-  const paint = (card, en, practice) => {
+  const paint = (card, en, practice, sel) => {
     setCtx({ type: 'kart', key: 'kart:' + card.id, label: 'Kart · ' + card.word });
     const rev = reverseOn && card.state === 'review' && (card.reps || 0) % 2 === 1;
     const front = h('div.flash',
@@ -125,7 +132,6 @@ async function session(root, kind = 'tekrar') {
       rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word,
         canSpeak() ? h('button.icon-btn.say', { type: 'button', 'aria-label': 'dinle', onclick: e => { e.stopPropagation(); speak(card.word); } }, SPK()) : null),
       starRow(card.word),
-      inLadder(card) ? h('span.chip.small.warn', 'merdiven') : null,
       (card.ctx || en?.ex?.[0]?.en) ? h('div.ctx', { lang: 'en', html: rev ? esc(card.ctx || en.ex[0].en).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(card.ctx || en.ex[0].en, card.word) }) : null
     );
     const back = h('div.back.hidden',
@@ -134,32 +140,33 @@ async function session(root, kind = 'tekrar') {
       card.syn?.length ? h('div', h('b', 'Eş: '), card.syn.join(', ')) : null,
       card.coll ? h('div', h('b', 'Eşdizim: '), card.coll) : null,
       extra(card, en),
-      card.note ? h('div.small', card.note) : null,
+      noteParts(card.note).own ? h('div.small', noteParts(card.note).own) : null,
+      noteParts(card.note).auto ? h('div.small.muted.auto-note', 'ⓘ ' + noteParts(card.note).auto) : null,
       h('div.small.muted', [card.source, card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · '))
     );
     let graded = false;
     const grade = g => {
       if (graded) return; graded = true; // çift dokunuş = tek kayıt
-      if (practice && g !== 'again') { show(); return; } // "Zor" sonrası oturum içi ek gösterim: takvimi değiştirmez
+      if (practice && g !== 'again') { if (sel) { done++; seenIds.add(card.id); } show(); return; } // "Zor" sonrası oturum içi ek gösterim / seçili kelime: takvimi değiştirmez
       if (!store.get('cards', card.id)) store.put('cards', card);
       const prev = store.get('cards', card.id) || card;
       const wasLearning = ['new', 'learning'].includes(prev.state || 'new') && !inLadder(prev);
       const next = review(prev, g);
-      done++;
+      done++; seenIds.add(card.id);
       if (g === 'again') again.push(card.word);
       if (next.due < Date.now() + 20 * 60000) queue.push({ card: next });
       else if (g === 'hard' && wasLearning) queue.splice(Math.min(3, queue.length), 0, { card: next, practice: true });
       show();
     };
     const grades = h('div.grades.hidden', (practice ? ['again', 'good'] : GRADES).map(g => h('button.g-' + g, { onclick: () => grade(g) },
-      h('b', practice && g === 'good' ? 'Tamam' : GRADE_TR[g]), h('span', practice && g === 'good' ? 'yarın' : previewLabel(card, g)))));
+      h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'takvim aynı' : 'yarın') : previewLabel(card, g)))));
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
     const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
     const reveal = h('button.btn.primary.wide.big-btn', { onclick: doReveal }, 'Göster');
     const knowBtn = isNew ? h('button.btn.wide.know', { onclick: () => knowIt(card) }, 'Biliyorum, gösterme') : null;
     const hint = h('p.small.muted.center.hidden', '← Tekrar · kaydır · İyi →');
-    const box = h('div.card.flashcard', card.check ? h('span.chip.small.ok', 'haftalık kontrol') : null, practice ? h('span.chip.small', 'bir kez daha') : null, front, back);
+    const box = h('div.card.flashcard', card.check ? h('span.chip.small.ok', 'haftalık kontrol') : null, practice ? h('span.chip.small', sel ? 'seçili kelime' : 'bir kez daha') : null, front, back);
     // Tek el: karta dokun = göster; açıkken sağa = İyi, sola = Tekrar
     unsw = swipe(box, { tap: doReveal, right: () => open && grade('good'), left: () => open && grade('again') });
     keyH = e => {

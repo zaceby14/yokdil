@@ -25,6 +25,7 @@ export function lessonBlocks(l) {
   return (l.blocks || []).map(b => h('section.card.lesson', b.h ? h('h3', b.h) : null, h('div', { html: md(b.md) })));
 }
 
+export function showSide(title, body, backBtn) { return show(title, body, backBtn); }
 function show(title, body, backBtn) {
   const p = el();
   p.innerHTML = '';
