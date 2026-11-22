@@ -8,6 +8,7 @@ import { isStudied, isFunctionWord, level } from '../vocab.js';
 import { splitAt } from '../strategy.js';
 import { gapResult } from './gap.js';
 import { openLesson } from '../side.js';
+import { doneToday, markDone } from '../memory.js';
 
 const N = 10;
 const short = tr => String(tr || '').split(/[;(]/)[0].trim();
@@ -43,7 +44,8 @@ export async function buildItems(n = N) {
   const ok = w => w && !/\s/.test(w) && !isFunctionWord(w, idx);
   const posOf = w => idx.get(w.toLowerCase())?.pos || '';
   // Önce öğrenmekte olduğun (zayıf olan önce), sonra henüz görmediğin çekirdek kelimeler
-  const mine = shuffle(cards.filter(c => isStudied(c) && c.tr && ok(c.word))).sort((a, b) => (a.interval || 0) - (b.interval || 0))
+  const doneT = doneToday('tahmin');
+  const mine = shuffle(cards.filter(c => isStudied(c) && c.tr && ok(c.word) && !doneT[c.id])).sort((a, b) => (a.interval || 0) - (b.interval || 0))
     .map(c => ({ word: c.word.toLowerCase().trim(), tr: c.tr, pos: c.pos || posOf(c.word), cardId: c.id }));
   const have = new Set(cards.filter(c => level(c) !== 'new').map(c => (c.word || '').toLowerCase().trim()));
   const fresh = shuffle(core.filter(w => ok(w.word) && !have.has(w.word.toLowerCase()))).sort((a, b) => (b.freq || 0) - (a.freq || 0)).slice(0, 60)
@@ -71,7 +73,7 @@ export default async function guess(root, tabs) {
   if (!items.length) { box.append(h('div.card.empty', h('p', 'Örnek cümle bulunamadı. İnternete bağlanıp yenile.'))); return; }
   runQuiz(box, items, {
     title: 'Tahmin', auto: false, sid: 'tahmin:' + dayKey(), inline: true, name: 'Bağlamdan tahmin', source: 'Kartlarım', noLesson: true,
-    onAnswer: (it, ok) => { if (it.cardId) gapResult(it.cardId, ok); },
+    onAnswer: (it, ok) => { if (it.cardId) { gapResult(it.cardId, ok); if (ok) markDone('tahmin', it.cardId); } },
     onEnd: (_, el) => el.querySelector('.endnext')?.before(h('a.btn.wide', { href: '#/kartlar/tahmin', onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Yeni tur'))
   });
 }

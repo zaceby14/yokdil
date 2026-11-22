@@ -44,10 +44,20 @@ export function tourPool(cards = store.all('cards'), today = dayKey()) {
     (isToday(c.lastReview) && (c.hist || []).at(-1) === 'a') || ((c.tags || []).includes('hata') && isToday(c.createdAt))));
 }
 
+// Günlük alıştırma kaydı: bugün bu alıştırmada DOĞRU yapılan kartlar bir daha gelmez
+export const exKey = (day = dayKey()) => `exlog:${day}`;
+export const doneToday = (mode, day = dayKey()) => store.get('progress', exKey(day))?.[mode] || {};
+export function markDone(mode, id, day = dayKey()) {
+  if (!mode || !id) return;
+  const prev = doneToday(mode, day);
+  if (prev[id]) return;
+  store.patch('progress', exKey(day), { [mode]: { ...prev, [id]: 1 } });
+}
+
 export const TOUR_MAX = 8;
 // Hafıza turu kartları: anlamı olan, en fazla 8 (Bugün'deki sayı = turdaki soru sayısı)
-export const tourCards = (cards = store.all('cards'), today = dayKey()) =>
-  tourPool(cards, today).filter(c => (c.tr || '').trim()).sort((a, b) => (inLadder(b) - inLadder(a)) || String(a.id).localeCompare(String(b.id))).slice(0, TOUR_MAX);
+export const tourCards = (cards = store.all('cards'), today = dayKey(), skip = {}) =>
+  tourPool(cards, today).filter(c => (c.tr || '').trim() && !skip[c.id]).sort((a, b) => (inLadder(b) - inLadder(a)) || String(a.id).localeCompare(String(b.id))).slice(0, TOUR_MAX);
 
 // Saf: anlam seçme sorusu (kelime → 5 Türkçe anlamdan biri). others: [{word, tr}]
 export function meaningItem(card, others, rnd = Math.random) {
@@ -113,8 +123,8 @@ export function familyItem(card, fm, rnd = Math.random) {
 }
 
 // Egzersiz sonucu: yanlış → kart bugüne (merdivendeyse zaten kısa aralıkta), doğruysa dokunma
-export function memResult(cardId, ok) {
-  if (ok) return;
+export function memResult(cardId, ok, mode) {
+  if (ok) { markDone(mode, cardId); return; }
   const c = store.get('cards', cardId);
   if (!c) return;
   store.put('cards', { ...c, due: Math.min(c.due || Date.now(), Date.now()), wrongDay: dayKey(), ...(isGraduated(c) ? { pulled: true } : {}) });

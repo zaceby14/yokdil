@@ -26,6 +26,25 @@ export function taktikProgress(old, existing = {}) {
   return TAKTIK.filter(id => !existing[id]?.read).map(id => ({ id: 'ders:' + id, read: true, at: old.at || Date.now(), from: 'soru-tipi-taktikleri' }));
 }
 
+// Aynı kelimenin birden çok kartı (ör. iki cihazda ayrı eklenmiş): en çok çalışılanı tut, diğerlerini sil.
+// Deterministik: her cihaz aynı kartı seçer (reps çok → çekirdek 'w:' id → id sırası).
+export function dupCards(cards) {
+  const by = new Map();
+  for (const c of cards) {
+    if (c.deleted || !c.word) continue;
+    const k = c.word.toLowerCase().trim();
+    (by.get(k) || by.set(k, []).get(k)).push(c);
+  }
+  const del = [];
+  for (const list of by.values()) {
+    if (list.length < 2) continue;
+    list.sort((a, b) => (b.reps || 0) - (a.reps || 0) || (String(b.id).startsWith('w:') - String(a.id).startsWith('w:')) || String(a.id).localeCompare(String(b.id)));
+    del.push(...list.slice(1).map(c => c.id));
+  }
+  return del;
+}
+export function dedupeCards(st) { for (const id of dupCards(st.all('cards'))) st.del('cards', id); }
+
 export const MIGRATIONS = [
   { id: 'v6-taktik-read', run: st => {
     const old = st.get('progress', 'ders:soru-tipi-taktikleri');

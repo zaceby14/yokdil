@@ -2,7 +2,7 @@
 import * as store from './store.js';
 import * as sync from './sync.js';
 import { loadAll, seedUser, usedSample, wordIndex } from './data.js';
-import { MIGRATIONS } from './migrations.js';
+import { MIGRATIONS, dedupeCards } from './migrations.js';
 import { h, toast } from './util.js';
 import { applyTheme } from './theme.js';
 import { migrateContent } from './contentrev.js';
@@ -94,6 +94,7 @@ async function main() {
   await finalMode().catch(() => {}); // son 14 gün modu (hata seti boyutu için açılışta)
   await migrateContent().catch(e => console.warn('içerik güncelleme', e));
   try { store.migrate(MIGRATIONS, { idx: await wordIndex() }); } catch (e) { console.warn('göç', e); }
+  try { dedupeCards(store); } catch {}
   sync.onStatus(syncDot);
   sync.init();
   syncDot(sync.status);
@@ -107,6 +108,7 @@ async function main() {
     if (!info.merged) return;
     // senkrondan gelen eski içerikli kartları sessizce tazele (zaman damgası değişmez)
     migrateContent(true).catch(() => {});
+    try { dedupeCards(store); } catch {}
     // oturum ekranlarını bozma; liste/özet ekranlarını yenile
     const deep = (location.hash.split('/').length > 2);
     if (['bugun', 'eksikler', 'ayarlar', 'kartlar', 'okuma', 'dersler', 'notlar'].includes(current) && !deep) route();

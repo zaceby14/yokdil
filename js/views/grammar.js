@@ -56,6 +56,7 @@ async function daily(root) {
   root.append(back(), box);
   if (!items.length) { box.append(emptyData()); return; }
   const sid = 'gunluk:' + dayKey();
+  root.insertBefore(await whyCard(ids, qs), box);
   const go = () => runQuiz(box, items, {
     title: 'Günlük', extra: lessonLink, sid, name: 'Günlük gramer', source: 'Gramer', task: 'gramer', coach: true,
     onAnswer: logAns,
@@ -63,6 +64,28 @@ async function daily(root) {
   });
   // Isınma: setteki zayıf konuların kural kartı (yarım oturuma dönerken gösterilmez)
   if (inProgress(sid)) go(); else warmGate(box, items.map(it => keyOf(it.info)), go);
+}
+
+// "Bu set neden böyle?": konu başına soru sayısı, neden ve seviye (cevaplarına göre)
+async function whyCard(ids, qs) {
+  const w = await week();
+  const cur = new Set([...(w.grammar || []), ...(w.lessons || [])]);
+  const weak = new Set(await weakTopics());
+  const levels = await gLevels();
+  const logs = store.all('grammarLog').filter(l => l.kind === 'gramer');
+  const acc = {};
+  for (const l of logs) { const a = acc[l.topic] ||= [0, 0]; a[1]++; if (l.correct) a[0]++; }
+  const cnt = {};
+  for (const id of ids) { const t = qs.get(id)?.topic; if (t) cnt[t] = (cnt[t] || 0) + 1; }
+  const rows = Object.entries(cnt).sort((a, b) => b[1] - a[1]).map(([t, n]) => {
+    const why = weak.has(t) ? 'zorlandığın konu' : cur.has(t) ? 'bu haftanın konusu' : 'tekrar';
+    const a = acc[t];
+    return h('li', h('b', `${n} × ${topicName(t)}`), h('span.small.muted', ` · ${why} · seviye ${levels[t] || 1}/3${a ? ` · şu ana kadar %${Math.round(100 * a[0] / a[1])} doğru` : ''}`));
+  });
+  const det = h('details.card.why', h('summary', 'Bu set neden böyle? ', h('span.small.muted', 'cevaplarına göre seçildi')),
+    h('ul.list.compact', rows),
+    h('p.small.muted', 'Bir konuda %70 doğruyu geçince sorular zorlaşır. Bildiğin sorular daha az, yanlışların Hata tekrarında gelir.'));
+  return det;
 }
 
 // Konu seviyeleri (gramer kayıtlarından)

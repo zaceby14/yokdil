@@ -830,3 +830,13 @@ t('v15 tanı denemesi açıklaması', () => {
 });
 
 console.log(`\n${n} test geçti`);
+
+// v16: alıştırma günlük kaydı ve çift kart temizliği
+{
+  const { dupCards } = await import('../js/migrations.js');
+  const del = dupCards([
+    { id: 'c1', word: 'loose', reps: 1 }, { id: 'c2', word: 'Loose', reps: 2 }, { id: 'w:9', word: 'abc', reps: 0 }, { id: 'c3', word: 'abc', reps: 0 }, { id: 'x', word: 'solo' }
+  ]);
+  if (JSON.stringify(del.sort()) !== JSON.stringify(['c1', 'c3'])) throw new Error('dupCards: ' + JSON.stringify(del));
+  console.log('ok dupCards');
+}

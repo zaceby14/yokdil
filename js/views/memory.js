@@ -5,7 +5,7 @@ import { h, add, shuffle, dayKey, toast } from '../util.js';
 import { runQuiz } from '../quiz.js';
 import { nextTaskBtn } from '../tasks.js';
 import { tick } from '../plan.js';
-import { pool, tourCards, typoOk, synHit, blank, synItem, familyItem, meaningItem, memResult } from '../memory.js';
+import { pool, tourCards, typoOk, synHit, blank, synItem, familyItem, meaningItem, memResult, doneToday } from '../memory.js';
 import { setCtx } from '../ctx.js';
 import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
@@ -48,15 +48,26 @@ async function famItems(cards, n) {
 }
 
 export async function counts() {
-  const p = pool(), fm = await forms();
-  return { yaz: p.filter(c => c.tr).length, es: p.filter(c => c.syn?.length || c.wid).length, aile: p.filter(c => fm[c.word.toLowerCase()]?.family?.length).length, hafiza: tourCards().length };
+  const fm = await forms();
+  const left = m => pool().filter(c => !doneToday(m)[c.id]);
+  return { yaz: left('yaz').filter(c => c.tr).length, es: left('es').filter(c => c.syn?.length || c.wid).length,
+    aile: left('aile').filter(c => fm[c.word.toLowerCase()]?.family?.length).length, hafiza: tourCards(undefined, undefined, doneToday('hafiza')).length };
 }
 
 export default async function memory(root, mode, tabs) {
   root.append(tabs, h('a.btn.small', { href: '#/kartlar' }, '‹ Kartlar'), h('h2', EX[mode] || 'Alıştırma'));
   const box = h('div');
   root.append(box);
-  const cards = mode === 'hafiza' ? tourCards() : pool();
+  const done = doneToday(mode);
+  const full = mode === 'hafiza' ? tourCards() : pool();
+  const cards = mode === 'hafiza' ? tourCards(undefined, undefined, done) : full.filter(c => !done[c.id]);
+  if (!cards.length && full.length && !memory.all) {
+    box.append(h('div.card.center', h('div.big', 'Bugünlük bitti ✓'), h('p.muted', `Bu alıştırmadaki ${Object.keys(done).length} kelimeyi bugün doğru yaptın. Yarın aralıklı tekrarla yine gelecekler.`),
+      h('button.btn', { onclick: () => { memory.all = true; box.remove(); memory(root, mode, tabs).finally(() => { memory.all = false; }); } }, 'Yine de çalış')));
+    nextTaskBtn('').then(b => box.append(b));
+    return;
+  }
+  if (memory.all) { cards.length = 0; cards.push(...full); }
   if (!cards.length) {
     box.append(h('div.card', h('p', mode === 'hafiza' ? 'Bugün hafıza turu için kelime yok.' : 'Öğrenmekte olduğun kart yok.'),
       h('p.small.muted', 'Kart çalıştıkça (özellikle "Tekrar" dediklerin) burada çıkar.'), h('a.btn', { href: '#/kartlar/calis' }, 'Kart çalış')));
@@ -85,15 +96,15 @@ export default async function memory(root, mode, tabs) {
     if (!items.length) { box.append(h('p.muted', 'Hafıza turu için soru üretilemedi.')); return; }
     box.append(h('p.small.muted', `${items.length} kelime · seçmeli. Yazarak çalışmak için: Kartlar → Yazarak hatırla.`));
     const q = h('div'); box.append(q);
-    return runQuiz(q, items, quizOpts(sid, () => tick('hafiza')));
+    return runQuiz(q, items, quizOpts(sid, () => tick('hafiza'), null, 'hafiza'));
   }
   if (!items.length) { box.append(h('p.muted', mode === 'aile' ? 'Kartlarında kelime ailesi bilgisi olan kelime yok.' : 'Eş anlamlısı olan kart yok.')); return; }
-  runQuiz(box, items, quizOpts(sid, null, again));
+  runQuiz(box, items, quizOpts(sid, null, again, mode));
 }
 
-const quizOpts = (sid, done, again) => ({
+const quizOpts = (sid, done, again, mode) => ({
   sid, inline: true, auto: false, name: 'Hafıza', source: 'Alıştırma',
-  onAnswer: (it, ok) => memResult(it.cardId, ok),
+  onAnswer: (it, ok) => memResult(it.cardId, ok, mode),
   onEnd: (_, el) => { done?.(); if (again) el.querySelector('.endnext')?.before(again()); }
 });
 
@@ -131,7 +142,7 @@ function typing(box, items, sid, after) {
       const near = !giveUp && !exact ? synHit(inp.value, it.syn) : null;
       const ok = exact || !!near;
       if (ok) right++; else wrongs.push(it);
-      memResult(it.cardId, ok);
+      memResult(it.cardId, ok, 'yaz');
       inp.disabled = true; inp.classList.add(ok ? 'right' : 'wrong');
       fb.classList.remove('hidden');
       add(fb, h('b', near ? `Yakın: ${near} da olur. Kart "` : exact ? (inp.value.trim().toLowerCase() === it.word.toLowerCase() ? 'Doğru. ' : 'Doğru (küçük yazım farkı). ') : 'Doğrusu: '), h('span', { lang: 'en' }, it.word), near ? h('b', '" istiyordu.') : null,
