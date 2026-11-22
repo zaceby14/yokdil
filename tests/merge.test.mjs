@@ -320,7 +320,7 @@ t('Göç: Hata kaynaklı, tekrar edilmemiş anlamsız/işlev/çekimli kartlar si
   // store.migrate: bir kez çalışır
   ST.load(); ST.resetAll();
   for (const c of cards) ST.put('cards', c);
-  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), ['v6-taktik-read', 'v6-autocards']);
+  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), ['v6-taktik-read', 'v6-autocards', 'v18-vocabgoal']);
   assert.deepEqual(ST.all('cards').map(c => c.id).sort(), ['c', 'd', 'e', 'f']);
   assert.ok(ST.raw('cards', 'a').deleted);
   ST.put('cards', { id: 'h', word: 'because', tr: 'x', source: 'Hata', state: 'new' });
@@ -365,11 +365,12 @@ t('Seri: deneme/odak/görev günü sayar; haftada 1 joker; bugün çalışılmad
   assert.ok(!PL.activeDay({ id: 'x', focusMin: 5 }) && PL.activeDay({ id: 'x', mock: true }));
 });
 
-t('Hata tekrarı: günde en fazla 8, en eski vade + en çok yanlış önce, tüm kaynaklar', () => {
+t('Hata tekrarı: günde 8 (birikmişse +2/20, en fazla 14), en eski vade önce, tüm kaynaklar', () => {
   const ms = Array.from({ length: 30 }, (_, i) => ({ id: 'q' + i, due: '2026-11-' + String(10 + (i % 10)).padStart(2, '0'), wrongs: i % 3, kind: ['gramer', 'drill', 'okuma', 'cikmis'][i % 4] }));
   ms.push({ id: 'solved', due: '2026-11-01', solved: true }, { id: 'future', due: '2026-12-30' });
   const ids = MI.pickMistakes(ms, '2026-11-25');
-  assert.equal(ids.length, 8);
+  assert.equal(ids.length, 10);
+  assert.equal(MI.mistakeN(5), 8); assert.equal(MI.mistakeN(200), 14);
   assert.ok(!ids.includes('solved') && !ids.includes('future'));
   assert.equal(ms.find(m => m.id === ids[0]).due, '2026-11-10');
   assert.ok(new Set(ids.map(id => ms.find(m => m.id === id).kind)).size >= 2);
@@ -434,7 +435,7 @@ t('Senkron: yeni alanlar (reasons, bölüm süreleri, yarım deneme) birleşir; 
   // eski ayar kaydında yeni anahtarlar yok → varsayılanlar
   ST.load(); ST.put('settings', { id: 'main', theme: 'dark' });
   const set = ST.settings();
-  assert.equal(set.secClock, true); assert.equal(set.finalMode, true); assert.equal(set.readGoal, 120); assert.equal(set.vocabGoal, 2000); assert.equal(set.theme, 'dark');
+  assert.equal(set.secClock, true); assert.equal(set.finalMode, true); assert.equal(set.readGoal, 120); assert.equal(set.vocabGoal, null); assert.equal(set.theme, 'dark');
 });
 
 const TP = { total: 180, sections: [
@@ -839,4 +840,58 @@ console.log(`\n${n} test geçti`);
   ]);
   if (JSON.stringify(del.sort()) !== JSON.stringify(['c1', 'c3'])) throw new Error('dupCards: ' + JSON.stringify(del));
   console.log('ok dupCards');
+}
+
+// --- v18: öncelik, anlık uyum, tekrar tavanı, tahmin
+{
+  const PR = await import('../js/priority.js');
+  const AD = await import('../js/adapt.js');
+  const ES = await import('../js/estimate.js');
+  const SR = await import('../js/srs.js');
+  const L = (topic, ok, at, kind = 'gramer', dtype = 'bosluk') => ({ topic, correct: ok, at, kind, dtype, day: '2026-11-20' });
+  // Az çıkan konu (quantifier) hiç girmez; bağlaç zayıfsa öne çıkar; az sorulu konu girmez
+  const logs = [];
+  for (let i = 0; i < 12; i++) logs.push(L('quantifier', false, i));
+  for (let i = 0; i < 20; i++) logs.push(L('baglac-zitlik', i % 2 === 0, 100 + i));
+  for (let i = 0; i < 3; i++) logs.push(L('relative', false, 200 + i));
+  const pri = PR.priorities({ logs });
+  if (pri[0].k !== 'baglac-zitlik' || pri.some(p => p.k === 'quantifier' || p.k === 'relative')) throw new Error('priorities ' + JSON.stringify(pri.map(p => p.k)));
+  // Son 30: eski yanlışlar düşer, eğilim ↑
+  const lg = [];
+  for (let i = 0; i < 30; i++) lg.push(L('edat-esdizim', false, i));
+  for (let i = 0; i < 30; i++) lg.push(L('edat-esdizim', i % 10 !== 0, 100 + i));
+  const ks = PR.keyStats(lg)['edat-esdizim'];
+  if (Math.round(ks.value * 100) !== 90 || !(ks.trend > 0.8) || ks.all.n !== 60) throw new Error('keyStats ' + JSON.stringify(ks));
+  console.log('ok öncelik + son dönem doğruluk');
+  // Uyum: yanlış → 2 soru sonra pekiştirme; 3 doğru → sıradaki zor; en fazla 3 ek
+  const mk = (key, k, level) => ({ key, k, level, make: () => ({ key, info: { kind: 'gramer', topic: k, level }, options: [], answer: 0 }) });
+  const pool = [mk('a1', 'relative', 1), mk('a2', 'relative', 1), mk('a3', 'relative', 2), mk('a4', 'relative', 3), mk('b1', 'modal', 1), mk('b3', 'modal', 3)];
+  const items = ['a1', 'b1', 'a2', 'b1x'].map(k => ({ key: k, info: { kind: 'gramer', topic: k[0] === 'a' ? 'relative' : 'modal', level: 1 } }));
+  const ad = AD.makeAdapter(pool);
+  const note = ad.after(items, 0, false);
+  if (items.length !== 5 || items[3].adapt !== 'pekistir' || items[3].info.topic !== 'relative' || !/2 soru sonra/.test(note)) throw new Error('adapt wrong ' + JSON.stringify(items.map(x => x.key)));
+  const it2 = [{ key: 'x1', info: { topic: 'relative', level: 1 } }, { key: 'x2', info: { topic: 'relative', level: 1 } }, { key: 'x3', info: { topic: 'relative', level: 1 } }, { key: 'b1', info: { topic: 'modal', level: 1 } }];
+  const ad2 = AD.makeAdapter(pool);
+  ad2.after(it2, 0, true); ad2.after(it2, 1, true); const n3 = ad2.after(it2, 2, true);
+  if (it2[3].key !== 'b3' || it2[3].adapt !== 'zor' || !/zor/.test(n3)) throw new Error('adapt harder ' + JSON.stringify(it2.map(x => x.key)));
+  const it3 = Array.from({ length: 8 }, (_, j) => ({ key: 'z' + j, info: { topic: 'relative', level: 3 } }));
+  const big = [...pool, ...Array.from({ length: 6 }, (_, j) => mk('r' + j, 'relative', 2))];
+  const ad3 = AD.makeAdapter(big); for (let j = 0; j < 6; j++) ad3.after(it3, j, false);
+  if (it3.filter(x => x.adapt).length !== AD.ADAPT_MAX) throw new Error('adapt max');
+  console.log('ok anlık uyum');
+  // Tavan: bugün görülen her zaman kalır; kısa aralık → yıldız → gecikme
+  const cards = [
+    { id: 'a', interval: 30, due: 1, word: 'a' }, { id: 'b', interval: 1, state: 'learning', due: 5, word: 'b' },
+    { id: 'c', interval: 30, due: 2, word: 'c' }, { id: 'd', interval: 30, due: 3, lastReview: 1000, word: 'd' }];
+  const cd = SR.capDue(cards, { cap: 2, done: 0, sod: 500, star: c => c.word === 'c' ? 5 : 0 });
+  if (cd.list.map(c => c.id).join() !== 'd,b,c' || cd.overflow !== 1) throw new Error('capDue ' + JSON.stringify(cd));
+  if (!SR.isComeback(['2026-11-10'], '2026-11-20') || SR.isComeback(['2026-11-18'], '2026-11-20') || SR.isComeback([], '2026-11-20')) throw new Error('comeback');
+  console.log('ok tekrar tavanı + geri dönüş');
+  // Tahmin: veri yokken düşük güven; bölümler 80 soruya oranlanır
+  const e0 = ES.estimate([], [], '2026-11-23');
+  if (e0.enough || e0.mid !== Math.round(80 * 0.45 * 1.25)) throw new Error('estimate empty ' + JSON.stringify(e0));
+  const lg2 = []; for (let i = 0; i < 40; i++) lg2.push({ kind: 'gramer', dtype: 'bosluk', correct: true, day: '2026-11-20', at: i });
+  const e1 = ES.estimate(lg2, [], '2026-11-23');
+  if (!e1.enough || !(e1.sec.bosluk.p > 0.8) || !(e1.lo < e1.mid && e1.mid < e1.hi)) throw new Error('estimate ' + JSON.stringify(e1));
+  console.log('ok puan tahmini');
 }

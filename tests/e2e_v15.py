@@ -124,7 +124,7 @@ with sync_playwright() as p:
     s1 = days([0, 2, 3])
     check('joker' in s1, f'dün atlandı → "joker kullanıldı (dün)" ({s1})')
     s2 = days([0, 1, 3, 4])
-    check('joker' not in s2 and 'Seri: 4' in s2, f'joker daha önce kullanıldı → yazı yok ({s2})')
+    check('joker' not in s2 and 'seri 4' in s2, f'joker daha önce kullanıldı → yazı yok ({s2})')
 
     # 7) Kısa deneme: onay ekranı + gizli okuma seçeneği + sonuç ekranı
     go('deneme/yeni/mini', 700)
@@ -219,6 +219,7 @@ with sync_playwright() as p:
         check(page.locator('.parts-btn').count() == 0 and page.locator('.explain .partsbox').count() == 0, 'cevaptan sonra otomatik bloklar kalkar (karşılık yok)')
 
         # 10) "5 soru çöz": çıkmışlar da katılır (etiketli, diyalog yok)
+        ev("import('./js/store.js').then(m => m.setSetting('adapt', false))")
         go('gramer/pratik/baglac-zitlik', 1200)
         if page.locator('button:has-text("Baştan başla")').count(): page.click('button:has-text("Baştan başla")'); page.wait_for_timeout(400)
         keys = st()['sessions'].get('pratik:baglac-zitlik', {}).get('keys', [])
@@ -232,12 +233,13 @@ with sync_playwright() as p:
         check(sum(1 for l in labs if l.startswith('Çıkmış')) == len(xk), f'çıkmış sorular etiketli ({[l for l in labs if l.startswith("Çıkmış")]})')
         tps = ev(f"import('./js/pack.js').then(m => m.getPack()).then(p => {json.dumps(xk)}.map(k => {{ const i = k.lastIndexOf(':'); const e = p.exams.find(x => x.id === k.slice(0, i)); return e.questions.find(q => String(q.n) === k.slice(i + 1)); }}).map(q => [q.topic, q.type]))")
         check(all(t[0] == 'baglac-zitlik' and t[1] != 'diyalog' for t in tps), f'çıkmışlar aynı konudan, diyalog yok ({tps})')
+        ev("import('./js/store.js').then(m => m.setSetting('adapt', true))")
 
     # 11) Tanı denemesi açıklaması (hafta 2 Cumartesi: 28 Kas 2026)
     off = int((datetime.datetime(2026, 11, 28, 12) - datetime.datetime.now()).total_seconds() * 1000)
     ev(f"localStorage.setItem('test.dateoff', '{off}')"); page.goto(BASE + '#/bugun'); page.reload(); page.wait_for_timeout(1200)
-    t = page.locator('[data-task=deneme]')
-    check(t.count() == 1 and 'Seviyeni görmek için; sonuç önemli değil' in t.inner_text(), f'tanı denemesinde tek satır açıklama ({t.inner_text()[:90] if t.count() else ""!r})')
+    t = page.locator('[data-task=kisa]')
+    check(t.count() == 1 and 'Seviyeni görmek için; sonuç önemli değil' in t.inner_text() and 'okuma dahil' in t.inner_text(), f'tanı denemesi (YÖKDİL biçimi, okuma dahil) tek satır açıklama ({t.inner_text()[:90] if t.count() else ""!r})')
     shot('bugun-tani')
     ev("localStorage.removeItem('test.dateoff')"); page.reload(); page.wait_for_timeout(700)
 
@@ -251,7 +253,7 @@ with sync_playwright() as p:
     det = page.locator('details.more-detail')
     check(det.count() == 1 and not ev("document.querySelector('details.more-detail').open"), 'Eksikler: "Ayrıntı ▸" kapalı gelir')
     vis = [h.inner_text() for h in page.locator('main section.card > h3:visible').all()]
-    check(vis[:1] == ['En zayıf 3 alan'] and 'Kelimeler' in vis and 'Deneme sonuçları' in vis and 'Gramer konu doğruluğu' not in vis, f'görünen bölümler: {vis}')
+    check(vis[:1] == ['Öncelikli 3 alan'] and 'Kelimeler' in vis and 'Deneme sonuçları' in vis and 'Gramer konu doğruluğu' not in vis, f'görünen bölümler: {vis}')
     shot('eksikler', True)
     page.locator('details.more-detail > summary').click(); page.wait_for_timeout(300)
     eff = page.locator(f'.arow[data-key="{T}"] .after-card.effect')

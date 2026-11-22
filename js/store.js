@@ -6,7 +6,7 @@ let state = {};
 const subs = new Set();
 let saveT = null;
 
-export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8, autoAdd: true, readHl: true, vocabGoal: 2000, targetScore: null, secClock: true, finalMode: true, readGoal: 120, starFirst: false, warmup: true };
+export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8, autoAdd: true, readHl: true, vocabGoal: null, targetScore: null, secClock: true, finalMode: true, readGoal: 120, starFirst: false, warmup: true };
 
 export function load() {
   try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { state = {}; }
@@ -94,7 +94,7 @@ export function migrate(list, ctx = {}) {
   const ran = [];
   for (const m of list) {
     if (done.includes(m.id)) continue;
-    try { m.run({ all, get, put, del, raw }, ctx); done.push(m.id); ran.push(m.id); } catch (e) { console.warn('göç', m.id, e); }
+    try { m.run({ all, get, put, del, raw, settings, setSetting }, ctx); done.push(m.id); ran.push(m.id); } catch (e) { console.warn('göç', m.id, e); }
   }
   if (ran.length) localStorage.setItem(MK, JSON.stringify(done));
   return ran;

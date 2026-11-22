@@ -6,33 +6,37 @@ import { seedUser, words, aids, program } from '../data.js';
 import { diffDays } from '../util.js';
 const progFrac = async () => { const p = await program(); const T = diffDays(p.start, p.exam); return T > 0 ? diffDays(p.start, dayKey()) / T : 0; };
 import { hbars, heatmap, line, stacked, weekBars } from '../charts.js';
-import { coreSeen, weeklyWpm, READ_GOAL, vocabPlan } from '../strategy.js';
+import { coreSeen, weeklyWpm, READ_GOAL, vocabPlan, progVocab } from '../strategy.js';
 import { reasonSummary } from '../reasons.js';
 import { daysToExam, newLimit } from '../plan.js';
 import { loadStars, starOf } from '../stars.js';
 import { isKnownLevel } from '../vocab.js';
-import { typeOf, normKey, matches, afterCard, bestOne } from '../warm.js';
+import { typeOf, normKey, matches, afterCard, isType } from '../warm.js';
+import { priorities, keyStats, risers, trendText, RECENT_N } from '../priority.js';
 import { openRule } from './warmup.js';
 import { reasonCounts } from '../strategy.js';
+import { estimate } from '../estimate.js';
 import { lessons } from '../data.js';
 import { TOPIC_LESSON, TYPE_LESSON } from '../util.js';
 import { lessonTopic } from '../qbank.js';
 
 // Bildiğin kelime: known + öğrenildi + olgun, hedef çizgisiyle
 // Saf: çekirdek listedeki 5★ kelimelerden kaçını biliyor (biliyorum + öğrenildi + olgun)
-export function topStarKnown(words, cards, m, known = isKnownLevel) {
-  const top = (words || []).filter(w => w?.word && starOf(w.word, m) === 5);
+export function topStarKnown(words, cards, m, known = isKnownLevel, minStar = 5) {
+  const top = (words || []).filter(w => w?.word && starOf(w.word, m) >= minStar);
   if (!top.length) return null;
   const k = new Set();
   for (const c of cards || []) if (c && !c.deleted && known(c)) { if (c.wid) k.add(c.wid); if (c.word) k.add(String(c.word).toLowerCase().trim()); }
   return { known: top.filter(w => k.has(w.id) || k.has(w.word.toLowerCase())).length, total: top.length };
 }
 
-function vocabBox(st, goal, left, limit, core, top5, frac) {
+function vocabBox(st, goal, left, limit, core, top5, frac, top45) {
   const v = vocabPlan(st, goal, frac, left, limit);
   const scale = Math.max(goal, v.studied) * 1.05;
   const pc = x => (Math.min(x, scale) / scale * 100).toFixed(1);
   return h('div.vocab',
+    top45 ? h('div.star45', h('span.small', 'Sınavda en çok çıkan (4–5★) kelimeler: '), h('b.big', `${top45.known}/${top45.total}`), h('span.small.muted', ' biliyorsun'),
+      h('div.goalbar.thin', h('i', { style: `width:${(top45.known / Math.max(1, top45.total) * 100).toFixed(1)}%` }))) : null,
     h('div.row.between', h('div', h('span.big', v.studied), h('span.muted', ' çalıştığın kelime')),
       h('a.btn.small', { href: '#/kartlar/tara' }, 'Tara')),
     h('div.small.vocab-solid', 'Sağlam (iyi bildiğin): ', h('b', v.solid), ` · hedef ${goal}`),
@@ -40,9 +44,9 @@ function vocabBox(st, goal, left, limit, core, top5, frac) {
       v.todayGoal ? h('span.goal-line', { style: `left:${pc(v.todayGoal)}%`, title: 'bugünün ara hedefi' }) : null),
     v.todayGoal ? h('div.small.muted.vocab-today', `Dikey çizgi: bugün olman gereken yer (${v.todayGoal} sağlam kelime)`) : null,
     h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Kalıcı ${st.mature} · Öğreniliyor ${st.learning}`),
-    core?.total ? h('div.core-seen', h('div.small', 'Sık kelime listesi: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
+    core?.total && false ? h('div.core-seen', h('div.small', 'Sık kelime listesi: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
       h('div.goalbar.thin', h('i', { style: `width:${(core.seen / core.total * 100).toFixed(1)}%` }))) : null,
-    top5 ? h('div.small.star5', '5★ kelimeler: ', h('b', `${top5.known}/${top5.total}`), ' biliyor') : null,
+    top5 && !top45 ? h('div.small.star5', '5★ kelimeler: ', h('b', `${top5.known}/${top5.total}`), ' biliyor') : null,
     left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${v.proj} çalışılmış kelime`,
       v.needPerDay ? h('span', ' · hedefe yetişmek için günde ', h('b', v.needPerDay), ' yeni ya da ', h('a', { href: '#/kartlar/tara' }, 'Kelime tara')) : null) : null);
 }
@@ -80,11 +84,18 @@ const TIP = {
   bosluk: 'Günün gramer sorularını ve hata tekrarını her gün bitir.'
 };
 
+// Son 30 cevap üzerinden doğruluk (birikimli değil) + eğilim; toplam ayrıca tutulur
 function acc(filter, keyOf) {
-  const m = {};
-  for (const l of store.all('grammarLog')) {
+  const by = {};
+  for (const l of [...store.all('grammarLog')].sort((a, b) => (a.at || 0) - (b.at || 0))) {
     if (!filter(l)) continue;
-    const k = keyOf(l); const a = m[k] ||= [0, 0]; a[1]++; if (l.correct && !l.hint) a[0]++; // ipucuyla doğru ayrı sayılır
+    (by[keyOf(l)] ||= []).push(l.correct && !l.hint ? 1 : 0); // ipucuyla doğru ayrı sayılır
+  }
+  const m = {};
+  for (const [k, xs] of Object.entries(by)) {
+    const rec = xs.slice(-RECENT_N), prev = xs.slice(-2 * RECENT_N, -RECENT_N), sum = a => a.reduce((x, y) => x + y, 0);
+    const v = sum(rec) / rec.length;
+    m[k] = { c: sum(rec), n: rec.length, all: xs.length, allV: sum(xs) / xs.length, trend: rec.length >= 8 && prev.length >= 8 ? v - sum(prev) / prev.length : null };
   }
   return m;
 }
@@ -116,9 +127,10 @@ const barCls = v => v >= 0.75 ? 'good' : v >= 0.5 ? 'mid' : 'bad';
 function actRow(r) {
   const k = normKey(r.k), weak = r.value < WEAK_AT && (r.n == null || r.n >= 3); // 1–2 soruyla zayıf denmez
   const kk = store.get('progress', 'kkart:' + k);
-  const ac = kk?.firstAt ? afterCard(store.all('grammarLog'), k, kk.firstAt) : null;
+  const ac = kk?.firstAt && k !== 'paragraf' && k !== 'okuma' ? afterCard(store.all('grammarLog'), k, kk.firstAt) : null;
   return h('li.arow' + (weak ? '.weak' : ''), { 'data-key': k },
-    h('div.arow-top', h('span.arow-l', r.label), h('span.arow-v', `%${Math.round(r.value * 100)}`, r.n ? h('span.small.muted', ` (${r.n})`) : null), moreMenu(k, { full: weak })),
+    h('div.arow-top', h('span.arow-l', r.label), h('span.arow-v', `%${Math.round(r.value * 100)}`, r.trend != null ? h('span.small.trend' + (r.trend >= 0.05 ? '.up' : r.trend <= -0.05 ? '.down' : ''), ' ' + trendText(r.trend)) : null, r.n ? h('span.small.muted', ` (son ${r.n})`) : null), moreMenu(k, { full: weak })),
+    r.all > r.n ? h('div.small.muted.arow-all', `toplam %${Math.round(r.allV * 100)} · ${r.all} soru`) : null,
     h('div.arow-bar', h('i.' + barCls(r.value), { style: `width:${Math.max(2, r.value * 100).toFixed(0)}%` })),
     cardEffect(ac),
     weak ? h('div.arow-acts', ruleBtn(k), practiceBtn(k)) : null);
@@ -139,7 +151,7 @@ export default async function render(root) {
   const st = stats();
   const gt = acc(l => (l.kind === 'gramer' || l.kind === 'ders' || isX(l)) && TOPICS[l.topic], l => l.topic);
   const types = acc(l => !!typeOf(l), typeOf);
-  const rows = (m, nm) => Object.entries(m).map(([k, [c, n]]) => ({ k, label: nm(k), value: c / n, n, note: `(${n})` }))
+  const rows = (m, nm) => Object.entries(m).map(([k, x]) => ({ k, label: nm(k), value: x.c / x.n, n: x.n, all: x.all, allV: x.allV, trend: x.trend }))
     .sort((a, b) => a.value - b.value);
   const hinted = store.all('grammarLog').filter(l => l.hint && l.correct).length;
   const lapsed = store.all('cards').filter(c => c.lapses > 0).sort((a, b) => b.lapses - a.lapses).slice(0, 8);
@@ -148,16 +160,10 @@ export default async function render(root) {
   const focusWeek = Object.values(days).filter(d => d.id >= dayKey(new Date(Date.now() - 6 * 86400000))).reduce((a, d) => a + (d.focusMin || 0), 0);
   const mocks = store.all('mocks').sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 
-  // En zayıf 3 alan
-  const areas = [
-    ...rows(gt, topicName).filter(r => r.n >= 3).map(r => ({ ...r, label: r.label })),
-    ...rows(types, typeName).filter(r => r.n >= 3 && r.k !== 'bosluk')
-  ];
-  const last = mocks.at(-1);
-  // Çıkmış (kısa set / yarım deneme) kaydında olmayan bölüm %0 sayılmaz
-  if (last) for (const [k, l, n0] of MOCK) { const s = last.sections?.[k]; if (!s && (last.src === 'cikmis' || last.kind === 'kisa')) continue; const n = s?.n ?? n0; if (n >= 3) areas.push({ k, label: 'Deneme: ' + l, value: (+s?.d || 0) / n }); }
-  const weak = areas.sort((a, b) => a.value - b.value).filter((a, i, arr) => arr.findIndex(x => x.label === a.label) === i).slice(0, 3);
-
+  // Öncelik: sınav ağırlığı × eksiklik × güven (Bugün ekranıyla aynı kaynak). Az çıkan konular girmez.
+  const pri = priorities({ logs: store.all('grammarLog'), mistakes: store.all('mistakes'), seed: [...(seed.weakTopics || []), ...(seed.weakDrills || [])] });
+  const weak = pri.slice(0, 3).map(p => ({ k: p.k, label: topicName(p.k), value: p.value, n: p.n, trend: p.trend }));
+  const ups = risers(keyStats(store.all('grammarLog')));
   const mockBox = h('div');
   const core = coreSeen(await words(), store.all('cards'));
   const top5 = topStarKnown(await words(), store.all('cards'), await loadStars());
@@ -165,16 +171,18 @@ export default async function render(root) {
   const reasonBox = A?.errorReasons?.length ? reasonSummary(A.errorReasons) : null;
   LES = new Map();
   for (const l of await lessons()) { LES.set(l.id, l.id); const t = lessonTopic(l); if (t && !LES.has(t)) LES.set(t, l.id); }
-  const best = bestOne(rows(gt, topicName), rows(types, typeName), seed.weakTopics || []);
+  const best = pri[0] ? { key: pri[0].k, value: pri[0].value, n: pri[0].n } : null;
   root.append(
     h('h2', 'Eksiklerim'),
     h('p.small.muted.screen-why', 'Nerede zorlanıyorsun, ne yapmalısın: tek bakışta.'),
     best ? h('div.card.best1', h('div.small.muted', 'Bugün en çok işine yarayacak 1 şey'),
       h('div.best1-row', h('b', topicName(normKey(best.key))), best.value != null ? h('span.chip.bad.small', `%${Math.round(best.value * 100)}`) : null),
       h('a.btn.primary.wide.best1-go', { href: '#/gramer/pratik/' + enc(normKey(best.key)) + '/kural' }, 'Kural kartı + 5 soru')) : null,
-    sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(normKey(w.k)), practiceBtn(normKey(w.k)))))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
-      h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(k), practiceBtn(k))))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5, await progFrac())),
+    sec('Öncelikli 3 alan', h('p.small.muted.pri-why', 'Sınavda çok çıkan ve son 30 cevabında zorlandığın konular. Her cevapla güncellenir.'),
+      weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), w.value != null ? ` %${Math.round(w.value * 100)}` : '', w.trend != null ? h('span.small.trend' + (w.trend >= 0.05 ? '.up' : w.trend <= -0.05 ? '.down' : ''), ' ' + trendText(w.trend)) : null,
+        h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(normKey(w.k)), practiceBtn(normKey(w.k)))))) : h('p.small.muted', 'Biraz soru çözünce burada belirir.'),
+      ups.length ? h('p.small.risers', '↑ Bu dönem güçlenenler: ', ups.map(u => `${topicName(u.k)} (+${Math.round(u.trend * 100)})`).join(' · ')) : null),
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || progVocab(await program()), await daysToExam(), await newLimit(), core, top5, await progFrac(), topStarKnown(await words(), store.all('cards'), await loadStars(), isKnownLevel, 4))),
     sec('Deneme sonuçları', mockBox),
     // İkincil bölümler: "Ayrıntı ▸" altında (kapalı)
     h('details.more-detail', h('summary.card', h('b', 'Ayrıntı ▸'), h('span.small.muted', ' konu konu doğruluk, hata nedenleri, unutulan kelimeler, okuma hızı, takvim')),
@@ -209,12 +217,20 @@ function drawMocks(box) {
   box.innerHTML = '';
   const mocks = store.all('mocks').sort((a, b) => (a.date || '').localeCompare(b.date || ''));
   const last = mocks.at(-1);
+  const goal = +store.settings().targetScore || 70;
+  // Tahmini puan gidişi (her gün son cevaplardan; yüzde değil puan)
+  const est = estimate(store.all('grammarLog'), mocks);
+  const ests = store.all('days').filter(d => d.est != null).sort((a, b) => a.id.localeCompare(b.id)).slice(-60);
+  add(box, h('div.est-box',
+    est.enough ? h('div', h('span.small.muted', 'Tahmini puan '), h('b.big', `${est.lo}–${est.hi}`), h('span.small.muted', ` · hedef ${goal}` + (est.hi < goal ? ` · ${Math.max(0, Math.ceil((goal - est.mid) / 1.25))} soru daha` : ''))) : h('p.small.muted', 'Tahmini puan: biraz daha soru çözünce görünür.'),
+    ests.length >= 2 ? h('div', { html: line(ests.map((d, i, a) => ({ label: i % Math.ceil(a.length / 5) === 0 || i === a.length - 1 ? fmtDate(d.id) : '', v: d.est })), { goal }) }) : null,
+    h('p.small.muted', 'Tahmin: son 4 haftadaki cevaplarından, bölüm bölüm 80 soruya oranlanır. Çalışırken çözülen sorular sınavdan biraz kolay sayılır.')));
   if (mocks.length) {
-    const goal = +store.settings().targetScore || 70;
     const pctOf = m => m.kind === 'kisa' || m.pct;
+    const fulls = mocks.filter(m => !pctOf(m));
     add(box,
-      h('div', { html: line(mocks.map(m => ({ label: m.date ? fmtDate(m.date) : '–', v: score(m), cls: pctOf(m) ? 'kisa' : '' })), { goal }) }),
-      h('div.mock-legend', h('span', h('i'), 'Tam deneme (puan)'), mocks.some(pctOf) ? h('span', h('i.kisa'), 'Kısa / yarım (doğru yüzdesi)') : null, h('span', h('i.goal'), `Hedef ${goal}`)),
+      fulls.length ? h('div', { html: line(fulls.map(m => ({ label: m.date ? fmtDate(m.date) : '–', v: score(m) })), { goal }) }) : null,
+      fulls.length ? h('div.mock-legend', h('span', h('i'), 'Tam deneme (puan)'), h('span', h('i.goal'), `Hedef ${goal}`)) : null,
       h('p.small', pctOf(last) ? h('b', `Son: ${last.right ?? '?'}/${last.n ?? '?'} doğru`) : h('b', 'Son: ' + score(last).toLocaleString('tr-TR') + ' puan'), ` · ${last.date ? fmtDate(last.date) : ''}${last.name ? ' · ' + last.name : ''}`),
       h('div', { html: stacked([...MOCK, ...Object.keys(EXTRA).map(k => [k, EXTRA[k], 0])]
         .filter(([k, , n]) => last.src === 'cikmis' || last.kind === 'kisa' ? last.sections?.[k] : (n || last.sections?.[k]))

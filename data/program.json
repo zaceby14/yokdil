@@ -101,13 +101,10 @@
    ],
    "goal": "Neden-sonuç-amaç: because / due to / in order to / with a view to + Ving.",
    "weekend": "Cmt: tanı denemesi (yarım, 40 soru) · Paz: hata tekrarı",
-   "mock": {
-    "kind": "yarim",
-    "n": 40,
+   "kisa": {
+    "size": "yarim",
     "day": "Cmt",
-    "exam": "yds-2019-1",
-    "title": "Tanı: 2019-YDS/1 ilk 40 soru (boşluk, cloze, cümle tamamlama)",
-    "note": "Seviyeni görmek için; sonuç önemli değil. YDS soruları da aynı tipte."
+    "title": "Tanı denemesi (YÖKDİL Fen biçiminde, okuma dahil)"
    }
   },
   {
@@ -567,8 +564,8 @@
  "osymLink": "https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html",
  "mockPlan": {
   "tam": 5,
-  "yarim": 3,
-  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 3 yarım (40 soru) hafta 2, 6, 9 · 2022–2025 kısa setler son iki hafta · kısa deneme (özgün): Pazar, hafta 1, 3–5 mini (20 soru · 45 dk), 7–8 yarım (40 soru · 90 dk); son 14 günde hafta içi mini",
+  "yarim": 2,
+  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 2 yarım çıkmış (40 soru) hafta 6, 9 · tanı denemesi hafta 2 (YÖKDİL Fen biçiminde, okuma dahil) · 2022–2025 kısa setler son iki hafta · kısa deneme (özgün): Pazar, hafta 1, 3–5 mini (20 soru · 45 dk), 7–8 yarım (40 soru · 90 dk); son 14 günde hafta içi mini",
   "kisa": {
    "mini": [
     1,
@@ -577,6 +574,7 @@
     5
    ],
    "yarim": [
+    2,
     7,
     8
    ]

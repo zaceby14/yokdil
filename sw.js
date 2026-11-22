@@ -1,5 +1,5 @@
 // Service worker: uygulama kabuğu önbellekte, data/ ağ öncelikli
-const VER = 'yokdil-v17';
+const VER = 'yokdil-v18';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/app.js', 'js/util.js', 'js/merge.js', 'js/store.js', 'js/data.js', 'js/plan.js', 'js/srs.js', 'js/mistakes.js',
@@ -13,7 +13,7 @@ const SHELL = [
   'js/migrations.js', 'js/tasks.js', 'js/gplan.js', 'js/views/aids.js',
   'js/strategy.js', 'js/reasons.js', 'js/views/strategy.js', 'js/views/guess.js', 'js/stars.js',
   'js/kisa.js', 'js/readpick.js', 'js/views/kisa.js',
-  'js/warm.js', 'js/views/warmup.js', 'js/autoparts.js'
+  'js/warm.js', 'js/views/warmup.js', 'js/autoparts.js', 'js/priority.js', 'js/adapt.js', 'js/estimate.js'
 ];
 
 // Yeni sürüm: önbelleği HTTP önbelleğini atlayarak doldur; sayfa "Yenile" deyince devreye gir

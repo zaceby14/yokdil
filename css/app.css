@@ -704,3 +704,22 @@ details.set-adv h3 { margin-top: 14px; }
 .explain .exrow2 .exl { font-size: .78rem; font-weight: 700; color: var(--muted); padding-top: 2px; }
 .explain .exrow2.mine .exl { color: var(--bad, #c0392b); }
 @media (max-width: 420px) { .explain .exrow2 { grid-template-columns: 1fr; gap: 2px; } }
+
+/* v18: anlık uyum, öncelik, tahmin */
+.adapt-note { margin: .5em 0; padding: .45em .7em; border-left: 3px solid var(--accent, #3b82f6); background: color-mix(in srgb, var(--accent, #3b82f6) 9%, transparent); border-radius: 6px; font-size: .92em; }
+.adapt-chip { background: color-mix(in srgb, var(--accent, #3b82f6) 15%, transparent); }
+.trend.up { color: var(--good, #16a34a); font-weight: 600; }
+.trend.down { color: var(--bad, #dc2626); }
+.arow-all { margin-top: -.15em; }
+.risers { color: var(--good, #16a34a); margin-top: .5em; }
+.pri-why { margin-top: -.3em; }
+.est-box { margin-bottom: .8em; }
+.est-box .big { font-size: 1.6em; }
+.star45 { margin-bottom: .6em; }
+.star45 .big { font-size: 1.3em; }
+.rehearse .row { gap: .5em; margin-top: .4em; flex-wrap: wrap; }
+.banner.comeback { background: color-mix(in srgb, var(--good, #16a34a) 12%, transparent); }
+.tomorrow { margin-top: .4em; font-weight: 600; }
+.closed-week { margin: .2em 0 .6em; }
+/* Yapışkan "Sonraki" düğmesi açıklamanın sonunu kapatmasın */
+body.qmode .explain:not(.hidden) { padding-bottom: 5.5em; }

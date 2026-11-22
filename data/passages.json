@@ -9976,5 +9976,3307 @@
     "tr": "tanıdık"
    }
   ]
+ },
+ {
+  "id": "p091",
+  "title": "Metals That Remember",
+  "topic": "malzeme",
+  "level": 1,
+  "words": 186,
+  "text": "Most metals stay bent after they have been deformed. Shape-memory alloys, however, can return to their original shape when they are heated. The best-known example is nitinol, an alloy of nickel and titanium that was developed at a US naval laboratory in the early 1960s.\n\nThe secret lies in the arrangement of atoms. At low temperatures, the atoms of nitinol form a structure that can be bent easily without breaking the metal. When the alloy is warmed above a certain temperature, the atoms move back into their original, more rigid arrangement, and the part recovers its earlier shape. Engineers can choose this temperature by slightly changing the amount of nickel in the alloy.\n\nShape-memory alloys are now used in many fields. In medicine, thin nitinol tubes called stents are folded to a small size, pushed into a narrow blood vessel and then opened by body heat. Similar alloys are used in eyeglass frames that survive being sat on, and in small valves that open or close automatically when water reaches a certain temperature. Their main drawbacks are high cost and a limited life under repeated bending.",
+  "questions": [
+   {
+    "q": "According to the passage, nitinol ----.",
+    "options": [
+     "cannot be bent easily when its temperature is low",
+     "was first developed for use in medical stents in the 1960s",
+     "recovers its earlier shape when it is warmed above a certain temperature",
+     "is produced by adding small amounts of titanium to steel",
+     "becomes permanently bent once it has been heated"
+    ],
+    "answer": 2,
+    "explain": "Metin 'When the alloy is warmed above a certain temperature ... the part recovers its earlier shape' diyor. Şık bunu neredeyse aynı sözcüklerle veriyor.",
+    "anlam": "Soru: Metne göre nitinol hakkında ne doğru? Dayanak (2. paragraf): 'Alaşım belli bir sıcaklığın üstüne ısıtılınca parça eski şeklini geri kazanır.'",
+    "why": [
+     "Ters bilgi: düşük sıcaklıkta kolayca bükülebiliyor.",
+     "1960'larda deniz kuvvetleri laboratuvarında geliştirildi; stent sonraki bir kullanım.",
+     "",
+     "Nikel ve titanyum alaşımı; çelik hiç geçmiyor.",
+     "Isıtılınca eski şekline döner; kalıcı bükülme sıradan metallerin özelliği."
+    ],
+    "tip": "Detay sorusunda şıktaki koşulu (ısıtınca / soğukken) metindeki koşulla eşle."
+   },
+   {
+    "q": "It is stated in the passage that the temperature at which a shape-memory alloy recovers its shape ----.",
+    "options": [
+     "can be adjusted through the nickel content",
+     "is always the same as normal human body temperature",
+     "depends mainly on how many times the part has already been bent and straightened",
+     "was first measured by doctors working with stents",
+     "rises as the price of the alloy becomes lower"
+    ],
+    "answer": 0,
+    "explain": "Metin 'Engineers can choose this temperature by slightly changing the amount of nickel' diyor. Şık bunu 'can be adjusted through the nickel content' ile veriyor.",
+    "anlam": "Soru: Şekil hafızalı alaşımın şeklini geri aldığı sıcaklık hakkında ne söyleniyor? Dayanak (2. paragraf): 'Mühendisler bu sıcaklığı nikel miktarını biraz değiştirerek seçebilir.'",
+    "why": [
+     "",
+     "Metin sıcaklığın seçilebildiğini söylüyor; stent örneği sadece bir kullanım.",
+     "Bükülme sayısı ömürle ilgili bir sakınca; sıcaklığı belirlemiyor.",
+     "Sıcaklığı mühendisler nikel oranıyla seçiyor; doktorlardan söz yok.",
+     "Fiyat sadece sakınca olarak geçiyor; sıcaklıkla bağı kurulmuyor."
+    ],
+    "tip": "'this temperature' gibi gönderimleri bul; cevap çoğu zaman o cümlededir."
+   },
+   {
+    "q": "The passage mainly focuses on ----.",
+    "options": [
+     "the history of research carried out at US naval laboratories",
+     "why most metals stay bent after they have been deformed",
+     "how shape-memory alloys work and where they are used",
+     "the high cost of producing nickel and titanium",
+     "the medical risks of placing stents in narrow blood vessels"
+    ],
+    "answer": 2,
+    "explain": "Metin önce alaşımın nasıl çalıştığını (atom dizilişi), sonra kullanım alanlarını anlatıyor. Doğru şık ikisini birlikte kapsıyor.",
+    "anlam": "Soru: Parça esas olarak neye odaklanıyor? Dayanak (tüm metin): 1–2. paragraf çalışma ilkesi, 3. paragraf kullanım alanları.",
+    "why": [
+     "Laboratuvar sadece bir yan bilgi; metnin konusu değil.",
+     "Bu yalnızca giriş cümlesi; metin karşıt alaşımları anlatıyor.",
+     "",
+     "Maliyet son cümlede küçük bir sakınca; ana konu değil.",
+     "Stent bir kullanım örneği; risklerinden söz edilmiyor."
+    ],
+    "tip": "Ana fikir şıkkı tüm paragrafları kapsamalı; tek cümlelik ayrıntı ana fikir olamaz."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "deform",
+    "tr": "biçimini bozmak, şekil değiştirmek"
+   },
+   {
+    "w": "alloy",
+    "tr": "alaşım"
+   },
+   {
+    "w": "arrangement",
+    "tr": "diziliş, düzen"
+   },
+   {
+    "w": "rigid",
+    "tr": "katı, esnemeyen"
+   },
+   {
+    "w": "recover",
+    "tr": "geri kazanmak"
+   },
+   {
+    "w": "stent",
+    "tr": "damar içi tüp (stent)"
+   },
+   {
+    "w": "vessel",
+    "tr": "damar"
+   },
+   {
+    "w": "drawback",
+    "tr": "sakınca, dezavantaj"
+   }
+  ]
+ },
+ {
+  "id": "p092",
+  "title": "Batteries Without Lithium",
+  "topic": "enerji",
+  "level": 2,
+  "words": 190,
+  "text": "Lithium-ion batteries power almost every phone and electric car on the market. Lithium, however, is mined in only a few countries, and its price rose sharply when demand for electric vehicles grew. This has encouraged researchers to look again at an older idea: batteries that use sodium instead.\n\nSodium works in a similar way to lithium. During charging, sodium ions travel from one electrode to the other through a liquid electrolyte, and during use they move back, releasing energy. The great advantage of sodium is that it is extremely common, since it can be obtained from ordinary salt. Sodium-ion cells also perform better in freezing weather and can be stored safely with no charge at all, which simplifies transport.\n\nThe main weakness is weight. Sodium ions are larger and heavier than lithium ions, so a sodium battery stores less energy for the same mass. For this reason, experts do not expect sodium to replace lithium in long-range cars. Instead, the new cells are likely to be used in small city vehicles and in large stationary batteries that store solar and wind power, where low cost matters more than low weight.",
+  "questions": [
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "the reasons why lithium is mined in only a few countries",
+     "how electric cars with a long range can be charged quickly during freezing winter weather",
+     "the strengths and limits of sodium as an alternative to lithium in batteries",
+     "the history of salt production in the modern world",
+     "a new method of storing solar power without batteries"
+    ],
+    "answer": 2,
+    "explain": "Metin sodyumun avantajlarını (bol, soğukta iyi, güvenli) ve zayıflığını (ağırlık) anlatıp nerede kullanılacağını söylüyor. Doğru şık bunu özetliyor.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (tüm metin): 2. paragraf avantajlar, 3. paragraf zayıflık ve kullanım alanı.",
+    "why": [
+     "Bu giriş bilgisi; metin sodyum pili anlatıyor.",
+     "Uzun menzilli araçlar sadece sodyumun uygun olmadığı alan olarak geçiyor.",
+     "",
+     "Tuz sadece sodyum kaynağı olarak anılıyor.",
+     "Güneş enerjisi yine pille depolanıyor; pilsiz yöntem yok."
+    ],
+    "tip": "Avantaj + dezavantaj anlatan metinde ana fikir 'strengths and limits' gibi iki yönlü şıktır."
+   },
+   {
+    "q": "According to the passage, sodium-ion cells ----.",
+    "options": [
+     "perform better in freezing conditions",
+     "store more energy than lithium cells of the same mass",
+     "must always be kept partly charged during transport",
+     "are expected to replace lithium in long-range cars",
+     "use lithium ions that travel through a solid electrolyte"
+    ],
+    "answer": 0,
+    "explain": "Metin 'Sodium-ion cells also perform better in freezing weather' diyor. Şık bunu 'perform better in freezing conditions' ile veriyor.",
+    "anlam": "Soru: Metne göre sodyum-iyon hücreler hakkında ne doğru? Dayanak (2. paragraf): 'Dondurucu havada da daha iyi çalışırlar.'",
+    "why": [
+     "",
+     "Ters bilgi: aynı kütlede daha az enerji depolar.",
+     "Ters bilgi: hiç şarjsız güvenle saklanabilir.",
+     "Metin uzmanların bunu beklemediğini söylüyor.",
+     "Sodyum iyonları sıvı elektrolitte hareket ediyor; lityum ve katı elektrolit yanlış."
+    ],
+    "tip": "'freezing weather' = 'freezing conditions': eş anlamlı ifadeyi yakala."
+   },
+   {
+    "q": "It is stated in the passage that sodium batteries are likely to be used in large stationary batteries because ----.",
+    "options": [
+     "sodium ions are smaller and lighter than lithium ions",
+     "solar and wind power cannot be stored in lithium batteries",
+     "these batteries must work in freezing weather all year",
+     "in such systems low cost matters more than low weight",
+     "the price of salt has risen sharply in recent years"
+    ],
+    "answer": 3,
+    "explain": "Metin '... where low cost matters more than low weight' diyor. Şık bunu nedeni olarak veriyor.",
+    "anlam": "Soru: Sodyum pillerin büyük sabit depolarda kullanılmasının nedeni ne? Dayanak (3. paragraf): 'Düşük maliyetin düşük ağırlıktan daha önemli olduğu yerlerde.'",
+    "why": [
+     "Ters bilgi: sodyum iyonları daha büyük ve ağır.",
+     "Metinde böyle bir iddia yok.",
+     "Soğuğa dayanıklılık bir avantaj ama bu kullanımın nedeni olarak verilmiyor.",
+     "",
+     "Fiyatı artan lityum; tuz bol ve ucuz."
+    ],
+    "tip": "Neden sorusunda 'where / because / since' ile başlayan yan cümleyi ara."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "mine",
+    "tr": "maden çıkarmak"
+   },
+   {
+    "w": "demand",
+    "tr": "talep"
+   },
+   {
+    "w": "electrode",
+    "tr": "elektrot"
+   },
+   {
+    "w": "electrolyte",
+    "tr": "elektrolit"
+   },
+   {
+    "w": "release",
+    "tr": "serbest bırakmak, açığa çıkarmak"
+   },
+   {
+    "w": "obtain",
+    "tr": "elde etmek"
+   },
+   {
+    "w": "simplify",
+    "tr": "kolaylaştırmak"
+   },
+   {
+    "w": "stationary",
+    "tr": "sabit, yerinde duran"
+   }
+  ]
+ },
+ {
+  "id": "p093",
+  "title": "Surviving the Impossible",
+  "topic": "biyoloji",
+  "level": 3,
+  "words": 197,
+  "text": "Tardigrades, tiny animals less than a millimetre long, are often described as the toughest creatures on Earth. They live in moss, soil and ocean sediments, and they normally need a thin film of water around them to remain active. What makes them remarkable is what happens when that water disappears.\n\nAs its surroundings dry out, a tardigrade pulls in its legs, loses almost all of its body water and curls into a dry, lifeless-looking form known as a tun. In this state its metabolism falls to less than 0.01 per cent of the normal rate. Tuns have survived temperatures close to absolute zero, years without water and even exposure to the vacuum of space. When water returns, the animal can become active again within hours.\n\nFor a long time it was assumed that tardigrades relied mainly on a sugar called trehalose, which protects the cells of some other dry-tolerant organisms. Many tardigrade species, however, produce little of it. Instead, researchers have identified unusual proteins that form a glass-like gel inside the cells as they dry, holding other molecules in place. Scientists hope that similar proteins might one day allow vaccines and medicines to be stored without refrigeration.",
+  "questions": [
+   {
+    "q": "According to the passage, when a tardigrade is in the tun state, ----.",
+    "options": [
+     "it needs a thin film of water in order to stay alive",
+     "it produces large amounts of trehalose to protect its legs",
+     "it becomes active again only after several years",
+     "its metabolism slows to a tiny fraction of the normal rate",
+     "its body water increases to protect it from the cold"
+    ],
+    "answer": 3,
+    "explain": "Metin 'its metabolism falls to less than 0.01 per cent of the normal rate' diyor. Şık bunu 'slows to a tiny fraction' ile veriyor.",
+    "anlam": "Soru: Tun hâlindeyken tardigradda ne olur? Dayanak (2. paragraf): 'Metabolizması normal hızın yüzde 0,01'inden azına düşer.'",
+    "why": [
+     "Su filmi aktif kalmak için gerekli; tun hâli su yokken oluşuyor.",
+     "Birçok tür trehaloz az üretiyor; bacak koruma diye bir bilgi yok.",
+     "Su gelince saatler içinde aktifleşir; 'yıllar' susuz kalma süresi.",
+     "",
+     "Ters bilgi: vücut suyunun neredeyse tamamını kaybeder."
+    ],
+    "tip": "Sayı veren cümle şıkta çoğu zaman genel bir ifadeyle (tiny fraction) karşılanır."
+   },
+   {
+    "q": "It is stated in the passage that, contrary to earlier assumptions, many tardigrade species ----.",
+    "options": [
+     "cannot survive temperatures close to absolute zero",
+     "use special proteins instead of trehalose",
+     "produce more trehalose than other dry-tolerant organisms",
+     "live in deep ocean water rather than in moss and soil",
+     "are already used today by medical companies to store vaccines without any refrigeration"
+    ],
+    "answer": 1,
+    "explain": "Metin trehalozun varsayıldığını ama birçok türün az ürettiğini, bunun yerine cam gibi jel yapan proteinlerin bulunduğunu söylüyor.",
+    "anlam": "Soru: Eski varsayımın tersine birçok tardigrad türü için ne söyleniyor? Dayanak (3. paragraf): 'Birçoğu trehalozu az üretir; bunun yerine olağandışı proteinler bulundu.'",
+    "why": [
+     "Ters bilgi: tunlar mutlak sıfıra yakın sıcaklıklara dayandı.",
+     "",
+     "Ters bilgi: birçok tür trehalozu az üretiyor.",
+     "Yosun, toprak ve okyanus tortusunda yaşarlar; derin su karşıtlığı yok.",
+     "Bu bir umut; bugün yapılan bir şey değil ve proteinlerle ilgili."
+    ],
+    "tip": "'For a long time it was assumed ... however' kalıbı eski görüş → yeni bulgu demektir; soru yeni bulguyu sorar."
+   },
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "how tardigrades survive drying out and what protects their cells",
+     "the different habitats of tardigrades in moss, soil and ocean sediments",
+     "the use of trehalose in storing vaccines",
+     "why tardigrades are the largest animals living in moss",
+     "experiments that sent tardigrades into space to test new medicines"
+    ],
+    "answer": 0,
+    "explain": "Metin tardigradların kuruyunca tun hâline geçip nasıl hayatta kaldığını ve hücrelerini neyin koruduğunu (trehaloz değil, özel proteinler) anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (2.–3. paragraf): tun hâli ve hücreleri koruyan cam gibi proteinler.",
+    "why": [
+     "",
+     "Yaşam alanları sadece giriş bilgisi.",
+     "Aşılarda trehaloz kullanımından söz yok; proteinler bir umut olarak geçiyor.",
+     "Ters bilgi: milimetreden küçük canlılar.",
+     "Uzay sadece dayanıklılık örneği; ilaç deneyi yok."
+    ],
+    "tip": "Ana fikir şıkkı hem 'nasıl hayatta kalır' hem 'ne korur' bölümlerini kapsamalı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "sediment",
+    "tr": "tortu, çökelti"
+   },
+   {
+    "w": "moss",
+    "tr": "yosun"
+   },
+   {
+    "w": "metabolism",
+    "tr": "metabolizma"
+   },
+   {
+    "w": "absolute zero",
+    "tr": "mutlak sıfır"
+   },
+   {
+    "w": "exposure",
+    "tr": "maruz kalma"
+   },
+   {
+    "w": "assume",
+    "tr": "varsaymak"
+   },
+   {
+    "w": "rely on",
+    "tr": "dayanmak, güvenmek"
+   },
+   {
+    "w": "refrigeration",
+    "tr": "soğutma, buzdolabında saklama"
+   }
+  ]
+ },
+ {
+  "id": "p094",
+  "title": "Why We Get a Fever",
+  "topic": "tip",
+  "level": 1,
+  "words": 178,
+  "text": "A fever is a rise in body temperature above the normal level of about 37 °C. Many people see it as a problem that must be stopped as quickly as possible. In fact, a fever is usually part of the body's own defence against infection.\n\nWhen bacteria or viruses enter the body, white blood cells release chemical messengers. These messengers travel to a small region of the brain called the hypothalamus, which acts like a thermostat. The hypothalamus then sets a higher target temperature, and the body responds by shivering and by reducing blood flow to the skin. This is why a person with a rising fever often feels cold.\n\nA higher temperature helps the body in two ways. Many germs grow more slowly when they are warmer than normal, and some immune cells work faster at higher temperatures. For this reason, doctors do not always recommend lowering a mild fever in an otherwise healthy adult. A very high fever, however, can be dangerous, especially for babies and elderly people, and it should be treated by a doctor.",
+  "questions": [
+   {
+    "q": "According to the passage, a person whose fever is rising often feels cold because ----.",
+    "options": [
+     "white blood cells travel to the skin and cool it",
+     "germs grow more slowly when the body is warm",
+     "the hypothalamus lowers the normal body temperature of about 37 °C during an infection",
+     "blood flow to the skin increases suddenly",
+     "the body tries to reach a new, higher target temperature"
+    ],
+    "answer": 4,
+    "explain": "Metin hipotalamusun daha yüksek hedef sıcaklık ayarladığını, vücudun titreme ve deriye az kanla cevap verdiğini, 'This is why ... feels cold' diyor.",
+    "anlam": "Soru: Ateşi yükselen kişi neden üşür? Dayanak (2. paragraf): 'Hipotalamus daha yüksek hedef sıcaklık ayarlar; vücut titreyerek cevap verir. Bu yüzden kişi üşür.'",
+    "why": [
+     "Akyuvarlar haberci madde salar; deriye gidip soğutmazlar.",
+     "Bu ateşin yararı; üşüme hissinin nedeni değil.",
+     "Ters bilgi: hipotalamus hedef sıcaklığı yükseltir.",
+     "Ters bilgi: deriye kan akışı azalır.",
+     ""
+    ],
+    "tip": "'This is why' önceki cümleleri sonuca bağlar; nedeni bir önceki cümlede ara."
+   },
+   {
+    "q": "It is stated in the passage that the hypothalamus ----.",
+    "options": [
+     "releases chemical messengers into the blood as soon as bacteria or viruses enter the body",
+     "is a brain region acting like a thermostat",
+     "is a type of immune cell that works faster when warm",
+     "should be treated by a doctor in babies and elderly people",
+     "reduces the temperature of the body during an infection"
+    ],
+    "answer": 1,
+    "explain": "Metin 'a small region of the brain called the hypothalamus, which acts like a thermostat' diyor.",
+    "anlam": "Soru: Hipotalamus hakkında ne söyleniyor? Dayanak (2. paragraf): 'Termostat gibi çalışan küçük bir beyin bölgesi.'",
+    "why": [
+     "Haberci maddeleri akyuvarlar salar.",
+     "",
+     "Hızlı çalışan bağışıklık hücreleri; hipotalamus beyin bölgesi.",
+     "Doktor tedavisi çok yüksek ateş için; hipotalamus için değil.",
+     "Ters bilgi: hedef sıcaklığı yükseltir."
+    ],
+    "tip": "Tanım sorusunda 'called X, which ...' yapısındaki 'which' sonrası bilgi cevaptır."
+   },
+   {
+    "q": "The main point of the passage is that ----.",
+    "options": [
+     "every fever should be stopped as quickly as possible",
+     "babies and elderly people never develop a fever",
+     "doctors no longer treat fevers in any patients",
+     "a fever is usually a useful defence, although very high fevers need treatment",
+     "shivering is the main cause of infections in adults"
+    ],
+    "answer": 3,
+    "explain": "Metin ateşin genelde savunmanın parçası olduğunu ve iki yararını anlatıyor, ama çok yüksek ateşin tehlikeli olduğunu ekliyor.",
+    "anlam": "Soru: Parçanın ana fikri ne? Dayanak (1. ve 3. paragraf): 'Ateş genelde vücudun kendi savunmasının parçasıdır ... Ancak çok yüksek ateş tehlikeli olabilir.'",
+    "why": [
+     "Metin bunu yaygın ama yanlış bir görüş olarak veriyor.",
+     "Metinde böyle bir bilgi yok; sadece yüksek ateşin onlar için tehlikeli olduğu söyleniyor.",
+     "Çok yüksek ateş tedavi edilmeli; 'hiçbir hasta' yanlış.",
+     "",
+     "Titreme ateşin bir tepkisi; enfeksiyon nedeni değil."
+    ],
+    "tip": "'In fact' sonrası yazarın asıl görüşünü verir; 'however' ile gelen sınırlamayı da şıkta ara."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "infection",
+    "tr": "enfeksiyon"
+   },
+   {
+    "w": "white blood cell",
+    "tr": "akyuvar"
+   },
+   {
+    "w": "messenger",
+    "tr": "haberci"
+   },
+   {
+    "w": "thermostat",
+    "tr": "termostat, ısı ayarlayıcı"
+   },
+   {
+    "w": "target",
+    "tr": "hedef"
+   },
+   {
+    "w": "shiver",
+    "tr": "titremek"
+   },
+   {
+    "w": "germ",
+    "tr": "mikrop"
+   },
+   {
+    "w": "mild",
+    "tr": "hafif"
+   }
+  ]
+ },
+ {
+  "id": "p095",
+  "title": "When Corals Turn White",
+  "topic": "ekoloji",
+  "level": 2,
+  "words": 186,
+  "text": "Coral reefs cover less than one per cent of the ocean floor, yet they support about a quarter of all marine species. The corals that build them are animals, but they depend on tiny algae living inside their tissues. The algae use sunlight to produce food, much of which they pass to the coral, and they also give the coral its colour.\n\nThis partnership is sensitive to heat. When the water stays only one or two degrees warmer than usual for several weeks, the algae begin to produce harmful chemicals, and the coral expels them. Without its algae, the coral loses its colour, a process known as bleaching. Bleached corals are not dead, but they are starving, and if the water does not cool down soon, many of them die.\n\nMass bleaching events were almost unknown before the 1980s. Since then, they have become more frequent as ocean temperatures have risen. Reefs need around ten years to recover from a severe event, but the gaps between events are becoming shorter. Scientists are therefore testing ways to help reefs, such as breeding corals that tolerate higher temperatures.",
+  "questions": [
+   {
+    "q": "According to the passage, the algae living inside corals ----.",
+    "options": [
+     "build coral reefs on the ocean floor without the coral",
+     "are animals that feed on the tissues of the coral",
+     "feed the coral and give it colour",
+     "produce harmful chemicals only when the water is cold",
+     "support about a quarter of all marine species even though they cover only a small area"
+    ],
+    "answer": 2,
+    "explain": "Metin 'The algae use sunlight to produce food, much of which they pass to the coral, and they also give the coral its colour' diyor.",
+    "anlam": "Soru: Mercanın içindeki algler ne yapar? Dayanak (1. paragraf): 'Güneşle besin üretir, çoğunu mercana verir ve mercana rengini verir.'",
+    "why": [
+     "Resifleri mercanlar kurar; algler dokunun içinde yaşar.",
+     "Mercanlar hayvandır; algler güneş ışığıyla besin üretir.",
+     "",
+     "Zararlı madde sıcak suda üretilir; soğuk değil.",
+     "Deniz türlerinin dörtte birini destekleyen resiflerdir; algler değil."
+    ],
+    "tip": "Şıktaki öznenin (algae / coral / reef) metindeki özneyle aynı olduğunu kontrol et."
+   },
+   {
+    "q": "It is stated in the passage that bleached corals ----.",
+    "options": [
+     "have already died because of the harmful chemicals",
+     "are starving but not yet dead",
+     "recover their colour within a few weeks in all cases",
+     "were common on reefs long before the 1980s",
+     "expel their algae because the water is too cold"
+    ],
+    "answer": 1,
+    "explain": "Metin 'Bleached corals are not dead, but they are starving, and if the water does not cool down soon, many of them die' diyor.",
+    "anlam": "Soru: Ağarmış mercanlar hakkında ne söyleniyor? Dayanak (2. paragraf): 'Ölü değiller ama açlar; su kısa sürede soğumazsa çoğu ölür.'",
+    "why": [
+     "Ters bilgi: 'Bleached corals are not dead'.",
+     "",
+     "Metin toparlanmanın yaklaşık on yıl sürdüğünü söylüyor.",
+     "Ters bilgi: toplu ağarma 1980 öncesi neredeyse bilinmiyordu.",
+     "Neden sıcak su; soğuk değil."
+    ],
+    "tip": "'not X, but Y' yapısında doğru şık hem X'in olumsuzunu hem Y'yi birlikte verir."
+   },
+   {
+    "q": "Which of the following best expresses the main idea of the passage?",
+    "options": [
+     "Coral reefs cover a very small part of the ocean floor",
+     "Rising sea temperatures break the coral–algae partnership and threaten reefs",
+     "Corals that can tolerate higher temperatures have already been bred to save most of the world's reefs",
+     "Algae are more important to marine life than corals",
+     "Most marine species live far away from coral reefs"
+    ],
+    "answer": 1,
+    "explain": "Metin mercan-alg ortaklığını, ısının bu ortaklığı nasıl bozduğunu ve ağarmanın artmasını anlatıyor. Doğru şık tüm akışı özetliyor.",
+    "anlam": "Soru: Parçanın ana fikri hangisi? Dayanak (2.–3. paragraf): 'Bu ortaklık ısıya duyarlıdır ... sıcaklık arttıkça ağarma sıklaştı.'",
+    "why": [
+     "Bu giriş ayrıntısı; ana fikir değil.",
+     "",
+     "Bu sadece denenen bir yöntem; resifleri kurtardığı söylenmiyor.",
+     "Böyle bir karşılaştırma yapılmıyor.",
+     "Metin resiflerin türlerin dörtte birini desteklediğini söylüyor; bu yorum metinde yok."
+    ],
+    "tip": "Ana fikir genellikle neden (ısınma) + sonuç (tehdit) birlikte verir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "marine",
+    "tr": "denizel, denize ait"
+   },
+   {
+    "w": "algae",
+    "tr": "alg, su yosunu"
+   },
+   {
+    "w": "tissue",
+    "tr": "doku"
+   },
+   {
+    "w": "partnership",
+    "tr": "ortaklık"
+   },
+   {
+    "w": "expel",
+    "tr": "dışarı atmak"
+   },
+   {
+    "w": "bleaching",
+    "tr": "ağarma, beyazlama"
+   },
+   {
+    "w": "starve",
+    "tr": "açlık çekmek"
+   },
+   {
+    "w": "tolerate",
+    "tr": "dayanmak, katlanmak"
+   }
+  ]
+ },
+ {
+  "id": "p096",
+  "title": "Zero Resistance",
+  "topic": "fizik",
+  "level": 3,
+  "words": 192,
+  "text": "In an ordinary copper wire, moving electrons constantly collide with vibrating atoms, and part of the electrical energy is lost as heat. In 1911, the Dutch physicist Heike Kamerlingh Onnes discovered that mercury cooled to about minus 269 °C loses its electrical resistance completely. A current started in a loop of such a superconductor can, in principle, flow for years without any power supply.\n\nSuperconductors have another striking property: they push magnetic fields out of their interior. A small magnet placed above a cooled superconductor therefore floats in the air. This effect, together with the ability to carry very large currents, makes superconductors ideal for the powerful electromagnets in medical scanners and particle accelerators.\n\nThe main obstacle to wider use is the need for extreme cold. Early superconductors had to be cooled with liquid helium, which is expensive and scarce. In 1986, researchers found ceramic materials that become superconducting at higher temperatures, cold enough to be reached with cheap liquid nitrogen. These ceramics, however, are brittle and difficult to form into wires. A material that superconducts at room temperature would transform power grids, but despite many claims, none has yet been confirmed.",
+  "questions": [
+   {
+    "q": "According to the passage, the ceramic materials discovered in 1986 ----.",
+    "options": [
+     "become superconducting at normal room temperature",
+     "are easy to form into long and flexible wires",
+     "must be cooled with expensive and scarce liquid helium",
+     "were discovered in 1911 by Heike Kamerlingh Onnes, who cooled them with liquid helium",
+     "can be cooled with liquid nitrogen"
+    ],
+    "answer": 4,
+    "explain": "Metin seramiklerin 'cold enough to be reached with cheap liquid nitrogen' sıcaklıkta süperiletken olduğunu söylüyor.",
+    "anlam": "Soru: 1986'da bulunan seramikler hakkında ne doğru? Dayanak (3. paragraf): 'Ucuz sıvı azotla ulaşılabilecek sıcaklıklarda süperiletken olurlar.'",
+    "why": [
+     "Oda sıcaklığında süperiletken hiçbir malzeme henüz doğrulanmadı.",
+     "Ters bilgi: gevrek ve tel yapımı zor.",
+     "Helyum eski süperiletkenler için; seramikler azotla yetinir.",
+     "Onnes 1911'de cıvayla çalıştı; seramikler 1986'da bulundu ve azotla soğutulabiliyor.",
+     ""
+    ],
+    "tip": "Yıllar ve kişiler karışık verilmişse her bilgiyi kendi yılıyla eşle."
+   },
+   {
+    "q": "It is stated in the passage that a magnet floats above a cooled superconductor because ----.",
+    "options": [
+     "the superconductor carries a current without a power supply",
+     "electrons collide with vibrating atoms and produce heat",
+     "liquid helium is lighter than the air around the magnet",
+     "ceramic materials are brittle and difficult to shape",
+     "superconductors push magnetic fields out of their interior"
+    ],
+    "answer": 4,
+    "explain": "Metin 'they push magnetic fields out of their interior. A small magnet ... therefore floats' diyor. 'therefore' nedeni öncekine bağlıyor.",
+    "anlam": "Soru: Mıknatıs neden süperiletkenin üstünde havada durur? Dayanak (2. paragraf): 'Manyetik alanı içlerinden dışarı iterler; bu yüzden mıknatıs havada durur.'",
+    "why": [
+     "Akımın sürmesi ayrı bir özellik; havada durmanın nedeni olarak verilmiyor.",
+     "Bu sıradan bakır tel için; süperiletkende olmaz.",
+     "Metinde böyle bir neden yok.",
+     "Gevreklik bir engel; havada durmayla ilgisi yok.",
+     ""
+    ],
+    "tip": "'therefore' görünce nedeni bir önceki cümlede ara."
+   },
+   {
+    "q": "The passage is mainly about ----.",
+    "options": [
+     "the life and career of the physicist Kamerlingh Onnes",
+     "the properties of superconductors and the difficulties that limit their use",
+     "why copper is the best material for electrical wires",
+     "the recent discovery of materials that are confirmed to superconduct at normal room temperature",
+     "the design of medical scanners and particle accelerators"
+    ],
+    "answer": 1,
+    "explain": "Metin süperiletkenliğin özelliklerini (sıfır direnç, manyetik alanı itme) ve soğutma, gevreklik gibi engelleri anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne hakkında? Dayanak (tüm metin): 1–2. paragraf özellikler, 3. paragraf engeller.",
+    "why": [
+     "Onnes sadece keşfi için anılıyor.",
+     "",
+     "Bakır sadece karşılaştırma için anılıyor.",
+     "Ters bilgi: hiçbiri henüz doğrulanmadı.",
+     "Bunlar kullanım örneği; tasarımları anlatılmıyor."
+    ],
+    "tip": "'The main obstacle' gibi ifadeler metnin ikinci ana bölümünü gösterir; ana fikir iki bölümü de kapsar."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "collide",
+    "tr": "çarpışmak"
+   },
+   {
+    "w": "resistance",
+    "tr": "direnç"
+   },
+   {
+    "w": "in principle",
+    "tr": "ilke olarak, kuramsal olarak"
+   },
+   {
+    "w": "striking",
+    "tr": "çarpıcı"
+   },
+   {
+    "w": "interior",
+    "tr": "iç kısım"
+   },
+   {
+    "w": "accelerator",
+    "tr": "hızlandırıcı"
+   },
+   {
+    "w": "obstacle",
+    "tr": "engel"
+   },
+   {
+    "w": "scarce",
+    "tr": "kıt, az bulunan"
+   },
+   {
+    "w": "brittle",
+    "tr": "gevrek, kırılgan"
+   },
+   {
+    "w": "claim",
+    "tr": "iddia"
+   }
+  ]
+ },
+ {
+  "id": "p097",
+  "title": "Cleaning the Exhaust",
+  "topic": "kimya",
+  "level": 1,
+  "words": 183,
+  "text": "When petrol burns in a car engine, it produces not only carbon dioxide and water but also several harmful gases. These include carbon monoxide, which is poisonous, unburnt fuel and nitrogen oxides, which help to form smog. Since the 1970s, most new cars have been fitted with a device called a catalytic converter to reduce these pollutants.\n\nA catalytic converter is a metal box in the exhaust pipe. Inside it there is a ceramic block with thousands of tiny channels, coated with small amounts of precious metals such as platinum and rhodium. These metals act as catalysts: they speed up chemical reactions without being used up themselves. As the hot exhaust gases pass through the channels, carbon monoxide and unburnt fuel are changed into carbon dioxide and water, while nitrogen oxides are turned back into nitrogen.\n\nCatalytic converters work well only when they are hot, so most pollution from modern cars is produced in the first few minutes after a cold start. The precious metals inside them are also valuable, and in some cities thieves have begun to steal converters from parked cars.",
+  "questions": [
+   {
+    "q": "According to the passage, the precious metals in a catalytic converter ----.",
+    "options": [
+     "are used up quickly and must be replaced every year",
+     "change carbon dioxide and water into carbon monoxide",
+     "speed up reactions without being used up",
+     "form the ceramic block with thousands of tiny channels",
+     "work most effectively during the first few minutes after the car has been started from cold"
+    ],
+    "answer": 2,
+    "explain": "Metin 'These metals act as catalysts: they speed up chemical reactions without being used up themselves' diyor.",
+    "anlam": "Soru: Konvertördeki değerli metaller ne yapar? Dayanak (2. paragraf): 'Kendileri tükenmeden kimyasal tepkimeleri hızlandırırlar.'",
+    "why": [
+     "Ters bilgi: 'without being used up themselves'.",
+     "Ters yön: karbonmonoksit karbondioksit ve suya dönüşüyor.",
+     "",
+     "Seramik blok ayrı; metaller onun üstüne kaplanıyor.",
+     "Ters bilgi: soğukken iyi çalışmaz; kirliliğin çoğu o sırada olur."
+    ],
+    "tip": "İki nokta (:) sonrası açıklama, önceki kavramın tanımıdır."
+   },
+   {
+    "q": "It is stated in the passage that most pollution from modern cars ----.",
+    "options": [
+     "occurs in the first minutes after a cold start",
+     "comes from thieves who steal catalytic converters",
+     "consists mainly of pure nitrogen and water",
+     "is produced when the converter is too hot",
+     "was much lower before the 1970s, when cars were not yet fitted with catalytic converters"
+    ],
+    "answer": 0,
+    "explain": "Metin 'most pollution from modern cars is produced in the first few minutes after a cold start' diyor.",
+    "anlam": "Soru: Modern arabaların kirliliğinin çoğu ne zaman oluşur? Dayanak (3. paragraf): 'Soğuk çalıştırmadan sonraki ilk birkaç dakikada.'",
+    "why": [
+     "",
+     "Hırsızlık ayrı bir sorun; kirlilik kaynağı değil.",
+     "Azot ve su temizlenmiş gazın ürünü; kirlilik değil.",
+     "Ters bilgi: sıcakken iyi çalışır.",
+     "Metinde 1970 öncesiyle böyle bir karşılaştırma yapılmıyor."
+    ],
+    "tip": "'in the first few minutes after a cold start' ifadesini şıkta kısaltılmış biçimde ara."
+   },
+   {
+    "q": "The primary purpose of the passage is to ----.",
+    "options": [
+     "compare the prices of platinum and rhodium",
+     "explain how catalytic converters reduce harmful gases from car engines",
+     "warn drivers about converter theft in large cities",
+     "describe how petrol is produced from crude oil",
+     "argue that cars should not be started when cold"
+    ],
+    "answer": 1,
+    "explain": "Metin zararlı gazları, konvertörün yapısını ve nasıl çalıştığını anlatıyor; amacı açıklamaktır.",
+    "anlam": "Soru: Parçanın temel amacı ne? Dayanak (tüm metin): 'Kirleticileri azaltmak için ... catalytic converter' ve 2. paragraftaki işleyiş.",
+    "why": [
+     "Metaller sadece örnek olarak anılıyor; fiyat karşılaştırması yok.",
+     "",
+     "Hırsızlık son cümlede küçük bir ayrıntı.",
+     "Benzinin üretiminden hiç söz edilmiyor.",
+     "Metin bir öneri yapmıyor; sadece soğuk çalıştırmanın etkisini anlatıyor."
+    ],
+    "tip": "Bilgi veren metinde amaç 'explain / describe' ile başlar; 'argue / warn' şıklarına dikkat."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "exhaust",
+    "tr": "egzoz"
+   },
+   {
+    "w": "poisonous",
+    "tr": "zehirli"
+   },
+   {
+    "w": "pollutant",
+    "tr": "kirletici"
+   },
+   {
+    "w": "fit with",
+    "tr": "ile donatmak"
+   },
+   {
+    "w": "precious metal",
+    "tr": "değerli metal"
+   },
+   {
+    "w": "catalyst",
+    "tr": "katalizör"
+   },
+   {
+    "w": "be used up",
+    "tr": "tükenmek"
+   },
+   {
+    "w": "cold start",
+    "tr": "soğuk çalıştırma"
+   }
+  ]
+ },
+ {
+  "id": "p098",
+  "title": "Fixing Errors Automatically",
+  "topic": "bilgisayar",
+  "level": 2,
+  "words": 189,
+  "text": "Whenever data is sent over a network or stored on a disc, some bits may be changed by electrical noise, scratches or radiation. A single wrong bit can turn a number into a different number or make a file impossible to open. Engineers therefore add extra bits to the data, which allow errors to be detected and often corrected.\n\nThe simplest method is the parity bit. A sender counts the number of ones in a group of bits and adds one more bit so that the total is always even. If the receiver finds an odd total, it knows that something has gone wrong. A parity bit, however, cannot show which bit is wrong, and it fails if two bits change at the same time.\n\nMore advanced codes, first developed by Richard Hamming in 1950, use several check bits arranged so that the position of a wrong bit can be calculated and repaired automatically. Similar ideas protect QR codes, which can still be read when part of the pattern is dirty or torn, and they allow space probes billions of kilometres away to send clear images back to Earth.",
+  "questions": [
+   {
+    "q": "According to the passage, a receiver that finds an odd number of ones in a group with a parity bit ----.",
+    "options": [
+     "can calculate the position of the wrong bit and repair it",
+     "knows that exactly two bits have changed at once",
+     "adds one more bit to make the total even again",
+     "can still read the data if the pattern is torn",
+     "detects an error but cannot locate it"
+    ],
+    "answer": 4,
+    "explain": "Metin tek sayı bulunca alıcının bir şeyin ters gittiğini anladığını, ama 'cannot show which bit is wrong' dediğini söylüyor.",
+    "anlam": "Soru: Tek sayıda bir bulan alıcı ne anlar? Dayanak (2. paragraf): 'Bir şeyin ters gittiğini bilir ... ama eşlik biti hangi bitin yanlış olduğunu gösteremez.'",
+    "why": [
+     "Bu Hamming kodlarının özelliği; eşlik biti yeri gösteremez.",
+     "İki bit değişirse eşlik biti hatayı fark edemez.",
+     "Biti gönderen ekler; alıcı denetler.",
+     "Bu QR kodlarla ilgili; eşlik bitiyle değil.",
+     ""
+    ],
+    "tip": "Bir paragrafta iki yöntem varsa özelliklerin hangi yönteme ait olduğunu ayır."
+   },
+   {
+    "q": "It is stated in the passage that the codes developed by Richard Hamming ----.",
+    "options": [
+     "use a single parity bit in each group so that the total number of ones always remains even",
+     "allow wrong bits to be located and corrected",
+     "fail whenever two bits change at the same time",
+     "were first designed to read dirty or torn QR codes",
+     "can only detect errors without correcting them"
+    ],
+    "answer": 1,
+    "explain": "Metin Hamming kodlarının 'several check bits arranged so that the position of a wrong bit can be calculated and repaired automatically' olduğunu söylüyor.",
+    "anlam": "Soru: Hamming'in kodları hakkında ne söyleniyor? Dayanak (3. paragraf): 'Yanlış bitin yeri hesaplanıp otomatik onarılabilecek şekilde birkaç denetim biti kullanır.'",
+    "why": [
+     "Tek eşlik biti en basit yöntem; Hamming birkaç denetim biti kullanır.",
+     "",
+     "Bu eşlik bitinin zayıflığı olarak veriliyor.",
+     "QR kodlar benzer fikirlerin sonraki bir kullanımı; ilk amaç olarak verilmiyor.",
+     "Ters bilgi: hatayı otomatik onarabilir."
+    ],
+    "tip": "'More advanced' bir yöntemi öncekinden ayırır; öncekinin zayıflığını yeni yönteme yükleyen şıkkı ele."
+   },
+   {
+    "q": "The passage mainly deals with ----.",
+    "options": [
+     "the life and work of the scientist Richard Hamming",
+     "how space probes billions of kilometres away take clear images of distant planets and moons",
+     "methods that add extra bits so that data errors can be found and corrected",
+     "the reasons why QR codes become dirty or torn",
+     "why networks should not be used to store files"
+    ],
+    "answer": 2,
+    "explain": "Metin hata kaynaklarını, eşlik bitini ve Hamming kodlarını anlatıyor; hepsi 'ek bitlerle hatayı bulma ve düzeltme' konusudur.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (1. paragraf): 'Mühendisler veriye ek bit ekler; bunlar hataların bulunmasını ve çoğu zaman düzeltilmesini sağlar.'",
+    "why": [
+     "Hamming sadece bir yöntemin geliştiricisi olarak anılıyor.",
+     "Uzay sondaları sadece kullanım örneği.",
+     "",
+     "QR kodlar örnek; kirlenme nedenleri anlatılmıyor.",
+     "Metinde böyle bir öneri yok."
+    ],
+    "tip": "Birinci paragrafın son cümlesi çoğu zaman metnin konusunu verir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "bit",
+    "tr": "bit (ikili sayı basamağı)"
+   },
+   {
+    "w": "noise",
+    "tr": "gürültü, parazit"
+   },
+   {
+    "w": "scratch",
+    "tr": "çizik"
+   },
+   {
+    "w": "detect",
+    "tr": "saptamak, fark etmek"
+   },
+   {
+    "w": "parity",
+    "tr": "eşlik (tek-çift denetimi)"
+   },
+   {
+    "w": "odd",
+    "tr": "tek (sayı)"
+   },
+   {
+    "w": "arrange",
+    "tr": "düzenlemek, yerleştirmek"
+   },
+   {
+    "w": "probe",
+    "tr": "sonda, uzay aracı"
+   }
+  ]
+ },
+ {
+  "id": "p099",
+  "title": "When the Ground Turns to Liquid",
+  "topic": "yerbilimi",
+  "level": 3,
+  "words": 193,
+  "text": "During strong earthquakes, buildings sometimes tilt or sink even though their walls remain undamaged. The cause is often not the shaking itself but a process called soil liquefaction, in which solid ground temporarily behaves like a thick liquid.\n\nLiquefaction occurs mainly in loose, sandy soils that are saturated with water, such as those found near rivers, coasts and reclaimed land. Normally, the sand grains touch one another, and friction between them allows the soil to carry the weight of buildings. When an earthquake shakes the ground, the grains try to settle into a tighter arrangement. Because the water between them cannot escape quickly enough, its pressure rises until the grains are no longer pressed together. At that moment the soil loses most of its strength, and heavy structures sink while light ones, such as buried tanks, may float upwards.\n\nEngineers cannot prevent earthquakes, but they can reduce this risk. Common methods include compacting loose sand with heavy vibrating machines, installing drains that let water escape during shaking, and supporting buildings on deep piles that reach firmer layers. Mapping areas prone to liquefaction also helps planners decide where new buildings should not be placed.",
+  "questions": [
+   {
+    "q": "According to the passage, during liquefaction the soil loses its strength because ----.",
+    "options": [
+     "the walls of buildings are damaged by the shaking",
+     "the sand grains move apart and water quickly escapes",
+     "buried tanks float upwards and push the soil aside",
+     "rising water pressure stops the sand grains from pressing against each other",
+     "friction between the grains suddenly becomes stronger"
+    ],
+    "answer": 3,
+    "explain": "Metin suyun kaçamadığını, basıncın 'taneler artık birbirine bastırılmayana kadar' arttığını ve o anda zeminin dayanımını kaybettiğini söylüyor.",
+    "anlam": "Soru: Sıvılaşmada zemin neden dayanımını kaybeder? Dayanak (2. paragraf): 'Su yeterince hızlı kaçamaz, basıncı taneler birbirine bastırılmayana kadar artar.'",
+    "why": [
+     "Metin duvarların sağlam kalabildiğini söylüyor.",
+     "Ters bilgi: su yeterince hızlı kaçamıyor.",
+     "Tankların yükselmesi sonuç; neden değil.",
+     "",
+     "Ters bilgi: taneler birbirine bastırmayınca sürtünme kaybolur."
+    ],
+    "tip": "Süreç anlatan paragrafta neden-sonuç zincirini sırayla izle; sonucu neden diye veren şıkkı ele."
+   },
+   {
+    "q": "It is stated in the passage that deep piles are used to ----.",
+    "options": [
+     "let the water between the sand grains escape quickly while the ground is shaking",
+     "carry building loads down to firmer layers",
+     "compact loose sand with heavy vibration",
+     "map areas where liquefaction is likely to occur",
+     "make light structures such as tanks float"
+    ],
+    "answer": 1,
+    "explain": "Metin 'supporting buildings on deep piles that reach firmer layers' diyor.",
+    "anlam": "Soru: Derin kazıklar ne için kullanılır? Dayanak (3. paragraf): 'Binaları daha sağlam katmanlara ulaşan derin kazıklara oturtmak.'",
+    "why": [
+     "Bu drenlerin işi.",
+     "",
+     "Bu titreşimli makinelerin işi.",
+     "Haritalama ayrı bir önlem; kazıkla ilgisi yok.",
+     "Tankların yükselmesi bir zarar; kazığın amacı değil."
+    ],
+    "tip": "Sayılan önlemlerde her yöntemi kendi işleviyle eşle; şıklar işlevleri karıştırır."
+   },
+   {
+    "q": "The author's main purpose in the passage is to ----.",
+    "options": [
+     "show that earthquakes can be prevented by engineers",
+     "describe the history of building on reclaimed land",
+     "argue that no new buildings should be allowed on reclaimed land or near rivers and coasts",
+     "explain why some soils fail in earthquakes and how this risk can be reduced",
+     "compare earthquakes in sandy and rocky regions"
+    ],
+    "answer": 3,
+    "explain": "Metin sıvılaşmanın nedenini (2. paragraf) ve riski azaltma yollarını (3. paragraf) anlatıyor.",
+    "anlam": "Soru: Yazarın temel amacı ne? Dayanak (tüm metin): 2. paragraf neden, 3. paragraf önlemler.",
+    "why": [
+     "Ters bilgi: 'Engineers cannot prevent earthquakes'.",
+     "Kazanılmış arazi sadece sıvılaşmanın olduğu yer örneği.",
+     "Metin haritalamanın yardımcı olduğunu söylüyor; genel yasak önermiyor.",
+     "",
+     "Kayalık bölgelerden hiç söz edilmiyor."
+    ],
+    "tip": "Amaç sorusunda metnin her paragrafının işini düşün: neden + çözüm."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "tilt",
+    "tr": "yana yatmak, eğilmek"
+   },
+   {
+    "w": "liquefaction",
+    "tr": "sıvılaşma"
+   },
+   {
+    "w": "temporarily",
+    "tr": "geçici olarak"
+   },
+   {
+    "w": "saturated",
+    "tr": "doymuş"
+   },
+   {
+    "w": "reclaimed land",
+    "tr": "denizden/bataklıktan kazanılmış arazi"
+   },
+   {
+    "w": "friction",
+    "tr": "sürtünme"
+   },
+   {
+    "w": "compact",
+    "tr": "sıkıştırmak"
+   },
+   {
+    "w": "pile",
+    "tr": "kazık"
+   },
+   {
+    "w": "prone to",
+    "tr": "eğilimli, -e açık"
+   }
+  ]
+ },
+ {
+  "id": "p100",
+  "title": "Trading Speed for Force",
+  "topic": "makine",
+  "level": 1,
+  "words": 187,
+  "text": "Gears are toothed wheels that pass motion from one shaft to another. They are found in clocks, bicycles, washing machines and car gearboxes, and they have been used for more than two thousand years. Their main job is not to create power but to change the balance between speed and turning force, which engineers call torque.\n\nWhen a small gear drives a larger one, the larger gear turns more slowly but with greater torque. If the large gear has three times as many teeth as the small one, it turns at one third of the speed but with about three times the force. This is why a cyclist climbing a steep hill chooses a low gear: the pedals turn easily, although the bicycle moves slowly. When the small gear is driven by the large one, the opposite happens, and speed increases while torque falls.\n\nNo gear system is perfect. Friction between the teeth turns a small part of the energy into heat and noise, so the output power is always slightly less than the input. For this reason, gears are carefully shaped and usually kept in oil.",
+  "questions": [
+   {
+    "q": "According to the passage, when a small gear drives a larger one, the larger gear ----.",
+    "options": [
+     "turns faster and with greater torque",
+     "creates extra power from the friction between the teeth",
+     "turns at three times the speed of the small gear",
+     "turns more slowly but with greater torque",
+     "loses all of its torque because of heat and noise"
+    ],
+    "answer": 3,
+    "explain": "Metin 'When a small gear drives a larger one, the larger gear turns more slowly but with greater torque' diyor.",
+    "anlam": "Soru: Küçük dişli büyüğü döndürünce büyük dişli nasıl döner? Dayanak (2. paragraf): 'Daha yavaş ama daha büyük torkla.'",
+    "why": [
+     "Hız artmaz; büyük dişli yavaşlar.",
+     "Dişliler güç üretmez; sürtünme enerji kaybettirir.",
+     "Ters bilgi: üç kat diş varsa üçte bir hızla döner.",
+     "",
+     "Isı ve gürültü küçük bir kayıp; torkun tamamı kaybolmaz."
+    ],
+    "tip": "Ters ilişki (hız azalır, tork artar) sorularında iki yönü birden kontrol et."
+   },
+   {
+    "q": "It is stated in the passage that gears are usually kept in oil because ----.",
+    "options": [
+     "oil increases the number of teeth on each gear",
+     "gears have been used for more than two thousand years",
+     "the output power is always greater than the input",
+     "friction turns some energy into heat",
+     "cyclists need low gears when climbing steep hills"
+    ],
+    "answer": 3,
+    "explain": "Metin sürtünmenin enerjinin bir kısmını ısı ve gürültüye çevirdiğini, 'For this reason, gears are carefully shaped and usually kept in oil' diyor.",
+    "anlam": "Soru: Dişliler neden genelde yağ içinde tutulur? Dayanak (3. paragraf): 'Dişler arası sürtünme enerjinin bir kısmını ısıya çevirir. Bu yüzden ... yağda tutulur.'",
+    "why": [
+     "Yağın diş sayısıyla ilgisi yok.",
+     "Tarih bilgisi; yağın nedeni değil.",
+     "Ters bilgi: çıkış gücü girişten biraz azdır.",
+     "",
+     "Bisiklet örneği hız-tork dengesi için; yağla ilgisi yok."
+    ],
+    "tip": "'For this reason' sonucu verir; neden hemen önceki cümlededir."
+   },
+   {
+    "q": "Which of the following best describes the main idea of the passage?",
+    "options": [
+     "Gears create power that engines alone cannot produce",
+     "Gears change the balance between speed and torque but lose a little energy",
+     "Bicycles are the most common machines that use gears",
+     "Friction makes gear systems useless in modern machines",
+     "Clocks were the first machines to use gears, more than two thousand years ago, long before bicycles"
+    ],
+    "answer": 1,
+    "explain": "Metin dişlinin asıl işinin hız ile tork arasındaki dengeyi değiştirmek olduğunu ve sürtünmeyle küçük kayıp olduğunu anlatıyor.",
+    "anlam": "Soru: Parçanın ana fikri hangisi? Dayanak (1. ve 3. paragraf): 'Asıl işi güç üretmek değil hız-tork dengesini değiştirmek ... Hiçbir dişli sistemi kusursuz değil.'",
+    "why": [
+     "Ters bilgi: 'not to create power'.",
+     "",
+     "Bisiklet sadece bir örnek.",
+     "Sürtünme küçük bir kayıp; dişliler işe yaramaz değil.",
+     "Metinde ilk kullanımın saat olduğu söylenmiyor."
+    ],
+    "tip": "'Their main job is ...' gibi cümleler ana fikri doğrudan söyler."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "toothed",
+    "tr": "dişli"
+   },
+   {
+    "w": "shaft",
+    "tr": "mil"
+   },
+   {
+    "w": "gearbox",
+    "tr": "şanzıman, dişli kutusu"
+   },
+   {
+    "w": "torque",
+    "tr": "tork, döndürme momenti"
+   },
+   {
+    "w": "drive",
+    "tr": "tahrik etmek, döndürmek"
+   },
+   {
+    "w": "steep",
+    "tr": "dik"
+   },
+   {
+    "w": "output",
+    "tr": "çıkış, çıktı"
+   },
+   {
+    "w": "input",
+    "tr": "giriş, girdi"
+   }
+  ]
+ },
+ {
+  "id": "p101",
+  "title": "Concrete That Repairs Itself",
+  "topic": "malzeme",
+  "level": 2,
+  "words": 181,
+  "text": "Concrete is the most widely used building material in the world, but it has a common weakness: it cracks. Small cracks are not dangerous in themselves, yet they allow water and salts to reach the steel bars inside, which then begin to corrode. Repairing such damage on bridges and tunnels is slow and expensive.\n\nOne promising solution is self-healing concrete. In one version, developed in the Netherlands, the concrete mix contains spores of special bacteria together with a food source such as calcium lactate. The spores can remain inactive inside the hard concrete for many years. When a crack forms and water enters, they wake up, feed and produce limestone, which gradually fills the gap. Cracks up to about one millimetre wide can be sealed in this way within a few weeks.\n\nSelf-healing concrete currently costs considerably more than ordinary concrete, so it is mainly being tested in structures that are hard to reach, such as underground tanks and tunnel walls. Supporters argue that the higher initial price may be repaid by lower maintenance costs over the life of a structure.",
+  "questions": [
+   {
+    "q": "According to the passage, the bacteria in self-healing concrete ----.",
+    "options": [
+     "prevent any cracks from forming in the concrete",
+     "cause the steel bars inside the concrete to corrode",
+     "must be added to the concrete again every few weeks",
+     "can seal cracks of any width within a few days, even in the hardest kinds of concrete",
+     "wake up in water-filled cracks and make limestone"
+    ],
+    "answer": 4,
+    "explain": "Metin 'When a crack forms and water enters, they wake up, feed and produce limestone' diyor.",
+    "anlam": "Soru: Kendini onaran betondaki bakteriler ne yapar? Dayanak (2. paragraf): 'Çatlak oluşup su girince uyanır, beslenir ve kireçtaşı üretirler.'",
+    "why": [
+     "Çatlak yine oluşur; bakteriler sonradan kapatır.",
+     "Paslanmaya su ve tuz yol açar; bakteriler değil.",
+     "Sporlar yıllarca bekleyebilir; yeniden ekleme yok.",
+     "Yaklaşık 1 mm'ye kadar ve birkaç haftada; 'her genişlik' ve 'birkaç gün' yanlış.",
+     ""
+    ],
+    "tip": "Sayı ve süre veren şıklarda (1 mm, birkaç hafta) metindeki değeri tek tek kontrol et."
+   },
+   {
+    "q": "It is stated in the passage that self-healing concrete is mainly being tested in ----.",
+    "options": [
+     "ordinary houses because it is cheaper than normal concrete",
+     "laboratories in the Netherlands only",
+     "bridges that have already collapsed",
+     "structures that are difficult to reach for repairs",
+     "buildings without any steel bars inside"
+    ],
+    "answer": 3,
+    "explain": "Metin 'it is mainly being tested in structures that are hard to reach, such as underground tanks and tunnel walls' diyor.",
+    "anlam": "Soru: Kendini onaran beton esas olarak nerede deneniyor? Dayanak (3. paragraf): 'Yeraltı tankları ve tünel duvarları gibi ulaşılması zor yapılarda.'",
+    "why": [
+     "Ters bilgi: sıradan betondan çok daha pahalı.",
+     "Hollanda geliştirildiği yer; test yeri olarak verilmiyor.",
+     "Metinde yıkılan köprülerden söz yok.",
+     "",
+     "Bu bilgi metinde geçmiyor."
+    ],
+    "tip": "'hard to reach' = 'difficult to reach': eş anlamlı ifadeyi yakala."
+   },
+   {
+    "q": "The passage is mainly about ----.",
+    "options": [
+     "the reasons why concrete is the most popular material",
+     "the high cost of repairing bridges in the Netherlands",
+     "how steel bars inside concrete can be made resistant to water and salts on bridges",
+     "a concrete that uses bacteria to heal its cracks",
+     "the life cycle of bacteria living in limestone"
+    ],
+    "answer": 3,
+    "explain": "Metin betonun çatlama sorununu, bakterili çözümü ve maliyetini anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne hakkında? Dayanak (2. paragraf): 'Umut verici bir çözüm kendini onaran betondur.'",
+    "why": [
+     "Bu sadece giriş cümlesi.",
+     "Onarım maliyeti genel bir sorun; Hollanda'ya özgü değil.",
+     "Çelik çubuklar sadece çatlakların zararını anlatmak için anılıyor.",
+     "",
+     "Bakterilerin yaşam döngüsü konu değil; betondaki işlevi konu."
+    ],
+    "tip": "'One promising solution is ...' cümlesi metnin asıl konusunu tanıtır."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "crack",
+    "tr": "çatlamak; çatlak"
+   },
+   {
+    "w": "corrode",
+    "tr": "paslanmak, aşınmak"
+   },
+   {
+    "w": "spore",
+    "tr": "spor"
+   },
+   {
+    "w": "inactive",
+    "tr": "etkin olmayan, uyuyan"
+   },
+   {
+    "w": "limestone",
+    "tr": "kireçtaşı"
+   },
+   {
+    "w": "seal",
+    "tr": "kapatmak, mühürlemek"
+   },
+   {
+    "w": "initial",
+    "tr": "ilk, başlangıçtaki"
+   },
+   {
+    "w": "maintenance",
+    "tr": "bakım"
+   }
+  ]
+ },
+ {
+  "id": "p102",
+  "title": "The Cost of Green Hydrogen",
+  "topic": "enerji",
+  "level": 3,
+  "words": 188,
+  "text": "Hydrogen is often presented as the fuel of the future, because burning it produces only water. Almost all hydrogen made today, however, comes from natural gas, in a process that releases large amounts of carbon dioxide. So-called green hydrogen is produced instead by electrolysis, in which an electric current splits water into hydrogen and oxygen, using electricity from renewable sources.\n\nThe difficulty lies in energy losses. Modern electrolysers convert only about 70 per cent of the electrical energy they use into chemical energy stored in hydrogen. Further energy is needed to compress or cool the gas for storage, and when hydrogen is turned back into electricity in a fuel cell, roughly half of the remaining energy is lost again. As a result, a car running on green hydrogen needs about three times as much renewable electricity per kilometre as a battery car.\n\nFor this reason, many energy experts argue that green hydrogen should be reserved for uses where batteries and direct electricity are impractical. These include steelmaking, where hydrogen can replace coal in removing oxygen from iron ore, the production of fertilisers, and possibly long-distance shipping and aviation.",
+  "questions": [
+   {
+    "q": "According to the passage, most of the hydrogen produced today ----.",
+    "options": [
+     "is produced by electrolysis, which splits water into hydrogen and oxygen using renewable electricity",
+     "comes from natural gas, causing carbon emissions",
+     "produces only water when it is made in factories",
+     "is used to replace coal in the production of steel",
+     "loses about 70 per cent of its energy in fuel cells"
+    ],
+    "answer": 1,
+    "explain": "Metin 'Almost all hydrogen made today ... comes from natural gas, in a process that releases large amounts of carbon dioxide' diyor.",
+    "anlam": "Soru: Bugün üretilen hidrojenin çoğu hakkında ne doğru? Dayanak (1. paragraf): 'Doğal gazdan, büyük miktarda karbondioksit salan bir süreçle elde edilir.'",
+    "why": [
+     "Bu yeşil hidrojen; bugün üretilenin çoğu değil.",
+     "",
+     "Sadece su, hidrojenin YAKILMASIYLA oluşur; üretimiyle değil.",
+     "Çelikte kullanım uzmanların önerisi; bugünkü durum değil.",
+     "%70 elektrolizörün verimi; yakıt hücresinde yaklaşık yarısı kaybolur."
+    ],
+    "tip": "'however' bir iddiayı düzeltir; doğru bilgi çoğu zaman 'however' cümlesindedir."
+   },
+   {
+    "q": "It is stated in the passage that a car running on green hydrogen ----.",
+    "options": [
+     "is three times as efficient as a car powered by batteries",
+     "loses no energy at all when its hydrogen is compressed or cooled for storage on board the vehicle",
+     "needs about three times as much electricity per kilometre as a battery car",
+     "is the best use of green hydrogen according to most experts",
+     "converts about 70 per cent of its fuel into electricity"
+    ],
+    "answer": 2,
+    "explain": "Metin 'a car running on green hydrogen needs about three times as much renewable electricity per kilometre as a battery car' diyor.",
+    "anlam": "Soru: Yeşil hidrojenle çalışan araba hakkında ne söyleniyor? Dayanak (2. paragraf): 'Pilli arabaya göre kilometre başına yaklaşık üç kat yenilenebilir elektrik ister.'",
+    "why": [
+     "Ters bilgi: üç kat DAHA FAZLA elektrik ister.",
+     "Sıkıştırma için de ek enerji gerekiyor.",
+     "",
+     "Uzmanlar yeşil hidrojeni pilin işe yaramadığı alanlara ayırmayı öneriyor.",
+     "%70 elektrolizörün verimi; arabanın değil."
+    ],
+    "tip": "'three times as much' karşılaştırmasında kimin daha fazla kullandığını ters çeviren şıkkı ele."
+   },
+   {
+    "q": "The author's main point is that green hydrogen ----.",
+    "options": [
+     "loses too much energy to be used everywhere and should be kept for special uses",
+     "will soon replace batteries in most private cars",
+     "produces more carbon dioxide than hydrogen from natural gas",
+     "cannot be used in steelmaking or fertiliser production",
+     "is cheaper to store than any other form of energy"
+    ],
+    "answer": 0,
+    "explain": "Metin enerji kayıplarını sayıp 'green hydrogen should be reserved for uses where batteries and direct electricity are impractical' sonucuna varıyor.",
+    "anlam": "Soru: Yazarın ana fikri ne? Dayanak (3. paragraf): 'Yeşil hidrojen pillerin ve doğrudan elektriğin elverişsiz olduğu kullanımlara ayrılmalı.'",
+    "why": [
+     "",
+     "Ters bilgi: araba için verimsiz olduğu gösteriliyor.",
+     "Ters bilgi: doğal gazlı üretim CO2 salar; yeşil hidrojen yenilenebilir elektrikle yapılır.",
+     "Ters bilgi: bunlar önerilen kullanım alanları.",
+     "Depolama ek enerji istiyor; ucuzluktan söz yok."
+    ],
+    "tip": "'For this reason, ... argue that ...' cümlesi yazarın vardığı sonuçtur; ana fikir orada."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "present as",
+    "tr": "olarak sunmak"
+   },
+   {
+    "w": "release",
+    "tr": "salmak"
+   },
+   {
+    "w": "electrolysis",
+    "tr": "elektroliz"
+   },
+   {
+    "w": "split",
+    "tr": "ayırmak, bölmek"
+   },
+   {
+    "w": "convert",
+    "tr": "dönüştürmek"
+   },
+   {
+    "w": "compress",
+    "tr": "sıkıştırmak"
+   },
+   {
+    "w": "reserve for",
+    "tr": "için ayırmak"
+   },
+   {
+    "w": "impractical",
+    "tr": "uygulanması zor, elverişsiz"
+   },
+   {
+    "w": "iron ore",
+    "tr": "demir cevheri"
+   }
+  ]
+ },
+ {
+  "id": "p103",
+  "title": "The Body's Inner Clock",
+  "topic": "biyoloji",
+  "level": 1,
+  "words": 183,
+  "text": "Most living things, from bacteria to humans, have an internal clock that follows a cycle of about 24 hours. This cycle, called the circadian rhythm, controls when we feel sleepy, when our body temperature rises and falls, and when certain hormones are released.\n\nIn humans, the master clock is a small group of nerve cells in the brain. It keeps time on its own, but it is adjusted every day by light entering the eyes. Morning light, in particular, tells the clock that the day has begun. In the evening, as light fades, the brain releases a hormone called melatonin, which helps to prepare the body for sleep.\n\nProblems arise when daily life does not match the inner clock. People who fly across several time zones suffer from jet lag, feeling tired during the day and awake at night until their clock adjusts. Night-shift workers face a similar but longer-lasting problem, and studies have linked years of shift work with a higher risk of some illnesses. Bright screens late in the evening may also delay the clock by reducing the release of melatonin.",
+  "questions": [
+   {
+    "q": "According to the passage, the master clock in the human brain ----.",
+    "options": [
+     "is located in the eyes rather than in the brain",
+     "keeps time by itself but is reset each day by light",
+     "cannot work at all without melatonin from screens",
+     "follows a cycle of exactly twelve hours",
+     "is controlled mainly by evening light"
+    ],
+    "answer": 1,
+    "explain": "Metin 'It keeps time on its own, but it is adjusted every day by light entering the eyes' diyor.",
+    "anlam": "Soru: Beyindeki ana saat hakkında ne doğru? Dayanak (2. paragraf): 'Kendi başına zaman tutar ama her gün gözlere giren ışıkla ayarlanır.'",
+    "why": [
+     "Saat beyinde; ışık gözlerden girer.",
+     "",
+     "Ekranlar melatonini azaltır; saat kendi başına zaman tutar.",
+     "Döngü yaklaşık 24 saat.",
+     "Özellikle sabah ışığı önemli; akşam ışık azalır."
+    ],
+    "tip": "'on its own, but ...' yapısında şık iki parçayı birlikte vermelidir."
+   },
+   {
+    "q": "It is stated in the passage that melatonin ----.",
+    "options": [
+     "is released as light fades in the evening",
+     "is released in the morning, when light tells the master clock in the brain that the day has begun",
+     "increases when people look at bright screens",
+     "is a group of nerve cells in the brain",
+     "causes jet lag in people who fly long distances"
+    ],
+    "answer": 0,
+    "explain": "Metin 'In the evening, as light fades, the brain releases a hormone called melatonin, which helps to prepare the body for sleep' diyor.",
+    "anlam": "Soru: Melatonin hakkında ne söyleniyor? Dayanak (2. paragraf): 'Akşam ışık azalınca beyin melatonin salar; bu hormon vücudu uykuya hazırlar.'",
+    "why": [
+     "",
+     "Sabah ışığı saate günün başladığını söyler; melatonin akşam salınır.",
+     "Ters bilgi: ekranlar melatonin salınımını azaltır.",
+     "Sinir hücreleri ana saattir; melatonin bir hormon.",
+     "Jet lag saat uyumsuzluğundan olur; melatonin neden olarak verilmiyor."
+    ],
+    "tip": "Hormon, organ ve uyaranı (ışık) birbirine karıştıran şıklara dikkat."
+   },
+   {
+    "q": "The last paragraph mainly discusses ----.",
+    "options": [
+     "how airlines reduce jet lag for their passengers",
+     "why night-shift work is better paid than day work",
+     "conflicts between daily life and the inner clock",
+     "the way bacteria and other simple living things keep time even though they have no brain",
+     "the best time of day to take melatonin tablets"
+    ],
+    "answer": 2,
+    "explain": "Son paragraf 'Problems arise when daily life does not match the inner clock' cümlesiyle açılıyor ve jet lag, gece vardiyası, ekran örneklerini veriyor.",
+    "anlam": "Soru: Son paragraf esas olarak neyi tartışıyor? Dayanak (3. paragraf): 'Günlük yaşam iç saatle uyuşmayınca sorunlar çıkar.'",
+    "why": [
+     "Havayolu önlemlerinden söz yok.",
+     "Ücretten söz yok.",
+     "",
+     "Bakteriler birinci paragrafta sadece örnek.",
+     "Tabletten hiç söz edilmiyor."
+    ],
+    "tip": "Paragrafın ana fikri çoğu zaman ilk cümlesidir; örnekler onu destekler."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "internal",
+    "tr": "iç"
+   },
+   {
+    "w": "cycle",
+    "tr": "döngü"
+   },
+   {
+    "w": "hormone",
+    "tr": "hormon"
+   },
+   {
+    "w": "nerve cell",
+    "tr": "sinir hücresi"
+   },
+   {
+    "w": "adjust",
+    "tr": "ayarlamak, uyum sağlamak"
+   },
+   {
+    "w": "fade",
+    "tr": "solmak, azalmak"
+   },
+   {
+    "w": "time zone",
+    "tr": "saat dilimi"
+   },
+   {
+    "w": "delay",
+    "tr": "geciktirmek"
+   }
+  ]
+ },
+ {
+  "id": "p104",
+  "title": "Antibiotics and the Gut",
+  "topic": "tip",
+  "level": 2,
+  "words": 185,
+  "text": "The human gut contains trillions of bacteria belonging to hundreds of species. Far from being harmful, most of them help us: they break down fibre that our own enzymes cannot digest, produce certain vitamins and train the immune system. A healthy gut community also makes it harder for dangerous bacteria to settle.\n\nAntibiotics save millions of lives, but they do not only kill the bacteria causing an infection. Many of them also destroy large numbers of helpful gut bacteria. After a typical course of treatment, most species return within a few weeks, yet studies have found that some may still be missing months later. During this period, a harmful bacterium called Clostridioides difficile can multiply in the weakened community and cause severe diarrhoea, especially in elderly hospital patients.\n\nDoctors therefore try to prescribe antibiotics only when they are truly needed and to choose drugs that act on as few species as possible. For patients with repeated C. difficile infections, an unusual treatment has proved highly effective: transferring gut bacteria from a healthy donor. This restores a diverse community that can push out the harmful species.",
+  "questions": [
+   {
+    "q": "According to the passage, helpful gut bacteria ----.",
+    "options": [
+     "cause severe diarrhoea in elderly hospital patients",
+     "are not affected by most antibiotics",
+     "break down fibre that human enzymes cannot digest",
+     "all return within a few days after treatment",
+     "produce the enzymes that digest our food"
+    ],
+    "answer": 2,
+    "explain": "Metin 'they break down fibre that our own enzymes cannot digest' diyor.",
+    "anlam": "Soru: Yararlı bağırsak bakterileri ne yapar? Dayanak (1. paragraf): 'Kendi enzimlerimizin sindiremediği lifi parçalarlar.'",
+    "why": [
+     "Bunu zararlı C. difficile yapar.",
+     "Ters bilgi: birçok antibiyotik onları da öldürür.",
+     "",
+     "Çoğu birkaç haftada döner; bazıları aylar sonra hâlâ eksik.",
+     "Metin kendi enzimlerimizin sindiremediği lifi parçaladıklarını söylüyor; enzim ürettiklerini değil."
+    ],
+    "tip": "Şık metindeki sözcükleri (enzymes, digest) kullanıp ilişkiyi ters kuruyorsa çeldiricidir."
+   },
+   {
+    "q": "It is stated in the passage that Clostridioides difficile ----.",
+    "options": [
+     "is a helpful bacterium that trains the immune system",
+     "multiplies when helpful bacteria are reduced",
+     "is the helpful bacterium that doctors transfer from healthy donors to patients with infections",
+     "is killed by all antibiotics within a few weeks",
+     "infects only young and healthy people"
+    ],
+    "answer": 1,
+    "explain": "Metin 'C. difficile can multiply in the weakened community and cause severe diarrhoea' diyor.",
+    "anlam": "Soru: C. difficile hakkında ne söyleniyor? Dayanak (2. paragraf): 'Zayıflamış toplulukta çoğalıp şiddetli ishale yol açabilir.'",
+    "why": [
+     "Ters bilgi: zararlı bir bakteri.",
+     "",
+     "Vericiden aktarılan sağlıklı bakteri topluluğu; C. difficile zararlı türdür.",
+     "Metinde böyle bir bilgi yok; tersine zayıf toplulukta çoğalır.",
+     "Özellikle yaşlı hastane hastalarında görülür."
+    ],
+    "tip": "'multiply in the weakened community': 'weakened' = 'helpful bacteria are reduced'."
+   },
+   {
+    "q": "The passage mainly aims to ----.",
+    "options": [
+     "prove that antibiotics are more dangerous to human health than the infections they are used to treat",
+     "describe how vitamins are produced in factories",
+     "encourage people to donate blood to hospitals",
+     "explain how antibiotics can harm useful gut bacteria and how doctors respond",
+     "list all the bacterial species living in the human gut"
+    ],
+    "answer": 3,
+    "explain": "Metin bağırsak bakterilerinin yararını, antibiyotiklerin onlara zararını ve doktorların önlemlerini anlatıyor.",
+    "anlam": "Soru: Parçanın temel amacı ne? Dayanak (2.–3. paragraf): antibiyotiğin zararı ve 'Doctors therefore try to ...'.",
+    "why": [
+     "Metin antibiyotiklerin milyonlarca hayat kurtardığını söylüyor.",
+     "Vitaminler bakterilerin yaptığı işlerden biri olarak geçiyor.",
+     "Bağış dışkı/bakteri aktarımı; kan bağışından söz yok.",
+     "",
+     "Türler sayılmıyor."
+    ],
+    "tip": "Sorun + çözüm anlatan metinde amaç şıkkı ikisini birden içerir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "gut",
+    "tr": "bağırsak"
+   },
+   {
+    "w": "fibre",
+    "tr": "lif"
+   },
+   {
+    "w": "digest",
+    "tr": "sindirmek"
+   },
+   {
+    "w": "settle",
+    "tr": "yerleşmek"
+   },
+   {
+    "w": "course of treatment",
+    "tr": "tedavi süreci, kür"
+   },
+   {
+    "w": "multiply",
+    "tr": "çoğalmak"
+   },
+   {
+    "w": "diarrhoea",
+    "tr": "ishal"
+   },
+   {
+    "w": "prescribe",
+    "tr": "reçete etmek"
+   },
+   {
+    "w": "donor",
+    "tr": "verici, bağışçı"
+   },
+   {
+    "w": "diverse",
+    "tr": "çeşitli"
+   }
+  ]
+ },
+ {
+  "id": "p105",
+  "title": "Dead Zones in the Sea",
+  "topic": "ekoloji",
+  "level": 3,
+  "words": 190,
+  "text": "Every summer, an area of the Gulf of Mexico several thousand square kilometres in size becomes almost empty of fish and shrimp. Similar so-called dead zones have been reported in more than 400 coastal regions worldwide, from the Baltic Sea to the coasts of China. Their main cause lies far inland, on farmland.\n\nFertilisers containing nitrogen and phosphorus are spread on fields to increase crop yields, but a large share is washed into rivers by rain. When this nutrient-rich water reaches the sea, it feeds huge blooms of algae near the surface. As the algae die, they sink and are broken down by bacteria, which consume dissolved oxygen in the process. In calm summer weather, warm fresh water lies on top of colder salt water and prevents oxygen from the air from mixing downwards. Near the bottom, oxygen levels fall so low that animals must flee or die.\n\nDead zones can recover. When fertiliser use around the Black Sea fell sharply in the 1990s for economic reasons, the dead zone there shrank considerably. Farmers can reduce runoff by applying fertiliser more precisely and by planting strips of vegetation along rivers.",
+  "questions": [
+   {
+    "q": "According to the passage, oxygen levels near the sea floor fall because ----.",
+    "options": [
+     "bacteria use up oxygen while breaking down dead algae",
+     "algae near the surface consume all the oxygen in the air",
+     "fish and shrimp breathe more quickly in warm summer water",
+     "cold salt water lies on top of warm fresh water",
+     "fertilisers contain no nitrogen or phosphorus"
+    ],
+    "answer": 0,
+    "explain": "Metin ölü alglerin dibe çöktüğünü ve 'broken down by bacteria, which consume dissolved oxygen' dediğini söylüyor.",
+    "anlam": "Soru: Deniz dibinde oksijen neden azalır? Dayanak (2. paragraf): 'Ölen algler çöker ve bakterilerce parçalanır; bakteriler çözünmüş oksijeni tüketir.'",
+    "why": [
+     "",
+     "Oksijeni ölü algleri parçalayan bakteriler tüketir.",
+     "Metinde böyle bir neden yok; balıklar kaçar ya da ölür.",
+     "Ters bilgi: sıcak tatlı su üstte, soğuk tuzlu su altta.",
+     "Ters bilgi: gübreler azot ve fosfor içerir."
+    ],
+    "tip": "Zincirli süreçte her adımın öznesini (algae / bacteria / water) doğru eşle."
+   },
+   {
+    "q": "Which of the following best expresses the main idea of the passage?",
+    "options": [
+     "Dead zones are found only in the Gulf of Mexico and the Baltic Sea",
+     "Algae blooms are useful because they add oxygen to deep water",
+     "Economic problems around the Black Sea destroyed its fishing industry in the 1990s",
+     "Fish and shrimp cause dead zones by consuming too much oxygen near the sea floor",
+     "Fertiliser runoff from farms causes low-oxygen zones in the sea, but they can recover"
+    ],
+    "answer": 4,
+    "explain": "Metin ölü bölgelerin ana nedeninin tarlalardan gelen gübre olduğunu, sürecin nasıl işlediğini ve bölgelerin toparlanabildiğini anlatıyor.",
+    "anlam": "Soru: Parçanın ana fikri hangisi? Dayanak (1. ve 3. paragraf): 'Ana nedenleri iç kesimlerde, tarım arazilerindedir ... Ölü bölgeler toparlanabilir.'",
+    "why": [
+     "Ters bilgi: dünyada 400'den fazla kıyı bölgesinde görülüyor.",
+     "Ters bilgi: ölen algler dipte oksijen tüketimine yol açar.",
+     "Karadeniz örneği ölü bölgenin küçüldüğünü gösteriyor; balıkçılıktan söz yok.",
+     "Balık ve karidesler kaçar ya da ölür; ölü bölgeye neden olmazlar.",
+     ""
+    ],
+    "tip": "Ana fikir: neden (gübre) + sonuç + çözüm; tek bir örnek (Karadeniz) ana fikir olamaz."
+   },
+   {
+    "q": "Which of the following is NOT mentioned in the passage as part of the process that creates dead zones?",
+    "options": [
+     "Fertiliser washed from fields into rivers",
+     "Large blooms of algae near the surface",
+     "Industrial waste pumped directly into the sea",
+     "Bacteria breaking down dead algae",
+     "Layers of water that do not mix in calm weather"
+    ],
+    "answer": 2,
+    "explain": "Metin gübre akışı, alg patlaması, bakterilerin oksijen tüketmesi ve karışmayan su katmanlarını sayıyor. Sanayi atığından hiç söz etmiyor.",
+    "anlam": "Soru: Hangisi ölü bölge oluşum sürecinde geçmiyor? Dayanak (2. paragraf): gübre → alg → bakteri → katmanlaşma.",
+    "why": [
+     "Metinde açıkça geçiyor.",
+     "Metinde açıkça geçiyor.",
+     "",
+     "Metinde açıkça geçiyor.",
+     "Metinde açıkça geçiyor."
+    ],
+    "tip": "NOT sorusunda metindeki adımları tek tek işaretle; listede olmayan doğru cevaptır."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "dead zone",
+    "tr": "ölü bölge (oksijensiz deniz alanı)"
+   },
+   {
+    "w": "inland",
+    "tr": "iç kesimler"
+   },
+   {
+    "w": "yield",
+    "tr": "verim, ürün miktarı"
+   },
+   {
+    "w": "nutrient",
+    "tr": "besin maddesi"
+   },
+   {
+    "w": "bloom",
+    "tr": "patlama (alg çoğalması)"
+   },
+   {
+    "w": "consume",
+    "tr": "tüketmek"
+   },
+   {
+    "w": "dissolved",
+    "tr": "çözünmüş"
+   },
+   {
+    "w": "flee",
+    "tr": "kaçmak"
+   },
+   {
+    "w": "shrink",
+    "tr": "küçülmek"
+   },
+   {
+    "w": "runoff",
+    "tr": "yüzey akışı, akıp giden su"
+   }
+  ]
+ },
+ {
+  "id": "p106",
+  "title": "Why the Sky Is Blue",
+  "topic": "fizik",
+  "level": 1,
+  "words": 189,
+  "text": "Sunlight looks white, but it is actually a mixture of all the colours of the rainbow. Each colour has a different wavelength: red light has the longest waves, and blue and violet light have the shortest. When sunlight enters the atmosphere, it meets countless tiny molecules of nitrogen and oxygen.\n\nThese molecules scatter light, that is, they send it off in new directions. Importantly, they scatter short wavelengths much more strongly than long ones. Blue light is therefore spread across the whole sky, and whichever direction we look, some of it reaches our eyes. Violet light is scattered even more, but the Sun produces less of it, and our eyes are less sensitive to it, so the sky appears blue rather than violet.\n\nThe same effect explains red sunsets. When the Sun is low, its light must travel through a much thicker layer of air before reaching us. By then, most of the blue light has been scattered away to the sides, and mainly orange and red light remains. On the Moon, which has no atmosphere, there is no scattering, and the sky looks black even during the day.",
+  "questions": [
+   {
+    "q": "According to the passage, the sky does not look violet because ----.",
+    "options": [
+     "violet light is scattered less than blue light",
+     "violet light has the longest wavelength",
+     "molecules of nitrogen absorb all the violet light",
+     "violet light can only be seen at sunset",
+     "the Sun gives out less violet light and our eyes respond to it less"
+    ],
+    "answer": 4,
+    "explain": "Metin 'Violet light is scattered even more, but the Sun produces less of it, and our eyes are less sensitive to it' diyor.",
+    "anlam": "Soru: Gökyüzü neden mor görünmez? Dayanak (2. paragraf): 'Güneş moru daha az üretir ve gözümüz ona daha az duyarlıdır.'",
+    "why": [
+     "Ters bilgi: mor ışık daha da çok saçılır.",
+     "En uzun dalga kırmızıda; mor en kısalardan.",
+     "Soğurmadan söz yok; metin saçılmayı anlatıyor.",
+     "Gün batımında kalan ışık turuncu-kırmızı.",
+     ""
+    ],
+    "tip": "'even more, but ...' yapısında asıl neden 'but' sonrasıdır."
+   },
+   {
+    "q": "It is stated in the passage that sunsets look red because ----.",
+    "options": [
+     "the Sun produces more red light in the evening",
+     "red light, which has the longest waves, is scattered much more strongly than blue light in the air",
+     "there is no atmosphere when the Sun is low",
+     "the light of a low Sun passes through more air, which scatters away the blue",
+     "the Moon reflects red light towards the Earth"
+    ],
+    "answer": 3,
+    "explain": "Metin Güneş alçakken ışığın 'much thicker layer of air' geçtiğini ve mavinin çoğunun yanlara saçıldığını söylüyor.",
+    "anlam": "Soru: Gün batımı neden kırmızı görünür? Dayanak (3. paragraf): 'Işık daha kalın hava katmanından geçer; mavinin çoğu yanlara saçılır, turuncu-kırmızı kalır.'",
+    "why": [
+     "Güneşin ürettiği ışık değişmiyor; yol uzuyor.",
+     "Ters bilgi: kısa dalgalar daha çok saçılır.",
+     "Atmosfer yok olmaz; tersine daha kalın katman geçilir.",
+     "",
+     "Ay sadece atmosfersiz karşılaştırma örneği."
+    ],
+    "tip": "Neden sorusunda şıktaki neden-sonuç yönünün metinle aynı olduğunu kontrol et."
+   },
+   {
+    "q": "The passage is mainly about ----.",
+    "options": [
+     "the life cycle of stars like the Sun",
+     "the differences between the Earth and the Moon",
+     "why human eyes are less sensitive to violet light than to the blue and red parts of sunlight",
+     "how air scatters sunlight and colours the sky",
+     "the chemical make-up of nitrogen and oxygen"
+    ],
+    "answer": 3,
+    "explain": "Metin saçılmanın mavi gökyüzünü, kırmızı gün batımını ve Ay'daki siyah gökyüzünü nasıl açıkladığını anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne hakkında? Dayanak (2.–3. paragraf): saçılma → mavi gök; 'The same effect explains red sunsets'.",
+    "why": [
+     "Yıldızların yaşamından söz yok.",
+     "Ay sadece son cümlede karşılaştırma için.",
+     "Gözler moru görür, sadece daha az duyarlıdır; ayrıntı.",
+     "",
+     "Moleküller sadece saçan parçacıklar olarak anılıyor."
+    ],
+    "tip": "'The same effect explains ...' gibi ifadeler tüm metnin tek bir ilkeye bağlandığını gösterir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "mixture",
+    "tr": "karışım"
+   },
+   {
+    "w": "wavelength",
+    "tr": "dalga boyu"
+   },
+   {
+    "w": "countless",
+    "tr": "sayısız"
+   },
+   {
+    "w": "scatter",
+    "tr": "saçmak, dağıtmak"
+   },
+   {
+    "w": "sensitive",
+    "tr": "duyarlı"
+   },
+   {
+    "w": "appear",
+    "tr": "görünmek"
+   },
+   {
+    "w": "layer",
+    "tr": "katman"
+   },
+   {
+    "w": "remain",
+    "tr": "kalmak"
+   }
+  ]
+ },
+ {
+  "id": "p107",
+  "title": "Capturing Carbon from Chimneys",
+  "topic": "kimya",
+  "level": 2,
+  "words": 180,
+  "text": "Power stations and cement works release enormous amounts of carbon dioxide through their chimneys. One way to reduce these emissions is carbon capture: removing the gas from the exhaust before it enters the atmosphere and storing it underground.\n\nThe most developed method uses liquids called amines, which are related to ammonia. The exhaust gas is passed upwards through a tall tower while the amine solution flows downwards. Carbon dioxide reacts with the amine and is held in the liquid, while the other gases, mainly nitrogen, pass out of the top. The liquid is then pumped to a second tower and heated to about 120 °C. At this temperature, the reaction reverses, pure carbon dioxide is released and collected, and the amine can be used again.\n\nThe process works, but it is costly. Heating the solution consumes a large part of the energy produced by a power station, often about a quarter, and amines slowly break down and must be replaced. Researchers are therefore testing solid materials with many tiny pores that capture carbon dioxide and release it at lower temperatures.",
+  "questions": [
+   {
+    "q": "According to the passage, in the first tower ----.",
+    "options": [
+     "carbon dioxide stays in the amine and nitrogen exits",
+     "the amine solution is heated to about 120 °C",
+     "pure carbon dioxide is released and collected",
+     "the exhaust gas and the amine solution both flow downwards through the tower at the same time",
+     "nitrogen reacts with the amine and stays in the liquid"
+    ],
+    "answer": 0,
+    "explain": "Metin 'Carbon dioxide reacts with the amine and is held in the liquid, while the other gases, mainly nitrogen, pass out of the top' diyor.",
+    "anlam": "Soru: Birinci kulede ne olur? Dayanak (2. paragraf): 'Karbondioksit aminle tepkimeye girip sıvıda tutulur, azot gibi diğer gazlar üstten çıkar.'",
+    "why": [
+     "",
+     "Isıtma ikinci kulede yapılır.",
+     "Bu ikinci kulede, ısıtınca olur.",
+     "Gaz yukarı, çözelti aşağı akar.",
+     "Tepkimeye giren karbondioksit; azot üstten çıkar."
+    ],
+    "tip": "İki aşamalı süreçte (birinci / ikinci kule) olayları doğru aşamaya yerleştir."
+   },
+   {
+    "q": "It is stated in the passage that one disadvantage of amine-based capture is that ----.",
+    "options": [
+     "carbon dioxide cannot be stored underground",
+     "the amine solution can never be used a second time and must be thrown away after each cycle",
+     "the process does not remove any carbon dioxide",
+     "solid materials with pores release toxic gases",
+     "heating consumes much of the station's power"
+    ],
+    "answer": 4,
+    "explain": "Metin 'Heating the solution consumes a large part of the energy produced by a power station, often about a quarter' diyor.",
+    "anlam": "Soru: Aminli yakalamanın bir sakıncası ne? Dayanak (3. paragraf): 'Çözeltiyi ısıtmak santralin ürettiği enerjinin büyük kısmını, çoğu zaman dörtte birini tüketir.'",
+    "why": [
+     "Metin yeraltında depolamayı yöntemin parçası olarak veriyor.",
+     "Ters bilgi: amin yeniden kullanılabilir, sadece yavaşça bozunur.",
+     "Metin 'The process works' diyor.",
+     "Gözenekli katılar denenen çözüm; zehirli gazdan söz yok.",
+     ""
+    ],
+    "tip": "'a large part of the energy' = 'much of the power': genel ifadeyi eşle."
+   },
+   {
+    "q": "The passage mainly ----.",
+    "options": [
+     "compares amines with ammonia as cleaning products",
+     "argues that cement works should be closed",
+     "explains how nitrogen, the main gas in the exhaust, is produced in power stations and cement works",
+     "proves that solid materials are cheaper than amines",
+     "describes a method of removing carbon dioxide from exhaust and its drawbacks"
+    ],
+    "answer": 4,
+    "explain": "Metin karbon yakalamayı tanıtıyor, aminli yöntemin işleyişini ve maliyetini anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne yapıyor? Dayanak (tüm metin): 2. paragraf işleyiş, 3. paragraf 'it is costly'.",
+    "why": [
+     "Amonyak sadece aminlerin akrabası olarak anılıyor.",
+     "Metinde böyle bir öneri yok.",
+     "Azot sadece geçip giden gaz olarak anılıyor.",
+     "Katı malzemeler hâlâ deneniyor; kanıt yok.",
+     ""
+    ],
+    "tip": "Ana fikirde 'describes ... and its drawbacks' gibi iki yönlü şıklar süreç + sorun anlatan metinlere uyar."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "emission",
+    "tr": "salım, emisyon"
+   },
+   {
+    "w": "capture",
+    "tr": "yakalamak, tutmak"
+   },
+   {
+    "w": "amine",
+    "tr": "amin (azotlu organik bileşik)"
+   },
+   {
+    "w": "related to",
+    "tr": "ile ilişkili, akraba"
+   },
+   {
+    "w": "solution",
+    "tr": "çözelti"
+   },
+   {
+    "w": "reverse",
+    "tr": "tersine dönmek"
+   },
+   {
+    "w": "break down",
+    "tr": "bozunmak"
+   },
+   {
+    "w": "pore",
+    "tr": "gözenek"
+   }
+  ]
+ },
+ {
+  "id": "p108",
+  "title": "Bits That Are Both",
+  "topic": "bilgisayar",
+  "level": 3,
+  "words": 198,
+  "text": "An ordinary computer stores information as bits, each of which is either 0 or 1. A quantum computer uses qubits, which can exist in a combination of both states at once until they are measured. When several qubits are linked through a phenomenon called entanglement, the number of states they represent together doubles with every qubit added. In principle, this allows certain calculations to explore a vast number of possibilities in parallel.\n\nIt is a common misunderstanding, however, that quantum computers will simply be faster at everything. Their advantage applies only to particular problems, such as simulating molecules for drug design or factoring very large numbers, which is the basis of much of today's internet encryption. For everyday tasks like word processing, an ordinary computer will remain more practical.\n\nThe greatest technical challenge is fragility. Qubits lose their quantum state when disturbed by heat, vibration or stray electromagnetic fields, a problem known as decoherence. Most current machines must therefore be cooled to a fraction of a degree above absolute zero. Because errors accumulate quickly, many physical qubits may be needed to create a single reliable one, and machines large enough to break encryption are probably still years away.",
+  "questions": [
+   {
+    "q": "According to the passage, decoherence is ----.",
+    "options": [
+     "the linking of several qubits so that their states multiply",
+     "a method of cooling qubits close to absolute zero",
+     "the process of measuring a qubit as either 0 or 1",
+     "a type of encryption used on the internet",
+     "the loss of a qubit's quantum state caused by disturbances from its surroundings"
+    ],
+    "answer": 4,
+    "explain": "Metin 'Qubits lose their quantum state when disturbed by heat, vibration or stray electromagnetic fields, a problem known as decoherence' diyor.",
+    "anlam": "Soru: Dekoherans nedir? Dayanak (3. paragraf): 'Kübitler ısı, titreşim veya alanlarla bozulunca kuantum hâllerini kaybeder; buna dekoherans denir.'",
+    "why": [
+     "Bu dolanıklık (entanglement).",
+     "Soğutma dekoheransa karşı alınan önlem.",
+     "Ölçüm konusu ilk paragrafta; dekoherans bozulmadır.",
+     "Şifreleme çarpanlara ayırmayla ilgili; dekoheransla değil.",
+     ""
+    ],
+    "tip": "'a problem known as X' yapısında X'in tanımı virgülden önceki kısımdır."
+   },
+   {
+    "q": "The author believes that quantum computers ----.",
+    "options": [
+     "will soon be faster than ordinary computers at every task, including word processing at home",
+     "can already break today's internet encryption easily",
+     "work best at room temperature without cooling",
+     "need fewer physical qubits than reliable qubits",
+     "will help only with certain kinds of problems"
+    ],
+    "answer": 4,
+    "explain": "Metin avantajın 'only to particular problems' için geçerli olduğunu, 'word processing' gibi işlerde sıradan bilgisayarın daha pratik kalacağını söylüyor.",
+    "anlam": "Soru: Yazar kuantum bilgisayarlar hakkında ne düşünüyor? Dayanak (2. paragraf): 'Avantajları sadece belirli sorunlar için ... gündelik işlerde sıradan bilgisayar daha pratik kalacak.'",
+    "why": [
+     "Yazar bunu 'common misunderstanding' olarak veriyor.",
+     "Bu yapabilecek makineler muhtemelen yıllar uzakta.",
+     "Ters bilgi: mutlak sıfıra çok yakın soğutulmalı.",
+     "Ters bilgi: tek güvenilir kübit için birçok fiziksel kübit gerekebilir.",
+     ""
+    ],
+    "tip": "'It is a common misunderstanding that ...' sonrası yazarın REDDETTİĞİ görüştür; onu seçme."
+   },
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "how quantum computers differ, what they offer and why they are hard to build",
+     "the history of internet encryption since its invention",
+     "the design of new drugs using ordinary computers",
+     "why word processing programs need more memory",
+     "the physics of heat and vibration in metals"
+    ],
+    "answer": 0,
+    "explain": "Metin kübitin farkını (1. paragraf), avantajlarının sınırını (2. paragraf) ve teknik güçlükleri (3. paragraf) anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (tüm metin): üç paragrafın her biri bir yönü anlatıyor.",
+    "why": [
+     "",
+     "Şifreleme sadece bir uygulama örneği.",
+     "İlaç tasarımı kuantum bilgisayarın örnek kullanımı.",
+     "Kelime işlem sadece karşılaştırma örneği.",
+     "Isı ve titreşim sadece kübiti bozan etkenler."
+    ],
+    "tip": "Üç paragraflı metinde ana fikir şıkkı üç paragrafı da kapsamalı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "measure",
+    "tr": "ölçmek"
+   },
+   {
+    "w": "entanglement",
+    "tr": "dolanıklık"
+   },
+   {
+    "w": "in parallel",
+    "tr": "eş zamanlı, paralel olarak"
+   },
+   {
+    "w": "misunderstanding",
+    "tr": "yanlış anlama"
+   },
+   {
+    "w": "factor",
+    "tr": "çarpanlarına ayırmak"
+   },
+   {
+    "w": "encryption",
+    "tr": "şifreleme"
+   },
+   {
+    "w": "fragility",
+    "tr": "kırılganlık"
+   },
+   {
+    "w": "stray",
+    "tr": "başıboş, istenmeyen"
+   },
+   {
+    "w": "accumulate",
+    "tr": "birikmek"
+   },
+   {
+    "w": "reliable",
+    "tr": "güvenilir"
+   }
+  ]
+ },
+ {
+  "id": "p109",
+  "title": "Rivers of Ice",
+  "topic": "yerbilimi",
+  "level": 1,
+  "words": 185,
+  "text": "A glacier is a large mass of ice that moves slowly over land. Glaciers form in places where more snow falls in winter than melts in summer. Year after year, the snow builds up and is pressed into dense ice by the weight of the layers above. When the ice becomes thick enough, it begins to flow downhill under its own weight, usually by only a few metres a year, although some glaciers move much faster.\n\nAs they move, glaciers act like giant files. Rocks frozen into the bottom of the ice scrape the ground below and break off pieces of bedrock. Over thousands of years, this process turns narrow river valleys, which are usually V-shaped, into wide valleys with a U-shaped cross-section. Many famous landscapes, such as the fjords of Norway, were shaped in this way during past ice ages.\n\nToday, most glaciers around the world are shrinking as temperatures rise. This matters not only for the landscape: in regions such as the Andes and the Himalayas, millions of people depend on meltwater from glaciers for drinking water and farming during the dry season.",
+  "questions": [
+   {
+    "q": "According to the passage, glaciers form where ----.",
+    "options": [
+     "rivers have already cut narrow, V-shaped valleys into the land during earlier ice ages",
+     "more snow falls than melts each year",
+     "people use meltwater for drinking and farming",
+     "temperatures are rising year after year",
+     "rocks are frozen into the bottom of the ice"
+    ],
+    "answer": 1,
+    "explain": "Metin 'Glaciers form in places where more snow falls in winter than melts in summer' diyor.",
+    "anlam": "Soru: Buzullar nerede oluşur? Dayanak (1. paragraf): 'Kışın yağan karın yazın eriyenden fazla olduğu yerlerde.'",
+    "why": [
+     "V vadiler buzulun sonradan değiştirdiği şekil; oluşum koşulu değil.",
+     "",
+     "Erime suyu kullanımı sonuç; oluşum yeri değil.",
+     "Ters bilgi: sıcaklık artınca buzullar küçülür.",
+     "Kayalar buzulun aşındırma aracıdır; oluşum koşulu değil."
+    ],
+    "tip": "'more snow falls in winter than melts in summer' karşılaştırmasını şıktaki kısa biçimle eşle."
+   },
+   {
+    "q": "It is stated in the passage that glaciers change river valleys by ----.",
+    "options": [
+     "filling them with water from melting snow",
+     "making them narrower and deeper over time",
+     "moving only a few metres in each ice age",
+     "pressing snow into dense ice on the valley sides",
+     "scraping the ground with rocks held in the ice"
+    ],
+    "answer": 4,
+    "explain": "Metin buzula donmuş kayaların 'scrape the ground below and break off pieces of bedrock' dediğini ve böylece vadilerin genişlediğini söylüyor.",
+    "anlam": "Soru: Buzullar nehir vadilerini nasıl değiştirir? Dayanak (2. paragraf): 'Buzun dibine donmuş kayalar alttaki zemini kazır ve ana kayadan parça koparır.'",
+    "why": [
+     "Erime suyu insanlara gerekli; vadiyi şekillendiren kazımadır.",
+     "Ters bilgi: vadileri genişletip U şekline sokarlar.",
+     "Yılda birkaç metre hareket ederler; vadi değişimi binlerce yılda olur.",
+     "Kar sıkışması buzul oluşumu; vadi değişimi değil.",
+     ""
+    ],
+    "tip": "Süreç sorusunda yöntemi (by + fiil+ing) metindeki fiille (scrape) eşle."
+   },
+   {
+    "q": "Which of the following would be the best title for the passage?",
+    "options": [
+     "The Fjords of Norway",
+     "Farming in the Himalayas",
+     "How Glaciers Form, Shape the Land and Matter to People",
+     "Why Rivers Flow Downhill Faster Than Glaciers in Mountain Valleys",
+     "The Causes of the Last Ice Age"
+    ],
+    "answer": 2,
+    "explain": "Metin buzulun oluşumunu (1. paragraf), arazi şekillendirmesini (2. paragraf) ve insanlar için önemini (3. paragraf) anlatıyor.",
+    "anlam": "Soru: Parçaya en uygun başlık hangisi? Dayanak (tüm metin): oluşum → aşındırma → küçülme ve insanlara etkisi.",
+    "why": [
+     "Fiyortlar sadece bir örnek.",
+     "Tarım son paragrafta küçük bir ayrıntı.",
+     "",
+     "Metin nehirleri değil buzulları anlatıyor.",
+     "Buzul çağlarının nedenlerinden söz edilmiyor."
+    ],
+    "tip": "Başlık sorusu ana fikir sorusudur; tek bir örneği başlık yapan şıkları ele."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "glacier",
+    "tr": "buzul"
+   },
+   {
+    "w": "mass",
+    "tr": "kütle"
+   },
+   {
+    "w": "build up",
+    "tr": "birikmek"
+   },
+   {
+    "w": "dense",
+    "tr": "yoğun"
+   },
+   {
+    "w": "file",
+    "tr": "eğe (alet)"
+   },
+   {
+    "w": "scrape",
+    "tr": "kazımak"
+   },
+   {
+    "w": "bedrock",
+    "tr": "ana kaya"
+   },
+   {
+    "w": "cross-section",
+    "tr": "kesit"
+   },
+   {
+    "w": "meltwater",
+    "tr": "erime suyu"
+   }
+  ]
+ },
+ {
+  "id": "p110",
+  "title": "Listening to Bearings",
+  "topic": "makine",
+  "level": 2,
+  "words": 188,
+  "text": "Rolling bearings support rotating shafts in almost every machine, from small electric motors to the huge rolls of steel mills. When a bearing fails unexpectedly, a production line may stop for hours or days. For this reason, many plants no longer replace bearings at fixed intervals but monitor their condition while the machines are running.\n\nThe most common method is vibration analysis. Small sensors called accelerometers are mounted on the bearing housing and record its vibration. A healthy bearing produces a low, fairly even signal. When a tiny crack or pit appears on one of the rings or rolling elements, each roller strikes the damaged spot as it passes, creating a short impact. Because the geometry and speed of the bearing are known, engineers can calculate at what frequency these impacts should repeat, and so identify which part is damaged.\n\nOther signs can support the diagnosis. A rise in temperature often indicates poor lubrication, while metal particles in the oil show that wear is taking place. By combining these signals, maintenance teams can plan a replacement during a scheduled stop, often weeks before the bearing would actually fail.",
+  "questions": [
+   {
+    "q": "According to the passage, engineers can identify which part of a bearing is damaged because ----.",
+    "options": [
+     "a healthy bearing produces a short, strong impact each time one of its rollers passes",
+     "accelerometers can see cracks inside the rings",
+     "metal particles in the oil come from only one part",
+     "impact frequencies point to the damaged part",
+     "bearings are replaced at fixed intervals"
+    ],
+    "answer": 3,
+    "explain": "Metin geometri ve hız bilindiği için 'engineers can calculate at what frequency these impacts should repeat, and so identify which part is damaged' diyor.",
+    "anlam": "Soru: Mühendisler hangi parçanın hasarlı olduğunu nasıl bulur? Dayanak (2. paragraf): 'Darbelerin hangi sıklıkta tekrarlanması gerektiğini hesaplayıp hasarlı parçayı belirlerler.'",
+    "why": [
+     "Ters bilgi: sağlam rulman düşük ve düzgün sinyal verir.",
+     "İvmeölçer titreşimi kaydeder; çatlağı görmez.",
+     "Yağdaki parçacıklar aşınmayı gösterir; parçayı belirlemez.",
+     "",
+     "Birçok tesis artık sabit aralıkla değiştirmiyor; bu teşhis yolu değil."
+    ],
+    "tip": "'and so' bir sonucu bağlar; nedeni hemen önceki yan cümlede ara."
+   },
+   {
+    "q": "It is stated in the passage that a rise in bearing temperature ----.",
+    "options": [
+     "shows that metal particles have entered the oil",
+     "often points to a problem with lubrication",
+     "is the most common method of finding cracks",
+     "means that the bearing has already failed",
+     "is measured with accelerometers on the housing"
+    ],
+    "answer": 1,
+    "explain": "Metin 'A rise in temperature often indicates poor lubrication' diyor.",
+    "anlam": "Soru: Rulman sıcaklığının artması hakkında ne söyleniyor? Dayanak (3. paragraf): 'Sıcaklık artışı çoğu zaman yetersiz yağlamayı gösterir.'",
+    "why": [
+     "Yağdaki metal parçacık aşınmanın ayrı bir işareti.",
+     "",
+     "En yaygın yöntem titreşim analizi.",
+     "Metin bunu bir uyarı işareti olarak veriyor; arıza olmuş değil.",
+     "İvmeölçer titreşimi ölçer; sıcaklığı değil."
+    ],
+    "tip": "'indicates' = 'points to': eş anlamlı fiili yakala."
+   },
+   {
+    "q": "The passage mainly explains ----.",
+    "options": [
+     "why steel mills need much larger rolling bearings than those used in small electric motors",
+     "how rolling bearings are manufactured",
+     "the history of vibration sensors in industry",
+     "how the condition of bearings is monitored so that failures can be avoided",
+     "why production lines often stop for several days"
+    ],
+    "answer": 3,
+    "explain": "Metin titreşim, sıcaklık ve yağ analizleriyle rulman durumunun izlenmesini ve arızanın önceden planlanmasını anlatıyor.",
+    "anlam": "Soru: Parça esas olarak neyi açıklıyor? Dayanak (1. paragraf): 'Birçok tesis rulmanların durumunu makine çalışırken izler.'",
+    "why": [
+     "Boyut farkı sadece giriş örneği.",
+     "Üretimden söz edilmiyor.",
+     "Sensörlerin tarihinden söz yok.",
+     "",
+     "Duruşlar sadece sorunun önemini göstermek için anılıyor."
+    ],
+    "tip": "Giriş paragrafının son cümlesi metnin konusunu duyurur."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "rolling bearing",
+    "tr": "rulman"
+   },
+   {
+    "w": "shaft",
+    "tr": "mil"
+   },
+   {
+    "w": "monitor",
+    "tr": "izlemek"
+   },
+   {
+    "w": "accelerometer",
+    "tr": "ivmeölçer"
+   },
+   {
+    "w": "housing",
+    "tr": "yuva, gövde"
+   },
+   {
+    "w": "pit",
+    "tr": "çukur, oyuk"
+   },
+   {
+    "w": "impact",
+    "tr": "darbe"
+   },
+   {
+    "w": "diagnosis",
+    "tr": "teşhis"
+   },
+   {
+    "w": "lubrication",
+    "tr": "yağlama"
+   },
+   {
+    "w": "wear",
+    "tr": "aşınma"
+   }
+  ]
+ },
+ {
+  "id": "p111",
+  "title": "Failure Without Overload",
+  "topic": "malzeme",
+  "level": 3,
+  "words": 174,
+  "text": "A steel part can break under a load that is far below its tensile strength if that load is applied and removed many thousands of times. This type of failure, called fatigue, is responsible for a large proportion of mechanical failures in service, including famous accidents involving early jet airliners in the 1950s.\n\nFatigue usually begins at a point where stress is concentrated, such as a sharp corner, a hole or a scratch on the surface. With each loading cycle, a microscopic crack grows a little further. For most of the part's life the crack remains too small to see, and the part shows no outward sign of damage. Finally, the remaining cross-section becomes too small to carry the load, and the part fractures suddenly.\n\nDesigners fight fatigue in several ways. They avoid sharp changes in shape, polish critical surfaces and use processes such as shot peening, which places the surface layer under compression and makes it harder for cracks to open. Since fatigue strength cannot be predicted exactly, parts are also inspected regularly.",
+  "questions": [
+   {
+    "q": "According to the passage, a fatigue crack usually starts ----.",
+    "options": [
+     "in the middle of the part, far from its surface",
+     "at stress concentrations such as sharp corners",
+     "only when the load is above the tensile strength",
+     "after the part has been shot peened",
+     "at the very end of the part's life, only a short time before the part finally breaks"
+    ],
+    "answer": 1,
+    "explain": "Metin 'Fatigue usually begins at a point where stress is concentrated, such as a sharp corner, a hole or a scratch' diyor.",
+    "anlam": "Soru: Yorulma çatlağı genelde nerede başlar? Dayanak (2. paragraf): 'Keskin köşe, delik veya yüzey çiziği gibi gerilmenin yoğunlaştığı noktada.'",
+    "why": [
+     "Ters bilgi: yüzeydeki çizik, köşe gibi yerlerde başlar.",
+     "",
+     "Ters bilgi: yük çekme dayanımının çok altında olabilir.",
+     "Bilyeli dövme çatlağı zorlaştırır; başlatmaz.",
+     "Çatlak ömrün başından büyür; sadece görünmez kalır."
+    ],
+    "tip": "'such as' sonrası örnekler; şıkta bu örneklerle genel kavram birlikte verilir."
+   },
+   {
+    "q": "It is stated in the passage that, for most of its life, a part suffering from fatigue ----.",
+    "options": [
+     "shows clear signs of damage on its surface",
+     "carries a load larger than its tensile strength",
+     "is protected from damage because its surface layer has been placed under compression",
+     "cannot be inspected by engineers",
+     "seems undamaged while a crack grows"
+    ],
+    "answer": 4,
+    "explain": "Metin 'For most of the part's life the crack remains too small to see, and the part shows no outward sign of damage' diyor.",
+    "anlam": "Soru: Yorulan parça ömrünün çoğunda nasıldır? Dayanak (2. paragraf): 'Çatlak görülemeyecek kadar küçük kalır ve parçada dışarıdan hasar belirtisi yoktur.'",
+    "why": [
+     "Ters bilgi: 'shows no outward sign of damage'.",
+     "Yük dayanımın altında; aşırı yük yok.",
+     "Basma gerilmesi bir önlem; her parçada olmaz.",
+     "Metin parçaların düzenli denetlendiğini söylüyor.",
+     ""
+    ],
+    "tip": "Olumsuz ifade (no outward sign) şıkta olumlu eş anlamlıyla (seems undamaged) verilebilir."
+   },
+   {
+    "q": "The passage mainly focuses on ----.",
+    "options": [
+     "the causes of the accidents involving early jet airliners in the 1950s",
+     "why steel is stronger in tension than other metals",
+     "the use of shot peening to make steel parts heavier",
+     "methods for calculating the exact fatigue life of every part in service",
+     "how fatigue cracks develop and how engineers try to prevent them"
+    ],
+    "answer": 4,
+    "explain": "Metin yorulmanın ne olduğunu, çatlağın nasıl büyüdüğünü ve tasarımcıların önlemlerini anlatıyor.",
+    "anlam": "Soru: Parça esas olarak neye odaklanıyor? Dayanak (2.–3. paragraf): çatlağın büyümesi ve 'Designers fight fatigue in several ways'.",
+    "why": [
+     "Jet kazaları sadece örnek; nedenleri ayrıca anlatılmıyor.",
+     "Metaller karşılaştırılmıyor.",
+     "Bilyeli dövme yüzeyi basma altına sokar; ağırlıkla ilgisi yok.",
+     "Ters bilgi: yorulma dayanımı tam tahmin edilemez.",
+     ""
+    ],
+    "tip": "Örnek (jet uçakları) ana fikir değildir; metnin süreç + çözüm yapısına bak."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "tensile strength",
+    "tr": "çekme dayanımı"
+   },
+   {
+    "w": "fatigue",
+    "tr": "yorulma"
+   },
+   {
+    "w": "in service",
+    "tr": "kullanımda, hizmette"
+   },
+   {
+    "w": "concentrate",
+    "tr": "yoğunlaşmak"
+   },
+   {
+    "w": "outward",
+    "tr": "dışa ait, görünen"
+   },
+   {
+    "w": "fracture",
+    "tr": "kırılmak"
+   },
+   {
+    "w": "polish",
+    "tr": "parlatmak"
+   },
+   {
+    "w": "shot peening",
+    "tr": "bilyeli dövme (yüzey işlemi)"
+   },
+   {
+    "w": "compression",
+    "tr": "basma, sıkıştırma"
+   }
+  ]
+ },
+ {
+  "id": "p112",
+  "title": "Moving Heat Uphill",
+  "topic": "enerji",
+  "level": 1,
+  "words": 175,
+  "text": "Heat naturally flows from warm places to cold ones. A heat pump uses electricity to move it the other way: from the cold air or ground outside into a warm house. A refrigerator works on the same principle, taking heat out of the food compartment and releasing it into the kitchen.\n\nInside a heat pump, a special liquid called a refrigerant circulates in a closed loop. Outside the house, it evaporates at a low temperature and absorbs heat from the air, even on cold days. A compressor then squeezes the gas, which raises its temperature sharply. Indoors, the hot gas condenses back into a liquid and gives its heat to the water or air of the heating system.\n\nThe main advantage is efficiency. For every unit of electricity it uses, a typical heat pump delivers three or four units of heat, because most of the energy comes from outside. An electric heater, by contrast, delivers only one. Heat pumps are, however, more expensive to install than gas boilers, and they work best in well-insulated buildings.",
+  "questions": [
+   {
+    "q": "According to the passage, the refrigerant in a heat pump ----.",
+    "options": [
+     "is burned indoors to produce heat for the house",
+     "cools down sharply when it is squeezed by the compressor",
+     "flows from the house into the ground and is lost",
+     "takes in heat outdoors as it evaporates and releases it indoors as it condenses",
+     "only absorbs heat on warm summer days"
+    ],
+    "answer": 3,
+    "explain": "Metin akışkanın dışarıda 'evaporates ... and absorbs heat', içeride 'condenses ... and gives its heat' dediğini söylüyor.",
+    "anlam": "Soru: Isı pompasındaki soğutucu akışkan ne yapar? Dayanak (2. paragraf): 'Dışarıda buharlaşıp ısı emer; içeride yoğuşup ısısını verir.'",
+    "why": [
+     "Yanma yok; akışkan buharlaşıp yoğuşur.",
+     "Ters bilgi: sıkıştırınca sıcaklığı keskin artar.",
+     "Kapalı devrede dolaşır; kaybolmaz.",
+     "",
+     "Metin soğuk günlerde bile ısı aldığını söylüyor."
+    ],
+    "tip": "Süreç sorusunda her işlemi doğru yere (dışarı / içeri) ve doğru yöne yerleştir."
+   },
+   {
+    "q": "It is stated in the passage that a heat pump can deliver more heat than the electricity it uses because ----.",
+    "options": [
+     "it burns gas in addition to using electricity",
+     "electric heaters deliver three or four units of heat",
+     "most of the heat is collected from the surroundings",
+     "it is cheaper to install than a gas boiler",
+     "heat naturally flows from cold places to warm ones"
+    ],
+    "answer": 2,
+    "explain": "Metin 'three or four units of heat, because most of the energy comes from outside' diyor.",
+    "anlam": "Soru: Isı pompası neden harcadığı elektrikten fazla ısı verir? Dayanak (3. paragraf): 'Çünkü enerjinin çoğu dışarıdan gelir.'",
+    "why": [
+     "Gaz kazanları karşılaştırma için anılıyor; ısı pompası gaz yakmaz.",
+     "Ters bilgi: elektrikli ısıtıcı sadece bir birim verir.",
+     "",
+     "Ters bilgi: kurulumu daha pahalı.",
+     "Ters bilgi: ısı doğal olarak sıcaktan soğuğa akar."
+    ],
+    "tip": "'because' sonrasındaki ifadeyi şıkta eş anlamlısıyla ara (from outside = from the surroundings)."
+   },
+   {
+    "q": "The primary purpose of the passage is to ----.",
+    "options": [
+     "compare different brands of refrigerators",
+     "persuade readers to insulate their houses well before they replace their old gas boilers",
+     "describe the history of gas boilers",
+     "warn readers that heat pumps are dangerous",
+     "explain how heat pumps work and why they are efficient"
+    ],
+    "answer": 4,
+    "explain": "Metin ilkeyi (1. paragraf), işleyişi (2. paragraf) ve verimi (3. paragraf) anlatıyor.",
+    "anlam": "Soru: Parçanın temel amacı ne? Dayanak (tüm metin): 'how it works' + 'The main advantage is efficiency'.",
+    "why": [
+     "Buzdolabı sadece aynı ilkeyi göstermek için anılıyor.",
+     "Yalıtım son cümlede küçük bir koşul.",
+     "Gaz kazanı sadece maliyet karşılaştırması için.",
+     "Tehlikeden söz edilmiyor.",
+     ""
+    ],
+    "tip": "Bilgi metninde amaç 'explain' ile başlar; 'persuade / warn' şıkları için metinde yazarın çağrısı olmalı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "compartment",
+    "tr": "bölme"
+   },
+   {
+    "w": "refrigerant",
+    "tr": "soğutucu akışkan"
+   },
+   {
+    "w": "circulate",
+    "tr": "dolaşmak"
+   },
+   {
+    "w": "evaporate",
+    "tr": "buharlaşmak"
+   },
+   {
+    "w": "absorb",
+    "tr": "emmek, soğurmak"
+   },
+   {
+    "w": "compressor",
+    "tr": "kompresör"
+   },
+   {
+    "w": "condense",
+    "tr": "yoğuşmak"
+   },
+   {
+    "w": "deliver",
+    "tr": "sağlamak, vermek"
+   },
+   {
+    "w": "insulated",
+    "tr": "yalıtımlı"
+   }
+  ]
+ },
+ {
+  "id": "p113",
+  "title": "Editing Genes with Precision",
+  "topic": "biyoloji",
+  "level": 2,
+  "words": 167,
+  "text": "For decades, changing the genes of a living organism was slow, expensive and imprecise. This changed in 2012, when Jennifer Doudna and Emmanuelle Charpentier showed that a bacterial defence system known as CRISPR could be turned into a simple tool for cutting DNA at a chosen place.\n\nIn nature, bacteria use CRISPR to recognise and destroy the DNA of viruses that have attacked them before. The tool consists of two parts: a short piece of guide RNA, which matches the target sequence, and an enzyme called Cas9, which cuts both strands of the DNA there. When the cell repairs the cut, a gene can be switched off, or a new piece of DNA can be inserted.\n\nCRISPR has spread rapidly through laboratories because it is cheap and easy to use. In 2023, the first CRISPR-based treatment was approved for sickle cell disease, an inherited blood disorder. The technique also raises ethical concerns, particularly about changing human embryos, since such changes would be passed on to future generations.",
+  "questions": [
+   {
+    "q": "According to the passage, the guide RNA in the CRISPR tool ----.",
+    "options": [
+     "is the enzyme, called Cas9, that cuts both strands of the DNA at the target",
+     "repairs the DNA after it has been cut",
+     "destroys viruses by producing new genes",
+     "matches the target DNA",
+     "was discovered in human embryos in 2012"
+    ],
+    "answer": 3,
+    "explain": "Metin 'a short piece of guide RNA, which matches the target sequence' diyor.",
+    "anlam": "Soru: CRISPR aracındaki kılavuz RNA ne yapar? Dayanak (2. paragraf): 'Hedef diziyle eşleşen kısa bir RNA parçası.'",
+    "why": [
+     "Kesen Cas9 enzimi; kılavuz RNA hedefi eşler.",
+     "Onarımı hücre yapar.",
+     "Virüs DNA'sını bakteriler CRISPR ile yok eder; yeni gen üretme yok.",
+     "",
+     "2012'de bakteriyel sistemin araca dönüşebileceği gösterildi."
+    ],
+    "tip": "İki parçalı sistemde (guide RNA / Cas9) her parçanın görevini ayrı eşle."
+   },
+   {
+    "q": "It is stated in the passage that changing human embryos is a concern because ----.",
+    "options": [
+     "CRISPR is still too expensive and too difficult for most ordinary laboratories to use",
+     "it cannot be used to treat sickle cell disease",
+     "embryos cannot repair cuts in their DNA",
+     "viruses attack embryos that have been edited",
+     "the changes would be inherited by later generations"
+    ],
+    "answer": 4,
+    "explain": "Metin 'since such changes would be passed on to future generations' diyor.",
+    "anlam": "Soru: İnsan embriyolarını değiştirmek neden kaygı yaratıyor? Dayanak (3. paragraf): 'Çünkü bu değişiklikler gelecek kuşaklara aktarılır.'",
+    "why": [
+     "Ters bilgi: ucuz ve kullanımı kolay.",
+     "Ters bilgi: orak hücre için tedavi onaylandı.",
+     "Böyle bir bilgi metinde yok.",
+     "Virüsler bakterilerle ilgili kısımda geçiyor.",
+     ""
+    ],
+    "tip": "'since' burada 'çünkü' anlamında; neden onun arkasındadır."
+   },
+   {
+    "q": "The passage mainly deals with ----.",
+    "options": [
+     "how CRISPR works and its uses and risks",
+     "the careers of the two scientists who first showed in 2012 that CRISPR could cut DNA",
+     "the causes and symptoms of sickle cell disease",
+     "the ways viruses attack bacteria in nature",
+     "why changing genes is still slow and expensive"
+    ],
+    "answer": 0,
+    "explain": "Metin aracın kökenini ve işleyişini, kullanımını ve etik kaygıları anlatıyor.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (tüm metin): 2. paragraf işleyiş, 3. paragraf kullanım ve etik.",
+    "why": [
+     "",
+     "Bilim insanları sadece keşif için anılıyor.",
+     "Hastalık sadece onaylanan tedavi örneği.",
+     "Bakteri-virüs ilişkisi sadece kökeni açıklıyor.",
+     "Ters bilgi: bu eskiden öyleydi; CRISPR bunu değiştirdi."
+    ],
+    "tip": "Ana fikir şıkkı metnin tüm bölümlerini (işleyiş + kullanım + sorun) kapsar."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "imprecise",
+    "tr": "kesin olmayan"
+   },
+   {
+    "w": "defence",
+    "tr": "savunma"
+   },
+   {
+    "w": "guide RNA",
+    "tr": "kılavuz RNA"
+   },
+   {
+    "w": "sequence",
+    "tr": "dizi"
+   },
+   {
+    "w": "strand",
+    "tr": "iplik, zincir"
+   },
+   {
+    "w": "insert",
+    "tr": "yerleştirmek"
+   },
+   {
+    "w": "approve",
+    "tr": "onaylamak"
+   },
+   {
+    "w": "inherited",
+    "tr": "kalıtsal"
+   },
+   {
+    "w": "ethical",
+    "tr": "etik"
+   },
+   {
+    "w": "embryo",
+    "tr": "embriyo"
+   }
+  ]
+ },
+ {
+  "id": "p114",
+  "title": "Targeted Medicines from the Immune System",
+  "topic": "tip",
+  "level": 3,
+  "words": 173,
+  "text": "Antibodies are Y-shaped proteins produced by the immune system. Each one recognises a single target, such as a particular molecule on the surface of a virus, and attaches to it. In 1975, Georges Köhler and César Milstein found a way to produce large quantities of identical antibodies in the laboratory, so-called monoclonal antibodies.\n\nThese molecules have become some of the most important medicines of recent decades. Because they bind only to their chosen target, they can act on diseased cells while largely sparing healthy ones. Some mark cancer cells so that the patient's own immune system destroys them; others block signals that drive inflammation in diseases such as rheumatoid arthritis.\n\nMonoclonal antibodies do, however, have drawbacks. Being large proteins, they would be digested in the stomach, so they cannot be taken as tablets and must be injected or infused. They are also costly to manufacture, which makes treatment expensive for health systems. Early versions made in mice sometimes caused allergic reactions, a problem largely solved by modern antibodies, which are almost entirely human.",
+  "questions": [
+   {
+    "q": "According to the passage, monoclonal antibodies cannot be taken as tablets because ----.",
+    "options": [
+     "they cause allergic reactions when they are swallowed, as the early versions made in mice did",
+     "they bind only to healthy cells in the stomach",
+     "they would be digested",
+     "they are too cheap to be produced as tablets",
+     "they must first be made in mice"
+    ],
+    "answer": 2,
+    "explain": "Metin 'Being large proteins, they would be digested in the stomach, so they cannot be taken as tablets' diyor.",
+    "anlam": "Soru: Monoklonal antikorlar neden tablet olarak alınamaz? Dayanak (3. paragraf): 'Büyük proteinler oldukları için midede sindirilirler.'",
+    "why": [
+     "Alerji eski fare antikorlarının sorunu; tablet nedeni değil.",
+     "Ters bilgi: hastalıklı hedefe bağlanırlar.",
+     "",
+     "Ters bilgi: üretimi pahalı.",
+     "Modern antikorlar neredeyse tamamen insan kaynaklı."
+    ],
+    "tip": "'Being X, ...' yapısı neden bildirir: 'X olduğu için'."
+   },
+   {
+    "q": "It is stated in the passage that some monoclonal antibodies used against cancer ----.",
+    "options": [
+     "mark cancer cells for destruction by the body",
+     "destroy healthy cells together with cancer cells",
+     "block the signals that drive inflammation in cancer cells and in rheumatoid arthritis",
+     "were first discovered in the stomach of mice",
+     "are produced by the cancer cells themselves"
+    ],
+    "answer": 0,
+    "explain": "Metin 'Some mark cancer cells so that the patient's own immune system destroys them' diyor.",
+    "anlam": "Soru: Kansere karşı kullanılan bazı antikorlar ne yapar? Dayanak (2. paragraf): 'Kanser hücrelerini işaretler, böylece hastanın bağışıklık sistemi onları yok eder.'",
+    "why": [
+     "",
+     "Metin sağlıklı hücrelere büyük ölçüde dokunmadıklarını söylüyor.",
+     "Bu iltihap hastalıklarında kullanılan başka antikorlar.",
+     "Fareler eski üretim kaynağı; mide ile ilgisi yok.",
+     "Antikorlar laboratuvarda üretiliyor."
+    ],
+    "tip": "'Some ...; others ...' yapısında her grubun işini ayrı eşle."
+   },
+   {
+    "q": "Which of the following best summarises the passage?",
+    "options": [
+     "Monoclonal antibodies are precise, useful drugs that also have some drawbacks",
+     "Monoclonal antibodies have replaced all other medicines",
+     "Antibodies made in mice are the safest form of treatment",
+     "The immune system cannot recognise viruses without drugs",
+     "Köhler and Milstein discovered the cause of arthritis"
+    ],
+    "answer": 0,
+    "explain": "Metin antikorların ne olduğunu, hedefli etkisini ve sakıncalarını (enjeksiyon, maliyet) anlatıyor.",
+    "anlam": "Soru: Parçayı en iyi hangisi özetler? Dayanak (2.–3. paragraf): 'most important medicines' + 'do, however, have drawbacks'.",
+    "why": [
+     "",
+     "Metin bunu söylemiyor; 'en önemlilerden' diyor.",
+     "Ters bilgi: fare antikorları alerji yapabiliyordu.",
+     "Metin bağışıklık sisteminin antikor ürettiğini söylüyor.",
+     "Onlar antikor üretim yolunu buldu."
+    ],
+    "tip": "Özet şıkkı hem olumlu hem olumsuz yönü birlikte vermeli ('... but also have drawbacks' gibi)."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "antibody",
+    "tr": "antikor"
+   },
+   {
+    "w": "attach",
+    "tr": "bağlanmak, yapışmak"
+   },
+   {
+    "w": "identical",
+    "tr": "özdeş, aynı"
+   },
+   {
+    "w": "bind",
+    "tr": "bağlanmak"
+   },
+   {
+    "w": "spare",
+    "tr": "esirgemek, zarar vermemek"
+   },
+   {
+    "w": "inflammation",
+    "tr": "iltihap, yangı"
+   },
+   {
+    "w": "infuse",
+    "tr": "damardan vermek (serum)"
+   },
+   {
+    "w": "manufacture",
+    "tr": "üretmek"
+   },
+   {
+    "w": "allergic",
+    "tr": "alerjik"
+   }
+  ]
+ },
+ {
+  "id": "p115",
+  "title": "Nature's Water Filters",
+  "topic": "ekoloji",
+  "level": 1,
+  "words": 161,
+  "text": "Wetlands such as marshes and swamps were once seen as useless land, and many were drained to make room for farms and cities. Scientists now know that they provide valuable services, one of the most important being the cleaning of water.\n\nAs water flows slowly through a wetland, mud and other particles settle to the bottom. Plants take up nitrogen and phosphorus, nutrients that would otherwise pollute rivers and lakes. Bacteria living around the roots break down many harmful substances, and some even turn nitrogen compounds into harmless nitrogen gas. In this way, a healthy wetland can remove a large part of the pollution from farm runoff before it reaches open water.\n\nWetlands also store water during heavy rain and release it slowly, which reduces flooding downstream. Because of these benefits, some towns have built artificial wetlands to treat their wastewater. These systems use little energy and are cheaper to run than conventional treatment plants, although they need much more land.",
+  "questions": [
+   {
+    "q": "According to the passage, bacteria living around wetland plant roots ----.",
+    "options": [
+     "take up nitrogen and phosphorus from the water",
+     "make mud and particles settle to the bottom",
+     "store water during heavy rain",
+     "pollute rivers with nitrogen gas",
+     "break down harmful substances and can convert some nitrogen compounds into gas"
+    ],
+    "answer": 4,
+    "explain": "Metin 'Bacteria living around the roots break down many harmful substances, and some even turn nitrogen compounds into harmless nitrogen gas' diyor.",
+    "anlam": "Soru: Köklerin çevresindeki bakteriler ne yapar? Dayanak (2. paragraf): 'Birçok zararlı maddeyi parçalar; bazıları azot bileşiklerini zararsız azot gazına çevirir.'",
+    "why": [
+     "Bunu bitkiler yapar.",
+     "Çökelme suyun yavaş akmasıyla olur.",
+     "Su depolama sulak alanın kendi işlevi.",
+     "Azot gazı zararsız olarak veriliyor; kirlilik değil.",
+     ""
+    ],
+    "tip": "Bir paragrafta birkaç özne (water, plants, bacteria) iş yapıyorsa her işi doğru özneyle eşle."
+   },
+   {
+    "q": "It is stated in the passage that artificial wetlands ----.",
+    "options": [
+     "use more energy than conventional treatment plants",
+     "are cheaper to run but need far more land area",
+     "need much less land than conventional plants",
+     "were built mainly in order to make room for new farms and cities on land that was once wet",
+     "increase flooding in towns downstream"
+    ],
+    "answer": 1,
+    "explain": "Metin 'These systems use little energy and are cheaper to run than conventional treatment plants, although they need much more land' diyor.",
+    "anlam": "Soru: Yapay sulak alanlar hakkında ne söyleniyor? Dayanak (3. paragraf): 'Az enerji kullanır, işletmesi daha ucuzdur ama çok daha fazla arazi ister.'",
+    "why": [
+     "Ters bilgi: az enerji kullanırlar.",
+     "",
+     "Ters bilgi: çok daha fazla arazi isterler.",
+     "Kurutma eskiden tarım için yapılıyordu; yapay sulak alan atık su için.",
+     "Ters bilgi: sulak alanlar taşkını azaltır."
+    ],
+    "tip": "'although' iki yönü bağlar; doğru şık ikisini birden verir."
+   },
+   {
+    "q": "The main idea of the passage is that wetlands ----.",
+    "options": [
+     "should be drained to make room for cities",
+     "are the main cause of pollution in rivers",
+     "provide useful services, especially by cleaning water",
+     "can only be found near towns with treatment plants",
+     "are more important for bacteria than for people"
+    ],
+    "answer": 2,
+    "explain": "Metin sulak alanların değerli hizmetler sunduğunu, en önemlisinin suyu temizlemek olduğunu söyleyip bunu açıklıyor.",
+    "anlam": "Soru: Parçanın ana fikri ne? Dayanak (1. paragraf): 'Bilim insanları artık bunların değerli hizmetler sunduğunu biliyor; en önemlilerinden biri suyun temizlenmesi.'",
+    "why": [
+     "Bu eski görüş; metin onu düzeltiyor.",
+     "Ters bilgi: kirliliği temizlerler.",
+     "",
+     "Böyle bir bilgi yok.",
+     "Böyle bir karşılaştırma yok."
+    ],
+    "tip": "'were once seen as ... now know that ...' kalıbında ana fikir 'now' kısmıdır."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "wetland",
+    "tr": "sulak alan"
+   },
+   {
+    "w": "marsh",
+    "tr": "bataklık"
+   },
+   {
+    "w": "drain",
+    "tr": "kurutmak, suyunu boşaltmak"
+   },
+   {
+    "w": "settle",
+    "tr": "dibe çökmek"
+   },
+   {
+    "w": "take up",
+    "tr": "almak, emmek"
+   },
+   {
+    "w": "compound",
+    "tr": "bileşik"
+   },
+   {
+    "w": "downstream",
+    "tr": "akış aşağı"
+   },
+   {
+    "w": "artificial",
+    "tr": "yapay"
+   },
+   {
+    "w": "conventional",
+    "tr": "geleneksel, alışılmış"
+   }
+  ]
+ },
+ {
+  "id": "p116",
+  "title": "Silence from Sound",
+  "topic": "fizik",
+  "level": 2,
+  "words": 173,
+  "text": "Sound travels through air as a wave of tiny pressure changes. When two sound waves meet, their effects add together. If the high-pressure parts of one wave meet the high-pressure parts of another, the sound becomes louder. If, however, the high-pressure parts of one wave meet the low-pressure parts of another, the two can cancel each other out. This effect is called destructive interference.\n\nNoise-cancelling headphones use this principle. A small microphone on the outside of each ear cup picks up the surrounding noise. An electronic circuit then produces an opposite wave, and the speaker plays it together with the music. When the two waves meet inside the ear cup, much of the noise disappears.\n\nThe system works best for steady, low-pitched sounds, such as the hum of an aircraft engine, because these waves are long and change slowly enough for the electronics to follow. Sudden or high-pitched sounds, like voices or a dog barking, are harder to cancel. For this reason, headphones also rely on soft padding that physically blocks higher frequencies.",
+  "questions": [
+   {
+    "q": "According to the passage, the microphone on a noise-cancelling headphone ----.",
+    "options": [
+     "detects the noise around the listener",
+     "produces the opposite wave that cancels the noise",
+     "blocks high-pitched sounds with soft padding",
+     "makes the music louder by adding waves together",
+     "plays the music inside the ear cup"
+    ],
+    "answer": 0,
+    "explain": "Metin 'A small microphone on the outside of each ear cup picks up the surrounding noise' diyor.",
+    "anlam": "Soru: Kulaklıktaki mikrofon ne yapar? Dayanak (2. paragraf): 'Her kapağın dışındaki küçük mikrofon çevredeki gürültüyü algılar.'",
+    "why": [
+     "",
+     "Karşıt dalgayı elektronik devre üretir.",
+     "Bunu yumuşak dolgu yapar.",
+     "Dalgaların toplanması ilke olarak anlatılıyor; mikrofonun işi değil.",
+     "Müziği hoparlör çalar."
+    ],
+    "tip": "Parça-görev eşleştirmesinde (mikrofon / devre / hoparlör / dolgu) her birinin fiilini ayrı not et."
+   },
+   {
+    "q": "It is stated in the passage that the hum of an aircraft engine is easy to cancel because ----.",
+    "options": [
+     "it is a sudden, high-pitched sound",
+     "it is blocked completely by soft padding",
+     "its high-pressure parts meet the high-pressure parts of the music played by the speaker",
+     "its long waves change slowly enough to follow",
+     "aircraft engines produce no pressure changes"
+    ],
+    "answer": 3,
+    "explain": "Metin 'because these waves are long and change slowly enough for the electronics to follow' diyor.",
+    "anlam": "Soru: Uçak motorunun uğultusu neden kolay bastırılır? Dayanak (3. paragraf): 'Bu dalgalar uzundur ve elektroniğin izleyebileceği kadar yavaş değişir.'",
+    "why": [
+     "Ters bilgi: ani ve tiz sesler zor bastırılır.",
+     "Dolgu daha çok yüksek frekansları engeller.",
+     "Yüksek basınçlı kısımların buluşması sesi yükseltir; bastırmaz.",
+     "",
+     "Ses zaten basınç değişimidir; yanlış."
+    ],
+    "tip": "Örnek (aircraft hum) ile kural (steady, low-pitched) arasında bağ kuran 'because' cümlesini bul."
+   },
+   {
+    "q": "Which of the following is the best title for the passage?",
+    "options": [
+     "How Noise-Cancelling Headphones Use Sound Waves",
+     "The History of the Microphone",
+     "Why Dogs Bark at Night",
+     "Aircraft Engines, Barking Dogs and Other Noisy Things",
+     "The Dangers of Loud Music"
+    ],
+    "answer": 0,
+    "explain": "Metin girişim ilkesini ve bu ilkenin kulaklıklarda nasıl kullanıldığını anlatıyor.",
+    "anlam": "Soru: Parçaya en uygun başlık hangisi? Dayanak (2. paragraf): 'Noise-cancelling headphones use this principle.'",
+    "why": [
+     "",
+     "Mikrofonun tarihinden söz yok.",
+     "Köpek havlaması sadece tiz ses örneği.",
+     "Uçak motoru sadece bir örnek.",
+     "Yüksek müziğin zararından söz yok."
+    ],
+    "tip": "Başlık hem ilkeyi (sound waves) hem uygulamayı (headphones) kapsamalı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "pressure",
+    "tr": "basınç"
+   },
+   {
+    "w": "cancel out",
+    "tr": "birbirini yok etmek"
+   },
+   {
+    "w": "interference",
+    "tr": "girişim"
+   },
+   {
+    "w": "ear cup",
+    "tr": "kulaklık kapağı"
+   },
+   {
+    "w": "pick up",
+    "tr": "algılamak, yakalamak"
+   },
+   {
+    "w": "circuit",
+    "tr": "devre"
+   },
+   {
+    "w": "steady",
+    "tr": "sabit, düzenli"
+   },
+   {
+    "w": "low-pitched",
+    "tr": "pes, kalın sesli"
+   },
+   {
+    "w": "padding",
+    "tr": "dolgu, yastık"
+   }
+  ]
+ },
+ {
+  "id": "p117",
+  "title": "Left-Handed and Right-Handed Molecules",
+  "topic": "kimya",
+  "level": 3,
+  "words": 184,
+  "text": "Many molecules exist in two forms that contain exactly the same atoms joined in the same order but are mirror images of each other, like a left and a right hand. Such molecules are called chiral. The two forms, known as enantiomers, have identical boiling points and most other physical properties, yet they can behave very differently in the body.\n\nThe reason is that the receptors and enzymes in our cells are themselves chiral. Just as a left hand fits only a left glove, an enzyme may interact strongly with one enantiomer and hardly at all with the other. The two forms of the molecule carvone, for example, smell of spearmint and of caraway respectively.\n\nIn medicine, the difference can be critical. In the late 1950s, the drug thalidomide was sold as a mixture of both forms to ease morning sickness in pregnant women. One form was later linked to severe birth defects, although the body can convert one form into the other. Since then, regulators have required companies to test each enantiomer separately, and many modern drugs are produced as a single form.",
+  "questions": [
+   {
+    "q": "According to the passage, the two enantiomers of a chiral molecule ----.",
+    "options": [
+     "contain different atoms joined in a different order",
+     "have very different boiling points",
+     "share most physical properties but may act differently in the body",
+     "always smell exactly the same",
+     "cannot interact at all with any of the receptors or enzymes found in our cells"
+    ],
+    "answer": 2,
+    "explain": "Metin enantiyomerlerin 'identical boiling points and most other physical properties' olduğunu, 'yet they can behave very differently in the body' dediğini söylüyor.",
+    "anlam": "Soru: Kiral bir molekülün iki enantiyomeri hakkında ne doğru? Dayanak (1. paragraf): 'Fiziksel özelliklerinin çoğu aynıdır, yine de vücutta çok farklı davranabilirler.'",
+    "why": [
+     "Ters bilgi: aynı atomlar aynı sırayla bağlıdır.",
+     "Ters bilgi: kaynama noktaları aynıdır.",
+     "",
+     "Karvon örneği iki formun farklı koktuğunu gösteriyor.",
+     "Enzim birine güçlü, diğerine zayıf bağlanabilir; hiç bağlanmaz değil."
+    ],
+    "tip": "'yet' iki zıt bilgiyi bağlar; doğru şık ikisini birlikte verir."
+   },
+   {
+    "q": "The example of carvone is given to show that ----.",
+    "options": [
+     "carvone was one of the forms of the drug thalidomide sold in the late 1950s",
+     "enzymes are not chiral themselves",
+     "the body can distinguish the two forms",
+     "spearmint and caraway contain different atoms",
+     "both forms of a molecule have the same smell"
+    ],
+    "answer": 2,
+    "explain": "Karvonun iki formu farklı kokuyor (nane ve kimyon); bu, vücudun (koku alıcılarının) iki formu ayırt edebildiğini gösteriyor.",
+    "anlam": "Soru: Karvon örneği ne göstermek için verilmiş? Dayanak (2. paragraf): 'İki form sırasıyla nane ve kimyon gibi kokar.'",
+    "why": [
+     "Karvon ile talidomit ayrı örnekler.",
+     "Ters bilgi: reseptör ve enzimler de kiraldir.",
+     "",
+     "Ters bilgi: iki form aynı atomları içerir.",
+     "Ters bilgi: iki form farklı kokar."
+    ],
+    "tip": "'for example' önceki genel iddiayı (enzim bir forma güçlü, ötekine zayıf bağlanır) örnekler."
+   },
+   {
+    "q": "The passage is mainly concerned with ----.",
+    "options": [
+     "the history of drugs such as thalidomide that were used to ease morning sickness",
+     "why mirror-image forms of molecules matter, particularly in medicine",
+     "how to measure the boiling points of drugs",
+     "the reasons why left-handed people are rare",
+     "the use of spearmint and caraway in cooking"
+    ],
+    "answer": 1,
+    "explain": "Metin kiralliği tanımlıyor, vücudun iki formu neden ayırdığını açıklıyor ve ilaçlardaki önemini talidomit örneğiyle veriyor.",
+    "anlam": "Soru: Parça esas olarak ne ile ilgili? Dayanak (3. paragraf): 'In medicine, the difference can be critical.'",
+    "why": [
+     "Talidomit sadece bir örnek.",
+     "",
+     "Kaynama noktası sadece benzerliği göstermek için anılıyor.",
+     "El benzetmesi sadece kiralliği anlatmak için.",
+     "Bunlar sadece koku örneği."
+    ],
+    "tip": "Benzetmeler (eller, eldiven) ana fikir değildir; benzetmenin anlattığı kavramı seç."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "mirror image",
+    "tr": "ayna görüntüsü"
+   },
+   {
+    "w": "chiral",
+    "tr": "kiral (ayna görüntüsüyle çakışmayan)"
+   },
+   {
+    "w": "enantiomer",
+    "tr": "enantiyomer"
+   },
+   {
+    "w": "identical",
+    "tr": "aynı, özdeş"
+   },
+   {
+    "w": "receptor",
+    "tr": "reseptör, alıcı"
+   },
+   {
+    "w": "respectively",
+    "tr": "sırasıyla"
+   },
+   {
+    "w": "morning sickness",
+    "tr": "gebelik bulantısı"
+   },
+   {
+    "w": "birth defect",
+    "tr": "doğum kusuru"
+   },
+   {
+    "w": "regulator",
+    "tr": "denetleyici kurum"
+   }
+  ]
+ },
+ {
+  "id": "p118",
+  "title": "Making Files Smaller",
+  "topic": "bilgisayar",
+  "level": 1,
+  "words": 169,
+  "text": "Every photo, song and document on a computer is stored as a long series of bits. Many files contain patterns and repetitions, and compression programs take advantage of them to store the same information in less space.\n\nThere are two main types of compression. Lossless compression allows the original file to be rebuilt exactly. A simple example is replacing a row of one hundred identical white pixels with a short instruction meaning \"one hundred white pixels\". Text documents and computer programs must always be compressed in this way, since changing even a single character could make them useless.\n\nLossy compression, by contrast, throws away some information permanently. Formats such as JPEG for images and MP3 for music remove details that people are unlikely to notice, such as very small changes in colour or very quiet sounds hidden behind loud ones. As a result, files can be made ten times smaller or more. If a lossy file is compressed and saved again and again, however, the quality gradually becomes worse.",
+  "questions": [
+   {
+    "q": "According to the passage, text documents must be compressed without loss because ----.",
+    "options": [
+     "even one wrong character could make them useless",
+     "they contain no patterns or repetitions",
+     "lossy formats such as JPEG and MP3 make text documents about ten times larger",
+     "they are always much larger than image and music files",
+     "people are unlikely to notice small changes in text"
+    ],
+    "answer": 0,
+    "explain": "Metin 'since changing even a single character could make them useless' diyor.",
+    "anlam": "Soru: Metin belgeleri neden kayıpsız sıkıştırılmalı? Dayanak (2. paragraf): 'Çünkü tek bir karakteri değiştirmek bile onları işe yaramaz yapabilir.'",
+    "why": [
+     "",
+     "Metin dosyaların çoğunda örüntü olduğunu söylüyor.",
+     "Kayıplı biçimler dosyayı küçültür; metni büyütmez.",
+     "Metinde dosya türleri arasında boyut karşılaştırması yok.",
+     "Bu kayıplı sıkıştırmanın resim/ses için mantığı; metin için tersi geçerli."
+    ],
+    "tip": "'since' = 'çünkü'; 'a single character' = 'one wrong character'."
+   },
+   {
+    "q": "It is stated in the passage that lossy compression ----.",
+    "options": [
+     "allows the original file to be rebuilt exactly",
+     "improves the quality of the file a little more each time it is compressed and saved again",
+     "drops details we are unlikely to notice",
+     "is the only method used for computer programs",
+     "makes files slightly larger than the original"
+    ],
+    "answer": 2,
+    "explain": "Metin JPEG ve MP3'ün 'remove details that people are unlikely to notice' dediğini söylüyor.",
+    "anlam": "Soru: Kayıplı sıkıştırma hakkında ne söyleniyor? Dayanak (3. paragraf): 'İnsanların fark etmesi olası olmayan ayrıntıları atar.'",
+    "why": [
+     "Bu kayıpsız sıkıştırmanın tanımı.",
+     "Ters bilgi: tekrar kaydettikçe kalite düşer.",
+     "",
+     "Programlar kayıpsız sıkıştırılmalı.",
+     "Ters bilgi: on kat ya da daha çok küçültür."
+    ],
+    "tip": "İki tür anlatılıyorsa her özelliği doğru türe yerleştir (lossless / lossy)."
+   },
+   {
+    "q": "The passage mainly ----.",
+    "options": [
+     "compares two ways of reducing file size",
+     "explains how JPEG was invented",
+     "describes how pixels display colours on a screen",
+     "warns people never to save music files",
+     "argues that lossy compression should be banned"
+    ],
+    "answer": 0,
+    "explain": "Metin kayıpsız ve kayıplı sıkıştırmayı tanımlayıp karşılaştırıyor ('There are two main types').",
+    "anlam": "Soru: Parça esas olarak ne yapıyor? Dayanak (2. paragraf): 'İki ana sıkıştırma türü vardır.'",
+    "why": [
+     "",
+     "JPEG sadece örnek.",
+     "Piksel sadece basit bir örnekte geçiyor.",
+     "Böyle bir uyarı yok.",
+     "Metin bir öneri yapmıyor."
+    ],
+    "tip": "'There are two main types' gibi cümleler karşılaştırma metni olduğunu gösterir."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "compression",
+    "tr": "sıkıştırma"
+   },
+   {
+    "w": "take advantage of",
+    "tr": "yararlanmak"
+   },
+   {
+    "w": "lossless",
+    "tr": "kayıpsız"
+   },
+   {
+    "w": "rebuild",
+    "tr": "yeniden oluşturmak"
+   },
+   {
+    "w": "identical",
+    "tr": "aynı, özdeş"
+   },
+   {
+    "w": "pixel",
+    "tr": "piksel"
+   },
+   {
+    "w": "lossy",
+    "tr": "kayıplı"
+   },
+   {
+    "w": "permanently",
+    "tr": "kalıcı olarak"
+   },
+   {
+    "w": "gradually",
+    "tr": "giderek, yavaş yavaş"
+   }
+  ]
+ },
+ {
+  "id": "p119",
+  "title": "Seconds of Warning",
+  "topic": "yerbilimi",
+  "level": 2,
+  "words": 185,
+  "text": "Earthquakes cannot yet be predicted days or hours in advance, but it is possible to warn people a few seconds before strong shaking arrives. This is the aim of earthquake early warning systems, which now operate in Japan, Mexico, parts of the United States and several other countries.\n\nThe systems rely on the fact that an earthquake sends out two main kinds of waves. The first, called P-waves, travel faster but usually cause little damage. The slower S-waves and surface waves that follow produce most of the destructive shaking. A network of sensors detects the first P-waves near the source, and computers quickly estimate the location and size of the earthquake. A warning is then sent by mobile phone, radio and television to areas that the stronger waves have not yet reached.\n\nThe warning time depends on distance. People very close to the source may receive no warning at all, while those a hundred kilometres away may have twenty seconds or more. Even a few seconds, however, are enough to stop trains, open fire station doors and allow people to take cover under a table.",
+  "questions": [
+   {
+    "q": "According to the passage, early warning systems work by ----.",
+    "options": [
+     "detecting fast P-waves and sending alerts before the stronger waves arrive",
+     "predicting earthquakes several days in advance",
+     "stopping S-waves before they reach large cities",
+     "measuring the damage caused by surface waves",
+     "sending sensors to the source of the earthquake"
+    ],
+    "answer": 0,
+    "explain": "Metin sensörlerin ilk P dalgalarını algıladığını ve güçlü dalgaların henüz ulaşmadığı yerlere uyarı gönderildiğini söylüyor.",
+    "anlam": "Soru: Erken uyarı sistemleri nasıl çalışır? Dayanak (2. paragraf): 'Sensör ağı ilk P dalgalarını algılar ... uyarı güçlü dalgaların henüz ulaşmadığı yerlere gönderilir.'",
+    "why": [
+     "",
+     "Ters bilgi: depremler henüz günler önceden tahmin edilemiyor.",
+     "Dalgalar durdurulamaz; sadece önceden uyarılır.",
+     "Uyarı hasar oluşmadan verilir.",
+     "Sensör ağı zaten kurulu; kaynağa gönderilmiyor."
+    ],
+    "tip": "'cannot yet be predicted' bilgisi tahmin şıklarını eler; sistem tahmin değil uyarı yapar."
+   },
+   {
+    "q": "It is stated in the passage that people very close to the source of an earthquake ----.",
+    "options": [
+     "always receive at least twenty seconds of warning",
+     "may not be warned before the shaking",
+     "feel only the harmless P-waves",
+     "are warned days before the earthquake",
+     "are protected because S-waves travel faster"
+    ],
+    "answer": 1,
+    "explain": "Metin 'People very close to the source may receive no warning at all' diyor.",
+    "anlam": "Soru: Kaynağa çok yakın kişiler hakkında ne söyleniyor? Dayanak (3. paragraf): 'Hiç uyarı almayabilirler.'",
+    "why": [
+     "Yirmi saniye yaklaşık yüz km uzaktakiler için.",
+     "",
+     "Metinde böyle bir bilgi yok.",
+     "Ters bilgi: depremler günler önceden tahmin edilemez.",
+     "Ters bilgi: S dalgaları daha yavaştır."
+    ],
+    "tip": "'may receive no warning at all' = 'may not be warned': olumsuz yapıları eşle."
+   },
+   {
+    "q": "The author's main purpose in the passage is to ----.",
+    "options": [
+     "argue that earthquakes will soon be predicted days in advance",
+     "compare the earthquake history of Japan and Mexico",
+     "describe how fire stations are designed",
+     "show that P-waves are the most destructive waves",
+     "explain how short earthquake warnings work and why they help"
+    ],
+    "answer": 4,
+    "explain": "Metin sistemin dayandığı ilkeyi, uyarı süresini ve birkaç saniyenin bile yararını anlatıyor.",
+    "anlam": "Soru: Yazarın temel amacı ne? Dayanak (tüm metin): ilke (2. paragraf) + yarar (3. paragraf).",
+    "why": [
+     "Metin bunun henüz mümkün olmadığını söylüyor.",
+     "Ülkeler sadece sistemin kullanıldığı yerler.",
+     "İtfaiye kapısı sadece bir örnek eylem.",
+     "Ters bilgi: P dalgaları az hasar verir.",
+     ""
+    ],
+    "tip": "Amaç şıkkında 'how' ve 'why' birlikte geçiyorsa metnin iki bölümünü de karşılayıp karşılamadığına bak."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "predict",
+    "tr": "önceden tahmin etmek"
+   },
+   {
+    "w": "in advance",
+    "tr": "önceden"
+   },
+   {
+    "w": "rely on",
+    "tr": "dayanmak"
+   },
+   {
+    "w": "source",
+    "tr": "kaynak (odak)"
+   },
+   {
+    "w": "destructive",
+    "tr": "yıkıcı"
+   },
+   {
+    "w": "estimate",
+    "tr": "tahmin etmek, kestirmek"
+   },
+   {
+    "w": "reach",
+    "tr": "ulaşmak"
+   },
+   {
+    "w": "take cover",
+    "tr": "sığınmak"
+   }
+  ]
+ },
+ {
+  "id": "p120",
+  "title": "A Thin Film of Oil",
+  "topic": "makine",
+  "level": 3,
+  "words": 181,
+  "text": "In a well-lubricated journal bearing, the rotating shaft never actually touches the bearing surface. Instead, it rides on a thin film of oil, often only a few thousandths of a millimetre thick. This condition, called hydrodynamic lubrication, explains why such bearings in turbines can run for decades with very little wear.\n\nThe film is created by the motion itself. Because the shaft sits slightly off-centre, the gap between shaft and bearing narrows on one side. As the rotating shaft drags oil into this narrowing wedge, pressure builds up in the oil and lifts the shaft. The faster the shaft turns and the thicker the oil, the higher the pressure and the thicker the film.\n\nThe weakest moments are therefore starting and stopping. At low speeds the film is too thin to separate the surfaces, and metal rubs against metal. To reduce this damage, large machines often use a separate pump that forces oil into the bearing under high pressure before the shaft begins to turn. Overheating is another danger, since hot oil becomes thinner and may no longer support the load.",
+  "questions": [
+   {
+    "q": "According to the passage, the oil film in a journal bearing becomes thicker when ----.",
+    "options": [
+     "the shaft sits exactly in the centre of the bearing",
+     "the machine is starting or stopping",
+     "the shaft rotates faster or a thicker oil is used",
+     "the oil becomes hot and thin",
+     "metal rubs against metal at low speed"
+    ],
+    "answer": 2,
+    "explain": "Metin 'The faster the shaft turns and the thicker the oil, the higher the pressure and the thicker the film' diyor.",
+    "anlam": "Soru: Yağ filmi ne zaman kalınlaşır? Dayanak (2. paragraf): 'Mil ne kadar hızlı döner ve yağ ne kadar koyu olursa, basınç ve film o kadar artar.'",
+    "why": [
+     "Film merkezden kaçıklıkla oluşan daralmadan doğar.",
+     "Ters bilgi: bu anlarda film çok incedir.",
+     "",
+     "Ters bilgi: sıcak yağ incelir ve yükü taşıyamayabilir.",
+     "Bu, film yetersiz olduğunda olur."
+    ],
+    "tip": "'The more ..., the more ...' kalıbında iki değişkenin yönünü (artar/azalır) dikkatle eşle."
+   },
+   {
+    "q": "It is stated in the passage that some large machines use a separate pump in order to ----.",
+    "options": [
+     "feed oil in before the shaft turns",
+     "cool the oil when the machine overheats, since hot oil becomes too thin to carry the load",
+     "keep the shaft exactly in the centre",
+     "make the oil film thinner at high speed",
+     "replace the oil after decades of use"
+    ],
+    "answer": 0,
+    "explain": "Metin 'a separate pump that forces oil into the bearing under high pressure before the shaft begins to turn' diyor.",
+    "anlam": "Soru: Bazı büyük makineler ayrı pompayı ne için kullanır? Dayanak (3. paragraf): 'Mil dönmeye başlamadan önce yatağa yüksek basınçla yağ basmak için.'",
+    "why": [
+     "",
+     "Pompanın amacı başlangıçtaki teması önlemek; soğutma değil.",
+     "Merkezden kaçıklık filmi oluşturan şey; pompa bunun için kullanılmıyor.",
+     "Pompa basınçla yağ basar; filmi inceltmek için değil.",
+     "Metinde yağ değişiminden söz yok."
+    ],
+    "tip": "'To reduce this damage' amacı verir; 'this damage' önceki cümledeki metal-metal sürtünmesidir."
+   },
+   {
+    "q": "Which of the following best states the main idea of the passage?",
+    "options": [
+     "Journal bearings wear out quickly because metal always touches metal",
+     "Turbines should never be started or stopped",
+     "Thin oils are always better than thick oils in bearings",
+     "Motion creates an oil film that keeps shaft and bearing apart, except in some conditions",
+     "Pumps are the main source of pressure in all bearings"
+    ],
+    "answer": 3,
+    "explain": "Metin filmin hareketle oluştuğunu ve düşük hız ile aşırı ısınmada zayıfladığını anlatıyor.",
+    "anlam": "Soru: Parçanın ana fikri hangisi? Dayanak (2.–3. paragraf): 'The film is created by the motion itself' + 'The weakest moments are ... starting and stopping ... Overheating is another danger'.",
+    "why": [
+     "Ters bilgi: iyi yağlanınca on yıllarca az aşınırlar.",
+     "Böyle bir öneri yok; sadece en zayıf anlar olduğu söyleniyor.",
+     "Ters bilgi: koyu yağ filmi kalınlaştırır.",
+     "",
+     "Basıncı esas olarak dönme hareketi üretir; pompa yardımcı."
+    ],
+    "tip": "Ana fikir şıkkı, metnin hem kuralını hem istisnalarını kapsamalı."
+   }
+  ],
+  "gloss": [
+   {
+    "w": "lubricate",
+    "tr": "yağlamak"
+   },
+   {
+    "w": "journal bearing",
+    "tr": "kaymalı yatak (muylu yatağı)"
+   },
+   {
+    "w": "ride on",
+    "tr": "üzerinde taşınmak"
+   },
+   {
+    "w": "hydrodynamic",
+    "tr": "hidrodinamik"
+   },
+   {
+    "w": "off-centre",
+    "tr": "merkezden kaçık"
+   },
+   {
+    "w": "drag",
+    "tr": "sürüklemek"
+   },
+   {
+    "w": "wedge",
+    "tr": "kama"
+   },
+   {
+    "w": "rub",
+    "tr": "sürtünmek"
+   },
+   {
+    "w": "overheating",
+    "tr": "aşırı ısınma"
+   }
+  ]
  }
 ]

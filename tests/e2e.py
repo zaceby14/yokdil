@@ -380,7 +380,7 @@ with sync_playwright() as p:
     check('gmat' in due, 'olgun (öğrenilmemiş) kart normal kuyrukta')
     page.goto(BASE + '#/eksikler'); page.wait_for_timeout(500)
     txt = page.inner_text('main')
-    check('çalıştığın kelime' in txt and 'hedef 2000' in txt and page.locator('.goal-line').count() == 1, 'Eksikler: çalıştığın kelime + sağlam + ara hedef çizgisi')
+    check('çalıştığın kelime' in txt and 'hedef 1100' in txt and page.locator('.goal-line').count() == 1, 'Eksikler: çalıştığın kelime + sağlam + ara hedef çizgisi')
     page.screenshot(path=f'{SHOTS}/v3-eksikler-kelime.png', full_page=True)
 
     # 4a) Yanlış cevap → otomatik kart
@@ -1074,22 +1074,23 @@ with sync_playwright() as p:
       const k = Object.keys(JSON.parse(localStorage.getItem('yokdil.v1')).days || {{}}); for (const d of m.all('days')) {{ const x = {{ ...d }}; delete x.hset; m.put('days', x); }} }})""")
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(700)
     ht = page.locator('[data-task=hata]').first.text_content() if page.locator('[data-task=hata]').count() else ''  # deneme gününde 'İsteğe bağlı' (kapalı) içinde
-    check('Hata tekrarı (0/8)' in ht, f'Bugün: ayrı görev "Hata tekrarı (0/8)" ({ht.strip()[:40]})')
+    mh = re.search(r'Hata tekrarı \(0/(\d+)\)', ht); HN = int(mh.group(1)) if mh else -1
+    check(HN == 10, f'Bugün: ayrı görev "Hata tekrarı (0/10)" — 30 birikmiş → 10 ({ht.strip()[:40]})')
     gt = page.locator('[data-task=gramer]').first.text_content()
     check('hata' not in gt.lower() and '+' not in gt, f'Gramer görevinde birikmiş hata sayısı yok ({gt.strip()})')
     page.goto(BASE + '#/gramer/hata'); page.wait_for_timeout(700)
-    check('1/8' in page.inner_text('.qhead'), 'hata tekrarı oturumu 8 soru')
+    check(f'1/{HN}' in page.inner_text('.qhead'), f'hata tekrarı oturumu {HN} soru')
     for k in range(3):
         page.locator('.opt').nth(0).click(); page.wait_for_timeout(100); page.click('.actbar .btn'); page.wait_for_timeout(100)
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
-    check('(3/8)' in page.locator('[data-task=hata]').first.text_content(), 'Hata tekrarı ilerlemesi (3/8)')
+    check(f'(3/{HN})' in page.locator('[data-task=hata]').first.text_content(), f'Hata tekrarı ilerlemesi (3/{HN})')
 
     # A5) Seri: tek atlanan gün + deneme günü
     ev("""import('./js/store.js').then(m => import('./js/util.js').then(u => { const t = u.dayKey();
       for (const [i, f] of [[2, { tasks: { kart: true } }], [3, { mock: true }], [4, { focusMin: 30 }]]) m.put('days', { id: u.addDays(t, -i), tasks: {}, ...f }); }))""")
     page.goto(BASE + '#/kartlar'); page.wait_for_timeout(200); page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
     stv = page.inner_text('.streak')
-    check('Seri: 4' in stv and 'joker' in stv, f'seri: deneme sayıldı + joker dün kullanıldı ({stv})')
+    check('seri 4' in stv and 'joker' in stv and '/7 gün' in stv, f'seri: deneme sayıldı + joker dün kullanıldı ({stv})')
 
     # A8) Hafıza turu sayısı tutarlı; okuma çok hızlıysa ✓ yok
     tour_n = ev("import('./js/memory.js').then(m => m.tourCards().length)")
@@ -1261,9 +1262,8 @@ with sync_playwright() as p:
     go('eksikler', 600)
     check(page.locator('.reasons-all .cbar').count() == 2 and '3 işaretli' in page.inner_text('.reasons-all'), 'Eksikler: hata nedenleri birikimli grafik')
     txt = page.inner_text('main')
-    mcs = re.search(r'Sık kelime listesi: (\d+)/(\d+) görüldü', txt)
-    n_words = len(json.load(open(f'{ROOT}/data/words.json', encoding='utf-8')))
-    check(mcs is not None and int(mcs.group(2)) == n_words and 'hedef 2000' in txt, f'Eksikler: çekirdek liste ilerlemesi ({mcs.group(0) if mcs else None}), hedef 2000 duruyor')
+    mcs = re.search(r'\(4–5★\) kelimeler: (\d+)/(\d+)', txt)
+    check(mcs is not None and int(mcs.group(2)) > 100 and 'hedef 1100' in txt and 'Sık kelime listesi' not in txt, f'Eksikler: 4–5★ ana gösterge ({mcs.group(0) if mcs else None}), hedef programdan (1100)')
     # D2) Okuma hızı haftalık grafik + hedef çizgisi
     ev("""import('./js/store.js').then(m => { const now = Date.now(), d = 86400000;
       [[1, 95], [2, 105], [9, 88], [16, 80], [17, 84]].forEach(([ago, wpm], i) => m.put('progress', { id: 'read:t' + i, kind: 'read', words: 200, secs: 120, wpm, level: 1, at: now - ago * d, right: 2, total: 3 })); })""")
@@ -1343,21 +1343,19 @@ with sync_playwright() as p:
         page.click('.actbar .btn.primary'); page.wait_for_timeout(150)
     check(page.locator('.endcard').count() == 1 and page.locator('a:has-text("Yeni tur")').count() == 1, 'Tahmin: tur bitti (10 soru)')
 
-    # D1) Aynı kişisel kuraldan 2 yanlış → Bugün'e kural kartı görevi
-    wrong_topics = {l.get('topic') for l in st()['grammarLog'].values() if not l.get('correct')}
-    rule_topic = next(r['topic'] for r in aids_m['personalRules'] if r['topic'] not in wrong_topics)
+    # D1) Tek öncelik: sınavda çok çıkan konuda son cevaplar zayıf → Bugün'de tek görev (Eksikler'le aynı)
     go('bugun', 500)
-    check(page.locator('.rule-tasks li').count() == 0, 'kural görevi: yanlış yokken yok')
-    ev(f"""import('./js/store.js').then(m => {{ const now = Date.now(); const day = new Date(now).toISOString().slice(0, 10);
-      for (let i = 0; i < 2; i++) m.put('grammarLog', {{ id: 'rw' + i, q: 'g000' + i, correct: false, kind: 'gramer', topic: '{rule_topic}', at: now - i * 1000, day: (() => {{ const d = new Date(now); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }})() }}); }})""")
-    page.wait_for_timeout(300); go('bugun', 300); page.reload(); page.wait_for_timeout(700)
-    check(page.locator(f'.rule-tasks li[data-rule="{rule_topic}"]').count() == 1 and 'Kural kartı' in page.inner_text('.rule-tasks'), 'Bugün: kural kartı görevi (2 yanlış)')
-    shot('v7-bugun-kural-gorevi', True)
-    page.click('.rule-tasks a.task'); page.wait_for_timeout(500)
-    check(page.locator('.rulecard.focus').count() >= 1 and page.locator('.rulecard').first.get_attribute('class').find('focus') >= 0, 'kural kartı üstte ve vurgulu')
-    shot('v7-kural-karti', True)
-    page.click('.rule-ack'); page.wait_for_timeout(600)
-    check(page.url.endswith('#/bugun') and page.locator('.rule-tasks li').count() == 0 and st()['progress'].get('kural:' + rule_topic, {}).get('ackAt'), 'Okudum → görev kapandı')
+    ev("""import('./js/store.js').then(m => { const now = Date.now(); const d = new Date(now); const day = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      for (const l of m.all('grammarLog')) m.del('grammarLog', l.id);
+      for (let i = 0; i < 10; i++) m.put('grammarLog', { id: 'pw' + i, q: 'g000' + i, correct: i < 3, kind: 'gramer', topic: 'baglac-zitlik', at: now - i * 1000, day });
+      for (let i = 0; i < 10; i++) m.put('grammarLog', { id: 'pq' + i, q: 'gq' + i, correct: false, kind: 'gramer', topic: 'quantifier', at: now - i * 1000, day }); })""")
+    page.wait_for_timeout(300); page.reload(); page.wait_for_timeout(700)
+    check(page.locator('.rule-tasks li[data-rule="baglac-zitlik"]').count() == 1 and 'En çok puan getirecek' in page.inner_text('.rule-tasks'), 'Bugün: tek öncelik görevi (quantifier değil, zıtlık)')
+    shot('v18-bugun-oncelik', True)
+    page.click('.rule-tasks a.task'); page.wait_for_timeout(700)
+    check('#/gramer/pratik/baglac-zitlik/kural' in page.url and page.locator('.wcard, .rulecard').count() >= 1, 'öncelik görevi → kural kartı + 5 soru')
+    go('eksikler', 700)
+    check('Bağlaç: zıtlık' in page.inner_text('.best1') and 'Quantifier' not in page.inner_text('main section.card:has(h3:has-text("Öncelikli 3 alan"))'), 'Eksikler "1 şey" = Bugün görevi; az çıkan konu yok')
 
     # E) Dersler: gruplar + arama + yeni konu adları
     go('dersler', 600)
@@ -1391,7 +1389,7 @@ with sync_playwright() as p:
 
     # A5) Son 14 gün modu + başvuru bantları (tarih taklidi)
     ev("import('./js/store.js').then(m => m.setSetting('newLimit', 15))"); page.wait_for_timeout(300)
-    set_date('2026-11-28')
+    set_date('2026-12-26')
     go('bugun', 500)
     dl = page.locator('li[data-task=deneme] a.task')
     check(dl.count() == 1 and dl.get_attribute('href').endswith('/yarim') and '90 dk' in dl.inner_text() and page.locator('details.optional-tasks').count() == 1, 'Bugün: programdaki yarım deneme günü → deneme görevi (ilk 40 / 90 dk), gerisi isteğe bağlı')
@@ -1561,11 +1559,11 @@ with sync_playwright() as p:
     page.locator('#wordSheet .stars').click(); page.wait_for_timeout(200)
     check('Sınavda ne sık çıktığı' in page.locator('#toast').inner_text() and page.locator('#wordSheet:not(.hidden)').count() == 1, 'panelde yıldıza dokun → açıklama, panel açık kalır')
     # Eksikler: 5★ satırı
-    top5 = [w for w in WORDS if star(w['word']) == 5]
+    top5 = [w for w in WORDS if (star(w['word']) or 0) >= 4]
     go('eksikler', 700)
-    t5 = page.locator('.star5').inner_text() if page.locator('.star5').count() else ''
-    m5 = re.search(r'5★ kelimeler: (\d+)/(\d+) biliyor', t5)
-    check(m5 and int(m5.group(2)) == len(top5) and int(m5.group(1)) >= 1, f'Eksikler: "{t5.strip()}" (5★ çekirdek {len(top5)})')
+    t5 = page.locator('.star45').inner_text() if page.locator('.star45').count() else ''
+    m5 = re.search(r'\(4–5★\) kelimeler: (\d+)/(\d+)', t5)
+    check(m5 and int(m5.group(2)) == len(top5) and int(m5.group(1)) >= 1, f'Eksikler: "{t5.strip()}" (4–5★ çekirdek {len(top5)})')
     shot('v8-eksikler', True)
     ctx.close()
 
@@ -1577,7 +1575,7 @@ with sync_playwright() as p:
     page.evaluate("import('./js/store.js').then(m => m.setSetting('starFirst', true))"); page.wait_for_timeout(200)
     n_st = 0
     for r in ['kartlar/yeni', 'kartlar/liste', 'kartlar/tara', 'eksikler', 'ayarlar']:
-        go(r, 600); n_st += page.locator('.stars, .starbar, .star5').count()
+        go(r, 600); n_st += page.locator('.stars, .starbar, .star5, .star45').count()
     check(n_st == 0 and page.locator('label.switch:has-text("çok çıkanları")').count() == 0, f'stars.json yok: yıldız / filtre / ayar görünmüyor ({n_st})')
     go('kartlar/yeni', 600)
     check(page.locator('button:text-is("Göster")').count() == 1 and page.locator('.flash .fword').count() == 1, 'stars.json yok: yeni kelime oturumu yine çalışıyor')
@@ -1626,7 +1624,7 @@ with sync_playwright() as p:
     set_date('2026-12-06')
     # Sorular → Deneme sekmesi
     go('deneme')
-    check(page.locator('.seg a').count() == 4 and page.locator('.seg a.active').inner_text() == 'Deneme' and page.locator('.kisa-card').count() == 2, 'Sorular: Deneme sekmesi, Mini + Yarım')
+    check(page.locator('.seg a').count() == 4 and page.locator('.seg a.active').inner_text() == 'Deneme' and page.locator('.kisa-card').count() == 4, 'Sorular: Deneme sekmesi, Mini + Yarım + Okuma/Çeviri provası')
     check('5 boşluk · 5 cloze · 3 cümle tamamlama · 2 çeviri · 1 paragraf · 1 ilgisiz · 3 okuma' in page.inner_text('main'), 'mini dağılımı YÖKDİL oranında')
     check(ev("document.documentElement.scrollWidth") <= 392, 'Deneme ekranı taşmıyor (4 sekme)')
     shot('v11-deneme-ana', True)
@@ -1688,8 +1686,8 @@ with sync_playwright() as p:
     check('1/40' in page.inner_text('.qhead') and page.locator('.timer').inner_text().startswith(('1:29', '1:30')) and page.locator('.secstrip .chip').count() == 8, 'yarım kısa deneme: 40 soru · 90 dk')
     # Eksikler + hedef net
     go('eksikler', 800)
-    check(page.locator('.chart .dot.kisa').count() >= 1 and page.locator('.mock-legend').count() == 1 and page.locator('.kisa-chip').count() >= 1, 'Eksikler: kısa deneme ayrı renk/etiket')
-    page.locator('.mock-legend').scroll_into_view_if_needed(); shot('v11-eksikler-kisa')
+    check(page.locator('.chart .dot.kisa').count() == 0 and page.locator('.kisa-chip').count() >= 1, 'Eksikler: kısa deneme puan grafiğine karışmaz, listede etiketli')
+    page.locator('.kisa-chip').first.scroll_into_view_if_needed(); shot('v11-eksikler-kisa')
     go('dersler/arac/net', 800)
     check('Tam deneme çözünce' in page.inner_text('main'), 'Hedef net: kısa deneme esas alınmıyor (tam deneme yok)')
     set_date(None)

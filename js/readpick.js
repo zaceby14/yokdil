@@ -29,7 +29,9 @@ export function readMin(doc, wpm = 120) {
 }
 
 // Saf: sıradaki parça. ps: özgün, rs: gizli; done: Set (özgün id / 'r:'+gizli id); lastGizli: son okuma gizli miydi
-export function pickReading({ ps = [], rs = [], done = new Set(), recs = [], lastGizli = false }) {
+export function pickReading({ ps = [], rs = [], done = new Set(), recs = [], lastGizli = false, short = false }) {
+  // Hafta içi mikro okuma: sınav uzunluğunda (≤ 200 kelime) özgün parça öncelikli
+  if (short) { const sp = ps.filter(x => (x.words || 999) <= SHORT_W && !done.has(x.id)); if (sp.length) { ps = sp; rs = []; } }
   const maxL = Math.max(1, ...ps.map(p => p.level || 1), ...rs.map(r => +r.level || 1));
   const sg = suggestLevel(recs, maxL);
   const near = list => list.find(x => (+x.level || 1) === sg.level) || [...list].sort((a, b) => Math.abs((+a.level || 1) - sg.level) - Math.abs((+b.level || 1) - sg.level))[0] || null;
@@ -48,9 +50,12 @@ export async function readingDone() {
   return done;
 }
 
+export const SHORT_W = 200;
 export async function nextReading() {
   const [ps, pack] = await Promise.all([passages(), getPack().catch(() => null)]);
   const recs = readRecs();
   const last = [...recs].sort((a, b) => (b.at || 0) - (a.at || 0))[0];
-  return pickReading({ ps, rs: pack?.readings || [], done: await readingDone(), recs, lastGizli: !!last?.gizli }).next;
+  const wd = new Date().getDay();
+  const nx = pickReading({ ps, rs: pack?.readings || [], done: await readingDone(), recs, lastGizli: !!last?.gizli, short: wd >= 1 && wd <= 5 }).next;
+  return nx && wd >= 1 && wd <= 5 && !nx.gizli && (ps.find(p => p.id === nx.id)?.words || 999) <= SHORT_W ? { ...nx, micro: true } : nx;
 }

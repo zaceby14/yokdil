@@ -5,6 +5,8 @@ import { h, toast, fmtTime, dayKey } from '../util.js';
 import { applyTheme } from '../theme.js';
 import { usedSample } from '../data.js';
 import { week } from '../plan.js';
+import { REVIEW_CAP } from '../srs.js';
+import { progVocab } from '../strategy.js';
 import { fetchPrivate, meta as pmeta, status as pstat } from '../private.js';
 import { loadStars, hasStars } from '../stars.js';
 
@@ -38,8 +40,10 @@ export default async function render(root) {
   const seg = (opts, cur, on) => h('div.seg', opts.map(([v, l]) => h('button' + (cur === v ? '.active' : ''), { onclick: () => on(v) }, l)));
   const limit = h('input.num', { type: 'number', min: 0, max: 60, placeholder: String(w.newWords ?? 15), value: s.newLimit ?? '' });
   limit.onchange = () => { store.setSetting('newLimit', limit.value === '' ? null : Math.max(0, +limit.value)); toast('Kaydedildi'); };
-  const goal = h('input.num', { type: 'number', min: 100, max: 10000, step: 100, value: s.vocabGoal || 2000 });
-  goal.onchange = () => { store.setSetting('vocabGoal', Math.max(100, +goal.value || 2000)); toast('Kaydedildi'); };
+  const goal = h('input.num', { type: 'number', min: 100, max: 10000, step: 100, value: s.vocabGoal || progVocab(w.prog) });
+  goal.onchange = () => { store.setSetting('vocabGoal', Math.max(100, +goal.value || progVocab(w.prog))); toast('Kaydedildi'); };
+  const cap = h('input.num', { type: 'number', min: 20, max: 300, step: 10, value: s.reviewCap || REVIEW_CAP, 'aria-label': 'Günlük kart tekrarı tavanı' });
+  cap.onchange = () => { store.setSetting('reviewCap', Math.min(300, Math.max(20, +cap.value || REVIEW_CAP))); toast('Kaydedildi'); };
   const gc = h('input.num', { type: 'number', min: 3, max: 20, value: s.grammarCount });
   gc.onchange = () => { store.setSetting('grammarCount', Math.min(20, Math.max(3, +gc.value || 8))); toast('Kaydedildi'); };
 
@@ -91,6 +95,8 @@ export default async function render(root) {
       h('h3', 'Sorular'),
       h('div.field', h('span', 'Günlük gramer sorusu'), gc),
       sw('warmup', 'Sorulardan önce zayıf konunun kural kartı', s.warmup !== false),
+      sw('adapt', 'Anlık uyum: yanlışta pekiştirme sorusu, 3 doğruda daha zor soru', s.adapt !== false),
+      h('div.field', h('span', 'Günlük kart tekrarı tavanı'), cap), h('p.small.muted', `Fazlası sonraki günlere yayılır (varsayılan ${REVIEW_CAP}).`),
       sw('showDialog', 'Diyalog sorularını da göster (YDS\'de var, YÖKDİL\'de yok)', !!s.showDialog),
       h('h3', 'Okuma'),
       sw('readHl', 'Bilmediğin kelimelerin altını çiz', s.readHl !== false),

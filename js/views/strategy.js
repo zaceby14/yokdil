@@ -2,6 +2,7 @@
 import * as store from '../store.js';
 import { h, add, fmtDate } from '../util.js';
 import { planRows, targetFor, netRows, lastFullMock } from '../strategy.js';
+import { estimate, estMock } from '../estimate.js';
 
 const arr = x => Array.isArray(x) ? x : [];
 
@@ -36,7 +37,9 @@ export function targetView(root, a) {
     const set = +store.settings().targetScore || 0;
     const cur = scores.includes(set) ? set : (scores.filter(s => s <= set).at(-1) || scores[Math.min(1, scores.length - 1)]);
     const t = targetFor(a.targets, cur);
-    const mock = lastFullMock(store.all('mocks'));
+    const full = lastFullMock(store.all('mocks'));
+    const est = full ? null : estimate(store.all('grammarLog'), store.all('mocks'));
+    const mock = full || (est?.enough ? estMock(est) : null);
     const rows = netRows(t, mock);
     const mine = mock ? rows.reduce((s, r) => s + (r.mine || 0), 0) : null;
     const diff = d => d == null ? '' : d > 0 ? '+' + d : d === 0 ? '✓' : '−' + Math.abs(d);
@@ -45,16 +48,17 @@ export function targetView(root, a) {
       h('div.seg.target-seg', scores.map(s => h('button' + (s === cur ? '.active' : ''), { type: 'button', 'aria-pressed': String(s === cur), onclick: () => { store.setSetting('targetScore', s); draw(); } }, s + ' puan'))),
       set && !scores.includes(set) ? h('p.small.muted', `Ayarlar'daki hedefin ${set}; en yakın tablo: ${cur}.`) : null,
       h('div.tblwrap', h('table.mock.nettable',
-        h('tr', h('th', 'Bölüm'), h('th', 'Gereken'), mock ? h('th', 'Senin') : null, mock ? h('th', 'Fark') : null),
+        h('tr', h('th', 'Bölüm'), h('th', 'Gereken'), mock ? h('th', mock.est ? 'Senin (tahmini)' : 'Senin') : null, mock ? h('th', 'Fark') : null),
         rows.map(r => h('tr', h('td', r.label, h('span.small.muted', ` ${r.n}`)), h('td', r.need),
           mock ? h('td', r.mine ?? '–') : null, mock ? h('td' + (r.diff == null ? '' : r.diff < 0 ? '.bad-t' : '.good-t'), diff(r.diff)) : null)),
         h('tr.total', h('td', 'Toplam', h('span.small.muted', ' 80')), h('td', t.total), mock ? h('td', mine) : null,
           mock ? h('td' + (mine - t.total < 0 ? '.bad-t' : '.good-t'), diff(mine - t.total)) : null))),
       h('p.small.muted', `${t.total} doğru × 1,25 = ${(t.total * 1.25).toLocaleString('tr-TR')} puan. Yanlış doğruyu götürmez.`),
       t.note ? h('p.small', t.note) : null,
-      mock ? h('p.small.muted', `Senin: ${fmtDate(mock.date)}${mock.name ? ' · ' + mock.name : ''}`)
+      mock?.est ? h('p.small.muted', 'Senin (tahmini): son 4 haftadaki cevaplarından. Tam deneme çözünce gerçek doğruların görünür.')
+      : mock ? h('p.small.muted', `Senin: ${fmtDate(mock.date)}${mock.name ? ' · ' + mock.name : ''}`)
         : h('div.note', 'Tam deneme çözünce kendi doğruların ve fark burada görünür.'),
-      mock ? null : h('a.btn.wide', { href: '#/cikmis' }, 'Denemelere git'));
+      full ? null : h('a.btn.wide', { href: '#/cikmis' }, 'Denemelere git'));
   };
   draw();
 }

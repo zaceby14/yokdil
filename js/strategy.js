@@ -206,6 +206,11 @@ export function vocabPlan(st, goal, frac, left, limit) {
   const todayGoal = Math.round(goal * f);
   const L = Math.max(0, left || 0);
   const proj = studied + (limit || 0) * L;
-  const needPerDay = proj >= goal || !L ? 0 : Math.ceil((goal - studied) / L);
+  const raw = proj >= goal || !L ? 0 : Math.ceil((goal - studied) / L);
+  // Son 14 günde ya da programın 2 katından fazlası gerekiyorsa gösterme (ulaşılamaz hedef moral bozar)
+  const needPerDay = L <= 14 || raw > 2 * (limit || 0) ? 0 : raw;
   return { studied, solid, todayGoal, proj, needPerDay };
 }
+
+// Programdan kelime hedefi: Σ (haftalık yeni kelime × 7), 50'ye yuvarlı
+export const progVocab = prog => Math.round((prog?.weeks || []).reduce((a, w) => a + (+w.newWords || 0) * 7, 0) / 50) * 50 || 1000;

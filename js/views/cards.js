@@ -83,6 +83,7 @@ function hl(ctx, word) {
 
 // kind: 'tekrar' (yalnız bekleyen tekrarlar) | 'yeni' (yalnız yeni kartlar) | 'sec' (Eksikler'den seçili kelimeler)
 // 'sec': vadesi gelmemiş kart takvimi bozmaz (yalnız "Tekrar" takvime yazılır)
+export const AGAIN_GAP = 4, SHOW_MAX = 3;
 async function session(root, kind = 'tekrar', ids = []) {
   const end = Date.now() + 20 * 60000;
   const queue = kind === 'yeni' ? await newQueue() : kind === 'sec'
@@ -92,6 +93,7 @@ async function session(root, kind = 'tekrar', ids = []) {
   let done = 0, keyH = null, unsw = null;
   const seenIds = new Set(); // bitiş sayısı: farklı kart (tekrar gösterimler ayrı)
   const again = [];
+  const shows = {};
   const seen = new Set(queue.map(q => q.card?.id || 'w:' + q.word.id));
   // "Biliyorum": kotayı yemez, sıradaki yeni kelime gelir
   const knowIt = async card => {
@@ -158,7 +160,10 @@ async function session(root, kind = 'tekrar', ids = []) {
       const next = review(prev, g);
       done++; seenIds.add(card.id);
       if (g === 'again') again.push(card.word);
-      if (next.due < Date.now() + 20 * 60000) queue.push({ card: next });
+      shows[card.id] = (shows[card.id] || 0) + 1;
+      // Anlık uyum: "Tekrar" → 4 kart sonra yeniden (oturumda en fazla 3 gösterim; sonra 10 dk sonraki oturuma kalır)
+      if (g === 'again' && shows[card.id] < SHOW_MAX) queue.splice(Math.min(AGAIN_GAP, queue.length), 0, { card: next });
+      else if (g !== 'again' && next.due < Date.now() + 20 * 60000) queue.push({ card: next });
       else if (g === 'hard' && wasLearning) queue.splice(Math.min(3, queue.length), 0, { card: next, practice: true });
       show();
     };

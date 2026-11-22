@@ -345,7 +345,7 @@ with sync_playwright() as p:
     li = page.locator('a[href="#/gramer/konu/gerund-infinitive"]')
     check(li.count() == 1 and 'zayıf' not in li.inner_text(), f'%100 konuda "zayıf" etiketi yok ({li.inner_text() if li.count() else "-"})')
     # O8: Bugün'de en fazla 1 kural kartı görevi
-    ev("""Promise.all([import('./js/store.js'), import('./js/util.js')]).then(([m, u]) => { const d = u.dayKey(); for (const t of ['edat-esdizim', 'baglac-zitlik', 'relative']) for (let i = 0; i < 2; i++) m.put('grammarLog', { id: 'rw' + t + i, q: 'rq' + t + i, correct: false, at: Date.now(), day: d, kind: 'gramer', topic: t, dtype: 'bosluk' }); })""")
+    ev("""Promise.all([import('./js/store.js'), import('./js/util.js')]).then(([m, u]) => { const d = u.dayKey(); for (const t of ['edat-esdizim', 'baglac-zitlik', 'relative']) for (let i = 0; i < 6; i++) m.put('grammarLog', { id: 'rw' + t + i, q: 'rq' + t + i, correct: false, at: Date.now(), day: d, kind: 'gramer', topic: t, dtype: 'bosluk' }); })""")
     go('bugun', 900)
     check(page.locator('.rule-tasks li').count() == 1 and 'yanlış' not in page.inner_text('.rule-tasks'), 'Bugün: en fazla 1 kural kartı, sayı yok')
     shot('kurul-bugun', True)

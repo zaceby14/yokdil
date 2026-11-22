@@ -2,8 +2,8 @@
 import * as store from '../store.js';
 import { h, dayKey, fmtDate, diffDays, addDays, topicName, typeName } from '../util.js';
 import { isStudied } from '../vocab.js';
-import { week, daysToExam, dayRec, tick, updateDay, streakInfo, weekdayHint, finalMode, newLimit } from '../plan.js';
-import { dueCount } from '../srs.js';
+import { week, daysToExam, dayRec, tick, updateDay, streakInfo, weekdayHint, finalMode, newLimit, activeDay } from '../plan.js';
+import { dueCount, dueInfo } from '../srs.js';
 import { openSessions } from '../quiz.js';
 import { tourCards } from '../memory.js';
 import { todayTasks, mockHref, mockNote } from '../tasks.js';
@@ -13,14 +13,24 @@ import { applyState, examDayFor, ruleTasks, lastFullMock } from '../strategy.js'
 import { getPack } from '../pack.js';
 import { startFocus, running, lens } from '../focus.js';
 import { getToken } from '../sync.js';
+import { priorities } from '../priority.js';
+import { estimate } from '../estimate.js';
+import { normKey } from '../warm.js';
 
 const rr0busy = () => !!dayRec().busy;
+// Son 7 günde çalışılan gün sayısı (seri bir gün atlayınca sıfırlanır; bu sayı moral bozmaz)
+const wk7 = () => { const mk = new Set(store.all('mocks').map(m => m.date)); let n = 0; for (let j = 0; j < 7; j++) { const k = addDays(dayKey(), -j); if (activeDay(store.get('days', k), mk) || mk.has(k)) n++; } return n; };
 
 // Hedefe uzaklık (yalnız tam deneme): "Son tam deneme 56 · hedef 70 · fark 12 soru"
 export function goalGap(score, goal) { const d = Math.max(0, goal - score); return { score, goal, q: Math.ceil(d / 1.25 - 1e-9) }; }
 function goalLine() {
   const m = lastFullMock(store.all('mocks'));
-  if (!m) return null;
+  const goal = +store.settings().targetScore || 70;
+  const est = estimate(store.all('grammarLog'), store.all('mocks'));
+  if (est.enough && dayRec().est !== est.mid) updateDay({ est: est.mid, estLo: est.lo, estHi: est.hi }); // gidiş grafiği için günlük kayıt
+  if (!m || m.date < addDays(dayKey(), -28)) return est.enough
+    ? h('a.goalline.small.est-line', { href: '#/eksikler' }, 'Tahmini puan ', h('b', `≈ ${est.lo}–${est.hi}`), ` · hedef ${goal}`, h('span.muted', ' · son cevaplarından'))
+    : h('a.goalline.small.est-line', { href: '#/eksikler' }, `Tahmini puan: ${30 - Math.min(29, est.n)} soru daha çözünce görünür · hedef ${goal}`);
   const sc = m.score ?? +(Object.values(m.sections || {}).reduce((s, x) => s + (+x?.d || 0), 0) * 1.25).toFixed(2);
   const g = goalGap(sc, +store.settings().targetScore || 70);
   return h('a.goalline.small', { href: '#/eksikler' }, `Son tam deneme ${Math.round(g.score)} · hedef ${g.goal} · `, h('b', g.q ? `fark ${g.q} soru` : 'hedefte'));
@@ -56,7 +66,9 @@ export default async function render(root) {
     const edDone = store.get('progress', 'examday')?.done || {};
     // Aynı kişisel kuraldan 2+ yanlış → kural kartı görevi
     const acks = Object.fromEntries(store.all('progress').filter(p => p.id?.startsWith('kural:')).map(p => [p.id.slice(6), p.ackAt || 0]));
-    const rTasks = rr0busy() ? [] : ruleTasks(store.all('grammarLog'), A?.personalRules, acks, today).slice(0, 1);
+    // Tek öncelik kaynağı (Eksikler'deki "1 şey" ile aynı)
+    const p1 = rr0busy() ? null : priorities({ logs: store.all('grammarLog'), mistakes: store.all('mistakes') })[0];
+    const rTasks = p1 ? [{ topic: normKey(p1.k), value: p1.value, n: p1.n }] : [];
     const nlNow = fin.on ? await newLimit() : 0;
     // Faz geçişi: yeni fazın ilk 3 günü kısa bildirim
     const prevW = (w.prog.weeks || []).find(x => x.n === w.n - 1);
@@ -80,7 +92,7 @@ export default async function render(root) {
         h('div.hero-r',
           h('div', w.beforeStart ? `Başlangıç: ${fmtDate(w.prog.start)}` : `Hafta ${w.n}/${(w.prog.weeks || []).length || w.n} · ${w.phase}`),
           w.goal ? h('div.small.muted', w.goal) : null,
-          h('div.streak', 'Seri: ', h('b', st.n), ' gün', st.jokerNow ? h('span.small.muted.joker', ' · joker kullanıldı (dün)') : null))
+          h('div.streak', 'Son 7 gün: ', h('b', wk7()), '/7 gün çalıştın', h('span.small.muted', ` · seri ${st.n}`), st.jokerNow ? h('span.small.muted.joker', ' · joker kullanıldı (dün)') : null))
       ),
       goalLine(),
       !getToken() ? h('a.banner', { href: '#/ayarlar' }, 'Çıkmış sorular + senkron için GitHub anahtarını gir → Ayarlar') : null,
@@ -113,14 +125,15 @@ export default async function render(root) {
         }, rr.busy ? 'Yoğun gün: açık' : 'Yoğun gün')
       ),
       rr.busy ? h('p.small.muted', 'Kart tekrarı + 3 gramer. Seri bozulmaz.') : null,
-      optT.length ? h('p.small.muted.mockday-note', 'Deneme günü: kart tekrarı + deneme yeter.') : null,
+      !rr.busy && dueInfo().comeback && !tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('div.banner.comeback', h('b', 'Hoş geldin!'), ` Birikmiş tekrarları günlere böldüm. Bugün yalnız kart + gramer yeter (~15 dk).`) : null,
+      optT.length && tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('p.small.muted.mockday-note', 'Deneme günü: kart tekrarı + deneme yeter.') : null,
       h('ul.tasks', mainT.map(taskLi)),
       optT.length ? h('details.optional-tasks', h('summary', h('b', 'İsteğe bağlı'), h('span.small.muted', ` · ${optT.length} görev`)), h('ul.tasks', optT.map(taskLi))) : null,
       (rr.reviews || rr.answered || rr.focusMin) ? h('p.small.muted.daysum', `Bugün: ${rr.reviews || 0} kart · ${rr.correct || 0}/${rr.answered || 0} soru doğru · ${Math.round((rr.readSec || 0) / 60)} dk okuma${rr.focusMin ? ` · ${rr.focusMin} dk odak` : ''}`) : null,
       rTasks.length ? h('ul.tasks.extra.rule-tasks', rTasks.map(t => h('li', { 'data-rule': t.topic },
         h('span.check.ghost', { 'aria-hidden': 'true' }, '!'),
-        h('a.task', { href: '#/dersler/arac/kural/' + encodeURIComponent(t.topic) }, h('b', 'Kural kartı: ' + topicName(t.topic)), h('span.small.muted', 'bu hafta zorlandığın kural · 1 dk')),
-        h('span.small.muted.tmin', '~1 dk'), h('span.chev', '›')))) : null,
+        h('a.task', { href: '#/gramer/pratik/' + encodeURIComponent(t.topic) + '/kural' }, h('b', 'En çok puan getirecek: ' + topicName(t.topic)), h('span.small.muted', `son ${t.n} cevapta %${Math.round(t.value * 100)} · kural kartı + 5 soru`)),
+        h('span.small.muted.tmin', '~5 dk'), h('span.chev', '›')))) : null,
       tour ? h('ul.tasks.extra', h('li' + (rr.tasks?.hafiza ? '.done' : ''),
         h('button.check', { 'aria-label': 'tamamlandı', onclick: () => { tick('hafiza', !rr.tasks?.hafiza); draw(); } }, rr.tasks?.hafiza ? '✓' : ''),
         h('a.task', { href: '#/kartlar/hafiza' }, h('b', 'Hafıza turu'), h('span.small.muted', `${tour} kelime · seçmeli`)),
@@ -129,12 +142,14 @@ export default async function render(root) {
         h('b', `Odak oturumu · ${work} dk`), h('span.small.muted', ` çalış, ${brk} dk ayağa kalk`)),
       !rr.busy && !fin.on ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiğin kelimeleri hızla ele (50\'şer)')) : null,
       fin.on && !rr.busy ? h('a.card.link', { href: '#/okuma' }, h('b', 'Okuma'), h('span.small.muted', ' isteğe bağlı · bir parça')) : null,
+      left <= 21 && left > 1 && !rr.busy ? h('div.card.rehearse', h('b', 'Bölüm provası'), h('span.small.muted', ' sınav süresiyle tek bölüm'),
+        h('div.row', h('a.btn.small', { href: '#/deneme/yeni/okuma' }, 'Okuma: 5 parça · 60 dk'), h('a.btn.small', { href: '#/deneme/yeni/ceviri' }, 'Çeviri: 12 soru · 15 dk'))) : null,
       w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).map(typeName).join(' · ') || 'karışık'))) : null,
       w.mock && !T.deneme ? h('a.card.link.mock-plan', { href: mockHref(w.mock) },
         h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · 90 dk)`),
         h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · ')), mockNote(w.mock) ? h('div.small.task-note', mockNote(w.mock)) : null) : null,
       w.kisa && KISA[w.kisa.size] && !T.kisa ? h('a.card.link.kisa-plan', { href: '#/deneme' },
-        h('b', `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · çıkmış değil, benzer sorular')) : null,
+        h('b', w.kisa.title || `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · çıkmış değil, benzer sorular')) : null,
       h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' nerede zorlanıyorsun, ne yapmalısın')),
       h('div.small.muted.center.pad', `Sınav: ${fmtDate(w.prog.exam)} · Puan ≈ doğru × 1,25`)
     );

@@ -3,11 +3,12 @@ import * as store from '../store.js';
 import { grammar, program, drills, passages } from '../data.js';
 import { h, dayKey, seeded, uid, toast, TOPICS, topicName } from '../util.js';
 import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
-import { answer, openMistakes, mistakeToday } from '../mistakes.js';
+import { answer, openMistakes, mistakeToday, closedWeek } from '../mistakes.js';
 import { keyOf, isType, matches, practicePick, mixPractice } from '../warm.js';
 import { warmGate, inProgress } from './warmup.js';
 import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
+import { makeAdapter, tomorrowLine } from '../adapt.js';
 import { gItem, dItem, pItem, xItem, resolve } from '../qbank.js';
 import { getPack } from '../pack.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
@@ -46,12 +47,54 @@ export async function dailySet() {
 
 const logAns = (it, ok, k, m) => answer(it.key, ok, it.info, m);
 
+// Günlük tip soruları: her gün 2 farklı tip (dönüşümlü). Haftanın konusuna bağlı madde varsa o önce. Gün kaydında sabit.
+export const TYPE_ROT = ['ceviri-en-tr', 'cumle-tamamlama', 'ilgisiz', 'paragraf-tamamlama', 'ceviri-tr-en', 'cloze', 'cumle-tamamlama', 'paragraf-tamamlama'];
+export const DAILY_TYPES = 2;
+export function typeKeysFor(dayNum, ds, { cur = new Set(), seen = new Map(), rnd = Math.random } = {}) {
+  const out = [];
+  for (let j = 0; out.length < DAILY_TYPES && j < TYPE_ROT.length; j++) {
+    const t = TYPE_ROT[(dayNum * DAILY_TYPES + j) % TYPE_ROT.length];
+    if (out.some(k => k.t === t)) continue;
+    const cand = [];
+    for (const d of ds) if (d.type === t) (d.items || []).forEach((_, i) => cand.push({ key: `${d.id}#${i}`, cur: cur.has(d.topic), s: seen.has(`${d.id}#${i}`) ? (seen.get(`${d.id}#${i}`) ? 2 : 1) : 0, r: rnd() }));
+    cand.sort((a, b) => a.s - b.s || (b.cur - a.cur) || a.r - b.r);
+    if (cand[0]) out.push({ t, key: cand[0].key });
+  }
+  return out.map(x => x.key);
+}
+async function dailyTypes() {
+  const r = dayRec();
+  if (Array.isArray(r.tset)) return r.tset;
+  const w = await week();
+  const cur = new Set([...(w.grammar || []), ...(w.lessons || [])]);
+  const seen = new Map(); for (const l of store.all('grammarLog')) seen.set(l.q, l.correct);
+  const dayNum = Math.floor(Date.parse(dayKey() + 'T12:00:00Z') / 864e5);
+  const keys = typeKeysFor(dayNum, await drills(), { cur, seen, rnd: seeded(dayKey() + 't') });
+  updateDay({ tset: keys });
+  return keys;
+}
+
 async function daily(root) {
   const r = dayRec();
   const ids = await dailySet();
-  const qs = new Map((await grammar()).map(q => [q.id, q]));
+  const gq = await grammar();
+  const qs = new Map(gq.map(q => [q.id, q]));
   let items = ids.map(id => qs.get(id)).filter(Boolean).map(gItem);
   if (r.busy) items = items.slice(0, 3);
+  else {
+    const tk = await dailyTypes();
+    const tItems = (await Promise.all(tk.map(k => resolve(k)))).filter(Boolean);
+    // 6 boşluk + 2 tip sorusu (tipler araya dağılır)
+    items = items.slice(0, Math.max(1, items.length - tItems.length));
+    tItems.forEach((t, j) => items.splice(Math.min(items.length, 3 + j * 3), 0, t));
+  }
+  // Anlık uyum havuzu: gramer + alıştırma maddeleri
+  const lvOf = new Map(gq.map(q => [q.id, q.level || 1]));
+  const pool = gq.map(q => ({ key: q.id, k: q.topic, level: q.level || 1, make: () => gItem(q) }));
+  for (const d of await drills()) (d.items || []).forEach((_, i) => pool.push({ key: `${d.id}#${i}`, k: keyOf({ kind: 'drill', topic: d.topic || '', dtype: d.type }), level: d.level || 1, make: () => dItem(d, i) }));
+  const seenM = new Map(); for (const l of store.all('grammarLog')) seenM.set(l.q, l.correct);
+  const levels = () => topicLevels(store.all('grammarLog').filter(l => l.kind === 'gramer').map(l => ({ ...l, level: l.level || lvOf.get(l.q) || 0 })));
+  const adapter = r.busy ? null : makeAdapter(pool, { seen: seenM, levels });
   const box = h('div');
   root.append(back(), box);
   if (!items.length) { box.append(emptyData()); return; }
@@ -59,8 +102,8 @@ async function daily(root) {
   root.insertBefore(await whyCard(ids, qs), box);
   const go = () => runQuiz(box, items, {
     title: 'Günlük', extra: lessonLink, sid, name: 'Günlük gramer', source: 'Gramer', task: 'gramer', coach: true,
-    onAnswer: logAns,
-    onEnd: () => tick('gramer')
+    onAnswer: logAns, adapt: adapter,
+    onEnd: (res, el) => { tick('gramer'); const t = adapter && tomorrowLine(adapter.sum); if (t) el.querySelector('.endcard')?.append(h('p.small.tomorrow', t)); }
   });
   // Isınma: setteki zayıf konuların kural kartı (yarım oturuma dönerken gösterilmez)
   if (inProgress(sid)) go(); else warmGate(box, items.map(it => keyOf(it.info)), go);
@@ -84,7 +127,8 @@ async function whyCard(ids, qs) {
   });
   const det = h('details.card.why', h('summary', 'Bu set neden böyle? ', h('span.small.muted', 'cevaplarına göre seçildi')),
     h('ul.list.compact', rows),
-    h('p.small.muted', 'Bir konuda %70 doğruyu geçince sorular zorlaşır. Bildiğin sorular daha az, yanlışların Hata tekrarında gelir.'));
+    h('p.small.muted.why-types', 'Her gün 2 de soru tipi sorusu (çeviri, cümle tamamlama, ilgisiz, paragraf…) gelir: sınavın yarısı bu tiplerden.'),
+    h('p.small.muted', 'Bir konuda %70 doğruyu geçince sorular zorlaşır. Yanlış yaparsan aynı kuraldan bir pekiştirme sorusu 2 soru sonra gelir; 3 doğruda sıradaki soru zorlaşır.'));
   return det;
 }
 
@@ -128,7 +172,10 @@ async function practice(root, k, kural) {
   root.append(backP(), h('h2', topicName(k) + ' · 5 soru'), el);
   if (!items.length) { el.append(h('p.muted', 'Bu konuda soru yok.')); return; }
   const sid = 'pratik:' + k;
-  const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns });
+  const seenM = new Map(); for (const l of store.all('grammarLog')) seenM.set(l.q, l.correct);
+  const adapter = makeAdapter(own.map(p => ({ ...p, k })), { seen: seenM, keyFn: () => k });
+  const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns, adapt: adapter,
+    onEnd: (res, e2) => { const t = tomorrowLine(adapter.sum); if (t) e2.querySelector('.endcard')?.append(h('p.small.tomorrow', t)); } });
   if (kural) warmGate(el, [k], go, { force: true }); else go();
 }
 
@@ -148,9 +195,10 @@ async function box(root) {
   const left = hs.ids.filter(id => !store.all('grammarLog').some(l => l.q === id && l.day === dayKey() && l.hset));
   const items = (await Promise.all(left.map(id => resolve(id)))).filter(Boolean);
   const el = h('div');
-  root.append(back(), h('h2', `Hata tekrarı · bugün ${hs.total}`), el);
+  const cw = closedWeek(store.all('mistakes'));
+  root.append(back(), h('h2', `Hata tekrarı · bugün ${hs.total}`), cw ? h('p.small.good-t.closed-week', `Bu hafta ${cw} yanlışı kapattın ✓`) : null, el);
   if (!items.length) {
-    el.append(h('div.card', h('p', hs.total ? 'Bugünkü hata tekrarı bitti.' : 'Bugün tekrar edilecek hata yok.'), h('p.small.muted', 'Kalan hatalar sonraki günlere en fazla 8\'er soru olarak gelir.')));
+    el.append(h('div.card', h('p', hs.total ? 'Bugünkü hata tekrarı bitti.' : 'Bugün tekrar edilecek hata yok.'), h('p.small.muted', 'Kalan hatalar sonraki günlere yayılır; birikirse günlük sayı biraz artar.')));
     if (hs.total) tick('hata');
     return;
   }

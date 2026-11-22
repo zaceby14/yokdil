@@ -2,10 +2,10 @@
 import * as store from './store.js';
 import { h } from './util.js';
 import { week, dayRec, tick, taskList, newLimit, finalMode } from './plan.js';
-import { dueCount, newQueue } from './srs.js';
+import { dueInfo, newQueue } from './srs.js';
 import { mistakeToday } from './mistakes.js';
 import { kisaTitle, KISA } from './kisa.js';
-import { dayKey, parseDay } from './util.js';
+import { dayKey, parseDay, addDays } from './util.js';
 import { nextReading } from './readpick.js';
 
 export const SEC_PER_CARD = 8;           // tekrar kartı ≈ 8 sn
@@ -30,7 +30,7 @@ export async function todayTasks() {
   const r = dayRec();
   const busy = !!r.busy;
   const fin = await finalMode();
-  const due = dueCount();
+  const di = dueInfo(), due = di.list.length;
   const nl = busy ? 0 : await newLimit();
   const nq = busy ? 0 : (await newQueue()).length;
   const gN = busy ? 3 : store.settings().grammarCount;
@@ -42,14 +42,14 @@ export async function todayTasks() {
   const kz = busy || fin.on ? null : kisaToday(w);
   const rd = busy ? null : await nextReading().catch(() => null);
   const T = {
-    kart: { sub: due ? `${due} tekrar` : 'Bekleyen yok', go: '#/kartlar/calis', min: cardMin(due) },
+    kart: { sub: due ? `${due} tekrar` + (di.overflow ? ` · ${di.overflow} tanesi sonraki günlere yayıldı` : '') : 'Bekleyen yok', go: '#/kartlar/calis', min: cardMin(due) },
     yeni: { sub: nq ? `${nq} yeni kart` : `bugünlük bitti (${rr.newDone || 0}/${nl})`, go: '#/kartlar/yeni', min: cardMin(nq * NEW_VIEWS) },
     gramer: { sub: `${gN} soru`, go: '#/gramer/gunluk', min: gN },
     hata: { label: `Hata tekrarı (${hs.done}/${hs.total})`, sub: 'eski yanlışlar · tüm bölümler', go: '#/gramer/hata', min: Math.max(1, Math.ceil(hs.total * 0.75)) },
     okuma: rr.tasks?.okuma && rr.readTitle ? { sub: rr.readTitle + ' · okundu', go: '#/okuma', min: rd?.min || min.okuma || 20 }
-      : { sub: rd ? rd.title + (rd.gizli ? ' · kaynağım' : '') : 'parça + bilinmeyen kelime', go: rd?.href || '#/okuma', min: rd?.min || min.okuma || 20 },
+      : { label: rd?.micro ? 'Mikro okuma' : undefined, sub: rd ? rd.title + (rd.gizli ? ' · kaynağım' : rd.micro ? ' · sınav uzunluğunda parça + 3 soru' : '') : 'parça + bilinmeyen kelime', go: rd?.href || '#/okuma', min: rd?.micro ? Math.min(rd.min, 10) : rd?.min || min.okuma || 20 },
     deneme: { sub: w.mock?.title || 'çıkmış sınav ya da 8 soruluk set', go: mockHref(w.mock), min: 0 },
-    kisa: { label: kisaTitle(kz || 'mini'), sub: 'sınav gibi · çıkmış değil · ipucu yok', go: kisaHref(kz || 'mini'), min: KISA[kz || 'mini'].min }
+    kisa: { label: kisaTitle(kz || 'mini'), sub: 'sınav gibi · çıkmış değil · ipucu yok', go: kisaHref(kz || 'mini'), min: KISA[kz || 'mini'].min, note: w.kisa?.title ? w.kisa.title + ' · ' + TANI_NOTE : '' }
   };
   // Son 14 gün: hafta içi deneme görevi = mini kısa deneme (programda o gün tam/yarım çıkmış yoksa)
   const wdN = parseDay(dayKey()).getDay();
@@ -60,10 +60,18 @@ export async function todayTasks() {
   const xm = !busy && !fin.on && w.mock && w.mock.day in WD && WD[w.mock.day] === wdN ? w.mock : null;
   if (xm) Object.assign(T.deneme, { label: xm.kind === 'tam' ? 'Tam deneme (180 dk)' : `Yarım deneme (${xm.n || 40} soru · 90 dk)`, sub: xm.title || 'çıkmış sınav', go: mockHref(xm), min: xm.kind === 'tam' ? 180 : 90, note: mockNote(xm) });
   const mockDay = !!(kz || xm);
-  const keys = [...taskList(busy, fin.on), ...(xm ? ['deneme'] : []), ...(kz ? ['kisa'] : [])].filter(k => k !== 'hata' || hs.total).filter(k => !(fin.on && k === 'yeni' && !nl));
+  // Deneme günü: kartın ilk 10 dk'sı yeter
+  if (mockDay && T.kart.min > 10) Object.assign(T.kart, { min: 10, sub: T.kart.sub + ' · deneme günü: 10 dk yeter' });
+  // Geri dönüş günü: yalnız kart + gramer zorunlu (~15 dk); gerisi isteğe bağlı
+  const back = !busy && !mockDay && di.comeback;
+  // Tam denemeden sonraki gün: 3 adımlı analiz (neden çipleri → en çok kaybettiren 2 bölüm → tek süre hedefi)
+  const yday = addDays(dayKey(), -1);
+  const fm = busy ? null : store.all('mocks').find(m => m.date === yday && m.src === 'cikmis' && !m.half && !m.pct && !m.sample && m.examId);
+  if (fm) T.analiz = { label: 'Deneme analizi (3 adım)', sub: 'nedenler 10 dk · en zayıf 2 bölümden 10\'ar soru · bir süre hedefi', go: '#/cikmis/sonuc/' + encodeURIComponent(fm.examId), min: 30 };
+  const keys = [...(fm ? ['analiz'] : []), ...taskList(busy, fin.on), ...(xm ? ['deneme'] : []), ...(kz ? ['kisa'] : [])].filter(k => k !== 'hata' || hs.total).filter(k => !(fin.on && k === 'yeni' && !nl));
   return orderMockDay(keys, mockDay).map(k => ({
     key: k, label: T[k].label || LABEL[k], sub: T[k].sub, go: T[k].go, min: T[k].min, note: T[k].note || '', done: !!r3.tasks?.[k] || (k === 'deneme' && !!r3.mock),
-    optional: mockDay && !MOCK_DAY_MAIN.includes(k)
+    optional: k !== 'analiz' && ((mockDay && !MOCK_DAY_MAIN.includes(k)) || (back && !['kart', 'gramer'].includes(k)))
   }));
 }
 

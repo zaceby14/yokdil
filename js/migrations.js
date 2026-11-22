@@ -51,5 +51,7 @@ export const MIGRATIONS = [
     const ex = Object.fromEntries(TAKTIK.map(id => [id, st.get('progress', 'ders:' + id)]));
     for (const r of taktikProgress(old, ex)) st.put('progress', { ...(st.get('progress', r.id) || {}), ...r });
   } },
-  { id: 'v6-autocards', run: (st, ctx) => { for (const id of badAutoCards(st.all('cards'), ctx.idx)) st.del('cards', id); } }
+  { id: 'v6-autocards', run: (st, ctx) => { for (const id of badAutoCards(st.all('cards'), ctx.idx)) st.del('cards', id); } },
+  // v18: eski varsayılan kelime hedefi (2000) → programdan türetilen hedef (boş = program)
+  { id: 'v18-vocabgoal', run: st => { if (+st.settings().vocabGoal === 2000) st.setSetting('vocabGoal', null); } }
 ];

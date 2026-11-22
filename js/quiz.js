@@ -144,6 +144,13 @@ export function runQuiz(root, items, opts = {}) {
           if (ok) right++;
           picks[i] = k; persist();
           opts.onAnswer?.(it, ok, k, { hint: !!hints[i] });
+          // Anlık uyum: pekiştirme / zorlaştırma (opts.adapt; denemelerde yok)
+          if (opts.adapt && store.settings().adapt !== false) {
+            const note = opts.adapt.after(items, i, ok);
+            if (note) exp.insertBefore(h('div.adapt-note', note), exp.querySelector('.tap-hint'));
+            next.textContent = i + 1 < items.length ? 'Sonraki' : 'Bitir';
+            persist();
+          }
           if (!ok && opts.coach) { const ck = keyOf(it.info); if (ck) { wrongN[ck] = (wrongN[ck] || 0) + 1; if (wrongN[ck] >= 2 && !coached.has(ck)) { coached.add(ck); coachKey = ck; } } }
           if (!ok && opts.auto !== false) fromWrong(it, k).catch(e => console.warn(e));
           exp.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
@@ -172,7 +179,7 @@ export function runQuiz(root, items, opts = {}) {
       }
       add(root,
         h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${i + 1}/${items.length}`),
-          h('span.qtools', it.unverified ? h('span.chip.bad.small', 'cevap kesin değil') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
+          h('span.qtools', it.adapt ? h('span.chip.small.adapt-chip', it.adapt === 'zor' ? 'daha zor' : 'pekiştirme') : null, it.unverified ? h('span.chip.bad.small', 'cevap kesin değil') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
         h('div.qbar', hintBtn, partsBtn,
           opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
         hintBox, stem, q, partsSlot,

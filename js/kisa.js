@@ -15,7 +15,10 @@ export const KISA = {
     { sec: 'tr-en', pool: 'ceviri-tr-en', units: 2, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 2, w: 1 },
     { sec: 'ilgisiz', pool: 'ilgisiz', units: 2, w: 1 }, { sec: 'okuma', pool: 'p', units: 2, w: 3 }] }
 };
-export const KISA_SIZES = ['mini', 'yarim'];
+// Bölüm provası (son haftalar): yalnız okuma 5 parça / 60 dk · yalnız çeviri 12 soru / 15 dk
+KISA.okuma = { n: 15, min: 60, label: 'Okuma provası', plan: [{ sec: 'okuma', pool: 'p', units: 5, w: 3 }] };
+KISA.ceviri = { n: 12, min: 15, label: 'Çeviri provası', plan: [{ sec: 'en-tr', pool: 'ceviri-en-tr', units: 6, w: 1 }, { sec: 'tr-en', pool: 'ceviri-tr-en', units: 6, w: 1 }] };
+export const KISA_SIZES = ['mini', 'yarim', 'okuma', 'ceviri'];
 export const kisaTitle = size => `Kısa deneme (${KISA[size]?.n || 20} soru · ${KISA[size]?.min || 45} dk)`;
 export const MIX = [0.3, 0.45, 0.25]; // seviye 1/2/3
 export const RECENT_N = 3;            // son 3 kısa denemede çıkan birim tekrar etmez

@@ -2,7 +2,7 @@
 import * as store from './store.js';
 import { words } from './data.js';
 import { endOfToday, dayKey, DAY } from './util.js';
-import { newLimit, bumpDay, dayRec, tick } from './plan.js';
+import { newLimit, bumpDay, dayRec, tick, FINAL } from './plan.js';
 import { isGraduated, weeklyChecks, counts, STUDY_STATES } from './vocab.js';
 import { loadStars, starOf } from './stars.js';
 
@@ -63,13 +63,52 @@ export function previewLabel(card, grade) {
 }
 
 // Bekleyen kartlar: öğrenilenler hariç; öğrenilenlerden haftalık kontrol (≤5) + oyunda yanlış çekilenler
-export function dueCards() {
+function rawDue() {
   const end = endOfToday();
   const out = store.all('cards').filter(c => STUDY_STATES.includes(c.state) && c.due <= end && (!isGraduated(c) || c.pulled));
   const have = new Set(out.map(c => c.id));
   for (const c of weeklyChecks()) if (!have.has(c.id)) out.push({ ...c, check: true });
   return out.sort((a, b) => a.due - b.due);
 }
+
+// Günlük tekrar tavanı: fazlası sonraki günlere yayılır. Uzun aradan sonra (≥3 gün çalışılmadı) ilk gün daha az.
+export const REVIEW_CAP = 60, COMEBACK_CAP = 30, COMEBACK_GAP = 3;
+let STARS = null;
+loadStars().then(m => { STARS = m; }).catch(() => {});
+// Saf: tavan uygula. Bugün oturumda görülmüş (yeniden gelen) kartlar her zaman kalır; gerisi öncelikle sıralanıp kesilir.
+// Öncelik: kısa aralıklı (öğreniliyor/merdiven) → çok çıkan (yıldız) → en çok geciken
+export function capDue(list, { cap = REVIEW_CAP, done = 0, sod = 0, star = () => 0 } = {}) {
+  const inS = list.filter(c => (c.lastReview || 0) >= sod);
+  const rest = list.filter(c => (c.lastReview || 0) < sod);
+  const short = c => (c.state === 'learning' || c.state === 'relearn' || c.ladder != null || (c.interval || 0) <= 3) ? 0 : 1;
+  rest.sort((a, b) => short(a) - short(b) || star(b) - star(a) || (a.due || 0) - (b.due || 0));
+  const left = Math.max(0, cap - done);
+  return { list: [...inS, ...rest.slice(0, left)], overflow: Math.max(0, rest.length - left) };
+}
+// Saf: geri dönüş günü mü? (bugünden önceki son çalışılan gün ≥ COMEBACK_GAP+1 gün önce)
+export function isComeback(activeDays, today) {
+  const past = activeDays.filter(d => d < today).sort();
+  if (!past.length) return false;
+  const last = past.at(-1);
+  return (Date.parse(today) - Date.parse(last)) / DAY > COMEBACK_GAP;
+}
+export function dueInfo() {
+  const today = dayKey();
+  const r = dayRec(today);
+  let comeback = r.comeback;
+  if (comeback == null) {
+    const act = store.all('days').filter(d => d.id !== today && ((d.reviews || 0) + (d.answered || 0) > 0 || Object.values(d.tasks || {}).some(Boolean))).map(d => d.id);
+    comeback = isComeback(act, today);
+    if (comeback) store.put('days', { ...r, id: today, comeback: true }, { silent: true });
+  }
+  const sod = new Date(); sod.setHours(0, 0, 0, 0);
+  const base = +store.settings().reviewCap || REVIEW_CAP;
+  const cap = comeback ? Math.min(base, COMEBACK_CAP) : base;
+  const raw = rawDue();
+  const { list, overflow } = capDue(raw, { cap, done: r.dueDone || 0, sod: sod.getTime(), star: c => (STARS ? starOf(c.word, STARS) || 0 : 0) });
+  return { list, overflow, cap, comeback: !!comeback, raw: raw.length };
+}
+export function dueCards() { return dueInfo().list; }
 
 export function dueCount() { return dueCards().length; }
 
@@ -80,12 +119,12 @@ export const MINE_EXTRA = 10; // dünden kalan kendi kelimeleri limiti en fazla 
 
 // Saf: yeni kuyruk sırası. Kendi eklediklerin (eskiden yeniye) → öne alınanlar (tarama/hata) → notlarım/seed.
 // Dünden (ya da önceden) kalan kendi kelimelerin limit dolsa bile gelir (en fazla MINE_EXTRA) → en geç ertesi gün.
-export function orderNew(cards, left, startToday) {
+export function orderNew(cards, left, startToday, extra = MINE_EXTRA) {
   const fresh = cards.filter(c => (c.state || 'new') === 'new');
   const mine = fresh.filter(isMine).sort((a, b) => (a.mine || a.createdAt || 0) - (b.mine || b.createdAt || 0));
   const rest = fresh.filter(c => !isMine(c)).sort((a, b) => newOrder(a) - newOrder(b));
   const old = mine.filter(c => (c.mine || c.createdAt || 0) < startToday);
-  const n = Math.max(left, Math.min(old.length, left + MINE_EXTRA));
+  const n = Math.max(left, Math.min(old.length, left + extra));
   return [...mine, ...rest].slice(0, n);
 }
 
@@ -95,7 +134,7 @@ export async function newQueue() {
   if (r.busy) return [];
   const left = Math.max(0, (await newLimit()) - (r.newDone || 0));
   const sod = new Date(); sod.setHours(0, 0, 0, 0);
-  const q = orderNew(store.all('cards'), left, sod.getTime()).map(c => ({ card: c }));
+  const q = orderNew(store.all('cards'), left, sod.getTime(), FINAL.on ? 0 : MINE_EXTRA).map(c => ({ card: c })); // son 14 gün: limit aşılmaz
   if (q.length < left) {
     const have = new Set(Object.values(store.snapshot().cards).map(c => c.wid).filter(Boolean));
     const known = new Set(store.all('cards').map(c => (c.word || '').toLowerCase()));
@@ -130,6 +169,8 @@ export function cardFromWord(w) {
 
 export function review(card, grade) {
   const wasNew = (card.state || 'new') === 'new';
+  const sod0 = new Date(); sod0.setHours(0, 0, 0, 0);
+  if (!wasNew && (card.lastReview || 0) < sod0.getTime()) bumpDay('dueDone'); // tavana sayılan ilk tekrar
   const next = { ...card, ...schedule(card, grade) };
   delete next.pulled; delete next.check;
   if (next.ladder == null) delete next.ladder;
