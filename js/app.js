@@ -94,7 +94,12 @@ async function main() {
   syncDot(sync.status);
   document.getElementById('syncDot').addEventListener('click', e => toast(e.currentTarget.title || 'Senkron'));
   store.subscribe(info => {
-    if (info.merged && ['bugun', 'eksikler', 'ayarlar'].includes(current)) route();
+    if (!info.merged) return;
+    // senkrondan gelen eski içerikli kartları sessizce tazele (zaman damgası değişmez)
+    migrateContent(true).catch(() => {});
+    // oturum ekranlarını bozma; liste/özet ekranlarını yenile
+    const deep = (location.hash.split('/').length > 2);
+    if (['bugun', 'eksikler', 'ayarlar', 'kartlar', 'okuma', 'dersler', 'notlar'].includes(current) && !deep) route();
   });
   addEventListener('hashchange', route);
   initNotes();

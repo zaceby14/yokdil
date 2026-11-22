@@ -43,13 +43,18 @@ const sig = (s, w) => {
 };
 
 // Açılışta: veri imzası değiştiyse çalışır. updatedAt güncellenir → senkronla diğer cihaza gider.
-export async function migrateContent() {
+// Not: içerik alanları her cihazda veri dosyalarından aynı hesaplanır; bu yüzden updatedAt DEĞİŞTİRİLMEZ
+// (aksi halde yeni sürümü ilk açan cihazın eski SRS durumu diğer cihazdaki ilerlemeyi ezerdi).
+export async function migrateContent(force = false) {
   const [s, w] = await Promise.all([seedUser(), words()]);
   if (!w.length && !(s.cards || []).length) return 0;
   const rev = sig(s, w);
-  if (localStorage.getItem(RK) === rev) return 0;
+  if (!force && localStorage.getItem(RK) === rev) return 0;
   const todo = plan(store.all('cards'), s.cards || [], w);
-  for (const { id, fields } of todo) store.put('cards', { ...store.get('cards', id), ...fields, contentRev: rev });
+  for (const { id, fields } of todo) {
+    const prev = store.get('cards', id);
+    store.put('cards', { ...prev, ...fields, contentRev: rev }, { ts: prev?.updatedAt || 1, silent: true });
+  }
   localStorage.setItem(RK, rev);
   return todo.length;
 }
