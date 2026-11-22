@@ -124,8 +124,13 @@ export function runQuiz(root, items, opts = {}) {
         exp.classList.remove('hidden');
         exp.innerHTML = '';
         const ex = realExplain(it.explain);
-        exp.append(h('b', ok ? 'Doğru. ' : 'Yanlış. '), ex);
-        if (it.tip) exp.append(h('div.tip', 'Taktik: ' + it.tip));
+        const L = 'ABCDE';
+        const mineWhy = !ok && Array.isArray(it.why) ? String(it.why[k] || '').trim() : '';
+        exp.append(h('div.exhead', h('b', ok ? 'Doğru ✓' : 'Yanlış ✗')));
+        if (it.anlam) exp.append(h('div.exrow2', h('span.exl', 'Cümle'), h('span', it.anlam)));
+        if (ex) exp.append(h('div.exrow2', h('span.exl', `Doğru (${L[it.answer] || ''})`), h('span', ex)));
+        if (mineWhy) exp.append(h('div.exrow2.mine', h('span.exl', `Senin seçimin (${L[k]})`), h('span', mineWhy)));
+        if (it.tip) exp.append(h('div.tip', (it.why ? 'Kalıp / taktik: ' : 'Taktik: ') + it.tip));
         hintBtn?.remove();
         if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
         // Çeviri: blokların karşılıkları + kontrol maddeleri

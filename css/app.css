@@ -698,3 +698,9 @@ details.set-adv > summary, details.steps-more > summary { list-style: none; curs
 details.set-adv > summary::-webkit-details-marker, details.steps-more > summary::-webkit-details-marker { display: none; }
 details.set-adv[open] > summary { margin-bottom: 8px; }
 details.set-adv h3 { margin-top: 14px; }
+/* Açıklama: Cümle / Doğru / Senin seçimin satırları */
+.explain .exhead { margin-bottom: 6px; }
+.explain .exrow2 { display: grid; grid-template-columns: 7.2em 1fr; gap: 8px; margin: 6px 0; line-height: 1.45; }
+.explain .exrow2 .exl { font-size: .78rem; font-weight: 700; color: var(--muted); padding-top: 2px; }
+.explain .exrow2.mine .exl { color: var(--bad, #c0392b); }
+@media (max-width: 420px) { .explain .exrow2 { grid-template-columns: 1fr; gap: 2px; } }

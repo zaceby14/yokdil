@@ -31,14 +31,14 @@ export async function lessonFor(topic) {
 
 export function gItem(q) {
   const dbl = !!q.double || (String(q.q || '').match(/-{2,}/g) || []).length >= 2;
-  return { key: q.id, q: q.q, options: (q.options || []).map(optText), answer: q.answer, explain: q.explain, tip: q.tip, hint: q.hint || '', double: dbl,
+  return { key: q.id, q: q.q, options: (q.options || []).map(optText), answer: q.answer, explain: q.explain, anlam: q.anlam || '', why: q.why || null, tip: q.tip, hint: q.hint || '', double: dbl,
     label: topicName(q.topic) + (dbl ? ' · çift boşluk' : ''), info: { kind: 'gramer', topic: q.topic, dtype: q.type || 'bosluk', level: q.level || 0 } };
 }
 
 export function dItem(d, i) {
   const it = d.items[i];
   return {
-    key: `${d.id}#${i}`, stem: d.stem, q: it.q, options: (it.options || []).map(optText), answer: it.answer, explain: it.explain, tip: it.tip, hint: it.hint || '',
+    key: `${d.id}#${i}`, stem: d.stem, q: it.q, options: (it.options || []).map(optText), answer: it.answer, explain: it.explain, anlam: it.anlam || '', why: it.why || null, tip: it.tip, hint: it.hint || '',
     label: typeName(d.type) + (d.items.length > 1 ? ` (${i + 1})` : ''),
     ...(Array.isArray(it.parts) && it.parts.length ? { parts: it.parts, check: it.check || [] } : {}),
     info: { kind: 'drill', topic: d.topic || '', dtype: d.type }
@@ -47,12 +47,12 @@ export function dItem(d, i) {
 
 export function lItem(l, i) {
   const c = l.checks[i];
-  return { key: `ders:${l.id}#${i}`, q: c.q, options: (c.options || []).map(optText), hint: c.hint || l.formula || '', answer: c.answer, explain: c.explain, label: l.title, info: { kind: 'ders', topic: lessonTopic(l), dtype: 'bosluk' } };
+  return { key: `ders:${l.id}#${i}`, q: c.q, options: (c.options || []).map(optText), hint: c.hint || l.formula || '', answer: c.answer, explain: c.explain, anlam: c.anlam || '', why: c.why || null, label: l.title, info: { kind: 'ders', topic: lessonTopic(l), dtype: 'bosluk' } };
 }
 
 export function pItem(p, i) {
   const q = p.questions[i];
-  return { key: `${p.id}#${i}`, stemNode: () => tappable(p.text, { source: 'Okuma', note: p.title }).el, q: q.q, options: q.options, answer: q.answer, explain: q.explain,
+  return { key: `${p.id}#${i}`, stemNode: () => tappable(p.text, { source: 'Okuma', note: p.title }).el, q: q.q, options: q.options, answer: q.answer, explain: q.explain, anlam: q.anlam || '', why: q.why || null, tip: q.tip || '',
     label: p.title, info: { kind: 'okuma', topic: p.topic || '', dtype: 'paragraf' } };
 }
 
@@ -60,7 +60,7 @@ export function pItem(p, i) {
 export function rItem(r, k) {
   const q = r.questions[k];
   return { key: `r:${r.id}:${k + 1}`, stemNode: () => tappable(r.text, { source: r.source || 'Okuma', note: r.title || '' }).el, q: q.q, options: q.options.map(optText), answer: q.answer,
-    explain: q.explain || '', tf: q.type === 'tf', unverified: q.keySource === 'claude', label: r.title || 'Okuma',
+    explain: q.explain || '', anlam: q.anlam || '', why: q.why || null, tf: q.type === 'tf', unverified: q.keySource === 'claude', label: r.title || 'Okuma',
     info: { kind: 'okuma', topic: r.topic || '', dtype: 'paragraf', src: 'gizli' } };
 }
 
@@ -80,7 +80,7 @@ export function xItem(e, q) {
   return {
     key: `${e.id}:${q.n}`, stemNode: g?.text ? () => tappable(g.text, src).el : null,
     qNode: long ? () => tappable(q.q, src).el : null, q: q.q,
-    options: (q.options || []).map(optText), answer: q.answer, explain: q.explain || '',
+    options: (q.options || []).map(optText), answer: q.answer, explain: q.explain || '', anlam: q.anlam || '', why: q.why || null,
     label: `${e.title || e.id} · ${q.n}`, unverified: q.keySource === 'claude',
     info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' },
     ...xParts(q)
