@@ -494,7 +494,7 @@
   "id": "w0027",
   "word": "whether",
   "pos": "conj",
-  "tr": "-ip -mediği",
+  "tr": "-ip -madığı; -se de -mese de",
   "syn": [
    "if"
   ],
@@ -656,7 +656,7 @@
   "id": "w0036",
   "word": "regardless of",
   "pos": "prep",
-  "tr": "-e bakmaksızın",
+  "tr": "-e bakmadan, -den bağımsız olarak",
   "syn": [
    "irrespective of",
    "without regard to"
@@ -894,7 +894,7 @@
   "id": "w0049",
   "word": "eventually",
   "pos": "adv",
-  "tr": "sonunda, nihayetinde",
+  "tr": "sonunda, en sonunda",
   "syn": [
    "ultimately",
    "finally",
@@ -913,7 +913,7 @@
   "id": "w0050",
   "word": "ultimately",
   "pos": "adv",
-  "tr": "nihayetinde, sonuçta",
+  "tr": "sonuçta, en sonunda",
   "syn": [
    "eventually",
    "finally",
@@ -1593,7 +1593,7 @@
   "id": "w0087",
   "word": "refer to",
   "pos": "phr",
-  "tr": "-e atıfta bulunmak; anlamına gelmek",
+  "tr": "-den söz etmek, -e değinmek; anlamına gelmek",
   "syn": [
    "mention",
    "denote",
@@ -1731,7 +1731,7 @@
   "id": "w0095",
   "word": "rule out",
   "pos": "phr",
-  "tr": "olasılık dışı bırakmak, elemek",
+  "tr": "elemek, olasılık dışı bırakmak",
   "syn": [
    "exclude",
    "eliminate",
@@ -2083,7 +2083,7 @@
   "id": "w0114",
   "word": "suggest",
   "pos": "v",
-  "tr": "ileri sürmek, akla getirmek; önermek",
+  "tr": "ileri sürmek, göstermek; önermek",
   "syn": [
    "indicate",
    "imply",
@@ -2453,7 +2453,7 @@
   "id": "w0134",
   "word": "employ",
   "pos": "v",
-  "tr": "kullanmak; istihdam etmek",
+  "tr": "kullanmak; işe almak",
   "syn": [
    "use",
    "utilise",
@@ -2489,7 +2489,7 @@
   "id": "w0136",
   "word": "establish",
   "pos": "v",
-  "tr": "kurmak, tesis etmek; kanıtlamak",
+  "tr": "kurmak, oluşturmak; kanıtlamak",
   "syn": [
    "found",
    "set up",
@@ -3378,7 +3378,7 @@
   "id": "w0184",
   "word": "capable",
   "pos": "adj",
-  "tr": "-ebilen, yetenekli, muktedir",
+  "tr": "-ebilen, yetenekli",
   "syn": [
    "able",
    "competent",
@@ -3489,7 +3489,7 @@
   "id": "w0190",
   "word": "considerable",
   "pos": "adj",
-  "tr": "hatırı sayılır, önemli",
+  "tr": "önemli, epey büyük",
   "syn": [
    "substantial",
    "significant",
@@ -3768,7 +3768,7 @@
   "id": "w0205",
   "word": "enormous",
   "pos": "adj",
-  "tr": "muazzam, devasa",
+  "tr": "çok büyük, devasa",
   "syn": [
    "huge",
    "massive",
@@ -4354,7 +4354,7 @@
   "id": "w0237",
   "word": "means",
   "pos": "n",
-  "tr": "araç, yol, vasıta",
+  "tr": "araç, yol, yöntem",
   "syn": [
    "way",
    "method",
@@ -4574,7 +4574,7 @@
   "id": "w0249",
   "word": "aspect",
   "pos": "n",
-  "tr": "yön, boyut, husus",
+  "tr": "yön, boyut",
   "syn": [
    "feature",
    "facet",
@@ -5148,7 +5148,7 @@
   "id": "w0280",
   "word": "prove",
   "pos": "v",
-  "tr": "kanıtlamak; ... olduğu ortaya çıkmak",
+  "tr": "kanıtlamak; -dığı ortaya çıkmak",
   "syn": [
    "demonstrate",
    "show",
@@ -5313,7 +5313,7 @@
   "id": "w0289",
   "word": "attribute",
   "pos": "v",
-  "tr": "atfetmek, bağlamak",
+  "tr": "(nedenini) -e bağlamak",
   "syn": [
    "ascribe",
    "credit",
@@ -5891,7 +5891,7 @@
   "id": "w0320",
   "word": "now that",
   "pos": "conj",
-  "tr": "madem ki, artık -dığına göre",
+  "tr": "artık -dığına göre, madem",
   "syn": [
    "since",
    "seeing that"
@@ -6169,7 +6169,7 @@
   "id": "w0335",
   "word": "in case",
   "pos": "conj",
-  "tr": "-ebilir diye, olur ki diye (ihtimaline karşı)",
+  "tr": "-ebilir diye, ihtimaline karşı",
   "syn": [
    "lest",
    "in the event that",
@@ -6369,7 +6369,7 @@
   "id": "w0346",
   "word": "whereby",
   "pos": "adv",
-  "tr": "ki onunla, -diği (yöntem)",
+  "tr": "ki bu sayede; -dığı (yöntem)",
   "syn": [
    "by which",
    "through which"
@@ -6405,7 +6405,7 @@
   "id": "w0348",
   "word": "notably",
   "pos": "adv",
-  "tr": "özellikle, bilhassa",
+  "tr": "özellikle, dikkat çekici şekilde",
   "syn": [
    "especially",
    "particularly",
@@ -6529,7 +6529,7 @@
   "id": "w0355",
   "word": "irrespective of",
   "pos": "prep",
-  "tr": "-e bakılmaksızın",
+  "tr": "-e bakılmadan, -den bağımsız olarak",
   "syn": [
    "regardless of",
    "independent of"
@@ -6563,7 +6563,7 @@
   "id": "w0357",
   "word": "by means of",
   "pos": "prep",
-  "tr": "vasıtasıyla",
+  "tr": "aracılığıyla, yoluyla",
   "syn": [
    "through",
    "via",
@@ -6767,7 +6767,7 @@
   "id": "w0368",
   "word": "in accordance with",
   "pos": "prep",
-  "tr": "uygun olarak",
+  "tr": "-e uygun olarak",
   "syn": [
    "in line with",
    "according to",
@@ -6786,7 +6786,7 @@
   "id": "w0369",
   "word": "in favour of",
   "pos": "prep",
-  "tr": "lehine",
+  "tr": "lehine, -i tercih ederek",
   "syn": [
    "in support of",
    "for"
@@ -7567,7 +7567,7 @@
   "id": "w0413",
   "word": "suffer from",
   "pos": "phr",
-  "tr": "-den muzdarip olmak, -den çekmek",
+  "tr": "-den acı çekmek, -den sıkıntı çekmek",
   "syn": [
    "be affected by",
    "experience"
@@ -7635,7 +7635,7 @@
   "id": "w0417",
   "word": "be subject to",
   "pos": "phr",
-  "tr": "-e tabi olmak, maruz olmak",
+  "tr": "-e maruz kalmak, -e bağlı olmak",
   "syn": [
    "be liable to",
    "be exposed to"
@@ -7652,7 +7652,7 @@
   "id": "w0418",
   "word": "be capable of",
   "pos": "phr",
-  "tr": "-ebilmek, -e muktedir olmak",
+  "tr": "-ebilmek, -e gücü yetmek",
   "syn": [
    "be able to",
    "be competent at"
@@ -7758,7 +7758,7 @@
   "id": "w0424",
   "word": "amount to",
   "pos": "phr",
-  "tr": "-e varmak, toplam olmak",
+  "tr": "toplamı -e varmak; anlamına gelmek",
   "syn": [
    "add up to",
    "total",
@@ -7975,7 +7975,7 @@
   "id": "w0436",
   "word": "optimise",
   "pos": "v",
-  "tr": "en iyilemek, optimize etmek",
+  "tr": "en iyi hale getirmek, optimize etmek",
   "syn": [
    "improve",
    "refine",
@@ -8064,7 +8064,7 @@
   "id": "w0441",
   "word": "eradicate",
   "pos": "v",
-  "tr": "kökünü kazımak",
+  "tr": "tamamen yok etmek, kökünü kazımak",
   "syn": [
    "eliminate",
    "wipe out",
@@ -8213,7 +8213,7 @@
   "id": "w0449",
   "word": "dissolve",
   "pos": "v",
-  "tr": "çözünmek, çözmek; dağılmak; feshetmek",
+  "tr": "çözünmek, çözmek; dağılmak, sona erdirmek",
   "syn": [
    "break up",
    "disperse",
@@ -8247,7 +8247,7 @@
   "id": "w0451",
   "word": "condense",
   "pos": "v",
-  "tr": "yoğuşmak, yoğunlaşmak; yoğunlaştırmak, özetlemek",
+  "tr": "yoğuşmak, yoğunlaşmak; özetlemek",
   "syn": [
    "liquefy",
    "concentrate",
@@ -8319,7 +8319,7 @@
   "id": "w0455",
   "word": "penetrate",
   "pos": "v",
-  "tr": "nüfuz etmek, içine girmek",
+  "tr": "içine girmek, içine işlemek",
   "syn": [
    "pierce",
    "enter",
@@ -8643,7 +8643,7 @@
   "id": "w0473",
   "word": "tolerate",
   "pos": "v",
-  "tr": "tahammül etmek, dayanmak",
+  "tr": "dayanmak, katlanmak",
   "syn": [
    "endure",
    "withstand",
@@ -8931,7 +8931,7 @@
   "id": "w0489",
   "word": "quantify",
   "pos": "v",
-  "tr": "sayısal olarak ifade etmek",
+  "tr": "sayıyla ölçmek, miktarını belirlemek",
   "syn": [
    "measure",
    "calculate",
@@ -9111,7 +9111,7 @@
   "id": "w0499",
   "word": "infer",
   "pos": "v",
-  "tr": "çıkarım yapmak",
+  "tr": "sonuç çıkarmak, anlamak",
   "syn": [
    "deduce",
    "conclude",
@@ -9895,7 +9895,7 @@
   "id": "w0542",
   "word": "corrosion",
   "pos": "n",
-  "tr": "korozyon, paslanma, (kimyasal) aşınma",
+  "tr": "korozyon, paslanma",
   "syn": [
    "rust",
    "oxidation",
@@ -10056,7 +10056,7 @@
   "id": "w0551",
   "word": "yield",
   "pos": "n",
-  "tr": "verim, ürün (miktarı); getiri",
+  "tr": "verim, ürün; getiri",
   "syn": [
    "output",
    "crop",
@@ -12395,7 +12395,7 @@
   "id": "w0679",
   "word": "essentially",
   "pos": "adv",
-  "tr": "esasen",
+  "tr": "aslında, temelde",
   "syn": [
    "basically",
    "fundamentally",
@@ -12575,7 +12575,7 @@
   "id": "w0689",
   "word": "exert",
   "pos": "v",
-  "tr": "uygulamak (kuvvet), sarf etmek",
+  "tr": "(kuvvet, etki) uygulamak; harcamak",
   "syn": [
    "apply",
    "use",
@@ -13612,7 +13612,7 @@
   "id": "w0748",
   "word": "restrain",
   "pos": "v",
-  "tr": "zapt etmek, sınırlamak",
+  "tr": "sınırlamak, durdurmak",
   "syn": [
    "restrict",
    "control",
@@ -13631,7 +13631,7 @@
   "id": "w0749",
   "word": "curb",
   "pos": "v",
-  "tr": "dizginlemek, sınırlamak",
+  "tr": "sınırlamak, frenlemek",
   "syn": [
    "restrict",
    "limit",
@@ -13753,7 +13753,7 @@
   "id": "w0756",
   "word": "neutralise",
   "pos": "v",
-  "tr": "nötralize etmek",
+  "tr": "etkisiz hale getirmek, nötrleştirmek",
   "syn": [
    "counteract",
    "cancel out",
@@ -13805,7 +13805,7 @@
   "id": "w0759",
   "word": "converge",
   "pos": "v",
-  "tr": "birleşmek, yakınsamak",
+  "tr": "bir noktada birleşmek, yaklaşmak",
   "syn": [
    "meet",
    "merge",
@@ -13839,7 +13839,7 @@
   "id": "w0761",
   "word": "simulate",
   "pos": "v",
-  "tr": "benzetimini yapmak, simüle etmek; taklit etmek",
+  "tr": "simüle etmek, benzetimini yapmak; taklit etmek",
   "syn": [
    "imitate",
    "model",
@@ -13874,7 +13874,7 @@
   "id": "w0763",
   "word": "manipulate",
   "pos": "v",
-  "tr": "işlemek, ustalıkla kullanmak",
+  "tr": "elle işlemek, kullanmak; yönlendirmek",
   "syn": [
    "handle",
    "control",
@@ -13912,7 +13912,7 @@
   "id": "w0765",
   "word": "harness",
   "pos": "v",
-  "tr": "yararlanmak, dizginlemek",
+  "tr": "(enerji vb.) kullanmak, yararlanmak",
   "syn": [
    "utilise",
    "exploit",
@@ -14475,7 +14475,7 @@
   "id": "w0797",
   "word": "retention",
   "pos": "n",
-  "tr": "tutma, muhafaza",
+  "tr": "tutma, koruma",
   "syn": [
    "preservation",
    "maintenance",
@@ -14492,7 +14492,7 @@
   "id": "w0798",
   "word": "acquisition",
   "pos": "n",
-  "tr": "edinim, kazanım",
+  "tr": "edinme, kazanma",
   "syn": [
    "gain",
    "attainment",
@@ -14565,7 +14565,7 @@
   "id": "w0802",
   "word": "disposal",
   "pos": "n",
-  "tr": "bertaraf, atma",
+  "tr": "atma, yok etme",
   "syn": [
    "discarding",
    "removal",
@@ -14676,7 +14676,7 @@
   "id": "w0808",
   "word": "surplus",
   "pos": "n",
-  "tr": "fazla, artan",
+  "tr": "fazlalık, artan miktar",
   "syn": [
    "excess",
    "remainder",
@@ -14694,7 +14694,7 @@
   "id": "w0809",
   "word": "trace",
   "pos": "n",
-  "tr": "iz, eser miktar",
+  "tr": "iz, çok az miktar",
   "syn": [
    "hint",
    "sign",
@@ -14730,7 +14730,7 @@
   "id": "w0811",
   "word": "deposit",
   "pos": "n",
-  "tr": "tortu, yatak",
+  "tr": "tortu, birikinti; (maden) yatak",
   "syn": [
    "sediment",
    "layer",
@@ -15046,7 +15046,7 @@
   "id": "w0829",
   "word": "depression",
   "pos": "n",
-  "tr": "depresyon, çöküntü; (meteoroloji) alçak basınç; çukur",
+  "tr": "depresyon; çukur, çöküntü; alçak basınç",
   "syn": [
    "dejection",
    "low",
@@ -15084,7 +15084,7 @@
   "id": "w0831",
   "word": "preserve",
   "pos": "v",
-  "tr": "korumak, muhafaza etmek",
+  "tr": "korumak, saklamak",
   "syn": [
    "conserve",
    "protect",
@@ -15240,7 +15240,7 @@
   "id": "w0839",
   "word": "trait",
   "pos": "n",
-  "tr": "özellik, nitelik (kalıtsal)",
+  "tr": "(kalıtsal) özellik",
   "syn": [
    "characteristic",
    "feature",
@@ -15370,7 +15370,7 @@
   "id": "w0846",
   "word": "deforestation",
   "pos": "n",
-  "tr": "ormansızlaşma, ormanların yok edilmesi",
+  "tr": "ormansızlaşma",
   "syn": [
    "forest clearance",
    "logging",
@@ -15445,7 +15445,7 @@
   "id": "w0850",
   "word": "pesticide",
   "pos": "n",
-  "tr": "tarım ilacı, böcek/haşere öldürücü",
+  "tr": "tarım ilacı, böcek ilacı",
   "syn": [
    "insecticide",
    "herbicide",
@@ -15559,7 +15559,7 @@
   "id": "w0856",
   "word": "breed",
   "pos": "v",
-  "tr": "üremek; yetiştirmek, ıslah etmek",
+  "tr": "üremek; yetiştirmek",
   "syn": [
    "reproduce",
    "raise",
@@ -15693,7 +15693,7 @@
   "id": "w0863",
   "word": "sophisticated",
   "pos": "adj",
-  "tr": "gelişmiş, karmaşık, ileri düzeyde",
+  "tr": "gelişmiş, ileri düzeyde",
   "syn": [
    "advanced",
    "complex",
@@ -15712,7 +15712,7 @@
   "id": "w0864",
   "word": "biodiversity",
   "pos": "n",
-  "tr": "biyoçeşitlilik, biyolojik çeşitlilik",
+  "tr": "biyoçeşitlilik",
   "syn": [
    "biological diversity",
    "species richness",
@@ -15863,7 +15863,7 @@
   "id": "w0872",
   "word": "go on",
   "pos": "phr",
-  "tr": "devam etmek; olmak, cereyan etmek",
+  "tr": "devam etmek; olmak, yaşanmak",
   "syn": [
    "continue",
    "carry on",
@@ -15881,7 +15881,7 @@
   "id": "w0873",
   "word": "settle",
   "pos": "v",
-  "tr": "yerleşmek; çökmek, dibe çökmek; çözmek",
+  "tr": "yerleşmek; dibe çökmek; çözmek",
   "syn": [
    "colonise",
    "sink",
@@ -15977,7 +15977,7 @@
   "id": "w0878",
   "word": "ancestor",
   "pos": "n",
-  "tr": "ata, cet",
+  "tr": "ata",
   "syn": [
    "forebear",
    "predecessor",
@@ -16036,7 +16036,7 @@
   "id": "w0881",
   "word": "overlook",
   "pos": "v",
-  "tr": "gözden kaçırmak, göz ardı etmek; tepeden bakmak",
+  "tr": "gözden kaçırmak, göz ardı etmek",
   "syn": [
    "neglect",
    "ignore",
@@ -16167,7 +16167,7 @@
   "id": "w0888",
   "word": "practical",
   "pos": "adj",
-  "tr": "pratik, uygulanabilir, işe yarar",
+  "tr": "pratik, uygulanabilir",
   "syn": [
    "applicable",
    "feasible",
@@ -16186,7 +16186,7 @@
   "id": "w0889",
   "word": "prominent",
   "pos": "adj",
-  "tr": "önemli, önde gelen; belirgin, göze çarpan",
+  "tr": "önemli, önde gelen; belirgin",
   "syn": [
    "notable",
    "leading",
@@ -16262,7 +16262,7 @@
   "id": "w0893",
   "word": "outbreak",
   "pos": "n",
-  "tr": "(salgın, savaş vb.) patlak verme, salgın",
+  "tr": "salgın; (savaş) patlak verme",
   "syn": [
    "epidemic",
    "eruption",
@@ -16301,7 +16301,7 @@
   "id": "w0895",
   "word": "devastating",
   "pos": "adj",
-  "tr": "yıkıcı, çok tahrip edici",
+  "tr": "yıkıcı",
   "syn": [
    "destructive",
    "catastrophic",
@@ -16339,7 +16339,7 @@
   "id": "w0897",
   "word": "delicate",
   "pos": "adj",
-  "tr": "hassas, narin, kırılgan",
+  "tr": "hassas, narin",
   "syn": [
    "fragile",
    "sensitive",
@@ -16414,7 +16414,7 @@
   "id": "w0901",
   "word": "convenient",
   "pos": "adj",
-  "tr": "uygun, elverişli, kullanışlı",
+  "tr": "uygun, kullanışlı",
   "syn": [
    "handy",
    "suitable",
@@ -16493,7 +16493,7 @@
   "id": "w0905",
   "word": "advent",
   "pos": "n",
-  "tr": "ortaya çıkış, geliş, başlangıç",
+  "tr": "ortaya çıkış, geliş",
   "syn": [
    "arrival",
    "emergence",
@@ -16570,7 +16570,7 @@
   "id": "w0909",
   "word": "elaborate",
   "pos": "adj",
-  "tr": "ayrıntılı, özenle hazırlanmış, karmaşık",
+  "tr": "ayrıntılı, karmaşık",
   "syn": [
    "detailed",
    "intricate",
@@ -16588,7 +16588,7 @@
   "id": "w0910",
   "word": "prescribe",
   "pos": "v",
-  "tr": "(ilaç) yazmak; öngörmek, şart koşmak",
+  "tr": "(ilaç) yazmak; öngörmek",
   "syn": [
    "recommend",
    "order",
@@ -16607,7 +16607,7 @@
   "id": "w0911",
   "word": "tremendous",
   "pos": "adj",
-  "tr": "muazzam, çok büyük",
+  "tr": "çok büyük, muazzam",
   "syn": [
    "enormous",
    "huge",
@@ -16626,7 +16626,7 @@
   "id": "w0912",
   "word": "purely",
   "pos": "adv",
-  "tr": "tamamen, sadece, salt",
+  "tr": "tamamen, sadece",
   "syn": [
    "entirely",
    "solely",
@@ -16645,7 +16645,7 @@
   "id": "w0913",
   "word": "remarkably",
   "pos": "adv",
-  "tr": "dikkat çekici şekilde, olağanüstü",
+  "tr": "dikkat çekici şekilde, şaşırtıcı derecede",
   "syn": [
    "strikingly",
    "notably",
@@ -16701,7 +16701,7 @@
   "id": "w0916",
   "word": "urgent",
   "pos": "adj",
-  "tr": "acil, ivedi",
+  "tr": "acil",
   "syn": [
    "pressing",
    "critical",
@@ -16720,7 +16720,7 @@
   "id": "w0917",
   "word": "appreciate",
   "pos": "v",
-  "tr": "takdir etmek; farkında olmak, kavramak; değer kazanmak",
+  "tr": "takdir etmek; farkında olmak; değer kazanmak",
   "syn": [
    "value",
    "recognise",
@@ -16872,7 +16872,7 @@
   "id": "w0925",
   "word": "recall",
   "pos": "v",
-  "tr": "hatırlamak; geri çağırmak (ürün)",
+  "tr": "hatırlamak; (ürün) geri çağırmak",
   "syn": [
    "remember",
    "recollect",
@@ -16891,7 +16891,7 @@
   "id": "w0926",
   "word": "truly",
   "pos": "adv",
-  "tr": "gerçekten, hakikaten",
+  "tr": "gerçekten",
   "syn": [
    "genuinely",
    "really",
@@ -16910,7 +16910,7 @@
   "id": "w0927",
   "word": "controversy",
   "pos": "n",
-  "tr": "tartışma, ihtilaf",
+  "tr": "tartışma, anlaşmazlık",
   "syn": [
    "dispute",
    "debate",
@@ -16949,7 +16949,7 @@
   "id": "w0929",
   "word": "habitable",
   "pos": "adj",
-  "tr": "yaşanabilir, oturulabilir",
+  "tr": "yaşanabilir",
   "syn": [
    "inhabitable",
    "liveable",
@@ -16988,7 +16988,7 @@
   "id": "w0931",
   "word": "dispose",
   "pos": "v",
-  "tr": "(of ile) atmak, elden çıkarmak",
+  "tr": "(dispose of) atmak, elden çıkarmak",
   "syn": [
    "discard",
    "get rid of",
@@ -17008,7 +17008,7 @@
   "id": "w0932",
   "word": "trivial",
   "pos": "adj",
-  "tr": "önemsiz, değersiz",
+  "tr": "önemsiz",
   "syn": [
    "insignificant",
    "minor",
@@ -17046,7 +17046,7 @@
   "id": "w0934",
   "word": "notorious",
   "pos": "adj",
-  "tr": "(kötü şöhretiyle) bilinen, adı çıkmış",
+  "tr": "kötü ünlü, adı çıkmış",
   "syn": [
    "infamous",
    "disreputable",
@@ -17180,7 +17180,7 @@
   "id": "w0941",
   "word": "for the sake of",
   "pos": "prep",
-  "tr": "-in uğruna, -in hatırı için",
+  "tr": "-in uğruna, -in için",
   "syn": [
    "for the benefit of",
    "in the interest of",
@@ -17238,7 +17238,7 @@
   "id": "w0944",
   "word": "incentive",
   "pos": "n",
-  "tr": "teşvik, özendirici",
+  "tr": "teşvik, özendirici şey",
   "syn": [
    "motivation",
    "stimulus",
@@ -17446,7 +17446,7 @@
   "id": "w0955",
   "word": "tedious",
   "pos": "adj",
-  "tr": "sıkıcı, usandırıcı",
+  "tr": "sıkıcı, bıktırıcı",
   "syn": [
    "boring",
    "monotonous",
@@ -17484,7 +17484,7 @@
   "id": "w0957",
   "word": "suspend",
   "pos": "v",
-  "tr": "askıya almak, durdurmak; asmak; (sıvıda) asılı tutmak",
+  "tr": "askıya almak, durdurmak; asılı tutmak",
   "syn": [
    "halt",
    "interrupt",
@@ -17581,7 +17581,7 @@
   "id": "w0962",
   "word": "notoriously",
   "pos": "adv",
-  "tr": "kötü bilinen biçimde, herkesçe bilindiği gibi",
+  "tr": "herkesçe (kötü) bilinen şekilde",
   "syn": [
    "famously",
    "infamously",
@@ -17600,7 +17600,7 @@
   "id": "w0963",
   "word": "take on",
   "pos": "phr",
-  "tr": "üstlenmek; (görünüm, nitelik) kazanmak; işe almak",
+  "tr": "üstlenmek; (görünüm) kazanmak; işe almak",
   "syn": [
    "undertake",
    "assume",
@@ -17732,7 +17732,7 @@
   "id": "w0970",
   "word": "immensely",
   "pos": "adv",
-  "tr": "son derece, muazzam ölçüde",
+  "tr": "son derece, çok büyük ölçüde",
   "syn": [
    "enormously",
    "extremely",
@@ -17769,7 +17769,7 @@
   "id": "w0972",
   "word": "indispensable",
   "pos": "adj",
-  "tr": "vazgeçilmez, zorunlu",
+  "tr": "vazgeçilmez",
   "syn": [
    "essential",
    "vital",
@@ -17788,7 +17788,7 @@
   "id": "w0973",
   "word": "herald",
   "pos": "v",
-  "tr": "müjdelemek, habercisi olmak",
+  "tr": "habercisi olmak, müjdelemek",
   "syn": [
    "signal",
    "announce",
@@ -17845,7 +17845,7 @@
   "id": "w0976",
   "word": "inquiry",
   "pos": "n",
-  "tr": "soruşturma, araştırma; sorgu",
+  "tr": "araştırma, soruşturma",
   "syn": [
    "investigation",
    "enquiry",
@@ -17901,7 +17901,7 @@
   "id": "w0979",
   "word": "bring out",
   "pos": "phr",
-  "tr": "ortaya çıkarmak, belirginleştirmek; piyasaya sürmek",
+  "tr": "ortaya çıkarmak; piyasaya sürmek",
   "syn": [
    "reveal",
    "highlight",
@@ -18118,7 +18118,7 @@
   "id": "w0991",
   "word": "intricately",
   "pos": "adv",
-  "tr": "karmaşık biçimde, girift olarak",
+  "tr": "karmaşık biçimde",
   "syn": [
    "elaborately",
    "closely",
@@ -18136,7 +18136,7 @@
   "id": "w0992",
   "word": "fortify",
   "pos": "v",
-  "tr": "güçlendirmek, takviye etmek; zenginleştirmek (gıda)",
+  "tr": "güçlendirmek; (gıda) zenginleştirmek",
   "syn": [
    "strengthen",
    "reinforce",
@@ -18209,7 +18209,7 @@
   "id": "w0996",
   "word": "embody",
   "pos": "v",
-  "tr": "somutlaştırmak, temsil etmek, içermek",
+  "tr": "somutlaştırmak, temsil etmek",
   "syn": [
    "represent",
    "incorporate",
@@ -18265,7 +18265,7 @@
   "id": "w0999",
   "word": "unevenly",
   "pos": "adv",
-  "tr": "eşit olmayan biçimde, düzensiz",
+  "tr": "eşit olmayan şekilde, düzensiz",
   "syn": [
    "irregularly",
    "unequally",
@@ -18396,7 +18396,7 @@
   "id": "w1006",
   "word": "attach",
   "pos": "v",
-  "tr": "takmak, bağlamak, iliştirmek",
+  "tr": "takmak, bağlamak",
   "syn": [
    "fasten",
    "fix",
@@ -18470,7 +18470,7 @@
   "id": "w1010",
   "word": "regulate",
   "pos": "v",
-  "tr": "düzenlemek, ayarlamak, kontrol etmek",
+  "tr": "düzenlemek, kontrol etmek",
   "syn": [
    "control",
    "adjust",
@@ -18675,7 +18675,7 @@
   "id": "w1021",
   "word": "dominate",
   "pos": "v",
-  "tr": "hakim olmak, egemen olmak",
+  "tr": "baskın olmak, hâkim olmak",
   "syn": [
    "control",
    "prevail",
@@ -18694,7 +18694,7 @@
   "id": "w1022",
   "word": "abandon",
   "pos": "v",
-  "tr": "terk etmek, bırakmak, vazgeçmek",
+  "tr": "terk etmek, bırakmak",
   "syn": [
    "desert",
    "give up",
@@ -18805,7 +18805,7 @@
   "id": "w1028",
   "word": "concentrate",
   "pos": "v",
-  "tr": "yoğunlaşmak, toplanmak; derişikleştirmek",
+  "tr": "yoğunlaşmak, toplanmak; (kimya) derişik hale getirmek",
   "syn": [
    "focus",
    "gather",
@@ -18824,7 +18824,7 @@
   "id": "w1029",
   "word": "contemporary",
   "pos": "adj",
-  "tr": "çağdaş, günümüze ait; aynı döneme ait",
+  "tr": "çağdaş, günümüze ait; aynı dönemde yaşamış",
   "syn": [
    "modern",
    "current",
@@ -18971,7 +18971,7 @@
   "id": "w1037",
   "word": "dynamic",
   "pos": "adj",
-  "tr": "dinamik, hareketli, sürekli değişen",
+  "tr": "dinamik, sürekli değişen",
   "syn": [
    "active",
    "changing",
@@ -19026,7 +19026,7 @@
   "id": "w1040",
   "word": "medium",
   "pos": "n",
-  "tr": "ortam, araç; besiyeri",
+  "tr": "ortam, araç; (biyoloji) besiyeri",
   "syn": [
    "environment",
    "means",
@@ -19044,7 +19044,7 @@
   "id": "w1041",
   "word": "constitute",
   "pos": "v",
-  "tr": "oluşturmak, teşkil etmek",
+  "tr": "oluşturmak",
   "syn": [
    "form",
    "make up",
@@ -19212,7 +19212,7 @@
   "id": "w1050",
   "word": "radical",
   "pos": "adj",
-  "tr": "köklü, radikal, temelden",
+  "tr": "köklü, radikal",
   "syn": [
    "fundamental",
    "drastic",
@@ -19288,7 +19288,7 @@
   "id": "w1054",
   "word": "parallel",
   "pos": "adj",
-  "tr": "paralel, koşut, benzer",
+  "tr": "paralel, benzer",
   "syn": [
    "equivalent",
    "analogous",
@@ -19402,7 +19402,7 @@
   "id": "w1060",
   "word": "integral",
   "pos": "adj",
-  "tr": "ayrılmaz, temel, bütünün parçası olan",
+  "tr": "ayrılmaz, temel",
   "syn": [
    "essential",
    "fundamental",
@@ -19420,7 +19420,7 @@
   "id": "w1061",
   "word": "principal",
   "pos": "adj",
-  "tr": "başlıca, ana, temel",
+  "tr": "ana, başlıca",
   "syn": [
    "main",
    "chief",
@@ -19438,7 +19438,7 @@
   "id": "w1062",
   "word": "undertake",
   "pos": "v",
-  "tr": "üstlenmek; girişmek, yürütmek",
+  "tr": "üstlenmek; yürütmek",
   "syn": [
    "carry out",
    "conduct",
@@ -19457,7 +19457,7 @@
   "id": "w1063",
   "word": "substitute",
   "pos": "n",
-  "tr": "yedek, ikame, yerine kullanılan şey",
+  "tr": "yerine kullanılan şey, yedek",
   "syn": [
    "replacement",
    "alternative",
@@ -19549,7 +19549,7 @@
   "id": "w1068",
   "word": "secure",
   "pos": "v",
-  "tr": "sağlamlaştırmak, sabitlemek; elde etmek",
+  "tr": "sabitlemek; elde etmek",
   "syn": [
    "fasten",
    "fix",
@@ -19585,7 +19585,7 @@
   "id": "w1070",
   "word": "allocate",
   "pos": "v",
-  "tr": "ayırmak, tahsis etmek",
+  "tr": "(kaynak) ayırmak, dağıtmak",
   "syn": [
    "assign",
    "allot",
@@ -19604,7 +19604,7 @@
   "id": "w1071",
   "word": "domain",
   "pos": "n",
-  "tr": "alan, saha; (fizik) bölge",
+  "tr": "alan; (fizik) bölge",
   "syn": [
    "field",
    "area",
@@ -19640,7 +19640,7 @@
   "id": "w1073",
   "word": "voluntary",
   "pos": "adj",
-  "tr": "gönüllü, isteğe bağlı; istemli",
+  "tr": "gönüllü, isteğe bağlı",
   "syn": [
    "optional",
    "willing",
@@ -19659,7 +19659,7 @@
   "id": "w1074",
   "word": "predominant",
   "pos": "adj",
-  "tr": "baskın, ağır basan, en yaygın",
+  "tr": "baskın, en yaygın",
   "syn": [
    "dominant",
    "main",
@@ -19679,7 +19679,7 @@
   "id": "w1075",
   "word": "uniform",
   "pos": "adj",
-  "tr": "tekdüze, düzgün, homojen",
+  "tr": "düzgün, tekdüze, homojen",
   "syn": [
    "consistent",
    "even",
@@ -19808,7 +19808,7 @@
   "id": "w1082",
   "word": "aggregate",
   "pos": "n",
-  "tr": "toplam, bütün; agrega (inşaat)",
+  "tr": "toplam, bütün; (inşaat) agrega",
   "syn": [
    "total",
    "sum",
@@ -19903,7 +19903,7 @@
   "id": "w1087",
   "word": "prospect",
   "pos": "n",
-  "tr": "olasılık, beklenti, ihtimal",
+  "tr": "olasılık, beklenti",
   "syn": [
    "possibility",
    "likelihood",
@@ -19921,7 +19921,7 @@
   "id": "w1088",
   "word": "coherent",
   "pos": "adj",
-  "tr": "tutarlı, mantıklı; (fizik) eş fazlı",
+  "tr": "tutarlı, mantıklı",
   "syn": [
    "consistent",
    "logical",
@@ -19976,7 +19976,7 @@
   "id": "w1091",
   "word": "rational",
   "pos": "adj",
-  "tr": "akılcı, mantıklı; (matematik) rasyonel",
+  "tr": "akılcı, mantıklı",
   "syn": [
    "logical",
    "reasonable",
@@ -20067,7 +20067,7 @@
   "id": "w1096",
   "word": "compatible",
   "pos": "adj",
-  "tr": "uyumlu, bağdaşabilir",
+  "tr": "uyumlu",
   "syn": [
    "consistent",
    "suited",
@@ -20180,7 +20180,7 @@
   "id": "w1102",
   "word": "impose",
   "pos": "v",
-  "tr": "dayatmak, uygulamak, yüklemek",
+  "tr": "dayatmak, uygulamak; yüklemek",
   "syn": [
    "enforce",
    "apply",
@@ -20272,7 +20272,7 @@
   "id": "w1107",
   "word": "precede",
   "pos": "v",
-  "tr": "-den önce gelmek, öncesinde olmak",
+  "tr": "-den önce gelmek",
   "syn": [
    "come before",
    "go before",
@@ -20345,7 +20345,7 @@
   "id": "w1111",
   "word": "paradigm",
   "pos": "n",
-  "tr": "paradigma, model, örnek",
+  "tr": "model, örnek, paradigma",
   "syn": [
    "model",
    "pattern",
@@ -20382,7 +20382,7 @@
   "id": "w1113",
   "word": "complement",
   "pos": "v",
-  "tr": "tamamlamak, bütünlemek",
+  "tr": "tamamlamak",
   "syn": [
    "supplement",
    "enhance",
@@ -20418,7 +20418,7 @@
   "id": "w1115",
   "word": "analogy",
   "pos": "n",
-  "tr": "benzetme, analoji, benzerlik",
+  "tr": "benzetme, benzerlik",
   "syn": [
    "comparison",
    "parallel",
@@ -20491,7 +20491,7 @@
   "id": "w1119",
   "word": "distort",
   "pos": "v",
-  "tr": "bozmak, çarpıtmak, biçimini bozmak",
+  "tr": "bozmak, çarpıtmak",
   "syn": [
    "deform",
    "twist",
@@ -20509,7 +20509,7 @@
   "id": "w1120",
   "word": "intermediate",
   "pos": "adj",
-  "tr": "ara, orta, ara aşamadaki",
+  "tr": "ara, orta",
   "syn": [
    "middle",
    "midway",
@@ -20527,7 +20527,7 @@
   "id": "w1121",
   "word": "protocol",
   "pos": "n",
-  "tr": "protokol, yöntem kuralları",
+  "tr": "protokol, uygulama kuralları",
   "syn": [
    "procedure",
    "method",
@@ -20564,7 +20564,7 @@
   "id": "w1123",
   "word": "straightforward",
   "pos": "adj",
-  "tr": "basit, kolay, anlaşılır",
+  "tr": "basit, kolay anlaşılır",
   "syn": [
    "simple",
    "easy",
@@ -20601,7 +20601,7 @@
   "id": "w1125",
   "word": "assign",
   "pos": "v",
-  "tr": "atamak, görevlendirmek; vermek, yüklemek",
+  "tr": "atamak, görevlendirmek; vermek",
   "syn": [
    "allocate",
    "allot",
@@ -20828,7 +20828,7 @@
   "id": "w1137",
   "word": "consequent",
   "pos": "adj",
-  "tr": "sonucu olarak ortaya çıkan, bunu izleyen",
+  "tr": "sonucunda ortaya çıkan, ardından gelen",
   "syn": [
    "resulting",
    "resultant",
@@ -20978,7 +20978,7 @@
   "id": "w1145",
   "word": "reside",
   "pos": "v",
-  "tr": "ikamet etmek, bulunmak, yer almak",
+  "tr": "bulunmak, yer almak; oturmak",
   "syn": [
    "live",
    "dwell",
@@ -21091,7 +21091,7 @@
   "id": "w1151",
   "word": "locate",
   "pos": "v",
-  "tr": "yerini saptamak, bulmak; yerleştirmek",
+  "tr": "yerini bulmak; yerleştirmek",
   "syn": [
    "find",
    "detect",
@@ -21277,7 +21277,7 @@
   "id": "w1161",
   "word": "commit",
   "pos": "v",
-  "tr": "adamak, taahhüt etmek; (hata) yapmak",
+  "tr": "(hata, suç) işlemek; adamak, söz vermek",
   "syn": [
    "pledge",
    "devote",
@@ -21390,7 +21390,7 @@
   "id": "w1167",
   "word": "implicate",
   "pos": "v",
-  "tr": "(bir şeyin) sorumlusu olarak göstermek, ilişkilendirmek",
+  "tr": "-in sorumlusu olarak göstermek, ilişkilendirmek",
   "syn": [
    "involve",
    "incriminate",
@@ -21483,7 +21483,7 @@
   "id": "w1172",
   "word": "retain",
   "pos": "v",
-  "tr": "tutmak, korumak, muhafaza etmek",
+  "tr": "tutmak, korumak",
   "syn": [
    "keep",
    "hold",
@@ -21797,7 +21797,7 @@
   "id": "w1189",
   "word": "revenue",
   "pos": "n",
-  "tr": "gelir, hasılat",
+  "tr": "gelir",
   "syn": [
    "income",
    "earnings",
@@ -21981,7 +21981,7 @@
   "id": "w1199",
   "word": "overseas",
   "pos": "adj",
-  "tr": "denizaşırı, yurt dışı",
+  "tr": "yurt dışı, denizaşırı",
   "syn": [
    "foreign",
    "international",
@@ -22036,7 +22036,7 @@
   "id": "w1202",
   "word": "adult",
   "pos": "n",
-  "tr": "yetişkin, ergin",
+  "tr": "yetişkin",
   "syn": [
    "grown-up",
    "mature individual"
@@ -22054,7 +22054,7 @@
   "id": "w1203",
   "word": "contrary",
   "pos": "adj",
-  "tr": "zıt, aykırı, ters",
+  "tr": "zıt, ters",
   "syn": [
    "opposite",
    "opposing",
@@ -22127,7 +22127,7 @@
   "id": "w1207",
   "word": "equip",
   "pos": "v",
-  "tr": "donatmak",
+  "tr": "donatmak, (ekipmanla) donatmak",
   "syn": [
    "supply",
    "provide",
@@ -22164,7 +22164,7 @@
   "id": "w1209",
   "word": "grade",
   "pos": "n",
-  "tr": "kalite sınıfı, derece",
+  "tr": "derece, kalite sınıfı",
   "syn": [
    "quality",
    "class",
@@ -22275,7 +22275,7 @@
   "id": "w1215",
   "word": "sole",
   "pos": "adj",
-  "tr": "tek, yegâne",
+  "tr": "tek, biricik",
   "syn": [
    "only",
    "single",
@@ -22313,7 +22313,7 @@
   "id": "w1217",
   "word": "successor",
   "pos": "n",
-  "tr": "ardıl, halef",
+  "tr": "halef, yerine gelen",
   "syn": [
    "replacement",
    "heir",
@@ -22331,7 +22331,7 @@
   "id": "w1218",
   "word": "ultimate",
   "pos": "adj",
-  "tr": "nihai, son; en üst",
+  "tr": "en son, nihai; en üst",
   "syn": [
    "final",
    "eventual",
@@ -22404,7 +22404,7 @@
   "id": "w1222",
   "word": "eventual",
   "pos": "adj",
-  "tr": "nihai, sonunda gerçekleşen",
+  "tr": "sonunda gerçekleşen, en sonki",
   "syn": [
    "final",
    "ultimate",
@@ -22423,7 +22423,7 @@
   "id": "w1223",
   "word": "guideline",
   "pos": "n",
-  "tr": "yönerge, kılavuz ilke",
+  "tr": "yönerge, kılavuz",
   "syn": [
    "rule",
    "recommendation",
@@ -22551,7 +22551,7 @@
   "id": "w1230",
   "word": "virtual",
   "pos": "adj",
-  "tr": "sanal; fiilî, neredeyse tam",
+  "tr": "sanal; neredeyse tam",
   "syn": [
    "simulated",
    "digital",
@@ -22827,7 +22827,7 @@
   "id": "w1245",
   "word": "vision",
   "pos": "n",
-  "tr": "görme (duyusu); öngörü",
+  "tr": "görme; öngörü",
   "syn": [
    "sight",
    "eyesight",
@@ -22845,7 +22845,7 @@
   "id": "w1246",
   "word": "conceive",
   "pos": "v",
-  "tr": "tasarlamak, aklına getirmek; gebe kalmak",
+  "tr": "tasarlamak, düşünmek; gebe kalmak",
   "syn": [
    "imagine",
    "devise",
@@ -22957,7 +22957,7 @@
   "id": "w1252",
   "word": "invoke",
   "pos": "v",
-  "tr": "başvurmak, öne sürmek, dayanmak",
+  "tr": "başvurmak, öne sürmek",
   "syn": [
    "cite",
    "appeal to",
@@ -23013,7 +23013,7 @@
   "id": "w1255",
   "word": "so-called",
   "pos": "adj",
-  "tr": "… denilen, … diye adlandırılan; sözde",
+  "tr": "… denilen; sözde",
   "syn": [
    "supposed",
    "alleged",
@@ -23206,7 +23206,7 @@
   "id": "w1266",
   "word": "seal",
   "pos": "v",
-  "tr": "sızdırmaz hâle getirmek, mühürlemek, kapatmak",
+  "tr": "sızdırmaz yapmak, kapatmak; mühürlemek",
   "syn": [
    "close",
    "plug",
@@ -23520,7 +23520,7 @@
   "id": "w1284",
   "word": "stabilise",
   "pos": "v",
-  "tr": "dengelemek, sabitlemek, kararlı hâle getirmek",
+  "tr": "dengelemek, kararlı hale getirmek",
   "syn": [
    "steady",
    "balance",
@@ -23573,7 +23573,7 @@
   "id": "w1287",
   "word": "provoke",
   "pos": "v",
-  "tr": "yol açmak, kışkırtmak, uyandırmak",
+  "tr": "yol açmak, kışkırtmak",
   "syn": [
    "cause",
    "trigger",
@@ -23591,7 +23591,7 @@
   "id": "w1288",
   "word": "discharge",
   "pos": "v",
-  "tr": "boşaltmak, deşarj etmek, salmak",
+  "tr": "boşaltmak, salmak; deşarj etmek",
   "syn": [
    "release",
    "emit",
@@ -23626,7 +23626,7 @@
   "id": "w1290",
   "word": "enclose",
   "pos": "v",
-  "tr": "içine almak, çevrelemek, kapatmak",
+  "tr": "içine almak, çevrelemek",
   "syn": [
    "surround",
    "contain",
@@ -23694,7 +23694,7 @@
   "id": "w1294",
   "word": "inherit",
   "pos": "v",
-  "tr": "kalıtım yoluyla almak, miras almak",
+  "tr": "kalıtımla almak, miras almak",
   "syn": [
    "receive",
    "acquire",
@@ -23730,7 +23730,7 @@
   "id": "w1296",
   "word": "thrive",
   "pos": "v",
-  "tr": "gelişmek, iyi büyümek, serpilmek",
+  "tr": "gelişmek, iyi büyümek",
   "syn": [
    "flourish",
    "prosper",
@@ -23749,7 +23749,7 @@
   "id": "w1297",
   "word": "flourish",
   "pos": "v",
-  "tr": "gelişmek, serpilmek, bolca yetişmek",
+  "tr": "gelişmek, çoğalmak",
   "syn": [
    "thrive",
    "prosper",
@@ -23905,7 +23905,7 @@
   "id": "w1306",
   "word": "inhabit",
   "pos": "v",
-  "tr": "(bir yerde) yaşamak, mesken tutmak",
+  "tr": "(bir yerde) yaşamak",
   "syn": [
    "live in",
    "occupy",
@@ -23923,7 +23923,7 @@
   "id": "w1307",
   "word": "cultivate",
   "pos": "v",
-  "tr": "ekip biçmek, yetiştirmek",
+  "tr": "yetiştirmek, ekip biçmek",
   "syn": [
    "grow",
    "farm",
@@ -24030,7 +24030,7 @@
   "id": "w1313",
   "word": "tackle",
   "pos": "v",
-  "tr": "ele almak, üstesinden gelmeye çalışmak",
+  "tr": "ele almak, çözmeye çalışmak",
   "syn": [
    "address",
    "deal with",
@@ -24048,7 +24048,7 @@
   "id": "w1314",
   "word": "address",
   "pos": "v",
-  "tr": "ele almak, çözüm aramak",
+  "tr": "ele almak, çözmeye çalışmak",
   "syn": [
    "tackle",
    "deal with",
@@ -24082,7 +24082,7 @@
   "id": "w1316",
   "word": "speculate",
   "pos": "v",
-  "tr": "tahmin yürütmek, kuram yürütmek",
+  "tr": "tahmin yürütmek",
   "syn": [
    "guess",
    "theorise",
@@ -24099,7 +24099,7 @@
   "id": "w1317",
   "word": "forecast",
   "pos": "v",
-  "tr": "tahmin etmek (hava, gelecek)",
+  "tr": "(hava, gelecek) tahmin etmek",
   "syn": [
    "predict",
    "project",
@@ -24134,7 +24134,7 @@
   "id": "w1319",
   "word": "envisage",
   "pos": "v",
-  "tr": "öngörmek, tasavvur etmek",
+  "tr": "öngörmek, düşünmek",
   "syn": [
    "imagine",
    "foresee",
@@ -24257,7 +24257,7 @@
   "id": "w1326",
   "word": "attract",
   "pos": "v",
-  "tr": "çekmek, cezbetmek",
+  "tr": "çekmek, ilgisini çekmek",
   "syn": [
    "draw",
    "pull",
@@ -24309,7 +24309,7 @@
   "id": "w1329",
   "word": "soar",
   "pos": "v",
-  "tr": "hızla yükselmek; süzülmek",
+  "tr": "hızla yükselmek",
   "syn": [
    "rocket",
    "rise",
@@ -24361,7 +24361,7 @@
   "id": "w1332",
   "word": "exemplify",
   "pos": "v",
-  "tr": "örneklemek, tipik örneği olmak",
+  "tr": "örnek olmak, örneklemek",
   "syn": [
    "illustrate",
    "typify",
@@ -24413,7 +24413,7 @@
   "id": "w1335",
   "word": "characterise",
   "pos": "v",
-  "tr": "karakterize etmek, ayırt edici özelliği olmak; nitelendirmek",
+  "tr": "nitelendirmek; tipik özelliği olmak",
   "syn": [
    "typify",
    "distinguish",
@@ -24430,7 +24430,7 @@
   "id": "w1336",
   "word": "depict",
   "pos": "v",
-  "tr": "tasvir etmek, göstermek",
+  "tr": "göstermek, betimlemek",
   "syn": [
    "portray",
    "show",
@@ -24482,7 +24482,7 @@
   "id": "w1339",
   "word": "manufacture",
   "pos": "v",
-  "tr": "üretmek, imal etmek",
+  "tr": "üretmek",
   "syn": [
    "produce",
    "make",
@@ -24660,7 +24660,7 @@
   "id": "w1349",
   "word": "deflect",
   "pos": "v",
-  "tr": "saptırmak, yönünü değiştirmek; sehim yapmak",
+  "tr": "saptırmak, yönünü değiştirmek; (kiriş) eğilmek, sehim yapmak",
   "syn": [
    "divert",
    "turn aside",
@@ -24782,7 +24782,7 @@
   "id": "w1356",
   "word": "ample",
   "pos": "adj",
-  "tr": "bol, fazlasıyla yeterli",
+  "tr": "bol, yeterinden fazla",
   "syn": [
    "plentiful",
    "abundant",
@@ -24956,7 +24956,7 @@
   "id": "w1366",
   "word": "hostile",
   "pos": "adj",
-  "tr": "elverişsiz, düşmanca",
+  "tr": "elverişsiz, zorlu; düşmanca",
   "syn": [
    "unfavourable",
    "harsh",
@@ -24992,7 +24992,7 @@
   "id": "w1368",
   "word": "remote",
   "pos": "adj",
-  "tr": "uzak, ücra; uzaktan",
+  "tr": "uzak, ıssız; uzaktan",
   "syn": [
    "distant",
    "isolated",
@@ -25063,7 +25063,7 @@
   "id": "w1372",
   "word": "persistent",
   "pos": "adj",
-  "tr": "kalıcı, inatçı, sürekli",
+  "tr": "kalıcı, sürekli, inatçı",
   "syn": [
    "lasting",
    "continuing",
@@ -25240,7 +25240,7 @@
   "id": "w1382",
   "word": "prolific",
   "pos": "adj",
-  "tr": "üretken, verimli, çok ürün veren",
+  "tr": "üretken, verimli",
   "syn": [
    "productive",
    "fertile",
@@ -25312,7 +25312,7 @@
   "id": "w1386",
   "word": "resilient",
   "pos": "adj",
-  "tr": "dayanıklı, çabuk toparlanan; esnek",
+  "tr": "dayanıklı, çabuk toparlanan",
   "syn": [
    "tough",
    "hardy",
@@ -25347,7 +25347,7 @@
   "id": "w1388",
   "word": "obsolete",
   "pos": "adj",
-  "tr": "eskimiş, kullanımdan kalkmış",
+  "tr": "eskimiş, artık kullanılmayan",
   "syn": [
    "outdated",
    "out of date",
@@ -25381,7 +25381,7 @@
   "id": "w1390",
   "word": "remarkable",
   "pos": "adj",
-  "tr": "dikkate değer, olağanüstü",
+  "tr": "dikkat çekici, olağanüstü",
   "syn": [
    "striking",
    "extraordinary",
@@ -25417,7 +25417,7 @@
   "id": "w1392",
   "word": "outstanding",
   "pos": "adj",
-  "tr": "üstün, olağanüstü; çözülmemiş",
+  "tr": "üstün, olağanüstü; (iş, borç) bekleyen",
   "syn": [
    "excellent",
    "exceptional",
@@ -25453,7 +25453,7 @@
   "id": "w1394",
   "word": "unprecedented",
   "pos": "adj",
-  "tr": "eşi görülmemiş",
+  "tr": "eşi görülmemiş, ilk kez olan",
   "syn": [
    "unparalleled",
    "unheard-of",
@@ -25521,7 +25521,7 @@
   "id": "w1398",
   "word": "comparable",
   "pos": "adj",
-  "tr": "benzer, karşılaştırılabilir",
+  "tr": "karşılaştırılabilir, benzer",
   "syn": [
    "similar",
    "equivalent",
@@ -25539,7 +25539,7 @@
   "id": "w1399",
   "word": "analogous",
   "pos": "adj",
-  "tr": "benzer, benzeşen",
+  "tr": "benzer",
   "syn": [
    "similar",
    "comparable",
@@ -25610,7 +25610,7 @@
   "id": "w1403",
   "word": "tentative",
   "pos": "adj",
-  "tr": "geçici, kesin olmayan, deneme niteliğinde",
+  "tr": "geçici, kesin olmayan",
   "syn": [
    "provisional",
    "preliminary",
@@ -25681,7 +25681,7 @@
   "id": "w1407",
   "word": "intricate",
   "pos": "adj",
-  "tr": "karmaşık, girift, ince işlenmiş",
+  "tr": "karmaşık, ince işlenmiş",
   "syn": [
    "complex",
    "elaborate",
@@ -25698,7 +25698,7 @@
   "id": "w1408",
   "word": "subtle",
   "pos": "adj",
-  "tr": "ince, zor fark edilen, hafif",
+  "tr": "ince, zor fark edilen",
   "syn": [
    "slight",
    "fine",
@@ -25733,7 +25733,7 @@
   "id": "w1410",
   "word": "negligible",
   "pos": "adj",
-  "tr": "ihmal edilebilir, önemsiz",
+  "tr": "önemsiz, göz ardı edilebilir",
   "syn": [
    "insignificant",
    "trivial",
@@ -25751,7 +25751,7 @@
   "id": "w1411",
   "word": "modest",
   "pos": "adj",
-  "tr": "küçük, sınırlı, mütevazı",
+  "tr": "küçük, sınırlı; alçakgönüllü",
   "syn": [
    "small",
    "moderate",
@@ -25838,7 +25838,7 @@
   "id": "w1416",
   "word": "vague",
   "pos": "adj",
-  "tr": "belirsiz, muğlak",
+  "tr": "belirsiz, net olmayan",
   "syn": [
    "unclear",
    "imprecise",
@@ -25874,7 +25874,7 @@
   "id": "w1418",
   "word": "prevailing",
   "pos": "adj",
-  "tr": "yaygın, hâkim, geçerli",
+  "tr": "yaygın, geçerli, hâkim",
   "syn": [
    "dominant",
    "current",
@@ -26015,7 +26015,7 @@
   "id": "w1426",
   "word": "set out",
   "pos": "phr",
-  "tr": "yola çıkmak; (amaçla) işe koyulmak; ortaya koymak",
+  "tr": "yola çıkmak; işe koyulmak; ortaya koymak",
   "syn": [
    "aim",
    "begin",
@@ -26050,7 +26050,7 @@
   "id": "w1428",
   "word": "turn out",
   "pos": "phr",
-  "tr": "ortaya çıkmak, (sonuçta) ... olmak",
+  "tr": "(sonunda) -dığı ortaya çıkmak",
   "syn": [
    "prove",
    "emerge",
@@ -26068,7 +26068,7 @@
   "id": "w1429",
   "word": "turn to",
   "pos": "phr",
-  "tr": "-e yönelmek, başvurmak",
+  "tr": "-e yönelmek, -e başvurmak",
   "syn": [
    "resort to",
    "rely on",
@@ -26156,7 +26156,7 @@
   "id": "w1434",
   "word": "end up",
   "pos": "phr",
-  "tr": "sonunda ... olmak, kendini ... bulmak",
+  "tr": "sonunda -e varmak, sonunda ... olmak",
   "syn": [
    "finish",
    "wind up",
@@ -26227,7 +26227,7 @@
   "id": "w1438",
   "word": "hold back",
   "pos": "phr",
-  "tr": "engellemek, tutmak, geciktirmek",
+  "tr": "engellemek, geciktirmek",
   "syn": [
    "restrain",
    "hinder",
@@ -26369,7 +26369,7 @@
   "id": "w1446",
   "word": "stand for",
   "pos": "phr",
-  "tr": "anlamına gelmek, simgelemek; kısaltması olmak",
+  "tr": "anlamına gelmek, kısaltması olmak",
   "syn": [
    "represent",
    "mean",
@@ -26540,7 +26540,7 @@
   "id": "w1456",
   "word": "keep pace with",
   "pos": "phr",
-  "tr": "-e ayak uydurmak, aynı hızda ilerlemek",
+  "tr": "-e ayak uydurmak",
   "syn": [
    "keep up with",
    "match",
@@ -26612,7 +26612,7 @@
   "id": "w1460",
   "word": "be dependent on",
   "pos": "phr",
-  "tr": "-e bağımlı/bağlı olmak",
+  "tr": "-e bağlı olmak, -e bağımlı olmak",
   "syn": [
    "rely on",
    "depend on",
@@ -26701,7 +26701,7 @@
   "id": "w1465",
   "word": "be likely to",
   "pos": "phr",
-  "tr": "olası olmak, muhtemelen ...-mek",
+  "tr": "muhtemelen -mek, -mesi olası olmak",
   "syn": [
    "be expected to",
    "be liable to",
@@ -26718,7 +26718,7 @@
   "id": "w1466",
   "word": "be bound to",
   "pos": "phr",
-  "tr": "kesinlikle ...-ecek olmak, kaçınılmaz olmak",
+  "tr": "kesinlikle -ecek olmak",
   "syn": [
    "be certain to",
    "be sure to",
@@ -26793,7 +26793,7 @@
   "id": "w1470",
   "word": "on the verge of",
   "pos": "prep",
-  "tr": "eşiğinde, -mek üzere",
+  "tr": "-in eşiğinde, -mek üzere",
   "syn": [
    "on the brink of",
    "close to",
@@ -26811,7 +26811,7 @@
   "id": "w1471",
   "word": "on the grounds that",
   "pos": "conj",
-  "tr": "gerekçesiyle, -diği için",
+  "tr": "-dığı gerekçesiyle, -dığı için",
   "syn": [
    "because",
    "since",
@@ -26881,7 +26881,7 @@
   "id": "w1475",
   "word": "in excess of",
   "pos": "prep",
-  "tr": "-den fazla, -in üzerinde",
+  "tr": "-den fazla",
   "syn": [
    "more than",
    "over",
@@ -26936,7 +26936,7 @@
   "id": "w1478",
   "word": "at the cost of",
   "pos": "prep",
-  "tr": "pahasına",
+  "tr": "-in pahasına",
   "syn": [
    "at the expense of",
    "at the price of",
@@ -26953,7 +26953,7 @@
   "id": "w1479",
   "word": "at risk of",
   "pos": "prep",
-  "tr": "riski altında",
+  "tr": "-in riski altında",
   "syn": [
    "in danger of",
    "threatened by",
@@ -26970,7 +26970,7 @@
   "id": "w1480",
   "word": "by far",
   "pos": "adv",
-  "tr": "açık ara, fersah fersah",
+  "tr": "açık ara, çok daha",
   "syn": [
    "easily",
    "much",
@@ -27039,7 +27039,7 @@
   "id": "w1484",
   "word": "as of",
   "pos": "prep",
-  "tr": "itibarıyla",
+  "tr": "-den itibaren, itibarıyla",
   "syn": [
    "from",
    "starting from",
@@ -27147,7 +27147,7 @@
   "id": "w1490",
   "word": "in theory",
   "pos": "adv",
-  "tr": "kuramsal olarak, teoride",
+  "tr": "teoride, kuramsal olarak",
   "syn": [
    "theoretically",
    "in principle",
@@ -27165,7 +27165,7 @@
   "id": "w1491",
   "word": "in turn",
   "pos": "adv",
-  "tr": "sırasıyla; bunun sonucunda da",
+  "tr": "sırayla; bu da (sonuç olarak)",
   "syn": [
    "consequently",
    "subsequently",
@@ -27254,7 +27254,7 @@
   "id": "w1496",
   "word": "on the whole",
   "pos": "adv",
-  "tr": "genel olarak, bütüne bakıldığında",
+  "tr": "genel olarak",
   "syn": [
    "generally",
    "overall",
@@ -27323,7 +27323,7 @@
   "id": "w1500",
   "word": "in essence",
   "pos": "adv",
-  "tr": "özünde, esasen",
+  "tr": "özünde, temelde",
   "syn": [
    "basically",
    "essentially",
@@ -27340,7 +27340,7 @@
   "id": "w1501",
   "word": "a diversity of",
   "pos": "phr",
-  "tr": "çok çeşitli, çeşitli",
+  "tr": "çeşitli, çok çeşitli",
   "syn": [
    "a variety of",
    "a range of",
@@ -27358,7 +27358,7 @@
   "id": "w1502",
   "word": "a good deal of",
   "pos": "phr",
-  "tr": "epey, oldukça fazla (sayılamayan)",
+  "tr": "epey, oldukça fazla",
   "syn": [
    "a great deal of",
    "a lot of",
@@ -27376,7 +27376,7 @@
   "id": "w1503",
   "word": "a great deal of",
   "pos": "phr",
-  "tr": "çok fazla, büyük miktarda (sayılamayan)",
+  "tr": "çok fazla, büyük miktarda",
   "syn": [
    "a large amount of",
    "much",
@@ -27394,7 +27394,7 @@
   "id": "w1504",
   "word": "a large amount of",
   "pos": "phr",
-  "tr": "büyük miktar (+ of, sayılamayan)",
+  "tr": "büyük miktarda",
   "syn": [
    "a great deal",
    "a large quantity",
@@ -27412,7 +27412,7 @@
   "id": "w1505",
   "word": "a large quantity of",
   "pos": "phr",
-  "tr": "büyük miktar (+ of)",
+  "tr": "büyük miktarda",
   "syn": [
    "a large amount",
    "a great deal",
@@ -27430,7 +27430,7 @@
   "id": "w1506",
   "word": "a number of",
   "pos": "phr",
-  "tr": "birçok, bir dizi, birtakım (+ çoğul isim)",
+  "tr": "birçok, bir dizi",
   "syn": [
    "several",
    "various",
@@ -27484,7 +27484,7 @@
   "id": "w1509",
   "word": "a wide range of",
   "pos": "phr",
-  "tr": "geniş bir yelpaze, çok çeşitli",
+  "tr": "çok çeşitli, geniş bir yelpaze",
   "syn": [
    "a wide variety of",
    "a broad spectrum of",
@@ -27502,7 +27502,7 @@
   "id": "w1510",
   "word": "abduct",
   "pos": "v",
-  "tr": "kaçırmak (zorla); (anatomi) uzaklaştırmak",
+  "tr": "(zorla) kaçırmak",
   "syn": [
    "kidnap",
    "seize",
@@ -27520,7 +27520,7 @@
   "id": "w1511",
   "word": "abduction",
   "pos": "n",
-  "tr": "kaçırma; (anatomi) abdüksiyon, uzaklaştırma",
+  "tr": "(zorla) kaçırma",
   "syn": [
    "kidnapping",
    "seizure",
@@ -27538,7 +27538,7 @@
   "id": "w1512",
   "word": "abductor",
   "pos": "n",
-  "tr": "kaçıran kişi; uzaklaştırıcı kas",
+  "tr": "kaçıran kişi",
   "syn": [
    "kidnapper",
    "captor"
@@ -27555,7 +27555,7 @@
   "id": "w1513",
   "word": "ability",
   "pos": "n",
-  "tr": "yetenek, beceri, kabiliyet",
+  "tr": "yetenek, beceri",
   "syn": [
    "capacity",
    "capability",
@@ -27627,7 +27627,7 @@
   "id": "w1517",
   "word": "aboard",
   "pos": "prep",
-  "tr": "(araç) içinde, gemide, uçakta",
+  "tr": "(gemi, uçak) içinde, gemide",
   "syn": [
    "on board",
    "onto",
@@ -27645,7 +27645,7 @@
   "id": "w1518",
   "word": "abolitionist",
   "pos": "n",
-  "tr": "kölelik karşıtı; (bir uygulamanın) kaldırılması yanlısı",
+  "tr": "kölelik karşıtı; kaldırılması yanlısı",
   "syn": [
    "reformer",
    "emancipationist"
@@ -27753,7 +27753,7 @@
   "id": "w1524",
   "word": "absolution",
   "pos": "n",
-  "tr": "bağışlanma, af (günahtan)",
+  "tr": "bağışlanma, af",
   "syn": [
    "forgiveness",
    "pardon",
@@ -27806,7 +27806,7 @@
   "id": "w1527",
   "word": "abusive",
   "pos": "adj",
-  "tr": "hakaret içeren, kaba; istismar eden, kötü davranan",
+  "tr": "hakaret eden, kaba; kötü davranan",
   "syn": [
    "insulting",
    "offensive",
@@ -27932,7 +27932,7 @@
   "id": "w1534",
   "word": "acclimatization",
   "pos": "n",
-  "tr": "iklime uyum, alışma (yeni ortama)",
+  "tr": "yeni ortama alışma, iklime uyum",
   "syn": [
    "adaptation",
    "adjustment",
@@ -28004,7 +28004,7 @@
   "id": "w1538",
   "word": "accomplished",
   "pos": "adj",
-  "tr": "başarılı, usta, yetenekli",
+  "tr": "usta, yetenekli",
   "syn": [
    "skilled",
    "expert",
@@ -28074,7 +28074,7 @@
   "id": "w1542",
   "word": "accumulator",
   "pos": "n",
-  "tr": "akümülatör, biriktirici, akü",
+  "tr": "akü, biriktirici",
   "syn": [
    "battery",
    "storage cell",
@@ -28092,7 +28092,7 @@
   "id": "w1543",
   "word": "accusation",
   "pos": "n",
-  "tr": "suçlama, itham",
+  "tr": "suçlama",
   "syn": [
    "charge",
    "allegation",
@@ -28128,7 +28128,7 @@
   "id": "w1545",
   "word": "accuse",
   "pos": "v",
-  "tr": "suçlamak (of)",
+  "tr": "suçlamak",
   "syn": [
    "blame",
    "charge",
@@ -28146,7 +28146,7 @@
   "id": "w1546",
   "word": "accused",
   "pos": "n",
-  "tr": "sanık; (adj) suçlanan",
+  "tr": "sanık",
   "syn": [
    "defendant",
    "suspect"
@@ -28163,7 +28163,7 @@
   "id": "w1547",
   "word": "accuser",
   "pos": "n",
-  "tr": "suçlayan kişi, davacı",
+  "tr": "suçlayan kişi",
   "syn": [
    "plaintiff",
    "complainant",
@@ -28216,7 +28216,7 @@
   "id": "w1550",
   "word": "acquirer",
   "pos": "n",
-  "tr": "edinen, satın alan (şirket)",
+  "tr": "satın alan (şirket), edinen",
   "syn": [
    "buyer",
    "purchaser",
@@ -28252,7 +28252,7 @@
   "id": "w1552",
   "word": "acre",
   "pos": "n",
-  "tr": "akre (≈4047 m², yaklaşık 4 dönüm)",
+  "tr": "akre (yaklaşık 4 dönüm)",
   "syn": [
    "unit of area"
   ],
@@ -28268,7 +28268,7 @@
   "id": "w1553",
   "word": "act",
   "pos": "v",
-  "tr": "davranmak; etki etmek (on); görev yapmak (as) — (n) eylem, yasa",
+  "tr": "davranmak; etki etmek; görev yapmak — (isim) eylem, yasa",
   "syn": [
    "behave",
    "operate",
@@ -28304,7 +28304,7 @@
   "id": "w1555",
   "word": "adamant",
   "pos": "adj",
-  "tr": "kararlı, inatçı, ısrarcı",
+  "tr": "kararlı, inatçı",
   "syn": [
    "determined",
    "firm",
@@ -28340,7 +28340,7 @@
   "id": "w1557",
   "word": "adaptability",
   "pos": "n",
-  "tr": "uyum yeteneği, uyarlanabilirlik",
+  "tr": "uyum yeteneği",
   "syn": [
    "flexibility",
    "versatility",
@@ -28395,7 +28395,7 @@
   "id": "w1560",
   "word": "adhere",
   "pos": "v",
-  "tr": "yapışmak; bağlı kalmak, uymak (to)",
+  "tr": "yapışmak; (kurala) uymak",
   "syn": [
    "stick",
    "cling",
@@ -28413,7 +28413,7 @@
   "id": "w1561",
   "word": "adherent",
   "pos": "n",
-  "tr": "taraftar, bağlı kişi; (adj) yapışık",
+  "tr": "taraftar, bağlı kişi",
   "syn": [
    "follower",
    "supporter",
@@ -28431,7 +28431,7 @@
   "id": "w1562",
   "word": "admirable",
   "pos": "adj",
-  "tr": "takdire değer, hayranlık uyandıran",
+  "tr": "takdire değer",
   "syn": [
    "praiseworthy",
    "commendable",
@@ -28521,7 +28521,7 @@
   "id": "w1567",
   "word": "admiring",
   "pos": "adj",
-  "tr": "hayran, takdirkâr",
+  "tr": "hayranlık dolu",
   "syn": [
    "approving",
    "appreciative",
@@ -28556,7 +28556,7 @@
   "id": "w1569",
   "word": "admissibility",
   "pos": "n",
-  "tr": "kabul edilebilirlik (delil vb.)",
+  "tr": "kabul edilebilirlik",
   "syn": [
    "acceptability",
    "validity",
@@ -28628,7 +28628,7 @@
   "id": "w1573",
   "word": "admittance",
   "pos": "n",
-  "tr": "giriş (izni)",
+  "tr": "giriş izni",
   "syn": [
    "entry",
    "access",
@@ -28664,7 +28664,7 @@
   "id": "w1575",
   "word": "admittedly",
   "pos": "adv",
-  "tr": "kabul etmek gerekir ki, itiraf etmeli ki",
+  "tr": "kabul etmek gerekir ki",
   "syn": [
    "undeniably",
    "certainly",
@@ -28788,7 +28788,7 @@
   "id": "w1582",
   "word": "advisability",
   "pos": "n",
-  "tr": "uygunluk, akla yatkınlık",
+  "tr": "uygunluk, akıllıca olma",
   "syn": [
    "wisdom",
    "prudence",
@@ -28824,7 +28824,7 @@
   "id": "w1584",
   "word": "advise",
   "pos": "v",
-  "tr": "tavsiye etmek, öğüt vermek; bilgilendirmek",
+  "tr": "tavsiye etmek; bilgilendirmek",
   "syn": [
    "recommend",
    "counsel",
@@ -28842,7 +28842,7 @@
   "id": "w1585",
   "word": "advisedly",
   "pos": "adv",
-  "tr": "bilerek, kasten, düşünerek",
+  "tr": "bilerek, düşünerek",
   "syn": [
    "deliberately",
    "intentionally",
@@ -28896,7 +28896,7 @@
   "id": "w1588",
   "word": "aerial",
   "pos": "adj",
-  "tr": "havai, havadan; (bitki) toprak üstü",
+  "tr": "havadan, havai; (bitki) toprak üstü",
   "syn": [
    "airborne",
    "overhead"
@@ -28931,7 +28931,7 @@
   "id": "w1590",
   "word": "affectation",
   "pos": "n",
-  "tr": "yapmacıklık, özenti",
+  "tr": "yapmacıklık",
   "syn": [
    "pretension",
    "artificiality",
@@ -29003,7 +29003,7 @@
   "id": "w1594",
   "word": "affliction",
   "pos": "n",
-  "tr": "dert, ıstırap; hastalık",
+  "tr": "dert, acı; hastalık",
   "syn": [
    "suffering",
    "disease",
@@ -29021,7 +29021,7 @@
   "id": "w1595",
   "word": "affluence",
   "pos": "n",
-  "tr": "bolluk, zenginlik, refah",
+  "tr": "zenginlik, refah",
   "syn": [
    "wealth",
    "prosperity",
@@ -29076,7 +29076,7 @@
   "id": "w1598",
   "word": "aged",
   "pos": "adj",
-  "tr": "yaşlı; ...yaşında",
+  "tr": "yaşlı; ... yaşında",
   "syn": [
    "elderly",
    "old",
@@ -29130,7 +29130,7 @@
   "id": "w1601",
   "word": "agency",
   "pos": "n",
-  "tr": "ajans, kurum, büro; etken (vasıta)",
+  "tr": "kurum, ajans; etken",
   "syn": [
    "organization",
    "bureau",
@@ -29148,7 +29148,7 @@
   "id": "w1602",
   "word": "agent",
   "pos": "n",
-  "tr": "etken madde, ajan; temsilci",
+  "tr": "etken madde; ajan, temsilci",
   "syn": [
    "substance",
    "factor",
@@ -29184,7 +29184,7 @@
   "id": "w1604",
   "word": "aggressive",
   "pos": "adj",
-  "tr": "saldırgan; (hastalık) agresif, hızlı yayılan",
+  "tr": "saldırgan; (hastalık) hızlı yayılan",
   "syn": [
    "hostile",
    "violent",
@@ -29310,7 +29310,7 @@
   "id": "w1611",
   "word": "agreement",
   "pos": "n",
-  "tr": "anlaşma; uyum, mutabakat",
+  "tr": "anlaşma; uyum",
   "syn": [
    "accord",
    "deal",
@@ -29345,7 +29345,7 @@
   "id": "w1613",
   "word": "ahead of",
   "pos": "prep",
-  "tr": "önünde; -den önce; -den ileride",
+  "tr": "önünde; -den önce",
   "syn": [
    "before",
    "in front of",
@@ -29399,7 +29399,7 @@
   "id": "w1616",
   "word": "airship",
   "pos": "n",
-  "tr": "zeplin, hava gemisi",
+  "tr": "zeplin",
   "syn": [
    "dirigible",
    "blimp",
@@ -29417,7 +29417,7 @@
   "id": "w1617",
   "word": "alfalfa",
   "pos": "n",
-  "tr": "yonca (kaba yem bitkisi)",
+  "tr": "yonca",
   "syn": [
    "lucerne",
    "forage crop"
@@ -29434,7 +29434,7 @@
   "id": "w1618",
   "word": "algae",
   "pos": "n",
-  "tr": "algler, su yosunları (tekil: alga)",
+  "tr": "algler, su yosunları",
   "syn": [
    "seaweed",
    "phytoplankton",
@@ -29452,7 +29452,7 @@
   "id": "w1619",
   "word": "alien",
   "pos": "adj",
-  "tr": "yabancı, yabancıl; (n) uzaylı; istilacı (tür)",
+  "tr": "yabancı; istilacı (tür) — (isim) uzaylı",
   "syn": [
    "foreign",
    "strange",
@@ -29470,7 +29470,7 @@
   "id": "w1620",
   "word": "alienate",
   "pos": "v",
-  "tr": "soğutmak, uzaklaştırmak, yabancılaştırmak",
+  "tr": "uzaklaştırmak, yabancılaştırmak",
   "syn": [
    "estrange",
    "isolate",
@@ -29506,7 +29506,7 @@
   "id": "w1622",
   "word": "allelopathy",
   "pos": "n",
-  "tr": "allelopati (bitkinin kimyasallarla komşu bitkiyi baskılaması)",
+  "tr": "allelopati (bitkinin kimyasalla komşusunu baskılaması)",
   "syn": [
    "chemical inhibition",
    "interference"
@@ -29523,7 +29523,7 @@
   "id": "w1623",
   "word": "allied",
   "pos": "adj",
-  "tr": "müttefik; bağlantılı, ilgili (to/with)",
+  "tr": "müttefik; bağlantılı, ilgili",
   "syn": [
    "related",
    "connected",
@@ -29576,7 +29576,7 @@
   "id": "w1626",
   "word": "allude",
   "pos": "v",
-  "tr": "ima etmek, dolaylı değinmek (to)",
+  "tr": "ima etmek, dolaylı değinmek",
   "syn": [
    "refer",
    "hint",
@@ -29612,7 +29612,7 @@
   "id": "w1628",
   "word": "allusive",
   "pos": "adj",
-  "tr": "imalı, dolaylı göndermeli",
+  "tr": "imalı, dolaylı",
   "syn": [
    "suggestive",
    "indirect",
@@ -29630,7 +29630,7 @@
   "id": "w1629",
   "word": "allusiveness",
   "pos": "n",
-  "tr": "imalı olma, dolaylılık",
+  "tr": "dolaylılık",
   "syn": [
    "indirectness",
    "suggestiveness"
@@ -29700,7 +29700,7 @@
   "id": "w1633",
   "word": "amber",
   "pos": "n",
-  "tr": "kehribar; (adj) kehribar renkli",
+  "tr": "kehribar",
   "syn": [
    "fossil resin"
   ],
@@ -29932,7 +29932,7 @@
   "id": "w1646",
   "word": "annualized",
   "pos": "adj",
-  "tr": "yıllığa çevrilmiş, yıllık bazda",
+  "tr": "yıllık bazda",
   "syn": [
    "yearly",
    "per annum",
@@ -29968,7 +29968,7 @@
   "id": "w1648",
   "word": "anxious",
   "pos": "adj",
-  "tr": "endişeli; istekli (to + V)",
+  "tr": "endişeli; istekli",
   "syn": [
    "worried",
    "nervous",
@@ -30004,7 +30004,7 @@
   "id": "w1650",
   "word": "apologetic",
   "pos": "adj",
-  "tr": "özür diler gibi, mahcup",
+  "tr": "mahcup, özür diler gibi",
   "syn": [
    "sorry",
    "regretful",
@@ -30072,7 +30072,7 @@
   "id": "w1654",
   "word": "apparatus",
   "pos": "n",
-  "tr": "aygıt, düzenek, cihaz; sistem",
+  "tr": "aygıt, düzenek, cihaz",
   "syn": [
    "device",
    "equipment",
@@ -30288,7 +30288,7 @@
   "id": "w1666",
   "word": "apprehension",
   "pos": "n",
-  "tr": "endişe, kaygı; kavrama; yakalama",
+  "tr": "endişe, kaygı; kavrama",
   "syn": [
    "anxiety",
    "fear",
@@ -30360,7 +30360,7 @@
   "id": "w1670",
   "word": "appropriation",
   "pos": "n",
-  "tr": "ödenek, tahsis; el koyma",
+  "tr": "ödenek, (para) ayırma; el koyma",
   "syn": [
    "allocation",
    "allotment",
@@ -30397,7 +30397,7 @@
   "id": "w1672",
   "word": "approve",
   "pos": "v",
-  "tr": "onaylamak; uygun görmek (of)",
+  "tr": "onaylamak; uygun görmek",
   "syn": [
    "authorize",
    "endorse",
@@ -30504,7 +30504,7 @@
   "id": "w1678",
   "word": "arch",
   "pos": "n",
-  "tr": "kemer; (ayak) taban kemeri",
+  "tr": "kemer",
   "syn": [
    "vault",
    "curve",
@@ -30612,7 +30612,7 @@
   "id": "w1684",
   "word": "arrangement",
   "pos": "n",
-  "tr": "düzen, dizilim; düzenleme, anlaşma",
+  "tr": "düzen, dizilim; anlaşma",
   "syn": [
    "layout",
    "order",
@@ -30630,7 +30630,7 @@
   "id": "w1685",
   "word": "arranger",
   "pos": "n",
-  "tr": "düzenleyen; (müzik) aranjör",
+  "tr": "düzenleyen",
   "syn": [
    "organizer",
    "planner",
@@ -30792,7 +30792,7 @@
   "id": "w1694",
   "word": "as for",
   "pos": "prep",
-  "tr": "-e gelince, ...konusunda",
+  "tr": "-e gelince",
   "syn": [
    "regarding",
    "concerning",
@@ -30828,7 +30828,7 @@
   "id": "w1696",
   "word": "as such",
   "pos": "adv",
-  "tr": "bu nedenle, bu haliyle; kendi başına",
+  "tr": "bu nedenle; kendi başına, bu haliyle",
   "syn": [
    "therefore",
    "consequently",
@@ -30863,7 +30863,7 @@
   "id": "w1698",
   "word": "as to",
   "pos": "prep",
-  "tr": "hakkında, ...ile ilgili",
+  "tr": "hakkında, ile ilgili",
   "syn": [
    "regarding",
    "concerning",
@@ -30881,7 +30881,7 @@
   "id": "w1699",
   "word": "as yet",
   "pos": "adv",
-  "tr": "henüz, şimdiye dek",
+  "tr": "henüz, şimdiye kadar",
   "syn": [
    "so far",
    "until now",
@@ -30935,7 +30935,7 @@
   "id": "w1702",
   "word": "assertiveness",
   "pos": "n",
-  "tr": "girişkenlik, kendini ortaya koyabilme, iddialılık",
+  "tr": "kendini ortaya koyabilme, girişkenlik",
   "syn": [
    "confidence",
    "forcefulness",
@@ -30989,7 +30989,7 @@
   "id": "w1705",
   "word": "asset",
   "pos": "n",
-  "tr": "varlık, değer; kıymetli şey",
+  "tr": "varlık, değerli şey",
   "syn": [
    "resource",
    "advantage",
@@ -31008,7 +31008,7 @@
   "id": "w1706",
   "word": "assistive",
   "pos": "adj",
-  "tr": "yardımcı (engelliler için)",
+  "tr": "(engelliler için) yardımcı",
   "syn": [
    "supportive",
    "helpful",
@@ -31026,7 +31026,7 @@
   "id": "w1707",
   "word": "astonish",
   "pos": "v",
-  "tr": "şaşırtmak, hayrete düşürmek",
+  "tr": "şaşırtmak",
   "syn": [
    "amaze",
    "astound",
@@ -31044,7 +31044,7 @@
   "id": "w1708",
   "word": "astonished",
   "pos": "adj",
-  "tr": "şaşkın, hayret içinde",
+  "tr": "şaşkın",
   "syn": [
    "amazed",
    "astounded",
@@ -31062,7 +31062,7 @@
   "id": "w1709",
   "word": "astonishing",
   "pos": "adj",
-  "tr": "şaşırtıcı, hayret verici",
+  "tr": "şaşırtıcı",
   "syn": [
    "amazing",
    "astounding",
@@ -31098,7 +31098,7 @@
   "id": "w1711",
   "word": "astonishment",
   "pos": "n",
-  "tr": "hayret, şaşkınlık",
+  "tr": "şaşkınlık",
   "syn": [
    "amazement",
    "surprise",
@@ -31116,7 +31116,7 @@
   "id": "w1712",
   "word": "attend",
   "pos": "v",
-  "tr": "katılmak, devam etmek; ilgilenmek (to)",
+  "tr": "katılmak; ilgilenmek",
   "syn": [
    "be present at",
    "go to",
@@ -31152,7 +31152,7 @@
   "id": "w1714",
   "word": "attendant",
   "pos": "n",
-  "tr": "görevli; (adj) beraberindeki, eşlik eden",
+  "tr": "görevli — (sıfat) eşlik eden",
   "syn": [
    "assistant",
    "accompanying",
@@ -31206,7 +31206,7 @@
   "id": "w1717",
   "word": "attributable",
   "pos": "adj",
-  "tr": "-e bağlanabilir, -den kaynaklanan (to)",
+  "tr": "-e bağlanabilir, -den kaynaklanan",
   "syn": [
    "due",
    "owing",
@@ -31224,7 +31224,7 @@
   "id": "w1718",
   "word": "attribute to",
   "pos": "phr",
-  "tr": "-e bağlamak, -e atfetmek",
+  "tr": "(nedenini) -e bağlamak",
   "syn": [
    "ascribe to",
    "credit to",
@@ -31242,7 +31242,7 @@
   "id": "w1719",
   "word": "attributive",
   "pos": "adj",
-  "tr": "(dilbilgisi) sıfat görevinde, niteleyici",
+  "tr": "(dilbilgisi) niteleyici",
   "syn": [
    "qualifying",
    "modifying"
@@ -31276,7 +31276,7 @@
   "id": "w1721",
   "word": "audience",
   "pos": "n",
-  "tr": "dinleyici, izleyici kitlesi",
+  "tr": "izleyici, dinleyici kitlesi",
   "syn": [
    "listeners",
    "viewers",
@@ -31294,7 +31294,7 @@
   "id": "w1722",
   "word": "autonomous",
   "pos": "adj",
-  "tr": "özerk; otonom, kendi kendine çalışan",
+  "tr": "özerk; kendi kendine çalışan",
   "syn": [
    "independent",
    "self-governing",
@@ -31330,7 +31330,7 @@
   "id": "w1724",
   "word": "avalanche",
   "pos": "n",
-  "tr": "çığ; (mecaz) yağmur, sel",
+  "tr": "çığ",
   "syn": [
    "snowslide",
    "flood",
@@ -31367,7 +31367,7 @@
   "id": "w1726",
   "word": "avid",
   "pos": "adj",
-  "tr": "hevesli, istekli, tutkun",
+  "tr": "hevesli, istekli",
   "syn": [
    "eager",
    "keen",
@@ -31385,7 +31385,7 @@
   "id": "w1727",
   "word": "avidity",
   "pos": "n",
-  "tr": "hırs, heves; (biyokimya) bağlanma gücü (avidite)",
+  "tr": "heves, hırs",
   "syn": [
    "eagerness",
    "keenness",
@@ -31421,7 +31421,7 @@
   "id": "w1729",
   "word": "avoid",
   "pos": "v",
-  "tr": "kaçınmak, sakınmak, önlemek",
+  "tr": "kaçınmak, önlemek",
   "syn": [
    "prevent",
    "evade",
@@ -31549,7 +31549,7 @@
   "id": "w1736",
   "word": "balance",
   "pos": "n",
-  "tr": "denge; terazi; bakiye — (v) dengelemek",
+  "tr": "denge; bakiye — (fiil) dengelemek",
   "syn": [
    "equilibrium",
    "stability",
@@ -31585,7 +31585,7 @@
   "id": "w1738",
   "word": "bank",
   "pos": "n",
-  "tr": "kıyı (nehir), set; banka — (v) yığmak, kümelenmek",
+  "tr": "(nehir) kıyı, set; banka",
   "syn": [
    "shore",
    "embankment",
@@ -31603,7 +31603,7 @@
   "id": "w1739",
   "word": "bar",
   "pos": "n",
-  "tr": "çubuk, demir; bar (basınç birimi); engel",
+  "tr": "çubuk; engel; bar (basınç birimi)",
   "syn": [
    "rod",
    "beam",
@@ -31621,7 +31621,7 @@
   "id": "w1740",
   "word": "bargain",
   "pos": "n",
-  "tr": "pazarlık, anlaşma; kelepir — (v) pazarlık etmek",
+  "tr": "pazarlık, anlaşma; kelepir — (fiil) pazarlık etmek",
   "syn": [
    "deal",
    "agreement",
@@ -31675,7 +31675,7 @@
   "id": "w1743",
   "word": "be fed up with",
   "pos": "phr",
-  "tr": "-den bıkmak, usanmak",
+  "tr": "-den bıkmak",
   "syn": [
    "be tired of",
    "be sick of",
@@ -31711,7 +31711,7 @@
   "id": "w1745",
   "word": "beam",
   "pos": "n",
-  "tr": "ışın, demet; kiriş — (v) ışın yaymak",
+  "tr": "ışın, demet; kiriş — (fiil) ışın yaymak",
   "syn": [
    "ray",
    "shaft",
@@ -31729,7 +31729,7 @@
   "id": "w1746",
   "word": "bear",
   "pos": "v",
-  "tr": "taşımak, katlanmak; (meyve, sonuç) vermek",
+  "tr": "taşımak, katlanmak; (sonuç) vermek",
   "syn": [
    "carry",
    "endure",
@@ -31784,7 +31784,7 @@
   "id": "w1749",
   "word": "bearer",
   "pos": "n",
-  "tr": "taşıyıcı, getiren; hamil",
+  "tr": "taşıyıcı, getiren",
   "syn": [
    "carrier",
    "holder",
@@ -31802,7 +31802,7 @@
   "id": "w1750",
   "word": "bearing",
   "pos": "n",
-  "tr": "rulman, yatak; ilgi, etki (on); yön",
+  "tr": "rulman, yatak; ilgi, etki; yön",
   "syn": [
    "ball bearing",
    "relevance",
@@ -31945,7 +31945,7 @@
   "id": "w1758",
   "word": "believer",
   "pos": "n",
-  "tr": "inanan, mümin; savunucu (in)",
+  "tr": "inanan; savunucu",
   "syn": [
    "supporter",
    "advocate",
@@ -31963,7 +31963,7 @@
   "id": "w1759",
   "word": "belong",
   "pos": "v",
-  "tr": "ait olmak (to); bir gruba dahil olmak",
+  "tr": "ait olmak; bir gruba dahil olmak",
   "syn": [
    "be part of",
    "pertain to",
@@ -32052,7 +32052,7 @@
   "id": "w1764",
   "word": "blame",
   "pos": "v",
-  "tr": "suçlamak, sorumlu tutmak (for/on)",
+  "tr": "suçlamak, sorumlu tutmak",
   "syn": [
    "accuse",
    "hold responsible",
@@ -32070,7 +32070,7 @@
   "id": "w1765",
   "word": "blatant",
   "pos": "adj",
-  "tr": "bariz, apaçık, göze batan",
+  "tr": "apaçık, göze batan",
   "syn": [
    "obvious",
    "flagrant",
@@ -32106,7 +32106,7 @@
   "id": "w1767",
   "word": "bleach",
   "pos": "n",
-  "tr": "ağartıcı, çamaşır suyu — (v) ağartmak",
+  "tr": "ağartıcı, çamaşır suyu — (fiil) ağartmak",
   "syn": [
    "whitener",
    "bleaching agent",
@@ -32124,7 +32124,7 @@
   "id": "w1768",
   "word": "blur",
   "pos": "v",
-  "tr": "bulanıklaştırmak — (n) bulanıklık",
+  "tr": "bulanıklaştırmak — (isim) bulanıklık",
   "syn": [
    "cloud",
    "obscure",
@@ -32320,7 +32320,7 @@
   "id": "w1779",
   "word": "brake",
   "pos": "n",
-  "tr": "fren — (v) frenlemek",
+  "tr": "fren — (fiil) frenlemek",
   "syn": [
    "retarder",
    "check",
@@ -32356,7 +32356,7 @@
   "id": "w1781",
   "word": "break off",
   "pos": "phr",
-  "tr": "kopmak, kopararak ayırmak; kesmek (ilişki, görüşme)",
+  "tr": "kopmak, koparmak; (görüşme) kesmek",
   "syn": [
    "detach",
    "snap off",
@@ -32446,7 +32446,7 @@
   "id": "w1786",
   "word": "bring in",
   "pos": "phr",
-  "tr": "getirmek; (yasa, kural) yürürlüğe koymak; kazandırmak",
+  "tr": "getirmek; (kural) yürürlüğe koymak; kazandırmak",
   "syn": [
    "introduce",
    "implement",
@@ -32649,7 +32649,7 @@
   "id": "w1797",
   "word": "brutalize",
   "pos": "v",
-  "tr": "vahşileştirmek; vahşice davranmak",
+  "tr": "vahşice davranmak",
   "syn": [
    "dehumanize",
    "mistreat",
@@ -32685,7 +32685,7 @@
   "id": "w1799",
   "word": "budget",
   "pos": "n",
-  "tr": "bütçe — (v) bütçe ayırmak",
+  "tr": "bütçe — (fiil) bütçe ayırmak",
   "syn": [
    "funds",
    "allocation",
@@ -32883,7 +32883,7 @@
   "id": "w1810",
   "word": "capture",
   "pos": "v",
-  "tr": "yakalamak; tutmak (karbon vb.); kaydetmek — (n) yakalama",
+  "tr": "yakalamak; (karbon) tutmak; kaydetmek",
   "syn": [
    "catch",
    "trap",
@@ -33028,7 +33028,7 @@
   "id": "w1818",
   "word": "cast",
   "pos": "v",
-  "tr": "dökmek (kalıba); atmak; (şüphe, ışık) düşürmek",
+  "tr": "(kalıba) dökmek; atmak; (şüphe) düşürmek",
   "syn": [
    "mould",
    "throw",
@@ -33261,7 +33261,7 @@
   "id": "w1831",
   "word": "chalk",
   "pos": "n",
-  "tr": "tebeşir; tebeşir taşı (kireç taşı türü)",
+  "tr": "tebeşir; tebeşir taşı",
   "syn": [
    "limestone",
    "calcium carbonate"
@@ -33296,7 +33296,7 @@
   "id": "w1833",
   "word": "change over",
   "pos": "phr",
-  "tr": "geçmek, geçiş yapmak (from/to)",
+  "tr": "geçmek, geçiş yapmak",
   "syn": [
    "switch",
    "convert",
@@ -33333,7 +33333,7 @@
   "id": "w1835",
   "word": "chemical",
   "pos": "adj",
-  "tr": "kimyasal — (n) kimyasal madde",
+  "tr": "kimyasal — (isim) kimyasal madde",
   "syn": [
    "chemical substance"
   ],
@@ -33382,7 +33382,7 @@
   "id": "w1838",
   "word": "chief",
   "pos": "adj",
-  "tr": "başlıca, ana, en önemli — (n) şef",
+  "tr": "başlıca, ana, en önemli — (isim) şef",
   "syn": [
    "main",
    "principal",
@@ -33420,7 +33420,7 @@
   "id": "w1840",
   "word": "chronicle",
   "pos": "n",
-  "tr": "kronik, vakayiname, kayıt — (v) kaydetmek",
+  "tr": "kayıt, tarihçe — (fiil) kaydetmek",
   "syn": [
    "record",
    "history",
@@ -33563,7 +33563,7 @@
   "id": "w1848",
   "word": "clearance",
   "pos": "n",
-  "tr": "açıklık, boşluk (mühendislik); temizleme; izin",
+  "tr": "(mühendislik) boşluk, açıklık; temizleme; izin",
   "syn": [
    "gap",
    "space",
@@ -33689,7 +33689,7 @@
   "id": "w1855",
   "word": "coal-fired power",
   "pos": "n",
-  "tr": "kömürden elektrik üretimi, kömürlü termik santral (enerjisi)",
+  "tr": "kömürlü termik santral (elektriği)",
   "syn": [
    "coal power"
   ],
@@ -33776,7 +33776,7 @@
   "id": "w1860",
   "word": "cohesion",
   "pos": "n",
-  "tr": "uyum, bütünlük; (fizik) kohezyon, iç yapışma",
+  "tr": "uyum, bütünlük; (fizik) iç yapışma",
   "syn": [
    "unity",
    "solidarity",
@@ -34049,7 +34049,7 @@
   "id": "w1875",
   "word": "comfort",
   "pos": "n",
-  "tr": "rahatlık, konfor; teselli — (v) teselli etmek",
+  "tr": "rahatlık, konfor; teselli — (fiil) teselli etmek",
   "syn": [
    "ease",
    "well-being",
@@ -34085,7 +34085,7 @@
   "id": "w1877",
   "word": "comment",
   "pos": "v",
-  "tr": "yorum yapmak (on) — (n) yorum",
+  "tr": "yorum yapmak — (isim) yorum",
   "syn": [
    "remark",
    "observe",
@@ -34156,7 +34156,7 @@
   "id": "w1881",
   "word": "commission",
   "pos": "n",
-  "tr": "komisyon, kurul; görevlendirme — (v) sipariş vermek, işletmeye almak",
+  "tr": "komisyon, kurul; görevlendirme — (fiil) sipariş vermek",
   "syn": [
    "committee",
    "board",
@@ -34174,7 +34174,7 @@
   "id": "w1882",
   "word": "commissioner",
   "pos": "n",
-  "tr": "komisyon üyesi, yetkili, komiser",
+  "tr": "komisyon üyesi, yetkili",
   "syn": [
    "official",
    "delegate",
@@ -34192,7 +34192,7 @@
   "id": "w1883",
   "word": "commodity",
   "pos": "n",
-  "tr": "emtia, mal, ürün",
+  "tr": "mal, ürün (ticari)",
   "syn": [
    "good",
    "product",
@@ -34283,7 +34283,7 @@
   "id": "w1888",
   "word": "compact",
   "pos": "v",
-  "tr": "sıkıştırmak — (adj) sıkı, yoğun, küçük",
+  "tr": "sıkıştırmak — (sıfat) sıkı, yoğun, küçük",
   "syn": [
    "compress",
    "pack",
@@ -34444,7 +34444,7 @@
   "id": "w1897",
   "word": "complain",
   "pos": "v",
-  "tr": "şikâyet etmek (about/of)",
+  "tr": "şikâyet etmek",
   "syn": [
    "protest",
    "object",
@@ -34552,7 +34552,7 @@
   "id": "w1903",
   "word": "complicated",
   "pos": "adj",
-  "tr": "karmaşık, girift",
+  "tr": "karmaşık",
   "syn": [
    "complex",
    "intricate",
@@ -34588,7 +34588,7 @@
   "id": "w1905",
   "word": "compliment",
   "pos": "n",
-  "tr": "iltifat, övgü — (v) iltifat etmek",
+  "tr": "iltifat, övgü — (fiil) iltifat etmek",
   "syn": [
    "praise",
    "tribute",
@@ -34607,7 +34607,7 @@
   "id": "w1906",
   "word": "comply",
   "pos": "v",
-  "tr": "uymak (with)",
+  "tr": "uymak",
   "syn": [
    "obey",
    "conform",
@@ -34660,7 +34660,7 @@
   "id": "w1909",
   "word": "compromise",
   "pos": "v",
-  "tr": "uzlaşmak; tehlikeye atmak, zayıflatmak — (n) uzlaşma",
+  "tr": "uzlaşmak; tehlikeye atmak — (isim) uzlaşma",
   "syn": [
    "settle",
    "endanger",
@@ -34785,7 +34785,7 @@
   "id": "w1916",
   "word": "concrete",
   "pos": "n",
-  "tr": "beton — (adj) somut",
+  "tr": "beton — (sıfat) somut",
   "syn": [
    "cement",
    "tangible",
@@ -34839,7 +34839,7 @@
   "id": "w1919",
   "word": "confide",
   "pos": "v",
-  "tr": "sır vermek, güvenip anlatmak (in)",
+  "tr": "sır vermek, güvenip anlatmak",
   "syn": [
    "confess",
    "disclose",
@@ -34965,7 +34965,7 @@
   "id": "w1926",
   "word": "confiscation",
   "pos": "n",
-  "tr": "el koyma, müsadere",
+  "tr": "el koyma",
   "syn": [
    "seizure",
    "appropriation",
@@ -35001,7 +35001,7 @@
   "id": "w1928",
   "word": "conformation",
   "pos": "n",
-  "tr": "biçim, yapı; (kimya) konformasyon",
+  "tr": "biçim, yapı",
   "syn": [
    "shape",
    "structure",
@@ -35092,7 +35092,7 @@
   "id": "w1933",
   "word": "congestion",
   "pos": "n",
-  "tr": "tıkanıklık, sıkışıklık; (tıp) konjesyon",
+  "tr": "tıkanıklık, sıkışıklık",
   "syn": [
    "blockage",
    "crowding",
@@ -35290,7 +35290,7 @@
   "id": "w1944",
   "word": "consist",
   "pos": "v",
-  "tr": "oluşmak (of); -den ibaret olmak (in)",
+  "tr": "-den oluşmak; -den ibaret olmak",
   "syn": [
    "comprise",
    "be made up of",
@@ -35344,7 +35344,7 @@
   "id": "w1947",
   "word": "consolidation",
   "pos": "n",
-  "tr": "pekişme, sağlamlaşma; (zemin) konsolidasyon; birleşme",
+  "tr": "pekişme, sağlamlaşma; birleşme",
   "syn": [
    "strengthening",
    "reinforcement",
@@ -35397,7 +35397,7 @@
   "id": "w1950",
   "word": "consultative",
   "pos": "adj",
-  "tr": "danışma niteliğinde, istişari",
+  "tr": "danışma niteliğinde",
   "syn": [
    "advisory",
    "consulting",
@@ -35415,7 +35415,7 @@
   "id": "w1951",
   "word": "consumable",
   "pos": "adj",
-  "tr": "tüketilebilir — (n) sarf malzemesi",
+  "tr": "tüketilebilir — (isim) sarf malzemesi",
   "syn": [
    "usable",
    "disposable",
@@ -35433,7 +35433,7 @@
   "id": "w1952",
   "word": "containment",
   "pos": "n",
-  "tr": "kontrol altına alma, sınırlandırma; muhafaza",
+  "tr": "kontrol altına alma, sınırlama",
   "syn": [
    "control",
    "restriction",
@@ -35451,7 +35451,7 @@
   "id": "w1953",
   "word": "contest",
   "pos": "n",
-  "tr": "yarışma; mücadele — (v) itiraz etmek",
+  "tr": "yarışma; mücadele — (fiil) itiraz etmek",
   "syn": [
    "competition",
    "struggle",
@@ -35593,7 +35593,7 @@
   "id": "w1961",
   "word": "control",
   "pos": "v",
-  "tr": "kontrol etmek, denetlemek — (n) kontrol; kontrol grubu",
+  "tr": "kontrol etmek, denetlemek — (isim) kontrol; kontrol grubu",
   "syn": [
    "regulate",
    "manage",
@@ -35768,7 +35768,7 @@
   "id": "w1971",
   "word": "corrupt",
   "pos": "adj",
-  "tr": "yozlaşmış, rüşvetçi; (veri) bozuk — (v) bozmak",
+  "tr": "yozlaşmış, rüşvetçi; (veri) bozuk — (fiil) bozmak",
   "syn": [
    "dishonest",
    "damaged",
@@ -35823,7 +35823,7 @@
   "id": "w1974",
   "word": "counter",
   "pos": "v",
-  "tr": "karşı koymak, karşılık vermek — (n) sayaç; tezgâh",
+  "tr": "karşı koymak, karşılık vermek — (isim) sayaç; tezgâh",
   "syn": [
    "oppose",
    "offset",
@@ -35841,7 +35841,7 @@
   "id": "w1975",
   "word": "counterpart",
   "pos": "n",
-  "tr": "karşılık, muadil, eşdeğer",
+  "tr": "karşılığı, eşdeğeri, benzeri",
   "syn": [
    "equivalent",
    "match",
@@ -35878,7 +35878,7 @@
   "id": "w1977",
   "word": "crash",
   "pos": "n",
-  "tr": "çarpışma, kaza; (uçak) düşme; çöküş — (v) çakılmak",
+  "tr": "çarpışma, kaza; çöküş — (fiil) çakılmak",
   "syn": [
    "collision",
    "accident",
@@ -35952,7 +35952,7 @@
   "id": "w1981",
   "word": "criminal",
   "pos": "adj",
-  "tr": "suç teşkil eden, cezai — (n) suçlu",
+  "tr": "cezai, suçla ilgili — (isim) suçlu",
   "syn": [
    "illegal",
    "unlawful",
@@ -35988,7 +35988,7 @@
   "id": "w1983",
   "word": "criminally",
   "pos": "adv",
-  "tr": "cezai olarak; affedilmez derecede",
+  "tr": "cezai olarak",
   "syn": [
    "illegally",
    "unlawfully",
@@ -36025,7 +36025,7 @@
   "id": "w1985",
   "word": "crop",
   "pos": "n",
-  "tr": "ürün, mahsul, ekin — (v) ürün vermek",
+  "tr": "ürün, mahsul, ekin — (fiil) ürün vermek",
   "syn": [
    "harvest",
    "yield",
@@ -36061,7 +36061,7 @@
   "id": "w1987",
   "word": "cruise",
   "pos": "n",
-  "tr": "deniz yolculuğu, gemi turu — (v) seyir hızında gitmek",
+  "tr": "gemi turu — (fiil) seyir hızında gitmek",
   "syn": [
    "voyage",
    "sail",
@@ -36115,7 +36115,7 @@
   "id": "w1990",
   "word": "culmination",
   "pos": "n",
-  "tr": "doruk, en yüksek nokta; sonuç",
+  "tr": "doruk, en yüksek nokta",
   "syn": [
    "climax",
    "peak",
@@ -36133,7 +36133,7 @@
   "id": "w1991",
   "word": "cultivator",
   "pos": "n",
-  "tr": "çiftçi, yetiştirici; çapa makinesi",
+  "tr": "yetiştirici, çiftçi; çapa makinesi",
   "syn": [
    "farmer",
    "grower",
@@ -36204,7 +36204,7 @@
   "id": "w1995",
   "word": "customarily",
   "pos": "adv",
-  "tr": "âdet olduğu üzere, genellikle",
+  "tr": "genellikle, alışıldığı gibi",
   "syn": [
    "usually",
    "traditionally",
@@ -36240,7 +36240,7 @@
   "id": "w1997",
   "word": "cut off",
   "pos": "phr",
-  "tr": "kesmek; yalıtmak, bağlantısını koparmak",
+  "tr": "kesmek; bağlantısını koparmak",
   "syn": [
    "disconnect",
    "isolate",
@@ -36259,7 +36259,7 @@
   "id": "w1998",
   "word": "cut out",
   "pos": "phr",
-  "tr": "çıkarmak, kesip çıkarmak; (motor) aniden durmak",
+  "tr": "kesip çıkarmak; (motor) aniden durmak",
   "syn": [
    "remove",
    "eliminate",
@@ -36332,7 +36332,7 @@
   "id": "w2002",
   "word": "dart",
   "pos": "n",
-  "tr": "küçük ok — (v) fırlamak, ok gibi atılmak",
+  "tr": "küçük ok — (fiil) fırlamak, ok gibi atılmak",
   "syn": [
    "arrow",
    "dash"
@@ -36636,7 +36636,7 @@
   "id": "w2019",
   "word": "dedicate",
   "pos": "v",
-  "tr": "adamak, ithaf etmek, ayırmak (to)",
+  "tr": "adamak, ithaf etmek, ayırmak",
   "syn": [
    "devote",
    "commit",
@@ -36690,7 +36690,7 @@
   "id": "w2022",
   "word": "deduct",
   "pos": "v",
-  "tr": "düşmek, çıkarmak (from)",
+  "tr": "düşmek, çıkarmak",
   "syn": [
    "subtract",
    "take away",
@@ -36708,7 +36708,7 @@
   "id": "w2023",
   "word": "deem",
   "pos": "v",
-  "tr": "saymak, addetmek, kabul etmek",
+  "tr": "saymak, kabul etmek, görmek",
   "syn": [
    "consider",
    "regard",
@@ -36726,7 +36726,7 @@
   "id": "w2024",
   "word": "defeat",
   "pos": "v",
-  "tr": "yenmek, alt etmek — (n) yenilgi",
+  "tr": "yenmek, alt etmek — (isim) yenilgi",
   "syn": [
    "beat",
    "overcome",
@@ -36923,7 +36923,7 @@
   "id": "w2035",
   "word": "defy",
   "pos": "v",
-  "tr": "meydan okumak; karşı gelmek; (açıklama vb.) imkânsız kılmak",
+  "tr": "meydan okumak, karşı gelmek; (açıklamayı) imkânsız kılmak",
   "syn": [
    "resist",
    "challenge",
@@ -36995,7 +36995,7 @@
   "id": "w2039",
   "word": "denomination",
   "pos": "n",
-  "tr": "(para) değer, birim; mezhep",
+  "tr": "(para) birim, değer; mezhep",
   "syn": [
    "unit",
    "value",
@@ -37031,7 +37031,7 @@
   "id": "w2041",
   "word": "depart",
   "pos": "v",
-  "tr": "ayrılmak, hareket etmek; sapmak (from)",
+  "tr": "ayrılmak, hareket etmek; sapmak",
   "syn": [
    "leave",
    "set off",
@@ -37066,7 +37066,7 @@
   "id": "w2043",
   "word": "departure",
   "pos": "n",
-  "tr": "ayrılış, kalkış; sapma (from)",
+  "tr": "ayrılış, kalkış; sapma",
   "syn": [
    "leaving",
    "exit",
@@ -37084,7 +37084,7 @@
   "id": "w2044",
   "word": "depend",
   "pos": "v",
-  "tr": "bağlı olmak (on); güvenmek",
+  "tr": "bağlı olmak; güvenmek",
   "syn": [
    "rely",
    "hinge",
@@ -37120,7 +37120,7 @@
   "id": "w2046",
   "word": "dependant",
   "pos": "n",
-  "tr": "bakmakla yükümlü olunan kişi (aile bireyi)",
+  "tr": "bakmakla yükümlü olunan kişi",
   "syn": [
    "dependent",
    "family member"
@@ -37210,7 +37210,7 @@
   "id": "w2051",
   "word": "deserter",
   "pos": "n",
-  "tr": "asker kaçağı, firari; terk eden",
+  "tr": "asker kaçağı; terk eden",
   "syn": [
    "runaway",
    "defector",
@@ -37282,7 +37282,7 @@
   "id": "w2055",
   "word": "desire",
   "pos": "n",
-  "tr": "istek, arzu — (v) arzulamak",
+  "tr": "istek, arzu — (fiil) arzulamak",
   "syn": [
    "wish",
    "longing",
@@ -37300,7 +37300,7 @@
   "id": "w2056",
   "word": "despair",
   "pos": "n",
-  "tr": "umutsuzluk — (v) ümidini kesmek (of)",
+  "tr": "umutsuzluk — (fiil) umudunu kesmek",
   "syn": [
    "hopelessness",
    "desperation",
@@ -37444,7 +37444,7 @@
   "id": "w2064",
   "word": "destruct",
   "pos": "v",
-  "tr": "imha etmek (özellikle kendi kendini)",
+  "tr": "(kendi kendini) imha etmek",
   "syn": [
    "self-destruct",
    "destroy",
@@ -37605,7 +37605,7 @@
   "id": "w2073",
   "word": "differential",
   "pos": "adj",
-  "tr": "farklı, ayırıcı; diferansiyel — (n) fark",
+  "tr": "farklı, ayırıcı; diferansiyel — (isim) fark",
   "syn": [
    "distinguishing",
    "different",
@@ -37659,7 +37659,7 @@
   "id": "w2076",
   "word": "direct",
   "pos": "adj",
-  "tr": "doğrudan, direkt — (v) yönlendirmek, yönetmek",
+  "tr": "doğrudan, direkt — (fiil) yönlendirmek, yönetmek",
   "syn": [
    "immediate",
    "straight",
@@ -38018,7 +38018,7 @@
   "id": "w2096",
   "word": "discretion",
   "pos": "n",
-  "tr": "takdir yetkisi; ağzı sıkılık, ihtiyat",
+  "tr": "takdir yetkisi; ağzı sıkılık",
   "syn": [
    "judgement",
    "choice",
@@ -38036,7 +38036,7 @@
   "id": "w2097",
   "word": "disgust",
   "pos": "v",
-  "tr": "tiksindirmek — (n) tiksinti",
+  "tr": "tiksindirmek — (isim) tiksinti",
   "syn": [
    "repel",
    "revolt",
@@ -38072,7 +38072,7 @@
   "id": "w2099",
   "word": "dismay",
   "pos": "v",
-  "tr": "dehşete düşürmek, üzmek — (n) dehşet, üzüntü",
+  "tr": "dehşete düşürmek, üzmek — (isim) dehşet, üzüntü",
   "syn": [
    "alarm",
    "dishearten",
@@ -38198,7 +38198,7 @@
   "id": "w2106",
   "word": "disposition",
   "pos": "n",
-  "tr": "eğilim, mizaç; düzenleme, yerleşim",
+  "tr": "eğilim, mizaç; düzenleme",
   "syn": [
    "tendency",
    "temperament",
@@ -38288,7 +38288,7 @@
   "id": "w2111",
   "word": "dissipate",
   "pos": "v",
-  "tr": "dağıtmak, dağılmak; boşa harcamak, (ısı) atmak",
+  "tr": "dağılmak, dağıtmak; (ısı, enerji) kaybetmek",
   "syn": [
    "disperse",
    "scatter",
@@ -38414,7 +38414,7 @@
   "id": "w2118",
   "word": "do with",
   "pos": "phr",
-  "tr": "ile ilgisi olmak (have to do with); idare etmek",
+  "tr": "(have to do with) ile ilgisi olmak; idare etmek",
   "syn": [
    "relate to",
    "concern",
@@ -38470,7 +38470,7 @@
   "id": "w2121",
   "word": "doubt",
   "pos": "v",
-  "tr": "şüphe etmek, kuşkulanmak — (n) şüphe",
+  "tr": "şüphe etmek, kuşkulanmak — (isim) şüphe",
   "syn": [
    "question",
    "suspect",
@@ -38542,7 +38542,7 @@
   "id": "w2125",
   "word": "down to",
   "pos": "prep",
-  "tr": "-e kadar (aşağı); -den kaynaklanan (be down to)",
+  "tr": "-e kadar; (be down to) -den kaynaklanmak",
   "syn": [
    "as far as",
    "due to",
@@ -38597,7 +38597,7 @@
   "id": "w2128",
   "word": "drill",
   "pos": "n",
-  "tr": "matkap, delici; tatbikat — (v) delmek, sondaj yapmak",
+  "tr": "matkap, delici; tatbikat — (fiil) delmek, sondaj yapmak",
   "syn": [
    "borer",
    "exercise",
@@ -38669,7 +38669,7 @@
   "id": "w2132",
   "word": "dye",
   "pos": "n",
-  "tr": "boya (kumaş, saç), boyar madde — (v) boyamak",
+  "tr": "boya (kumaş, saç), boyar madde — (fiil) boyamak",
   "syn": [
    "colourant",
    "pigment",
@@ -38739,7 +38739,7 @@
   "id": "w2136",
   "word": "earthly",
   "pos": "adj",
-  "tr": "dünyevi; (olumsuz) hiç, akla gelebilecek",
+  "tr": "dünyevi; (olumsuzda) hiç",
   "syn": [
    "worldly",
    "terrestrial",
@@ -38793,7 +38793,7 @@
   "id": "w2139",
   "word": "ease",
   "pos": "n",
-  "tr": "kolaylık, rahatlık — (v) hafifletmek, azaltmak",
+  "tr": "kolaylık, rahatlık — (fiil) hafifletmek, azaltmak",
   "syn": [
    "simplicity",
    "comfort",
@@ -38845,7 +38845,7 @@
   "id": "w2142",
   "word": "economical",
   "pos": "adj",
-  "tr": "tutumlu, ekonomik, verimli (az tüketen)",
+  "tr": "tutumlu, az tüketen, ekonomik",
   "syn": [
    "efficient",
    "cost-effective",
@@ -39025,7 +39025,7 @@
   "id": "w2152",
   "word": "effusion",
   "pos": "n",
-  "tr": "dışarı akma, sızma; (tıp) efüzyon, sıvı toplanması",
+  "tr": "dışarı akma, sızma; (tıp) sıvı toplanması",
   "syn": [
    "outflow",
    "discharge",
@@ -39061,7 +39061,7 @@
   "id": "w2154",
   "word": "elect",
   "pos": "v",
-  "tr": "seçmek (oyla); tercih etmek (to + V)",
+  "tr": "seçmek (oyla); tercih etmek",
   "syn": [
    "choose",
    "vote for",
@@ -39097,7 +39097,7 @@
   "id": "w2156",
   "word": "elective",
   "pos": "adj",
-  "tr": "seçmeli; isteğe bağlı (ameliyat)",
+  "tr": "seçmeli; isteğe bağlı",
   "syn": [
    "optional",
    "voluntary",
@@ -39149,7 +39149,7 @@
   "id": "w2159",
   "word": "embark",
   "pos": "v",
-  "tr": "(gemi, uçağa) binmek; başlamak, girişmek (on)",
+  "tr": "(gemi, uçağa) binmek; başlamak, girişmek",
   "syn": [
    "board",
    "begin",
@@ -39167,7 +39167,7 @@
   "id": "w2160",
   "word": "emerald",
   "pos": "n",
-  "tr": "zümrüt — (adj) zümrüt yeşili",
+  "tr": "zümrüt — (sıfat) zümrüt yeşili",
   "syn": [
    "green gem",
    "beryl"
@@ -39202,7 +39202,7 @@
   "id": "w2162",
   "word": "emergent",
   "pos": "adj",
-  "tr": "ortaya çıkan, yeni gelişen; (ekoloji) su yüzeyine çıkan",
+  "tr": "ortaya çıkan, yeni gelişen",
   "syn": [
    "emerging",
    "developing",
@@ -39327,7 +39327,7 @@
   "id": "w2169",
   "word": "emulsify",
   "pos": "v",
-  "tr": "emülsiyon haline getirmek, (yağ ile suyu) karıştırmak",
+  "tr": "(yağ ile suyu) karıştırmak, emülsiyon yapmak",
   "syn": [
    "blend",
    "homogenize",
@@ -39345,7 +39345,7 @@
   "id": "w2170",
   "word": "enact",
   "pos": "v",
-  "tr": "(yasa) çıkarmak, yürürlüğe koymak; canlandırmak",
+  "tr": "(yasa) çıkarmak, yürürlüğe koymak",
   "syn": [
    "pass",
    "legislate",
@@ -39381,7 +39381,7 @@
   "id": "w2172",
   "word": "endemic",
   "pos": "adj",
-  "tr": "endemik, yerli (bölgeye özgü); bölgede yaygın (hastalık)",
+  "tr": "(bölgeye) özgü, yerli; bölgede yaygın (hastalık)",
   "syn": [
    "native",
    "indigenous",
@@ -39470,7 +39470,7 @@
   "id": "w2177",
   "word": "engage",
   "pos": "v",
-  "tr": "meşgul etmek, ilgisini çekmek; katılmak (in); (dişli) kavramak",
+  "tr": "ilgisini çekmek, meşgul etmek; katılmak; (dişli) kavramak",
   "syn": [
    "involve",
    "participate",
@@ -39579,7 +39579,7 @@
   "id": "w2183",
   "word": "enlightenment",
   "pos": "n",
-  "tr": "aydınlanma; the Enlightenment: Aydınlanma Çağı",
+  "tr": "aydınlanma",
   "syn": [
    "illumination",
    "understanding",
@@ -39687,7 +39687,7 @@
   "id": "w2189",
   "word": "entitle",
   "pos": "v",
-  "tr": "hak vermek, yetkilendirmek; adlandırmak",
+  "tr": "hak vermek; adlandırmak",
   "syn": [
    "qualify",
    "authorize",
@@ -39705,7 +39705,7 @@
   "id": "w2190",
   "word": "entitlement",
   "pos": "n",
-  "tr": "hak, hak ediş",
+  "tr": "hak",
   "syn": [
    "right",
    "claim",
@@ -39759,7 +39759,7 @@
   "id": "w2193",
   "word": "episode",
   "pos": "n",
-  "tr": "bölüm, olay, nöbet (hastalık); dönem",
+  "tr": "olay, bölüm; (hastalık) nöbet",
   "syn": [
    "event",
    "incident",
@@ -39795,7 +39795,7 @@
   "id": "w2195",
   "word": "epitomize",
   "pos": "v",
-  "tr": "simgelemek, en iyi örneği olmak",
+  "tr": "en iyi örneği olmak, simgelemek",
   "syn": [
    "embody",
    "represent",
@@ -40043,7 +40043,7 @@
   "id": "w2209",
   "word": "exclusivity",
   "pos": "n",
-  "tr": "ayrıcalık, münhasırlık",
+  "tr": "ayrıcalık, yalnız birine ait olma",
   "syn": [
    "exclusiveness",
    "uniqueness",
@@ -40061,7 +40061,7 @@
   "id": "w2210",
   "word": "executive",
   "pos": "n",
-  "tr": "yönetici — (adj) yürütme, yönetimle ilgili",
+  "tr": "yönetici — (sıfat) yürütme, yönetimle ilgili",
   "syn": [
    "manager",
    "director",
@@ -40079,7 +40079,7 @@
   "id": "w2211",
   "word": "executor",
   "pos": "n",
-  "tr": "vasiyet tenfiz memuru, yürütücü",
+  "tr": "yürütücü; vasiyeti uygulayan kişi",
   "syn": [
    "administrator",
    "trustee",
@@ -40097,7 +40097,7 @@
   "id": "w2212",
   "word": "exercise",
   "pos": "n",
-  "tr": "egzersiz; tatbikat, uygulama — (v) (hak, güç) kullanmak",
+  "tr": "egzersiz; tatbikat, uygulama — (fiil) (hak, güç) kullanmak",
   "syn": [
    "training",
    "drill",
@@ -40240,7 +40240,7 @@
   "id": "w2220",
   "word": "expectancy",
   "pos": "n",
-  "tr": "beklenti; (yaşam) beklentisi, ömür",
+  "tr": "beklenti; (yaşam) süresi",
   "syn": [
    "expectation",
    "prospect",
@@ -40366,7 +40366,7 @@
   "id": "w2227",
   "word": "exploitable",
   "pos": "adj",
-  "tr": "işletilebilir, sömürülebilir, yararlanılabilir",
+  "tr": "yararlanılabilir, işletilebilir",
   "syn": [
    "usable",
    "workable",
@@ -40438,7 +40438,7 @@
   "id": "w2231",
   "word": "explosive",
   "pos": "adj",
-  "tr": "patlayıcı; hızlı — (n) patlayıcı madde",
+  "tr": "patlayıcı; hızlı — (isim) patlayıcı madde",
   "syn": [
    "volatile",
    "rapid",
@@ -40511,7 +40511,7 @@
   "id": "w2235",
   "word": "externality",
   "pos": "n",
-  "tr": "dışsallık (ekonomi), dış etki",
+  "tr": "(ekonomi) dışsallık, dış etki",
   "syn": [
    "external cost",
    "spillover"
@@ -40564,7 +40564,7 @@
   "id": "w2238",
   "word": "extreme",
   "pos": "adj",
-  "tr": "aşırı, uç — (n) uç nokta",
+  "tr": "aşırı, uç — (isim) uç nokta",
   "syn": [
    "severe",
    "intense",
@@ -40582,7 +40582,7 @@
   "id": "w2239",
   "word": "extremity",
   "pos": "n",
-  "tr": "uç, en uç nokta; (vücut) uzuv, el-ayak",
+  "tr": "uç nokta; (vücut) el, ayak",
   "syn": [
    "limb",
    "end",
@@ -40617,7 +40617,7 @@
   "id": "w2241",
   "word": "fairness",
   "pos": "n",
-  "tr": "adalet, hakkaniyet",
+  "tr": "adalet, dürüstlük",
   "syn": [
    "justice",
    "equity",
@@ -40763,7 +40763,7 @@
   "id": "w2249",
   "word": "falsify",
   "pos": "v",
-  "tr": "tahrif etmek, sahtesini yapmak; yanlışlamak (kuram)",
+  "tr": "sahtesini yapmak, değiştirmek; (kuramı) yanlışlamak",
   "syn": [
    "fake",
    "forge",
@@ -40781,7 +40781,7 @@
   "id": "w2250",
   "word": "familiar",
   "pos": "adj",
-  "tr": "tanıdık, bilindik; aşina (with)",
+  "tr": "tanıdık, bilindik; aşina",
   "syn": [
    "known",
    "well-known",
@@ -40799,7 +40799,7 @@
   "id": "w2251",
   "word": "familiarity",
   "pos": "n",
-  "tr": "aşinalık, bilgi sahibi olma",
+  "tr": "aşinalık, iyi bilme",
   "syn": [
    "acquaintance",
    "knowledge",
@@ -40817,7 +40817,7 @@
   "id": "w2252",
   "word": "familiarize",
   "pos": "v",
-  "tr": "alıştırmak, tanıştırmak (with)",
+  "tr": "alıştırmak, tanıtmak",
   "syn": [
    "acquaint",
    "accustom",
@@ -40923,7 +40923,7 @@
   "id": "w2258",
   "word": "fancy",
   "pos": "v",
-  "tr": "canı istemek; sanmak — (adj) süslü, gösterişli",
+  "tr": "canı istemek; sanmak — (sıfat) süslü",
   "syn": [
    "want",
    "imagine",
@@ -41050,7 +41050,7 @@
   "id": "w2265",
   "word": "fauna",
   "pos": "n",
-  "tr": "fauna, (bir bölgenin) hayvan varlığı",
+  "tr": "fauna, hayvan varlığı",
   "syn": [
    "wildlife",
    "animal life",
@@ -41068,7 +41068,7 @@
   "id": "w2266",
   "word": "feat",
   "pos": "n",
-  "tr": "başarı, ustalık (gerektiren iş)",
+  "tr": "(zor) başarı",
   "syn": [
    "achievement",
    "accomplishment",
@@ -41176,7 +41176,7 @@
   "id": "w2272",
   "word": "finance",
   "pos": "n",
-  "tr": "finans, maliye — (v) finanse etmek",
+  "tr": "finans, maliye — (fiil) finanse etmek",
   "syn": [
    "funding",
    "money",
@@ -41229,7 +41229,7 @@
   "id": "w2275",
   "word": "fingerprint",
   "pos": "n",
-  "tr": "parmak izi — (v) parmak izi almak",
+  "tr": "parmak izi — (fiil) parmak izi almak",
   "syn": [
    "print",
    "fingermark",
@@ -41265,7 +41265,7 @@
   "id": "w2277",
   "word": "flare",
   "pos": "n",
-  "tr": "parlama, alevlenme; işaret fişeği — (v) alevlenmek",
+  "tr": "parlama, alevlenme; işaret fişeği — (fiil) alevlenmek",
   "syn": [
    "blaze",
    "burst",
@@ -41356,7 +41356,7 @@
   "id": "w2282",
   "word": "flood",
   "pos": "n",
-  "tr": "sel, taşkın; (mecaz) akın — (v) su basmak",
+  "tr": "sel, taşkın; (mecaz) akın — (fiil) su basmak",
   "syn": [
    "deluge",
    "inundation",
@@ -41393,7 +41393,7 @@
   "id": "w2284",
   "word": "flow",
   "pos": "v",
-  "tr": "akmak — (n) akış, akım",
+  "tr": "akmak — (isim) akış, akım",
   "syn": [
    "stream",
    "run",
@@ -41537,7 +41537,7 @@
   "id": "w2292",
   "word": "footing",
   "pos": "n",
-  "tr": "temel, ayak basacak yer; (yapı) temel pabucu",
+  "tr": "temel, ayak basacak yer",
   "syn": [
    "foundation",
    "base",
@@ -41628,7 +41628,7 @@
   "id": "w2297",
   "word": "forgo",
   "pos": "v",
-  "tr": "vazgeçmek, -den feragat etmek (forgo)",
+  "tr": "vazgeçmek",
   "syn": [
    "give up",
    "do without",
@@ -41682,7 +41682,7 @@
   "id": "w2300",
   "word": "fortunately",
   "pos": "adv",
-  "tr": "neyse ki, bereket versin",
+  "tr": "neyse ki",
   "syn": [
    "luckily",
    "happily",
@@ -41718,7 +41718,7 @@
   "id": "w2302",
   "word": "forward",
   "pos": "adv",
-  "tr": "ileri, öne doğru — (v) iletmek",
+  "tr": "ileri, öne doğru — (fiil) iletmek",
   "syn": [
    "ahead",
    "onward",
@@ -41933,7 +41933,7 @@
   "id": "w2314",
   "word": "fume",
   "pos": "n",
-  "tr": "duman, buhar (genelde çoğul: fumes) — (v) duman çıkarmak",
+  "tr": "duman, buhar — (fiil) duman çıkarmak",
   "syn": [
    "smoke",
    "vapour",
@@ -41986,7 +41986,7 @@
   "id": "w2317",
   "word": "further",
   "pos": "adj",
-  "tr": "ek, daha fazla — (adv) daha ileri — (v) ilerletmek",
+  "tr": "ek, daha fazla — (zarf) daha ileri",
   "syn": [
    "additional",
    "more",
@@ -42022,7 +42022,7 @@
   "id": "w2319",
   "word": "fuse",
   "pos": "v",
-  "tr": "kaynaştırmak, birleştirmek; (sigorta) atmak — (n) sigorta; fitil",
+  "tr": "kaynaştırmak, birleştirmek — (isim) sigorta; fitil",
   "syn": [
    "merge",
    "melt together",
@@ -42257,7 +42257,7 @@
   "id": "w2332",
   "word": "get around",
   "pos": "phr",
-  "tr": "(sorunu) aşmak, atlatmak; dolaşmak; yayılmak",
+  "tr": "(sorunu) aşmak; dolaşmak; yayılmak",
   "syn": [
    "circumvent",
    "avoid",
@@ -42276,7 +42276,7 @@
   "id": "w2333",
   "word": "get away",
   "pos": "phr",
-  "tr": "kaçmak, kurtulmak; (with) yanına kâr kalmak",
+  "tr": "kaçmak, kurtulmak",
   "syn": [
    "escape",
    "flee",
@@ -42333,7 +42333,7 @@
   "id": "w2336",
   "word": "gift",
   "pos": "n",
-  "tr": "hediye; yetenek, doğuştan kabiliyet",
+  "tr": "hediye; yetenek",
   "syn": [
    "present",
    "talent",
@@ -42513,7 +42513,7 @@
   "id": "w2346",
   "word": "grateful",
   "pos": "adj",
-  "tr": "minnettar, müteşekkir",
+  "tr": "minnettar",
   "syn": [
    "thankful",
    "appreciative",
@@ -42531,7 +42531,7 @@
   "id": "w2347",
   "word": "gratefully",
   "pos": "adv",
-  "tr": "minnetle, şükranla",
+  "tr": "minnetle",
   "syn": [
    "thankfully",
    "appreciatively"
@@ -42637,7 +42637,7 @@
   "id": "w2353",
   "word": "habitation",
   "pos": "n",
-  "tr": "ikamet, yerleşim; konut",
+  "tr": "yerleşim, oturma; konut",
   "syn": [
    "residence",
    "dwelling",
@@ -42655,7 +42655,7 @@
   "id": "w2354",
   "word": "hail",
   "pos": "n",
-  "tr": "dolu — (v) dolu yağmak; övmek (as)",
+  "tr": "dolu — (fiil) övmek",
   "syn": [
    "hailstones",
    "ice pellets",
@@ -42690,7 +42690,7 @@
   "id": "w2356",
   "word": "harbour",
   "pos": "v",
-  "tr": "barındırmak, içinde taşımak — (n) liman",
+  "tr": "barındırmak, taşımak — (isim) liman",
   "syn": [
    "shelter",
    "host",
@@ -42744,7 +42744,7 @@
   "id": "w2359",
   "word": "hardware",
   "pos": "n",
-  "tr": "donanım; hırdavat, nalburiye",
+  "tr": "donanım; hırdavat",
   "syn": [
    "equipment",
    "devices",
@@ -42780,7 +42780,7 @@
   "id": "w2361",
   "word": "hatch",
   "pos": "v",
-  "tr": "yumurtadan çıkmak — (n) kapak, ambar kapağı",
+  "tr": "yumurtadan çıkmak — (isim) kapak",
   "syn": [
    "emerge",
    "incubate",
@@ -43157,7 +43157,7 @@
   "id": "w2382",
   "word": "hold on",
   "pos": "phr",
-  "tr": "beklemek; sıkı tutunmak (to)",
+  "tr": "beklemek; sıkı tutunmak",
   "syn": [
    "wait",
    "hang on",
@@ -43195,7 +43195,7 @@
   "id": "w2384",
   "word": "hold up",
   "pos": "phr",
-  "tr": "geciktirmek; desteklemek, ayakta tutmak; (örnek) göstermek",
+  "tr": "geciktirmek; desteklemek; (örnek) göstermek",
   "syn": [
    "delay",
    "support",
@@ -43303,7 +43303,7 @@
   "id": "w2390",
   "word": "hugely",
   "pos": "adv",
-  "tr": "son derece, muazzam derecede",
+  "tr": "son derece, çok büyük ölçüde",
   "syn": [
    "enormously",
    "greatly",
@@ -43409,7 +43409,7 @@
   "id": "w2396",
   "word": "if only",
   "pos": "conj",
-  "tr": "keşke; yalnızca -sa bile",
+  "tr": "keşke; (if only to) sırf ... için bile",
   "syn": [
    "I wish",
    "would that"
@@ -43444,7 +43444,7 @@
   "id": "w2398",
   "word": "ignorant",
   "pos": "adj",
-  "tr": "cahil, bilgisiz (of)",
+  "tr": "cahil, bilgisiz",
   "syn": [
    "unaware",
    "uninformed",
@@ -43569,7 +43569,7 @@
   "id": "w2405",
   "word": "illusory",
   "pos": "adj",
-  "tr": "yanıltıcı, aldatıcı, hayalî",
+  "tr": "yanıltıcı, hayali",
   "syn": [
    "illusive",
    "deceptive",
@@ -43641,7 +43641,7 @@
   "id": "w2409",
   "word": "immediate",
   "pos": "adj",
-  "tr": "derhal, hemen olan; doğrudan, yakın",
+  "tr": "hemen olan, anında; doğrudan, yakın",
   "syn": [
    "instant",
    "direct",
@@ -43712,7 +43712,7 @@
   "id": "w2413",
   "word": "impetuous",
   "pos": "adj",
-  "tr": "aceleci, düşüncesizce davranan",
+  "tr": "aceleci, düşüncesiz",
   "syn": [
    "impulsive",
    "rash",
@@ -43801,7 +43801,7 @@
   "id": "w2418",
   "word": "improbable",
   "pos": "adj",
-  "tr": "olasılık dışı, olası olmayan",
+  "tr": "olası olmayan",
   "syn": [
    "unlikely",
    "doubtful",
@@ -43855,7 +43855,7 @@
   "id": "w2421",
   "word": "impurity",
   "pos": "n",
-  "tr": "safsızlık, kirletici madde",
+  "tr": "safsızlık, yabancı madde",
   "syn": [
    "contaminant",
    "pollutant",
@@ -43927,7 +43927,7 @@
   "id": "w2425",
   "word": "in fulfilment of",
   "pos": "phr",
-  "tr": "-in gereği olarak, -i yerine getirmek için",
+  "tr": "-i yerine getirmek için",
   "syn": [
    "in satisfaction of",
    "to meet"
@@ -44284,7 +44284,7 @@
   "id": "w2445",
   "word": "indicative",
   "pos": "adj",
-  "tr": "gösterge niteliğinde, işaret eden (of)",
+  "tr": "gösteren, işaret eden",
   "syn": [
    "suggestive",
    "symptomatic",
@@ -44320,7 +44320,7 @@
   "id": "w2447",
   "word": "indifferent",
   "pos": "adj",
-  "tr": "kayıtsız, ilgisiz; vasat",
+  "tr": "kayıtsız, ilgisiz",
   "syn": [
    "apathetic",
    "uninterested",
@@ -44374,7 +44374,7 @@
   "id": "w2450",
   "word": "industrialisation",
   "pos": "n",
-  "tr": "sanayileşme (İng. yazımı)",
+  "tr": "sanayileşme",
   "syn": [
    "industrialization",
    "development"
@@ -44568,7 +44568,7 @@
   "id": "w2461",
   "word": "inflict",
   "pos": "v",
-  "tr": "(zarar, acı) vermek, uğratmak",
+  "tr": "(zarar, acı) vermek",
   "syn": [
    "cause",
    "impose",
@@ -44586,7 +44586,7 @@
   "id": "w2462",
   "word": "inform",
   "pos": "v",
-  "tr": "bilgilendirmek, haber vermek; şekillendirmek",
+  "tr": "bilgilendirmek, haber vermek",
   "syn": [
    "notify",
    "tell",
@@ -44604,7 +44604,7 @@
   "id": "w2463",
   "word": "informant",
   "pos": "n",
-  "tr": "muhbir; bilgi veren kişi (kaynak kişi)",
+  "tr": "bilgi veren kişi; muhbir",
   "syn": [
    "source",
    "informer",
@@ -44675,7 +44675,7 @@
   "id": "w2467",
   "word": "ingenious",
   "pos": "adj",
-  "tr": "dâhiyane, yaratıcı, ustaca",
+  "tr": "çok zekice, yaratıcı",
   "syn": [
    "clever",
    "inventive",
@@ -44693,7 +44693,7 @@
   "id": "w2468",
   "word": "ingeniously",
   "pos": "adv",
-  "tr": "ustaca, dâhice",
+  "tr": "ustaca, zekice",
   "syn": [
    "cleverly",
    "inventively",
@@ -44820,7 +44820,7 @@
   "id": "w2475",
   "word": "inquest",
   "pos": "n",
-  "tr": "(adli) soruşturma, ölüm nedeni soruşturması",
+  "tr": "(ölüm nedeni) soruşturması",
   "syn": [
    "inquiry",
    "investigation",
@@ -44838,7 +44838,7 @@
   "id": "w2476",
   "word": "inquisition",
   "pos": "n",
-  "tr": "sorgu, engizisyon",
+  "tr": "sorgu",
   "syn": [
    "interrogation",
    "questioning",
@@ -44892,7 +44892,7 @@
   "id": "w2479",
   "word": "insist",
   "pos": "v",
-  "tr": "ısrar etmek (on/that)",
+  "tr": "ısrar etmek",
   "syn": [
    "demand",
    "maintain",
@@ -45125,7 +45125,7 @@
   "id": "w2492",
   "word": "intellectual",
   "pos": "adj",
-  "tr": "zihinsel, entelektüel — (n) aydın",
+  "tr": "zihinsel, entelektüel — (isim) aydın",
   "syn": [
    "mental",
    "cerebral",
@@ -45160,7 +45160,7 @@
   "id": "w2494",
   "word": "intend",
   "pos": "v",
-  "tr": "niyet etmek, amaçlamak, tasarlamak",
+  "tr": "niyet etmek, amaçlamak",
   "syn": [
    "plan",
    "aim",
@@ -45196,7 +45196,7 @@
   "id": "w2496",
   "word": "intent",
   "pos": "n",
-  "tr": "niyet, amaç — (adj) kararlı (on)",
+  "tr": "niyet, amaç — (sıfat) kararlı",
   "syn": [
    "intention",
    "purpose",
@@ -45267,7 +45267,7 @@
   "id": "w2500",
   "word": "interfere",
   "pos": "v",
-  "tr": "karışmak, müdahale etmek (in); engellemek, bozmak (with)",
+  "tr": "karışmak, müdahale etmek; engellemek, bozmak",
   "syn": [
    "disrupt",
    "hinder",
@@ -45410,7 +45410,7 @@
   "id": "w2508",
   "word": "inverse",
   "pos": "adj",
-  "tr": "ters, tersine, ters orantılı — (n) ters",
+  "tr": "ters, ters orantılı — (isim) ters",
   "syn": [
    "opposite",
    "reverse",
@@ -45445,7 +45445,7 @@
   "id": "w2510",
   "word": "inversion",
   "pos": "n",
-  "tr": "tersine çevirme, ters dönme; (meteoroloji) enversiyon",
+  "tr": "tersine çevirme; (meteoroloji) sıcaklık terselmesi",
   "syn": [
    "reversal",
    "inverting",
@@ -45498,7 +45498,7 @@
   "id": "w2513",
   "word": "involve in",
   "pos": "phr",
-  "tr": "-e dahil etmek, -e karıştırmak (be involved in)",
+  "tr": "(be involved in) -e dahil olmak, -e karışmak",
   "syn": [
    "engage in",
    "include in",
@@ -45676,7 +45676,7 @@
   "id": "w2523",
   "word": "joint",
   "pos": "adj",
-  "tr": "ortak, birleşik — (n) eklem; bağlantı yeri",
+  "tr": "ortak — (isim) eklem; bağlantı yeri",
   "syn": [
    "shared",
    "common",
@@ -45748,7 +45748,7 @@
   "id": "w2527",
   "word": "justifiable",
   "pos": "adj",
-  "tr": "haklı gösterilebilir, savunulabilir",
+  "tr": "savunulabilir, haklı gösterilebilir",
   "syn": [
    "defensible",
    "reasonable",
@@ -45766,7 +45766,7 @@
   "id": "w2528",
   "word": "keep away",
   "pos": "phr",
-  "tr": "uzak tutmak, uzak durmak (from)",
+  "tr": "uzak tutmak, uzak durmak",
   "syn": [
    "stay away",
    "avoid",
@@ -45823,7 +45823,7 @@
   "id": "w2531",
   "word": "keep up",
   "pos": "phr",
-  "tr": "sürdürmek, devam ettirmek; ayak uydurmak (with)",
+  "tr": "sürdürmek, devam ettirmek; ayak uydurmak",
   "syn": [
    "maintain",
    "continue",
@@ -45842,7 +45842,7 @@
   "id": "w2532",
   "word": "knowing",
   "pos": "adj",
-  "tr": "anlamlı, manidar (bakış); bilinçli, kasıtlı",
+  "tr": "anlamlı (bakış); bilinçli, kasıtlı",
   "syn": [
    "deliberate",
    "aware",
@@ -46141,7 +46141,7 @@
   "id": "w2549",
   "word": "leap",
   "pos": "n",
-  "tr": "sıçrama, atlayış; büyük ilerleme — (v) sıçramak",
+  "tr": "sıçrama; büyük ilerleme — (fiil) sıçramak",
   "syn": [
    "jump",
    "bound",
@@ -46229,7 +46229,7 @@
   "id": "w2554",
   "word": "legend",
   "pos": "n",
-  "tr": "efsane; (harita) lejant, açıklama",
+  "tr": "efsane; (harita) açıklama, lejant",
   "syn": [
    "myth",
    "tale",
@@ -46283,7 +46283,7 @@
   "id": "w2557",
   "word": "liability",
   "pos": "n",
-  "tr": "yükümlülük, sorumluluk; dezavantaj, yük",
+  "tr": "sorumluluk, yükümlülük; dezavantaj",
   "syn": [
    "responsibility",
    "obligation",
@@ -46301,7 +46301,7 @@
   "id": "w2558",
   "word": "liable",
   "pos": "adj",
-  "tr": "sorumlu (for); eğilimli, -mesi muhtemel (to)",
+  "tr": "sorumlu; -mesi muhtemel, eğilimli",
   "syn": [
    "responsible",
    "prone",
@@ -46497,7 +46497,7 @@
   "id": "w2569",
   "word": "livestock",
   "pos": "n",
-  "tr": "çiftlik hayvanları, büyükbaş/küçükbaş hayvan",
+  "tr": "çiftlik hayvanları",
   "syn": [
    "farm animals",
    "cattle",
@@ -46515,7 +46515,7 @@
   "id": "w2570",
   "word": "locality",
   "pos": "n",
-  "tr": "yöre, bölge, mevki",
+  "tr": "yöre, bölge",
   "syn": [
    "area",
    "region",
@@ -46533,7 +46533,7 @@
   "id": "w2571",
   "word": "localize",
   "pos": "v",
-  "tr": "yerelleştirmek; yerini belirlemek; sınırlamak",
+  "tr": "yerini belirlemek; sınırlamak; yerelleştirmek",
   "syn": [
    "pinpoint",
    "locate",
@@ -46604,7 +46604,7 @@
   "id": "w2575",
   "word": "look down",
   "pos": "phr",
-  "tr": "aşağı bakmak; küçümsemek (on)",
+  "tr": "aşağı bakmak; küçümsemek",
   "syn": [
    "despise",
    "belittle",
@@ -46909,7 +46909,7 @@
   "id": "w2592",
   "word": "make do",
   "pos": "phr",
-  "tr": "idare etmek, yetinmek (with)",
+  "tr": "idare etmek, yetinmek",
   "syn": [
    "manage",
    "get by",
@@ -46947,7 +46947,7 @@
   "id": "w2594",
   "word": "make over",
   "pos": "phr",
-  "tr": "devretmek; yeniden düzenlemek, yenilemek",
+  "tr": "devretmek; yenilemek",
   "syn": [
    "transfer",
    "renovate",
@@ -46984,7 +46984,7 @@
   "id": "w2596",
   "word": "malignant",
   "pos": "adj",
-  "tr": "kötü huylu (tümör), habis; zararlı",
+  "tr": "kötü huylu (tümör); zararlı",
   "syn": [
    "cancerous",
    "harmful",
@@ -47002,7 +47002,7 @@
   "id": "w2597",
   "word": "manage",
   "pos": "v",
-  "tr": "yönetmek; başarmak, becermek (to + V); idare etmek",
+  "tr": "yönetmek; (to + fiil) -meyi başarmak; idare etmek",
   "syn": [
    "run",
    "control",
@@ -47199,7 +47199,7 @@
   "id": "w2608",
   "word": "matching",
   "pos": "adj",
-  "tr": "uyumlu, eşleşen — (n) eşleştirme",
+  "tr": "uyumlu, eşleşen — (isim) eşleştirme",
   "syn": [
    "corresponding",
    "equivalent",
@@ -47217,7 +47217,7 @@
   "id": "w2609",
   "word": "matter",
   "pos": "n",
-  "tr": "madde; mesele, konu — (v) önemli olmak",
+  "tr": "madde; konu, mesele — (fiil) önemli olmak",
   "syn": [
    "substance",
    "material",
@@ -47306,7 +47306,7 @@
   "id": "w2614",
   "word": "mention",
   "pos": "v",
-  "tr": "bahsetmek, değinmek — (n) söz, anma",
+  "tr": "bahsetmek, değinmek",
   "syn": [
    "refer to",
    "cite",
@@ -47324,7 +47324,7 @@
   "id": "w2615",
   "word": "military",
   "pos": "adj",
-  "tr": "askeri — (n) ordu",
+  "tr": "askeri — (isim) ordu",
   "syn": [
    "armed",
    "defence",
@@ -47377,7 +47377,7 @@
   "id": "w2618",
   "word": "mistrust",
   "pos": "n",
-  "tr": "güvensizlik — (v) güvenmemek",
+  "tr": "güvensizlik — (fiil) güvenmemek",
   "syn": [
    "distrust",
    "suspicion",
@@ -47395,7 +47395,7 @@
   "id": "w2619",
   "word": "misuse",
   "pos": "n",
-  "tr": "yanlış/kötüye kullanım — (v) kötüye kullanmak",
+  "tr": "yanlış kullanım — (fiil) kötüye kullanmak",
   "syn": [
    "abuse",
    "misapplication",
@@ -47627,7 +47627,7 @@
   "id": "w2632",
   "word": "native",
   "pos": "adj",
-  "tr": "yerli, doğal olarak bulunan; ana (dil) — (n) yerli",
+  "tr": "yerli, doğal olarak bulunan; ana (dil)",
   "syn": [
    "indigenous",
    "local",
@@ -47646,7 +47646,7 @@
   "id": "w2633",
   "word": "naturalist",
   "pos": "n",
-  "tr": "doğa bilimci, doğabilimci",
+  "tr": "doğa bilimci",
   "syn": [
    "natural scientist",
    "biologist",
@@ -47665,7 +47665,7 @@
   "id": "w2634",
   "word": "naturalistic",
   "pos": "adj",
-  "tr": "doğal, doğalcı; gerçekçi",
+  "tr": "doğal, gerçekçi",
   "syn": [
    "realistic",
    "natural",
@@ -47683,7 +47683,7 @@
   "id": "w2635",
   "word": "navigate",
   "pos": "v",
-  "tr": "yön bulmak, yolunu bulmak; seyretmek",
+  "tr": "yön bulmak; (gemiyle) yol almak",
   "syn": [
    "steer",
    "find one's way",
@@ -47701,7 +47701,7 @@
   "id": "w2636",
   "word": "navigation",
   "pos": "n",
-  "tr": "navigasyon, seyrüsefer, yön bulma",
+  "tr": "yön bulma, navigasyon",
   "syn": [
    "steering",
    "piloting",
@@ -47719,7 +47719,7 @@
   "id": "w2637",
   "word": "navigator",
   "pos": "n",
-  "tr": "seyrüseferci, kâşif; navigasyon cihazı",
+  "tr": "yön bulan kişi; navigasyon cihazı",
   "syn": [
    "pilot",
    "helmsman",
@@ -47773,7 +47773,7 @@
   "id": "w2640",
   "word": "negotiable",
   "pos": "adj",
-  "tr": "pazarlığa açık, görüşülebilir; geçilebilir",
+  "tr": "pazarlığa açık; geçilebilir",
   "syn": [
    "open to discussion",
    "flexible",
@@ -47791,7 +47791,7 @@
   "id": "w2641",
   "word": "negotiate",
   "pos": "v",
-  "tr": "müzakere etmek, görüşmek; (engel) aşmak",
+  "tr": "müzakere etmek, görüşmek; (engeli) aşmak",
   "syn": [
    "bargain",
    "discuss",
@@ -47863,7 +47863,7 @@
   "id": "w2645",
   "word": "nor",
   "pos": "conj",
-  "tr": "ne de (neither ... nor); ve ... de değil",
+  "tr": "ne de (neither ... nor)",
   "syn": [
    "and not",
    "not either"
@@ -47933,7 +47933,7 @@
   "id": "w2649",
   "word": "object",
   "pos": "v",
-  "tr": "itiraz etmek, karşı çıkmak (to) — (n) nesne, cisim; amaç",
+  "tr": "itiraz etmek, karşı çıkmak — (isim) nesne, cisim; amaç",
   "syn": [
    "oppose",
    "protest",
@@ -47951,7 +47951,7 @@
   "id": "w2650",
   "word": "objectionable",
   "pos": "adj",
-  "tr": "sakıncalı, hoş olmayan, itiraz edilebilir",
+  "tr": "sakıncalı, hoş olmayan",
   "syn": [
    "offensive",
    "unacceptable",
@@ -47987,7 +47987,7 @@
   "id": "w2652",
   "word": "oblige",
   "pos": "v",
-  "tr": "zorunda bırakmak, mecbur etmek; iyilik etmek",
+  "tr": "zorunda bırakmak; iyilik etmek",
   "syn": [
    "require",
    "force",
@@ -48042,7 +48042,7 @@
   "id": "w2655",
   "word": "observatory",
   "pos": "n",
-  "tr": "gözlemevi, rasathane",
+  "tr": "gözlemevi",
   "syn": [
    "observation station"
   ],
@@ -48058,7 +48058,7 @@
   "id": "w2656",
   "word": "obsess",
   "pos": "v",
-  "tr": "takıntı haline gelmek, aklını meşgul etmek",
+  "tr": "takıntı haline gelmek",
   "syn": [
    "preoccupy",
    "haunt",
@@ -48076,7 +48076,7 @@
   "id": "w2657",
   "word": "obsessed",
   "pos": "adj",
-  "tr": "takıntılı (with)",
+  "tr": "takıntılı",
   "syn": [
    "fixated",
    "preoccupied",
@@ -48148,7 +48148,7 @@
   "id": "w2661",
   "word": "occasion",
   "pos": "n",
-  "tr": "fırsat, durum, vesile; olay",
+  "tr": "fırsat, durum; olay",
   "syn": [
    "instance",
    "time",
@@ -48238,7 +48238,7 @@
   "id": "w2666",
   "word": "offering",
   "pos": "n",
-  "tr": "sunum, sunulan şey, teklif; adak",
+  "tr": "sunulan şey, teklif",
   "syn": [
    "offer",
    "contribution",
@@ -48256,7 +48256,7 @@
   "id": "w2667",
   "word": "omit",
   "pos": "v",
-  "tr": "atlamak, dahil etmemek, çıkarmak",
+  "tr": "atlamak, çıkarmak",
   "syn": [
    "leave out",
    "exclude",
@@ -48293,7 +48293,7 @@
   "id": "w2669",
   "word": "onward",
   "pos": "adj",
-  "tr": "ileri doğru, ilerleyen — (adv) ileriye",
+  "tr": "ileri doğru — (zarf) ileriye",
   "syn": [
    "forward",
    "ahead",
@@ -48311,7 +48311,7 @@
   "id": "w2670",
   "word": "onwards",
   "pos": "adv",
-  "tr": "itibaren, -den sonra; ileri",
+  "tr": "-den itibaren; ileri",
   "syn": [
    "from then on",
    "forward",
@@ -48348,7 +48348,7 @@
   "id": "w2672",
   "word": "opium poppy",
   "pos": "n",
-  "tr": "haşhaş, afyon bitkisi",
+  "tr": "haşhaş",
   "syn": [
    "poppy",
    "Papaver somniferum"
@@ -48365,7 +48365,7 @@
   "id": "w2673",
   "word": "opportunistic",
   "pos": "adj",
-  "tr": "fırsatçı; (tıp) fırsatçı enfeksiyon",
+  "tr": "fırsatçı",
   "syn": [
    "exploitative",
    "expedient",
@@ -48401,7 +48401,7 @@
   "id": "w2675",
   "word": "opposed to",
   "pos": "phr",
-  "tr": "karşı; -in aksine (as opposed to)",
+  "tr": "(as opposed to) -in aksine; karşı",
   "syn": [
    "against",
    "contrary to",
@@ -48454,7 +48454,7 @@
   "id": "w2678",
   "word": "or else",
   "pos": "conj",
-  "tr": "yoksa, aksi takdirde",
+  "tr": "yoksa, aksi halde",
   "syn": [
    "otherwise",
    "if not",
@@ -48597,7 +48597,7 @@
   "id": "w2686",
   "word": "outlaw",
   "pos": "v",
-  "tr": "yasaklamak, yasa dışı ilan etmek — (n) kanun kaçağı",
+  "tr": "yasaklamak — (isim) kanun kaçağı",
   "syn": [
    "ban",
    "prohibit",
@@ -48722,7 +48722,7 @@
   "id": "w2693",
   "word": "overflow",
   "pos": "v",
-  "tr": "taşmak — (n) taşma",
+  "tr": "taşmak — (isim) taşma",
   "syn": [
    "spill over",
    "flood",
@@ -48757,7 +48757,7 @@
   "id": "w2695",
   "word": "overwhelm",
   "pos": "v",
-  "tr": "bunaltmak, altında ezmek; baskın çıkmak",
+  "tr": "bunaltmak, ezmek; baskın çıkmak",
   "syn": [
    "overpower",
    "swamp",
@@ -48775,7 +48775,7 @@
   "id": "w2696",
   "word": "overwhelming",
   "pos": "adj",
-  "tr": "ezici, karşı konulamaz; çok büyük",
+  "tr": "ezici, çok büyük",
   "syn": [
    "overpowering",
    "massive",
@@ -48936,7 +48936,7 @@
   "id": "w2705",
   "word": "patch",
   "pos": "n",
-  "tr": "yama; parça, leke; (arazi) küçük alan",
+  "tr": "yama; parça, leke; küçük alan",
   "syn": [
    "piece",
    "spot",
@@ -49131,7 +49131,7 @@
   "id": "w2716",
   "word": "perceptive",
   "pos": "adj",
-  "tr": "algısı güçlü, anlayışlı, sezgili",
+  "tr": "anlayışlı, sezgisi güçlü",
   "syn": [
    "insightful",
    "observant",
@@ -49149,7 +49149,7 @@
   "id": "w2717",
   "word": "perennial",
   "pos": "adj",
-  "tr": "çok yıllık (bitki); sürekli, kalıcı",
+  "tr": "(bitki) çok yıllık; sürekli, kalıcı",
   "syn": [
    "lasting",
    "recurring",
@@ -49167,7 +49167,7 @@
   "id": "w2718",
   "word": "perish",
   "pos": "v",
-  "tr": "ölmek, yok olmak; çürümek, bozulmak",
+  "tr": "ölmek, yok olmak; çürümek",
   "syn": [
    "die",
    "expire",
@@ -49240,7 +49240,7 @@
   "id": "w2722",
   "word": "permit",
   "pos": "v",
-  "tr": "izin vermek, olanak tanımak — (n) izin belgesi, ruhsat",
+  "tr": "izin vermek, olanak tanımak — (isim) izin belgesi, ruhsat",
   "syn": [
    "allow",
    "enable",
@@ -49259,7 +49259,7 @@
   "id": "w2723",
   "word": "perpetual",
   "pos": "adj",
-  "tr": "sürekli, daimi, sonsuz",
+  "tr": "sürekli, sonsuz",
   "syn": [
    "everlasting",
    "constant",
@@ -49384,7 +49384,7 @@
   "id": "w2730",
   "word": "pertain",
   "pos": "v",
-  "tr": "ilgili olmak, ait olmak (to)",
+  "tr": "ilgili olmak",
   "syn": [
    "relate",
    "concern",
@@ -49420,7 +49420,7 @@
   "id": "w2732",
   "word": "piecemeal",
   "pos": "adv",
-  "tr": "parça parça, azar azar — (adj) parça parça yapılan",
+  "tr": "parça parça, azar azar",
   "syn": [
    "bit by bit",
    "gradually",
@@ -49438,7 +49438,7 @@
   "id": "w2733",
   "word": "pier",
   "pos": "n",
-  "tr": "iskele; (köprü) ayak, kolon",
+  "tr": "iskele; (köprü) ayak",
   "syn": [
    "jetty",
    "dock",
@@ -49456,7 +49456,7 @@
   "id": "w2734",
   "word": "pipeline",
   "pos": "n",
-  "tr": "boru hattı; (mecaz) hazırlık aşaması",
+  "tr": "boru hattı; hazırlık aşaması",
   "syn": [
    "pipe",
    "conduit",
@@ -49492,7 +49492,7 @@
   "id": "w2736",
   "word": "plain",
   "pos": "adj",
-  "tr": "açık, belli; sade, düz — (n) ova",
+  "tr": "açık, belli; sade, düz — (isim) ova",
   "syn": [
    "clear",
    "simple",
@@ -49528,7 +49528,7 @@
   "id": "w2738",
   "word": "plant",
   "pos": "n",
-  "tr": "bitki; tesis, santral — (v) dikmek",
+  "tr": "bitki; tesis, santral — (fiil) dikmek",
   "syn": [
    "vegetation",
    "factory",
@@ -49675,7 +49675,7 @@
   "id": "w2746",
   "word": "plume",
   "pos": "n",
-  "tr": "(duman, gaz) bulutu, sütun; tüy",
+  "tr": "(duman, gaz) bulutu, sütun",
   "syn": [
    "column",
    "cloud",
@@ -49851,7 +49851,7 @@
   "id": "w2756",
   "word": "populate",
   "pos": "v",
-  "tr": "yerleşmek, doldurmak, iskân etmek",
+  "tr": "yerleşmek, doldurmak",
   "syn": [
    "inhabit",
    "occupy",
@@ -49940,7 +49940,7 @@
   "id": "w2761",
   "word": "portray",
   "pos": "v",
-  "tr": "tasvir etmek, betimlemek, canlandırmak",
+  "tr": "betimlemek, göstermek",
   "syn": [
    "depict",
    "represent",
@@ -49958,7 +49958,7 @@
   "id": "w2762",
   "word": "portrayal",
   "pos": "n",
-  "tr": "tasvir, betimleme",
+  "tr": "betimleme",
   "syn": [
    "depiction",
    "representation",
@@ -50012,7 +50012,7 @@
   "id": "w2765",
   "word": "possessive",
   "pos": "adj",
-  "tr": "sahiplenici, kıskanç; (dilbilgisi) iyelik",
+  "tr": "sahiplenici; (dilbilgisi) iyelik",
   "syn": [
    "protective",
    "jealous",
@@ -50119,7 +50119,7 @@
   "id": "w2771",
   "word": "pre-eminence",
   "pos": "n",
-  "tr": "üstünlük, ön planda olma",
+  "tr": "üstünlük",
   "syn": [
    "supremacy",
    "superiority",
@@ -50137,7 +50137,7 @@
   "id": "w2772",
   "word": "precarious",
   "pos": "adj",
-  "tr": "tehlikeli, belirsiz, güvensiz",
+  "tr": "tehlikeli, belirsiz",
   "syn": [
    "unstable",
    "uncertain",
@@ -50173,7 +50173,7 @@
   "id": "w2774",
   "word": "precast concrete",
   "pos": "n",
-  "tr": "prefabrik beton, önceden dökülmüş beton",
+  "tr": "prefabrik beton",
   "syn": [
    "prefabricated concrete",
    "precast elements"
@@ -50226,7 +50226,7 @@
   "id": "w2777",
   "word": "predictor",
   "pos": "n",
-  "tr": "belirleyici, öngörücü etken",
+  "tr": "öngörücü etken",
   "syn": [
    "indicator",
    "sign",
@@ -50245,7 +50245,7 @@
   "id": "w2778",
   "word": "preface",
   "pos": "n",
-  "tr": "önsöz — (v) önsöz yazmak, giriş yapmak",
+  "tr": "önsöz — (fiil) giriş yapmak",
   "syn": [
    "foreword",
    "introduction",
@@ -50335,7 +50335,7 @@
   "id": "w2783",
   "word": "presence",
   "pos": "n",
-  "tr": "varlık, bulunma; huzur",
+  "tr": "varlık, bulunma",
   "syn": [
    "existence",
    "occurrence",
@@ -50424,7 +50424,7 @@
   "id": "w2788",
   "word": "pretension",
   "pos": "n",
-  "tr": "iddia; gösteriş, kibir",
+  "tr": "iddia; gösteriş",
   "syn": [
    "claim",
    "pretentiousness",
@@ -50442,7 +50442,7 @@
   "id": "w2789",
   "word": "pretentious",
   "pos": "adj",
-  "tr": "iddialı, gösterişçi",
+  "tr": "gösterişçi, iddialı",
   "syn": [
    "showy",
    "affected",
@@ -50478,7 +50478,7 @@
   "id": "w2791",
   "word": "pricey",
   "pos": "adj",
-  "tr": "pahalı, tuzlu",
+  "tr": "pahalı",
   "syn": [
    "expensive",
    "costly",
@@ -50514,7 +50514,7 @@
   "id": "w2793",
   "word": "pristine",
   "pos": "adj",
-  "tr": "bozulmamış, el değmemiş, tertemiz",
+  "tr": "bozulmamış, el değmemiş",
   "syn": [
    "untouched",
    "unspoiled",
@@ -50712,7 +50712,7 @@
   "id": "w2804",
   "word": "progression",
   "pos": "n",
-  "tr": "ilerleme, gelişme, seyir",
+  "tr": "ilerleme, gelişme",
   "syn": [
    "progress",
    "advance",
@@ -50730,7 +50730,7 @@
   "id": "w2805",
   "word": "prohibitively",
   "pos": "adv",
-  "tr": "engelleyecek ölçüde, aşırı derecede",
+  "tr": "(fiyat) aşırı derecede, engelleyecek kadar",
   "syn": [
    "excessively",
    "exorbitantly",
@@ -50820,7 +50820,7 @@
   "id": "w2810",
   "word": "province",
   "pos": "n",
-  "tr": "il, vilayet; alan, uzmanlık alanı",
+  "tr": "il; uzmanlık alanı",
   "syn": [
    "region",
    "state",
@@ -50838,7 +50838,7 @@
   "id": "w2811",
   "word": "provisional",
   "pos": "adj",
-  "tr": "geçici, şartlı",
+  "tr": "geçici",
   "syn": [
    "temporary",
    "interim",
@@ -50911,7 +50911,7 @@
   "id": "w2815",
   "word": "pull up",
   "pos": "phr",
-  "tr": "durmak (araç); yukarı çekmek; sökmek",
+  "tr": "(araç) durmak; yukarı çekmek; sökmek",
   "syn": [
    "stop",
    "raise",
@@ -51002,7 +51002,7 @@
   "id": "w2820",
   "word": "put down",
   "pos": "phr",
-  "tr": "yazmak, kaydetmek; (isyan) bastırmak; bağlamak (to)",
+  "tr": "yazmak, kaydetmek; (isyan) bastırmak",
   "syn": [
    "write down",
    "record",
@@ -51022,7 +51022,7 @@
   "id": "w2821",
   "word": "put out",
   "pos": "phr",
-  "tr": "söndürmek; yayımlamak; (ışık, gaz) salmak",
+  "tr": "söndürmek; yayımlamak; (gaz) salmak",
   "syn": [
    "extinguish",
    "publish",
@@ -51061,7 +51061,7 @@
   "id": "w2823",
   "word": "put through",
   "pos": "phr",
-  "tr": "(telefon) bağlamak; (zorluk, test) yaşatmak, tabi tutmak",
+  "tr": "(telefon) bağlamak; (teste) tabi tutmak",
   "syn": [
    "connect",
    "subject to",
@@ -51080,7 +51080,7 @@
   "id": "w2824",
   "word": "put up",
   "pos": "phr",
-  "tr": "dikmek, kurmak; (fiyat) yükseltmek; konaklatmak",
+  "tr": "kurmak, dikmek; (fiyat) yükseltmek; konaklatmak",
   "syn": [
    "erect",
    "build",
@@ -51099,7 +51099,7 @@
   "id": "w2825",
   "word": "put up with",
   "pos": "phr",
-  "tr": "katlanmak, tahammül etmek",
+  "tr": "katlanmak, dayanmak",
   "syn": [
    "tolerate",
    "endure",
@@ -51118,7 +51118,7 @@
   "id": "w2826",
   "word": "qualification",
   "pos": "n",
-  "tr": "nitelik, yeterlilik, diploma; çekince",
+  "tr": "nitelik, yeterlilik; çekince",
   "syn": [
    "certificate",
    "competence",
@@ -51136,7 +51136,7 @@
   "id": "w2827",
   "word": "qualified",
   "pos": "adj",
-  "tr": "nitelikli, yetkili, ehil",
+  "tr": "nitelikli, yetkili",
   "syn": [
    "trained",
    "certified",
@@ -51154,7 +51154,7 @@
   "id": "w2828",
   "word": "qualify",
   "pos": "v",
-  "tr": "hak kazanmak, nitelik kazanmak; sınırlamak",
+  "tr": "hak kazanmak; sınırlamak",
   "syn": [
    "be eligible",
    "certify",
@@ -51259,7 +51259,7 @@
   "id": "w2834",
   "word": "rank",
   "pos": "v",
-  "tr": "sıralamak, derecelendirmek; yer almak — (n) rütbe, sıra",
+  "tr": "sıralamak; yer almak — (isim) rütbe, sıra",
   "syn": [
    "rate",
    "classify",
@@ -51277,7 +51277,7 @@
   "id": "w2835",
   "word": "rapidity",
   "pos": "n",
-  "tr": "hız, süratlilik",
+  "tr": "hız",
   "syn": [
    "speed",
    "swiftness",
@@ -51330,7 +51330,7 @@
   "id": "w2838",
   "word": "readable",
   "pos": "adj",
-  "tr": "okunaklı; okunabilir, kolay okunan",
+  "tr": "okunaklı, kolay okunan",
   "syn": [
    "legible",
    "clear",
@@ -51403,7 +51403,7 @@
   "id": "w2842",
   "word": "reasoning",
   "pos": "n",
-  "tr": "akıl yürütme, muhakeme",
+  "tr": "akıl yürütme",
   "syn": [
    "logic",
    "thinking",
@@ -51474,7 +51474,7 @@
   "id": "w2846",
   "word": "reckless",
   "pos": "adj",
-  "tr": "pervasız, umursamaz, dikkatsiz",
+  "tr": "pervasız, dikkatsiz",
   "syn": [
    "careless",
    "rash",
@@ -51510,7 +51510,7 @@
   "id": "w2848",
   "word": "reclaim",
   "pos": "v",
-  "tr": "geri almak, geri kazanmak; (arazi) ıslah etmek",
+  "tr": "geri kazanmak; (arazi) kullanılır hale getirmek",
   "syn": [
    "recover",
    "regain",
@@ -51581,7 +51581,7 @@
   "id": "w2852",
   "word": "recreation",
   "pos": "n",
-  "tr": "eğlence, dinlenme, rekreasyon",
+  "tr": "dinlenme, eğlence",
   "syn": [
    "leisure",
    "relaxation",
@@ -51599,7 +51599,7 @@
   "id": "w2853",
   "word": "recruit",
   "pos": "v",
-  "tr": "işe almak, kaydetmek; (çalışmaya) katılımcı toplamak",
+  "tr": "işe almak; (araştırmaya) katılımcı toplamak",
   "syn": [
    "hire",
    "enlist",
@@ -51653,7 +51653,7 @@
   "id": "w2856",
   "word": "refer",
   "pos": "v",
-  "tr": "söz etmek, atıfta bulunmak (to); başvurmak; sevk etmek",
+  "tr": "söz etmek, değinmek; başvurmak; yönlendirmek",
   "syn": [
    "mention",
    "cite",
@@ -51689,7 +51689,7 @@
   "id": "w2858",
   "word": "refrain",
   "pos": "v",
-  "tr": "kaçınmak, sakınmak (from)",
+  "tr": "kaçınmak, sakınmak",
   "syn": [
    "abstain",
    "avoid",
@@ -51724,7 +51724,7 @@
   "id": "w2860",
   "word": "refund",
   "pos": "v",
-  "tr": "(para) iade etmek — (n) geri ödeme",
+  "tr": "(para) iade etmek — (isim) geri ödeme",
   "syn": [
    "repay",
    "reimburse",
@@ -51760,7 +51760,7 @@
   "id": "w2862",
   "word": "refuse",
   "pos": "v",
-  "tr": "reddetmek — (n) çöp, atık",
+  "tr": "reddetmek — (isim) çöp, atık",
   "syn": [
    "decline",
    "reject",
@@ -51796,7 +51796,7 @@
   "id": "w2864",
   "word": "regret",
   "pos": "v",
-  "tr": "pişman olmak, üzülmek — (n) pişmanlık",
+  "tr": "pişman olmak — (isim) pişmanlık",
   "syn": [
    "be sorry",
    "lament",
@@ -51833,7 +51833,7 @@
   "id": "w2866",
   "word": "regrettable",
   "pos": "adj",
-  "tr": "üzücü, esef verici",
+  "tr": "üzücü",
   "syn": [
    "unfortunate",
    "deplorable",
@@ -51922,7 +51922,7 @@
   "id": "w2871",
   "word": "reinstate",
   "pos": "v",
-  "tr": "eski haline getirmek, yeniden yürürlüğe koymak; göreve iade etmek",
+  "tr": "eski haline getirmek; göreve iade etmek",
   "syn": [
    "restore",
    "bring back",
@@ -51941,7 +51941,7 @@
   "id": "w2872",
   "word": "reinstatement",
   "pos": "n",
-  "tr": "eski haline getirme, yeniden yürürlüğe koyma; göreve iade",
+  "tr": "eski haline getirme; göreve iade",
   "syn": [
    "restoration",
    "return",
@@ -52012,7 +52012,7 @@
   "id": "w2876",
   "word": "relent",
   "pos": "v",
-  "tr": "yumuşamak, vazgeçmek; hafiflemek",
+  "tr": "yumuşamak, vazgeçmek",
   "syn": [
    "give in",
    "soften",
@@ -52048,7 +52048,7 @@
   "id": "w2878",
   "word": "reliant",
   "pos": "adj",
-  "tr": "bağımlı (on)",
+  "tr": "bağımlı",
   "syn": [
    "dependent"
   ],
@@ -52064,7 +52064,7 @@
   "id": "w2879",
   "word": "relic",
   "pos": "n",
-  "tr": "kalıntı, emanet, yadigâr",
+  "tr": "kalıntı, yadigâr",
   "syn": [
    "remnant",
    "remains",
@@ -52118,7 +52118,7 @@
   "id": "w2882",
   "word": "remediation",
   "pos": "n",
-  "tr": "iyileştirme, ıslah (kirli alan); telafi",
+  "tr": "(kirli alanı) iyileştirme, temizleme",
   "syn": [
    "clean-up",
    "restoration",
@@ -52172,7 +52172,7 @@
   "id": "w2885",
   "word": "reparation",
   "pos": "n",
-  "tr": "tazminat, zararın karşılanması",
+  "tr": "tazminat, zararı karşılama",
   "syn": [
    "compensation",
    "damages",
@@ -52244,7 +52244,7 @@
   "id": "w2889",
   "word": "repository",
   "pos": "n",
-  "tr": "depo, arşiv, havuz",
+  "tr": "depo, arşiv",
   "syn": [
    "store",
    "storage",
@@ -52317,7 +52317,7 @@
   "id": "w2893",
   "word": "reputed",
   "pos": "adj",
-  "tr": "... olduğu söylenen, ünlü",
+  "tr": "... olduğu söylenen",
   "syn": [
    "alleged",
    "reported",
@@ -52335,7 +52335,7 @@
   "id": "w2894",
   "word": "requisite",
   "pos": "adj",
-  "tr": "gerekli, şart olan — (n) gereklilik",
+  "tr": "gerekli, şart olan",
   "syn": [
    "required",
    "necessary",
@@ -52408,7 +52408,7 @@
   "id": "w2898",
   "word": "reservation",
   "pos": "n",
-  "tr": "çekince, kuşku; rezervasyon, yer ayırtma",
+  "tr": "çekince, kuşku; rezervasyon",
   "syn": [
    "doubt",
    "booking"
@@ -52425,7 +52425,7 @@
   "id": "w2899",
   "word": "resignation",
   "pos": "n",
-  "tr": "istifa; boyun eğme, teslimiyet",
+  "tr": "istifa; boyun eğme",
   "syn": [
    "departure",
    "acceptance",
@@ -52605,7 +52605,7 @@
   "id": "w2909",
   "word": "reverberate",
   "pos": "v",
-  "tr": "yankılanmak; etkileri yayılmak",
+  "tr": "yankılanmak; etkisi yayılmak",
   "syn": [
    "echo",
    "resound",
@@ -52623,7 +52623,7 @@
   "id": "w2910",
   "word": "revere",
   "pos": "v",
-  "tr": "saygı göstermek, hürmet etmek",
+  "tr": "saygı duymak",
   "syn": [
    "respect",
    "honour",
@@ -52641,7 +52641,7 @@
   "id": "w2911",
   "word": "revolt",
   "pos": "v",
-  "tr": "ayaklanmak, isyan etmek — (n) isyan",
+  "tr": "ayaklanmak — (isim) isyan",
   "syn": [
    "rebel",
    "rise up",
@@ -52659,7 +52659,7 @@
   "id": "w2912",
   "word": "reward",
   "pos": "n",
-  "tr": "ödül, karşılık — (v) ödüllendirmek",
+  "tr": "ödül — (fiil) ödüllendirmek",
   "syn": [
    "prize",
    "benefit",
@@ -52677,7 +52677,7 @@
   "id": "w2913",
   "word": "rewarding",
   "pos": "adj",
-  "tr": "tatmin edici, faydalı, kazançlı",
+  "tr": "tatmin edici, faydalı",
   "syn": [
    "satisfying",
    "worthwhile",
@@ -52713,7 +52713,7 @@
   "id": "w2915",
   "word": "ridicule",
   "pos": "v",
-  "tr": "alay etmek, gülünç duruma düşürmek — (n) alay",
+  "tr": "alay etmek — (isim) alay",
   "syn": [
    "mock",
    "deride",
@@ -52820,7 +52820,7 @@
   "id": "w2921",
   "word": "rot",
   "pos": "v",
-  "tr": "çürümek — (n) çürüme",
+  "tr": "çürümek — (isim) çürüme",
   "syn": [
    "decay",
    "decompose",
@@ -52856,7 +52856,7 @@
   "id": "w2923",
   "word": "run down",
   "pos": "phr",
-  "tr": "tükenmek, azalmak; (pil) bitmek; zayıflamak",
+  "tr": "tükenmek, azalmak; (pil) bitmek",
   "syn": [
    "deplete",
    "drain",
@@ -52894,7 +52894,7 @@
   "id": "w2925",
   "word": "run through",
   "pos": "phr",
-  "tr": "gözden geçirmek, prova etmek; içinden geçmek",
+  "tr": "gözden geçirmek; içinden geçmek",
   "syn": [
    "review",
    "rehearse",
@@ -52913,7 +52913,7 @@
   "id": "w2926",
   "word": "run up",
   "pos": "phr",
-  "tr": "(borç, maliyet) biriktirmek; hızla yükselmek",
+  "tr": "(borç, maliyet) biriktirmek",
   "syn": [
    "accumulate",
    "incur",
@@ -52950,7 +52950,7 @@
   "id": "w2928",
   "word": "safeguard",
   "pos": "v",
-  "tr": "korumak, güvence altına almak — (n) güvence, koruma",
+  "tr": "korumak, güvence altına almak — (isim) güvence",
   "syn": [
    "protect",
    "secure",
@@ -52968,7 +52968,7 @@
   "id": "w2929",
   "word": "sample",
   "pos": "n",
-  "tr": "numune, örnek; örneklem — (v) numune almak",
+  "tr": "numune, örnek; örneklem — (fiil) numune almak",
   "syn": [
    "specimen",
    "sampling",
@@ -53077,7 +53077,7 @@
   "id": "w2935",
   "word": "satisfy",
   "pos": "v",
-  "tr": "tatmin etmek; karşılamak, sağlamak (koşul)",
+  "tr": "tatmin etmek; (koşulu) karşılamak",
   "syn": [
    "meet",
    "fulfil",
@@ -53113,7 +53113,7 @@
   "id": "w2937",
   "word": "scholar",
   "pos": "n",
-  "tr": "bilgin, akademisyen, araştırmacı",
+  "tr": "akademisyen, araştırmacı",
   "syn": [
    "academic",
    "researcher",
@@ -53149,7 +53149,7 @@
   "id": "w2939",
   "word": "scholarship",
   "pos": "n",
-  "tr": "burs; akademik bilgi, ilim",
+  "tr": "burs; akademik bilgi",
   "syn": [
    "grant",
    "bursary",
@@ -53202,7 +53202,7 @@
   "id": "w2942",
   "word": "scouring",
   "pos": "n",
-  "tr": "aşındırma, oyma (su akıntısıyla); ovalama",
+  "tr": "(su akıntısıyla) aşındırma, oyma",
   "syn": [
    "erosion",
    "scour",
@@ -53327,7 +53327,7 @@
   "id": "w2949",
   "word": "seizure",
   "pos": "n",
-  "tr": "nöbet (sara); el koyma, müsadere",
+  "tr": "(sara) nöbet; el koyma",
   "syn": [
    "fit",
    "convulsion",
@@ -53507,7 +53507,7 @@
   "id": "w2959",
   "word": "sensation",
   "pos": "n",
-  "tr": "his, duyu; heyecan, sansasyon",
+  "tr": "his, duyu; heyecan",
   "syn": [
    "feeling",
    "sense",
@@ -53543,7 +53543,7 @@
   "id": "w2961",
   "word": "sense",
   "pos": "n",
-  "tr": "duyu; anlam; his, duygu — (v) algılamak, sezmek",
+  "tr": "duyu; anlam; his — (fiil) algılamak, sezmek",
   "syn": [
    "feeling",
    "meaning",
@@ -53633,7 +53633,7 @@
   "id": "w2966",
   "word": "settle down",
   "pos": "phr",
-  "tr": "yerleşmek, oturmak; sakinleşmek; durulmak",
+  "tr": "yerleşmek; sakinleşmek",
   "syn": [
    "calm down",
    "stabilize",
@@ -53780,7 +53780,7 @@
   "id": "w2974",
   "word": "shuttle",
   "pos": "n",
-  "tr": "mekik; servis aracı — (v) gidip gelmek",
+  "tr": "mekik; servis aracı — (fiil) gidip gelmek",
   "syn": [
    "space shuttle",
    "shuttle bus",
@@ -53834,7 +53834,7 @@
   "id": "w2977",
   "word": "silt",
   "pos": "n",
-  "tr": "silt, alüvyon, balçık",
+  "tr": "silt, ince çamur, alüvyon",
   "syn": [
    "sediment",
    "mud",
@@ -53994,7 +53994,7 @@
   "id": "w2986",
   "word": "sizeable",
   "pos": "adj",
-  "tr": "oldukça büyük, hatırı sayılır",
+  "tr": "oldukça büyük",
   "syn": [
    "considerable",
    "substantial",
@@ -54013,7 +54013,7 @@
   "id": "w2987",
   "word": "skilled",
   "pos": "adj",
-  "tr": "vasıflı, becerikli, usta",
+  "tr": "usta, becerikli, vasıflı",
   "syn": [
    "trained",
    "expert",
@@ -54031,7 +54031,7 @@
   "id": "w2988",
   "word": "skillful",
   "pos": "adj",
-  "tr": "becerikli, hünerli",
+  "tr": "becerikli, usta",
   "syn": [
    "skilled",
    "adept",
@@ -54102,7 +54102,7 @@
   "id": "w2992",
   "word": "slave",
   "pos": "n",
-  "tr": "köle — (v) köle gibi çalışmak",
+  "tr": "köle",
   "syn": [
    "servant",
    "captive",
@@ -54138,7 +54138,7 @@
   "id": "w2994",
   "word": "slide",
   "pos": "v",
-  "tr": "kaymak, kaydırmak — (n) kayma; (mikroskop) lam",
+  "tr": "kaymak, kaydırmak — (isim) kayma; (mikroskop) lam",
   "syn": [
    "glide",
    "slip",
@@ -54156,7 +54156,7 @@
   "id": "w2995",
   "word": "slip",
   "pos": "v",
-  "tr": "kaymak; sızmak, gizlice girmek; (düzey) düşmek",
+  "tr": "kaymak; gizlice girmek; (düzey) düşmek",
   "syn": [
    "slide",
    "fall",
@@ -54192,7 +54192,7 @@
   "id": "w2997",
   "word": "slot",
   "pos": "n",
-  "tr": "yuva, yarık; zaman aralığı — (v) yerleştirmek",
+  "tr": "yuva, yarık; zaman aralığı — (fiil) yerleştirmek",
   "syn": [
    "slit",
    "opening",
@@ -54246,7 +54246,7 @@
   "id": "w3000",
   "word": "smelt",
   "pos": "v",
-  "tr": "(maden) eritip ayırmak, ergitmek",
+  "tr": "(cevheri) eritmek, ergitmek",
   "syn": [
    "melt",
    "refine",
@@ -54264,7 +54264,7 @@
   "id": "w3001",
   "word": "smog",
   "pos": "n",
-  "tr": "dumanlı sis (smog), kirli hava tabakası",
+  "tr": "dumanlı sis (smog)",
   "syn": [
    "haze",
    "smoke",
@@ -54300,7 +54300,7 @@
   "id": "w3003",
   "word": "sociability",
   "pos": "n",
-  "tr": "sosyallik, girişkenlik",
+  "tr": "sosyallik",
   "syn": [
    "friendliness",
    "sociableness",
@@ -54352,7 +54352,7 @@
   "id": "w3006",
   "word": "soil",
   "pos": "n",
-  "tr": "toprak — (v) kirletmek",
+  "tr": "toprak — (fiil) kirletmek",
   "syn": [
    "earth",
    "ground",
@@ -54440,7 +54440,7 @@
   "id": "w3011",
   "word": "solvent",
   "pos": "n",
-  "tr": "çözücü — (adj) borcunu ödeyebilir",
+  "tr": "çözücü",
   "syn": [
    "dissolving agent",
    "thinner"
@@ -54529,7 +54529,7 @@
   "id": "w3016",
   "word": "spark",
   "pos": "n",
-  "tr": "kıvılcım — (v) tetiklemek, başlatmak",
+  "tr": "kıvılcım — (fiil) tetiklemek, başlatmak",
   "syn": [
    "flash",
    "trigger",
@@ -54565,7 +54565,7 @@
   "id": "w3018",
   "word": "spectacular",
   "pos": "adj",
-  "tr": "muhteşem, göz alıcı, çarpıcı",
+  "tr": "muhteşem, çarpıcı",
   "syn": [
    "impressive",
    "striking",
@@ -54601,7 +54601,7 @@
   "id": "w3020",
   "word": "spin",
   "pos": "v",
-  "tr": "dönmek, döndürmek; (iplik) eğirmek — (n) dönüş, spin",
+  "tr": "dönmek, döndürmek; (iplik) eğirmek",
   "syn": [
    "rotate",
    "whirl",
@@ -54636,7 +54636,7 @@
   "id": "w3022",
   "word": "spirit",
   "pos": "n",
-  "tr": "ruh; moral; (kimya) alkol, ispirto",
+  "tr": "ruh; moral; (kimya) alkol",
   "syn": [
    "soul",
    "morale",
@@ -54742,7 +54742,7 @@
   "id": "w3028",
   "word": "spontaneity",
   "pos": "n",
-  "tr": "kendiliğindenlik, doğallık",
+  "tr": "kendiliğindenlik",
   "syn": [
    "naturalness",
    "impulsiveness"
@@ -54796,7 +54796,7 @@
   "id": "w3031",
   "word": "spur",
   "pos": "v",
-  "tr": "teşvik etmek, hızlandırmak — (n) teşvik",
+  "tr": "teşvik etmek, hızlandırmak",
   "syn": [
    "stimulate",
    "encourage",
@@ -54814,7 +54814,7 @@
   "id": "w3032",
   "word": "spy",
   "pos": "n",
-  "tr": "casus — (v) casusluk yapmak; görmek",
+  "tr": "casus — (fiil) casusluk yapmak",
   "syn": [
    "agent",
    "secret agent",
@@ -54850,7 +54850,7 @@
   "id": "w3034",
   "word": "stage",
   "pos": "v",
-  "tr": "düzenlemek, sahnelemek — (n) aşama, evre; sahne",
+  "tr": "düzenlemek, sahnelemek — (isim) aşama, evre",
   "syn": [
    "organize",
    "arrange",
@@ -54868,7 +54868,7 @@
   "id": "w3035",
   "word": "stalk",
   "pos": "n",
-  "tr": "sap, gövde — (v) gizlice izlemek",
+  "tr": "sap, gövde — (fiil) gizlice izlemek",
   "syn": [
    "stem",
    "shoot",
@@ -54886,7 +54886,7 @@
   "id": "w3036",
   "word": "stamp",
   "pos": "v",
-  "tr": "damgalamak, mühürlemek; ayak vurmak — (n) pul, damga",
+  "tr": "damgalamak — (isim) pul, damga",
   "syn": [
    "mark",
    "imprint",
@@ -54904,7 +54904,7 @@
   "id": "w3037",
   "word": "starter",
   "pos": "n",
-  "tr": "başlangıç; marş motoru; başlatıcı (kültür)",
+  "tr": "başlangıç; marş motoru",
   "syn": [
    "beginning",
    "starter motor",
@@ -54940,7 +54940,7 @@
   "id": "w3039",
   "word": "starve",
   "pos": "v",
-  "tr": "açlıktan ölmek, aç kalmak; aç bırakmak, yoksun bırakmak",
+  "tr": "açlıktan ölmek, aç kalmak; yoksun bırakmak",
   "syn": [
    "go hungry",
    "deprive",
@@ -54959,7 +54959,7 @@
   "id": "w3040",
   "word": "starved",
   "pos": "adj",
-  "tr": "aç, yoksun (of)",
+  "tr": "aç, yoksun",
   "syn": [
    "hungry",
    "deprived",
@@ -55048,7 +55048,7 @@
   "id": "w3045",
   "word": "stem",
   "pos": "n",
-  "tr": "gövde, sap; kök — (v) kaynaklanmak (from); durdurmak",
+  "tr": "gövde, sap — (fiil) (stem from) -den kaynaklanmak",
   "syn": [
    "stalk",
    "trunk",
@@ -55066,7 +55066,7 @@
   "id": "w3046",
   "word": "step down",
   "pos": "phr",
-  "tr": "istifa etmek, görevden ayrılmak; (gerilim) düşürmek",
+  "tr": "istifa etmek; (gerilim) düşürmek",
   "syn": [
    "resign",
    "quit",
@@ -55085,7 +55085,7 @@
   "id": "w3047",
   "word": "stimulator",
   "pos": "n",
-  "tr": "uyarıcı (cihaz/madde)",
+  "tr": "uyarıcı (cihaz, madde)",
   "syn": [
    "stimulant",
    "activator",
@@ -55157,7 +55157,7 @@
   "id": "w3051",
   "word": "stock",
   "pos": "n",
-  "tr": "stok, rezerv; (balık) popülasyon; hisse — (v) depolamak",
+  "tr": "stok, rezerv; (balık) popülasyon — (fiil) depolamak",
   "syn": [
    "supply",
    "reserve",
@@ -55193,7 +55193,7 @@
   "id": "w3053",
   "word": "strait",
   "pos": "n",
-  "tr": "boğaz (deniz)",
+  "tr": "(deniz) boğaz",
   "syn": [
    "channel",
    "narrows",
@@ -55247,7 +55247,7 @@
   "id": "w3056",
   "word": "strike",
   "pos": "v",
-  "tr": "vurmak, çarpmak; (afet) bastırmak; aklına gelmek — (n) grev; saldırı",
+  "tr": "vurmak, çarpmak; (afet) baş göstermek; aklına gelmek — (isim) grev",
   "syn": [
    "hit",
    "affect",
@@ -55284,7 +55284,7 @@
   "id": "w3058",
   "word": "stringer",
   "pos": "n",
-  "tr": "(yapı) uzunlamasına kiriş, kiriş takviyesi; (jeoloji) ince cevher damarı",
+  "tr": "(yapı) uzunlamasına kiriş, takviye kirişi",
   "syn": [
    "longitudinal beam",
    "veinlet"
@@ -55319,7 +55319,7 @@
   "id": "w3060",
   "word": "stud",
   "pos": "n",
-  "tr": "saplama, çivi, perçin; (hayvan) damızlık",
+  "tr": "saplama, çivi, perçin",
   "syn": [
    "bolt",
    "rivet",
@@ -55337,7 +55337,7 @@
   "id": "w3061",
   "word": "stuff",
   "pos": "n",
-  "tr": "şey, madde, malzeme — (v) doldurmak",
+  "tr": "şey, madde, malzeme — (fiil) doldurmak",
   "syn": [
    "material",
    "substance",
@@ -55355,7 +55355,7 @@
   "id": "w3062",
   "word": "subconscious",
   "pos": "adj",
-  "tr": "bilinçaltı — (n) bilinçaltı",
+  "tr": "bilinçaltı",
   "syn": [
    "unconscious",
    "subliminal",
@@ -55463,7 +55463,7 @@
   "id": "w3068",
   "word": "suit",
   "pos": "v",
-  "tr": "uygun olmak, yakışmak; işine gelmek — (n) takım elbise; dava; giysi",
+  "tr": "uygun olmak, yakışmak — (isim) takım elbise; dava",
   "syn": [
    "fit",
    "match",
@@ -55570,7 +55570,7 @@
   "id": "w3074",
   "word": "superstitious",
   "pos": "adj",
-  "tr": "batıl inançlı, hurafeye inanan",
+  "tr": "batıl inançlı",
   "syn": [
    "irrational",
    "credulous"
@@ -55692,7 +55692,7 @@
   "id": "w3081",
   "word": "surveyor",
   "pos": "n",
-  "tr": "haritacı, kadastro mühendisi; eksper, denetçi",
+  "tr": "haritacı; eksper, denetçi",
   "syn": [
    "land surveyor",
    "inspector",
@@ -55727,7 +55727,7 @@
   "id": "w3083",
   "word": "swamp",
   "pos": "n",
-  "tr": "bataklık — (v) su basmak; boğmak (işe vb.)",
+  "tr": "bataklık — (fiil) su basmak",
   "syn": [
    "marsh",
    "bog",
@@ -55745,7 +55745,7 @@
   "id": "w3084",
   "word": "sweep",
   "pos": "v",
-  "tr": "süpürmek; hızla yayılmak, silip süpürmek",
+  "tr": "süpürmek; hızla yayılmak",
   "syn": [
    "brush",
    "spread",
@@ -56008,7 +56008,7 @@
   "id": "w3098",
   "word": "tally",
   "pos": "n",
-  "tr": "hesap, sayım, çetele — (v) uyuşmak, tutmak (with)",
+  "tr": "sayım, çetele — (fiil) uyuşmak, tutmak",
   "syn": [
    "count",
    "total",
@@ -56170,7 +56170,7 @@
   "id": "w3107",
   "word": "thaw",
   "pos": "v",
-  "tr": "çözülmek, erimek — (n) çözülme",
+  "tr": "çözülmek, erimek — (isim) çözülme",
   "syn": [
    "melt",
    "defrost",
@@ -56206,7 +56206,7 @@
   "id": "w3109",
   "word": "the number of",
   "pos": "phr",
-  "tr": "...sayısı (+ çoğul isim, tekil fiil)",
+  "tr": "... sayısı (+ çoğul isim, tekil fiil)",
   "syn": [
    "the count of",
    "the total of"
@@ -56241,7 +56241,7 @@
   "id": "w3111",
   "word": "think over",
   "pos": "phr",
-  "tr": "üzerinde düşünmek, enine boyuna düşünmek",
+  "tr": "üzerinde düşünmek",
   "syn": [
    "consider",
    "reflect on",
@@ -56296,7 +56296,7 @@
   "id": "w3114",
   "word": "thoughtful",
   "pos": "adj",
-  "tr": "düşünceli, düşünce dolu; özenli",
+  "tr": "düşünceli; özenli",
   "syn": [
    "considerate",
    "reflective",
@@ -56386,7 +56386,7 @@
   "id": "w3119",
   "word": "threefold",
   "pos": "adj",
-  "tr": "üç kat, üç misli — (adv) üç kat",
+  "tr": "üç kat",
   "syn": [
    "triple",
    "three times",
@@ -56421,7 +56421,7 @@
   "id": "w3121",
   "word": "tide",
   "pos": "n",
-  "tr": "gelgit, med-cezir; akım, eğilim",
+  "tr": "gelgit; akım, eğilim",
   "syn": [
    "tidal flow",
    "current",
@@ -56439,7 +56439,7 @@
   "id": "w3122",
   "word": "tight",
   "pos": "adj",
-  "tr": "sıkı, gergin; dar; sınırlı (bütçe, zaman)",
+  "tr": "sıkı, gergin; dar; (bütçe, zaman) sınırlı",
   "syn": [
    "firm",
    "taut",
@@ -56493,7 +56493,7 @@
   "id": "w3125",
   "word": "tightness",
   "pos": "n",
-  "tr": "sıkılık, gerginlik; (göğüs) sıkışma",
+  "tr": "sıkılık, gerginlik",
   "syn": [
    "tension",
    "tautness",
@@ -56511,7 +56511,7 @@
   "id": "w3126",
   "word": "time warp",
   "pos": "n",
-  "tr": "zaman bükülmesi; zamanın durduğu yer",
+  "tr": "zaman bükülmesi",
   "syn": [
    "time distortion",
    "anachronism"
@@ -56617,7 +56617,7 @@
   "id": "w3132",
   "word": "touchstone",
   "pos": "n",
-  "tr": "mihenk taşı, ölçüt",
+  "tr": "ölçüt, mihenk taşı",
   "syn": [
    "standard",
    "benchmark",
@@ -56635,7 +56635,7 @@
   "id": "w3133",
   "word": "tract",
   "pos": "n",
-  "tr": "alan, saha; (anatomi) kanal, yol",
+  "tr": "alan; (anatomi) kanal, yol",
   "syn": [
    "area",
    "expanse",
@@ -56653,7 +56653,7 @@
   "id": "w3134",
   "word": "traction",
   "pos": "n",
-  "tr": "çekiş, yol tutuşu; ilgi kazanma",
+  "tr": "çekiş, yol tutuş; ilgi kazanma",
   "syn": [
    "grip",
    "friction",
@@ -56671,7 +56671,7 @@
   "id": "w3135",
   "word": "trade",
   "pos": "n",
-  "tr": "ticaret; meslek — (v) ticaret yapmak",
+  "tr": "ticaret; meslek — (fiil) ticaret yapmak",
   "syn": [
    "commerce",
    "business",
@@ -56888,7 +56888,7 @@
   "id": "w3147",
   "word": "troop",
   "pos": "n",
-  "tr": "birlik, asker; sürü (troops: askerler)",
+  "tr": "birlik; sürü (troops: askerler)",
   "syn": [
    "soldiers",
    "unit",
@@ -57034,7 +57034,7 @@
   "id": "w3155",
   "word": "turn over",
   "pos": "phr",
-  "tr": "devretmek, teslim etmek; ters çevirmek; (ciro) yapmak",
+  "tr": "devretmek, teslim etmek; ters çevirmek",
   "syn": [
    "hand over",
    "flip",
@@ -57053,7 +57053,7 @@
   "id": "w3156",
   "word": "turn up",
   "pos": "phr",
-  "tr": "ortaya çıkmak, gelmek; (ses, ısı) açmak, artırmak",
+  "tr": "ortaya çıkmak, gelmek; (ses, ısı) artırmak",
   "syn": [
    "appear",
    "arrive",
@@ -57307,7 +57307,7 @@
   "id": "w3170",
   "word": "unearthly",
   "pos": "adj",
-  "tr": "doğaüstü, tuhaf; (saat) çok erken",
+  "tr": "doğaüstü, tuhaf",
   "syn": [
    "supernatural",
    "eerie",
@@ -57630,7 +57630,7 @@
   "id": "w3188",
   "word": "upgrade",
   "pos": "v",
-  "tr": "yükseltmek, iyileştirmek, güncellemek — (n) yükseltme",
+  "tr": "yükseltmek, iyileştirmek — (isim) yükseltme",
   "syn": [
    "improve",
    "update",
@@ -57648,7 +57648,7 @@
   "id": "w3189",
   "word": "uphold",
   "pos": "v",
-  "tr": "desteklemek, savunmak; onaylamak",
+  "tr": "desteklemek, savunmak",
   "syn": [
    "support",
    "maintain",
@@ -57667,7 +57667,7 @@
   "id": "w3190",
   "word": "upon",
   "pos": "prep",
-  "tr": "üzerine; -ince, -e üzerine (resmi)",
+  "tr": "üzerine; -ince (resmi)",
   "syn": [
    "on",
    "onto",
@@ -57703,7 +57703,7 @@
   "id": "w3192",
   "word": "upwards",
   "pos": "adv",
-  "tr": "yukarı doğru; (of) -den fazla",
+  "tr": "yukarı doğru; (upwards of) -den fazla",
   "syn": [
    "upward",
    "higher",
@@ -57847,7 +57847,7 @@
   "id": "w3200",
   "word": "vastness",
   "pos": "n",
-  "tr": "enginlik, uçsuz bucaksızlık",
+  "tr": "enginlik, genişlik",
   "syn": [
    "immensity",
    "hugeness",
@@ -57883,7 +57883,7 @@
   "id": "w3202",
   "word": "vegetative",
   "pos": "adj",
-  "tr": "bitkisel; (tıp) bitkisel hayat; eşeysiz (üreme)",
+  "tr": "bitkisel; (üreme) eşeysiz",
   "syn": [
    "plant",
    "vegetal",
@@ -57919,7 +57919,7 @@
   "id": "w3204",
   "word": "venture",
   "pos": "v",
-  "tr": "cesaret edip gitmek, göze almak — (n) girişim, risk",
+  "tr": "göze almak, cesaret edip gitmek — (isim) girişim, risk",
   "syn": [
    "dare",
    "risk",
@@ -57975,7 +57975,7 @@
   "id": "w3207",
   "word": "verse",
   "pos": "n",
-  "tr": "şiir, dize; (kutsal kitap) ayet",
+  "tr": "şiir, dize",
   "syn": [
    "poetry",
    "poem",
@@ -57993,7 +57993,7 @@
   "id": "w3208",
   "word": "versus",
   "pos": "prep",
-  "tr": "karşı, -e karşı (vs.)",
+  "tr": "-e karşı (vs.)",
   "syn": [
    "against",
    "compared with",
@@ -58011,7 +58011,7 @@
   "id": "w3209",
   "word": "vertebrate",
   "pos": "n",
-  "tr": "omurgalı — (adj) omurgalı",
+  "tr": "omurgalı",
   "syn": [
    "backboned animal"
   ],
@@ -58117,7 +58117,7 @@
   "id": "w3215",
   "word": "viewer",
   "pos": "n",
-  "tr": "izleyici; görüntüleyici (program/cihaz)",
+  "tr": "izleyici; görüntüleyici (program)",
   "syn": [
    "spectator",
    "observer",
@@ -58244,7 +58244,7 @@
   "id": "w3222",
   "word": "wage",
   "pos": "n",
-  "tr": "ücret, maaş — (v) (savaş, kampanya) yürütmek",
+  "tr": "ücret, maaş — (fiil) (savaş) yürütmek",
   "syn": [
    "pay",
    "salary",
@@ -58262,7 +58262,7 @@
   "id": "w3223",
   "word": "warp",
   "pos": "v",
-  "tr": "eğrilmek, çarpılmak, bükülmek — (n) çarpılma",
+  "tr": "eğrilmek, çarpılmak — (isim) çarpılma",
   "syn": [
    "bend",
    "twist",
@@ -58351,7 +58351,7 @@
   "id": "w3228",
   "word": "wayward",
   "pos": "adj",
-  "tr": "başına buyruk, inatçı; düzensiz, istikrarsız",
+  "tr": "başına buyruk; düzensiz",
   "syn": [
    "unruly",
    "erratic",
@@ -58369,7 +58369,7 @@
   "id": "w3229",
   "word": "wealth",
   "pos": "n",
-  "tr": "zenginlik, servet; bolluk (a wealth of)",
+  "tr": "zenginlik, servet; (a wealth of) bolluk",
   "syn": [
    "riches",
    "affluence",
@@ -58422,7 +58422,7 @@
   "id": "w3232",
   "word": "weed",
   "pos": "n",
-  "tr": "yabani ot — (v) ayıklamak (weed out)",
+  "tr": "yabani ot — (fiil) (weed out) ayıklamak",
   "syn": [
    "wild plant",
    "unwanted plant",
@@ -58440,7 +58440,7 @@
   "id": "w3233",
   "word": "welfare",
   "pos": "n",
-  "tr": "refah, esenlik; sosyal yardım",
+  "tr": "refah, iyilik; sosyal yardım",
   "syn": [
    "well-being",
    "health",
@@ -58545,7 +58545,7 @@
   "id": "w3239",
   "word": "whatsoever",
   "pos": "adv",
-  "tr": "hiç, hiçbir şekilde (olumsuzlukla)",
+  "tr": "(olumsuzda) hiç, hiçbir şekilde",
   "syn": [
    "at all",
    "of any kind",
@@ -58563,7 +58563,7 @@
   "id": "w3240",
   "word": "which is why",
   "pos": "conj",
-  "tr": "bu yüzden, ki bu nedenle",
+  "tr": "bu yüzden",
   "syn": [
    "so",
    "therefore",
@@ -58581,7 +58581,7 @@
   "id": "w3241",
   "word": "whirlwind",
   "pos": "n",
-  "tr": "kasırga, hortum; (mecaz) koşuşturma",
+  "tr": "kasırga, hortum",
   "syn": [
    "tornado",
    "cyclone",
@@ -58670,7 +58670,7 @@
   "id": "w3246",
   "word": "windward",
   "pos": "adj",
-  "tr": "rüzgâr alan (taraf), rüzgâra bakan",
+  "tr": "rüzgâr alan (taraf)",
   "syn": [
    "exposed",
    "weather side"
@@ -58705,7 +58705,7 @@
   "id": "w3248",
   "word": "with reference to",
   "pos": "phr",
-  "tr": "-e atfen, ile ilgili olarak, -e göre",
+  "tr": "ile ilgili olarak, -e göre",
   "syn": [
    "regarding",
    "concerning",
@@ -58760,7 +58760,7 @@
   "id": "w3251",
   "word": "withdrawal",
   "pos": "n",
-  "tr": "geri çekilme, geri çekme; yoksunluk (bağımlılık)",
+  "tr": "geri çekilme; (bağımlılık) yoksunluk",
   "syn": [
    "removal",
    "retreat",
@@ -58778,7 +58778,7 @@
   "id": "w3252",
   "word": "withhold",
   "pos": "v",
-  "tr": "vermemek, saklamak, alıkoymak",
+  "tr": "vermemek, saklamak",
   "syn": [
    "hold back",
    "keep back",
@@ -58796,7 +58796,7 @@
   "id": "w3253",
   "word": "witness",
   "pos": "v",
-  "tr": "tanık olmak, görmek — (n) tanık",
+  "tr": "tanık olmak, görmek — (isim) tanık",
   "syn": [
    "see",
    "observe",
@@ -58814,7 +58814,7 @@
   "id": "w3254",
   "word": "wonder",
   "pos": "v",
-  "tr": "merak etmek; hayret etmek — (n) harika, hayret",
+  "tr": "merak etmek; hayret etmek — (isim) harika, hayret",
   "syn": [
    "ask oneself",
    "marvel",
@@ -58851,7 +58851,7 @@
   "id": "w3256",
   "word": "workable",
   "pos": "adj",
-  "tr": "uygulanabilir, işe yarar; işlenebilir",
+  "tr": "uygulanabilir, işe yarar",
   "syn": [
    "feasible",
    "practical",
@@ -58922,7 +58922,7 @@
   "id": "w3260",
   "word": "worldliness",
   "pos": "n",
-  "tr": "dünyevilik, görmüş geçirmişlik",
+  "tr": "görmüş geçirmişlik",
   "syn": [
    "sophistication",
    "experience",
@@ -59013,7 +59013,7 @@
   "id": "w3265",
   "word": "worship",
   "pos": "v",
-  "tr": "tapmak, ibadet etmek — (n) ibadet",
+  "tr": "tapmak, ibadet etmek — (isim) ibadet",
   "syn": [
    "pray to",
    "revere",
@@ -59067,7 +59067,7 @@
   "id": "w3268",
   "word": "worthwhile",
   "pos": "adj",
-  "tr": "değer, zahmete değer",
+  "tr": "zahmete değer, faydalı",
   "syn": [
    "valuable",
    "useful",
@@ -59085,7 +59085,7 @@
   "id": "w3269",
   "word": "worthy",
   "pos": "adj",
-  "tr": "layık, değer",
+  "tr": "layık, saygıdeğer",
   "syn": [
    "deserving",
    "meritorious",
@@ -59103,7 +59103,7 @@
   "id": "w3270",
   "word": "wreck",
   "pos": "n",
-  "tr": "enkaz, batık — (v) mahvetmek, harap etmek",
+  "tr": "enkaz, batık — (fiil) mahvetmek",
   "syn": [
    "wreckage",
    "ruin",

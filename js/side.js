@@ -47,7 +47,7 @@ export async function openLesson(idOrTopic) {
   store.patch('progress', 'ders:' + l.id, { opened: Date.now() });
   show(l.title, [
     h('div.small.muted', [topicName(lessonTopic(l)), l.minutes ? l.minutes + ' dk' : ''].filter(Boolean).join(' · ')),
-    l.formula ? h('div.formula', h('b', '30 sn: '), l.formula) : null,
+    l.formula ? h('div.formula', h('b', '30 sn özet: '), l.formula) : null,
     l.summary ? h('div.note', l.summary) : null,
     ...lessonBlocks(l),
     h('button.btn.wide', { onclick: closeSide }, 'Kapat ve soruya dön')

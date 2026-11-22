@@ -2,7 +2,9 @@
 import * as store from '../store.js';
 import { h, uid, fmtDate, dayKey, optText } from '../util.js';
 import { grammar, drills, passages } from '../data.js';
-import { KISA, KISA_SIZES, poolsOf, buildKisa, lastSeenOf, recentUnits } from '../kisa.js';
+import { KISA, KISA_SIZES, poolsOf, buildKisa, lastSeenOf, recentUnits, privPool, privMc, PRIV_MC } from '../kisa.js';
+import { getPack } from '../pack.js';
+import { rItem } from '../qbank.js';
 import { SEC_ORDER } from '../strategy.js';
 import { gItem } from '../qbank.js';
 import { runExam, examResult, examWrong } from './exams.js';
@@ -29,8 +31,10 @@ async function content() {
 // Yeni kısa deneme tanımı (yalnız birim kimlikleri; senkrona girer, metin yok)
 export async function createKisa(size = 'mini') {
   const pools = poolsOf(await content());
+  const mixPriv = !!store.settings().kisaGizli;
+  if (mixPriv) pools.pr = privPool((await getPack().catch(() => null))?.readings);
   const lastSeen = lastSeenOf(store.all('grammarLog'), store.all('progress').filter(x => x.kind === 'read'));
-  const b = buildKisa(pools, size, { lastSeen, recent: recentUnits(kisaDefs()) });
+  const b = buildKisa(pools, size, { lastSeen, recent: recentUnits(kisaDefs()), mixPriv });
   const id = uid('kisa-');
   store.put('progress', { id: DEF + id, kind: 'kisadef', examId: id, size, units: b.units.map(u => ({ sec: u.sec, id: u.id })), createdAt: Date.now(), day: dayKey() });
   return id;
@@ -42,6 +46,7 @@ export async function kisaExam(id) {
   if (!def || !KISA[def.size]) return null;
   const c = await content();
   const G = new Map(c.grammar.map(x => [x.id, x])), D = new Map(c.drills.map(x => [x.id, x])), P = new Map(c.passages.map(x => [x.id, x]));
+  const R = (def.units || []).some(u => String(u.id).startsWith('r:')) ? new Map(((await getPack().catch(() => null))?.readings || []).map(r => ['r:' + r.id, r])) : new Map();
   const units = [...(def.units || [])].sort((a, b) => SEC_ORDER.indexOf(a.sec) - SEC_ORDER.indexOf(b.sec));
   const questions = [], groups = [];
   let n = 0;
@@ -58,6 +63,14 @@ export async function kisaExam(id) {
       } else {
         const x = d.items[0];
         questions.push({ n: ++n, type: d.type, q: d.stem, options: (x.options || []).map(optText), answer: x.answer, explain: x.explain || '', topic: d.topic || '', key: `${d.id}#0`, info });
+      }
+    } else if (R.has(u.id)) {
+      // Gizli okuma (kaynağım): ilk 3 çoktan seçmeli soru; anahtar r:<id>:<n> (metin senkrona girmez)
+      const r = R.get(u.id);
+      groups.push({ id: u.id, text: r.text });
+      for (const { k } of privMc(r).slice(0, PRIV_MC)) {
+        const it = rItem(r, k);
+        questions.push({ n: ++n, type: 'paragraf', group: u.id, q: it.q, options: it.options, answer: it.answer, explain: it.explain || '', topic: r.topic || '', key: it.key, info: it.info, priv: true });
       }
     } else if (P.has(u.id)) {
       const p = P.get(u.id);
@@ -79,6 +92,7 @@ export default async function render(root, [mode, id, arg]) {
       const c = KISA[size];
       root.append(h('a.btn.small', { href: '#/deneme' }, '‹ Deneme'), h('h2', kisaName(size)),
         h('section.card.kisa-confirm', h('p', h('b', `${c.n} soru · ${c.min} dk`), ' · ipucu yok'), h('p.small.muted', 'Başlayınca süre işler; sayfadan çıkınca durur.'),
+          await privSwitch(),
           h('a.btn.primary.wide.big-btn.kisa-go', { href: `#/deneme/yeni/${size}/basla` }, 'Başla')));
       return;
     }
@@ -94,10 +108,18 @@ export default async function render(root, [mode, id, arg]) {
   return home(root);
 }
 
-function home(root) {
+// "Okumaya kaynaklarımdan parça kat" (gizli pakette ≥3 çoktan seçmeli sorulu okuma varsa)
+async function privSwitch() {
+  const n = privPool((await getPack().catch(() => null))?.readings).length;
+  if (!n) return null;
+  return h('label.switch.kisa-priv', h('input', { type: 'checkbox', name: 'kisaGizli', checked: !!store.settings().kisaGizli, onchange: e => store.setSetting('kisaGizli', e.target.checked) }),
+    h('span', 'Okuma sorusuna kaynaklarımdan parça kat', h('span.small.muted', ` (${n} parça)`)));
+}
+
+async function home(root) {
   const mocks = store.all('mocks').filter(m => m.kind === 'kisa').sort((a, b) => (b.date || '').localeCompare(a.date || '') || (b.updatedAt || 0) - (a.updatedAt || 0));
   root.append(soruTabs('deneme'), h('h2', 'Kısa deneme'),
-    h('p.small.muted', 'Özgün sorular (çıkmış değil) · YÖKDİL oranında · ipucu yok'),
+    h('p.small.muted.screen-why', 'Sınav gibi, uygulamanın kendi sorularıyla (çıkmış değil). İpucu yok.'),
     ...KISA_SIZES.map(size => {
       const c = KISA[size], o = openKisa(size), n = o ? Object.keys(o.answers || {}).length : 0;
       return h('section.card.kisa-card', { 'data-size': size },
@@ -106,7 +128,8 @@ function home(root) {
           h('a.btn.primary.grow.kisa-start', { href: '#/deneme/yeni/' + size + (o ? '' : '/basla') }, o ? `Devam et (${n} cevap)` : 'Başla'),
           o ? h('a.btn', { href: `#/deneme/yeni/${size}/bastan`, onclick: ev => { if (!confirm('Yarım kalan deneme silinsin, yenisi başlasın mı?')) ev.preventDefault(); } }, 'Yeni') : null));
     }),
-    h('p.small.muted', 'Süre bitince kendiliğinden biter. Sonuç: doğru / soru (sınav puanı değil). Aynı soru son 3 kısa denemede tekrar gelmez.'),
+    await privSwitch(),
+    h('p.small.muted', 'Süre bitince kendiliğinden biter. Sonuç: kaç doğru (sınav puanı değil). Aynı soru son 3 denemede tekrar gelmez.'),
     mocks.length ? h('h3', 'Geçmiş') : null,
     mocks.length ? h('ul.list.compact.kisa-hist', mocks.slice(0, 10).map(m => {
       const done = store.get('progress', 'exam:' + m.examId)?.done && store.get('progress', DEF + m.examId);

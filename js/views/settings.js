@@ -1,4 +1,4 @@
-// Ayarlar: senkron, tema, ters kart, yeni limit, dışa/içe aktar, sıfırla
+// Ayarlar: Temel (anahtar, hedef puan, tema, günlük yeni kelime) + Gelişmiş ▸ (gerisi)
 import * as store from '../store.js';
 import * as sync from '../sync.js';
 import { h, toast, fmtTime, dayKey } from '../util.js';
@@ -20,7 +20,7 @@ export default async function render(root) {
   const stat = h('div.small');
   const drawStat = st => {
     const t = st.at ? 'Son senkron: ' + fmtTime(st.at) : 'Henüz senkron yok';
-    stat.textContent = { off: 'Kapalı (token yok) — uygulama yine tam çalışır.', syncing: 'Senkronlanıyor…', pending: 'Gönderilecek… · ' + t, error: 'Hata: ' + st.msg + ' · ' + t }[st.state] || t;
+    stat.textContent = { off: 'Senkron kapalı (anahtar yok). Uygulama yine tam çalışır.', syncing: 'Senkronlanıyor…', pending: 'Gönderilecek… · ' + t, error: 'Senkron yapılamadı: ' + st.msg + ' · ' + t }[st.state] || t;
     stat.className = 'small ' + (st.state === 'error' ? 'bad-t' : 'muted');
   };
   drawStat(sync.status);
@@ -56,12 +56,15 @@ export default async function render(root) {
     } catch { toast('Dosya okunamadı'); }
   };
 
+  const sw = (key, label, on, name) => h('label.switch', h('input', { type: 'checkbox', name: name || key, checked: on, onchange: e => store.setSetting(key, e.target.checked) }), h('span', label));
+  // Temel: anahtar, hedef puan, tema, günlük yeni kelime. Gerisi "Gelişmiş ▸" altında (kapalı)
   root.append(
     h('h2', 'Ayarlar'),
-    h('section.card',
+    h('p.small.muted.screen-why', 'Çoğu kişi yalnız üstteki 4 ayarı kullanır.'),
+    h('section.card.set-key',
       h('h3', 'GitHub anahtarı'),
-      h('p.small', 'Tek anahtar iki iş görür: senkron + gizli sorular.'),
-      h('ol.small.steps', h('li', h('a', { href: TOKEN_URL, target: '_blank', rel: 'noopener' }, 'Anahtar oluştur'), ' (classic; "gist" + "repo" işaretli gelir)'),
+      h('p.small', 'Tek anahtar: cihazlar arası senkron + çıkmış sorular.'),
+      h('ol.small.steps', h('li', h('a', { href: TOKEN_URL, target: '_blank', rel: 'noopener' }, 'Anahtar oluştur'), ' ("gist" ve "repo" kutuları işaretli gelir)'),
         h('li', 'Buraya yapıştır → Kaydet')),
       tok,
       h('div.row',
@@ -70,48 +73,49 @@ export default async function render(root) {
         sync.getToken() ? h('button.btn', { onclick: () => { sync.setToken(''); tok.value = ''; } }, 'Kapat') : null),
       stat,
       h('div.row.between', pinfo, sync.getToken() ? h('button.btn.small', { onclick: async e => { e.currentTarget.disabled = true; const r = await fetchPrivate({ force: true }); toast(r.error ? 'Hata: ' + r.error : r.changed ? 'Sorular güncellendi' : 'Sorular güncel'); drawP(); e.target.disabled = false; } }, 'Soruları güncelle') : null),
-      h('p.small.muted', 'Anahtar yalnızca bu cihazda saklanır. Soru metinleri senkrona girmez.')
+      h('p.small.muted', 'Anahtar yalnız bu cihazda kalır. Soru metinleri senkrona girmez.')
     ),
-    h('section.card',
-      h('h3', 'Görünüm'),
-      h('div.field', h('span', 'Tema'), seg([['system', 'Sistem'], ['light', 'Açık'], ['dark', 'Koyu']], s.theme, v => { store.setSetting('theme', v); applyTheme(); render2(); })),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.reverse, onchange: e => store.setSetting('reverse', e.target.checked) }), h('span', 'Ters kart (Tr → İng)'))
+    h('section.card.set-basic',
+      h('h3', 'Temel'),
+      h('div.field', h('span', 'Hedef puan'), tgt), h('p.small.muted', 'Deneme grafiğindeki çizgi. ', h('a', { href: '#/dersler/arac/net' }, 'Kaç doğru gerekir? ›')),
+      h('div.field', h('span', 'Tema'), seg([['system', 'Otomatik'], ['light', 'Açık'], ['dark', 'Koyu']], s.theme, v => { store.setSetting('theme', v); applyTheme(); render2(); })),
+      h('div.field', h('span', 'Günde yeni kelime'), limit), h('p.small.muted', `Boş bırakırsan programdaki sayı (${w.newWords ?? 15}).`)
     ),
-    h('section.card',
-      h('h3', 'Çalışma'),
-      h('div.field', h('span', 'Günlük yeni kelime'), limit), h('p.small.muted', `Boş = programdan (${w.newWords ?? 15}).`),
-      hasStars() ? h('label.switch', h('input', { type: 'checkbox', name: 'starFirst', checked: !!s.starFirst, onchange: e => store.setSetting('starFirst', e.target.checked) }), h('span', 'Yeni kelimelerde çok çıkanları öne al')) : null,
+    h('details.card.set-adv',
+      h('summary', h('b', 'Gelişmiş ▸'), h('span.small.muted', ' kelime, soru, okuma, deneme, odak, yedek')),
+      h('h3', 'Kelime'),
+      sw('reverse', 'Kartı bazen Türkçeden sor (Tr → İng)', !!s.reverse),
+      hasStars() ? sw('starFirst', 'Yeni kelimelerde sınavda çok çıkanlar önce', !!s.starFirst) : null,
+      sw('autoAdd', 'Yanlış cevaptaki kelimeyi karta ekle', s.autoAdd !== false),
+      h('div.field', h('span', 'Kelime hedefi (sınava kadar)'), goal),
+      h('h3', 'Sorular'),
       h('div.field', h('span', 'Günlük gramer sorusu'), gc),
-      h('label.switch', h('input', { type: 'checkbox', name: 'warmup', checked: s.warmup !== false, onchange: e => store.setSetting('warmup', e.target.checked) }), h('span', 'Sorulardan önce ısınma (zayıf konunun kural kartı)')),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.autoAdd !== false, onchange: e => store.setSetting('autoAdd', e.target.checked) }), h('span', 'Yanlış cevaptaki kelimeyi karta ekle')),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.readHl !== false, onchange: e => store.setSetting('readHl', e.target.checked) }), h('span', 'Okumada bilmediğin kelimeleri işaretle')),
-      h('div.field', h('span', 'Kelime hedefi'), goal),
-      h('div.field', h('span', 'Hedef puan'), tgt), h('p.small.muted', h('a', { href: '#/dersler/arac/net' }, 'Hedef net tablosu ›')),
+      sw('warmup', 'Sorulardan önce zayıf konunun kural kartı', s.warmup !== false),
+      sw('showDialog', 'Diyalog sorularını da göster (YDS\'de var, YÖKDİL\'de yok)', !!s.showDialog),
+      h('h3', 'Okuma'),
+      sw('readHl', 'Bilmediğin kelimelerin altını çiz', s.readHl !== false),
+      sw('activeRead', 'Paragraf sonunda "+ Ana fikir yaz" düğmesi', s.activeRead !== false),
       h('div.field', h('span', 'Okuma hızı hedefi (kelime/dk)'), rg),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.secClock !== false, onchange: e => store.setSetting('secClock', e.target.checked) }), h('span', 'Denemede bölüm süresi göstergesi')),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.finalMode !== false, onchange: e => store.setSetting('finalMode', e.target.checked) }), h('span', 'Son 14 gün modu (yeni kelime azalır)')),
-      h('label.switch', h('input', { type: 'checkbox', checked: !!s.showDialog, onchange: e => store.setSetting('showDialog', e.target.checked) }), h('span', 'Diyalog sorularını göster (YDS)')),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.activeRead !== false, onchange: e => store.setSetting('activeRead', e.target.checked) }), h('span', 'Okumada "ana fikir" kutuları'))
-    ),
-    h('section.card',
+      h('h3', 'Deneme'),
+      sw('secClock', 'Denemede "Bu bölüm: x/y dk" göstergesi', s.secClock !== false),
+      sw('kisaGizli', 'Kısa denemede okumaya kaynaklarımdan parça kat', !!s.kisaGizli),
+      sw('finalMode', 'Son 14 günde yeni kelimeyi azalt', s.finalMode !== false),
       h('h3', 'Odak'),
       h('div.field', h('span', 'Çalışma (dk)'), num('focusWork', 25, 5, 90)),
       h('div.field', h('span', 'Mola (dk)'), num('focusBreak', 5, 1, 30)),
-      h('label.switch', h('input', { type: 'checkbox', name: 'focusOnTask', checked: s.focusOnTask === true, onchange: e => store.setSetting('focusOnTask', e.target.checked) }), h('span', 'Bugün\'deki ▶ ile odak sayacı başlasın')),
-      h('label.switch', h('input', { type: 'checkbox', checked: s.eveTip !== false, onchange: e => store.setSetting('eveTip', e.target.checked) }), h('span', 'Akşam (17:00 sonrası) uyku ipucu'))
-    ),
-    h('section.card',
-      h('h3', 'Veri'),
+      sw('focusOnTask', 'Bugün\'deki ▶ ile odak sayacı başlasın', s.focusOnTask === true),
+      sw('eveTip', 'Akşam (17:00 sonrası) kısa mola hatırlatması', s.eveTip !== false),
+      h('h3', 'Yedek'),
       h('div.row',
-        h('button.btn.grow', { onclick: exportJSON }, 'Dışa aktar'),
-        h('button.btn.grow', { onclick: () => file.click() }, 'İçe aktar'), file),
+        h('button.btn.grow', { onclick: exportJSON }, 'Yedeği indir'),
+        h('button.btn.grow', { onclick: () => file.click() }, 'Yedekten yükle'), file),
       h('button.btn.danger.wide', {
         onclick: () => {
           if (!confirm('Bu cihazdaki tüm veriler silinsin mi?')) return;
           store.resetAll(); toast('Sıfırlandı'); setTimeout(() => location.reload(), 400);
         }
-      }, 'Sıfırla'),
-      h('p.small.muted', 'Senkron açıksa veriler gist\'ten geri gelir.'),
+      }, 'Bu cihazı sıfırla'),
+      h('p.small.muted', 'Anahtar varsa veriler GitHub\'dan geri gelir.'),
       usedSample.size ? h('p.small.bad-t', 'Örnek veri kullanılıyor: ' + [...usedSample].join(', ')) : null
     )
   );

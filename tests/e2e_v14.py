@@ -30,6 +30,8 @@ with sync_playwright() as p:
     def go(r, t=600):
         if page.url == BASE + '#/' + r: page.goto(BASE + ('#/ayarlar' if r == 'bugun' else '#/bugun')); page.wait_for_timeout(250)
         page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
+        # v15: ikincil bölümler kapalı (Ayarlar → Gelişmiş, Eksikler → Ayrıntı); içlerini test etmek için aç
+        page.evaluate("document.querySelectorAll('details.set-adv, details.more-detail').forEach(d => d.open = true)")
     def shot(n, full=False): page.screenshot(path=f'{SHOTS}/{n}.png', full_page=full)
     def st(): page.wait_for_timeout(250); return ev("JSON.parse(localStorage.getItem('yokdil.v1')||'{}')")
 
@@ -137,7 +139,7 @@ with sync_playwright() as p:
     # 6) Eksikler: en üstte tek kart, satır eylemleri
     go('eksikler', 900)
     check(page.locator('.best1').count() == 1 and page.locator('.best1 .best1-go').count() == 1, 'Eksikler: "Bugün en çok kazandıracak 1 şey" tek kart')
-    check(page.locator('section.card').nth(1).locator('.stats3').count() == 1, 'Eksikler: bölüm sırası korunuyor (2. bölüm Kelimeler)')
+    check(page.locator('section.card').nth(1).locator('h3').inner_text() == 'Kelimeler' and page.locator('section.card').nth(1).locator('.vocab').count() == 1, 'Eksikler: bölüm sırası korunuyor (2. bölüm Kelimeler)')
     row = page.locator(f'.arow.weak[data-key="{T}"]').first
     check(row.count() == 1 and row.locator('.arow-acts .btn').count() == 2, f'zayıf konu satırında 2 düğme ({T})')
     mx = ev("Math.max(...[...document.querySelectorAll('.arow')].map(r => r.querySelectorAll(':scope > .arow-acts .btn').length), 0)")
@@ -235,6 +237,8 @@ with sync_playwright() as p:
     def go(r, t=600):
         if page.url == BASE + '#/' + r: page.goto(BASE + ('#/ayarlar' if r == 'bugun' else '#/bugun')); page.wait_for_timeout(250)
         page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
+        # v15: ikincil bölümler kapalı (Ayarlar → Gelişmiş, Eksikler → Ayrıntı); içlerini test etmek için aç
+        page.evaluate("document.querySelectorAll('details.set-adv, details.more-detail').forEach(d => d.open = true)")
     def shot(n, full=False): page.screenshot(path=f'{SHOTS}/{n}.png', full_page=full)
     def st(): page.wait_for_timeout(250); return ev("JSON.parse(localStorage.getItem('yokdil.v1')||'{}')")
     # Y1/O1: kartta iç terim yok, otomatik not kısa ve gri

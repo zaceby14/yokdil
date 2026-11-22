@@ -12,7 +12,8 @@ import { getToken } from '../sync.js';
 import { fetchPrivate, status as pstat, resetMeta } from '../private.js';
 import { setCtx } from '../ctx.js';
 import { openLesson, openFor, findLesson } from '../side.js';
-import { updateDay, tick } from '../plan.js';
+import { updateDay, tick, week } from '../plan.js';
+import { mockNote } from '../tasks.js';
 import { aids } from '../data.js';
 import { SECTION_OF, SEC_LBL, HALF_N, HALF_MIN, secClock, planRows, stepOf } from '../strategy.js';
 import { reasonList, reasonChips, reasonSummary } from '../reasons.js';
@@ -39,6 +40,7 @@ const visibleQs = e => (e.questions || []).filter(q => showDialog() || q.type !=
 
 // Yarım deneme: ilk 40 soru / 90 dk; ilerleme ayrı kayıtta (exam:<id>~yarim)
 const HALF = 'yarim';
+const ALL = 'hepsi'; // sonuçtaki "Yanlışlarımı çöz": tüm bölümlerin yanlış/boşları
 const pidOf = (e, half) => 'exam:' + e.id + (half ? '~' + HALF : '');
 const halfQs = (e, half) => half ? visibleQs(e).slice(0, HALF_N) : visibleQs(e);
 const sfx = half => half ? '/' + HALF : '';
@@ -77,7 +79,7 @@ function uploader(onDone) {
 async function home(root) {
   const pack = await getPack();
   const redraw = () => { root.innerHTML = ''; home(root); };
-  root.append(soruTabs('cikmis'), h('h2', 'Çıkmış sorular'));
+  root.append(soruTabs('cikmis'), h('h2', 'Çıkmış sorular'), h('p.small.muted.screen-why', 'Gerçek sınav soruları: tam deneme, yarım deneme ya da tipe göre.'));
   if (!pack?.exams?.length) {
     if (!getToken()) {
       root.append(
@@ -94,12 +96,16 @@ async function home(root) {
   }
   const types = {}, otypes = {};
   for (const e of pack.exams) for (const q of visibleQs(e)) { types[q.type] = (types[q.type] || 0) + 1; if (isOsym(e)) otypes[q.type] = (otypes[q.type] || 0) + 1; }
-  const exams = pack.exams.filter(e => visibleQs(e).length).sort((a, b) => isOsym(b) - isOsym(a));
+  // Tam sınavlar önce; tam olmayanlar (örnek sorular) sonra
+  const exams = pack.exams.filter(e => visibleQs(e).length).sort((a, b) => (!!b.full - !!a.full) || (isOsym(b) - isOsym(a)));
   root.append(
     h('h3', 'Sınavlar'),
     h('ul.list', exams.map(e => {
       const pr = store.get('progress', 'exam:' + e.id);
-      const status = pr?.done ? `Son: ${pr.score?.toLocaleString('tr-TR')} puan` : pr?.startedAt ? 'Devam ediyor' : '';
+      const b = bestOf(e, pr);
+      const solved = !!b || !!pr?.done;
+      // Tam olmayan sınav: "Örnek sorular (8)"; çözülene ✓ + en iyi sonuç
+      const status = pr?.startedAt && !pr.done ? 'Devam ediyor' : b ? (e.full ? `En iyi: ${b.score.toLocaleString('tr-TR')} puan` : `En iyi: ${b.right}/${b.n}`) : '';
       const secs = e.full ? sectionsOf(visibleQs(e)) : [];
       const hp = store.get('progress', pidOf(e, true));
       const secRow = secs.length > 1 ? h('details.secpick', h('summary', 'Yarım deneme · bölüm bölüm çöz'),
@@ -108,11 +114,12 @@ async function home(root) {
           hp?.done ? h('a.chip.pick', { href: `#/cikmis/sonuc/${encodeURIComponent(e.id)}/${HALF}` }, 'Yarım sonucu') : null,
           secs.map(sc => h('a.chip.pick', { href: `#/cikmis/sinav/${encodeURIComponent(e.id)}/${sc.k}` }, `${SEC_LBL[sc.k] || sc.k} ${sc.from}–${sc.to}`)))) : null;
       return h('li', h('div.exam-row',
-        h('div.grow', h('b', e.title || e.id), h('div.small.muted', [isOsym(e) ? 'ÖSYM' : 'Yayınevi', e.date, visibleQs(e).length + ' soru', status].filter(Boolean).join(' · '))),
+        h('div.grow', h('b', solved ? h('span.good-t.solved', '✓ ') : null, e.title || e.id, e.full ? null : h('span.chip.small.sample-chip', `Örnek sorular (${visibleQs(e).length})`)),
+          h('div.small.muted', [isOsym(e) ? 'ÖSYM' : 'Yayınevi', e.date, e.full ? visibleQs(e).length + ' soru' : '', status].filter(Boolean).join(' · '))),
         pr?.done ? h('a.btn.small', { href: '#/cikmis/sonuc/' + encodeURIComponent(e.id) }, 'Sonuç') : null,
         h('a.btn.small.primary', { href: '#/cikmis/sinav/' + encodeURIComponent(e.id) }, pr?.startedAt && !pr.done ? 'Devam' : (e.full ? 'Tam deneme' : 'Çöz'))), secRow);
     })),
-    h('h3', 'Tipe göre çalış'),
+    h('h3', 'Soru tipine göre çalış'),
     h('ul.list.compact', Object.keys(TYPES).filter(t => types[t]).map(t =>
       h('li', h('a', { href: '#/cikmis/tip/' + t }, h('b', typeName(t)), h('span.small.muted', `ÖSYM ${otypes[t] || 0} · toplam ${types[t]} soru`))))),
     h('p.small.muted', 'Sorular yalnızca bu cihazda; senkrona sadece cevapların gider.'),
@@ -120,6 +127,15 @@ async function home(root) {
     h('details.small', h('summary', 'Dosya / sil'), ...uploader(redraw),
       h('button.btn.danger.wide', { onclick: async () => { if (confirm('Sorular bu cihazdan silinsin mi?')) { await clearPack(); resetMeta(); redraw(); } } }, 'Soruları sil'))
   );
+}
+
+// Saf: sınavın en iyi sonucu (yarım hariç) → {score, right, n} | null. Eski kayıtta right yoksa puandan (÷1,25)
+export function bestOf(e, pr, mocks = store.all('mocks')) {
+  const ms = (mocks || []).filter(m => m && m.examId === e.id && !m.half && m.kind !== 'kisa');
+  const n = visibleQs(e).length;
+  const rs = ms.map(m => ({ score: +m.score || 0, right: m.right ?? Math.round((+m.score || 0) / 1.25), n: m.n || n }));
+  if (!rs.length && pr?.done && !pr.half) rs.push({ score: +pr.score || 0, right: pr.right ?? Math.round((+pr.score || 0) / 1.25), n });
+  return rs.sort((a, b) => b.right - a.right || b.score - a.score)[0] || null;
 }
 
 // --- Tam deneme / sınav modu (bölüm bölüm de çözülebilir: bölüm sonu ara sonuç, bölüm kilitlenir)
@@ -176,7 +192,7 @@ function examMode(root, e, startSec) {
       clock.dataset.k = txt + c.over;
       clock.innerHTML = '';
       add(clock, h('span', txt), c.over ? h('span.small', ' · süre aşıldı') : null,
-        h('button.icon-x.small', { type: 'button', 'aria-label': 'bölüm süresini gizle', onclick: () => { store.setSetting('secClock', false); toast('Gizlendi · Ayarlar → Çalışma\'dan açılır'); drawClock(); } }, '×'));
+        h('button.icon-x.small', { type: 'button', 'aria-label': 'bölüm süresini gizle', onclick: () => { store.setSetting('secClock', false); toast('Gizlendi · Ayarlar → Gelişmiş → Deneme\'den açılır'); drawClock(); } }, '×'));
     }
   }
   aids().then(a => { const tp = planOf(e, a?.timePlan, secCounts(secs), half); plan = tp && planRows(tp).length ? tp : null; drawClock(); }).catch(() => {});
@@ -184,8 +200,11 @@ function examMode(root, e, startSec) {
     h('a.btn.small', { href: baseOf(e), 'aria-label': 'geri' }, '‹'), h('b.grow.ellipsis', e.title || e.id), timer,
     h('button.btn.small', { onclick: () => { grid.classList.toggle('hidden'); drawGrid(); } }, 'Optik'),
     h('button.btn.small.primary', { onclick: () => finish(false) }, 'Bitir'));
-  root.append(bar, half ? h('div.small.muted.half-note', `Yarım deneme: ilk ${qs.length} soru · ${HALF_MIN} dk · süre bitince kendiliğinden biter`)
-    : e.kisa ? h('div.small.muted.half-note.kisa-note', `Özgün sorular · ${qs.length} soru · ${e.durationMin} dk · ipucu yok · süre bitince biter`) : null, secs.length > 1 ? strip : null, clock, grid, main);
+  const tani = h('div.small.task-note.tani-note.hidden');
+  // Programdaki tanı denemesiyse tek satır açıklama
+  if (!e.kisa) week().then(w => { const m = (w.prog.weeks || []).map(x => x.mock).find(m => m?.exam === e.id && mockNote(m)); if (m) { tani.textContent = mockNote(m); tani.classList.remove('hidden'); } }).catch(() => {});
+  root.append(bar, tani, half ? h('div.small.muted.half-note', `Yarım deneme: ilk ${qs.length} soru · ${HALF_MIN} dk · süre bitince kendiliğinden biter`)
+    : e.kisa ? h('div.small.muted.half-note.kisa-note', `Çıkmış değil, benzer sorular · ${qs.length} soru · ${e.durationMin} dk · ipucu yok · süre bitince biter`) : null, secs.length > 1 ? strip : null, clock, grid, main);
 
   const secStat = si => {
     const st = { d: 0, y: 0, b: 0, n: 0, a: 0 };
@@ -198,7 +217,7 @@ function examMode(root, e, startSec) {
     secs.forEach((sc, si) => {
       const st = secStat(si);
       strip.append(h('button.chip' + (si === cs ? '.on' : '') + (pr.locked[si] ? '.ok' : ''), { onclick: () => { interim = null; pr.cur = sc.idx[0]; save(); draw(); } },
-        `${SEC_LBL[sc.k] || sc.k} ${pr.locked[si] ? '✓' : st.a + '/' + st.n}`));
+        `${(SEC_LBL[sc.k] || sc.k).replace(/\s*\(.*\)$/, '')} ${pr.locked[si] ? '✓' : st.a + '/' + st.n}`));
     });
   }
   function drawGrid() {
@@ -227,7 +246,7 @@ function examMode(root, e, startSec) {
       answer(qkey(e, q), ok, qinfo(e, q));
       if (!ok) autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: qinfo(e, q) }, a, { quiet: true }).catch(() => 0));
     }
-    Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
+    Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`, { bottom: true }); });
     pr.locked[si] = true; save();
     updateDay({ mock: true });
   }
@@ -241,7 +260,7 @@ function examMode(root, e, startSec) {
       h('h3', `Bölüm sonu: ${SEC_LBL[sc.k] || sc.k}`),
       pr.locked[si] ? h('table.mock', h('tr', h('th', 'D'), h('th', 'Y'), h('th', 'B')), h('tr', h('td', st.d), h('td', st.y), h('td', st.b)))
         : h('p', `${st.a} / ${st.n} cevaplandı`),
-      pr.locked[si] ? h('p.small.muted', 'Bölüm kilitlendi; yanlışlar hata kutusuna yazıldı.') : h('p.small.muted', 'Kontrol edince doğru/yanlış görünür ve bölüm kilitlenir.'),
+      pr.locked[si] ? h('p.small.muted', 'Bölüm kapandı; yanlışlar "Hata tekrarı"na eklendi.') : h('p.small.muted', 'Kontrol edince doğrular görünür; bu bölümü artık değiştiremezsin.'),
       h('div.actbar',
         !pr.locked[si] ? h('button.btn.primary.wide.main-act', { onclick: () => { checkSection(si); showInterim(si); } }, 'Bölümü kontrol et') : null,
         next ? h('button.btn.wide' + (pr.locked[si] ? '.primary.main-act' : ''), { onclick: () => { interim = null; pr.cur = next.idx[0]; save(); draw(); } }, `Sonraki bölüm: ${SEC_LBL[next.k] || next.k} ›`)
@@ -265,7 +284,7 @@ function examMode(root, e, startSec) {
     const it = { q: q.q, info: { topic: q.topic || '', dtype: q.type || '' } };
     add(main,
       h('div.qhead', h('span.muted', `Soru ${q.n} · ${pr.cur + 1}/${qs.length}`),
-        h('span.qtools', q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, h('span.chip', typeName(q.type)))),
+        h('span.qtools', q.keySource === 'claude' ? h('span.chip.bad.small', 'cevap kesin değil') : null, h('span.chip', typeName(q.type)))),
       h('div.qbar', h('button.chip.lesson-btn', { type: 'button', onclick: () => openFor(it) }, 'Ders')),
       g?.text ? h('div.stem.tap', tappable(g.text, src).el) : null,
       trq ? h('div.q', q.q) : h('div.q.tap', tappable(q.q, src).el),
@@ -314,10 +333,12 @@ function examMode(root, e, startSec) {
       }
       if (!done) answer(qkey(e, q), ok, qinfo(e, q));
     });
-    Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
+    Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`, { bottom: true }); });
     // Tahmini YÖKDİL puanı yalnız tam denemede (doğru × 1,25). Kısa ve yarım: doğru / soru × 100 (puan değil, yüzde)
-    const score = e.kisa || half ? kisaScore(right, qs.length) : +(right * 1.25).toFixed(2);
-    store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: e.kisa ? 'kisa' : 'cikmis', examId: e.id, score,
+    const part = e.kisa || half || !e.full; // tam olmayan sınavda da puan yok, doğru %
+    const score = part ? kisaScore(right, qs.length) : +(right * 1.25).toFixed(2);
+    store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: e.kisa ? 'kisa' : 'cikmis', examId: e.id, score, right, n: qs.length,
+      ...(!e.kisa && !half && !e.full ? { sample: true, pct: true } : {}),
       times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right, n: qs.length, pct: true } : {}), ...(e.kisa ? { kind: 'kisa', size: e.kisa.size, right, n: qs.length } : {}) });
     updateDay({ mock: true });
     if (e.kisa) tick('kisa');
@@ -330,6 +351,8 @@ function examMode(root, e, startSec) {
   return () => { clearInterval(iv); if (!finished) { tick(); store.put('progress', pr); } };
 }
 
+const STEP_N = 3; // analiz listesinde ilk görünen adım
+
 // Zayıf bölüm için ders (soru tipi taktik dersi)
 async function weakLessonBtn(secKey) {
   const l = await findLesson([TYPE_LESSON[SEC_TYPE[secKey]], 'soru-tipi-taktikleri'].filter(Boolean));
@@ -338,11 +361,11 @@ async function weakLessonBtn(secKey) {
 
 // Sonuç üst kutusu: tam denemede tahmini puan; kısa/yarımda "x/y doğru (%z)" (sınav puanı değil)
 export function heroOf(e, half, right, qs, pr) {
-  if (!e.kisa && !half) return h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')), h('div.hero-r', 'Doğru × 1,25'));
+  if (!e.kisa && !half && e.full) return h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')), h('div.hero-r', 'Doğru × 1,25'));
   const pct = Math.round(right / Math.max(1, qs.length) * 100);
   const noRead = half && !qs.some(q => SECTION_OF[q.type] === 'okuma');
   return h('div.hero.hero-pct', h('div', h('div.big', `${right}/${qs.length}`), h('div.small', `doğru (%${pct})`)),
-    h('div.hero-r', e.kisa ? 'Mini deneme sınav puanı değildir.' : 'Tahmini puan yalnız tam denemede.', noRead ? h('div.small.no-read', 'Okuma bölümü yok.') : null));
+    h('div.hero-r', e.kisa ? 'Mini deneme sınav puanı değildir.' : !e.full && !half ? 'Örnek sorular: sınav puanı değil.' : 'Tahmini puan yalnız tam denemede.', noRead ? h('div.small.no-read', 'Okuma bölümü yok.') : null));
 }
 
 function result(root, e, half = false) {
@@ -366,18 +389,19 @@ function result(root, e, half = false) {
     h('a.btn.small', { href: base }, e.kisa ? '‹ Deneme' : '‹ Çıkmış'),
     h('h2', (e.title || e.id) + (half ? ` · ilk ${qs.length} soru` : '')),
     heroOf(e, half, right, qs, pr),
+    wrong.length ? h('a.btn.primary.wide.big-btn.fix-wrongs', { href: `${base}/yanlis/${encodeURIComponent(e.id)}/${ALL}${sfx(half)}` }, `Yanlışlarımı çöz (${wrong.length})`) : h('p.good-t.center', 'Yanlış yok.'),
     h('table.mock', h('tr', h('th', 'Bölüm'), h('th', 'D'), h('th', 'Y'), h('th', 'B')),
       order.map(k => { const s = pr.sections[k]; return h('tr.secrow', { onclick: () => { const d = groups.querySelector(`[data-sec="${k}"]`); if (d) { d.open = true; d.scrollIntoView({ block: 'start', behavior: 'smooth' }); } } },
         h('td', SEC_LBL[k] || k, h('span.small.muted', ` ${s.n}`)), h('td', s.d), h('td', s.y), h('td', s.b)); })),
     timeSlot,
     lessonSlot,
-    h('p.small.muted', 'Bölüme dokun → o bölümün yanlışları. Sonuç Eksiklerim → deneme geçmişine yazıldı.'),
+    h('p.small.muted', 'Bölüme dokun → o bölümün yanlışları. Sonuç Eksiklerim\'e yazıldı.'),
     stepSlot,
     h('h3', `Yanlış / boş (${wrong.length})`),
     sumSlot,
     groups,
-    e.kisa ? h('a.btn.primary.wide.kisa-new', { href: '#/deneme/yeni/' + e.kisa.size }, `Yeni ${KISA[e.kisa.size]?.label.toLocaleLowerCase('tr-TR') || ''} deneme`) : null,
-    h('a.btn' + (e.kisa ? '' : '.primary') + '.wide', { href: base + '/sinav/' + encodeURIComponent(e.id) + sfx(half) }, half ? 'Yarım denemeyi tekrar çöz' : e.kisa ? 'Aynı denemeyi tekrar çöz' : 'Tüm sınavı tekrar çöz')
+    e.kisa ? h('a.btn.wide.kisa-new', { href: '#/deneme/yeni/' + e.kisa.size }, `Yeni ${KISA[e.kisa.size]?.label.toLocaleLowerCase('tr-TR') || ''} deneme`) : null,
+    h('a.btn.wide', { href: base + '/sinav/' + encodeURIComponent(e.id) + sfx(half) }, half ? 'Yarım denemeyi tekrar çöz' : e.kisa ? 'Aynı denemeyi tekrar çöz' : 'Tüm sınavı tekrar çöz')
   );
   const drawGroups = reasons => {
     groups.innerHTML = '';
@@ -397,7 +421,7 @@ function result(root, e, half = false) {
         h('summary', h('b', SEC_LBL[k] || k), h('span.small.muted', ` · ${list.length} yanlış/boş`)),
         h('a.btn.wide.retry-sec', { href: `${base}/yanlis/${encodeURIComponent(e.id)}/${k}${sfx(half)}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
         ...list.map(q => h('div.qwrong-wrap', h('details.qwrong',
-          h('summary', h('span.qw-arrow', '▸ '), h('b', `Soru ${q.n}`), ' ', h('span.small.qw-stem', shortQ(q.q)), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
+          h('summary', h('span.qw-arrow', '▸ '), h('b', `Soru ${q.n}`), ' ', h('span.small.qw-stem', shortQ(q.q)), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'cevap kesin değil') : null),
           groupOf(e, q)?.text ? h('div.stem.small', groupOf(e, q).text) : null,
           h('div.q', q.q),
           pr.answers[q.n] != null ? h('div.small.bad-t', `Senin: ${'ABCDE'[pr.answers[q.n]]}) ${q.options[pr.answers[q.n]]}`) : null,
@@ -437,15 +461,18 @@ function result(root, e, half = false) {
     const steps = (Array.isArray(a?.mockAnalysis) ? a.mockAnalysis : []).map(stepOf).filter(x => x?.title);
     if (steps.length) {
       const sid = `analiz:${pid}:${pr.attempts || 1}`;
-      const tot = steps.reduce((s, x) => s + x.min, 0) || Math.max(0, ...steps.map(x => x.end || 0));
       const box = h('section.card.analysis');
       const drawSteps = () => {
         const done = store.get('progress', sid)?.done || {};
         box.innerHTML = '';
-        box.append(h('h3', tot ? `${tot} dk analiz` : 'Deneme analizi', h('span.small.muted', ` · ${steps.filter((_, i) => done[i]).length}/${steps.length}`)),
-          h('ul.checklist', steps.map((x, i) => h('li' + (done[i] ? '.done' : ''),
-            h('button.check', { type: 'button', role: 'checkbox', 'aria-checked': done[i] ? 'true' : 'false', 'aria-label': x.title, onclick: () => { store.patch('progress', sid, { done: { ...done, [i]: !done[i] } }); drawSteps(); } }, done[i] ? '✓' : ''),
-            h('div.grow', h('b', x.title), x.min ? h('span.small.muted', ` · ${x.min} dk`) : null, x.text ? h('div.small.muted', x.text) : null)))));
+        const li = (x, i) => h('li' + (done[i] ? '.done' : ''),
+          h('button.check', { type: 'button', role: 'checkbox', 'aria-checked': done[i] ? 'true' : 'false', 'aria-label': x.title, onclick: () => { store.patch('progress', sid, { done: { ...done, [i]: !done[i] } }); drawSteps(); } }, done[i] ? '✓' : ''),
+          h('div.grow', h('b', x.title), x.min ? h('span.small.muted', ` · ${x.min} dk`) : null, x.text ? h('div.small.muted', x.text) : null));
+        // Telefonda kısa: ilk 3 adım; gerisi "Tümü ▸" altında
+        const rest = steps.slice(STEP_N);
+        box.append(h('h3', 'Sonra ne yapayım?', h('span.small.muted', ` · ${steps.filter((_, i) => done[i]).length}/${steps.length}`)),
+          h('ul.checklist', steps.slice(0, STEP_N).map(li)),
+          rest.length ? h('details.steps-more', { open: rest.some((_, j) => done[STEP_N + j]) }, h('summary', `Tümü ▸ (${steps.length})`), h('ul.checklist', rest.map((x, j) => li(x, STEP_N + j)))) : null);
       };
       drawSteps();
       stepSlot.append(box);
@@ -458,11 +485,12 @@ function result(root, e, half = false) {
 // Sonuç ekranından: bir bölümün yanlışlarını tekrar çöz
 function wrongMode(root, e, sec, half = false) {
   const pr = store.get('progress', pidOf(e, half));
-  const qs = halfQs(e, half).filter(q => (SECTION_OF[q.type] || 'diger') === sec && pr?.answers?.[q.n] !== q.answer);
+  const qs = halfQs(e, half).filter(q => (sec === ALL || (SECTION_OF[q.type] || 'diger') === sec) && pr?.answers?.[q.n] !== q.answer);
   const el = h('div');
-  root.append(h('a.btn.small', { href: baseOf(e) + '/sonuc/' + encodeURIComponent(e.id) + sfx(half) }, '‹ Sonuç'), h('h2', `${SEC_LBL[sec] || sec} · yanlışlar`), el);
+  const nm = sec === ALL ? 'Tüm yanlışlar' : `${SEC_LBL[sec] || sec} · yanlışlar`;
+  root.append(h('a.btn.small', { href: baseOf(e) + '/sonuc/' + encodeURIComponent(e.id) + sfx(half) }, '‹ Sonuç'), h('h2', nm), el);
   if (!qs.length) { el.append(h('p.muted', 'Bu bölümde yanlış yok.')); return; }
-  const go = its => runQuiz(el, its, { extra: lessonLink, name: `${e.title || e.id} · ${SEC_LBL[sec] || sec}`, source: e.kisa ? 'Kısa deneme' : 'Çıkmış',
+  const go = its => runQuiz(el, its, { extra: lessonLink, name: `${e.title || e.id} · ${sec === ALL ? 'yanlışlar' : SEC_LBL[sec] || sec}`, source: e.kisa ? 'Kısa deneme' : 'Çıkmış',
     onAnswer: (it, ok, k, m) => answer(it.key, ok, e.kisa ? { ...it.info, src: 'kisa' } : it.info, m) });
   if (!e.kisa) return go(qs.map(q => xItem(e, q)));
   // Kısa deneme: özgün soruyu kendi bankasından kur

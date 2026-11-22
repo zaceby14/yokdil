@@ -749,4 +749,84 @@ t('Deneme günü: ana liste deneme + kart, gerisi isteğe bağlı sonda', () => 
   assert.deepEqual(TK14.orderMockDay(['kart', 'yeni'], false), ['kart', 'yeni']);
 });
 
+// ---- v15
+const S15 = await import('../js/srs.js');
+const W15 = await import('../js/warm.js');
+const KS15 = await import('../js/kisa.js');
+const AP15 = await import('../js/autoparts.js');
+const PL15 = await import('../js/plan.js');
+const RS15 = await import('../js/reasons.js');
+const SC15 = await import('../js/views/scan.js');
+const PN15 = await import('../js/views/panel.js');
+const TK15 = await import('../js/tasks.js');
+t('v15 yeni kartta Zor ≠ İyi: Zor "bugün + 1 g" (oturumda tekrar), İyi "1 g"', () => {
+  const c = { state: 'new' };
+  assert.equal(S15.previewLabel(c, 'hard'), 'bugün + 1 g');
+  assert.equal(S15.previewLabel(c, 'good'), '1 g');
+  assert.ok(S15.hardAgain(c) && !S15.hardAgain({ state: 'review', interval: 5 }) && !S15.hardAgain({ state: 'learning', ladder: 0 }));
+  assert.notEqual(S15.previewLabel({ state: 'review', interval: 5, ease: 2.5 }, 'hard'), 'bugün + 1 g');
+});
+t('v15 neden çipleri: 3 ana (Kelime · Gramer · Süre) + Diğer, kimlikler aynı', () => {
+  const L = ['kelime', 'gramer', 'dikkat', 'sure', 'iki-sik', 'metin'].map(id => ({ id, label: id }));
+  const { main, more } = RS15.splitReasons(L);
+  assert.deepEqual(main.map(r => r.id), ['kelime', 'gramer', 'sure']);
+  assert.deepEqual(more.map(r => r.id), ['dikkat', 'iki-sik', 'metin']);
+  assert.deepEqual(RS15.splitReasons(L.slice(2, 4)).main.map(r => r.id), ['sure']);
+});
+t('v15 joker yazısı yalnız kullanıldığı gün (dün atlanan gün)', () => {
+  const T = '2026-11-25';
+  const mk = act => k => act.includes(k) ? { id: k, tasks: { kart: true } } : null;
+  const a = PL15.streakCalc(mk(['2026-11-25', '2026-11-23', '2026-11-22']), T);
+  assert.equal(a.n, 3); assert.ok(a.jokerNow); assert.deepEqual(a.days, ['2026-11-24']);
+  const b = PL15.streakCalc(mk(['2026-11-25', '2026-11-24', '2026-11-22', '2026-11-21']), T);
+  assert.equal(b.n, 4); assert.ok(!b.jokerNow);
+});
+t('v15 "5 soru çöz" karışımı: çıkmış en fazla 2, özgün az ise çıkmışla dolar', () => {
+  const own = [1, 2, 3, 4, 5, 6].map(i => ({ key: 'g' + i, level: 1 })), xs = [1, 2, 3].map(i => ({ key: 'x:' + i, level: 2 }));
+  const r = W15.mixPractice(own, xs, { allowed: 1, n: 5, rnd: () => 0.5 });
+  assert.equal(r.length, 5); assert.equal(r.filter(k => k.startsWith('x:')).length, 2);
+  assert.equal(W15.mixPractice(own.slice(0, 1), xs, { n: 5, rnd: () => 0.5 }).length, 4);
+  assert.deepEqual(W15.mixPractice(own, [], { n: 5, rnd: () => 0.5 }).length, 5);
+  // açık hata önce kalır
+  const r2 = W15.mixPractice(own, xs, { n: 5, mistakes: [{ id: 'g6', solved: false, due: '2026-01-01' }], rnd: () => 0.5 });
+  assert.equal(r2[0], 'g6');
+});
+t('v15 kısa deneme: gizli okuma (≥3 mc) okuma birimine katılır; yoksa özgün', () => {
+  const rs = [{ id: 'a', text: 'x', level: 2, topic: 'enerji', questions: [{ q: 1, options: ['a', 'b'], answer: 0 }, { q: 2, options: ['a', 'b'], answer: 0 }, { q: 3, options: ['a', 'b'], answer: 1 }] },
+    { id: 'b', text: 'y', questions: [{ q: 1, type: 'tf', options: ['D', 'Y'], answer: 0 }] }, { id: 'c', text: 'z', topic: 'diğer', questions: [1, 2, 3].map(q => ({ q, options: ['a', 'b'], answer: 0 })) }];
+  assert.deepEqual(KS15.privPool(rs).map(u => u.id), ['r:a']);
+  const pools = { g: [], p: [{ id: 'p1', level: 2 }, { id: 'p2', level: 2 }], pr: KS15.privPool(rs) };
+  const on = KS15.buildKisa(pools, 'yarim', { mixPriv: true, rand: () => 0.5 }).units.filter(u => u.sec === 'okuma').map(u => u.id);
+  assert.ok(on.includes('r:a') && on.length === 2);
+  const off = KS15.buildKisa(pools, 'mini', { rand: () => 0.5 }).units.filter(u => u.sec === 'okuma').map(u => u.id);
+  assert.ok(!off.includes('r:a') && off.length === 1);
+  const none = KS15.buildKisa({ ...pools, pr: [] }, 'mini', { mixPriv: true, rand: () => 0.5 }).units.filter(u => u.sec === 'okuma');
+  assert.equal(none.length, 1);
+});
+t('v15 otomatik parçalama: virgül, bağlaç, edat; rol yok; kısa cümle tek blok', () => {
+  const ps = AP15.autoParts('Although many metals corrode when exposed to moist air, stainless steel resists rust because it contains chromium.');
+  assert.ok(ps.length >= 3 && ps.every(p => p.src && !p.role));
+  assert.equal(ps.map(p => p.src).join(' '), 'Although many metals corrode when exposed to moist air, stainless steel resists rust because it contains chromium.');
+  assert.ok(ps.some(p => /^because/.test(p.src)));
+  assert.equal(AP15.autoParts('Water boils at 100 °C.').length, 1);
+  assert.ok(AP15.autoParts('Paslanmaz çelik, krom içerdiği için, birçok metalin aksine paslanmaz.', 'tr').length >= 2);
+});
+t('v15 kelime tara: 50\'şer, 1–2★ atla', () => {
+  assert.equal(SC15.BATCH, 50);
+  const L = [{ word: 'a' }, { word: 'b' }, { word: 'c' }];
+  const st = { a: 1, b: 3, c: 5 };
+  assert.deepEqual(SC15.skipLow(L, true, w => st[w.word]).map(w => w.word), ['b', 'c']);
+  assert.equal(SC15.skipLow(L, false, w => st[w.word]).length, 3);
+});
+t('v15 kural kartı etkisi: iki tarafta ≥5 soru → öncesi → sonrası', () => {
+  assert.equal(PN15.effectText({ before: { n: 6, c: 3 }, after: { n: 5, c: 4 } }), 'Kural kartı: öncesi %50 → sonrası %80');
+  assert.equal(PN15.effectText({ before: { n: 2, c: 1 }, after: { n: 5, c: 4 } }), 'Kural kartından sonra: %80 (5 soru)');
+  assert.equal(PN15.effectText({ before: { n: 9, c: 1 }, after: { n: 0, c: 0 } }), '');
+});
+t('v15 tanı denemesi açıklaması', () => {
+  assert.equal(TK15.mockNote({ title: 'Tanı: 2019-YDS/1 ilk 40' }), TK15.TANI_NOTE);
+  assert.equal(TK15.mockNote({ title: 'x', note: 'not' }), 'not');
+  assert.equal(TK15.mockNote({ title: '2019-YDS/2 ilk 40' }), '');
+});
+
 console.log(`\n${n} test geçti`);

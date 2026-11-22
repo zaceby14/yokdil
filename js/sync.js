@@ -28,8 +28,8 @@ async function gh(path, opts = {}) {
     ...opts,
     headers: { Authorization: 'token ' + getToken(), Accept: 'application/vnd.github+json', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) }
   });
-  if (r.status === 401) throw new Error('Token geçersiz');
-  if (r.status === 403) throw new Error('Yetki yok / limit');
+  if (r.status === 401) throw new Error('Anahtar geçersiz');
+  if (r.status === 403) throw new Error('Yetki yok ya da limit doldu');
   if (!r.ok) throw new Error('GitHub ' + r.status);
   return r.json();
 }

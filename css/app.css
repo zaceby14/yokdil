@@ -663,3 +663,38 @@ body.qmode div:not(.answered) > .q .w.saved, body.qmode div:not(.answered) > .st
 .goalline { display: block; margin: -4px 0 10px; padding: 6px 10px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
 .tasks a.task-go { text-decoration: none; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .seg button, .seg a { white-space: nowrap; }
+
+/* v15: başlık sade — dar ekranda logo "YÖKDİL", odak sayacı küçük, senkron çipi yalnız sorun varsa */
+.brand { white-space: nowrap; }
+@media (max-width: 480px) {
+  .brand b { display: none; }
+  .focus-pill { padding: 3px 7px; font-size: .75rem; }
+  .focus-pill .fp-l { display: none; }
+}
+.focus-pill { white-space: nowrap; }
+.sync-dot { min-width: 0; }
+.sync-dot.ok, .sync-dot.idle { background: var(--good); width: 8px; height: 8px; }
+.sync-dot.sync-chip { width: auto; height: auto; min-height: 32px; border-radius: 999px; padding: 4px 10px; background: var(--bad); color: #fff;
+  font: inherit; font-size: .75rem; font-weight: 700; white-space: nowrap; animation: none; }
+/* Bildirim altta (deneme sonucu: başlığı kapatmasın) */
+#toast.bottom { top: auto !important; bottom: calc(var(--tab-h) + 20px + env(safe-area-inset-bottom)) !important; }
+@media (max-width: 480px) { .top:has(.sync-chip) .btn-label, .top:has(.focus-pill:not(.hidden)) .settings-btn .btn-label { display: none; } }
+.read-legend .lg-new { text-decoration: underline dotted var(--mid); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.read-legend mark { background: var(--hl); color: var(--text); padding: 0 3px; border-radius: 3px; }
+.read-help, .read-legend { margin: 2px 0; }
+.ex-pair .ex-tr { display: inline; }
+details.wc-kisaca summary { min-height: 32px; cursor: pointer; color: var(--muted); }
+details.wc-kisaca ul { margin: 4px 0; padding-left: 18px; }
+details.more-detail > summary { list-style: none; cursor: pointer; display: block; }
+details.more-detail > summary::-webkit-details-marker { display: none; }
+details.more-detail[open] > summary b { color: var(--accent); }
+.screen-why { margin: -4px 0 10px; }
+.task-note { display: block; color: var(--accent); }
+.sample-chip { margin-left: 6px; vertical-align: middle; }
+.field > .seg { flex: 0 1 auto; margin: 0; }
+.field > .seg > * { padding: 8px 10px; flex: 0 0 auto; }
+.field > span:first-child { flex: 1 1 auto; min-width: 0; }
+details.set-adv > summary, details.steps-more > summary { list-style: none; cursor: pointer; min-height: 44px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+details.set-adv > summary::-webkit-details-marker, details.steps-more > summary::-webkit-details-marker { display: none; }
+details.set-adv[open] > summary { margin-bottom: 8px; }
+details.set-adv h3 { margin-top: 14px; }

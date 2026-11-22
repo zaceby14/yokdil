@@ -44,6 +44,9 @@ export function schedule(card, grade, now = Date.now()) {
   return { state, ease: +ease.toFixed(2), interval, lapses, reps: reps + 1, due, lastReview: now, hist, ladder };
 }
 
+// Yeni/öğrenilen kartta "Zor": aynı oturumda bir kez daha gösterilir
+export const hardAgain = c => ['new', 'learning'].includes(c?.state || 'new') && !inLadder(c);
+
 // Merdivendeki kart mı?
 export const inLadder = c => c?.ladder != null || c?.state === 'relearn';
 
@@ -51,6 +54,8 @@ function startOfDay(t) { const d = new Date(t); d.setHours(0, 0, 0, 0); return d
 
 export function previewLabel(card, grade) {
   const s = schedule(card, grade);
+  // Yeni kartta Zor: bugün oturumda bir kez daha + yarın (İyi yalnız yarın) — düğmelerde fark görünsün
+  if (grade === 'hard' && hardAgain(card)) return 'bugün + 1 g';
   const ms = s.due - Date.now();
   if (ms < 3600000) return Math.max(1, Math.round(ms / MIN)) + ' dk';
   if (s.interval < 1) return Math.round(ms / 3600000) + ' sa';

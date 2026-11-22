@@ -75,10 +75,14 @@ async function route() {
   catch (e) { console.error(e); root.append(h('div.card', h('b', 'Hata: '), String(e.message || e))); }
 }
 
+// Senkron: sorun varsa net çip ("Senkron yok – dokun"), sorunsuzsa küçük yeşil nokta, anahtar yoksa hiçbir şey
 function syncDot(s) {
   const d = document.getElementById('syncDot');
-  d.className = 'sync-dot ' + s.state;
-  d.title = { off: 'Senkron kapalı (anahtar yok)', idle: 'Senkron hazır', pending: 'Senkron: gönderilecek değişiklik var', syncing: 'Senkronlanıyor…', ok: 'Senkron tamam', error: 'Senkron yapılamadı (bağlantı?): ' + s.msg }[s.state] || '';
+  const err = s.state === 'error';
+  d.className = 'sync-dot ' + s.state + (err ? ' sync-chip' : '') + (s.state === 'off' ? ' hidden' : '');
+  d.textContent = err ? 'Senkron yok – dokun' : '';
+  d.title = { idle: 'Senkron hazır', pending: 'Gönderilecek değişiklik var', syncing: 'Senkronlanıyor…', ok: 'Senkron tamam', error: 'Senkron yapılamadı: ' + s.msg }[s.state] || '';
+  d.setAttribute('aria-label', d.title || 'Senkron');
 }
 
 async function main() {
@@ -93,7 +97,12 @@ async function main() {
   sync.onStatus(syncDot);
   sync.init();
   syncDot(sync.status);
-  document.getElementById('syncDot').addEventListener('click', e => toast(e.currentTarget.title || 'Senkron'));
+  // Çipe dokun: yeniden dene (bağlantı yoksa nedeni yazar)
+  document.getElementById('syncDot').addEventListener('click', e => {
+    const err = sync.status.state === 'error';
+    toast(err ? 'Tekrar deneniyor… (' + (sync.status.msg || 'bağlantı?') + ')' : e.currentTarget.title || 'Senkron');
+    if (err) sync.syncNow().catch(() => {});
+  });
   store.subscribe(info => {
     if (!info.merged) return;
     // senkrondan gelen eski içerikli kartları sessizce tazele (zaman damgası değişmez)

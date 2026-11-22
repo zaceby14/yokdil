@@ -69,6 +69,17 @@ export function practicePick(pool, { logs = [], mistakes = [], allowed = 1, n = 
     .slice(0, n).map(x => x.p.key);
 }
 
+// Saf: "5 soru çöz" karışımı — özgün havuz + çıkmış havuz (en fazla xMax çıkmış soru; özgün az ise çıkmışla tamamlanır).
+// Önce özgündeki açık hatalar/yanlışlar korunur, sonra çıkmışlar, sonra kalan özgünler.
+export function mixPractice(own, xs, ctx = {}, xMax = 2) {
+  const n = ctx.n || 5;
+  const xp = practicePick(xs || [], { ...ctx, n });
+  const op = practicePick(own || [], { ...ctx, n });
+  const nx = Math.min(xp.length, Math.max(xMax, n - op.length));
+  const no = Math.min(op.length, n - nx);
+  return [...op.slice(0, no), ...xp.slice(0, nx)].slice(0, n);
+}
+
 // Saf: kural kartını ilk gördükten sonraki doğruluk (ve öncesi)
 export function afterCard(logs, k, firstAt) {
   const a = { n: 0, c: 0 }, b = { n: 0, c: 0 };
@@ -109,7 +120,7 @@ export function bestOne(topicRows, typeRows, fallback = []) {
 // Saf: yanlış cevaptaki "Senin kuralın" kutusu: konu aynı + kuralın İngilizce anahtar sözcüklerinden biri doğru/seçilen şıkta geçmeli.
 // Soru tipi kuralında (ör. ilgisiz cümle) konu eşleşmesi yeter. Eşleşme yoksa null (ilgisiz kural gösterilmez).
 const RSTOP = new Set('a an the is are was were be it its and or but this x v ving'.split(' '));
-export const ruleWords = r => new Set((String([r?.rule, r?.right, r?.ex].filter(Boolean).join(' ')).toLowerCase().match(/[a-z]{2,}/g) || []).filter(w => !RSTOP.has(w)));
+export const ruleWords = r => new Set((String([r?.rule, r?.right, String(r?.ex || '').split('→')[0]].filter(Boolean).join(' ')).toLowerCase().match(/[a-z]{2,}/g) || []).filter(w => !RSTOP.has(w)));
 export function ruleMatch(rules, topic, texts = []) {
   if (!topic) return null;
   const tok = new Set(texts.join(' ').toLowerCase().match(/[a-z]{2,}/g) || []);

@@ -4,6 +4,7 @@ import { grammar, drills, lessons, passages } from './data.js';
 import { topicName, typeName, TOPICS, optText } from './util.js';
 import { getPack, groupOf } from './pack.js';
 import { tappable } from './tappable.js';
+import { autoParts } from './autoparts.js';
 
 let gmap = null, dmap = null, lmap = null, pmap = null;
 async function maps() {
@@ -63,6 +64,14 @@ export function rItem(r, k) {
     info: { kind: 'okuma', topic: r.topic || '', dtype: 'paragraf', src: 'gizli' } };
 }
 
+// Çıkmış çeviri: içerikte parçalar varsa onlar, yoksa basit otomatik parçalama (rol etiketi yok, karşılık yok)
+function xParts(q) {
+  if (!/^ceviri-/.test(q.type || '')) return {};
+  if (Array.isArray(q.parts) && q.parts.length) return { parts: q.parts, check: q.check || [] };
+  const ps = autoParts(q.q, q.type === 'ceviri-tr-en' ? 'tr' : 'en');
+  return ps.length > 1 ? { parts: ps, autoParts: true } : {};
+}
+
 // Çıkmış soru öğesi (metinler IndexedDB'den)
 export function xItem(e, q) {
   const g = groupOf(e, q);
@@ -73,7 +82,8 @@ export function xItem(e, q) {
     qNode: long ? () => tappable(q.q, src).el : null, q: q.q,
     options: (q.options || []).map(optText), answer: q.answer, explain: q.explain || '',
     label: `${e.title || e.id} · ${q.n}`, unverified: q.keySource === 'claude',
-    info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' }
+    info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' },
+    ...xParts(q)
   };
 }
 

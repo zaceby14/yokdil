@@ -12,14 +12,17 @@ import { enrich, wordIndex } from '../data.js';
 import memory, { EX, counts as exCounts } from './memory.js';
 import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
-import { inLadder } from '../srs.js';
+import { inLadder, hardAgain } from '../srs.js';
 import { setCtx } from '../ctx.js';
 import { nextTaskBtn, cardMin, NEW_VIEWS } from '../tasks.js';
 import { loadStars, hasStars, starOf, starsEl, starRow, STAR_TIP } from '../stars.js';
 
 const SRC = ['Ikigai', 'More to Read', 'Diğer'];
+// Kaynak adı ekranda (veri değeri aynı kalır)
+const SRC_TR = { 'Çekirdek': 'Sık kelime listesi', 'Hata': 'Yanlış cevaptan', 'Notlarım': 'Notlarım' };
+const srcName = s => SRC_TR[s] || s;
 const POS_TR = { n: 'isim', v: 'fiil', adj: 'sıfat', adv: 'zarf', conj: 'bağlaç', prep: 'edat', phr: 'öbek' };
-const STATE_TR = { new: 'Yeni', learning: 'Öğreniliyor', relearn: 'Tekrar öğren', review: 'Tekrar', known: 'Biliyorum' };
+const STATE_TR = { new: 'Yeni', learning: 'Öğreniliyor', relearn: 'Unuttuğun', review: 'Tekrarda', known: 'Biliyorum' };
 const stateTr = c => isGraduated(c) ? 'Öğrenildi' : STATE_TR[c.state || 'new'] || c.state;
 
 function tabs(active) {
@@ -52,14 +55,15 @@ async function home(root) {
     : h('span.btn.wide.disabled', h('span', h('b', EX[k]), h('br'), h('span.small.muted', 'kart çalıştıkça açılır')));
   const ladder = store.all('cards').filter(inLadder).length;
   root.append(tabs(''),
+    h('p.small.muted.screen-why', 'Kelimeleri unutmadan, tam zamanında tekrar et.'),
     h('div.stats3', h('div', h('b', due), h('span', 'tekrar')), h('div', h('b', nq), h('span', 'yeni (bugün)')),
       h('div', h('b', store.all('cards').length), h('span', 'toplam'))),
     h('div.row2',
       h('a.btn.primary.wide.big-btn' + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
-      h('a.btn.wide.big-btn' + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'günlük limit doldu')))),
-    h('p.small.muted.center', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Olgun ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
+      h('a.btn.wide.big-btn' + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'bugünkü sayı doldu')))),
+    h('p.small.muted.center', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Kalıcı ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
     h('div.row2',
-      h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini ele'))),
+      h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini hızla ele'))),
       gp >= GAP_MIN ? h('a.btn.wide', { href: '#/kartlar/bosluk' }, h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', 'kendi kartlarınla')))
         : h('span.btn.wide.disabled', h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', `${gp}/${GAP_MIN} kartta açılır`)))),
     h('a.btn.wide.guess-link', { href: '#/kartlar/tahmin' }, h('span', h('b', 'Bağlamdan tahmin'), h('br'), h('span.small.muted', 'cümleden anlamı çıkar · 10 soru'))),
@@ -138,11 +142,11 @@ async function session(root, kind = 'tekrar', ids = []) {
       h('div.ftr', rev ? card.word : card.tr || '—'),
       card.pos || card.tags?.length ? h('div.chips.centerx', card.pos ? h('span.small.muted', card.pos + ' ') : null, (card.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t))) : null,
       card.syn?.length ? h('div', h('b', 'Eş: '), card.syn.join(', ')) : null,
-      card.coll ? h('div', h('b', 'Eşdizim: '), card.coll) : null,
+      card.coll ? h('div', h('b', 'Kalıp: '), card.coll) : null,
       extra(card, en),
       noteParts(card.note).own ? h('div.small', noteParts(card.note).own) : null,
       noteParts(card.note).auto ? h('div.small.muted.auto-note', 'ⓘ ' + noteParts(card.note).auto) : null,
-      h('div.small.muted', [card.source, card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · '))
+      h('div.small.muted', [srcName(card.source), card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · '))
     );
     let graded = false;
     const grade = g => {
@@ -150,7 +154,7 @@ async function session(root, kind = 'tekrar', ids = []) {
       if (practice && g !== 'again') { if (sel) { done++; seenIds.add(card.id); } show(); return; } // "Zor" sonrası oturum içi ek gösterim / seçili kelime: takvimi değiştirmez
       if (!store.get('cards', card.id)) store.put('cards', card);
       const prev = store.get('cards', card.id) || card;
-      const wasLearning = ['new', 'learning'].includes(prev.state || 'new') && !inLadder(prev);
+      const wasLearning = hardAgain(prev);
       const next = review(prev, g);
       done++; seenIds.add(card.id);
       if (g === 'again') again.push(card.word);
@@ -159,7 +163,7 @@ async function session(root, kind = 'tekrar', ids = []) {
       show();
     };
     const grades = h('div.grades.hidden', (practice ? ['again', 'good'] : GRADES).map(g => h('button.g-' + g, { onclick: () => grade(g) },
-      h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'takvim aynı' : 'yarın') : previewLabel(card, g)))));
+      h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'sıra değişmez' : 'yarın') : previewLabel(card, g)))));
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
     const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
@@ -210,7 +214,7 @@ function extra(card, en) {
     for (const [e, t] of exs.slice(0, 3)) wrap.append(h('div.exrow',
       h('div.ex', { lang: 'en', html: hl(e, card.word) || esc(e) }), t ? h('div.small.muted', t) : null));
   }
-  if (!card.coll && en?.core?.coll) wrap.append(h('div.small', h('b', 'Eşdizim: '), en.core.coll));
+  if (!card.coll && en?.core?.coll) wrap.append(h('div.small', h('b', 'Kalıp: '), en.core.coll));
   return wrap.childNodes.length ? wrap : null;
 }
 
@@ -220,7 +224,7 @@ const TAG_SRC = { remzi: 'Remzi Hoca listesi', zafer: 'Zafer Hoca listesi' };
 function list(root) {
   const q = h('input', { type: 'search', placeholder: 'Ara (İng/Tr)' });
   const fs = h('select', h('option', { value: '' }, 'Tüm kaynaklar'),
-    ['Notlarım', 'Çekirdek', 'Okuma', 'Hata', ...SRC].map(s => h('option', { value: s }, s)),
+    ['Notlarım', 'Çekirdek', 'Okuma', 'Hata', ...SRC].map(s => h('option', { value: s }, srcName(s))),
     Object.entries(TAG_SRC).map(([k, v]) => h('option', { value: 'tag:' + k }, v)));
   const LV = { known: 'Bildiklerim', grad: 'Öğrenildi', eksik: 'Anlam eksik' };
   const fst = h('select', h('option', { value: '' }, 'Tüm durumlar'), Object.entries(STATE_TR).filter(([k]) => k !== 'known').map(([k, v]) => h('option', { value: k }, v)),
@@ -249,7 +253,7 @@ function list(root) {
       h('b', { lang: 'en' }, c.word), stars ? starsEl(c.word, { tag: 'span' }) : null, h('span.small.muted', `${c.tr || ''}`),
       !(c.tr || '').trim() ? h('span.chip.bad.small', 'anlam eksik') : null,
       h('span.chip.small', stateTr(c))),
-      c.state === 'known' ? h('button.btn.small.undo', { onclick: () => { unKnow(c); toast('Yeni kuyruğa alındı'); draw(); } }, 'Geri al') : null));
+      c.state === 'known' ? h('button.btn.small.undo', { onclick: () => { unKnow(c); toast('Yeni kelimelere geri alındı'); draw(); } }, 'Geri al') : null));
     if (cs.length > 300) ul.append(h('li.muted.small', 'İlk 300 gösteriliyor, aramayı daralt'));
   };
   q.oninput = draw; fs.onchange = draw; fst.onchange = draw; sort.onchange = draw; top.onchange = draw;
@@ -263,7 +267,7 @@ function list(root) {
 function form(root, c) {
   const f = (ph, v) => h('input', { placeholder: ph, value: v || '' });
   const word = f('kelime / öbek', c?.word), tr = f('Türkçe anlam', c?.tr), syn = f('eş anlamlılar (virgülle)', (c?.syn || []).join(', '));
-  const coll = f('eşdizim (ops.)', c?.coll);
+  const coll = f('birlikte kullanıldığı kalıp (isteğe bağlı)', c?.coll);
   const note = h('textarea', { rows: 2, placeholder: 'not / örnek' }); note.value = c?.note || '';
   const curSrc = c?.source || 'Diğer';
   const srcOpts = SRC.includes(curSrc) ? SRC : [curSrc, ...SRC];
@@ -283,7 +287,7 @@ function form(root, c) {
   page.inputMode = 'numeric';
   root.append(tabs(c ? '' : 'ekle'),
     h('h2', c ? 'Kartı düzenle' : 'Yeni kart'),
-    h('label', 'Kelime', word), h('label', 'Anlam', tr), h('label', 'Eş anlamlı', syn), h('label', 'Eşdizim', coll),
+    h('label', 'Kelime', word), h('label', 'Anlam', tr), h('label', 'Eş anlamlı', syn), h('label', 'Kalıp (eşdizim)', coll),
     h('label', 'Not', note),
     h('div.row', h('label.grow', 'Kaynak', src), h('label', { style: 'width:7rem' }, 'Sayfa', page)),
     c?.ctx ? h('div.ctx.small', { lang: 'en' }, c.ctx) : null,
@@ -307,6 +311,6 @@ function form(root, c) {
     }, c ? 'Kaydet' : 'Ekle'),
     c ? h('button.btn.danger.wide', { onclick: () => { if (confirm('Kart silinsin mi?')) { store.del('cards', c.id); location.hash = '#/kartlar/liste'; } } }, 'Sil') : null,
     (showPreview(), null),
-    c ? h('p.small.muted', `Durum: ${stateTr(c)} · aralık ${c.interval || 0} g · unutma ${c.lapses || 0}`) : null
+    c ? h('p.small.muted', `Durum: ${stateTr(c)} · tekrar aralığı ${c.interval || 0} gün · ${c.lapses || 0} kez unuttun`) : null
   );
 }

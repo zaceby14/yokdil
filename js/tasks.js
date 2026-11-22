@@ -12,7 +12,7 @@ export const SEC_PER_CARD = 8;           // tekrar kartı ≈ 8 sn
 export const NEW_VIEWS = 2;              // yeni kart ≈ 2 gösterim
 export const cardMin = n => n ? Math.max(1, Math.ceil(n * SEC_PER_CARD / 60)) : 0;
 
-const LABEL = { kart: 'Kart tekrarı', yeni: 'Yeni kelime', gramer: 'Gramer', hata: 'Hata tekrarı', okuma: 'Okuma', deneme: 'Deneme / kısa set', kisa: 'Kısa deneme' };
+const LABEL = { kart: 'Kart tekrarı', yeni: 'Yeni kelime', gramer: 'Gramer', hata: 'Hata tekrarı', okuma: 'Okuma', deneme: 'Deneme', kisa: 'Kısa deneme' };
 const WD = { Paz: 0, Pzt: 1, Sal: 2, Çar: 3, Per: 4, Cum: 5, Cmt: 6 };
 // Kısa deneme bağlantısı: yarım kalan varsa ona, yoksa yeni
 const openKisa = size => store.all('progress').filter(p => p.id?.startsWith('exam:kisa') && p.kisa === size && p.startedAt && !p.done).sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))[0];
@@ -49,20 +49,20 @@ export async function todayTasks() {
     okuma: rr.tasks?.okuma && rr.readTitle ? { sub: rr.readTitle + ' · okundu', go: '#/okuma', min: rd?.min || min.okuma || 20 }
       : { sub: rd ? rd.title + (rd.gizli ? ' · kaynağım' : '') : 'parça + bilinmeyen kelime', go: rd?.href || '#/okuma', min: rd?.min || min.okuma || 20 },
     deneme: { sub: w.mock?.title || 'çıkmış sınav ya da 8 soruluk set', go: mockHref(w.mock), min: 0 },
-    kisa: { label: kisaTitle(kz || 'mini'), sub: 'özgün sorular · sınav gibi, ipucu yok', go: kisaHref(kz || 'mini'), min: KISA[kz || 'mini'].min }
+    kisa: { label: kisaTitle(kz || 'mini'), sub: 'sınav gibi · çıkmış değil · ipucu yok', go: kisaHref(kz || 'mini'), min: KISA[kz || 'mini'].min }
   };
   // Son 14 gün: hafta içi deneme görevi = mini kısa deneme (programda o gün tam/yarım çıkmış yoksa)
   const wdN = parseDay(dayKey()).getDay();
-  if (fin.on && wdN >= 1 && wdN <= 5 && !(w.mock && WD[w.mock.day] === wdN)) Object.assign(T.deneme, { label: kisaTitle('mini'), sub: 'özgün sorular · sınav gibi', go: kisaHref('mini'), min: KISA.mini.min });
+  if (fin.on && wdN >= 1 && wdN <= 5 && !(w.mock && WD[w.mock.day] === wdN)) Object.assign(T.deneme, { label: kisaTitle('mini'), sub: 'sınav gibi · çıkmış değil', go: kisaHref('mini'), min: KISA.mini.min });
   if (fin.on && rr.mock && !rr.tasks?.deneme) tick('deneme');
   const r3 = dayRec();
   // Deneme günü (programdaki çıkmış deneme ya da kısa deneme bugün): ana liste kart tekrarı + deneme; gerisi isteğe bağlı
   const xm = !busy && !fin.on && w.mock && w.mock.day in WD && WD[w.mock.day] === wdN ? w.mock : null;
-  if (xm) Object.assign(T.deneme, { label: xm.kind === 'tam' ? 'Tam deneme (180 dk)' : `Yarım deneme (${xm.n || 40} soru · 90 dk)`, sub: xm.title || 'çıkmış sınav', go: mockHref(xm), min: xm.kind === 'tam' ? 180 : 90 });
+  if (xm) Object.assign(T.deneme, { label: xm.kind === 'tam' ? 'Tam deneme (180 dk)' : `Yarım deneme (${xm.n || 40} soru · 90 dk)`, sub: xm.title || 'çıkmış sınav', go: mockHref(xm), min: xm.kind === 'tam' ? 180 : 90, note: mockNote(xm) });
   const mockDay = !!(kz || xm);
   const keys = [...taskList(busy, fin.on), ...(xm ? ['deneme'] : []), ...(kz ? ['kisa'] : [])].filter(k => k !== 'hata' || hs.total).filter(k => !(fin.on && k === 'yeni' && !nl));
   return orderMockDay(keys, mockDay).map(k => ({
-    key: k, label: T[k].label || LABEL[k], sub: T[k].sub, go: T[k].go, min: T[k].min, done: !!r3.tasks?.[k] || (k === 'deneme' && !!r3.mock),
+    key: k, label: T[k].label || LABEL[k], sub: T[k].sub, go: T[k].go, min: T[k].min, note: T[k].note || '', done: !!r3.tasks?.[k] || (k === 'deneme' && !!r3.mock),
     optional: mockDay && !MOCK_DAY_MAIN.includes(k)
   }));
 }
@@ -73,6 +73,10 @@ export function orderMockDay(keys, mockDay) {
   if (!mockDay) return keys;
   return [...MOCK_DAY_MAIN.filter(k => keys.includes(k)), ...keys.filter(k => !MOCK_DAY_MAIN.includes(k))];
 }
+
+// Tanı denemesi gibi programdaki denemenin tek satır açıklaması (program.json "note"; "Tanı" başlıklıda varsayılan)
+export const TANI_NOTE = 'Seviyeni görmek için; sonuç önemli değil.';
+export const mockNote = m => m?.note || (/^tanı/i.test(m?.title || '') ? TANI_NOTE : '');
 
 // Programdaki deneme bağlantısı (yarım → ilk 40 soru / 90 dk)
 export const mockHref = m => !m?.exam ? '#/cikmis' : '#/cikmis/sinav/' + encodeURIComponent(m.exam) + (m.kind === 'tam' ? '' : '/yarim');

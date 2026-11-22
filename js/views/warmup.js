@@ -43,12 +43,16 @@ function extraEl(e, full) {
   return h('button.linkbtn.wc-sheet', { type: 'button', onclick: () => openSheet(c) }, 'Kopya kağıdı: ' + (c.title || '') + ' ›');
 }
 
+// Dersin "Kısaca" bloğu (başlığa göre; sabit indekse dayanma)
+const kisaca = l => (l?.blocks || []).find(b => /^kısaca$/i.test(String(b?.h || '').trim()))?.md || '';
+
 // Kural kartı: formül + kişisel kural (yanlış → doğru) + tek ek kart
 export function ruleCardEl(d, { onSnooze, full, compact } = {}) {
   const r = d.rule;
   return h('div.wcard', { 'data-key': d.key },
     h('div.wc-head', h('b', d.name)),
     d.formula ? h('div.wc-formula', d.formula) : null,
+    kisaca(d.lesson) && !compact ? h('details.wc-kisaca', h('summary.small', 'Kısaca ▸'), h('div.small', { html: md(kisaca(d.lesson)) })) : null,
     r ? h('div.wc-rule', r.rule && !(compact && (r.wrong || r.right)) ? h('div.small', r.rule) : null,
       r.wrong ? h('div.small.bad-t', { lang: 'en' }, '✗ ' + r.wrong) : null,
       r.right ? h('div.small.good-t', { lang: 'en' }, '✓ ' + r.right) : null) : null,

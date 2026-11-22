@@ -55,8 +55,9 @@ async function list(root) {
   const { next, sg } = pickReading({ ps, rs, done, recs, lastGizli: !!last?.gizli });
   root.append(
     h('div.row.between', h('h2', 'Okuma'), h('a.btn.primary', { href: '#/okuma/yeni' }, '+ Metin yapıştır')),
+    h('p.small.muted.screen-why', 'Fen metni oku; bilmediğin kelimeye dokun, karta ekle.'),
     next ? h('a.card.link.suggest', { href: next.href },
-      h('div.small.muted', 'Sıradaki önerilen · seviye ' + (next.level || '-') + (next.gizli ? ' · kaynağım' : '')), h('b', next.title),
+      h('div.small.muted', 'Sana önerilen · seviye ' + (next.level || '-') + (next.gizli ? ' · kaynağım' : '')), h('b', next.title),
       sg.acc != null ? h('div.small.muted', `Son okumalar: ${sg.wpm} kelime/dk · doğruluk %${Math.round(sg.acc * 100)}`) : null) : null,
     h('a.card.link.guess-link', { href: '#/kartlar/tahmin' }, h('b', 'Bağlamdan tahmin'), h('span.small.muted', ' bilmediğin kelimeyi cümleden çıkar')),
     mine.length ? h('h3', 'Metinlerim') : null,
@@ -82,8 +83,8 @@ function privList(rs, done) {
   for (const r of rs.filter(x => !isOther(x))) { const k = r.source || 'Diğer kaynak'; (groups.get(k) || groups.set(k, []).get(k)).push(r); }
   const other = rs.filter(isOther);
   return h('section.priv-read',
-    h('h3', 'Kaynaklarım (gizli)'),
-    h('p.small.muted', 'Yalnız bu cihazda; senkrona girmez.'),
+    h('h3', 'Kaynaklarım'),
+    h('p.small.muted', 'Gizli paketten; yalnız bu cihazda.'),
     [...groups].map(([src, list]) => h('details.privgroup', { open: groups.size <= 3 }, h('summary', h('b', src), h('span.small.muted', ` · ${list.length}`)), h('ul.list', list.map(item)))),
     other.length ? h('details.privgroup.other', h('summary', h('b', 'Diğer (genel)'), h('span.small.muted', ` · ${other.length} · fen dışı`)), h('ul.list', other.map(item))) : null);
 }
@@ -133,7 +134,7 @@ function reader(root, doc) {
   const mainIdea = i => {
     const key = `okuma:${doc.id}#p${i}`;
     const prev = quickNotes().find(n => n.ctx?.key === key);
-    const ta = h('textarea', { rows: 2, placeholder: 'Bu paragrafın ana fikri ne? (1 cümle, Türkçe olabilir)' });
+    const ta = h('textarea', { rows: 2, placeholder: 'Bu paragraf ne anlatıyor? (1 cümle, Türkçe olur)' });
     ta.value = prev?.text || '';
     let id = prev?.id;
     const st = h('span.small.muted', prev ? 'kaydedildi' : '');
@@ -143,8 +144,8 @@ function reader(root, doc) {
       st.textContent = 'kaydedildi';
     };
     ta.addEventListener('change', save);
-    return h('details.idea' + (prev ? '.has' : ''), h('summary', prev ? '✓ Ana fikir' : 'Ana fikir?'),
-      ta, h('div.row', h('button.btn.small', { onclick: save }, 'Kaydet'), st));
+    return h('details.idea' + (prev ? '.has' : ''), h('summary', prev ? '✓ Ana fikir' : '+ Ana fikir yaz'),
+      ta, h('div.row', h('button.btn.small', { onclick: save }, 'Ana fikri kaydet'), st));
   };
   // Çeviri (gizli okumada "tr" varsa): paragraf paragraf, varsayılan gizli; önce kendi çevirini yaz (isteğe bağlı → notlar)
   const trParas = doc.tr ? String(doc.tr).replace(/\r/g, '').split(/\n\s*\n/) : [];
@@ -160,7 +161,7 @@ function reader(root, doc) {
     ta.addEventListener('change', save);
     const out = h('div.trpara.hidden', { lang: 'tr' }, trParas[i]);
     const btn = h('button.btn.small.tr-show', { type: 'button', onclick: () => { save(); out.classList.toggle('hidden'); btn.textContent = out.classList.contains('hidden') ? 'Çeviriyi göster' : 'Çeviriyi gizle'; } }, 'Çeviriyi göster');
-    return h('details.idea.trbox', h('summary', 'Çeviri'), ta, h('div.row', h('button.btn.small', { type: 'button', onclick: save }, 'Kaydet'), btn, st), out);
+    return h('details.idea.trbox', h('summary', '+ Çeviri'), ta, h('div.row', h('button.btn.small', { type: 'button', onclick: save }, 'Çevirimi kaydet'), btn, st), out);
   };
   const after = i => { const a = active ? mainIdea(i) : null, b = trBox(i); return a && b ? h('div', a, b) : a || b; };
   const tp = tappable(doc.text, { source: doc.mine || doc.gizli ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
@@ -187,7 +188,7 @@ function reader(root, doc) {
   }
   const body = tp.el;
   let phraseMode = false;
-  const phraseBtn = h('button.btn.small', { onclick: () => { phraseMode = !phraseMode; tp.setPhrase(phraseMode); phraseBtn.classList.toggle('primary', phraseMode); if (phraseMode) toast('Başlangıç ve bitiş kelimesine dokun'); } }, 'Öbek');
+  const phraseBtn = h('button.btn.small', { onclick: () => { phraseMode = !phraseMode; tp.setPhrase(phraseMode); phraseBtn.classList.toggle('primary', phraseMode); if (phraseMode) toast('İlk ve son kelimeye dokun'); } }, 'Öbek');
 
   const gloss = doc.gloss?.length ? h('details.gloss', h('summary', `Sözlükçe (${doc.gloss.length})`),
     h('div.chips', doc.gloss.map(g => h('span.chip', h('b', g.w), ' ', g.tr)))) : null;
@@ -232,7 +233,8 @@ function reader(root, doc) {
       h('a', { href: '#/okuma', onclick: e => { if (!confirm('Metin silinsin mi?')) return e.preventDefault(); store.del('texts', doc.id); } }, 'Sil')) :
       doc.passage ? h('div.small.muted', `${topicName(doc.passage.topic || '')} · seviye ${doc.passage.level || '-'}`) :
       doc.gizli ? h('div.small.muted.priv-meta', [doc.source, isOther(doc) ? 'genel' : topicName(doc.topic), doc.level ? 'seviye ' + doc.level : ''].filter(Boolean).join(' · ')) : null,
-    h('p.small.muted', 'Dokun: kelime · Uzun bas/Öbek: başlangıç → bitiş'),
+    h('p.small.muted.read-help', 'Kelimeye dokun → anlamı. Birkaç kelime için ', h('b', 'Öbek'), '.'),
+    store.settings().readHl !== false ? h('p.small.muted.read-legend', h('span.lg-new', 'altı noktalı'), ' = yeni kelime · ', h('mark', 'sarı'), ' = kartında var') : null,
     gloss, body,
     doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); if (readCounts({ words: nWords, secs })) tickRead(); else speed.textContent = 'Kısa okuma: görev sayılmadı.'; showNew(); } }, 'Okumayı bitirdim'),
     speed, qsec, summary
@@ -245,7 +247,7 @@ function reader(root, doc) {
 // Parça sonu: kartı olmayan çekirdek kelimeler → hepsini ekle / seç
 export function newWordsBox(list, doc, after) {
   const box = h('section.card.newwords');
-  if (!list.length) { box.append(h('p.small.muted', 'Bu parçada yeni çekirdek kelime yok.')); return box; }
+  if (!list.length) { box.append(h('p.small.muted', 'Bu parçada kartında olmayan sık kelime yok.')); return box; }
   const on = new Set();
   const gm = glossMap(doc.gloss);
   const add = items => {

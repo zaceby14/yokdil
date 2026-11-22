@@ -35,12 +35,12 @@ function vocabBox(st, goal, left, limit, core, top5, frac) {
   return h('div.vocab',
     h('div.row.between', h('div', h('span.big', v.studied), h('span.muted', ' çalıştığın kelime')),
       h('a.btn.small', { href: '#/kartlar/tara' }, 'Tara')),
-    h('div.small.vocab-solid', 'Sağlam: ', h('b', v.solid), ` · hedef ${goal}`),
+    h('div.small.vocab-solid', 'Sağlam (iyi bildiğin): ', h('b', v.solid), ` · hedef ${goal}`),
     h('div.goalbar.two', h('i.studied', { style: `width:${pc(v.studied)}%` }), h('i', { style: `width:${pc(v.solid)}%` }),
       v.todayGoal ? h('span.goal-line', { style: `left:${pc(v.todayGoal)}%`, title: 'bugünün ara hedefi' }) : null),
-    v.todayGoal ? h('div.small.muted.vocab-today', `Çizgi: bugünün ara hedefi ${v.todayGoal} sağlam kelime`) : null,
-    h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Olgun ${st.mature} · Öğreniliyor ${st.learning}`),
-    core?.total ? h('div.core-seen', h('div.small', 'Çekirdek liste: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
+    v.todayGoal ? h('div.small.muted.vocab-today', `Dikey çizgi: bugün olman gereken yer (${v.todayGoal} sağlam kelime)`) : null,
+    h('div.small.muted', `Biliyorum ${st.known} · Öğrenildi ${st.grad} · Kalıcı ${st.mature} · Öğreniliyor ${st.learning}`),
+    core?.total ? h('div.core-seen', h('div.small', 'Sık kelime listesi: ', h('b', `${core.seen}/${core.total}`), ' görüldü'),
       h('div.goalbar.thin', h('i', { style: `width:${(core.seen / core.total * 100).toFixed(1)}%` }))) : null,
     top5 ? h('div.small.star5', '5★ kelimeler: ', h('b', `${top5.known}/${top5.total}`), ' biliyor') : null,
     left > 0 ? h('div.small.vocab-proj', `Günde ${limit} yeni kelimeyle sınavda ≈ ${v.proj} çalışılmış kelime`,
@@ -48,7 +48,7 @@ function vocabBox(st, goal, left, limit, core, top5, frac) {
 }
 
 export const MOCK = [
-  ['bosluk', 'Cümlede boşluk', 20], ['cloze', 'Cloze test', 10], ['tamamlama', 'Cümle tamamlama', 11],
+  ['bosluk', 'Cümlede boşluk', 20], ['cloze', 'Cloze (boşluklu paragraf)', 10], ['tamamlama', 'Cümle tamamlama', 11],
   ['en-tr', 'Çeviri İng→Tr', 6], ['tr-en', 'Çeviri Tr→İng', 6], ['paragraf', 'Paragraf tamamlama', 6],
   ['ilgisiz', 'İlgisiz cümle', 6], ['okuma', 'Okuma', 15]
 ];
@@ -64,7 +64,7 @@ const TIP = {
   'relative': 'Virgül ve edat varsa "that" olmaz; which/whom kullan.',
   'gerund-infinitive': 'Fiil + Ving / to V listesini kartla tekrar et.',
   'either-neither': 'Either…or, neither…nor, both…and eşlerini ezberle.',
-  'kelime': 'Günlük kart tekrarını aksatma, yeni limitini koru.',
+  'kelime': 'Günlük kart tekrarını aksatma, günlük yeni kelime sayını koru.',
   cloze: 'Boşluğun iki yanındaki cümleyi oku, bağlaç ve edat ipucunu ara.',
   'cumle-tamamlama': 'Önce bağlacın kutbunu belirle, sonra zaman uyumuna bak.',
   tamamlama: 'Önce bağlacın kutbunu belirle, sonra zaman uyumuna bak.',
@@ -77,7 +77,7 @@ const TIP = {
   'tr-en': 'Ana bağlacı ve zamanı eşleştir, sonra kelimeye bak.',
   okuma: 'Günde bir parça oku; önce soruları, sonra metni.',
   'yakin-anlam': 'Ana bağlacı ve zamanı eşleştir; olumsuzluğu (neither, hardly) kaçırma.',
-  bosluk: 'Günlük gramer setini ve hata kutusunu her gün bitir.'
+  bosluk: 'Günün gramer sorularını ve hata tekrarını her gün bitir.'
 };
 
 function acc(filter, keyOf) {
@@ -120,9 +120,18 @@ function actRow(r) {
   return h('li.arow' + (weak ? '.weak' : ''), { 'data-key': k },
     h('div.arow-top', h('span.arow-l', r.label), h('span.arow-v', `%${Math.round(r.value * 100)}`, r.n ? h('span.small.muted', ` (${r.n})`) : null), moreMenu(k, { full: weak })),
     h('div.arow-bar', h('i.' + barCls(r.value), { style: `width:${Math.max(2, r.value * 100).toFixed(0)}%` })),
-    ac?.after.n ? h('div.small.muted.after-card', `Kural kartından sonra: %${Math.round(ac.after.c / ac.after.n * 100)} (${ac.after.n} soru)`) : null,
+    cardEffect(ac),
     weak ? h('div.arow-acts', ruleBtn(k), practiceBtn(k)) : null);
 }
+// Kural kartı etkisi: iki tarafta ≥5 soru varsa "kart öncesi %X → sonrası %Y"; yoksa yalnız sonrası
+export const EFFECT_MIN = 5;
+export function effectText(ac) {
+  if (!ac?.after?.n) return '';
+  const p = x => Math.round(x.c / x.n * 100);
+  if (ac.after.n >= EFFECT_MIN && ac.before.n >= EFFECT_MIN) return `Kural kartı: öncesi %${p(ac.before)} → sonrası %${p(ac.after)}`;
+  return `Kural kartından sonra: %${p(ac.after)} (${ac.after.n} soru)`;
+}
+const cardEffect = ac => { const t = effectText(ac); return t ? h('div.small.muted.after-card' + (/öncesi/.test(t) ? '.effect' : ''), t) : null; };
 const actList = rs => rs.length ? h('ul.arows', rs.map(actRow)) : h('p.muted.small', 'Veri yok');
 
 export default async function render(root) {
@@ -159,22 +168,25 @@ export default async function render(root) {
   const best = bestOne(rows(gt, topicName), rows(types, typeName), seed.weakTopics || []);
   root.append(
     h('h2', 'Eksiklerim'),
-    best ? h('div.card.best1', h('div.small.muted', 'Bugün en çok kazandıracak 1 şey'),
+    h('p.small.muted.screen-why', 'Nerede zorlanıyorsun, ne yapmalısın: tek bakışta.'),
+    best ? h('div.card.best1', h('div.small.muted', 'Bugün en çok işine yarayacak 1 şey'),
       h('div.best1-row', h('b', topicName(normKey(best.key))), best.value != null ? h('span.chip.bad.small', `%${Math.round(best.value * 100)}`) : null),
       h('a.btn.primary.wide.best1-go', { href: '#/gramer/pratik/' + enc(normKey(best.key)) + '/kural' }, 'Kural kartı + 5 soru')) : null,
     sec('En zayıf 3 alan', weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), ` %${Math.round(w.value * 100)}`, h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(normKey(w.k)), practiceBtn(normKey(w.k)))))) : h('div', h('p.small.muted', 'Notlarına göre (soru çözdükçe güncellenir):'),
       h('ol.weak', [...(seed.weakTopics || []).slice(0, 2), ...(seed.weakDrills || []).slice(0, 1)].map(k => h('li', h('b', topicName(k)), h('div.small', TIP[k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(k), practiceBtn(k))))))),
-    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5, await progFrac()), h('div.stats3', h('div', h('b', st.new), h('span', 'yeni')), h('div', h('b', st.learning), h('span', 'öğreniliyor')), h('div', h('b', st.mature), h('span', 'olgun')))),
-    readLine(),
-    sec('Gramer konu doğruluğu', actList(rows(gt, topicName)),
-      hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),
-    sec('Soru tipi doğruluğu', typeBox(rows)),
-    A?.errorReasons?.length ? h('section.card.reasons-all', h('h3', 'Hata nedenleri'),
-      reasonBox || h('p.small.muted', 'Yanlış bir sorunun altında "Neden?" çipine dokun; dağılım burada birikir.'), reasonBox ? reasonAct(A.errorReasons, lapsed, best) : null) : null,
-    sec('En çok unutulan', lapsedBox(lapsed)),
-    sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Odak: son 7 günde ${focusWeek} dk`)),
-    h('a.card.link', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ` ${store.all('notes').filter(n => n.kind === 'quick' && !n.done).length} açık not`)),
-    sec('Deneme sonuçları', mockBox)
+    sec('Kelimeler', vocabBox(st, +store.settings().vocabGoal || 2000, await daysToExam(), await newLimit(), core, top5, await progFrac())),
+    sec('Deneme sonuçları', mockBox),
+    // İkincil bölümler: "Ayrıntı ▸" altında (kapalı)
+    h('details.more-detail', h('summary.card', h('b', 'Ayrıntı ▸'), h('span.small.muted', ' konu konu doğruluk, hata nedenleri, unutulan kelimeler, okuma hızı, takvim')),
+      sec('Gramer konu doğruluğu', actList(rows(gt, topicName)),
+        hinted ? h('p.small.muted.hint-stat', `İpucuyla doğru: ${hinted} (doğruluğa katılmaz)`) : null),
+      sec('Soru tipi doğruluğu', typeBox(rows)),
+      A?.errorReasons?.length ? h('section.card.reasons-all', h('h3', 'Neden yanlış yaptın?'),
+        reasonBox || h('p.small.muted', 'Yanlış bir sorunun altında "Neden?" çipine dokun; burada toplanır.'), reasonBox ? reasonAct(A.errorReasons, lapsed, best) : null) : null,
+      sec('En çok unuttuğun kelimeler', lapsedBox(lapsed)),
+      readLine(),
+      sec('Son 8 hafta', h('div.center', { html: heatmap(act) }), h('p.small.muted.center', `Koyu kare = çok çalışılan gün · odak: son 7 günde ${focusWeek} dk`)),
+      h('a.card.link', { href: '#/notlar' }, h('b', 'Notlarım'), h('span.small.muted', ` ${store.all('notes').filter(n => n.kind === 'quick' && !n.done).length} açık not`)))
   );
   drawMocks(mockBox);
 }
@@ -188,7 +200,7 @@ function typeBox(rows) {
     chart.innerHTML = ''; chart.append(actList(rows(m, typeName)));
     seg.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.f === f));
   };
-  const seg = h('div.seg.small', [['all', 'Hepsi'], ['own', 'Özgün'], ['x', 'Çıkmış']].map(([k, l]) => h('button', { 'data-f': k, onclick: () => { f = k; draw(); } }, l)));
+  const seg = h('div.seg.small', [['all', 'Hepsi'], ['own', 'Uygulama'], ['x', 'Çıkmış']].map(([k, l]) => h('button', { 'data-f': k, onclick: () => { f = k; draw(); } }, l)));
   box.append(seg, chart); draw();
   return box;
 }
@@ -202,11 +214,11 @@ function drawMocks(box) {
     const pctOf = m => m.kind === 'kisa' || m.pct;
     add(box,
       h('div', { html: line(mocks.map(m => ({ label: m.date ? fmtDate(m.date) : '–', v: score(m), cls: pctOf(m) ? 'kisa' : '' })), { goal }) }),
-      h('div.mock-legend', h('span', h('i'), 'Tam deneme (puan)'), mocks.some(pctOf) ? h('span', h('i.kisa'), 'Kısa / yarım (doğru %)') : null, h('span', h('i.goal'), `Hedef ${goal}`)),
+      h('div.mock-legend', h('span', h('i'), 'Tam deneme (puan)'), mocks.some(pctOf) ? h('span', h('i.kisa'), 'Kısa / yarım (doğru yüzdesi)') : null, h('span', h('i.goal'), `Hedef ${goal}`)),
       h('p.small', pctOf(last) ? h('b', `Son: ${last.right ?? '?'}/${last.n ?? '?'} doğru`) : h('b', 'Son: ' + score(last).toLocaleString('tr-TR') + ' puan'), ` · ${last.date ? fmtDate(last.date) : ''}${last.name ? ' · ' + last.name : ''}`),
       h('div', { html: stacked([...MOCK, ...Object.keys(EXTRA).map(k => [k, EXTRA[k], 0])]
         .filter(([k, , n]) => last.src === 'cikmis' || last.kind === 'kisa' ? last.sections?.[k] : (n || last.sections?.[k]))
-        .map(([k, l, n]) => ({ label: l, n: last.sections?.[k]?.n ?? n, d: +last.sections?.[k]?.d || 0, y: +last.sections?.[k]?.y || 0 }))
+        .map(([k, l, n]) => ({ label: l.replace(/\s*\(.*\)$/, ''), n: last.sections?.[k]?.n ?? n, d: +last.sections?.[k]?.d || 0, y: +last.sections?.[k]?.y || 0 }))
         .filter(r => r.n)) }),
       mockWeak(last),
       h('ul.list.compact', mocks.slice().reverse().map(m => h('li', h('span.grow', `${fmtDate(m.date)} ${m.name || ''}`, m.kind === 'kisa' ? h('span.chip.small.kisa-chip', 'kısa') : m.src === 'cikmis' ? h('span.chip.small', 'çıkmış') : null), h('b', pctOf(m) ? `%${score(m)}` : score(m).toLocaleString('tr-TR')),
@@ -296,5 +308,5 @@ function readLine() {
   const lastW = wk.filter(x => x.v != null).at(-1);
   return sec('Okuma', h('p', h('b', wpm), ' kelime/dk ortalama', acc != null ? ` · doğruluk %${Math.round(acc * 100)}` : '', h('span.small.muted', ` (${r.length} okuma)`)),
     h('div.readchart', { html: weekBars(wk.map(x => ({ label: x.label, v: x.v })), { goal, unit: ' kelime/dk' }) }),
-    h('p.small.muted', `Haftalık ortalama · kesik çizgi hedef: ${goal} kelime/dk`, lastW ? (lastW.v >= goal ? ' · son hafta hedefte' : ` · son hafta ${goal - lastW.v} eksik`) : ''));
+    h('p.small.muted', `Haftalık ortalama hız · kesik çizgi = hedef (${goal} kelime/dk)`, lastW ? (lastW.v >= goal ? ' · son hafta hedefte' : ` · son hafta ${goal - lastW.v} eksik`) : ''));
 }

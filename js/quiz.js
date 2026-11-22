@@ -1,7 +1,7 @@
 // Çoktan seçmeli soru oturumu (gramer, alıştırma, hata kutusu, okuma, ders, çıkmış, kelime oyunları)
 // - Oturum ilerlemesi 'sessions' koleksiyonuna yazılır (sid): sayfadan çıkıp dönünce "Kaldığın yerden devam et".
 // - Soru kökündeki kelimeye dokun = kelime paneli; şık satırına dokun = seç; şıktaki kelimeye UZUN bas = kelime paneli.
-import { h, add, realExplain, topicName } from './util.js';
+import { h, add, realExplain, topicName, exEl } from './util.js';
 import * as store from './store.js';
 import { fromWrong, fillContext } from './autocard.js';
 import { tappable } from './tappable.js';
@@ -35,7 +35,7 @@ export async function ruleFor(topic, texts) {
   return ruleMatch(a?.personalRules, topic, texts);
 }
 export const ruleBox = r => h('div.rulecard', h('div.small.muted', 'Senin kuralın · ' + topicName(r.topic)), h('b', r.rule),
-  r.ex ? h('div.small', { lang: 'en' }, r.ex) : null,
+  exEl(r.ex),
   r.wrong || r.right ? h('div.small', r.wrong ? h('span.bad-t', '✗ ' + r.wrong + ' ') : null, r.right ? h('span.good-t', '✓ ' + r.right) : null) : null);
 
 const L = 'ABCDE';
@@ -129,7 +129,7 @@ export function runQuiz(root, items, opts = {}) {
         hintBtn?.remove();
         if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
         // Çeviri: blokların karşılıkları + kontrol maddeleri
-        if (it.parts?.length) { partsBtn?.remove(); partsSlot.innerHTML = ''; const pb = partsBox(it, true); if (pb) exp.append(h('div.small.muted', 'Parça parça:'), pb); }
+        if (it.parts?.length) { partsBtn?.remove(); partsSlot.innerHTML = ''; const pb = it.autoParts ? null : partsBox(it, true); if (pb) exp.append(h('div.small.muted', 'Parça parça:'), pb); }
         // Yanlışta küçük "neden" çipleri (isteğe bağlı)
         if (!ok && it.info?.kind && opts.reasons !== false) reasonList().then(rs => { const row = reasonChips(rs, it.key, { src: it.info.kind, dtype: it.info.dtype || '', topic: it.info.topic || '' }); if (row && exp.isConnected) exp.insertBefore(row, exp.querySelector('.tap-hint')); }).catch(() => {});
         const x = opts.extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && exp.append(n));
@@ -167,7 +167,7 @@ export function runQuiz(root, items, opts = {}) {
       }
       add(root,
         h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${i + 1}/${items.length}`),
-          h('span.qtools', it.unverified ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
+          h('span.qtools', it.unverified ? h('span.chip.bad.small', 'cevap kesin değil') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
         h('div.qbar', hintBtn, partsBtn,
           opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
         hintBox, stem, q, partsSlot,

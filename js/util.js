@@ -80,10 +80,11 @@ export function seeded(str) {
   return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
 }
 
-export function toast(msg) {
+// opts.bottom: ekranın altında (başlığı kapatmasın; ör. deneme sonucu)
+export function toast(msg, opts = {}) {
   let t = document.getElementById('toast');
   if (!t) { t = h('div', { id: 'toast' }); document.body.append(t); }
-  t.textContent = msg; t.classList.add('show');
+  t.textContent = msg; t.classList.toggle('bottom', !!opts.bottom); t.classList.add('show');
   clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), 1800);
 }
 
@@ -117,14 +118,14 @@ export const TOPICS = {
 };
 
 export const DRILL_TYPES = {
-  'cloze': 'Cloze test', 'cumle-tamamlama': 'Cümle tamamlama', 'ilgisiz': 'İlgisiz cümle',
+  'cloze': 'Cloze (boşluklu paragraf)', 'cumle-tamamlama': 'Cümle tamamlama', 'ilgisiz': 'İlgisiz cümle',
   'paragraf-tamamlama': 'Paragraf tamamlama', 'ceviri-en-tr': 'Çeviri İng→Tr', 'ceviri-tr-en': 'Çeviri Tr→İng',
   'yakin-anlam': 'Yakın anlam'
 };
 
 // Tüm soru tipleri (sınav sırası)
 export const TYPES = {
-  'bosluk': 'Cümlede boşluk', 'cloze': 'Cloze test', 'cumle-tamamlama': 'Cümle tamamlama', 'ceviri-en-tr': 'Çeviri İng→Tr',
+  'bosluk': 'Cümlede boşluk', 'cloze': 'Cloze (boşluklu paragraf)', 'cumle-tamamlama': 'Cümle tamamlama', 'ceviri-en-tr': 'Çeviri İng→Tr',
   'ceviri-tr-en': 'Çeviri Tr→İng', 'paragraf-tamamlama': 'Paragraf tamamlama', 'ilgisiz': 'İlgisiz cümle',
   'paragraf': 'Paragraf (okuma)', 'yakin-anlam': 'Yakın anlam', 'diyalog': 'Diyalog'
 };
@@ -182,4 +183,12 @@ export function noteParts(note) {
   if (!auto.length) return { own, auto: '' };
   const added = auto.some(s => /eklendi/i.test(s)), fixed = auto.some(s => /düzeltildi/i.test(s));
   return { own, auto: added && fixed ? 'anlam otomatik eklendi, düzeltildi' : added ? 'anlam otomatik eklendi' : 'anlam otomatik düzeltildi' };
+}
+
+// Örnek cümle "İngilizce → Türkçe": solu lang="en", sağı küçük gri Türkçe
+export function exEl(ex, cls = 'div.small') {
+  if (!ex) return null;
+  const i = String(ex).indexOf('→');
+  if (i < 0) return h(cls, { lang: 'en' }, ex);
+  return h(cls + '.ex-pair', h('span', { lang: 'en' }, String(ex).slice(0, i).trim()), ' ', h('span.small.muted.ex-tr', { lang: 'tr' }, '→ ' + String(ex).slice(i + 1).trim()));
 }

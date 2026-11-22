@@ -76,7 +76,10 @@ function render() {
   const left = state.endsAt - Date.now();
   pill.classList.remove('hidden');
   pill.classList.toggle('brk', state.phase === 'break');
-  pill.textContent = (state.phase === 'work' ? 'Odak ' : 'Mola ') + mmss(left);
+  // Küçük: dar ekranda yalnız süre (başlık iki satıra inmesin)
+  pill.innerHTML = '';
+  pill.append(h('span.fp-l', state.phase === 'work' ? 'Odak ' : 'Mola '), mmss(left));
+  pill.setAttribute('aria-label', (state.phase === 'work' ? 'Odak: ' : 'Mola: ') + mmss(left) + ' kaldı');
   if (state.phase === 'break') {
     if (!overlay) {
       overlay = h('div.breakscreen', h('div.brk-in',

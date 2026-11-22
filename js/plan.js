@@ -78,14 +78,16 @@ export function streakCalc(get, today, mockDays = new Set()) {
   const act = k => activeDay(get(k) || (mockDays.has(k) ? { id: k } : null), mockDays);
   const wk = k => { const d = parseDay(k).getDay(); return addDays(k, -((d + 6) % 7)); };
   let n = 0, k = today, frozen = [];
+  const days = []; // jokerle kurtarılan günler
   if (!act(k)) k = addDays(k, -1);
   for (let guard = 0; guard < 400; guard++) {
     if (act(k)) { n++; k = addDays(k, -1); continue; }
     const prev = addDays(k, -1);
-    if (act(prev) && !frozen.includes(wk(k))) { frozen.push(wk(k)); k = prev; continue; }
+    if (act(prev) && !frozen.includes(wk(k))) { frozen.push(wk(k)); days.push(k); k = prev; continue; }
     break;
   }
-  return { n, frozen };
+  // jokerNow: joker dün ya da bugün kullanıldı → yalnız o gün "joker kullanıldı" yazılır
+  return { n, frozen, days, jokerNow: days.some(d => d >= addDays(today, -1)) };
 }
 
 export function streak(today = dayKey()) {

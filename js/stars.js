@@ -2,7 +2,7 @@
 import { loadData } from './data.js';
 import { h, toast, lemmas } from './util.js';
 
-export const STAR_TIP = 'Çıkmış YDS/YÖKDİL sorularındaki geçme sıklığına göre tahmin';
+export const STAR_TIP = 'Sınavda ne sık çıktığı (çıkmış YDS/YÖKDİL sorularına göre; 5 = çok sık)';
 let map = null;
 let loading = null;
 

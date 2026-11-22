@@ -1,5 +1,30 @@
 # Yol haritası
 
+## v15'te yapılanlar (kurul kalanları + sade arayüz dili)
+- [x] Yeni kartta Zor ≠ İyi (O3): Zor → "bugün + 1 g" (oturumda bir kez daha, yarın), İyi → "1 g"; düğme altında aralık
+- [x] Deneme sonucu (O10, O11): puanın altında tek büyük "Yanlışlarımı çöz (n)" (tüm bölümler, `…/yanlis/<id>/hepsi`); analiz "Sonra ne yapayım?" ilk 3 madde + "Tümü ▸" (aids.json 6 madde kalır); neden çipleri Kelime · Gramer · Süre + "Diğer ▸" (Dikkat · İki şık · Metin), kimlikler aynı
+- [x] Başlık (O14, D11): dar ekranda logo "YÖKDİL", odak sayacı küçük (yalnız süre); senkron sorunu → kırmızı çip "Senkron yok – dokun" (dokununca yeniden dener), sorunsuz → küçük yeşil nokta, anahtar yok → gizli
+- [x] Ayarlar Temel / Gelişmiş ▸ (D2): Temel = GitHub anahtarı, hedef puan, tema ("Otomatik"), günde yeni kelime; gerisi kapalı "Gelişmiş ▸" (Kelime · Sorular · Okuma · Deneme · Odak · Yedek)
+- [x] Okuma (D3, D4): tek satır "Kelimeye dokun → anlamı. Birkaç kelime için Öbek." + işaret açıklaması; "+ Ana fikir yaz" kapalı düğme, "Ana fikri kaydet"
+- [x] Deneme sonucu bildirimi altta (D6, `toast(msg, { bottom: true })`); joker yazısı yalnız kullanıldığı gün (D7, `streakCalc().jokerNow`)
+- [x] Çıkmış listesi (D8): tam sınavlar önce; tam olmayanlar "Örnek sorular (8)" etiketiyle sonda; çözülene ✓ + "En iyi: 6/8" ya da "En iyi: 62,5 puan"; örnek sorular sonucu puan değil doğru % (`sample`, `pct`), "Son tam deneme" satırına girmez
+- [x] Tanı denemesi (D9): program.json `mock.note` (yoksa "Tanı" başlıklıda varsayılan) → Bugün görevinde, haftalık kartta ve sınav ekranında tek satır
+- [x] Kelime tara (D10): 50'şer, "1–2★ kelimeleri atla" (Ayarlar'da hatırlanır), ara ekranda ana düğme "Devam"
+- [x] Eksikler: üstte 1 şey · En zayıf 3 alan · Kelimeler · Deneme sonuçları; gerisi "Ayrıntı ▸" altında (kapalı). Kural kartı etkisi: iki tarafta ≥5 soru varsa "Kural kartı: öncesi %X → sonrası %Y"
+- [x] "5 soru çöz": gizli paketten aynı konunun / tipin çıkmış soruları da (en fazla 2; özgün az ise çıkmışla dolar; diyalog yok; "Çıkmış · …" etiketli) — `mixPractice` (warm.js)
+- [x] Kısa deneme: isteğe bağlı gizli okuma (≥3 çoktan seçmeli soru; ilk 3 soru; fen dışı hariç) okuma biriminin yarısına (Mini: 1 parça) — Ayarlar → Gelişmiş → Deneme ya da başlangıç onay ekranındaki anahtar (`kisaGizli`); anahtar `r:<id>:<n>`, metin senkrona girmez
+- [x] Çıkmış çeviri sorularında "Parçala": içerikte `parts` yoksa basit otomatik parçalama (virgül, bağlaçlar, edat öbekleri; Tr→İng'de Türkçe bağlaçlar) — renkli bloklar, rol etiketi yok, yalnız cevaptan önce (`js/autoparts.js`, birim testli)
+- [x] Sınav modunda İpucu yok — **bilinçli** (sınav koşulu); İpucu yalnız alıştırma/gramer/5 soru/çıkmış tip ekranlarında
+- [x] İçerik notu: kural/bağlaç kartı örneklerinde "İngilizce → Türkçe" ayrı gösterilir (sol lang="en", sağ küçük gri); ısınma kartında dersin "Kısaca" bloğu "Kısaca ▸" (başlıkla bulunur, sabit indeks yok)
+- [x] Arayüz dili: jargon temizliği (merdiven/SRS/aralık/olgun/çekirdek/özgün/hata kutusu/hedef net/token/Cloze test…), ekran başlarında tek satır "ne işe yarar"; liste: `kurul/metin-degisiklik.md`
+- [x] SW v15; testler: `tests/e2e_v15.py` (ekran görüntüleri `/home/claude/shots/v15/`), birim testler `merge.test.mjs` (+9)
+
+## v15 sonrası fikirler
+- İçerik metinlerinde kalan iç terimler: aids.json mockAnalysis ("hata kutusuna düştü", neden listesi 6 ad), lessons.json deneme analizi dersi ("hata kutusuna") — içerik ajanı düzeltmeli
+- Otomatik parçalamayı uzun Türkçe cümlelerde ("-dığı için", "-ken" ekleri) iyileştirme; içerikte `parts` gelince o kullanılır
+- Isınma kartını kısa denemede bölüm başlarken de (ipucu yok kuralına dikkat)
+- Gizli okumalarda seviye ölçeği farklıysa (ör. B1/B2) sayıya çevirme
+
 ## v14'te yapılanlar (kural kartı önce, Eksikler'den eyleme)
 - [x] Isınma: günlük gramer seti ve Alıştırma (tip seçince) başlamadan önce, setteki zayıf konulardan (son 14 günde doğruluk < %70 [≥3 soru] · hata kutusunda o konudan ≥2 açık soru · kişisel kural konusunda son 14 günde yanlış) en fazla 2 kural kartı: ders formülü + kişisel kural (✗ → ✓) + varsa tek bağlaç kartı / kopya kağıdı. Tek ekran (390×844'te kaydırmasız), "Anladım, sorulara geç", "Dersi aç" (yan panel), "Bir hafta gösterme". Aynı konu aynı gün bir kez; yarım oturuma dönerken çıkmaz. Ayarlar → "Sorulardan önce ısınma" (varsayılan açık)
 - [x] Konu anahtarı: gramer konusu, yoksa soru tipi (alıştırmalardaki "biyoloji" gibi alan adları değil) — `js/warm.js` (saf, birim testli)
@@ -27,10 +52,10 @@
 - [x] SW v14; testler: `tests/e2e_v14.py` (ekran görüntüleri `/home/claude/shots/v14/`), birim testler `merge.test.mjs`
 
 ## v14 sonrası fikirler
-- Kurul (orta seviye) raporundan kalanlar: yeni kartta Zor = İyi (1 g) aynı görünüyor (O3); deneme analizi 6 madde → 3, sonuçta ana düğme "Yanlışlarımı çöz" (O11); neden çiplerini 3'e indirme (O10); başlıkta odak sayacı küçük, logo kısa (O14); Ayarlar Temel / Gelişmiş (D2); okuma ekranı açıklamaları ve "+ Ana fikir yaz" (D3, D4); deneme sonucu bildirimi altta (D6); joker yazısı yalnız kullanıldığı gün (D7); Çıkmış listesinde eksik sınavlar "Örnek sorular", çözülene ✓ (D8); tanı denemesi açıklaması (D9); Kelime tara 50'şer + 1–2★ atla (D10); senkron noktası yerine "Senkron yok" çipi (D11); Eksikler'de ikincil bölümler "Ayrıntı ▸" altında
-- Isınma kartını kısa denemede bölüm başlarken de (ipucu yok kuralına dikkat)
-- "5 soru çöz"de çıkmış (gizli paket) sorulardan da o konuya ait olanları katma
-- Kural kartından sonraki doğruluğu kartı görmeden önceki ile yan yana kıyaslama (veri birikince)
+- [x] Kurul (orta seviye) raporundan kalanlar (O3, O10, O11, O14, D2, D3, D4, D6, D7, D8, D9, D10, D11, Eksikler "Ayrıntı ▸") — v15'te yapıldı
+- [ ] Isınma kartını kısa denemede bölüm başlarken de — bilinçli olarak açık (sınav modunda ipucu yok)
+- [x] "5 soru çöz"de çıkmış (gizli paket) sorulardan da katma — v15
+- [x] Kural kartından önceki / sonraki doğruluk yan yana — v15
 
 ## v11'de yapılanlar (kısa deneme + gizli okumalar)
 - [x] Kısa deneme (`#/deneme`, Sorular → Deneme): Mini 20 soru · 45 dk (5 boşluk ≥1 çift, 1 cloze metni, 3 cümle tamamlama, 1+1 çeviri, 1 paragraf, 1 ilgisiz, 1 okuma parçası) / Yarım 40 · 90 dk (iki katı)
@@ -43,9 +68,9 @@
 - [x] SW v11
 
 ## v11 sonrası fikirler
-- Kısa denemede okuma bölümüne gizli okumalardan (soru sayısı yetenler) parça katma seçeneği
-- Yarım (çıkmış) denemede de bölüm hedef sürelerini 90 dk'ya oranlama (kısa denemedeki `scalePlan` hazır)
-- Gizli okumalarda seviye ölçeği farklıysa (ör. B1/B2) sayıya çevirme
+- [x] Kısa denemede okuma bölümüne gizli okumalardan parça katma seçeneği — v15
+- [x] Yarım (çıkmış) denemede bölüm hedef sürelerini oranlama — v14 (`scalePlan`)
+- [ ] Gizli okumalarda seviye ölçeği farklıysa (ör. B1/B2) sayıya çevirme — v15 sonrasına taşındı
 
 ## v8'de yapılanlar (kelime yıldızı)
 - [x] `data/stars.json` (yalnız kelime → 1–5 yıldız; soru metni yok), `tools/build_stars.py PAKET.json` ile üretilir: ÖSYM YDS ağırlık 1, YÖKDİL Fen 0,8, yayınevi 0,3; şık +1, kelime sorusunun doğru şıkkı +3; geçenler içinde yüzdelik (%90+ → 5, %70 → 4, %40 → 3, gerisi 2), hiç geçmeyen 1
@@ -72,10 +97,10 @@
 - [x] Kelimelere YDS'de çıkma ihtimaline göre 5 üzerinden yıldız (çıkmış YDS/YÖKDİL sıklığına göre) — v8'de yapıldı
 
 ## v7 sonrası fikirler
-- Sınav modunda İpucu (şimdilik yalnız alıştırma/gramer ekranlarında)
-- Çıkmış çeviri sorularında da Parçala (içerik gerekir)
-- Yarım deneme için bölüm hedef sürelerini 90 dk'ya göre ölçekleme
-- Neden çiplerine göre otomatik görev (ör. "süre" çoksa süre planı kartı)
+- [x] Sınav modunda İpucu: **bilinçli olarak YOK** (sınav koşulu); İpucu alıştırma/gramer/5 soru/çıkmış tip ekranlarında
+- [x] Çıkmış çeviri sorularında Parçala — v15 (içerik yoksa otomatik parçalama)
+- [x] Yarım deneme bölüm hedef süreleri oranlı — v14
+- [x] Neden çiplerine göre yönlendirme — v14 (Eksikler'de en sık nedene tek bağlantı)
 
 ## v6'da yapılanlar (kurul raporu: öğrenci, gramer öğretmeni, sınav uzmanı)
 - [x] Soru/sınav ekranlarında ana düğme hep erişilebilir: Not telefonda üst çubukta, bildirim üstte ve tıklamayı engellemez, Sonraki/Kontrol yapışkan alt çubukta (e2e: elementFromPoint)

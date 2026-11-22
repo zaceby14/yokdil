@@ -6,7 +6,7 @@ import { week, daysToExam, dayRec, tick, updateDay, streakInfo, weekdayHint, fin
 import { dueCount } from '../srs.js';
 import { openSessions } from '../quiz.js';
 import { tourCards } from '../memory.js';
-import { todayTasks, mockHref } from '../tasks.js';
+import { todayTasks, mockHref, mockNote } from '../tasks.js';
 import { KISA } from '../kisa.js';
 import { aids } from '../data.js';
 import { applyState, examDayFor, ruleTasks, lastFullMock } from '../strategy.js';
@@ -70,7 +70,7 @@ export default async function render(root) {
       const k = t.key, done = t.done;
       return h('li' + (done ? '.done' : ''), { 'data-task': k },
         h('button.check', { 'aria-label': 'tamamlandı', onclick: () => { tick(k, !done); draw(); } }, done ? '✓' : ''),
-        h('a.task', { href: t.go }, h('b', t.label), h('span.small.muted', t.sub)),
+        h('a.task', { href: t.go }, h('b', t.label), h('span.small.muted', t.sub), t.note ? h('span.small.task-note', t.note) : null),
         t.min ? h('span.small.muted.tmin', '~' + t.min + ' dk') : null, done ? h('span.chev', '›') : focusBtn(k));
     };
     root.innerHTML = '';
@@ -80,7 +80,7 @@ export default async function render(root) {
         h('div.hero-r',
           h('div', w.beforeStart ? `Başlangıç: ${fmtDate(w.prog.start)}` : `Hafta ${w.n}/${(w.prog.weeks || []).length || w.n} · ${w.phase}`),
           w.goal ? h('div.small.muted', w.goal) : null,
-          h('div.streak', 'Seri: ', h('b', st.n), ' gün', st.frozen.length ? h('span.small.muted', ' · joker kullanıldı') : null))
+          h('div.streak', 'Seri: ', h('b', st.n), ' gün', st.jokerNow ? h('span.small.muted.joker', ' · joker kullanıldı (dün)') : null))
       ),
       goalLine(),
       !getToken() ? h('a.banner', { href: '#/ayarlar' }, 'Çıkmış sorular + senkron için GitHub anahtarını gir → Ayarlar') : null,
@@ -127,15 +127,15 @@ export default async function render(root) {
         h('span.small.muted', '3–5 dk'), h('span.chev', '›'))) : null,
       running() ? null : h('button.card.link.focus-start', { onclick: () => { startFocus('', 'Serbest'); draw(); } },
         h('b', `Odak oturumu · ${work} dk`), h('span.small.muted', ` çalış, ${brk} dk ayağa kalk`)),
-      !rr.busy && !fin.on ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiklerini 20\'şer ele')) : null,
+      !rr.busy && !fin.on ? h('a.card.link', { href: '#/kartlar/tara' }, h('b', 'Kelime tara'), h('span.small.muted', ' bildiğin kelimeleri hızla ele (50\'şer)')) : null,
       fin.on && !rr.busy ? h('a.card.link', { href: '#/okuma' }, h('b', 'Okuma'), h('span.small.muted', ' isteğe bağlı · bir parça')) : null,
       w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).map(typeName).join(' · ') || 'karışık'))) : null,
       w.mock && !T.deneme ? h('a.card.link.mock-plan', { href: mockHref(w.mock) },
         h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · 90 dk)`),
-        h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · '))) : null,
+        h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · ')), mockNote(w.mock) ? h('div.small.task-note', mockNote(w.mock)) : null) : null,
       w.kisa && KISA[w.kisa.size] && !T.kisa ? h('a.card.link.kisa-plan', { href: '#/deneme' },
-        h('b', `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · özgün sorular')) : null,
-      h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' doğruluk, ısı haritası, deneme')),
+        h('b', `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · çıkmış değil, benzer sorular')) : null,
+      h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' nerede zorlanıyorsun, ne yapmalısın')),
       h('div.small.muted.center.pad', `Sınav: ${fmtDate(w.prog.exam)} · Puan ≈ doğru × 1,25`)
     );
   };

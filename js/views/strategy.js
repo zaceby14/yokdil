@@ -53,7 +53,7 @@ export function targetView(root, a) {
       h('p.small.muted', `${t.total} doğru × 1,25 = ${(t.total * 1.25).toLocaleString('tr-TR')} puan. Yanlış doğruyu götürmez.`),
       t.note ? h('p.small', t.note) : null,
       mock ? h('p.small.muted', `Senin: ${fmtDate(mock.date)}${mock.name ? ' · ' + mock.name : ''}`)
-        : h('div.note', 'Tam deneme çözünce kendi netlerin ve fark burada görünür.'),
+        : h('div.note', 'Tam deneme çözünce kendi doğruların ve fark burada görünür.'),
       mock ? null : h('a.btn.wide', { href: '#/cikmis' }, 'Denemelere git'));
   };
   draw();

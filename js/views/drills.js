@@ -32,6 +32,7 @@ export default async function render(root, [type]) {
   root.append(
     soruTabs('alistirma'),
     h('h2', 'Alıştırma'),
+    h('p.small.muted.screen-why', 'Sınavdaki her soru tipinden ayrı ayrı çalış.'),
     Object.keys(b).length ? null : emptyData(),
     hs.total ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata tekrarı · bugün ${hs.done}/${hs.total}`) : null,
     h('ul.list', Object.entries(TYPES).filter(([k]) => k !== 'diyalog').map(([k, v]) => {

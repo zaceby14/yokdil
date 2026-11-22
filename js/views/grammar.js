@@ -4,11 +4,12 @@ import { grammar, program, drills, passages } from '../data.js';
 import { h, dayKey, seeded, uid, toast, TOPICS, topicName } from '../util.js';
 import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
 import { answer, openMistakes, mistakeToday } from '../mistakes.js';
-import { keyOf, isType, matches, practicePick } from '../warm.js';
+import { keyOf, isType, matches, practicePick, mixPractice } from '../warm.js';
 import { warmGate, inProgress } from './warmup.js';
 import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
-import { gItem, dItem, pItem, resolve } from '../qbank.js';
+import { gItem, dItem, pItem, xItem, resolve } from '../qbank.js';
+import { getPack } from '../pack.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
 
 export default async function render(root, [mode, arg, arg2]) {
@@ -79,18 +80,30 @@ export async function poolFor(k) {
   return out;
 }
 
+// Çıkmış (gizli paket, IndexedDB) havuzu: konu ya da soru tipi eşleşmesi; diyalog hariç; etiket "Çıkmış · …"
+export async function xPoolFor(k) {
+  const out = [];
+  const pack = await getPack().catch(() => null);
+  for (const e of pack?.exams || []) for (const q of e.questions || []) {
+    if (!q || q.type === 'diyalog' || !Array.isArray(q.options)) continue;
+    if (isType(k) ? q.type !== k : q.topic !== k) continue;
+    out.push({ key: `${e.id}:${q.n}`, level: 2, x: true, make: () => { const it = xItem(e, q); return { ...it, label: 'Çıkmış · ' + it.label, cikmis: true }; } });
+  }
+  return out;
+}
+
 const backP = () => h('a.btn.small', { href: '#/eksikler' }, '‹ Eksikler');
 
 // "5 soru çöz": önce yanlış yapılanlar, sonra seviyeye uygun yeniler. kural=true → önce kural kartı
 async function practice(root, k, kural) {
-  const pool = await poolFor(k);
+  const own = await poolFor(k), xs = await xPoolFor(k);
   const levels = await gLevels();
-  const ids = practicePick(pool, { logs: store.all('grammarLog'), mistakes: store.all('mistakes'), allowed: isType(k) ? 3 : levels[k] || 1, n: 5 });
-  const by = new Map(pool.map(p => [p.key, p]));
+  const ids = mixPractice(own, xs, { logs: store.all('grammarLog'), mistakes: store.all('mistakes'), allowed: isType(k) ? 3 : levels[k] || 1, n: 5 });
+  const by = new Map([...own, ...xs].map(p => [p.key, p]));
   const items = ids.map(id => by.get(id).make());
   const el = h('div');
   root.append(backP(), h('h2', topicName(k) + ' · 5 soru'), el);
-  if (!items.length) { el.append(h('p.muted', 'Bu konuda özgün soru yok.')); return; }
+  if (!items.length) { el.append(h('p.muted', 'Bu konuda soru yok.')); return; }
   const sid = 'pratik:' + k;
   const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns });
   if (kural) warmGate(el, [k], go, { force: true }); else go();
@@ -144,9 +157,10 @@ async function home(root) {
   root.append(
     soruTabs('gramer'),
     h('h2', 'Gramer'),
+    h('p.small.muted.screen-why', 'Her gün birkaç soru: sınavdaki boşluk sorularının kuralları.'),
     qs.length ? null : emptyData(),
     h('div.chips', h('span.muted.small', `Hafta ${w.n}: `), (w.grammar || []).map(t => h('span.chip.ok', topicName(t)))),
-    h('a.btn.primary.wide.big-btn', { href: '#/gramer/gunluk' }, r.tasks?.gramer ? 'Günlük set ✓ (tekrar)' : `Günlük set · ${r.busy ? 3 : store.settings().grammarCount} soru`),
+    h('a.btn.primary.wide.big-btn', { href: '#/gramer/gunluk' }, r.tasks?.gramer ? 'Günün soruları ✓ (yeniden çöz)' : `Günün soruları · ${r.busy ? 3 : store.settings().grammarCount} soru`),
     hs.total ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata tekrarı · bugün ${hs.done}/${hs.total}`) : h('p.small.muted', 'Bugün hata tekrarı yok.'),
     h('h3', 'Konular'),
     h('ul.list.compact', [...new Set([...Object.keys(TOPICS), ...Object.keys(cnt)])].filter(t => cnt[t]).map(t => {

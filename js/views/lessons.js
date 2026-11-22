@@ -52,7 +52,7 @@ export default async function render(root, [id, a1, a2]) {
     } });
   const tools = await toolsStrip();
   root.append(tools, h('h2', 'Dersler'),
-    ls.length ? h('p.small.muted', `${ls.length} ders · ${readN(ls)} okundu. Soru çözerken "Ders" düğmesiyle de açılır.`) : null,
+    ls.length ? h('p.small.muted.screen-why', `Kurallar kısa ve örnekli. ${ls.length} ders · ${readN(ls)} okundu. Soru çözerken "Ders" düğmesiyle de açılır.`) : null,
     ls.length ? [ls.length > 8 ? search : null, wrap, none] : emptyData('Dersler'));
 }
 
@@ -74,7 +74,7 @@ function lesson(root, l) {
   root.append(
     h('a.btn.small', { href: '#/dersler' }, '‹ Dersler'),
     h('h2', l.title),
-    l.formula ? h('div.formula', h('b', '30 sn: '), l.formula) : null,
+    l.formula ? h('div.formula', h('b', '30 sn özet: '), l.formula) : null,
     h('div.small.muted', [topicName(lessonTopic(l)), l.minutes ? l.minutes + ' dk' : ''].filter(Boolean).join(' · ')),
     l.summary ? h('div.note', l.summary) : null,
     ...lessonBlocks(l),

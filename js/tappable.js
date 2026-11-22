@@ -127,7 +127,7 @@ export function tappable(text, opts = {}) {
     const stEl = starsEl(card?.word || entry?.word || base);
     if (stEl) info.append(stEl, ' ');
     if (card) info.append(h('span.chip.ok', 'Kartta var'), ' ');
-    if (entry) info.append(h('span.chip', 'Çekirdek liste'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Eşdizim: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
+    if (entry) info.append(h('span.chip', 'Sık kelime'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Kalıp: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
     sheet.append(
       h('div.sheet-head', wIn,
         canSpeak() ? h('button.icon-btn.say', { 'aria-label': 'dinle', onclick: () => speak(wIn.value) }, SPK()) : null,

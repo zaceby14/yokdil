@@ -9,22 +9,38 @@ export async function reasonList() {
   return (Array.isArray(a?.errorReasons) ? a.errorReasons : []).filter(r => r && r.id && r.label);
 }
 
+// Çiplerde kısa ad (veri kimlikleri aynı; uzun ad dokununca ipucu olarak)
+export const REASON_SHORT = { kelime: 'Kelime', gramer: 'Gramer', sure: 'Süre', dikkat: 'Dikkat', 'iki-sik': 'İki şık', metin: 'Metin' };
+export const REASON_MAIN = ['kelime', 'gramer', 'sure'];
+// Saf: ana çipler (Kelime · Gramer · Süre) + "Diğer" altındakiler
+export function splitReasons(list) {
+  const main = REASON_MAIN.map(id => list.find(r => r.id === id)).filter(Boolean);
+  return { main: main.length ? main : list.slice(0, 3), more: list.filter(r => !(main.length ? main : list.slice(0, 3)).includes(r)) };
+}
+
 // Çip satırı. list: errorReasons; meta: {src, dtype, topic}; onChange: seçim değişince
+// Görünen: 3 ana çip + "Diğer ▸" (dikkat, iki şık, metin). Seçili neden "Diğer"deyse açık gelir.
 export function reasonChips(list, key, meta = {}, onChange) {
   if (!list?.length) return null;
   const row = h('div.reasons', { role: 'group', 'aria-label': 'Hata nedeni' });
+  const { main, more } = splitReasons(list);
+  let showMore = false;
   const draw = () => {
     const cur = store.get('reasons', key)?.reason;
+    if (more.some(r => r.id === cur)) showMore = true;
     row.innerHTML = '';
-    row.append(h('span.small.muted', 'Neden?'), ...list.map(r => h('button.chip.reason' + (cur === r.id ? '.on' : ''), {
-      type: 'button', 'aria-pressed': cur === r.id ? 'true' : 'false', title: r.advice || '',
+    const chip = r => h('button.chip.reason' + (cur === r.id ? '.on' : ''), {
+      type: 'button', 'aria-pressed': cur === r.id ? 'true' : 'false', title: r.label, 'data-id': r.id,
       onclick: ev => {
         ev.stopPropagation();
         if (cur === r.id) store.del('reasons', key);
         else store.put('reasons', { id: key, reason: r.id, at: Date.now(), day: dayKey(), ...meta });
         draw(); onChange?.();
       }
-    }, r.label)));
+    }, REASON_SHORT[r.id] || r.label);
+    row.append(h('span.small.muted', 'Neden?'), ...main.map(chip),
+      ...(more.length && !showMore ? [h('button.chip.reason-more', { type: 'button', onclick: ev => { ev.stopPropagation(); showMore = true; draw(); } }, 'Diğer ▸')] : []),
+      ...(showMore ? more.map(chip) : []));
   };
   draw();
   return row;

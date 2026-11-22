@@ -36,6 +36,14 @@ export function poolsOf({ grammar = [], drills = [], passages = [] }) {
   return P;
 }
 
+// Gizli okumalar → kısa deneme birimi: en az 3 çoktan seçmeli (mc) sorusu olanlar; kimlik "r:<id>" (ilk 3 mc soru)
+export const PRIV_MC = 3;
+export const privMc = r => (r?.questions || []).map((q, k) => ({ q, k })).filter(x => x.q && x.q.type !== 'tf' && Array.isArray(x.q.options) && x.q.options.length >= 2);
+export function privPool(readings = []) {
+  return (readings || []).filter(r => r?.id && typeof r.text === 'string' && privMc(r).length >= PRIV_MC && !/^di[gğ]er$/i.test(String(r.topic || '')))
+    .map(r => ({ id: 'r:' + r.id, level: Math.min(3, Math.max(1, +r.level || 2)) }));
+}
+
 // Cevap kaydı → birim kimliği başına son görülme (g0001, d001#2 → d001, p001#0 → p001, read:p001 → p001)
 export function lastSeenOf(logs = [], reads = []) {
   const m = new Map();
@@ -47,7 +55,8 @@ export function lastSeenOf(logs = [], reads = []) {
 
 // Seçim: plan sırasıyla (büyük birimler önce) seviye açığı en büyük olan seviyeden en "taze" birim.
 // Taze: hiç görülmemiş (rastgele) → en eski görülen. recent: son denemelerde çıkanlar (yetmezse kullanılır).
-export function buildKisa(pools, size = 'mini', { lastSeen = new Map(), recent = new Set(), rand = Math.random } = {}) {
+// mixPriv: okuma birimlerinin yarısı (yukarı yuvarlanır) gizli okumalardan (pools.pr; yoksa özgünden)
+export function buildKisa(pools, size = 'mini', { lastSeen = new Map(), recent = new Set(), rand = Math.random, mixPriv = false } = {}) {
   const cfg = KISA[size] || KISA.mini;
   const total = cfg.plan.reduce((a, s) => a + s.units * s.w, 0);
   const target = MIX.map(x => x * total), got = [0, 0, 0];
@@ -56,12 +65,16 @@ export function buildKisa(pools, size = 'mini', { lastSeen = new Map(), recent =
   for (const k of Object.keys(pools)) for (const u of pools[k]) order.set(u.id, rand());
   const fresh = (a, b) => (lastSeen.get(a.id) ?? -Infinity) - (lastSeen.get(b.id) ?? -Infinity) || order.get(a.id) - order.get(b.id);
   const slots = [];
-  cfg.plan.forEach((s, pi) => { for (let i = 0; i < s.units; i++) slots.push({ ...s, pi, i, needDbl: i < (s.dbl || 0) }); });
+  cfg.plan.forEach((s, pi) => { for (let i = 0; i < s.units; i++) {
+    const priv = mixPriv && s.pool === 'p' && i < Math.ceil(s.units / 2) && (pools.pr || []).length;
+    slots.push({ ...s, pi, i, needDbl: i < (s.dbl || 0), ...(priv ? { pool: 'pr', alt: 'p' } : {}) });
+  } });
   // Ağır birimler (cloze 5, okuma 3) seviye dağılımını önce belirlesin
   const proc = [...slots].sort((a, b) => b.w - a.w || a.pi - b.pi || a.i - b.i);
   const pick = new Map();
   for (const sl of proc) {
-    const all = (pools[sl.pool] || []).filter(u => !used.has(u.id));
+    let all = (pools[sl.pool] || []).filter(u => !used.has(u.id));
+    if (!all.length && sl.alt) all = (pools[sl.alt] || []).filter(u => !used.has(u.id));
     let cands = all.filter(u => !recent.has(u.id));
     if (!cands.length) cands = all;
     if (sl.needDbl && cands.some(u => u.dbl)) cands = cands.filter(u => u.dbl);

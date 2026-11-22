@@ -17,6 +17,10 @@ def attach(page, tag):
     page.on('console', lambda m: m.type == 'error' and errors.append(f'[{tag}] {m.text}'))
     page.on('pageerror', lambda e: errors.append(f'[{tag}] {e}'))
 
+# v15: Ayarlar → Gelişmiş ve Eksikler → Ayrıntı varsayılan kapalı (tests/e2e_v15.py denetler); eski akışlar içlerini kullandığı için açılır
+OPEN_DETAILS = """new MutationObserver(() => document.querySelectorAll('details.set-adv:not([data-o]), details.more-detail:not([data-o])').forEach(d => { d.open = true; d.dataset.o = 1; }))
+  .observe(document, { childList: true, subtree: true });"""
+
 with sync_playwright() as p:
     exe = '/usr/bin/google-chrome' if os.path.exists('/usr/bin/google-chrome') else None
     b = p.chromium.launch(executable_path=exe, args=['--no-sandbox'])
@@ -33,6 +37,7 @@ with sync_playwright() as p:
 
     # --- Akış testi (mobil)
     ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.add_init_script(OPEN_DETAILS)
     ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
     page = ctx.new_page(); attach(page, 'akis')
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(500)
@@ -77,7 +82,7 @@ with sync_playwright() as p:
 
     page.goto(BASE + '#/eksikler'); page.wait_for_timeout(400)
     txt = page.inner_text('main')
-    learning = page.locator('section.card').nth(1).locator('.stats3 b').nth(1).inner_text()
+    learning = re.search(r'Öğreniliyor (\d+)', page.locator('section.card').nth(1).inner_text()).group(1)
     check(int(learning) > 0, f'panelde öğreniliyor/olgun sayısı: {learning}')
     page.screenshot(path=f'{SHOTS}/akis-panel-kart.png', full_page=True)
 
@@ -214,9 +219,9 @@ with sync_playwright() as p:
     page.locator('.opt').nth(0).click(); page.click('button:has-text("Bölüm sonu")'); page.wait_for_timeout(150)
     check(page.locator('.interim').count() == 1 and 'Bölüm sonu' in page.inner_text('.interim'), 'sınav: bölüm sonu ara ekranı'); page.click('button:has-text("Sonraki bölüm")')
     check(page.locator('.stem .reader .w').count() > 5, 'cloze metni dokunulabilir')
-    check(page.locator('.chip:has-text("anahtar doğrulanmadı")').count() == 0, 'doğrulanmış soruda etiket yok')
+    check(page.locator('.chip:has-text("cevap kesin değil")').count() == 0, 'doğrulanmış soruda etiket yok')
     page.click('button:has-text("İşaretle")'); page.click('button:has-text("Sonraki")')
-    check(page.locator('.chip:has-text("anahtar doğrulanmadı")').count() == 1, 'keySource=claude etiketi')
+    check(page.locator('.chip:has-text("cevap kesin değil")').count() == 1, 'keySource=claude etiketi')
     # Metinde kelimeye dokun → karta ekle
     page.locator('.stem .reader .w').nth(0).click(); page.wait_for_timeout(800)
     check(page.locator('#wordSheet:not(.hidden)').count() == 1, 'çıkmış metinde kelime paneli')
@@ -255,7 +260,7 @@ with sync_playwright() as p:
     page.screenshot(path=f'{SHOTS}/akis-panel-cikmis.png', full_page=True)
     # Ayar: diyalog göster
     page.goto(BASE + '#/ayarlar'); page.wait_for_timeout(300)
-    page.click('text=Diyalog sorularını göster'); page.wait_for_timeout(200)
+    page.click('text=Diyalog sorularını da göster'); page.wait_for_timeout(200)
     page.goto(BASE + '#/cikmis'); page.wait_for_timeout(400)
     check('Diyalog' in page.inner_text('main'), 'ayarla diyalog görünür')
 
@@ -269,7 +274,7 @@ with sync_playwright() as p:
     page.goto(BASE + '#/ayarlar'); page.wait_for_timeout(300)
     page.click('.seg button:has-text("Koyu")'); page.wait_for_timeout(200)
     check(page.evaluate("document.documentElement.dataset.theme") == 'dark', 'elle koyu tema')
-    with page.expect_download() as dl: page.click('button:has-text("Dışa aktar")')
+    with page.expect_download() as dl: page.click('button:has-text("Yedeği indir")')
     data = json.load(open(dl.value.path()))
     check('cards' in data['data'], 'dışa aktarma JSON')
     page.screenshot(path=f'{SHOTS}/akis-ayarlar-koyu.png', full_page=True)
@@ -277,6 +282,7 @@ with sync_playwright() as p:
 
     # ================= v3 akışları (temiz bağlam) =================
     ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.add_init_script(OPEN_DETAILS)
     ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
     page = ctx.new_page(); attach(page, 'v3')
     page.on('dialog', lambda d: d.accept())
@@ -335,7 +341,7 @@ with sync_playwright() as p:
     check(page.locator('a[href="#/kartlar/tara"]').count() == 1, 'Kartlar: "Kelime tara" girişi')
     page.screenshot(path=f'{SHOTS}/v3-kartlar-ana.png', full_page=True)
     page.goto(BASE + '#/kartlar/tara'); page.wait_for_timeout(500)
-    check(page.locator('.scan-card').count() == 1 and '1 / 20' in page.inner_text('.scan-card'), 'tarama: 20\'lik grup')
+    check(page.locator('.scan-card').count() == 1 and '1 / 50' in page.inner_text('.scan-card'), 'tarama: 50\'lik grup')
     check(page.locator('.scan-tr.hidden').count() == 1, 'anlam gizli')
     page.click('button:has-text("Anlamı gör")')
     page.screenshot(path=f'{SHOTS}/v3-tarama.png')
@@ -345,9 +351,9 @@ with sync_playwright() as p:
         page.click('.scan-btns .yes' if act == 'y' else '.scan-btns .no'); page.wait_for_timeout(120)
     scanned.append((page.locator('.scan-card .fword').inner_text(), 'y')); drag('.scan-card', 170)
     scanned.append((page.locator('.scan-card .fword').inner_text(), 'n')); drag('.scan-card', -170)
-    check('8 / 20' in page.inner_text('.scan-card'), 'kaydırma ile tarama (sağ/sol)')
+    check('8 / 50' in page.inner_text('.scan-card'), 'kaydırma ile tarama (sağ/sol)')
     page.click('button:has-text("Geri al")'); page.wait_for_timeout(200)
-    check('7 / 20' in page.inner_text('.scan-card'), 'tarama: geri al')
+    check('7 / 50' in page.inner_text('.scan-card'), 'tarama: geri al')
     scanned.pop()
     s = st()
     byw = {c.get('word'): c for c in s['cards'].values()}
@@ -356,9 +362,9 @@ with sync_playwright() as p:
     q = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.card ? x.card.word : x.word.word))")
     nos = [w for w, a in scanned if a == 'n']
     check(q[:len(nos) + 1][1:] == nos or q[:len(nos)] == nos or set(nos) <= set(q[:len(nos) + 1]), f'bilmiyorum → yeni kuyruğun önünde: {q[:4]}')
-    for k in range(14):
-        page.click('.scan-btns .yes'); page.wait_for_timeout(60)
-    check('20 kelime daha' in page.inner_text('main'), 'tarama grup sonu özeti')
+    for k in range(44):
+        page.click('.scan-btns .yes'); page.wait_for_timeout(40)
+    check('50 kelime daha' in page.inner_text('main') and page.locator('.scan-more.primary').count() == 1, 'tarama grup sonu özeti (ana düğme "Devam")')
     page.screenshot(path=f'{SHOTS}/v3-tarama-sonu.png', full_page=True)
 
     # 3) Mezuniyet: 7 öğrenilmiş kart → haftada en fazla 5 kontrol; bu hafta tekrar edilen gelmez
@@ -491,6 +497,7 @@ with sync_playwright() as p:
 
     # forms.json: kart arka yüzü (extra) + okuma panelinde "Halleri:"
     ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.add_init_script(OPEN_DETAILS)
     ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
     page = ctx.new_page(); attach(page, 'forms')
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
@@ -540,6 +547,7 @@ with sync_playwright() as p:
 
     def v4ctx(vp, mobile, tag, hour=None):
         c = b.new_context(viewport=vp, is_mobile=mobile, has_touch=mobile, service_workers='block')
+        c.add_init_script(OPEN_DETAILS)
         c.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
         c.route(API, gh_route)
         if hour is not None:
@@ -568,7 +576,7 @@ with sync_playwright() as p:
     check("Ayarlar'dan GitHub anahtarını gir" in page.inner_text('main') and page.locator('main a[href="#/ayarlar"]').count() == 1, 'token yok: "Soruları görmek için…" satırı + düğme')
     page.screenshot(path=f'{SHOTS}/m-cikmis-tokensiz.png', full_page=True)
     page.click('main a[href="#/ayarlar"]'); page.wait_for_timeout(300)
-    check(page.locator('a[href*="scopes=gist,repo"]').count() == 1 and 'Tek anahtar iki iş görür' in page.inner_text('main'), 'Ayarlar: tek anahtar rehberi (gist+repo)')
+    check(page.locator('a[href*="scopes=gist,repo"]').count() == 1 and 'Tek anahtar' in page.inner_text('main'), 'Ayarlar: tek anahtar rehberi (gist+repo)')
     page.fill('input[type=password]', 'ghp_testtoken123')
     page.click('button:has-text("Kaydet")'); page.wait_for_timeout(2500)
     check(len(gh_calls) >= 1 and gh_calls[0]['auth'] == 'Bearer ghp_testtoken123' and gh_calls[0]['accept'] == 'application/vnd.github.raw+json', f'GitHub isteği: Bearer + raw accept ({gh_calls[:1]})')
@@ -751,7 +759,7 @@ with sync_playwright() as p:
     # 7) Odak oturumu → mola ekranı, dakikalar gün kaydına
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(400)
     page.click('button.focus-start'); page.wait_for_timeout(400)
-    check(page.locator('#focusPill:not(.hidden)').count() == 1 and 'Odak' in page.inner_text('#focusPill'), 'odak sayacı başladı')
+    check(page.locator('#focusPill:not(.hidden)').count() == 1 and 'Odak' in page.locator('#focusPill').text_content(), 'odak sayacı başladı')
     ev("(() => { const s = JSON.parse(localStorage.getItem('yokdil.focus')); s.startedAt -= 26 * 60000; s.endsAt -= 26 * 60000; localStorage.setItem('yokdil.focus', JSON.stringify(s)); })()")
     page.reload(); page.wait_for_timeout(1500)
     check(page.locator('.breakscreen').count() == 1 and page.locator('.brk-tip').inner_text() != '', 'mola ekranı + öneri')
@@ -761,7 +769,7 @@ with sync_playwright() as p:
     page.click('.breakscreen button:has-text("Bitir")'); page.wait_for_timeout(300)
     check(page.locator('.breakscreen').count() == 0, 'mola bitir')
     page.goto(BASE + '#/eksikler'); page.wait_for_timeout(400)
-    check('Odak: son 7 günde 25 dk' in page.inner_text('main'), 'Eksikler: odak dakikaları')
+    check('odak: son 7 günde 25 dk' in page.inner_text('main'), 'Eksikler: odak dakikaları')
 
     # Boş veri: dersler/gramer yüklenemezse kısa mesaj
     ctx.route('**/data/lessons.json', lambda r: r.abort())
@@ -1078,10 +1086,10 @@ with sync_playwright() as p:
 
     # A5) Seri: tek atlanan gün + deneme günü
     ev("""import('./js/store.js').then(m => import('./js/util.js').then(u => { const t = u.dayKey();
-      for (const [i, f] of [[1, { tasks: { kart: true } }], [3, { mock: true }], [4, { focusMin: 30 }]]) m.put('days', { id: u.addDays(t, -i), tasks: {}, ...f }); }))""")
+      for (const [i, f] of [[2, { tasks: { kart: true } }], [3, { mock: true }], [4, { focusMin: 30 }]]) m.put('days', { id: u.addDays(t, -i), tasks: {}, ...f }); }))""")
     page.goto(BASE + '#/kartlar'); page.wait_for_timeout(200); page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
     stv = page.inner_text('.streak')
-    check('Seri: 4' in stv and 'joker' in stv, f'seri: deneme sayıldı + joker ({stv})')
+    check('Seri: 4' in stv and 'joker' in stv, f'seri: deneme sayıldı + joker dün kullanıldı ({stv})')
 
     # A8) Hafıza turu sayısı tutarlı; okuma çok hızlıysa ✓ yok
     tour_n = ev("import('./js/memory.js').then(m => m.tourCards().length)")
@@ -1130,6 +1138,7 @@ with sync_playwright() as p:
       window.Date = FD; })();"""
     def v7ctx(vp, mobile, tag):
         c = b.new_context(viewport=vp, is_mobile=mobile, has_touch=mobile, service_workers='block')
+        c.add_init_script(OPEN_DETAILS)
         c.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
         c.route(API, gh_route)
         for n in ['aids', 'drills', 'lessons']:
@@ -1162,7 +1171,7 @@ with sync_playwright() as p:
     # A1) Araçlar: Süre planı · Hedef net · Sınav günü · Kaynaklar
     go('dersler')
     tools = [page.locator('.toolstrip .tool').nth(i).inner_text() for i in range(page.locator('.toolstrip .tool').count())]
-    check(all(t in tools for t in ['Süre planı', 'Hedef net', 'Sınav günü', 'Kaynaklar']) and len(tools) == 10, f'Araçlar şeridi: 4 yeni araç ({len(tools)})')
+    check(all(t in tools for t in ['Süre planı', 'Hedefe kaç doğru', 'Sınav günü', 'Kaynaklar']) and len(tools) == 10, f'Araçlar şeridi: 4 yeni araç ({len(tools)})')
     go('dersler/arac/sure')
     aids_m = merged('aids')
     n_sec = len([x for x in aids_m['timePlan']['sections'] if x.get('minutes')])
@@ -1232,7 +1241,7 @@ with sync_playwright() as p:
     check(page.locator('.secgroup[open]').count() == 0, 'sonuç: bölümler kapalı gelir')
     page.locator('.secgroup summary').first.click(); page.wait_for_timeout(250)
     first_wrap = page.locator('.secgroup[open] .qwrong-wrap').first
-    check(first_wrap.locator('.reasons .chip').count() == n_reason, f'Sonuç: her yanlış/boş için {n_reason} neden çipi')
+    check(first_wrap.locator('.reasons .chip.reason').count() == 3 and first_wrap.locator('.reasons .reason-more').count() == (1 if n_reason > 3 else 0), f'Sonuç: her yanlışta 3 ana neden çipi + Diğer ▸ ({n_reason} neden)')
     wraps = page.locator('.secgroup[open] .qwrong-wrap')
     wraps.nth(0).locator('.reasons .chip').nth(0).click(); page.wait_for_timeout(150)
     wraps.nth(1).locator('.reasons .chip').nth(0).click(); page.wait_for_timeout(150)
@@ -1243,7 +1252,7 @@ with sync_playwright() as p:
     check(page.locator('.reason-card .cbar').count() == 2 and r0['label'] in page.locator('.reason-advice').inner_text() and r0['advice'][:20] in page.locator('.reason-advice').inner_text(), 'özet: neden dağılımı + en sık nedenin tavsiyesi')
     check(page.locator('.reasons .chip.on[aria-pressed=true]').count() == 3, 'seçili çipler işaretli')
     n_steps = len(aids_m['mockAnalysis'])
-    check(page.locator('.analysis ul.checklist li').count() == n_steps and ('20 dk analiz' in page.inner_text('.analysis h3') or 'analiz' in page.inner_text('.analysis h3').lower()), f'analiz adımları kontrol listesi ({n_steps}): {page.inner_text(".analysis h3")}')
+    check(page.locator('.analysis ul.checklist li:visible').count() == min(3, n_steps) and page.locator('.analysis ul.checklist li').count() == n_steps and 'Sonra ne yapayım' in page.inner_text('.analysis h3'), f'analiz: ilk 3 adım görünür, gerisi Tümü ▸ ({n_steps}): {page.inner_text(".analysis h3")}')
     page.locator('.analysis .check').first.click(); page.wait_for_timeout(250)
     check(page.locator('.analysis li.done').count() == 1 and any(k.startswith('analiz:exam:yokdil-fen-2020-1') for k in st()['progress']), 'analiz adımı işaretlendi')
     check(ev("document.documentElement.scrollWidth") <= 392, 'sonuç ekranı taşmıyor')
@@ -1252,14 +1261,14 @@ with sync_playwright() as p:
     go('eksikler', 600)
     check(page.locator('.reasons-all .cbar').count() == 2 and '3 işaretli' in page.inner_text('.reasons-all'), 'Eksikler: hata nedenleri birikimli grafik')
     txt = page.inner_text('main')
-    mcs = re.search(r'Çekirdek liste: (\d+)/(\d+) görüldü', txt)
+    mcs = re.search(r'Sık kelime listesi: (\d+)/(\d+) görüldü', txt)
     n_words = len(json.load(open(f'{ROOT}/data/words.json', encoding='utf-8')))
     check(mcs is not None and int(mcs.group(2)) == n_words and 'hedef 2000' in txt, f'Eksikler: çekirdek liste ilerlemesi ({mcs.group(0) if mcs else None}), hedef 2000 duruyor')
     # D2) Okuma hızı haftalık grafik + hedef çizgisi
     ev("""import('./js/store.js').then(m => { const now = Date.now(), d = 86400000;
       [[1, 95], [2, 105], [9, 88], [16, 80], [17, 84]].forEach(([ago, wpm], i) => m.put('progress', { id: 'read:t' + i, kind: 'read', words: 200, secs: 120, wpm, level: 1, at: now - ago * d, right: 2, total: 3 })); })""")
     page.wait_for_timeout(300); page.reload(); page.wait_for_timeout(800)
-    check(page.locator('svg.weekbars rect.bar').count() >= 3 and page.locator('svg.weekbars .goalL').count() == 1 and 'hedef: 120 kelime/dk' in page.inner_text('main'), f'Eksikler: okuma hızı haftalık grafik + hedef çizgisi ({page.locator("svg.weekbars rect.bar").count()} hafta)')
+    check(page.locator('svg.weekbars rect.bar').count() >= 3 and page.locator('svg.weekbars .goalL').count() == 1 and 'hedef (120 kelime/dk)' in page.inner_text('main'), f'Eksikler: okuma hızı haftalık grafik + hedef çizgisi ({page.locator("svg.weekbars rect.bar").count()} hafta)')
     shot('v7-eksikler', True)
 
     # A4) Yarım deneme: ilk 40 soru / 90 dk, süre bitince otomatik biter
@@ -1302,9 +1311,9 @@ with sync_playwright() as p:
     page.locator('.opt').nth((ans0 + 1) % 5).click(); page.wait_for_timeout(400)
     check(page.locator('.explain .partsbox.revealed .part-tgt').count() >= 3 and page.locator('.explain .part-check li').count() >= 1 and page.locator('.parts-btn').count() == 0, 'Cevaptan sonra: karşılıklar (tgt) + kontrol maddeleri')
     # A3) alıştırma yanlışında küçük neden çipi
-    check(page.locator('.explain .reasons .chip').count() == n_reason, 'Alıştırma yanlışında neden çipleri')
-    page.locator('.explain .reasons .chip').nth(2).click(); page.wait_for_timeout(250)
-    check(any(r.get('src') == 'drill' and r.get('reason') == aids_m['errorReasons'][2]['id'] for r in st()['reasons'].values()), 'alıştırma nedeni kaydedildi')
+    check(page.locator('.explain .reasons .chip.reason').count() == 3, 'Alıştırma yanlışında 3 ana neden çipi')
+    page.locator('.explain .reasons .chip.reason').nth(2).click(); page.wait_for_timeout(250)
+    check(any(r.get('src') == 'drill' and r.get('reason') == 'sure' for r in st()['reasons'].values()), 'alıştırma nedeni kaydedildi (Süre)')
     check(reachable('.actbar .btn.primary:not(.hidden)', False), 'Parçala sonrası "Sonraki" erişilebilir')
     shot('v7-ceviri-cevap', True)
     go('alistirma/ceviri-tr-en', 700)
@@ -1488,14 +1497,14 @@ with sync_playwright() as p:
     check(rowh < 34, f'yıldız satırı tek satır ({rowh:.0f}px)')
     shot('v8-kart-on')
     st0.click(); page.wait_for_timeout(250)
-    check('geçme sıklığına göre tahmin' in page.locator('#toast').inner_text() and page.locator('.back.hidden').count() == 1, 'yıldıza dokun → kısa açıklama; kart açılmadı')
+    check('Sınavda ne sık çıktığı' in page.locator('#toast').inner_text() and page.locator('.back.hidden').count() == 1, 'yıldıza dokun → kısa açıklama; kart açılmadı')
     shot('v8-kart-aciklama')
     page.click('button:has-text("Göster")'); page.wait_for_timeout(200)
     check(page.locator('.back .stars').count() == 0, 'arka yüzde ek yıldız yok (kalabalık değil)')
     shot('v8-kart-arka')
     # Ayar açık → sıra yıldıza göre; kendi eklediğin kelime yine en önde
     go('ayarlar', 500)
-    sw_ = page.locator('label.switch:has-text("çok çıkanları öne al") input')
+    sw_ = page.locator('label.switch:has-text("çok çıkanlar önce") input')
     check(sw_.count() == 1 and not sw_.is_checked(), 'Ayarlar: "Yeni kelimelerde çok çıkanları öne al" var, varsayılan kapalı')
     shot('v8-ayarlar', True)
     sw_.check(); page.wait_for_timeout(300)
@@ -1550,7 +1559,7 @@ with sync_playwright() as p:
     check(page.locator('#wordSheet:not(.hidden) .stars').count() == 1 and int(page.locator('#wordSheet .stars').get_attribute('data-n')) == star(twt), f'okuma kelime panelinde yıldız ({twt} → {star(twt)}★)')
     shot('v8-okuma-panel')
     page.locator('#wordSheet .stars').click(); page.wait_for_timeout(200)
-    check('geçme sıklığına göre tahmin' in page.locator('#toast').inner_text() and page.locator('#wordSheet:not(.hidden)').count() == 1, 'panelde yıldıza dokun → açıklama, panel açık kalır')
+    check('Sınavda ne sık çıktığı' in page.locator('#toast').inner_text() and page.locator('#wordSheet:not(.hidden)').count() == 1, 'panelde yıldıza dokun → açıklama, panel açık kalır')
     # Eksikler: 5★ satırı
     top5 = [w for w in WORDS if star(w['word']) == 5]
     go('eksikler', 700)
@@ -1582,6 +1591,7 @@ with sync_playwright() as p:
         if route.request.method == 'OPTIONS': return route.fulfill(status=204, headers=cors)
         route.fulfill(status=200, body=RPACK, headers={**cors, 'ETag': '"r1"', 'Content-Type': 'application/vnd.github.raw+json'})
     ctx = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    ctx.add_init_script(OPEN_DETAILS)
     ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
     ctx.route(API, gh_r)
     ctx.route('**/data/aids.json', lambda r: r.fulfill(json=merged('aids')))
@@ -1688,7 +1698,7 @@ with sync_playwright() as p:
     ev("localStorage.setItem('yokdil.token', 'ghp_x')"); page.reload(); page.wait_for_timeout(1800)
     go('okuma', 900)
     txt = page.inner_text('main')
-    check('Kaynaklarım (gizli)' in txt and page.locator('.privgroup:not(.other) summary:has-text("Test Kitabı A")').count() == 1, 'Okuma: "Kaynaklarım (gizli)" kaynağa göre gruplu')
+    check('Kaynaklarım' in txt and page.locator('.privgroup:not(.other) summary:has-text("Test Kitabı A")').count() == 1, 'Okuma: "Kaynaklarım (gizli)" kaynağa göre gruplu')
     oth = page.locator('details.privgroup.other')
     check(oth.count() == 1 and oth.get_attribute('open') is None and 'Diğer (genel)' in oth.inner_text(), '"Diğer (genel)" en altta, katlanmış')
     sug = page.locator('a.suggest').get_attribute('href')
@@ -1728,6 +1738,7 @@ with sync_playwright() as p:
 
     # Service worker kaydı (ayrı bağlam)
     ctx = b.new_context(viewport={'width': 390, 'height': 844})
+    ctx.add_init_script(OPEN_DETAILS)
     page = ctx.new_page(); attach(page, 'sw')
     page.goto(BASE); page.wait_for_timeout(1500)
     check(page.evaluate("navigator.serviceWorker.getRegistration().then(r => !!r)"), 'service worker kayıtlı')

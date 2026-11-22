@@ -6,7 +6,7 @@ export const SECTION_OF = {
   'bosluk': 'bosluk', 'cloze': 'cloze', 'cumle-tamamlama': 'tamamlama', 'ceviri-en-tr': 'en-tr', 'ceviri-tr-en': 'tr-en',
   'paragraf-tamamlama': 'paragraf', 'ilgisiz': 'ilgisiz', 'paragraf': 'okuma', 'yakin-anlam': 'yakin', 'diyalog': 'diyalog'
 };
-export const SEC_LBL = { bosluk: 'Cümlede boşluk', cloze: 'Cloze test', tamamlama: 'Cümle tamamlama', 'en-tr': 'Çeviri İng→Tr', 'tr-en': 'Çeviri Tr→İng',
+export const SEC_LBL = { bosluk: 'Cümlede boşluk', cloze: 'Cloze (boşluklu paragraf)', tamamlama: 'Cümle tamamlama', 'en-tr': 'Çeviri İng→Tr', 'tr-en': 'Çeviri Tr→İng',
   paragraf: 'Paragraf tamamlama', ilgisiz: 'İlgisiz cümle', okuma: 'Okuma', yakin: 'Yakın anlam', diyalog: 'Diyalog', diger: 'Diğer' };
 // YÖKDİL Fen bölüm soru sayıları
 export const SEC_N = { bosluk: 20, cloze: 10, tamamlama: 11, 'en-tr': 6, 'tr-en': 6, paragraf: 6, ilgisiz: 6, okuma: 15 };
@@ -62,7 +62,7 @@ export function netRows(target, mock) {
     return { ...r, mine, diff: mine == null ? null : mine - r.need };
   });
 }
-export const lastFullMock = mocks => (mocks || []).filter(m => m && !m.half && m.kind !== 'kisa' && m.sections).sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.updatedAt || 0) - (b.updatedAt || 0)).at(-1) || null;
+export const lastFullMock = mocks => (mocks || []).filter(m => m && !m.half && !m.sample && m.kind !== 'kisa' && m.sections).sort((a, b) => (a.date || '').localeCompare(b.date || '') || (a.updatedAt || 0) - (b.updatedAt || 0)).at(-1) || null;
 
 // Hata nedenleri: kayıtlar [{reason}] → [{id, label, advice, n}] (çoktan aza)
 export function reasonCounts(recs, reasons) {

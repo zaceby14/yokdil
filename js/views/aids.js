@@ -1,7 +1,7 @@
 // Gramer kolaylaştırıcıları: karar ağacı, bağlaç kutup kartları, zaman tablosu, kopya kağıtları, şık eleme, kişisel kurallar
 // data/aids.json yoksa ya da bir bölüm eksikse o araç görünmez.
 import { aids } from '../data.js';
-import { h, add, topicName } from '../util.js';
+import { h, add, topicName, exEl } from '../util.js';
 import { md } from '../md.js';
 import { setCtx } from '../ctx.js';
 import * as store from '../store.js';
@@ -16,7 +16,7 @@ const TOOLS = [
   ['eleme', 'Şık eleme', a => a.eliminationTips?.length],
   ['kural', 'Kişisel kurallarım', a => a.personalRules?.length],
   ['sure', 'Süre planı', a => planRows(a.timePlan).length],
-  ['net', 'Hedef net', a => a.targets?.some?.(t => t?.nets && t.score)],
+  ['net', 'Hedefe kaç doğru', a => a.targets?.some?.(t => t?.nets && t.score)],
   ['gun', 'Sınav günü', a => a.examDay?.some?.(g => g?.items?.length)],
   ['kaynak', 'Kaynaklar', a => a.resources?.some?.(r => r?.title)]
 ];
@@ -81,7 +81,7 @@ function polarity(root, a) {
     h('div.polcard.pc-' + (COLORS[String(c.color || '').toLowerCase()] || 'gray'),
       h('b', c.group), h('div.chips', arr(c.words).map(w => h('span.chip', { lang: 'en' }, w))),
       c.structure ? h('div.small', h('b', 'Yapı: '), c.structure) : null,
-      c.ex ? h('div.small', { lang: 'en' }, c.ex) : null,
+      exEl(c.ex),
       c.trap ? h('div.small.trap', h('b', 'Tuzak: '), c.trap) : null))));
 }
 
@@ -102,7 +102,7 @@ function sheets(root, a, id) {
 }
 
 function elim(root, a) {
-  root.append(h('ol.elim', arr(a.eliminationTips).map(t => h('li', h('b', t.title), h('div', t.text), t.ex ? h('div.small.muted', { lang: 'en' }, t.ex) : null))));
+  root.append(h('ol.elim', arr(a.eliminationTips).map(t => h('li', h('b', t.title), h('div', t.text), exEl(t.ex, 'div.small.muted')))));
 }
 
 // id = konu: Bugün'deki "Kural kartı" görevinden gelinir → o kart üstte + "Okudum" (görev kapanır)
@@ -112,7 +112,7 @@ function rules(root, a, id) {
   if (cur.length) root.append(h('div.note', 'Bu kuraldan son günlerde 2+ yanlış yaptın. Kartı oku, örneği sesli söyle.'));
   root.append(cur.length ? null : h('p.small.muted', 'İlgili konuda yanlış yapınca bu kart soru açıklamasında kendiliğinden çıkar.'),
     h('div', [...cur, ...list.filter(r => !cur.includes(r))].map(r => h('div.rulecard' + (cur.includes(r) ? '.focus' : ''), h('div.small.muted', topicName(r.topic || '')), h('b', r.rule),
-      r.ex ? h('div.small', { lang: 'en' }, r.ex) : null,
+      exEl(r.ex),
       r.wrong || r.right ? h('div.small', r.wrong ? h('span.bad-t', '✗ ' + r.wrong + ' ') : null, r.right ? h('span.good-t', '✓ ' + r.right) : null) : null,
       cur.includes(r) && r === cur.at(-1) ? h('div.row', h('button.btn.primary.grow.rule-ack', { onclick: () => { store.patch('progress', 'kural:' + id, { ackAt: Date.now() }); location.hash = '#/bugun'; } }, 'Okudum'),
         h('a.btn', { href: '#/gramer/konu/' + encodeURIComponent(id) }, 'Bu konudan çöz')) : null))));

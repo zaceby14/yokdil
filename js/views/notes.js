@@ -18,13 +18,13 @@ export default function render(root) {
       .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
     ul.innerHTML = '';
     if (!ns.length) {
-      ul.append(h('p.muted.center.pad', quickNotes().length ? 'Bu filtrede not yok.' : 'Henüz not yok. Sağ alttaki "Not" düğmesiyle her ekranda not alabilirsin.'));
+      ul.append(h('p.muted.center.pad', quickNotes().length ? 'Bu filtrede not yok.' : 'Henüz not yok. "Not" düğmesiyle her ekranda not alabilirsin.'));
       return;
     }
     for (const n of ns) ul.append(item(n, draw));
   };
   q.oninput = draw;
-  root.append(h('h2', 'Notlarım'), q, seg, ul);
+  root.append(h('h2', 'Notlarım'), h('p.small.muted.screen-why', 'Çalışırken aldığın kısa notlar; kelime notunu karta çevirebilirsin.'), q, seg, ul);
   draw();
 }
 
