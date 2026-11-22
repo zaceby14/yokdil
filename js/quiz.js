@@ -165,7 +165,7 @@ export function runQuiz(root, items, opts = {}) {
         h('div.qbar', hintBtn, partsBtn,
           opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
         hintBox, stem, q, partsSlot,
-        h('div.opts', opts_), exp, h('div.actbar', next)
+        h('div.opts' + (it.tf ? '.tf' : ''), opts_), exp, h('div.actbar', next)
       );
       if (picks[i] != null) reveal(picks[i], true);
       if (i === 0 || picks[i] == null) window.scrollTo(0, 0);

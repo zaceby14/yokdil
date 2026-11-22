@@ -55,6 +55,14 @@ export function pItem(p, i) {
     label: p.title, info: { kind: 'okuma', topic: p.topic || '', dtype: 'paragraf' } };
 }
 
+// Gizli okuma sorusu: anahtar r:<okumaId>:<n> (n 1'den); metin IndexedDB'den
+export function rItem(r, k) {
+  const q = r.questions[k];
+  return { key: `r:${r.id}:${k + 1}`, stemNode: () => tappable(r.text, { source: r.source || 'Okuma', note: r.title || '' }).el, q: q.q, options: q.options.map(optText), answer: q.answer,
+    explain: q.explain || '', tf: q.type === 'tf', unverified: q.keySource === 'claude', label: r.title || 'Okuma',
+    info: { kind: 'okuma', topic: r.topic || '', dtype: 'paragraf', src: 'gizli' } };
+}
+
 // Çıkmış soru öğesi (metinler IndexedDB'den)
 export function xItem(e, q) {
   const g = groupOf(e, q);
@@ -72,6 +80,11 @@ export function xItem(e, q) {
 export async function resolve(key) {
   const { gmap, dmap, lmap, pmap } = await maps();
   if (gmap.has(key)) return gItem(gmap.get(key));
+  if (key.startsWith('r:')) {
+    const k = key.lastIndexOf(':'), id = key.slice(2, k), n = +key.slice(k + 1);
+    const r = (await getPack())?.readings?.find(x => x.id === id);
+    return r?.questions?.[n - 1] ? rItem(r, n - 1) : null;
+  }
   if (key.startsWith('ders:')) {
     const [id, i] = key.slice(5).split('#');
     const l = lmap.get(id);

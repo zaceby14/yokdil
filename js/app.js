@@ -14,6 +14,7 @@ import drills from './views/drills.js';
 import panel from './views/panel.js';
 import settings from './views/settings.js';
 import exams from './views/exams.js';
+import kisa from './views/kisa.js';
 import lessons from './views/lessons.js';
 import notes from './views/notes.js';
 import { setCtx } from './ctx.js';
@@ -22,8 +23,8 @@ import { initFocus, eveTip } from './focus.js';
 import { dailyFetch } from './private.js';
 import { finalMode } from './plan.js';
 
-const routes = { bugun: today, okuma: reading, kartlar: cards, gramer: grammar, alistirma: drills, eksikler: panel, ayarlar: settings, cikmis: exams, dersler: lessons, notlar: notes };
-const TAB = { gramer: 'sorular', alistirma: 'sorular', cikmis: 'sorular' };
+const routes = { bugun: today, okuma: reading, kartlar: cards, gramer: grammar, alistirma: drills, eksikler: panel, ayarlar: settings, cikmis: exams, deneme: kisa, dersler: lessons, notlar: notes };
+const TAB = { gramer: 'sorular', alistirma: 'sorular', cikmis: 'sorular', deneme: 'sorular' };
 const view = document.getElementById('view');
 let cleanup = null, current = '';
 

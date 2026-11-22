@@ -49,7 +49,7 @@ export function line(points, { width = 340, height = 120, max = 100 } = {}) {
   const y = v => 8 + hh - (v / max) * hh;
   const grid = [0, 50, 100].map(v => `<line x1="${pl}" x2="${width - 8}" y1="${y(v)}" y2="${y(v)}" class="grid"/><text x="0" y="${y(v) + 4}" class="lbl small">${v}</text>`).join('');
   const path = points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
-  const dots = points.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.v)}" r="4" class="dot"/><text x="${x(i)}" y="${height - 4}" class="lbl small" text-anchor="middle">${esc(p.label)}</text>`).join('');
+  const dots = points.map((p, i) => `<circle cx="${x(i)}" cy="${y(p.v)}" r="4" class="dot${p.cls ? ' ' + p.cls : ''}"/><text x="${x(i)}" y="${height - 4}" class="lbl small${p.cls ? ' ' + p.cls : ''}" text-anchor="middle">${esc(p.label)}</text>`).join('');
   return `<svg class="chart" viewBox="0 0 ${width} ${height}" width="100%" role="img">${grid}<path d="${path}" class="lineP"/>${dots}</svg>`;
 }
 

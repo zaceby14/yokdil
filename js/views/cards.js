@@ -8,7 +8,7 @@ import scan from './scan.js';
 import gap, { gapPool, GAP_MIN } from './gap.js';
 import guess from './guess.js';
 import { tick } from '../plan.js';
-import { enrich } from '../data.js';
+import { enrich, wordIndex } from '../data.js';
 import memory, { EX, counts as exCounts } from './memory.js';
 import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
@@ -207,10 +207,14 @@ function extra(card, en) {
   return wrap.childNodes.length ? wrap : null;
 }
 
+// Kelime listesi etiketleri (words.json tags) → kaynak filtresi
+const TAG_SRC = { remzi: 'Remzi Hoca listesi', zafer: 'Zafer Hoca listesi' };
+
 function list(root) {
   const q = h('input', { type: 'search', placeholder: 'Ara (İng/Tr)' });
   const fs = h('select', h('option', { value: '' }, 'Tüm kaynaklar'),
-    ['Notlarım', 'Çekirdek', 'Okuma', 'Hata', ...SRC].map(s => h('option', { value: s }, s)));
+    ['Notlarım', 'Çekirdek', 'Okuma', 'Hata', ...SRC].map(s => h('option', { value: s }, s)),
+    Object.entries(TAG_SRC).map(([k, v]) => h('option', { value: 'tag:' + k }, v)));
   const LV = { known: 'Bildiklerim', grad: 'Öğrenildi', eksik: 'Anlam eksik' };
   const fst = h('select', h('option', { value: '' }, 'Tüm durumlar'), Object.entries(STATE_TR).filter(([k]) => k !== 'known').map(([k, v]) => h('option', { value: k }, v)),
     Object.entries(LV).map(([k, v]) => h('option', { value: k }, v)));
@@ -221,11 +225,15 @@ function list(root) {
   const top = h('input', { type: 'checkbox' });
   const ul = h('ul.list.compact');
   const count = h('div.small.muted');
+  // Etiket: kartın kendi etiketi ya da çekirdek listedeki (words.json) etiketi — kendi notlarım da eşleşir
+  let widx = null;
+  const tagOk = (c, t) => (c.tags || []).includes(t) || (widx?.get((c.word || '').trim().toLowerCase())?.tags || []).includes(t);
+  wordIndex().then(m => { widx = m; if (fs.value.startsWith('tag:')) draw(); });
   const draw = () => {
     const s = q.value.trim().toLowerCase();
     let cs = store.all('cards').filter(c =>
       (!s || (c.word || '').toLowerCase().includes(s) || (c.tr || '').toLowerCase().includes(s)) &&
-      (!fs.value || (c.source || '').startsWith(fs.value)) &&
+      (!fs.value || (fs.value.startsWith('tag:') ? tagOk(c, fs.value.slice(4)) : (c.source || '').startsWith(fs.value))) &&
       stOk(c) && (!top.checked || (starOf(c.word) || 0) >= 4));
     cs.sort((a, b) => (sort.value === 'star' ? (starOf(b.word) || 0) - (starOf(a.word) || 0) : 0) || (a.word || '').localeCompare(b.word || '', 'en'));
     count.textContent = cs.length + ' kart';

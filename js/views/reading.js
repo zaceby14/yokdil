@@ -10,6 +10,10 @@ import { cardFromWord } from '../srs.js';
 import { setCtx } from '../ctx.js';
 import { saveNote, quickNotes } from '../notes.js';
 import { emptyData } from './hub.js';
+import { getPack, reading as getReading } from '../pack.js';
+import { rItem } from '../qbank.js';
+import { suggestLevel, readRecs, pickReading, readingDone, isOther } from '../readpick.js';
+export { suggestLevel, readRecs };
 
 // Saf: okuma görevi sayılır mı? Makul hız (< 400 kelime/dk) ve (en az 1 doğru ya da sorusuz tamamlanmış okuma)
 export const MAX_WPM = 400;
@@ -19,18 +23,6 @@ export function readCounts({ words, secs, right = 0, total = 0 }) {
   return wpm < MAX_WPM && (total ? right >= 1 : true);
 }
 
-// Okuma hızı + doğruluk → önerilen seviye (saf)
-export function suggestLevel(recs, maxL = 3) {
-  const r = recs.filter(x => x.total).sort((a, b) => (b.at || 0) - (a.at || 0)).slice(0, 3);
-  if (!r.length) return { level: 1, wpm: 0, acc: null };
-  const wpm = Math.round(r.reduce((s, x) => s + (x.wpm || 0), 0) / r.length);
-  const acc = r.reduce((s, x) => s + x.right, 0) / r.reduce((s, x) => s + x.total, 0);
-  let level = r[0].level || 1;
-  if (acc >= 0.8 && wpm >= 110) level++;
-  else if (acc < 0.5) level--;
-  return { level: Math.min(maxL, Math.max(1, level)), wpm, acc };
-}
-export const readRecs = () => store.all('progress').filter(x => x.kind === 'read');
 
 export const SOURCES = ['More to Read', 'Ikigai', 'Diğer'];
 
@@ -39,6 +31,11 @@ export default async function render(root, [mode, id]) {
   if (mode === 'p') {
     const p = (await passages()).find(x => x.id === id);
     if (p) return reader(root, { id: p.id, title: p.title, text: p.text, gloss: p.gloss, questions: p.questions, source: 'Okuma: ' + p.title, passage: p });
+  }
+  if (mode === 'g') {
+    const r = await getReading(id);
+    if (r) return reader(root, { id: 'r:' + r.id, title: r.title || 'Okuma', text: r.text, gloss: r.glossary, tr: r.tr, level: +r.level || 0, topic: r.topic || '',
+      source: r.source || 'Kaynağım', gizli: r, questions: r.questions?.length ? r.questions : null });
   }
   if (mode === 't') {
     const t = store.get('texts', id);
@@ -49,25 +46,45 @@ export default async function render(root, [mode, id]) {
 
 async function list(root) {
   const ps = await passages();
-  const done = new Set(store.all('grammarLog').filter(l => l.kind === 'okuma').map(l => l.q.split('#')[0]));
+  const rs = (await getPack().catch(() => null))?.readings || [];
+  const done = await readingDone();
   const mine = store.all('texts').sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-  const sg = suggestLevel(readRecs(), Math.max(1, ...ps.map(p => p.level || 1)));
-  const todo = ps.filter(p => !done.has(p.id));
-  const next = todo.find(p => (p.level || 1) === sg.level) || todo.sort((a, b) => Math.abs((a.level || 1) - sg.level) - Math.abs((b.level || 1) - sg.level))[0];
+  const recs = readRecs();
+  const last = [...recs].sort((a, b) => (b.at || 0) - (a.at || 0))[0];
+  const { next, sg } = pickReading({ ps, rs, done, recs, lastGizli: !!last?.gizli });
   root.append(
     h('div.row.between', h('h2', 'Okuma'), h('a.btn.primary', { href: '#/okuma/yeni' }, '+ Metin yapıştır')),
-    next ? h('a.card.link.suggest', { href: '#/okuma/p/' + next.id },
-      h('div.small.muted', 'Sıradaki önerilen · seviye ' + (next.level || '-')), h('b', next.title),
+    next ? h('a.card.link.suggest', { href: next.href },
+      h('div.small.muted', 'Sıradaki önerilen · seviye ' + (next.level || '-') + (next.gizli ? ' · kaynağım' : '')), h('b', next.title),
       sg.acc != null ? h('div.small.muted', `Son okumalar: ${sg.wpm} kelime/dk · doğruluk %${Math.round(sg.acc * 100)}`) : null) : null,
     h('a.card.link.guess-link', { href: '#/kartlar/tahmin' }, h('b', 'Bağlamdan tahmin'), h('span.small.muted', ' bilmediğin kelimeyi cümleden çıkar')),
     mine.length ? h('h3', 'Metinlerim') : null,
     h('ul.list', mine.map(t => h('li', h('a', { href: '#/okuma/t/' + t.id },
       h('b', t.title || 'Başlıksız'), h('span.small.muted', `${t.source || ''}${t.page ? ' · s. ' + t.page : ''}`))))),
+    rs.length ? privList(rs, done) : null,
     h('h3', 'Hazır parçalar'),
     ps.length ? h('ul.list', ps.map(p => h('li' + (done.has(p.id) ? '.done' : ''), h('a', { href: '#/okuma/p/' + p.id },
       h('b', (done.has(p.id) ? '✓ ' : '') + p.title),
       h('span.small.muted', `${topicName(p.topic) || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : emptyData('Okuma parçaları')
   );
+}
+
+// Gizli kaynak okumaları: kaynağa göre gruplu; fen dışı ("diğer") en altta, katlanmış
+function privList(rs, done) {
+  const item = r => {
+    const d = done.has('r:' + r.id), nq = r.questions?.length || 0;
+    return h('li' + (d ? '.done' : ''), h('a', { href: '#/okuma/g/' + encodeURIComponent(r.id) },
+      h('b', (d ? '✓ ' : '') + (r.title || r.id)),
+      h('span.small.muted', [isOther(r) ? '' : topicName(r.topic) || '', r.level ? 'seviye ' + r.level : '', r.tr ? 'çevirili' : '', nq ? nq + ' soru' : ''].filter(Boolean).join(' · '))));
+  };
+  const groups = new Map();
+  for (const r of rs.filter(x => !isOther(x))) { const k = r.source || 'Diğer kaynak'; (groups.get(k) || groups.set(k, []).get(k)).push(r); }
+  const other = rs.filter(isOther);
+  return h('section.priv-read',
+    h('h3', 'Kaynaklarım (gizli)'),
+    h('p.small.muted', 'Yalnız bu cihazda; senkrona girmez.'),
+    [...groups].map(([src, list]) => h('details.privgroup', { open: groups.size <= 3 }, h('summary', h('b', src), h('span.small.muted', ` · ${list.length}`)), h('ul.list', list.map(item)))),
+    other.length ? h('details.privgroup.other', h('summary', h('b', 'Diğer (genel)'), h('span.small.muted', ` · ${other.length} · fen dışı`)), h('ul.list', other.map(item))) : null);
 }
 
 function editor(root, t) {
@@ -126,8 +143,25 @@ function reader(root, doc) {
     return h('details.idea' + (prev ? '.has' : ''), h('summary', prev ? '✓ Ana fikir' : 'Ana fikir?'),
       ta, h('div.row', h('button.btn.small', { onclick: save }, 'Kaydet'), st));
   };
-  const tp = tappable(doc.text, { source: doc.mine ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
-    afterPara: active ? i => mainIdea(i) : null });
+  // Çeviri (gizli okumada "tr" varsa): paragraf paragraf, varsayılan gizli; önce kendi çevirini yaz (isteğe bağlı → notlar)
+  const trParas = doc.tr ? String(doc.tr).replace(/\r/g, '').split(/\n\s*\n/) : [];
+  const trBox = i => {
+    if (!trParas[i]) return null;
+    const key = `okuma:${doc.id}#tr${i}`;
+    const prev = quickNotes().find(n => n.ctx?.key === key);
+    const ta = h('textarea.mytr', { rows: 2, placeholder: 'Önce kendin çevir (isteğe bağlı)' });
+    ta.value = prev?.text || '';
+    let id = prev?.id;
+    const st = h('span.small.muted', prev ? 'kaydedildi' : '');
+    const save = () => { if (!ta.value.trim()) return; id = saveNote(ta.value, { type: 'okuma', key, id: doc.id, para: i, label: `${doc.title} · çevirim ${i + 1}`, route: location.hash }, id).id; st.textContent = 'kaydedildi'; };
+    ta.addEventListener('change', save);
+    const out = h('div.trpara.hidden', { lang: 'tr' }, trParas[i]);
+    const btn = h('button.btn.small.tr-show', { type: 'button', onclick: () => { save(); out.classList.toggle('hidden'); btn.textContent = out.classList.contains('hidden') ? 'Çeviriyi göster' : 'Çeviriyi gizle'; } }, 'Çeviriyi göster');
+    return h('details.idea.trbox', h('summary', 'Çeviri'), ta, h('div.row', h('button.btn.small', { type: 'button', onclick: save }, 'Kaydet'), btn, st), out);
+  };
+  const after = i => { const a = active ? mainIdea(i) : null, b = trBox(i); return a && b ? h('div', a, b) : a || b; };
+  const tp = tappable(doc.text, { source: doc.mine || doc.gizli ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
+    afterPara: active || trParas.length ? after : null });
   const nWords = doc.passage?.words || (String(doc.text).match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) || []).length;
   const rid = 'read:' + doc.id;
   let readDone = false;
@@ -138,7 +172,7 @@ function reader(root, doc) {
     if (secs < 10) return;
     const wpm = Math.round(nWords / (secs / 60));
     if (wpm > 600) { speed.textContent = 'Çok hızlı geçtin; hız kaydedilmedi.'; return; } // göz gezdirme
-    store.put('progress', { ...(store.get('progress', rid) || {}), id: rid, kind: 'read', words: nWords, secs, wpm, level: doc.passage?.level || 0, at: Date.now(), right: 0, total: 0 });
+    store.put('progress', { ...(store.get('progress', rid) || {}), id: rid, kind: 'read', words: nWords, secs, wpm, level: doc.passage?.level || doc.level || 0, at: Date.now(), right: 0, total: 0, ...(doc.gizli ? { gizli: true } : {}) });
     speed.textContent = `Okuma hızın: ${wpm} kelime/dk (${Math.round(secs / 60) || '<1'} dk)`;
   }
   const summary = h('div');
@@ -162,10 +196,17 @@ function reader(root, doc) {
       onclick: e => {
         e.target.remove();
         stopReading();
-        runQuiz(qbox, doc.questions.map((q, k) => ({ ...q, key: `${doc.id}#${k}`, info: { kind: 'okuma', dtype: 'paragraf', topic: doc.passage?.topic || '' } })), {
-          sid: 'okuma:' + doc.id, name: 'Okuma · ' + doc.title, source: 'Okuma', inline: !!doc.mine,
-          resolve: async key => { const k = +key.split('#').pop(); const q = doc.questions[k]; return q ? { ...q, key, info: { kind: 'okuma', dtype: 'paragraf' } } : null; },
-          onAnswer: (it, ok) => answer(it.key, ok, { kind: 'okuma', topic: doc.passage?.topic || '', dtype: 'okuma' }),
+        // Gizli okuma: soru metni oturum kaydına (senkron) girmez; anahtar r:<id>:<n>, metin paketten çözülür
+        const G = doc.gizli;
+        const its = G ? G.questions.map((q, k) => ({ ...rItem(G, k), stemNode: null }))
+          : doc.questions.map((q, k) => ({ ...q, key: `${doc.id}#${k}`, info: { kind: 'okuma', dtype: 'paragraf', topic: doc.passage?.topic || '' } }));
+        runQuiz(qbox, its, {
+          sid: 'okuma:' + doc.id, name: 'Okuma · ' + doc.title, source: G ? doc.source : 'Okuma', inline: !!doc.mine,
+          resolve: async key => {
+            if (G) { const k = +key.split(':').pop() - 1; return G.questions[k] ? { ...rItem(G, k), stemNode: null } : null; }
+            const k = +key.split('#').pop(); const q = doc.questions[k]; return q ? { ...q, key, info: { kind: 'okuma', dtype: 'paragraf' } } : null;
+          },
+          onAnswer: (it, ok) => answer(it.key, ok, G ? it.info : { kind: 'okuma', topic: doc.passage?.topic || '', dtype: 'okuma' }),
           task: 'okuma',
           onEnd: ({ right, total }, el) => {
             flush();
@@ -186,7 +227,8 @@ function reader(root, doc) {
     doc.mine ? h('div.small.muted', `${doc.source || ''}${doc.page ? ' · s. ' + doc.page : ''} · `,
       h('a', { href: '#/okuma/duzenle/' + doc.id }, 'Düzenle'), ' · ',
       h('a', { href: '#/okuma', onclick: e => { if (!confirm('Metin silinsin mi?')) return e.preventDefault(); store.del('texts', doc.id); } }, 'Sil')) :
-      doc.passage ? h('div.small.muted', `${topicName(doc.passage.topic || '')} · seviye ${doc.passage.level || '-'}`) : null,
+      doc.passage ? h('div.small.muted', `${topicName(doc.passage.topic || '')} · seviye ${doc.passage.level || '-'}`) :
+      doc.gizli ? h('div.small.muted.priv-meta', [doc.source, isOther(doc) ? 'genel' : topicName(doc.topic), doc.level ? 'seviye ' + doc.level : ''].filter(Boolean).join(' · ')) : null,
     h('p.small.muted', 'Dokun: kelime · Uzun bas/Öbek: başlangıç → bitiş'),
     gloss, body,
     doc.questions?.length ? null : h('button.btn.wide.finish', { onclick: e => { e.target.remove(); stopReading(); flush(); if (readCounts({ words: nWords, secs })) tick('okuma'); else speed.textContent = 'Kısa okuma: görev sayılmadı.'; showNew(); } }, 'Okumayı bitirdim'),

@@ -14,6 +14,8 @@
 - **Eksikler:** doğruluk grafikleri, hata nedenleri, çekirdek liste ilerlemesi, haftalık okuma hızı (hedef çizgili), 8 haftalık ısı haritası, deneme sonuçları (puan = doğru × 1,25).
 - **Sınav stratejisi (Dersler → Araçlar):** *Süre planı* (bölüm başına dakika + çözme sırası), *Hedef net* (60/70/80 → gereken net, son denemenle fark), *Sınav günü* (kontrol listesi), *Kaynaklar*.
 - **Deneme:** her bölümde "Bu bölüm: 12/22 dk" göstergesi (× ile kapanır). Sonuçta bölüm başına net / dk / hedef / sn-soru, her yanlışa tek dokunuşla *neden*, 20 dk analiz listesi. *Yarım deneme:* ilk 40 soru / 90 dk, süre bitince kendiliğinden biter.
+- **Kısa deneme (Sorular → Deneme):** özgün sorulardan *Mini* (20 soru · 45 dk) ve *Yarım* (40 soru · 90 dk), YÖKDİL oranında; önce görülmemiş sorular, seviye karışık, son 3 kısa denemede aynı soru yok. Çıkmış deneme ekranıyla aynı (sayaç, optik, işaretle, bölüm süresi, ipucu yok); puan = doğru / soru × 100. Programda Pazar görevi (hafta 1, 3–5 mini; 7–8 yarım), son 14 günde hafta içi mini.
+- **Kaynaklarım (gizli okumalar):** gizli paketteki `readings` Okuma listesinde kaynağa göre (fen dışı "Diğer (genel)" en altta, kapalı). Parça ekranı aynı; *Çeviri* kutusu: önce kendin yaz (notlara düşer), sonra *Çeviriyi göster* (paragraf paragraf). Sorular sonda (Doğru/Yanlış iki büyük düğme). Bugün'ün okuma önerisi özgün ↔ kaynağım dönüşümlü.
 - **Çeviri:** "Parçala" → cümle renkli bloklara ayrılır; cevaptan sonra blokların karşılıkları.
 - **Bağlamdan tahmin (Kartlar / Okuma):** cümledeki sarı kelimenin anlamını 4 şıktan seç.
 - **Kelime yıldızı (★1–5):** çıkmış YDS/YÖKDİL sorularında geçme sıklığına göre tahmin; kartta, listede (sırala + 4★ filtresi), okuma panelinde. *Ayarlar → Yeni kelimelerde çok çıkanları öne al* (varsayılan kapalı).
@@ -30,7 +32,7 @@ Tek anahtar iki iş görür.
 2. **Ayarlar → GitHub anahtarı** kısmına yapıştır → **Kaydet**. Her cihazda bir kez.
 
 - Senkron: veriler gizli bir gist'te (`yokdil-sync.json`).
-- Çıkmış sorular: gizli repo `zaceby14/yokdil-ozel` → `paket.json` açılışta günde bir kez (ETag ile) indirilir, yalnızca cihazda (IndexedDB) tutulur. Soru metinleri senkrona girmez.
+- Çıkmış sorular: gizli repo `zaceby14/yokdil-ozel` → `paket.json` açılışta günde bir kez (ETag ile) indirilir, yalnızca cihazda (IndexedDB) tutulur. Soru ve okuma metinleri (`exams`, `readings`) senkrona girmez.
 
 Anahtar olmadan da her şey çalışır (çıkmış sorular hariç; istersen *Çıkmış → Dosyadan yükle*).
 

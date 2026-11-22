@@ -1,4 +1,4 @@
-// Gizli soru paketi: GitHub'daki özel repodan (zaceby14/yokdil-ozel/paket.json) token ile çekilir.
+// Gizli soru paketi (sınavlar + okumalar): GitHub'daki özel repodan (zaceby14/yokdil-ozel/paket.json) token ile çekilir.
 // Paket yalnızca bu cihazın IndexedDB'sine yazılır; senkrona (gist) GİRMEZ.
 import { getToken } from './sync.js';
 import { savePack, validate } from './pack.js';
@@ -41,9 +41,10 @@ async function run(force) {
     if (!r.ok) throw new Error('GitHub ' + r.status);
     const p = validate(JSON.parse(await r.text()));
     const saved = await savePack(p, 'gizli');
-    setMeta({ etag: r.headers.get('ETag') || '', at: Date.now(), day: dayKey(), n: p.exams.length, err: '' });
+    const nr = saved.readings.filter(x => x._src === 'gizli').length;
+    setMeta({ etag: r.headers.get('ETag') || '', at: Date.now(), day: dayKey(), n: p.exams.length, nr, err: '' });
     set('ok');
-    return { changed: true, exams: saved.exams.length };
+    return { changed: true, exams: saved.exams.length, readings: nr };
   } catch (e) {
     const msg = e instanceof SyntaxError ? 'Paket bozuk (JSON)' : (e.message === 'Failed to fetch' ? 'Bağlantı hatası' : e.message || 'Hata');
     setMeta({ err: msg, day: dayKey() }); // günde bir deneme; elle yenileme her zaman çalışır

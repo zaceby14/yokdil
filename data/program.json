@@ -75,7 +75,11 @@
    ],
    "drills": [],
    "goal": "Zıtlık kutbunu bul: although + cümle, despite + isim, ; however,.",
-   "weekend": "Cmt: uzun okuma · Paz: hafif kart tekrarı"
+   "weekend": "Cmt: uzun okuma · Paz: kısa deneme (20 soru · 45 dk)",
+   "kisa": {
+    "size": "mini",
+    "day": "Paz"
+   }
   },
   {
    "n": 2,
@@ -125,7 +129,11 @@
     "cloze"
    ],
    "goal": "at + değer, lead to + isim, edat + Ving kalıplarını otomatikleştir.",
-   "weekend": "Cmt: uzun okuma · Paz: hata tekrarı"
+   "weekend": "Cmt: uzun okuma · Paz: kısa deneme (20 soru · 45 dk) + hata tekrarı",
+   "kisa": {
+    "size": "mini",
+    "day": "Paz"
+   }
   },
   {
    "n": 4,
@@ -146,7 +154,11 @@
     "cloze"
    ],
    "goal": "Zaman ifadesini bul (since, by the time, over the past) → fiil biçimi.",
-   "weekend": "Cmt: uzun okuma (Ikigai) · Paz: hafif tekrar"
+   "weekend": "Cmt: uzun okuma (Ikigai) · Paz: kısa deneme (20 soru · 45 dk)",
+   "kisa": {
+    "size": "mini",
+    "day": "Paz"
+   }
   },
   {
    "n": 5,
@@ -169,7 +181,11 @@
     "ceviri-en-tr"
    ],
    "goal": "which/that/whose/where ve edat + which; çeviride relative'i bul.",
-   "weekend": "Cmt: 20 soruluk karışık gramer · Paz: kart tekrarı"
+   "weekend": "Cmt: 20 soruluk karışık gramer · Paz: kısa deneme (20 soru · 45 dk)",
+   "kisa": {
+    "size": "mini",
+    "day": "Paz"
+   }
   },
   {
    "n": 6,
@@ -227,10 +243,14 @@
     "ceviri-tr-en"
    ],
    "goal": "Bağlaç MASTER: ekleme, örnek, zaman, koşul grupları; cümle tamamlama yapı kuralları.",
-   "weekend": "Cmt: 11 cümle tamamlama (süreli) · Paz: hata tekrarı",
+   "weekend": "Cmt: 11 cümle tamamlama (süreli) · Paz: kısa deneme (40 soru · 90 dk)",
    "min": {
     "kart": 15,
     "okuma": 15
+   },
+   "kisa": {
+    "size": "yarim",
+    "day": "Paz"
    }
   },
   {
@@ -257,10 +277,14 @@
     "ceviri-tr-en"
    ],
    "goal": "Ving / to V, ikili bağlaçlar (either/or, not only/but also); çeviride ana yapı.",
-   "weekend": "Cmt: 12 çeviri sorusu · Paz: hafif tekrar",
+   "weekend": "Cmt: 12 çeviri sorusu · Paz: kısa deneme (40 soru · 90 dk)",
    "min": {
     "kart": 15,
     "okuma": 15
+   },
+   "kisa": {
+    "size": "yarim",
+    "day": "Paz"
    }
   },
   {
@@ -543,7 +567,19 @@
  "mockPlan": {
   "tam": 5,
   "yarim": 3,
-  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 3 yarım (40 soru) hafta 2, 6, 9 · 2022–2025 kısa setler son iki hafta"
+  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 3 yarım (40 soru) hafta 2, 6, 9 · 2022–2025 kısa setler son iki hafta · kısa deneme (özgün): Pazar, hafta 1, 3–5 mini (20 soru · 45 dk), 7–8 yarım (40 soru · 90 dk); son 14 günde hafta içi mini",
+  "kisa": {
+   "mini": [
+    1,
+    3,
+    4,
+    5
+   ],
+   "yarim": [
+    7,
+    8
+   ]
+  }
  },
  "timeNote": "Faz 2'de günlük tekrar ≈ 80–110 kart × 8 sn ≈ 11–15 dk → kart tekrarı 15 dk, yeni kelime 10/gün."
 }

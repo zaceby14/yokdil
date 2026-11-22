@@ -7,6 +7,7 @@ import { dueCount } from '../srs.js';
 import { openSessions } from '../quiz.js';
 import { tourCards } from '../memory.js';
 import { todayTasks, mockHref } from '../tasks.js';
+import { KISA } from '../kisa.js';
 import { aids } from '../data.js';
 import { applyState, examDayFor, ruleTasks } from '../strategy.js';
 import { getPack } from '../pack.js';
@@ -78,8 +79,10 @@ export default async function render(root) {
       ...(w.prog.notes || []).filter(n => n.date === today).map(n => h('div.banner', `${fmtDate(n.date)}: ${n.text}`)),
       weekdayHint() ? h('div.note', w.weekend || weekdayHint()) : null,
       ...exOpen.map(p => {
-        const e = pack?.exams?.find(x => x.id === p.examId);
         const n = Object.keys(p.answers || {}).length;
+        if (p.kisa) return h('a.banner.resume.exam-resume.kisa-resume', { href: '#/deneme/sinav/' + encodeURIComponent(p.examId) },
+          `Yarım kaldı: Kısa deneme · ${KISA[p.kisa]?.label || ''} (${KISA[p.kisa]?.n || '?'} soru) · ${n} cevap → Devam`);
+        const e = pack?.exams?.find(x => x.id === p.examId);
         return h('a.banner.resume.exam-resume', { href: '#/cikmis/sinav/' + encodeURIComponent(p.examId) + (p.half ? '/yarim' : '') }, `Yarım kaldı: ${e?.title || p.examId}${p.half ? ' (ilk 40)' : ''} · ${n} cevap → Devam`);
       }),
       ...open.map(o => h('a.banner.resume', { href: o.route }, `Yarım kaldı: ${o.name || 'Oturum'} · ${Math.min((o.i || 0) + 1, o.total || 1)}/${o.total || '?'} → Devam`)),
@@ -114,6 +117,8 @@ export default async function render(root) {
       w.mock ? h('a.card.link.mock-plan', { href: mockHref(w.mock) },
         h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · 90 dk)`),
         h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · '))) : null,
+      w.kisa && KISA[w.kisa.size] && !T.kisa ? h('a.card.link.kisa-plan', { href: '#/deneme' },
+        h('b', `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · özgün sorular')) : null,
       h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' doğruluk, ısı haritası, deneme')),
       h('div.small.muted.center.pad', `Sınav: ${fmtDate(w.prog.exam)} · Puan ≈ doğru × 1,25`)
     );

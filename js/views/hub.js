@@ -4,7 +4,7 @@ import { lessonFor } from '../qbank.js';
 import { openLesson } from '../side.js';
 
 export function soruTabs(active) {
-  return h('div.seg', [['gramer', 'Gramer'], ['alistirma', 'Alıştırma'], ['cikmis', 'Çıkmış']].map(([k, l]) =>
+  return h('div.seg', [['gramer', 'Gramer'], ['alistirma', 'Alıştırma'], ['cikmis', 'Çıkmış'], ['deneme', 'Deneme']].map(([k, l]) =>
     h('a' + (active === k ? '.active' : ''), { href: '#/' + k }, l)));
 }
 

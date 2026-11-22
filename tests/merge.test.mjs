@@ -580,4 +580,79 @@ t('Yıldız sırası: kapalıyken sıklık sırası aynen; açıkken önce yıld
   assert.deepEqual(SR.coreOrder(ws, m).map(w => w.id), ['delta', 'gamma', 'beta', 'alpha', 'eps'].map(x => ws.find(w => w.word === x).id));
 });
 
+// ---- v11: kısa deneme + gizli okumalar
+const KS = await import('../js/kisa.js');
+const { readFileSync } = await import('node:fs');
+const J = f => JSON.parse(readFileSync(new URL('../data/' + f, import.meta.url)));
+const CONTENT = { grammar: J('grammar.json'), drills: J('drills.json'), passages: J('passages.json') };
+const SECQ = (u, content) => u.sec === 'cloze' ? 5 : u.sec === 'okuma' ? 3 : 1;
+t('Kısa deneme: mini 20 / yarım 40, YÖKDİL oranı, çift boşluk, seviye karışık', () => {
+  const pools = KS.poolsOf(CONTENT);
+  const want = { mini: { bosluk: 5, cloze: 5, tamamlama: 3, 'en-tr': 1, 'tr-en': 1, paragraf: 1, ilgisiz: 1, okuma: 3 } };
+  want.yarim = Object.fromEntries(Object.entries(want.mini).map(([k, v]) => [k, v * 2]));
+  for (const size of ['mini', 'yarim']) {
+    const b = KS.buildKisa(pools, size);
+    const got = {};
+    for (const u of b.units) got[u.sec] = (got[u.sec] || 0) + SECQ(u);
+    assert.deepEqual(got, want[size], size);
+    assert.equal(b.n, KS.KISA[size].n);
+    assert.equal(new Set(b.units.map(u => u.id)).size, b.units.length, 'aynı birim iki kez yok');
+    const G = new Map(CONTENT.grammar.map(q => [q.id, q]));
+    const dbl = b.units.filter(u => u.sec === 'bosluk' && (G.get(u.id).double || (G.get(u.id).q.match(/-{2,}/g) || []).length >= 2)).length;
+    assert.ok(dbl >= (size === 'mini' ? 1 : 2), 'çift boşluk ' + dbl);
+    const pct = b.levels.map(x => x / b.n);
+    assert.ok(Math.abs(pct[0] - 0.3) <= 0.11 && Math.abs(pct[1] - 0.45) <= 0.11 && Math.abs(pct[2] - 0.25) <= 0.11, 'seviye ' + b.levels);
+  }
+});
+t('Kısa deneme: önce hiç görülmemiş, sonra en eski; son 3 denemede tekrar yok', () => {
+  const pools = KS.poolsOf(CONTENT);
+  const all = pools.g.map(u => u.id);
+  // Biri hariç hepsi görülmüş → görülmemiş seçilir
+  const seen = new Map(all.map((id, i) => [id, 1000 + i]));
+  const fresh = all.filter(id => !CONTENT.grammar.find(q => q.id === id).double).at(-1);
+  seen.delete(fresh);
+  const b = KS.buildKisa(pools, 'mini', { lastSeen: seen });
+  assert.ok(b.units.some(u => u.id === fresh), 'görülmemiş soru seçildi');
+  assert.deepEqual(KS.lastSeenOf([{ q: 'g0001', at: 5 }, { q: 'd001#2', at: 7 }, { q: 'd001#0', at: 3 }, { q: 'ornek-1:2', at: 9 }], [{ id: 'read:p001', at: 4 }]),
+    new Map([['g0001', 5], ['d001', 7], ['p001', 4]]));
+  const defs = [];
+  for (let i = 0; i < 5; i++) {
+    const recent = KS.recentUnits(defs);
+    const x = KS.buildKisa(pools, 'mini', { recent });
+    for (const u of x.units) assert.ok(!recent.has(u.id), 'son 3 denemede çıkan tekrar etmedi: ' + u.id);
+    defs.push({ createdAt: i + 1, units: x.units });
+  }
+  assert.equal(KS.recentUnits(defs).size, 3 * KS.buildKisa(pools, 'mini').units.length);
+  assert.equal(KS.kisaScore(13, 20), 65); assert.equal(KS.kisaScore(0, 0), 0);
+});
+t('Kısa deneme: süre planı soru sayısına oranlanır; hedef net tam denemeyi esas alır', () => {
+  const tp = J('aids.json').timePlan;
+  const sp = KS.scalePlan(tp, { bosluk: 5, cloze: 5, tamamlama: 3, 'en-tr': 1, 'tr-en': 1, paragraf: 1, ilgisiz: 1, okuma: 3 }, SG.planRows);
+  const rows = SG.planRows(sp);
+  assert.ok(rows.length >= 6 && sp.total <= 45, 'mini toplam ' + sp.total);
+  assert.equal(SG.planFor(sp, 'okuma').minutes, 12);
+  assert.deepEqual(SG.planFor(sp, 'en-tr').secs, ['en-tr', 'tr-en']);
+  const full = { date: '2026-12-01', sections: { bosluk: { d: 10 } } }, kisa = { date: '2026-12-05', kind: 'kisa', sections: { bosluk: { d: 4 } } };
+  assert.equal(SG.lastFullMock([full, kisa]), full);
+});
+const PK = await import('../js/pack.js');
+const RP = await import('../js/readpick.js');
+t('Gizli okumalar: doğrulama (bozuk atlanır, tf) ve exams şeması', () => {
+  const rs = PK.cleanReadings([{ id: 'a', text: 'x', questions: [{ type: 'tf', q: 'q', answer: false }, { type: 'mc', q: 'q2', options: ['a', 'b', 'c', 'd'], answer: 3 }, { type: 'mc', q: 'bad', options: ['a'], answer: 0 }] }, { id: 'b' }, null]);
+  assert.equal(rs.length, 1);
+  assert.deepEqual(rs[0].questions.map(q => [q.type, q.options.length, q.answer]), [['tf', 2, 1], ['mc', 4, 3]]);
+  assert.deepEqual(PK.validate({ readings: [] }).exams, []);
+  assert.throws(() => PK.validate({}));
+  assert.equal(PK.validate({ exams: [{ id: 'e', questions: [] }], readings: [{ id: 'z', text: 't' }] }).exams.length, 1);
+});
+t('Okuma önerisi: özgün ↔ gizli dönüşümlü, "diğer" önerilmez, seviyeye yakın', () => {
+  const ps = [{ id: 'p1', level: 1, title: 'P1' }, { id: 'p2', level: 2, title: 'P2' }];
+  const rs = [{ id: 'o', topic: 'diğer', level: 1 }, { id: 'r2', topic: 'enerji', level: 2 }, { id: 'r1', topic: 'malzeme', level: 1 }];
+  assert.equal(RP.pickReading({ ps, rs }).next.id, 'r:r1');
+  assert.equal(RP.pickReading({ ps, rs, lastGizli: true }).next.id, 'p1');
+  assert.equal(RP.pickReading({ ps, rs, done: new Set(['r:r1', 'r:r2']) }).next.id, 'p1');
+  assert.equal(RP.pickReading({ ps: [], rs: [rs[0]] }).next, null);
+  assert.equal(RP.pickReading({ ps, rs, lastGizli: true, recs: [{ at: 1, level: 1, wpm: 150, right: 3, total: 3 }] }).next.id, 'p2');
+});
+
 console.log(`\n${n} test geçti`);

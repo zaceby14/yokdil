@@ -1,5 +1,20 @@
 # Yol haritası
 
+## v11'de yapılanlar (kısa deneme + gizli okumalar)
+- [x] Kısa deneme (`#/deneme`, Sorular → Deneme): Mini 20 soru · 45 dk (5 boşluk ≥1 çift, 1 cloze metni, 3 cümle tamamlama, 1+1 çeviri, 1 paragraf, 1 ilgisiz, 1 okuma parçası) / Yarım 40 · 90 dk (iki katı)
+- [x] Seçim (`js/kisa.js`, saf): önce hiç görülmemiş, sonra en eski görülen; seviye 1/2/3 ≈ %30/45/25; son 3 kısa denemedeki birimler tekrar etmez (tanım `progress/kisadef:<id>`, yalnız kimlik)
+- [x] Motor çıkmış deneme ekranı (sanal sınav nesnesi): sayaç, optik, işaretle, bölüm şeridi/sonu, bölüm süresi (timePlan soru sayısına oranlı), ipucu yok; sonuç: bölüm D/Y/B, süre tablosu, neden çipleri, bölüm yanlışlarını tekrar çöz, zayıf bölüm dersi
+- [x] Sonuç `mocks` → `kind:"kisa"`, puan doğru/soru×100; Eksikler grafiğinde ayrı renk + etiket; Hedef net yalnız tam denemeyi esas alır; yanlışlar hata kutusuna mevcut kimliklerle (g…, d…#i, p…#k)
+- [x] program.json: hafta 1, 3, 4, 5 Pazar mini, 7–8 yarım (`week.kisa`); son 14 günde hafta içi "Deneme" görevi = mini kısa deneme; Bugün'de "Yarım kaldı" bandı
+- [x] Gizli okumalar: paket `readings` IndexedDB'de (bozuk okuma/soru atlanır, tf'de şık yoksa Doğru/Yanlış); Okuma → "Kaynaklarım (gizli)" kaynağa göre, "Diğer (genel)" en altta kapalı; çeviri paragraf paragraf (önce kendi çevirin → notlar); sorular mc/tf, yanlış → `r:<id>:<n>` (n 1'den); metin/çeviri/soru senkrona ve oturum kaydına girmez
+- [x] Bugün okuma önerisi: özgün ↔ gizli dönüşümlü, seviye/hıza göre; fen dışı ("diğer") önerilmez
+- [x] SW v11
+
+## v11 sonrası fikirler
+- Kısa denemede okuma bölümüne gizli okumalardan (soru sayısı yetenler) parça katma seçeneği
+- Yarım (çıkmış) denemede de bölüm hedef sürelerini 90 dk'ya oranlama (kısa denemedeki `scalePlan` hazır)
+- Gizli okumalarda seviye ölçeği farklıysa (ör. B1/B2) sayıya çevirme
+
 ## v8'de yapılanlar (kelime yıldızı)
 - [x] `data/stars.json` (yalnız kelime → 1–5 yıldız; soru metni yok), `tools/build_stars.py PAKET.json` ile üretilir: ÖSYM YDS ağırlık 1, YÖKDİL Fen 0,8, yayınevi 0,3; şık +1, kelime sorusunun doğru şıkkı +3; geçenler içinde yüzdelik (%90+ → 5, %70 → 4, %40 → 3, gerisi 2), hiç geçmeyen 1
 - [x] Yıldız: kart ön yüzü, Yeni kelime, kart listesi, okuma kelime paneli, kelime tarama; dokununca kısa açıklama; yıldızı olmayan kelimede gösterilmez

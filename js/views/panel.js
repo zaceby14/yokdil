@@ -101,7 +101,7 @@ export default async function render(root) {
   ];
   const last = mocks.at(-1);
   // Çıkmış (kısa set / yarım deneme) kaydında olmayan bölüm %0 sayılmaz
-  if (last) for (const [k, l, n0] of MOCK) { const s = last.sections?.[k]; if (!s && last.src === 'cikmis') continue; const n = s?.n ?? n0; if (n >= 3) areas.push({ k, label: 'Deneme: ' + l, value: (+s?.d || 0) / n }); }
+  if (last) for (const [k, l, n0] of MOCK) { const s = last.sections?.[k]; if (!s && (last.src === 'cikmis' || last.kind === 'kisa')) continue; const n = s?.n ?? n0; if (n >= 3) areas.push({ k, label: 'Deneme: ' + l, value: (+s?.d || 0) / n }); }
   const weak = areas.sort((a, b) => a.value - b.value).filter((a, i, arr) => arr.findIndex(x => x.label === a.label) === i).slice(0, 3);
 
   const mockBox = h('div');
@@ -148,13 +148,14 @@ function drawMocks(box) {
   const last = mocks.at(-1);
   if (mocks.length) {
     box.append(
-      h('div', { html: line(mocks.map(m => ({ label: fmtDate(m.date), v: score(m) }))) }),
+      h('div', { html: line(mocks.map(m => ({ label: fmtDate(m.date), v: score(m), cls: m.kind === 'kisa' ? 'kisa' : '' }))) }),
+      mocks.some(m => m.kind === 'kisa') ? h('div.mock-legend', h('span', h('i'), 'Tam / yarım'), h('span', h('i.kisa'), 'Kısa (doğru/soru × 100)')) : null,
       h('p.small', h('b', 'Son: ' + score(last).toLocaleString('tr-TR')), ` puan · ${fmtDate(last.date)}${last.name ? ' · ' + last.name : ''}`),
       h('div', { html: stacked([...MOCK, ...Object.keys(EXTRA).map(k => [k, EXTRA[k], 0])]
-        .filter(([k, , n]) => last.src === 'cikmis' ? last.sections?.[k] : (n || last.sections?.[k]))
+        .filter(([k, , n]) => last.src === 'cikmis' || last.kind === 'kisa' ? last.sections?.[k] : (n || last.sections?.[k]))
         .map(([k, l, n]) => ({ label: l, n: last.sections?.[k]?.n ?? n, d: +last.sections?.[k]?.d || 0, y: +last.sections?.[k]?.y || 0 }))
         .filter(r => r.n)) }),
-      h('ul.list.compact', mocks.slice().reverse().map(m => h('li', h('span.grow', `${fmtDate(m.date)} ${m.name || ''}`, m.src === 'cikmis' ? h('span.chip.small', 'çıkmış') : null), h('b', score(m).toLocaleString('tr-TR')),
+      h('ul.list.compact', mocks.slice().reverse().map(m => h('li', h('span.grow', `${fmtDate(m.date)} ${m.name || ''}`, m.kind === 'kisa' ? h('span.chip.small.kisa-chip', 'kısa') : m.src === 'cikmis' ? h('span.chip.small', 'çıkmış') : null), h('b', score(m).toLocaleString('tr-TR')),
         h('button.icon-x.small', { 'aria-label': 'sil', onclick: () => { if (confirm('Silinsin mi?')) { store.del('mocks', m.id); drawMocks(box); } } }, '×'))))
     );
   }

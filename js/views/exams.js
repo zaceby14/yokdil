@@ -12,10 +12,12 @@ import { getToken } from '../sync.js';
 import { fetchPrivate, status as pstat, resetMeta } from '../private.js';
 import { setCtx } from '../ctx.js';
 import { openLesson, openFor, findLesson } from '../side.js';
-import { updateDay } from '../plan.js';
+import { updateDay, tick } from '../plan.js';
 import { aids } from '../data.js';
 import { SECTION_OF, SEC_LBL, HALF_N, HALF_MIN, secClock, planRows, stepOf } from '../strategy.js';
 import { reasonList, reasonChips, reasonSummary } from '../reasons.js';
+import { KISA, scalePlan, kisaScore } from '../kisa.js';
+import { resolve as resolveKey } from '../qbank.js';
 export { SECTION_OF, SEC_LBL };
 
 const OSYM = 'https://www.osym.gov.tr/TR,23801/yokdil-cikmis-sorular.html';
@@ -40,6 +42,14 @@ const HALF = 'yarim';
 const pidOf = (e, half) => 'exam:' + e.id + (half ? '~' + HALF : '');
 const halfQs = (e, half) => half ? visibleQs(e).slice(0, HALF_N) : visibleQs(e);
 const sfx = half => half ? '/' + HALF : '';
+// Kısa deneme (sanal sınav: özgün sorular): aynı motor; anahtar/bilgi sorunun kendisinden, ana sayfa #/deneme
+const baseOf = e => e.kisa ? '#/deneme' : '#/cikmis';
+const qkey = (e, q) => q.key || `${e.id}:${q.n}`;
+const qinfo = (e, q) => q.info ? { ...q.info, src: 'kisa' } : { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' };
+const secCounts = secs => Object.fromEntries(secs.map(sc => [sc.k, sc.idx.length]));
+// Süre planı: kısa denemede bölüm hedefleri soru sayısına oranlanır
+const planOf = (e, tp, counts) => !tp ? null : e.kisa ? scalePlan(tp, counts, planRows) : tp;
+export { examMode as runExam, result as examResult, wrongMode as examWrong };
 
 export default async function render(root, [mode, id, arg, a2]) {
   if (mode === 'sinav') { const e = await getExam(id); if (e) return examMode(root, e, arg); }
@@ -55,7 +65,7 @@ function uploader(onDone) {
     try {
       const p = JSON.parse(await f.files[0].text());
       const r = await savePack(p);
-      toast(`Yüklendi: ${r.exams.length} sınav`); onDone();
+      toast(`Yüklendi: ${r.exams.length} sınav${r.readings?.length ? ` · ${r.readings.length} okuma` : ''}`); onDone();
     } catch (e) { toast('Paket okunamadı: ' + (e.message || '')); }
     f.value = '';
   };
@@ -118,7 +128,7 @@ function examMode(root, e, startSec) {
   const secOf = i => secs.findIndex(sc => sc.idx.includes(i));
   const pid = pidOf(e, half);
   let pr = store.get('progress', pid);
-  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), elapsed: 0, done: false, attempts: pr?.attempts || 0, secTime: {}, ...(half ? { half: true } : {}) };
+  if (!pr || pr.done) pr = { id: pid, examId: e.id, answers: {}, flags: {}, cur: 0, startedAt: Date.now(), elapsed: 0, done: false, attempts: pr?.attempts || 0, secTime: {}, ...(half ? { half: true } : {}), ...(e.kisa ? { kisa: e.kisa.size } : {}) };
   pr.locked ||= {};
   pr.secTime ||= {};
   if (startSec && !half) { const si = secs.findIndex(sc => sc.k === startSec); if (si >= 0) pr.cur = secs[si].idx[0]; }
@@ -167,12 +177,13 @@ function examMode(root, e, startSec) {
         h('button.icon-x.small', { type: 'button', 'aria-label': 'bölüm süresini gizle', onclick: () => { store.setSetting('secClock', false); toast('Gizlendi · Ayarlar → Çalışma\'dan açılır'); drawClock(); } }, '×'));
     }
   }
-  aids().then(a => { plan = a?.timePlan && planRows(a.timePlan).length ? a.timePlan : null; drawClock(); }).catch(() => {});
+  aids().then(a => { const tp = planOf(e, a?.timePlan, secCounts(secs)); plan = tp && planRows(tp).length ? tp : null; drawClock(); }).catch(() => {});
   const bar = h('div.readbar',
-    h('a.btn.small', { href: '#/cikmis', 'aria-label': 'geri' }, '‹'), h('b.grow.ellipsis', e.title || e.id), timer,
+    h('a.btn.small', { href: baseOf(e), 'aria-label': 'geri' }, '‹'), h('b.grow.ellipsis', e.title || e.id), timer,
     h('button.btn.small', { onclick: () => { grid.classList.toggle('hidden'); drawGrid(); } }, 'Optik'),
     h('button.btn.small.primary', { onclick: () => finish(false) }, 'Bitir'));
-  root.append(bar, half ? h('div.small.muted.half-note', `Yarım deneme: ilk ${qs.length} soru · ${HALF_MIN} dk · süre bitince kendiliğinden biter`) : null, secs.length > 1 ? strip : null, clock, grid, main);
+  root.append(bar, half ? h('div.small.muted.half-note', `Yarım deneme: ilk ${qs.length} soru · ${HALF_MIN} dk · süre bitince kendiliğinden biter`)
+    : e.kisa ? h('div.small.muted.half-note.kisa-note', `Özgün sorular · ${qs.length} soru · ${e.durationMin} dk · ipucu yok · süre bitince biter`) : null, secs.length > 1 ? strip : null, clock, grid, main);
 
   const secStat = si => {
     const st = { d: 0, y: 0, b: 0, n: 0, a: 0 };
@@ -211,8 +222,8 @@ function examMode(root, e, startSec) {
       const q = qs[i], a = pr.answers[q.n];
       if (a == null) continue;
       const ok = a === q.answer;
-      answer(`${e.id}:${q.n}`, ok, { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' });
-      if (!ok) autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '' } }, a, { quiet: true }).catch(() => 0));
+      answer(qkey(e, q), ok, qinfo(e, q));
+      if (!ok) autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: qinfo(e, q) }, a, { quiet: true }).catch(() => 0));
     }
     Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
     pr.locked[si] = true; save();
@@ -246,8 +257,8 @@ function examMode(root, e, startSec) {
     const si = secOf(pr.cur), locked = !!pr.locked[si];
     const lastOfSec = secs[si] && secs[si].idx.at(-1) === pr.cur;
     const g = groupOf(e, q);
-    const src = { source: e.title || 'Çıkmış', note: `Soru ${q.n}` };
-    setCtx({ type: 'soru', key: `${e.id}:${q.n}`, label: `${e.title || e.id} · Soru ${q.n}` });
+    const src = { source: e.kisa ? 'Kısa deneme' : e.title || 'Çıkmış', note: `Soru ${q.n}` };
+    setCtx({ type: 'soru', key: qkey(e, q), label: `${e.title || e.id} · Soru ${q.n}` });
     const trq = q.type === 'ceviri-tr-en', tro = q.type === 'ceviri-en-tr';
     const it = { q: q.q, info: { topic: q.topic || '', dtype: q.type || '' } };
     add(main,
@@ -297,19 +308,20 @@ function examMode(root, e, startSec) {
       const done = pr.locked[secOf(i)]; // bölüm sonunda zaten kaydedildi
       if (ok) { s.d++; right++; } else {
         s.y++;
-        if (!done) autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '' } }, a, { quiet: true }).catch(() => 0));
+        if (!done) autos.push(fromWrong({ q: q.q, options: q.options, answer: q.answer, stem: groupOf(e, q)?.text, info: qinfo(e, q) }, a, { quiet: true }).catch(() => 0));
       }
-      if (!done) answer(`${e.id}:${q.n}`, ok, { kind: 'cikmis', topic: q.topic || '', dtype: q.type || '', src: 'cikmis' });
+      if (!done) answer(qkey(e, q), ok, qinfo(e, q));
     });
     Promise.all(autos).then(ns => { const n = ns.reduce((x, y) => x + y, 0); if (n) toast(`+${n} kelime karta eklendi`); });
-    // Yarım deneme: puan 80 soruya oranlanır (40 soruda doğru × 2,5)
-    const score = +(right * 1.25 * (half ? 80 / Math.max(1, qs.length) : 1)).toFixed(2);
-    store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: 'cikmis', examId: e.id, score,
-      times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right } : {}) });
+    // Yarım deneme: puan 80 soruya oranlanır (40 soruda doğru × 2,5). Kısa deneme: doğru / soru × 100
+    const score = e.kisa ? kisaScore(right, qs.length) : +(right * 1.25 * (half ? 80 / Math.max(1, qs.length) : 1)).toFixed(2);
+    store.put('mocks', { id: uid('m'), date: dayKey(), name: (e.title || e.id) + (half ? ` · ilk ${qs.length}` : ''), sections, src: e.kisa ? 'kisa' : 'cikmis', examId: e.id, score,
+      times: { ...pr.secTime }, elapsed: pr.elapsed, ...(half ? { half: true, right } : {}), ...(e.kisa ? { kind: 'kisa', size: e.kisa.size, right, n: qs.length } : {}) });
     updateDay({ mock: true });
+    if (e.kisa) tick('kisa');
     pr = { ...pr, done: true, finishedAt: Date.now(), score, right, sections, attempts: (pr.attempts || 0) + 1 };
     pr = store.put('progress', pr);
-    location.hash = '#/cikmis/sonuc/' + encodeURIComponent(e.id) + sfx(half);
+    location.hash = baseOf(e) + '/sonuc/' + encodeURIComponent(e.id) + sfx(half);
   }
 
   tick(); draw();
@@ -326,9 +338,10 @@ function result(root, e, half = false) {
   const pid = pidOf(e, half);
   const pr = store.get('progress', pid);
   const qs = halfQs(e, half);
-  if (!pr?.done) { location.hash = '#/cikmis'; return; }
+  if (!pr?.done) { location.hash = baseOf(e); return; }
   const wrong = qs.filter(q => pr.answers[q.n] !== q.answer);
-  const keyOf = q => `${e.id}:${q.n}`;
+  const keyOf = q => qkey(e, q);
+  const base = baseOf(e);
   const bySec = {};
   for (const q of wrong) (bySec[SECTION_OF[q.type] || 'diger'] ||= []).push(q);
   const order = Object.keys(pr.sections || {});
@@ -339,10 +352,10 @@ function result(root, e, half = false) {
   const timeSlot = h('div'), sumSlot = h('div'), stepSlot = h('div');
   const right = pr.right ?? order.reduce((a, k) => a + (pr.sections[k].d || 0), 0);
   root.append(
-    h('a.btn.small', { href: '#/cikmis' }, '‹ Çıkmış'),
+    h('a.btn.small', { href: base }, e.kisa ? '‹ Deneme' : '‹ Çıkmış'),
     h('h2', (e.title || e.id) + (half ? ` · ilk ${qs.length} soru` : '')),
     h('div.hero', h('div', h('div.big', (pr.score || 0).toLocaleString('tr-TR')), h('div.small', 'tahmini puan')),
-      h('div.hero-r', half ? `${right}/${qs.length} doğru · 80 soruya oranlandı` : 'Doğru × 1,25')),
+      h('div.hero-r', half ? `${right}/${qs.length} doğru · 80 soruya oranlandı` : e.kisa ? `${right}/${qs.length} doğru` : 'Doğru × 1,25')),
     h('table.mock', h('tr', h('th', 'Bölüm'), h('th', 'D'), h('th', 'Y'), h('th', 'B')),
       order.map(k => { const s = pr.sections[k]; return h('tr.secrow', { onclick: () => { const d = groups.querySelector(`[data-sec="${k}"]`); if (d) { d.open = true; d.scrollIntoView({ block: 'start', behavior: 'smooth' }); } } },
         h('td', SEC_LBL[k] || k, h('span.small.muted', ` ${s.n}`)), h('td', s.d), h('td', s.y), h('td', s.b)); })),
@@ -353,7 +366,8 @@ function result(root, e, half = false) {
     h('h3', `Yanlış / boş (${wrong.length})`),
     sumSlot,
     groups,
-    h('a.btn.primary.wide', { href: '#/cikmis/sinav/' + encodeURIComponent(e.id) + sfx(half) }, half ? 'Yarım denemeyi tekrar çöz' : 'Tüm sınavı tekrar çöz')
+    e.kisa ? h('a.btn.primary.wide.kisa-new', { href: '#/deneme/yeni/' + e.kisa.size }, `Yeni ${KISA[e.kisa.size]?.label.toLocaleLowerCase('tr-TR') || ''} deneme`) : null,
+    h('a.btn' + (e.kisa ? '' : '.primary') + '.wide', { href: base + '/sinav/' + encodeURIComponent(e.id) + sfx(half) }, half ? 'Yarım denemeyi tekrar çöz' : e.kisa ? 'Aynı denemeyi tekrar çöz' : 'Tüm sınavı tekrar çöz')
   );
   const drawGroups = reasons => {
     groups.innerHTML = '';
@@ -371,14 +385,14 @@ function result(root, e, half = false) {
       if (!list?.length) continue;
       groups.append(h('details.card.secgroup', { 'data-sec': k },
         h('summary', h('b', SEC_LBL[k] || k), h('span.small.muted', ` · ${list.length} yanlış/boş`)),
-        h('a.btn.wide.retry-sec', { href: `#/cikmis/yanlis/${encodeURIComponent(e.id)}/${k}${sfx(half)}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
+        h('a.btn.wide.retry-sec', { href: `${base}/yanlis/${encodeURIComponent(e.id)}/${k}${sfx(half)}` }, 'Bu bölümün yanlışlarını tekrar çöz'),
         ...list.map(q => h('div.qwrong-wrap', h('details.qwrong',
           h('summary', h('b', `Soru ${q.n}`), ' ', h('span.small.muted', `Senin: ${pr.answers[q.n] != null ? 'ABCDE'[pr.answers[q.n]] : 'boş'} · Doğru: ${'ABCDE'[q.answer]}`), q.keySource === 'claude' ? h('span.chip.bad.small', 'anahtar doğrulanmadı') : null),
           groupOf(e, q)?.text ? h('div.stem.small', groupOf(e, q).text) : null,
           h('div.q', q.q),
           h('div.small', `Doğru: ${'ABCDE'[q.answer]}) ${q.options[q.answer]}`),
           realExplain(q.explain) ? h('div.explain', realExplain(q.explain)) : null),
-          reasonChips(reasons, keyOf(q), { src: 'cikmis', dtype: q.type || '', topic: q.topic || '' }, drawSum)))));
+          reasonChips(reasons, keyOf(q), { src: e.kisa ? 'kisa' : 'cikmis', dtype: q.type || '', topic: q.topic || '' }, drawSum)))));
       first = false;
     }
     drawSum();
@@ -389,7 +403,8 @@ function result(root, e, half = false) {
     // Bölüm başına: net, harcanan dk, hedef dk, soru başı sn
     const times = pr.secTime || {};
     if (Object.values(times).some(v => v > 0)) {
-      const plan = a?.timePlan ? planRows(a.timePlan) : [];
+      const tp = planOf(e, a?.timePlan, Object.fromEntries(order.map(k => [k, pr.sections[k].n])));
+      const plan = tp ? planRows(tp) : [];
       const used = new Set(), rows = [];
       for (const k of order) {
         if (used.has(k)) continue;
@@ -404,7 +419,7 @@ function result(root, e, half = false) {
         h('tr', h('th', 'Bölüm'), h('th', 'Net'), h('th', 'dk'), plan.length ? h('th', 'Hedef') : null, h('th', 'sn/soru')),
         rows.map(r => h('tr', h('td', r.label.replace(/\s*\(\d+[–-]\d+\)\s*$/, '')), h('td', r.d),
           h('td' + (r.target && r.t > r.target * 60 ? '.bad-t' : ''), r.t ? min(r.t) : '–'), plan.length ? h('td', r.target || '–') : null, h('td', r.t ? Math.max(1, Math.round(r.t / r.n)) : '–'))),
-        h('tr.total', h('td', 'Toplam'), h('td', right), h('td', min(pr.elapsed || 0)), plan.length ? h('td', half ? HALF_MIN : (a?.timePlan?.total || e.durationMin || 180)) : null, h('td', pr.elapsed ? Math.round(pr.elapsed / qs.length) : '–')))),
+        h('tr.total', h('td', 'Toplam'), h('td', right), h('td', min(pr.elapsed || 0)), plan.length ? h('td', half ? HALF_MIN : e.kisa ? e.durationMin : (a?.timePlan?.total || e.durationMin || 180)) : null, h('td', pr.elapsed ? Math.round(pr.elapsed / qs.length) : '–')))),
         h('p.small.muted', plan.length ? 'Kırmızı: hedef süre aşıldı.' : null));
     }
     // 20 dk analiz adımları (kontrol listesi)
@@ -434,10 +449,13 @@ function wrongMode(root, e, sec, half = false) {
   const pr = store.get('progress', pidOf(e, half));
   const qs = halfQs(e, half).filter(q => (SECTION_OF[q.type] || 'diger') === sec && pr?.answers?.[q.n] !== q.answer);
   const el = h('div');
-  root.append(h('a.btn.small', { href: '#/cikmis/sonuc/' + encodeURIComponent(e.id) + sfx(half) }, '‹ Sonuç'), h('h2', `${SEC_LBL[sec] || sec} · yanlışlar`), el);
+  root.append(h('a.btn.small', { href: baseOf(e) + '/sonuc/' + encodeURIComponent(e.id) + sfx(half) }, '‹ Sonuç'), h('h2', `${SEC_LBL[sec] || sec} · yanlışlar`), el);
   if (!qs.length) { el.append(h('p.muted', 'Bu bölümde yanlış yok.')); return; }
-  runQuiz(el, qs.map(q => xItem(e, q)), { extra: lessonLink, name: `${e.title || e.id} · ${SEC_LBL[sec] || sec}`, source: 'Çıkmış',
-    onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m) });
+  const go = its => runQuiz(el, its, { extra: lessonLink, name: `${e.title || e.id} · ${SEC_LBL[sec] || sec}`, source: e.kisa ? 'Kısa deneme' : 'Çıkmış',
+    onAnswer: (it, ok, k, m) => answer(it.key, ok, e.kisa ? { ...it.info, src: 'kisa' } : it.info, m) });
+  if (!e.kisa) return go(qs.map(q => xItem(e, q)));
+  // Kısa deneme: özgün soruyu kendi bankasından kur
+  return Promise.all(qs.map(q => resolveKey(q.key))).then(its => go(its.filter(Boolean)));
 }
 
 // Tipe göre: kaynak filtresi (ÖSYM varsayılan / Yayınevi / Hepsi — Hepsi'nde ÖSYM önce)
