@@ -932,12 +932,12 @@
   }
  ],
  "mockAnalysis": [
-  "0–3 dk: Bölüm bölüm doğru / yanlış / boş sayılarını siteye gir.",
-  "3–5 dk: Hedef net tablosuyla karşılaştır; en çok net kaybettiren 2 bölümü seç.",
-  "5–13 dk: Bu 2 bölümdeki her yanlışa bir hata nedeni seç (kelime, gramer, dikkat, süre, iki şık, metin).",
-  "13–17 dk: Bilmediğin kelimeleri karta, gramer hatalarını hata kutusuna ekle.",
-  "17–19 dk: Süre planına bak: hangi bölüm süreyi aştı?",
-  "19–20 dk: Bir sonraki deneme için tek bir hedef yaz (ör. \"okumaya 60 dk kalsın\")."
+  "Yukarıdaki tabloya bak: en çok yanlış olan 2 bölümü bul.",
+  "O bölüme dokun; her yanlışın altındaki çiplerden nedenini seç (kelime, gramer, dikkat, süre, iki şık, metin).",
+  "Yanlışlardaki bilmediğin kelimeye dokun → Karta ekle. (Gramer yanlışları zaten hata kutusuna düştü.)",
+  "\"Yanlışları tekrar çöz\"e bas, bu sefer açıklamaları oku.",
+  "Süre tablosunda kırmızı satır varsa: o bölümde bir dahakine daha hızlı geç.",
+  "Sağ üstteki Not'a bir sonraki deneme için tek hedef yaz (ör. \"okumaya 60 dk kalsın\")."
  ],
  "resources": [
   {
