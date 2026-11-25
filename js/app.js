@@ -20,6 +20,7 @@ import notes from './views/notes.js';
 import { setCtx } from './ctx.js';
 import { initNotes } from './notes.js';
 import { initFocus, eveTip } from './focus.js';
+import { initStopwatch } from './stopwatch.js';
 import { dailyFetch } from './private.js';
 import { finalMode } from './plan.js';
 
@@ -116,6 +117,7 @@ async function main() {
   addEventListener('hashchange', route);
   initNotes();
   initFocus();
+  initStopwatch();
   keyboardWatch();
   route();
   eveTip();

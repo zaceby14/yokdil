@@ -1,0 +1,36 @@
+# Kronometre: üst çubuk, başlat/tur/durdur/sıfırla, sayfa değişince ve yenilenince sürer.
+import os, sys
+from playwright.sync_api import sync_playwright
+BASE = os.environ.get('BASE', 'http://localhost:8765/'); SH = '/home/claude/shots/v19'; os.makedirs(SH, exist_ok=True)
+fails, errors = [], []
+def check(c, m):
+    print(('ok   ' if c else 'FAIL ') + m)
+    if not c: fails.append(m)
+with sync_playwright() as p:
+    b = p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
+    c = b.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, service_workers='block')
+    c.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
+    pg = c.new_page(); pg.on('pageerror', lambda e: errors.append(str(e)))
+    pg.goto(BASE + '#/bugun'); pg.wait_for_selector('.hero', timeout=15000); pg.wait_for_timeout(400)
+    check(pg.locator('#swTop').is_visible() and pg.locator('#swPanel.hidden').count() == 1, 'üst çubukta kronometre düğmesi')
+    pg.click('#swTop'); pg.wait_for_timeout(200)
+    check(pg.locator('#swPanel:not(.hidden)').count() == 1 and pg.inner_text('.sw-big') == '00:00', 'panel açılır, 00:00')
+    pg.click('.sw-go'); pg.wait_for_timeout(2300)
+    check(pg.inner_text('.sw-go') == 'Durdur' and pg.inner_text('.sw-big') in ('00:02', '00:03'), f'çalışıyor ({pg.inner_text(".sw-big")})')
+    pg.click('.sw-lap'); pg.wait_for_timeout(200)
+    check(pg.locator('.sw-laps li').count() == 1, 'tur kaydı')
+    pg.screenshot(path=f'{SH}/panel.png')
+    pg.mouse.click(30, 400); pg.wait_for_timeout(200)
+    check(pg.locator('#swPanel.hidden').count() == 1 and pg.locator('#swTop.on').count() == 1 and ':' in pg.inner_text('#swTop .sw-time'), 'dışarı dokununca kapanır, düğmede süre')
+    pg.goto(BASE + '#/kartlar'); pg.wait_for_timeout(600); pg.reload(); pg.wait_for_timeout(1500)
+    t = pg.inner_text('#swTop .sw-time')
+    check(pg.locator('#swTop.on').count() == 1 and t >= '00:03', f'yenileyince sürüyor ({t})')
+    check(pg.evaluate('document.documentElement.scrollWidth') <= 392, 'üst çubuk taşmıyor')
+    pg.screenshot(path=f'{SH}/ust-cubuk.png', clip={'x': 0, 'y': 0, 'width': 390, 'height': 70})
+    pg.click('#swTop'); pg.click('.sw-go'); pg.wait_for_timeout(1200)
+    a = pg.inner_text('.sw-big'); pg.wait_for_timeout(1200)
+    check(a == pg.inner_text('.sw-big') and pg.inner_text('.sw-go') == 'Devam', 'durdurunca sayaç durur, "Devam"')
+    pg.click('.sw-reset'); pg.wait_for_timeout(200)
+    check(pg.inner_text('.sw-big') == '00:00' and pg.inner_text('#swTop .sw-time') == '', 'sıfırla')
+    b.close()
+print(f'Konsol hataları: {len(errors)}'); print(f'Başarısız: {len(fails)}'); sys.exit(1 if fails or errors else 0)
