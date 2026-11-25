@@ -738,3 +738,6 @@ body.qmode .explain:not(.hidden) { padding-bottom: 5.5em; }
 .sw-laps { margin: 8px 0 0; padding: 0; list-style: none; max-height: 30vh; overflow: auto; }
 .sw-laps li { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; padding: 3px 0; border-top: 1px solid var(--line, #eee); font-variant-numeric: tabular-nums; font-size: .9rem; }
 @media (max-width: 480px) { .top:has(.sw-top.on) .btn-label, .top:has(.sw-top.paused) .btn-label { display: none; } }
+/* Kronometre eklenince dar ekranda üst çubuk sığsın: yazılar gizlenir, simgeler kalır */
+@media (max-width: 440px) { .top .btn-label { display: none; } .top .icon-btn { min-width: 40px; padding: 0 6px; } }
+@media (max-width: 440px) { .top:has(.sync-chip) .top-only { display: none; } }
