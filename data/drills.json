@@ -2918,27 +2918,27 @@
  {
   "id": "d059",
   "type": "cumle-tamamlama",
-  "stem": "Reflecting sunlight into space might reduce warming, ----.",
+  "stem": "Ocean acidification is caused by carbon dioxide, not by heat. Reflecting sunlight into space might reduce warming, ----.",
   "items": [
    {
     "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
     "options": [
-     "and it would therefore stop ocean acidification too",
-     "because it lowers the level of carbon dioxide in air",
-     "so the oceans would absorb less carbon dioxide",
+     "and it would stop ocean acidification as well",
+     "although it would make the planet cooler",
+     "so acidification must mainly be caused by heat",
      "but it would do nothing to stop ocean acidification",
-     "since acidification is caused by heat, not CO2"
+     "since the oceans are getting warmer every year"
     ],
     "answer": 3,
-    "explain": "Bu yöntem CO2'yi azaltmaz; asitlenme CO2'den olur. 'but it would do nothing to stop acidification' sınırı veriyor.",
-    "tip": "might do X, but … nothing to Y = sınırlama.",
-    "anlam": "Güneş ışığını uzaya yansıtmak ısınmayı azaltabilir, …",
+    "explain": "İlk cümle ipucunu veriyor: asitlenmenin sebebi ısı değil CO2. Işığı yansıtmak sadece ısıyı azaltır, bu yüzden asitlenmeyi durdurmaz. 'might reduce warming' (olumlu) + 'but … nothing' (olumsuz) = zıtlık.",
+    "tip": "Cevap için dış bilgi gerekmez: ipucu soru kökünde. 'might do X, but … nothing to Y' = sınırlama.",
+    "anlam": "Okyanus asitlenmesi ısıdan değil karbondioksitten kaynaklanır. Güneş ışığını uzaya yansıtmak ısınmayı azaltabilir, …",
     "why": [
-     "Asitlenme ısıdan değil CO2'den; durmaz.",
-     "Işık yansıtmak CO2'yi düşürmez.",
-     "Okyanusların daha az CO2 emmesi sonucu yanlış.",
+     "İlk cümleyle çelişir: asitlenme ısıdan değil, ısıyı azaltmak onu durdurmaz.",
+     "'Isınmayı azaltır, gerçi gezegeni soğutur' — iki taraf aynı yönde; 'although' zıtlık ister.",
+     "İlk cümleyle çelişir: metin asitlenmenin ısıdan değil CO2'den olduğunu söylüyor.",
      "",
-     "Asitlenme ısıdan değil CO2'den olur; bilgi yanlış."
+     "'since' neden bildirir ama 'okyanuslar ısınıyor' ışığın neden ısınmayı azaltacağını açıklamaz; anlam kopuk."
     ]
    }
   ],
