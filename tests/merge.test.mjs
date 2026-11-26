@@ -895,3 +895,21 @@ console.log(`\n${n} test geçti`);
   if (!e1.enough || !(e1.sec.bosluk.p > 0.8) || !(e1.lo < e1.mid && e1.mid < e1.hi)) throw new Error('estimate ' + JSON.stringify(e1));
   console.log('ok puan tahmini');
 }
+
+// --- v21: yazma
+{
+  const SR = await import('../js/srs.js');
+  let c = { word: 'x' };
+  c = { ...c, ...SR.addAgainDay(c, '2026-11-20') };
+  if (SR.needWrite(c, '2026-11-21')) throw new Error('tek gün yazma istemez');
+  c = { ...c, ...SR.addAgainDay(c, '2026-11-22') };
+  if (!SR.needWrite(c, '2026-11-23')) throw new Error('iki gün → yazma');
+  if (SR.needWrite(c, '2026-12-05')) throw new Error('10 gün sonra düşer');
+  c = { ...c, ...SR.writeResult(c, true, '2026-11-23') }; c = { ...c, ...SR.writeResult(c, true, '2026-11-23') };
+  if (c.wr.ok !== 1 || !SR.needWrite(c, '2026-11-23')) throw new Error('aynı gün iki doğru tek sayılır');
+  c = { ...c, ...SR.writeResult(c, true, '2026-11-24') };
+  if (SR.needWrite(c, '2026-11-24')) throw new Error('2 ayrı gün doğru → normal kart');
+  c = { ...c, ...SR.writeResult(c, false, '2026-11-25') };
+  if (c.wr.ok !== 0) throw new Error('yanlış sıfırlar');
+  console.log('ok yazma kuralı');
+}

@@ -1,7 +1,7 @@
 // Çoktan seçmeli soru oturumu (gramer, alıştırma, hata kutusu, okuma, ders, çıkmış, kelime oyunları)
 // - Oturum ilerlemesi 'sessions' koleksiyonuna yazılır (sid): sayfadan çıkıp dönünce "Kaldığın yerden devam et".
 // - Soru kökündeki kelimeye dokun = kelime paneli; şık satırına dokun = seç; şıktaki kelimeye UZUN bas = kelime paneli.
-import { h, add, realExplain, topicName, exEl } from './util.js';
+import { h, uid, add, realExplain, topicName, exEl } from './util.js';
 import * as store from './store.js';
 import { fromWrong, fillContext } from './autocard.js';
 import { tappable } from './tappable.js';
@@ -131,6 +131,17 @@ export function runQuiz(root, items, opts = {}) {
         if (ex) exp.append(h('div.exrow2', h('span.exl', `Doğru (${L[it.answer] || ''})`), h('span', ex)));
         if (mineWhy) exp.append(h('div.exrow2.mine', h('span.exl', `Senin seçimin (${L[k]})`), h('span', mineWhy)));
         if (it.tip) exp.append(h('div.tip', (it.why ? 'Kalıp / taktik: ' : 'Taktik: ') + it.tip));
+    // Yanlışta: kuralı not defterine (site + kâğıt defter)
+    const tpc = it.info?.topic;
+    if (!ok && tpc && (it.tip || ex) && !opts.exam) {
+      const nb = h('button.btn.small.nb-add', { type: 'button' }, '📓 Kural notlarıma ekle');
+      nb.onclick = e => {
+        e.stopPropagation();
+        store.put('notes', { id: uid('n'), topic: tpc, text: it.tip || ex, ex: it.anlam ? `${String(it.q || '').replace(/-{3,}|_{3,}/, (it.options || [])[it.answer] || '----')} (${it.anlam})` : '', origin: 'user', createdAt: Date.now() });
+        nb.replaceWith(h('span.small.good-t', '✓ Eklendi: Sorular › Gramer › Kural notlarım. Defterine de kendi örnek cümleni yaz.'));
+      };
+      exp.append(h('div.nb-row', nb));
+    }
         hintBtn?.remove();
         if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
         // Çeviri: blokların karşılıkları + kontrol maddeleri

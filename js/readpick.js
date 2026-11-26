@@ -31,7 +31,7 @@ export function readMin(doc, wpm = 120) {
 // Saf: sıradaki parça. ps: özgün, rs: gizli; done: Set (özgün id / 'r:'+gizli id); lastGizli: son okuma gizli miydi
 export function pickReading({ ps = [], rs = [], done = new Set(), recs = [], lastGizli = false, short = false }) {
   // Hafta içi mikro okuma: sınav uzunluğunda (≤ 200 kelime) özgün parça öncelikli
-  if (short) { const sp = ps.filter(x => (x.words || 999) <= SHORT_W && !done.has(x.id)); if (sp.length) { ps = sp; rs = []; } }
+  if (short) { const sp = ps.filter(x => (x.words || 999) <= SHORT_W && !done.has(x.id)); if (sp.length) ps = sp; } // kendi kaynakların sırası korunur
   const maxL = Math.max(1, ...ps.map(p => p.level || 1), ...rs.map(r => +r.level || 1));
   const sg = suggestLevel(recs, maxL);
   const near = list => list.find(x => (+x.level || 1) === sg.level) || [...list].sort((a, b) => Math.abs((+a.level || 1) - sg.level) - Math.abs((+b.level || 1) - sg.level))[0] || null;

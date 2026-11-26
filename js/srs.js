@@ -1,7 +1,7 @@
 // SM-2 türevi aralıklı tekrar. Durumlar: new, learning, review, relearn
 import * as store from './store.js';
 import { words } from './data.js';
-import { endOfToday, dayKey, DAY } from './util.js';
+import { endOfToday, dayKey, DAY, addDays } from './util.js';
 import { newLimit, bumpDay, dayRec, tick, FINAL } from './plan.js';
 import { isGraduated, weeklyChecks, counts, STUDY_STATES } from './vocab.js';
 import { loadStars, starOf } from './stars.js';
@@ -167,8 +167,24 @@ export function cardFromWord(w) {
   };
 }
 
+// Yazma: 10 gün içinde 2 ayrı gün "Tekrar" denen kelime, kart yerine yazdırılır; 2 ayrı günde doğru yazınca normale döner
+export const WRITE_DAYS = 2, WRITE_WIN = 10, WRITE_OK = 2;
+export function needWrite(card, today = dayKey()) {
+  const from = addDays(today, -WRITE_WIN);
+  return (card?.agDays || []).filter(d => d >= from).length >= WRITE_DAYS && (card?.wr?.ok || 0) < WRITE_OK;
+}
+// Saf: "Tekrar" günü kaydı (tekrarsız, son 5)
+export const addAgainDay = (card, today = dayKey()) => ({ agDays: [...new Set([...(card.agDays || []), today])].sort().slice(-5), wr: { ok: 0, day: '' } });
+// Saf: yazma sonucu (aynı gün ikinci doğru sayılmaz; yanlış → sıfır)
+export function writeResult(card, ok, today = dayKey()) {
+  const wr = card.wr || { ok: 0, day: '' };
+  if (!ok) return { wr: { ok: 0, day: today } };
+  return { wr: wr.day === today && wr.ok > 0 ? wr : { ok: (wr.ok || 0) + 1, day: today } };
+}
+
 export function review(card, grade) {
   const wasNew = (card.state || 'new') === 'new';
+  if (grade === 'again') card = { ...card, ...addAgainDay(card) };
   const sod0 = new Date(); sod0.setHours(0, 0, 0, 0);
   if (!wasNew && (card.lastReview || 0) < sod0.getTime()) bumpDay('dueDone'); // tavana sayılan ilk tekrar
   const next = { ...card, ...schedule(card, grade) };

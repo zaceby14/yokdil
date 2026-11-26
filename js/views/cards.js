@@ -12,7 +12,8 @@ import { enrich, wordIndex } from '../data.js';
 import memory, { EX, counts as exCounts } from './memory.js';
 import { speak, canSpeak } from '../speak.js';
 import { SPK } from '../tappable.js';
-import { inLadder, hardAgain } from '../srs.js';
+import { inLadder, hardAgain, needWrite, writeResult } from '../srs.js';
+import { typoOk, blank } from '../memory.js';
 import { setCtx } from '../ctx.js';
 import { nextTaskBtn, cardMin, NEW_VIEWS } from '../tasks.js';
 import { loadStars, hasStars, starOf, starsEl, starRow, STAR_TIP } from '../stars.js';
@@ -61,6 +62,7 @@ async function home(root) {
     h('div.row2',
       h('a.btn.primary.wide.big-btn' + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
       h('a.btn.wide.big-btn' + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'bugünkü sayı doldu')))),
+    (() => { const n = store.all('cards').filter(c => needWrite(c)).length; return n ? h('p.small.center.write-count', `✍ ${n} kelime yazarak çalışılıyor (birkaç gündür hatırlamadıkların)`) : null; })(),
     h('p.small.muted.center', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Kalıcı ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
     h('div.row2',
       h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini hızla ele'))),
@@ -132,8 +134,9 @@ async function session(root, kind = 'tekrar', ids = []) {
   };
   const paint = (card, en, practice, sel) => {
     setCtx({ type: 'kart', key: 'kart:' + card.id, label: 'Kart · ' + card.word });
-    const rev = reverseOn && card.state === 'review' && (card.reps || 0) % 2 === 1;
-    const front = h('div.flash',
+    const wmode = !practice && needWrite(card);
+    const rev = !wmode && reverseOn && card.state === 'review' && (card.reps || 0) % 2 === 1;
+    const front = wmode ? writeFront(card, en, () => doReveal()) : h('div.flash',
       h('div.small.muted', `${queue.length + 1} kaldı · ${stateTr(card)}`),
       rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word,
         canSpeak() ? h('button.icon-btn.say', { type: 'button', 'aria-label': 'dinle', onclick: e => { e.stopPropagation(); speak(card.word); } }, SPK()) : null),
@@ -141,14 +144,15 @@ async function session(root, kind = 'tekrar', ids = []) {
       (card.ctx || en?.ex?.[0]?.en) ? h('div.ctx', { lang: 'en', html: rev ? esc(card.ctx || en.ex[0].en).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(card.ctx || en.ex[0].en, card.word) }) : null
     );
     const back = h('div.back.hidden',
-      h('div.ftr', rev ? card.word : card.tr || '—'),
+      h('div.ftr', { lang: wmode || rev ? 'en' : null }, wmode || rev ? card.word : card.tr || '—'),
       card.pos || card.tags?.length ? h('div.chips.centerx', card.pos ? h('span.small.muted', card.pos + ' ') : null, (card.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t))) : null,
       card.syn?.length ? h('div', h('b', 'Eş: '), card.syn.join(', ')) : null,
       card.coll ? h('div', h('b', 'Kalıp: '), card.coll) : null,
       extra(card, en),
       noteParts(card.note).own ? h('div.small', noteParts(card.note).own) : null,
       noteParts(card.note).auto ? h('div.small.muted.auto-note', 'ⓘ ' + noteParts(card.note).auto) : null,
-      h('div.small.muted', [srcName(card.source), card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · '))
+      h('div.small.muted', [srcName(card.source), card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · ')),
+      wmode ? h('div.notebook', '📓 Defterine: ', h('b', { lang: 'en' }, card.word), ' ile kendi cümleni yaz (işinden ya da tezinden bir örnek).') : null
     );
     let graded = false;
     const grade = g => {
@@ -172,13 +176,14 @@ async function session(root, kind = 'tekrar', ids = []) {
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
     const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
-    const reveal = h('button.btn.primary.wide.big-btn', { onclick: doReveal }, 'Göster');
-    const knowBtn = isNew ? h('button.btn.wide.know', { onclick: () => knowIt(card) }, 'Biliyorum, gösterme') : null;
+    const reveal = wmode ? h('span') : h('button.btn.primary.wide.big-btn', { onclick: doReveal }, 'Göster');
+    const knowBtn = isNew && !wmode ? h('button.btn.wide.know', { onclick: () => knowIt(card) }, 'Biliyorum, gösterme') : null;
     const hint = h('p.small.muted.center.hidden', '← Tekrar · kaydır · İyi →');
     const box = h('div.card.flashcard', card.check ? h('span.chip.small.ok', 'haftalık kontrol') : null, practice ? h('span.chip.small', sel ? 'seçili kelime' : 'bir kez daha') : null, front, back);
     // Tek el: karta dokun = göster; açıkken sağa = İyi, sola = Tekrar
-    unsw = swipe(box, { tap: doReveal, right: () => open && grade('good'), left: () => open && grade('again') });
+    unsw = swipe(box, { tap: () => !wmode && doReveal(), right: () => open && grade('good'), left: () => open && grade('again') });
     keyH = e => {
+      if (wmode && !open) return; // yazma: Enter giriş kutusunda
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doReveal(); }
       else if (open && '1234'.includes(e.key)) grade(practice ? (e.key === '1' ? 'again' : 'good') : GRADES[+e.key - 1]);
       else if (!open && isNew && (e.key === 'k' || e.key === 'K')) knowIt(card);
@@ -187,6 +192,37 @@ async function session(root, kind = 'tekrar', ids = []) {
   };
   show();
   return () => { removeEventListener('keydown', onKey); unsw?.(); };
+}
+
+// Yazma yüzü: anlam + boşluklu cümle → kelimeyi yaz. Yanlışsa doğrusunu bir kez yazdırır, sonra kartı açar.
+function writeFront(card, en, done) {
+  const sent = [card.ctx, card.ex, en?.core?.ex, ...(en?.ex || []).map(e => e.en)].map(x => blank(x, card.word)).find(Boolean);
+  const w = card.word.trim();
+  const inp = h('input.write-in', { type: 'text', autocapitalize: 'off', autocomplete: 'off', autocorrect: 'off', spellcheck: 'false', lang: 'en', placeholder: 'kelimeyi yaz', 'aria-label': 'Kelimeyi yaz' });
+  const msg = h('div.write-msg');
+  let phase = 'ask';
+  const save = ok => { const cur = store.get('cards', card.id) || card; store.put('cards', { ...cur, ...writeResult(cur, ok) }); };
+  const check = (giveUp = false) => {
+    const v = inp.value;
+    if (phase === 'ask') {
+      if (!giveUp && typoOk(v, w)) { save(true); msg.className = 'write-msg ok'; msg.textContent = v.trim().toLowerCase() === w.toLowerCase() ? 'Doğru ✓' : `Doğru ✓ (yazımı: ${w})`; inp.disabled = true; btns.remove(); done(); return; }
+      save(false); phase = 'copy';
+      msg.className = 'write-msg bad'; msg.innerHTML = ''; msg.append('Doğrusu: ', h('b', { lang: 'en' }, w), h('div.small', 'Akılda kalsın diye bir kez yaz.'));
+      inp.value = ''; inp.focus(); giveBtn.remove();
+    } else if (typoOk(v, w)) { inp.disabled = true; btns.remove(); msg.append(h('div.small.good-t', 'Tamam. Bu kelime birkaç gün daha yazılı gelecek.')); done(); }
+    else { msg.querySelector('.small').textContent = 'Tam olarak yaz: ' + w; }
+  };
+  inp.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); check(); } };
+  const okBtn = h('button.btn.primary', { type: 'button', onclick: () => check() }, 'Kontrol');
+  const giveBtn = h('button.btn', { type: 'button', onclick: () => check(true) }, 'Bilmiyorum');
+  const btns = h('div.row.write-btns', okBtn, giveBtn);
+  setTimeout(() => inp.focus(), 50);
+  return h('div.flash.write',
+    h('span.chip.small.warn', 'Yazma · birkaç gündür hatırlamadın'),
+    h('div.fword.tr', card.tr || '?'),
+    sent ? h('div.ctx', { lang: 'en' }, sent) : null,
+    h('div.small.muted', `İpucu: ${w[0]}${'_'.repeat(Math.max(0, w.length - 1)).split('').join(' ')} (${w.length} harf)`),
+    inp, btns, msg);
 }
 
 // Kartın arka yüzü: diğer halleri + örnek cümleler (forms.json + words.json + kartın kendi örneği)
@@ -257,7 +293,7 @@ function list(root) {
     for (const c of cs.slice(0, 300)) ul.append(h('li', h('a', { href: '#/kartlar/duzenle/' + encodeURIComponent(c.id) },
       h('b', { lang: 'en' }, c.word), stars ? starsEl(c.word, { tag: 'span' }) : null, h('span.small.muted', `${c.tr || ''}`),
       !(c.tr || '').trim() ? h('span.chip.bad.small', 'anlam eksik') : null,
-      h('span.chip.small', stateTr(c))),
+      h('span.chip.small', stateTr(c)), needWrite(c) ? h('span.chip.small.warn', 'yazma') : null),
       c.state === 'known' ? h('button.btn.small.undo', { onclick: () => { unKnow(c); toast('Yeni kelimelere geri alındı'); draw(); } }, 'Geri al') : null));
     if (cs.length > 300) ul.append(h('li.muted.small', 'İlk 300 gösteriliyor, aramayı daralt'));
   };
