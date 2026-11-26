@@ -61,8 +61,8 @@ with sync_playwright() as p:
     keys = [page.locator('.wcard').nth(i).get_attribute('data-key') for i in range(page.locator('.wcard').count())]
     check(page.locator('.warm').count() == 1 and set(keys) == {T, T2}, f'zayıf konular için ısınma: {keys}')
     check(page.locator('.opt').count() == 0, 'ısınma sırasında soru yok')
-    fit = ev("document.scrollingElement.scrollHeight <= innerHeight + 2")
-    check(fit, f'ısınma tek ekrana sığıyor ({ev("document.scrollingElement.scrollHeight")} ≤ {ev("innerHeight")})')
+    btn = page.locator('.warm-go').bounding_box()
+    check(btn and btn['y'] + btn['height'] <= ev("innerHeight"), f'ısınma: "sorulara geç" düğmesi her zaman ekranda ({btn})')
     wc = page.locator(f'.wcard[data-key="{T}"]')
     check(wc.locator('.wc-formula').count() == 1, 'kartta ders formülü')
     check(wc.locator('.wc-lesson').count() == 1 and page.locator('.warm-go').count() == 1, '"Dersi aç" ve "Anladım, sorulara geç" var')

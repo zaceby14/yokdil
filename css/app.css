@@ -760,3 +760,14 @@ body.qmode .explain:not(.hidden) { padding-bottom: 5.5em; }
 .next-mistakes { margin-top: .3em; }
 .reader .blank.on { background: color-mix(in srgb, var(--accent) 22%, transparent); border-bottom-width: 3px; border-radius: 3px; }
 .reader .blank.on::after { color: var(--accent); font-weight: 700; }
+/* Kural kartı: kısaca + tuzak */
+.wc-list { margin: 6px 0 0; padding-left: 1.1em; font-size: .92rem; }
+.wc-list li { margin: 2px 0; }
+.wc-trap { margin-top: 6px; }
+.wc-trap .wc-list { margin-top: 2px; }
+.wc-list.trap li::marker { color: var(--bad, #dc2626); }
+.wc-more { margin-top: 6px; }
+.wc-ex { margin-top: 4px; }
+.wc-rule { margin-top: 6px; }
+.minirule .wc-list { font-size: .88rem; }
+.warm .actbar { position: sticky; bottom: calc(var(--tabh, 60px) + 6px); z-index: 5; }

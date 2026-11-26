@@ -44,21 +44,33 @@ function extraEl(e, full) {
 }
 
 // Dersin "Kısaca" bloğu (başlığa göre; sabit indekse dayanma)
-const kisaca = l => (l?.blocks || []).find(b => /^kısaca$/i.test(String(b?.h || '').trim()))?.md || '';
+const blockMd = (l, re) => (l?.blocks || []).find(b => re.test(String(b?.h || '').trim()))?.md || '';
+const kisaca = l => blockMd(l, /^kısaca$/i);
+// Saf: md içinden ilk n madde ("- " ile başlayan satırlar)
+export const bullets = (md, n = 9) => String(md || '').split('\n').map(x => x.trim()).filter(x => /^[-*] /.test(x)).slice(0, n).map(x => x.replace(/^[-*] /, ''));
+const tuzak = l => bullets(blockMd(l, /tuza/i), 2);
+const ornek = l => bullets(blockMd(l, /^örnek/i), 1)[0] || '';
+const nasil = l => blockMd(l, /^senin notun$/i);
+const li = (xs, cls = '') => xs.length ? h('ul.wc-list' + cls, xs.map(x => h('li', { html: md(x).replace(/^<p>|<\/p>$/g, '') }))) : null;
 
-// Kural kartı: formül + kişisel kural (yanlış → doğru) + tek ek kart
+// Kural kartı: formül + kısaca (açık) + tuzak + örnek + nasıl çözülür + kişisel kural (yanlış → doğru)
 export function ruleCardEl(d, { onSnooze, full, compact } = {}) {
-  const r = d.rule;
+  const r = d.rule, l = d.lesson;
+  const k = bullets(kisaca(l), compact ? 2 : 4), tz = tuzak(l), ex = ornek(l), how = nasil(l);
   return h('div.wcard', { 'data-key': d.key },
     h('div.wc-head', h('b', d.name)),
     d.formula ? h('div.wc-formula', d.formula) : null,
-    kisaca(d.lesson) && !compact ? h('details.wc-kisaca', h('summary.small', 'Kısaca ▸'), h('div.small', { html: md(kisaca(d.lesson)) })) : null,
-    r ? h('div.wc-rule', r.rule && !(compact && (r.wrong || r.right)) ? h('div.small', r.rule) : null,
+    li(k),
+    tz.length ? h('div.wc-trap', h('b.small', 'Tuzak'), li(compact ? tz.slice(0, 1) : tz, '.trap')) : null,
+    !compact && (ex || how) ? h('details.wc-more', h('summary.small', 'Örnek ve çözüm yolu ▸'),
+      ex ? h('div.small.wc-ex', { lang: 'en', html: '✓ ' + md(ex).replace(/^<p>|<\/p>$/g, '') }) : null,
+      how ? h('div.small.wc-how', { html: md(how) }) : null) : null,
+    r && (r.wrong || r.right) ? h('div.wc-rule', h('b.small', 'Notlarından'),
       r.wrong ? h('div.small.bad-t', { lang: 'en' }, '✗ ' + r.wrong) : null,
       r.right ? h('div.small.good-t', { lang: 'en' }, '✓ ' + r.right) : null) : null,
     extraEl(d.extra, full),
     full ? null : h('div.wc-acts',
-      d.lesson ? h('button.linkbtn.small.wc-lesson', { type: 'button', onclick: () => openLesson(d.lesson.id) }, 'Dersi aç') : null,
+      l ? h('button.linkbtn.small.wc-lesson', { type: 'button', onclick: () => openLesson(l.id) }, 'Dersi aç') : null,
       onSnooze ? h('button.linkbtn.small.wc-snooze.muted', { type: 'button', onclick: onSnooze }, 'Bir hafta gösterme') : null));
 }
 
@@ -94,7 +106,9 @@ export async function miniCard(k) {
   const el = h('div.minirule', { role: 'note' },
     h('div.mr-head', h('b.grow', 'Hatırla · ' + d.name), h('button.icon-x.small', { type: 'button', 'aria-label': 'kapat', onclick: () => el.remove() }, '×')),
     d.formula ? h('div.small', d.formula) : null,
-    h('button.linkbtn.small.mr-open', { type: 'button', onclick: () => openRule(k) }, 'Kuralı oku ›'));
+    li(bullets(kisaca(d.lesson), 3)),
+    tuzak(d.lesson)[0] ? h('div.small.trap', { html: 'Tuzak: ' + md(tuzak(d.lesson)[0]).replace(/^<p>|<\/p>$/g, '') }) : null,
+    h('button.linkbtn.small.mr-open', { type: 'button', onclick: () => openRule(k) }, 'Kuralın tamamı ›'));
   return el;
 }
 
