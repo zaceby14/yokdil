@@ -47,7 +47,7 @@ export async function todayTasks() {
     gramer: { sub: `${gN} soru`, go: '#/gramer/gunluk', min: gN },
     hata: { label: `Hata tekrarı (${hs.done}/${hs.total})`, sub: 'eski yanlışlar · tüm bölümler', go: '#/gramer/hata', min: Math.max(1, Math.ceil(hs.total * 0.75)) },
     okuma: rr.tasks?.okuma && rr.readTitle ? { sub: rr.readTitle + ' · okundu', go: '#/okuma', min: rd?.min || min.okuma || 20 }
-      : { label: rd?.micro ? 'Mikro okuma' : undefined, sub: rd ? rd.title + (rd.gizli ? ' · kaynağım' : rd.micro ? ' · sınav uzunluğunda parça + 3 soru' : '') : 'parça + bilinmeyen kelime', go: rd?.href || '#/okuma', min: rd?.micro ? Math.min(rd.min, 10) : rd?.min || min.okuma || 20 },
+      : { label: rd?.micro ? 'Kısa okuma' : undefined, sub: rd ? rd.title + (rd.gizli ? ' · kaynağım' : rd.micro ? ' · 1 parça + 3 soru' : '') : 'parça + bilinmeyen kelime', go: rd?.href || '#/okuma', min: rd?.micro ? 10 : rd?.min || min.okuma || 20 },
     deneme: { sub: w.mock?.title || 'çıkmış sınav ya da 8 soruluk set', go: mockHref(w.mock), min: 0 },
     kisa: { label: kisaTitle(kz || 'mini'), sub: 'sınav gibi · çıkmış değil · ipucu yok', go: kisaHref(kz || 'mini'), min: KISA[kz || 'mini'].min, note: w.kisa?.title ? w.kisa.title + ' · ' + TANI_NOTE : '' }
   };

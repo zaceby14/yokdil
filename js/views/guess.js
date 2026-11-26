@@ -13,6 +13,9 @@ import { doneToday, markDone } from '../memory.js';
 const N = 10;
 const short = tr => String(tr || '').split(/[;(]/)[0].trim();
 
+// Saf: Türkçesi kelimenin kendisi gibi mi? (risk/risk, sector/sektör, factor/faktör)
+const trN = x => String(x || '').toLowerCase().replace(/[öüşçğı]/g, ch => ({ ö: 'o', ü: 'u', ş: 's', ç: 'c', ğ: 'g', ı: 'i' })[ch]).replace(/k/g, 'c');
+export const cognate = (word, tr) => { const w = trN(word).replace(/[^a-z]/g, ''); if (w.length < 4) return false; return String(tr || '').split(/[,;/]/).some(t => trN(t).trim().startsWith(w.slice(0, 4))); };
 // Saf: tek soru kur. cand {word, tr, pos, cardId}; exs [{en,tr}]; pool [{word,tr,pos}] → öğe ya da null
 export function buildGuess(cand, exs, pool, rnd = Math.random) {
   const tr = short(cand.tr);
@@ -54,7 +57,7 @@ export async function buildItems(n = N) {
   const out = [], seen = new Set();
   for (const c of [...mine, ...shuffle(fresh)]) {
     if (out.length >= n) break;
-    if (seen.has(c.word)) continue;
+    if (seen.has(c.word) || cognate(c.word, c.tr)) continue; // risk = risk: bağlamdan tahmin olmaz
     const f = fm[c.word];
     const it = buildGuess(c, [...(f?.ex || []), ...(idx.get(c.word)?.ex ? [{ en: idx.get(c.word).ex }] : [])], pool);
     if (it) { seen.add(c.word); out.push(it); }

@@ -35,12 +35,12 @@ export default async function render(root, [type]) {
     h('p.small.muted.screen-why', 'Sınavdaki her soru tipinden ayrı ayrı çalış.'),
     Object.keys(b).length ? null : emptyData(),
     hs.total ? h('a.btn.wide', { href: '#/gramer/hata' }, `Hata tekrarı · bugün ${hs.done}/${hs.total}`) : null,
-    h('ul.list', Object.entries(TYPES).filter(([k]) => k !== 'diyalog').map(([k, v]) => {
+    h('ul.list', Object.entries(TYPES).filter(([k]) => k !== 'diyalog').sort(([a], [b]) => (a === 'yakin-anlam') - (b === 'yakin-anlam')).map(([k, v]) => {
       const items = b[k] || [];
       const done = items.filter(i => seen.has(i.key)).length;
       const pct = items.length ? Math.round(done / items.length * 100) : 0;
       return h('li' + (items.length ? '' : '.dim'), h('a', { href: items.length ? '#/alistirma/' + k : null },
-        h('b', v), thisWeek.has(k) ? h('span.chip.ok.small', 'bu hafta') : null, weak.has(k) ? h('span.chip.bad.small', 'zayıf') : null,
+        h('b', v), k === 'yakin-anlam' ? h('span.chip.small', 'YDS ek · YÖKDİL\'de yok') : null, thisWeek.has(k) ? h('span.chip.ok.small', 'bu hafta') : null, weak.has(k) && done > 0 && k !== 'yakin-anlam' ? h('span.chip.bad.small', 'zayıf') : null,
         h('span.small.muted', `${done}/${items.length} · %${pct}`),
         h('span.prog', h('i', { style: `width:${pct}%` }))));
     }))

@@ -53,20 +53,28 @@ export const snoozeDay = (today = dayKey()) => addDays(today, SNOOZE_DAYS);
 
 // Saf: "5 soru çöz" sırası. pool: [{key, level}] · ctx: {logs, mistakes, allowed (seviye), n}
 // Önce açık hatalar, sonra daha önce yanlış yapılanlar, sonra seviyeye uygun yeniler, sonra üst seviye yeniler, en son doğru bilinenler (eski önce)
-export function practicePick(pool, { logs = [], mistakes = [], allowed = 1, n = 5, rnd = Math.random } = {}) {
+// Aynı soruları döndürmemek için: önce hiç görülmemiş, sonra en eski görülen. Yanlışlar zaten hata tekrarında gelir:
+// en fazla 1 tanesi karışır. Son RECENT_DAYS günde çözülen soru en sona.
+export const RECENT_DAYS = 3, MAX_WRONG_IN_PRACTICE = 1;
+export function practicePick(pool, { logs = [], mistakes = [], allowed = 1, n = 5, rnd = Math.random, now = Date.now() } = {}) {
   const open = new Map(mistakes.filter(m => m && !m.solved).map(m => [m.id, m]));
   const last = new Map();
   for (const l of [...logs].sort((a, b) => (a.at || 0) - (b.at || 0))) last.set(l.q, l);
+  const recent = l => l && (now - (l.at || 0)) < RECENT_DAYS * 864e5;
   const rank = p => {
-    if (open.has(p.key)) return [0, open.get(p.key).due || ''];
     const l = last.get(p.key);
-    if (l && !l.correct) return [1, String(l.at || 0).padStart(15, '0')];
-    if (!l) { const lv = p.level || 1; return lv <= allowed ? [2, String(9 - lv) + rnd().toFixed(4)] : [3, String(lv) + rnd().toFixed(4)]; }
-    return [4, String(l.at || 0).padStart(15, '0')];
+    if (recent(l)) return [5, String(l.at || 0).padStart(15, '0')];
+    if (open.has(p.key) || (l && !l.correct)) return [3, String(l?.at || 0).padStart(15, '0')];
+    if (!l) { const lv = p.level || 1; return lv <= allowed ? [0, String(9 - lv) + rnd().toFixed(4)] : [1, String(lv) + rnd().toFixed(4)]; }
+    return [2, String(l.at || 0).padStart(15, '0')];
   };
-  return pool.map(p => ({ p, r: rank(p) }))
-    .sort((a, b) => a.r[0] - b.r[0] || String(a.r[1]).localeCompare(String(b.r[1])))
-    .slice(0, n).map(x => x.p.key);
+  const sorted = pool.map(p => ({ p, r: rank(p) })).sort((a, b) => a.r[0] - b.r[0] || String(a.r[1]).localeCompare(String(b.r[1])));
+  const out = [], wrongs = sorted.filter(x => x.r[0] === 3);
+  // Bir yanlış (varsa) sona yakın karışır; geri kalanı yeni/eski sorular
+  for (const x of sorted) { if (out.length >= n) break; if (x.r[0] === 3) continue; out.push(x.p.key); }
+  if (wrongs.length && MAX_WRONG_IN_PRACTICE) { if (out.length >= n) out.pop(); out.push(wrongs[0].p.key); }
+  for (const x of wrongs.slice(1)) { if (out.length >= n) break; out.push(x.p.key); }
+  return out.slice(0, n);
 }
 
 // Saf: "5 soru çöz" karışımı — özgün havuz + çıkmış havuz (en fazla xMax çıkmış soru; özgün az ise çıkmışla tamamlanır).

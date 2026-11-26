@@ -118,7 +118,8 @@ with sync_playwright() as p:
     sk = st()['sessions'].get('pratik:' + T, {}).get('keys', [])
     tops = ev(f"Promise.all({json.dumps(sk)}.map(k => import('./js/qbank.js').then(m => m.resolve(k)))).then(xs => xs.map(x => x && x.info.topic))")
     check(len(sk) == 5 and all(t == T for t in tops), f'5 soru, hepsi {T}')
-    check(sk[0] in st()['mistakes'] or any(l['q'] == sk[0] and not l['correct'] for l in st()['grammarLog'].values()), 'önce yanlış yapılan soru geliyor')
+    wr = set(st()['mistakes']) | {l['q'] for l in st()['grammarLog'].values() if not l['correct']}
+    check(sk[0] not in wr and sum(k in wr for k in sk) <= 1, 'önce yeni sorular; yanlışlardan en fazla 1 (aynı sorular dönmesin)')
     def answer_wrong(i):
         k = sk[i]
         ans = ev(f"import('./js/qbank.js').then(m => m.resolve('{k}')).then(x => x.answer)")
@@ -272,7 +273,7 @@ with sync_playwright() as p:
     page.locator('.opt').nth(1).click()
     page.click('.readbar button:has-text("Bitir")'); page.wait_for_timeout(1000)
     hero = page.inner_text('.hero')
-    check('/20' in page.inner_text('.hero .big') and 'tahmini puan' not in hero and 'sınav puanı değildir' in hero, f'kısa deneme sonucu: x/20 doğru (%), puan değil ({hero.strip()[:50]})')
+    check('/22' in page.inner_text('.hero .big') and 'tahmini puan' not in hero and 'sınav puanı değildir' in hero, f'kısa deneme sonucu: x/20 doğru (%), puan değil ({hero.strip()[:50]})')
     page.locator('details.secgroup > summary').first.click(); page.wait_for_timeout(200)
     qw = page.locator('details.secgroup').first.locator('.qwrong summary').first
     check(qw.locator('.qw-arrow').count() == 1, 'deneme yanlış listesi: ▸ işareti')

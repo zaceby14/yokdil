@@ -3,7 +3,8 @@ import * as store from './store.js';
 import { h, uid, lemmas, toast } from './util.js';
 import { local, online } from './lookup.js';
 import { enrich, wordIndex } from './data.js';
-import { coreHits, unknownHit } from './vocab.js';
+import { coreHits, unknownHit, glossMap } from './vocab.js';
+const TAG_TR = { remzi: 'Remzi Hoca listesi', zafer: 'Zafer Hoca listesi' };
 import { speak, canSpeak } from './speak.js';
 import { loadStars, starsEl } from './stars.js';
 
@@ -106,11 +107,14 @@ export function tappable(text, opts = {}) {
     sheet.classList.remove('hidden');
     sheet._close = () => { sheet.classList.add('hidden'); clearSel(); };
     const hit = await local(word);
+    // Parçanın kendi sözlükçesi önce
+    const gm = opts.gloss ? glossMap(opts.gloss) : null;
+    const gTr = gm && !isPhrase ? (gm.get(word.toLowerCase()) || gm.get((hit?.lemma || '').toLowerCase()) || '') : (gm?.get(word.toLowerCase()) || '');
     const entry = hit?.entry, card = hit?.card;
     let base = isPhrase ? word.toLowerCase() : (hit?.lemma || word.toLowerCase());
     if (!isPhrase && !hit) base = (await enrich(base).catch(() => null))?.key || guessLemma(base);
     const wIn = h('input.wordin', { value: card?.word || entry?.word || base });
-    const trIn = h('input', { placeholder: 'Türkçe anlam', value: card?.tr || entry?.tr || '' });
+    const trIn = h('input', { placeholder: 'Türkçe anlam', value: card?.tr || entry?.tr || gTr || '' });
     const synIn = h('input', { placeholder: 'eş anlamlılar (virgülle)', value: (card?.syn || entry?.syn || []).join(', ') });
     const ctxIn = h('textarea', { rows: 3 }); ctxIn.value = ctx;
     const info = h('div.small.muted');
@@ -127,7 +131,8 @@ export function tappable(text, opts = {}) {
     const stEl = starsEl(card?.word || entry?.word || base);
     if (stEl) info.append(stEl, ' ');
     if (card) info.append(h('span.chip.ok', 'Kartta var'), ' ');
-    if (entry) info.append(h('span.chip', 'Sık kelime'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Kalıp: ' + entry.coll : '', ...(entry.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t)));
+    if (entry) info.append(h('span.chip', 'Sık kelime'), ' ', entry.pos ? `(${entry.pos}) ` : '', entry.coll ? 'Kalıp: ' + entry.coll : '', ...(entry.tags || []).filter(t => TAG_TR[t]).map(t => h('span.chip.small', TAG_TR[t])));
+    if (gTr) info.append(h('span.chip.ok', 'Parçanın sözlükçesi'), ' ');
     sheet.append(
       h('div.sheet-head', wIn,
         canSpeak() ? h('button.icon-btn.say', { 'aria-label': 'dinle', onclick: () => speak(wIn.value) }, SPK()) : null,
@@ -138,7 +143,7 @@ export function tappable(text, opts = {}) {
       h('label', 'Bağlam', ctxIn),
       h('button.btn.primary.wide', { onclick: save }, card ? 'Kartı güncelle' : 'Karta ekle')
     );
-    if (!entry && !card) {
+    if (!entry && !card && !gTr) {
       const msg = h('span');
       info.append(msg);
       if (!navigator.onLine) msg.textContent = 'Çevrimdışı: anlamı sen yaz (kart yine kaydedilir).';

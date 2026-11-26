@@ -755,3 +755,8 @@ body.qmode .explain:not(.hidden) { padding-bottom: 5.5em; }
 .notebook { margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: color-mix(in srgb, #f59e0b 12%, transparent); font-size: .92rem; }
 .nb-row { margin-top: 8px; }
 .write-count { color: var(--accent); font-weight: 600; }
+.icon-btn.sw-top { background: none; border: 0; cursor: pointer; font: inherit; color: var(--text); }
+.icon-btn.sw-top.on { background: var(--accent-soft); color: var(--accent); }
+.next-mistakes { margin-top: .3em; }
+.reader .blank.on { background: color-mix(in srgb, var(--accent) 22%, transparent); border-bottom-width: 3px; border-radius: 3px; }
+.reader .blank.on::after { color: var(--accent); font-weight: 700; }

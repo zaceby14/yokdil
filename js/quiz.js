@@ -127,7 +127,7 @@ export function runQuiz(root, items, opts = {}) {
         const L = 'ABCDE';
         const mineWhy = !ok && Array.isArray(it.why) ? String(it.why[k] || '').trim() : '';
         exp.append(h('div.exhead', h('b', ok ? 'Doğru ✓' : 'Yanlış ✗')));
-        if (it.anlam) exp.append(h('div.exrow2', h('span.exl', 'Cümle'), h('span', it.anlam)));
+        if (it.anlam) exp.append(h('div.exrow2', h('span.exl', ['paragraf', 'ilgisiz', 'paragraf-tamamlama', 'okuma'].includes(it.info?.dtype) || it.info?.kind === 'okuma' ? 'Özet' : 'Cümle'), h('span', it.anlam)));
         if (ex) exp.append(h('div.exrow2', h('span.exl', `Doğru (${L[it.answer] || ''})`), h('span', ex)));
         if (mineWhy) exp.append(h('div.exrow2.mine', h('span.exl', `Senin seçimin (${L[k]})`), h('span', mineWhy)));
         if (it.tip) exp.append(h('div.tip', (it.why ? 'Kalıp / taktik: ' : 'Taktik: ') + it.tip));
@@ -173,6 +173,9 @@ export function runQuiz(root, items, opts = {}) {
         onclick: () => { if (answered) return; reveal(k, false); }
       }, h('span.ol', L[k]), optNode(o)));
       const stem = it.stemNode ? h('div.stem.tap', it.stemNode()) : it.stem ? h('div.stem.tap', tappable(it.stem, { ...src, ctx }).el) : null;
+      // Cloze: sorulan boşluğu vurgula ve göster
+      const bn = it.stem && String(it.q || '').match(/^\s*\((\d+)\)/)?.[1];
+      if (bn && stem) setTimeout(() => { const b = stem.querySelector(`.blank[data-b="${bn}"]`); if (b) { b.classList.add('on'); b.scrollIntoView({ block: 'center', behavior: 'smooth' }); } }, 60);
       const q = it.qNode ? h('div.q.tap', it.qNode()) : it.q ? (it.hl ? h('div.q.hlq', { lang: 'en' }, markHl(it.q, it.hl)) : trQ(it) ? h('div.q', it.q) : h('div.q.tap', tappable(it.q, { ...src, ctx }).el)) : null;
       // Parçala: cevaptan önce kaynak cümle blokları (karşılıklar gizli)
       const partsSlot = h('div');

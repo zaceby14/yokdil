@@ -30,6 +30,15 @@ export function answer(key, correct, info, extra = {}) {
   if (n) store.put('mistakes', { ...n, id: key, kind: info.kind, topic: info.topic || '', dtype: info.dtype || '' });
 }
 
+// Hata kutusunda "aynı kuraldan yeni soru": cevap, asıl yanlışın kaydını ilerletir (soru kaydı ayrıca tutulur)
+export function answerFor(mkey, correct, info) {
+  const day = dayKey();
+  const n = nextMistake(store.get('mistakes', mkey), correct);
+  if (n) store.put('mistakes', { ...n, id: mkey });
+  const r = store.get('days', day) || { id: day };
+  store.put('days', { ...r, id: day, mdone: [...new Set([...(r.mdone || []), mkey])] }); // bugünkü hata seti: bu yanlış yapıldı
+}
+
 export function dueMistakes(kind) {
   const t = dayKey();
   return store.all('mistakes').filter(m => !m.solved && m.due <= t && (!kind || m.kind === kind));
@@ -64,6 +73,6 @@ export function mistakeSet(key = dayKey()) {
 export function mistakeToday(key = dayKey()) {
   const ids = mistakeSet(key);
   const set = new Set(ids);
-  const done = new Set(store.all('grammarLog').filter(l => l.day === key && set.has(l.q) && l.hset).map(l => l.q)).size;
+  const done = new Set([...store.all('grammarLog').filter(l => l.day === key && set.has(l.q) && l.hset).map(l => l.q), ...((store.get('days', key)?.mdone) || []).filter(x => set.has(x))]).size;
   return { ids, done, total: ids.length };
 }

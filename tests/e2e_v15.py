@@ -70,7 +70,7 @@ with sync_playwright() as p:
     go('kartlar/yeni', 800)
     page.click('button:has-text("Göster")'); page.wait_for_timeout(200)
     zh, iy = page.locator('.g-hard span').inner_text(), page.locator('.g-good span').inner_text()
-    check(zh == 'bugün + 1 g' and iy == '1 g', f'yeni kartta Zor "{zh}" ≠ İyi "{iy}"')
+    check(zh == 'birazdan + 1 g' and iy == '1 g', f'yeni kartta Zor "{zh}" ≠ İyi "{iy}"')
     shot('kart-zor-iyi')
     w0 = page.locator('.fword').inner_text()
     page.click('.g-hard'); page.wait_for_timeout(200)
@@ -119,7 +119,7 @@ with sync_playwright() as p:
     # 6) Joker yazısı yalnız kullanıldığı gün
     def days(spec):
         ev(f"""import('./js/store.js').then(m => import('./js/util.js').then(u => {{ const t = u.dayKey();
-          for (const d of m.all('days')) m.del('days', d.id); for (const i of {json.dumps(spec)}) m.put('days', {{ id: u.addDays(t, -i), tasks: {{ kart: true }} }}); }}))""")
+          for (const d of m.all('days')) m.del('days', d.id); for (const i of {json.dumps(spec)}) m.put('days', {{ id: u.addDays(t, -i), tasks: {{ kart: true }}, reviews: 10 }}); }}))""")
         go('bugun', 500); return page.inner_text('.streak')
     s1 = days([0, 2, 3])
     check('joker' in s1, f'dün atlandı → "joker kullanıldı (dün)" ({s1})')

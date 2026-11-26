@@ -83,6 +83,7 @@ with sync_playwright() as p:
     # 5) Puan tahmini: Bugün + hedef tablosunda "Senin (tahmini)" + Eksikler grafiği
     ev(f"""import('./js/store.js').then(m => {{ const now = Date.now();
       for (let i = 0; i < 40; i++) m.put('grammarLog', {{ id: 'es' + i, q: 'g' + String(i).padStart(4, '0'), correct: i % 3 !== 0, at: now - i * 1000, day: '{TODAY}', kind: 'gramer', topic: 'baglac-zitlik', dtype: 'bosluk' }});
+      for (let i = 0; i < 8; i++) m.put('grammarLog', {{ id: 'ec' + i, q: 'd200#' + i, correct: i % 2 === 0, at: now - i * 800, day: '{TODAY}', kind: 'drill', topic: '', dtype: 'ceviri-en-tr' }});
       for (let i = 0; i < 12; i++) m.put('grammarLog', {{ id: 'eo' + i, q: 'p001#' + i, correct: i % 2 === 0, at: now - i * 900, day: '{TODAY}', kind: 'okuma', topic: '', dtype: 'paragraf' }}); }})""")
     go('bugun', 900)
     et = page.inner_text('.est-line') if page.locator('.est-line').count() else ''

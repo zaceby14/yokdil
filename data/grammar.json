@@ -6430,9 +6430,9 @@
   "options": [
    "contributed",
    "distributed",
-   "retributed",
+   "devoted",
    "attributed",
-   "tributed"
+   "committed"
   ],
   "answer": 3,
   "explain": "Cümlede 'A to B' yapısı var: çöküşün nedeni bakım. 'attribute A to B' 'A'nın nedenini B'ye bağlamak' demektir.",
@@ -6442,9 +6442,9 @@
   "why": [
    "'contributed' 'katkıda bulundu' demektir; 'A'yı B'ye' yapısıyla neden bildirmez.",
    "'distributed' 'dağıttı' demektir; anlam uymuyor.",
-   "'retributed' standart bir İngilizce kelime değildir.",
+   "'devoted' 'adadı, ayırdı' demektir (devote A to B: A'yı B'ye adamak); neden bildirmez.",
    "",
-   "'tributed' standart bir İngilizce kelime değildir."
+   "'committed' 'işledi, bağladı (söz)' demektir; 'A'nın nedenini B'ye bağlamak' anlamı yok."
   ]
  },
  {

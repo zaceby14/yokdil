@@ -60,10 +60,10 @@ async function home(root) {
     h('div.stats3', h('div', h('b', due), h('span', 'tekrar')), h('div', h('b', nq), h('span', 'yeni (bugün)')),
       h('div', h('b', store.all('cards').length), h('span', 'toplam'))),
     h('div.row2',
-      h('a.btn.primary.wide.big-btn' + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
-      h('a.btn.wide.big-btn' + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'bugünkü sayı doldu')))),
+      h('a.btn.wide.big-btn' + (due || !nq ? '.primary' : '') + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
+      h('a.btn.wide.big-btn' + (nq && !due ? '.primary' : '') + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'bugünkü sayı doldu')))),
     (() => { const n = store.all('cards').filter(c => needWrite(c)).length; return n ? h('p.small.center.write-count', `✍ ${n} kelime yazarak çalışılıyor (birkaç gündür hatırlamadıkların)`) : null; })(),
-    h('p.small.muted.center', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Kalıcı ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
+    h('p.small.muted.center.cstats', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Oturmuş ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
     h('div.row2',
       h('a.btn.wide', { href: '#/kartlar/tara' }, h('span', h('b', 'Kelime tara'), h('br'), h('span.small.muted', 'bildiklerini hızla ele'))),
       gp >= GAP_MIN ? h('a.btn.wide', { href: '#/kartlar/bosluk' }, h('span', h('b', 'Boşluk doldurma'), h('br'), h('span.small.muted', 'kendi kartlarınla')))

@@ -16,6 +16,7 @@ import { priorities, keyStats, risers, trendText, RECENT_N } from '../priority.j
 import { openRule } from './warmup.js';
 import { reasonCounts } from '../strategy.js';
 import { estimate } from '../estimate.js';
+const SEC_TR = { bosluk: 'boşluk', cloze: 'cloze', tamamlama: 'cümle tamamlama', 'en-tr': 'çeviri İng→Tr', 'tr-en': 'çeviri Tr→İng', paragraf: 'paragraf tamamlama', ilgisiz: 'ilgisiz cümle', okuma: 'okuma' };
 import { lessons } from '../data.js';
 import { TOPIC_LESSON, TYPE_LESSON } from '../util.js';
 import { lessonTopic } from '../qbank.js';
@@ -178,7 +179,7 @@ export default async function render(root) {
     best ? h('div.card.best1', h('div.small.muted', 'Bugün en çok işine yarayacak 1 şey'),
       h('div.best1-row', h('b', topicName(normKey(best.key))), best.value != null ? h('span.chip.bad.small', `%${Math.round(best.value * 100)}`) : null),
       h('a.btn.primary.wide.best1-go', { href: '#/gramer/pratik/' + enc(normKey(best.key)) + '/kural' }, 'Kural kartı + 5 soru')) : null,
-    sec('Öncelikli 3 alan', h('p.small.muted.pri-why', 'Sınavda çok çıkan ve son 30 cevabında zorlandığın konular. Her cevapla güncellenir.'),
+    sec('Öncelikli 3 alan', h('p.small.muted.pri-why', pri.some(p => p.n > 0) ? 'Sınavda çok çıkan ve son 30 cevabında zorlandığın konular. Her cevapla güncellenir.' : 'Başlangıç önceliği (başta verdiğin bilgilerden). Soru çözdükçe cevaplarına göre değişir.'),
       weak.length ? h('ol.weak', weak.map(w => h('li', h('b', w.label), w.value != null ? ` %${Math.round(w.value * 100)}` : '', w.trend != null ? h('span.small.trend' + (w.trend >= 0.05 ? '.up' : w.trend <= -0.05 ? '.down' : ''), ' ' + trendText(w.trend)) : null,
         h('div.small', TIP[w.k] || 'Bu konuda günlük 5 soru çöz.'), h('div.arow-acts', ruleBtn(normKey(w.k)), practiceBtn(normKey(w.k)))))) : h('p.small.muted', 'Biraz soru çözünce burada belirir.'),
       ups.length ? h('p.small.risers', '↑ Bu dönem güçlenenler: ', ups.map(u => `${topicName(u.k)} (+${Math.round(u.trend * 100)})`).join(' · ')) : null),
@@ -222,7 +223,7 @@ function drawMocks(box) {
   const est = estimate(store.all('grammarLog'), mocks);
   const ests = store.all('days').filter(d => d.est != null).sort((a, b) => a.id.localeCompare(b.id)).slice(-60);
   add(box, h('div.est-box',
-    est.enough ? h('div', h('span.small.muted', 'Tahmini puan '), h('b.big', `${est.lo}–${est.hi}`), h('span.small.muted', ` · hedef ${goal}` + (est.hi < goal ? ` · ${Math.max(0, Math.ceil((goal - est.mid) / 1.25))} soru daha` : ''))) : h('p.small.muted', 'Tahmini puan: biraz daha soru çözünce görünür.'),
+    est.enough ? h('div', h('span.small.muted', 'Tahmini puan '), h('b.big', `${est.lo}–${est.hi}`), h('span.small.muted', ` · hedef ${goal}` + (est.hi < goal ? ` · ${Math.max(0, Math.ceil((goal - est.mid) / 1.25))} soru daha` : ''))) : h('p.small.muted', `Tahmini puan: en az 3 soru tipinden 5'er soru çözünce görünür. Eksik: ${est.missing.map(k => SEC_TR[k] || k).slice(0, 4).join(', ')}.`),
     ests.length >= 2 ? h('div', { html: line(ests.map((d, i, a) => ({ label: i % Math.ceil(a.length / 5) === 0 || i === a.length - 1 ? fmtDate(d.id) : '', v: d.est })), { goal }) }) : null,
     h('p.small.muted', 'Tahmin: son 4 haftadaki cevaplarından, bölüm bölüm 80 soruya oranlanır. Çalışırken çözülen sorular sınavdan biraz kolay sayılır.')));
   if (mocks.length) {

@@ -33,7 +33,7 @@ export default async function render(root) {
     const m = pmeta();
     pinfo.className = 'small ' + (pstat.state === 'error' ? 'bad-t' : 'muted');
     pinfo.textContent = pstat.state === 'loading' ? 'Sorular indiriliyor…' : pstat.state === 'error' ? 'Sorular: ' + pstat.msg
-      : m.at ? `Sorular: ${m.n ?? '?'} sınav${m.nr ? ` · ${m.nr} okuma` : ''} · ${fmtTime(m.at)}` : (sync.getToken() ? 'Sorular henüz indirilmedi' : 'Gizli sorular için anahtar gir');
+      : m.at ? `Sorular: ${m.n ?? '?'} sınav${m.nr ? ` · ${m.nr} okuma` : ''} · ${fmtTime(m.at)}` : (sync.getToken() ? 'Sorular henüz indirilmedi' : 'Çıkmış sorular: yukarıdaki aynı anahtarla iner');
   };
   drawP();
   const offP = (await import('../private.js')).onStatus(drawP);

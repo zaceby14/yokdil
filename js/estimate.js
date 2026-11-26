@@ -6,6 +6,7 @@ import { addDays, dayKey } from './util.js';
 // Soru tipi → deneme bölümü
 export const SEC_OF_TYPE = { bosluk: 'bosluk', cloze: 'cloze', 'cumle-tamamlama': 'tamamlama', 'ceviri-en-tr': 'en-tr', 'ceviri-tr-en': 'tr-en',
   'paragraf-tamamlama': 'paragraf', ilgisiz: 'ilgisiz', paragraf: 'okuma', okuma: 'okuma' };
+export const MIN_SECS = 3;
 export const EST_DAYS = 28, EST_N = 40, PRIOR = 0.45, PRIOR_M = 6, PRACTICE_F = 0.92, MIN_TOTAL = 30;
 
 // Saf: logs [{kind, dtype, correct, hint, day, src}], mocks [{date, sections:{sec:{d,n}}}] → tahmin
@@ -41,7 +42,9 @@ export function estimate(logs, mocks = [], today = dayKey()) {
   const sd = Math.sqrt(varSum) * 1.25;
   const pts = mid * 1.25;
   const half = Math.max(3, Math.round(sd * 1.3));
-  return { mid: Math.round(pts), lo: Math.max(0, Math.round(pts - half)), hi: Math.min(100, Math.round(pts + half)), sec, n: total, enough: total >= MIN_TOTAL };
+  const secsOk = Object.values(sec).filter(x => x.n >= 5).length;
+  const missing = SEC_ORDER.filter(k => sec[k].n < 5);
+  return { secsOk, missing, mid: Math.round(pts), lo: Math.max(0, Math.round(pts - half)), hi: Math.min(100, Math.round(pts + half)), sec, n: total, enough: total >= MIN_TOTAL && secsOk >= MIN_SECS };
 }
 
 // Tahmini "senin" satırları için sahte deneme (hedef tablosunda karşılaştırma)

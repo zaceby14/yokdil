@@ -65,7 +65,7 @@ async function list(root) {
       h('b', t.title || 'Başlıksız'), h('span.small.muted', `${t.source || ''}${t.page ? ' · s. ' + t.page : ''}`))))),
     rs.length ? privList(rs, done) : null,
     h('h3', 'Hazır parçalar'),
-    ps.length ? h('ul.list', ps.map(p => h('li' + (done.has(p.id) ? '.done' : ''), h('a', { href: '#/okuma/p/' + p.id },
+    ps.length ? h('ul.list', ps.filter(p => p.id !== next?.id).map(p => h('li' + (done.has(p.id) ? '.done' : ''), h('a', { href: '#/okuma/p/' + p.id },
       h('b', (done.has(p.id) ? '✓ ' : '') + p.title),
       h('span.small.muted', `${topicName(p.topic) || ''} · seviye ${p.level || '-'} · ${p.words || '?'} kelime`))))) : emptyData('Okuma parçaları')
   );
@@ -164,7 +164,7 @@ function reader(root, doc) {
     return h('details.idea.trbox', h('summary', '+ Çeviri'), ta, h('div.row', h('button.btn.small', { type: 'button', onclick: save }, 'Çevirimi kaydet'), btn, st), out);
   };
   const after = i => { const a = active ? mainIdea(i) : null, b = trBox(i); return a && b ? h('div', a, b) : a || b; };
-  const tp = tappable(doc.text, { source: doc.mine || doc.gizli ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
+  const tp = tappable(doc.text, { gloss: doc.gloss, source: doc.mine || doc.gizli ? doc.source : 'Okuma', page: doc.page || '', note: doc.title, hl: store.settings().readHl !== false,
     afterPara: active || trParas.length ? after : null });
   const nWords = doc.passage?.words || (String(doc.text).match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) || []).length;
   const rid = 'read:' + doc.id;

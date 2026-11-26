@@ -138,7 +138,8 @@ export const TOPIC_ORDER = ['baglac-zitlik', 'baglac-neden-amac', 'edat-esdizim'
 // Okuma parçası konuları (passages.json topic)
 export const PASSAGE_TOPICS = {
   'hayvan-davranisi': 'Hayvan davranışı', 'tarim-gida': 'Tarım-gıda', 'meteoroloji': 'Meteoroloji', 'saglik': 'Sağlık',
-  'arkeoloji': 'Arkeoloji', 'psikoloji': 'Psikoloji', 'tarim': 'Tarım'
+  'arkeoloji': 'Arkeoloji', 'psikoloji': 'Psikoloji', 'tarim': 'Tarım', tip: 'Tıp', 'muhendislik-tarihi': 'Mühendislik tarihi',
+  'yapay-zeka': 'Yapay zekâ', yerbilimi: 'Yerbilimi', ceviri: 'Çeviri'
 };
 
 // Bilinmeyen anahtar: tire → boşluk, baş harf büyük
@@ -177,7 +178,7 @@ export function add(el, ...kids) {
 // Kart notu: otomatik (Claude) düzeltme kayıtlarını ayıkla → {own: kullanıcının notu, auto: kısa gri satır | ''}
 export function noteParts(note) {
   const segs = String(note || '').split(/;\s*/).map(s => s.trim()).filter(Boolean);
-  const isAuto = s => /claude/i.test(s);
+  const isAuto = s => /claude/i.test(s) || /(eklendi|güncellendi|düzeltildi)\b/i.test(s) && /^(anlam|eş anlam|örnek|kalıp|tr)\b/i.test(s) || /\(eski:/i.test(s);
   const own = segs.filter(s => !isAuto(s)).join('; ');
   const auto = segs.filter(isAuto);
   if (!auto.length) return { own, auto: '' };

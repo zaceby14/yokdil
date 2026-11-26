@@ -30,7 +30,7 @@ function goalLine() {
   if (est.enough && dayRec().est !== est.mid) updateDay({ est: est.mid, estLo: est.lo, estHi: est.hi }); // gidiş grafiği için günlük kayıt
   if (!m || m.date < addDays(dayKey(), -28)) return est.enough
     ? h('a.goalline.small.est-line', { href: '#/eksikler' }, 'Tahmini puan ', h('b', `≈ ${est.lo}–${est.hi}`), ` · hedef ${goal}`, h('span.muted', ' · son cevaplarından'))
-    : h('a.goalline.small.est-line', { href: '#/eksikler' }, `Tahmini puan: ${30 - Math.min(29, est.n)} soru daha çözünce görünür · hedef ${goal}`);
+    : h('a.goalline.small.est-line', { href: '#/eksikler' }, `Tahmini puan: ${est.secsOk < 3 ? 'en az 3 soru tipinden 5\'er soru çözünce' : 'biraz daha soru çözünce'} görünür · hedef ${goal}`);
   const sc = m.score ?? +(Object.values(m.sections || {}).reduce((s, x) => s + (+x?.d || 0), 0) * 1.25).toFixed(2);
   const g = goalGap(sc, +store.settings().targetScore || 70);
   return h('a.goalline.small', { href: '#/eksikler' }, `Son tam deneme ${Math.round(g.score)} · hedef ${g.goal} · `, h('b', g.q ? `fark ${g.q} soru` : 'hedefte'));

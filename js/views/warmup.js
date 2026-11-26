@@ -94,7 +94,6 @@ export async function miniCard(k) {
   const el = h('div.minirule', { role: 'note' },
     h('div.mr-head', h('b.grow', 'Hatırla · ' + d.name), h('button.icon-x.small', { type: 'button', 'aria-label': 'kapat', onclick: () => el.remove() }, '×')),
     d.formula ? h('div.small', d.formula) : null,
-    d.rule?.right ? h('div.small.good-t', { lang: 'en' }, '✓ ' + d.rule.right) : null,
     h('button.linkbtn.small.mr-open', { type: 'button', onclick: () => openRule(k) }, 'Kuralı oku ›'));
   return el;
 }

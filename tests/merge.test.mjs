@@ -352,7 +352,7 @@ t('Yeni kuyruk: kendi eklediğin kelimeler önde, dünden kalanlar limiti aşar 
 });
 
 t('Seri: deneme/odak/görev günü sayar; haftada 1 joker; bugün çalışılmadıysa bozulmaz', () => {
-  const D = { '2026-11-23': { id: '2026-11-23', tasks: { kart: true } }, '2026-11-24': { id: '2026-11-24', focusMin: 12 },
+  const D = { '2026-11-23': { id: '2026-11-23', tasks: { kart: true }, reviews: 12 }, '2026-11-24': { id: '2026-11-24', focusMin: 12 },
     '2026-11-25': { id: '2026-11-25', tasks: { gramer: true } }, /* 26 atlandı */ '2026-11-27': { id: '2026-11-27', tasks: { okuma: true } } };
   const mocks = new Set(['2026-11-28']); // tam deneme günü
   let r = PL.streakCalc(k => D[k], '2026-11-28', mocks);
@@ -587,10 +587,11 @@ const { readFileSync } = await import('node:fs');
 const J = f => JSON.parse(readFileSync(new URL('../data/' + f, import.meta.url)));
 const CONTENT = { grammar: J('grammar.json'), drills: J('drills.json'), passages: J('passages.json') };
 const SECQ = (u, content) => u.sec === 'cloze' ? 5 : u.sec === 'okuma' ? 3 : 1;
-t('Kısa deneme: mini 20 / yarım 40, YÖKDİL oranı, çift boşluk, seviye karışık', () => {
+t('Kısa deneme: mini 22 / yarım 40, YÖKDİL oranı, çift boşluk, seviye karışık', () => {
   const pools = KS.poolsOf(CONTENT);
-  const want = { mini: { bosluk: 5, cloze: 5, tamamlama: 3, 'en-tr': 1, 'tr-en': 1, paragraf: 1, ilgisiz: 1, okuma: 3 } };
-  want.yarim = Object.fromEntries(Object.entries(want.mini).map(([k, v]) => [k, v * 2]));
+  // Cloze 5'li birim: mini 22 (cloze 5, çeviri 4), yarım 40 (cloze 5, çeviri 6, okuma 9)
+  const want = { mini: { bosluk: 5, cloze: 5, tamamlama: 3, 'en-tr': 2, 'tr-en': 2, paragraf: 1, ilgisiz: 1, okuma: 3 },
+    yarim: { bosluk: 10, cloze: 5, tamamlama: 6, 'en-tr': 3, 'tr-en': 3, paragraf: 2, ilgisiz: 2, okuma: 9 } };
   for (const size of ['mini', 'yarim']) {
     const b = KS.buildKisa(pools, size);
     const got = {};
@@ -685,10 +686,14 @@ t('Isınma: konu anahtarı (alan adı değil soru tipi), deneme bölümü eşlem
   assert.equal(W.extraFor('edat-esdizim', a).kind, 'sheet');
   assert.equal(W.extraFor('modal', a), null);
 });
-t('5 soru sırası: açık hata → önceki yanlış → seviyeye uygun yeni → üst seviye → doğru bilinen', () => {
+t('5 soru sırası: yeni → üst seviye → eski doğru; yanlışlardan en fazla 1 karışır; son 3 günde çözülen en sona', () => {
   const pool = [{ key: 'ok', level: 1 }, { key: 'hi', level: 3 }, { key: 'new', level: 1 }, { key: 'wr', level: 1 }, { key: 'op', level: 1 }];
   const logs = [{ q: 'ok', correct: true, at: 1 }, { q: 'wr', correct: false, at: 2 }];
-  assert.deepEqual(W.practicePick(pool, { logs, mistakes: [{ id: 'op', due: '2026-01-01' }], allowed: 1, n: 5, rnd: () => 0.5 }), ['op', 'wr', 'new', 'hi', 'ok']);
+  const NOW = 100 * 864e5;
+  assert.deepEqual(W.practicePick(pool, { logs, mistakes: [{ id: 'op', due: '2026-01-01' }], allowed: 1, n: 5, rnd: () => 0.5, now: NOW }), ['new', 'hi', 'ok', 'op', 'wr']);
+  assert.deepEqual(W.practicePick(pool, { logs, mistakes: [{ id: 'op', due: '2026-01-01' }], allowed: 1, n: 3, rnd: () => 0.5, now: NOW }), ['new', 'hi', 'op']);
+  const logs2 = [{ q: 'new', correct: true, at: NOW - 3600e3 }];
+  assert.equal(W.practicePick(pool, { logs: logs2, allowed: 1, n: 5, rnd: () => 0.5, now: NOW }).at(-1), 'new');
 });
 t('Kural kartından sonraki doğruluk + en çok kazandıracak 1 şey', () => {
   const r = W.afterCard([{ topic: 'r', correct: true, at: 5 }, { topic: 'r', correct: false, at: 1 }, { topic: 'r', correct: true, hint: true, at: 9 }], 'r', 3);
@@ -762,10 +767,10 @@ const PN15 = await import('../js/views/panel.js');
 const TK15 = await import('../js/tasks.js');
 t('v15 yeni kartta Zor ≠ İyi: Zor "bugün + 1 g" (oturumda tekrar), İyi "1 g"', () => {
   const c = { state: 'new' };
-  assert.equal(S15.previewLabel(c, 'hard'), 'bugün + 1 g');
+  assert.equal(S15.previewLabel(c, 'hard'), 'birazdan + 1 g');
   assert.equal(S15.previewLabel(c, 'good'), '1 g');
   assert.ok(S15.hardAgain(c) && !S15.hardAgain({ state: 'review', interval: 5 }) && !S15.hardAgain({ state: 'learning', ladder: 0 }));
-  assert.notEqual(S15.previewLabel({ state: 'review', interval: 5, ease: 2.5 }, 'hard'), 'bugün + 1 g');
+  assert.notEqual(S15.previewLabel({ state: 'review', interval: 5, ease: 2.5 }, 'hard'), 'birazdan + 1 g');
 });
 t('v15 neden çipleri: 3 ana (Kelime · Gramer · Süre) + Diğer, kimlikler aynı', () => {
   const L = ['kelime', 'gramer', 'dikkat', 'sure', 'iki-sik', 'metin'].map(id => ({ id, label: id }));
@@ -776,7 +781,7 @@ t('v15 neden çipleri: 3 ana (Kelime · Gramer · Süre) + Diğer, kimlikler ayn
 });
 t('v15 joker yazısı yalnız kullanıldığı gün (dün atlanan gün)', () => {
   const T = '2026-11-25';
-  const mk = act => k => act.includes(k) ? { id: k, tasks: { kart: true } } : null;
+  const mk = act => k => act.includes(k) ? { id: k, tasks: { kart: true }, reviews: 10 } : null;
   const a = PL15.streakCalc(mk(['2026-11-25', '2026-11-23', '2026-11-22']), T);
   assert.equal(a.n, 3); assert.ok(a.jokerNow); assert.deepEqual(a.days, ['2026-11-24']);
   const b = PL15.streakCalc(mk(['2026-11-25', '2026-11-24', '2026-11-22', '2026-11-21']), T);
@@ -788,9 +793,9 @@ t('v15 "5 soru çöz" karışımı: çıkmış en fazla 2, özgün az ise çıkm
   assert.equal(r.length, 5); assert.equal(r.filter(k => k.startsWith('x:')).length, 2);
   assert.equal(W15.mixPractice(own.slice(0, 1), xs, { n: 5, rnd: () => 0.5 }).length, 4);
   assert.deepEqual(W15.mixPractice(own, [], { n: 5, rnd: () => 0.5 }).length, 5);
-  // açık hata önce kalır
-  const r2 = W15.mixPractice(own, xs, { n: 5, mistakes: [{ id: 'g6', solved: false, due: '2026-01-01' }], rnd: () => 0.5 });
-  assert.equal(r2[0], 'g6');
+  // açık hata en fazla 1 tane, yeni sorulardan sonra karışır
+  const r2 = W15.mixPractice(own, xs, { n: 5, mistakes: [{ id: 'g6', solved: false, due: '2026-01-01' }, { id: 'g5', solved: false, due: '2026-01-01' }], rnd: () => 0.5 });
+  assert.ok(r2[0] !== 'g6' && !(r2.includes('g6') && r2.includes('g5')));
 });
 t('v15 kısa deneme: gizli okuma (≥3 mc) okuma birimine katılır; yoksa özgün', () => {
   const rs = [{ id: 'a', text: 'x', level: 2, topic: 'enerji', questions: [{ q: 1, options: ['a', 'b'], answer: 0 }, { q: 2, options: ['a', 'b'], answer: 0 }, { q: 3, options: ['a', 'b'], answer: 1 }] },
@@ -798,7 +803,7 @@ t('v15 kısa deneme: gizli okuma (≥3 mc) okuma birimine katılır; yoksa özg�
   assert.deepEqual(KS15.privPool(rs).map(u => u.id), ['r:a']);
   const pools = { g: [], p: [{ id: 'p1', level: 2 }, { id: 'p2', level: 2 }], pr: KS15.privPool(rs) };
   const on = KS15.buildKisa(pools, 'yarim', { mixPriv: true, rand: () => 0.5 }).units.filter(u => u.sec === 'okuma').map(u => u.id);
-  assert.ok(on.includes('r:a') && on.length === 2);
+  assert.ok(on.includes('r:a') && on.length === 3);
   const off = KS15.buildKisa(pools, 'mini', { rand: () => 0.5 }).units.filter(u => u.sec === 'okuma').map(u => u.id);
   assert.ok(!off.includes('r:a') && off.length === 1);
   const none = KS15.buildKisa({ ...pools, pr: [] }, 'mini', { mixPriv: true, rand: () => 0.5 }).units.filter(u => u.sec === 'okuma');
@@ -891,6 +896,8 @@ console.log(`\n${n} test geçti`);
   const e0 = ES.estimate([], [], '2026-11-23');
   if (e0.enough || e0.mid !== Math.round(80 * 0.45 * 1.25)) throw new Error('estimate empty ' + JSON.stringify(e0));
   const lg2 = []; for (let i = 0; i < 40; i++) lg2.push({ kind: 'gramer', dtype: 'bosluk', correct: true, day: '2026-11-20', at: i });
+  if (ES.estimate(lg2, [], '2026-11-23').enough) throw new Error('tek bölümle tahmin yok');
+  for (let i = 0; i < 6; i++) lg2.push({ kind: 'drill', dtype: 'ceviri-en-tr', correct: true, day: '2026-11-20', at: 100 + i }, { kind: 'okuma', dtype: 'paragraf', correct: i % 2 === 0, day: '2026-11-20', at: 200 + i });
   const e1 = ES.estimate(lg2, [], '2026-11-23');
   if (!e1.enough || !(e1.sec.bosluk.p > 0.8) || !(e1.lo < e1.mid && e1.mid < e1.hi)) throw new Error('estimate ' + JSON.stringify(e1));
   console.log('ok puan tahmini');
@@ -912,4 +919,19 @@ console.log(`\n${n} test geçti`);
   c = { ...c, ...SR.writeResult(c, false, '2026-11-25') };
   if (c.wr.ok !== 0) throw new Error('yanlış sıfırlar');
   console.log('ok yazma kuralı');
+}
+{
+  const PL2 = await import('../js/plan.js');
+  if (PL2.activeDay({ id: 'x', tasks: { kart: true } }) || !PL2.activeDay({ id: 'x', reviews: 5 }) || PL2.activeDay({ id: 'x', reviews: 2 })) throw new Error('activeDay gerçek çalışma');
+  console.log('ok gün sayımı gerçek çalışmaya bağlı');
+}
+{
+  const GP = await import('../js/gplan.js');
+  const qs = [...Array.from({ length: 10 }, (_, i) => ({ id: 'z' + i, topic: 'baglac-zitlik', level: 1 })), ...Array.from({ length: 10 }, (_, i) => ({ id: 'e' + i, topic: 'edat-esdizim', level: 1 })), ...Array.from({ length: 10 }, (_, i) => ({ id: 'r' + i, topic: 'relative', level: 1 }))];
+  const ids = GP.pickDaily(qs, { cur: new Set(['baglac-zitlik']), weak: new Set(['baglac-zitlik']), n: 8, rnd: () => 0.5 });
+  if (ids.filter(x => x[0] === 'z').length > GP.TOPIC_CAP) throw new Error('konu sınırı ' + ids);
+  const lastDay = new Map(qs.filter(q => q.topic === 'baglac-zitlik').slice(0, 9).map(q => [q.id, '2026-11-25']));
+  const ids2 = GP.pickDaily(qs, { cur: new Set(['baglac-zitlik']), n: 8, rnd: () => 0.5, lastDay, today: '2026-11-26' });
+  if (ids2.filter(x => x[0] === 'z' && x !== 'z9').length > 0 && !ids2.includes('z9')) throw new Error('yakında çözülen tekrar ' + ids2);
+  console.log('ok günlük sette konu sınırı + yakında çözülen gelmez');
 }

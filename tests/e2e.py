@@ -1087,7 +1087,7 @@ with sync_playwright() as p:
 
     # A5) Seri: tek atlanan gün + deneme günü
     ev("""import('./js/store.js').then(m => import('./js/util.js').then(u => { const t = u.dayKey();
-      for (const [i, f] of [[2, { tasks: { kart: true } }], [3, { mock: true }], [4, { focusMin: 30 }]]) m.put('days', { id: u.addDays(t, -i), tasks: {}, ...f }); }))""")
+      for (const [i, f] of [[2, { tasks: { kart: true }, reviews: 10 }], [3, { mock: true }], [4, { focusMin: 30 }]]) m.put('days', { id: u.addDays(t, -i), tasks: {}, ...f }); }))""")
     page.goto(BASE + '#/kartlar'); page.wait_for_timeout(200); page.goto(BASE + '#/bugun'); page.wait_for_timeout(600)
     stv = page.inner_text('.streak')
     check('seri 4' in stv and 'joker' in stv and '/7 gün' in stv, f'seri: deneme sayıldı + joker dün kullanıldı ({stv})')
@@ -1610,7 +1610,7 @@ with sync_playwright() as p:
     # Program görevi: kısa deneme (Pazar; hafta 1, 3–5 mini, 7–8 yarım; çıkmış denemeli haftada yok)
     set_date('2026-12-06')
     kt = page.locator('li[data-task=kisa]')
-    check(kt.count() == 1 and 'Kısa deneme (20 soru · 45 dk)' in kt.inner_text() and kt.locator('a.task').get_attribute('href') == '#/deneme/yeni/mini', f'Bugün: hafta 3 Pazar "Kısa deneme (20 soru · 45 dk)" görevi ({kt.inner_text() if kt.count() else None})')
+    check(kt.count() == 1 and 'Kısa deneme (22 soru · 50 dk)' in kt.inner_text() and kt.locator('a.task').get_attribute('href') == '#/deneme/yeni/mini', f'Bugün: hafta 3 Pazar "Kısa deneme (22 soru · 50 dk)" görevi ({kt.inner_text() if kt.count() else None})')
     shot('v11-bugun-kisa', True)
     set_date('2026-12-05')
     check(page.locator('li[data-task=kisa]').count() == 0 and page.locator('a.kisa-plan').count() == 1, 'Cumartesi: görev yok, "Bu hafta kısa deneme" kartı var')
@@ -1620,21 +1620,21 @@ with sync_playwright() as p:
     check(page.locator('li[data-task=kisa]').count() == 0, 'çıkmış denemeli hafta (9): kısa deneme görevi yok')
     set_date('2027-02-17')
     dt = page.locator('li[data-task=deneme]')
-    check(dt.count() == 1 and 'Kısa deneme (20 soru · 45 dk)' in dt.inner_text() and dt.locator('a.task').get_attribute('href') == '#/deneme/yeni/mini', f'Son 14 gün hafta içi: deneme görevi = mini kısa deneme ({dt.inner_text() if dt.count() else None})')
+    check(dt.count() == 1 and 'Kısa deneme (22 soru · 50 dk)' in dt.inner_text() and dt.locator('a.task').get_attribute('href') == '#/deneme/yeni/mini', f'Son 14 gün hafta içi: deneme görevi = mini kısa deneme ({dt.inner_text() if dt.count() else None})')
     set_date('2026-12-06')
     # Sorular → Deneme sekmesi
     go('deneme')
     check(page.locator('.seg a').count() == 4 and page.locator('.seg a.active').inner_text() == 'Deneme' and page.locator('.kisa-card').count() == 4, 'Sorular: Deneme sekmesi, Mini + Yarım + Okuma/Çeviri provası')
-    check('5 boşluk · 5 cloze · 3 cümle tamamlama · 2 çeviri · 1 paragraf · 1 ilgisiz · 3 okuma' in page.inner_text('main'), 'mini dağılımı YÖKDİL oranında')
+    check('5 boşluk · 5 cloze · 3 cümle tamamlama · 4 çeviri · 1 paragraf · 1 ilgisiz · 3 okuma' in page.inner_text('main'), 'mini dağılımı YÖKDİL oranında')
     check(ev("document.documentElement.scrollWidth") <= 392, 'Deneme ekranı taşmıyor (4 sekme)')
     shot('v11-deneme-ana', True)
     page.click('.kisa-card[data-size=mini] .kisa-start'); page.wait_for_timeout(1000)
-    check('#/deneme/sinav/' in page.url and page.locator('.timer').inner_text().startswith(('0:44', '0:45')), f'mini deneme: 45 dk sayaç ({page.locator(".timer").inner_text()})')
+    check('#/deneme/sinav/' in page.url and page.locator('.timer').inner_text().startswith(('0:49', '0:50')), f'mini deneme: 50 dk sayaç ({page.locator(".timer").inner_text()})')
     ex = ev("(async () => { const m = await import('./js/views/kisa.js'); const id = decodeURIComponent(location.hash.split('/').pop()); const e = await m.kisaExam(id); return { id, qs: e.questions.map(q => ({ n: q.n, type: q.type, key: q.key, answer: q.answer, kind: q.info.kind })) }; })()")
     qs = ex['qs']
     from collections import Counter
     tc = Counter(q['type'] for q in qs)
-    check(len(qs) == 20 and tc == Counter({'bosluk': 5, 'cloze': 5, 'cumle-tamamlama': 3, 'ceviri-en-tr': 1, 'ceviri-tr-en': 1, 'paragraf-tamamlama': 1, 'ilgisiz': 1, 'paragraf': 3}), f'mini: 20 soru, oranlar {dict(tc)}')
+    check(len(qs) == 22 and tc == Counter({'bosluk': 5, 'cloze': 5, 'cumle-tamamlama': 3, 'ceviri-en-tr': 2, 'ceviri-tr-en': 2, 'paragraf-tamamlama': 1, 'ilgisiz': 1, 'paragraf': 3}), f'mini: 22 soru, oranlar {dict(tc)}')
     check(page.locator('.secstrip .chip').count() == 8 and page.locator('.kisa-note').count() == 1, 'bölüm şeridi 8 bölüm + özgün soru notu')
     check(page.locator('.hint-btn').count() == 0, 'sınav taklidi: ipucu yok')
     sc = page.inner_text('.secclock') if page.locator('.secclock:not(.hidden)').count() else ''
@@ -1649,10 +1649,10 @@ with sync_playwright() as p:
     check('Soru 20' in page.inner_text('.qhead') and page.locator('.stem .reader .w').count() > 20, 'optikten son soruya (okuma parçası dokunulabilir)')
     page.locator('.opt').nth(qs[19]['answer']).click()
     page.click('.readbar button:has-text("Bitir")'); page.wait_for_timeout(1000)
-    check('#/deneme/sonuc/' in page.url and '2/20' == page.inner_text('.hero .big').strip() and '%10' in page.inner_text('.hero') and 'sınav puanı değildir' in page.inner_text('.hero') and 'tahmini puan' not in page.inner_text('.hero'), f'sonuç: 2/20 doğru (%10), puan değil ({page.inner_text(".hero") if page.locator(".hero").count() else None})')
+    check('#/deneme/sonuc/' in page.url and '2/22' == page.inner_text('.hero .big').strip() and '%9' in page.inner_text('.hero') and 'sınav puanı değildir' in page.inner_text('.hero') and 'tahmini puan' not in page.inner_text('.hero'), f'sonuç: 2/20 doğru (%10), puan değil ({page.inner_text(".hero") if page.locator(".hero").count() else None})')
     s = st()
     km = [m for m in s['mocks'].values() if m.get('kind') == 'kisa']
-    check(len(km) == 1 and km[0]['score'] == 10 and km[0]['n'] == 20 and km[0]['size'] == 'mini' and km[0]['sections']['bosluk'] == {'d': 1, 'y': 1, 'b': 3, 'n': 5}, f'mocks: kind=kisa, bölüm D/Y/B ({km[0]["sections"].get("bosluk") if km else None})')
+    check(len(km) == 1 and km[0]['score'] == 9 and km[0]['n'] == 22 and km[0]['size'] == 'mini' and km[0]['sections']['bosluk'] == {'d': 1, 'y': 1, 'b': 3, 'n': 5}, f'mocks: kind=kisa, bölüm D/Y/B ({km[0]["sections"].get("bosluk") if km else None})')
     wk = qs[1]['key']
     check(wk in s['mistakes'] and s['mistakes'][wk]['kind'] == qs[1]['kind'], f'yanlış hata kutusunda mevcut kimlikle ({wk})')
     check(page.locator('table.mock tr.secrow').count() == 8 and page.locator('.timetable').count() == 1, 'sonuç: bölüm tablosu + süre tablosu')
@@ -1677,7 +1677,7 @@ with sync_playwright() as p:
     open_url = page.url
     go('bugun', 800)
     band = page.locator('.kisa-resume')
-    check(band.count() == 1 and 'Kısa deneme · Mini (20 soru) · 1 cevap' in band.inner_text(), f'Bugün: "Yarım kaldı" bandı ({band.inner_text() if band.count() else None})')
+    check(band.count() == 1 and 'Kısa deneme · Mini (22 soru) · 1 cevap' in band.inner_text(), f'Bugün: "Yarım kaldı" bandı ({band.inner_text() if band.count() else None})')
     check(page.locator('li[data-task=kisa] a.task').get_attribute('href').startswith('#/deneme/sinav/'), 'görev yarım kalan denemeye götürüyor')
     shot('v11-bugun-yarim-kaldi', True)
     band.click(); page.wait_for_timeout(900)

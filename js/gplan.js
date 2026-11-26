@@ -23,8 +23,10 @@ export function topicLevels(logs) {
 }
 
 // Saf: günlük set. ctx: {cur:Set, prev:Set, weak:Set, seen:Map(id→correct), open:Set, levels, n, rnd}
+export const TOPIC_CAP = 3, RECENT_Q_DAYS = 7;
 export function pickDaily(qs, ctx) {
-  const { cur = new Set(), prev = new Set(), weak = new Set(), seen = new Map(), open = new Set(), levels = {}, n = 8, rnd = Math.random } = ctx;
+  const { cur = new Set(), prev = new Set(), weak = new Set(), seen = new Map(), open = new Set(), levels = {}, n = 8, rnd = Math.random, lastDay = new Map(), today = '' } = ctx;
+  const recentQ = id => today && lastDay.get(id) && (Date.parse(today) - Date.parse(lastDay.get(id))) / 864e5 < RECENT_Q_DAYS;
   const minLv = {};
   for (const q of qs) minLv[q.topic] = Math.min(minLv[q.topic] ?? 9, q.level || 1);
   const allowed = t => Math.max(levels[t] || 1, minLv[t] || 1);
@@ -38,16 +40,20 @@ export function pickDaily(qs, ctx) {
     if (q.double || (String(q.q || '').match(/-{2,}/g) || []).length >= 2) wt *= 1.5;
     if (lv === al) wt *= 1.3;
     if (seen.get(q.id) === true) wt *= 0.25; else if (!seen.has(q.id)) wt *= 1.5;
+    if (recentQ(q.id)) wt *= 0.02; // son 7 günde çözülen soru neredeyse hiç gelmez
     pool.push({ q, k: Math.pow(rnd(), 1 / wt) });
   }
   pool.sort((a, b) => b.k - a.k);
-  const out = [];
+  const out = [], per = {};
   let low = 0;
-  for (const { q } of pool) {
+  // Bir konudan en fazla TOPIC_CAP soru (zayıf konu tüm seti kaplamasın); yetmezse sınır kalkar
+  for (const pass of [TOPIC_CAP, 99]) for (const { q } of pool) {
     if (out.length >= n) break;
+    if (out.includes(q.id) || (per[q.topic] || 0) >= pass) continue;
     const isLow = LOW_TOPICS.includes(q.topic) && !cur.has(q.topic);
     if (isLow && low >= 1) continue;
     if (isLow) low++;
+    per[q.topic] = (per[q.topic] || 0) + 1;
     out.push(q.id);
   }
   return out;

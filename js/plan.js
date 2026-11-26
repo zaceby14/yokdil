@@ -69,7 +69,10 @@ export function dayDone(r) {
 
 // Saf: anlamlı çalışma günü mü? (≥10 dk odak, ≥1 görev ya da deneme)
 export const FOCUS_MIN = 10;
-export const activeDay = (d, mockDays) => !!d && (Object.values(d.tasks || {}).some(Boolean) || (d.focusMin || 0) >= FOCUS_MIN || !!d.mock) ||
+// Gerçek çalışma: en az 5 kart/soru ya da elle bitirilen görev (bekleyen kart yokken kendiliğinden ✓ olan 'kart' sayılmaz)
+export const WORK_MIN = 5;
+const workDone = d => ((d.reviews || 0) + (d.answered || 0)) >= WORK_MIN || Object.entries(d.tasks || {}).some(([k, v]) => v && (k !== 'kart' || (d.reviews || 0) > 0));
+export const activeDay = (d, mockDays) => !!d && (workDone(d) || (d.focusMin || 0) >= FOCUS_MIN || !!d.mock) ||
   !!(mockDays && d && mockDays.has(d.id));
 
 // Saf: seri. Bugün henüz çalışılmadıysa dünden sayar (bugün seriyi bozmaz).

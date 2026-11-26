@@ -4,16 +4,16 @@ import { SECTION_OF } from './strategy.js';
 
 // Bölüm planı: units = birim sayısı, w = birim başına soru (cloze metni 5, okuma parçası 3)
 export const KISA = {
-  mini: { n: 20, min: 45, label: 'Mini', plan: [
+  mini: { n: 22, min: 50, label: 'Mini', plan: [
     { sec: 'bosluk', pool: 'g', units: 5, w: 1, dbl: 1 }, { sec: 'cloze', pool: 'cloze', units: 1, w: 5 },
-    { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 3, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 1, w: 1 },
-    { sec: 'tr-en', pool: 'ceviri-tr-en', units: 1, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 1, w: 1 },
+    { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 3, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 2, w: 1 },
+    { sec: 'tr-en', pool: 'ceviri-tr-en', units: 2, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 1, w: 1 },
     { sec: 'ilgisiz', pool: 'ilgisiz', units: 1, w: 1 }, { sec: 'okuma', pool: 'p', units: 1, w: 3 }] },
   yarim: { n: 40, min: 90, label: 'Yarım', plan: [
-    { sec: 'bosluk', pool: 'g', units: 10, w: 1, dbl: 2 }, { sec: 'cloze', pool: 'cloze', units: 2, w: 5 },
-    { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 6, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 2, w: 1 },
-    { sec: 'tr-en', pool: 'ceviri-tr-en', units: 2, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 2, w: 1 },
-    { sec: 'ilgisiz', pool: 'ilgisiz', units: 2, w: 1 }, { sec: 'okuma', pool: 'p', units: 2, w: 3 }] }
+    { sec: 'bosluk', pool: 'g', units: 10, w: 1, dbl: 2 }, { sec: 'cloze', pool: 'cloze', units: 1, w: 5 },
+    { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 6, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 3, w: 1 },
+    { sec: 'tr-en', pool: 'ceviri-tr-en', units: 3, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 2, w: 1 },
+    { sec: 'ilgisiz', pool: 'ilgisiz', units: 2, w: 1 }, { sec: 'okuma', pool: 'p', units: 3, w: 3 }] }
 };
 // Bölüm provası (son haftalar): yalnız okuma 5 parça / 60 dk · yalnız çeviri 12 soru / 15 dk
 KISA.okuma = { n: 15, min: 60, label: 'Okuma provası', plan: [{ sec: 'okuma', pool: 'p', units: 5, w: 3 }] };
