@@ -53,5 +53,7 @@ export const MIGRATIONS = [
   } },
   { id: 'v6-autocards', run: (st, ctx) => { for (const id of badAutoCards(st.all('cards'), ctx.idx)) st.del('cards', id); } },
   // v18: eski varsayılan kelime hedefi (2000) → programdan türetilen hedef (boş = program)
-  { id: 'v18-vocabgoal', run: st => { if (+st.settings().vocabGoal === 2000) st.setSetting('vocabGoal', null); } }
+  { id: 'v18-vocabgoal', run: st => { if (+st.settings().vocabGoal === 2000) st.setSetting('vocabGoal', null); } },
+  // v26: sınavda çok çıkan kelimeler önce (varsayılan açık)
+  { id: 'v26-starfirst', run: st => { if (st.settings().starFirst === false) st.setSetting('starFirst', true); } }
 ];

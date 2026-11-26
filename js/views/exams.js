@@ -280,17 +280,23 @@ function examMode(root, e, startSec) {
     const g = groupOf(e, q);
     const src = { source: e.kisa ? 'Kısa deneme' : e.title || 'Çıkmış', note: `Soru ${q.n}` };
     setCtx({ type: 'soru', key: qkey(e, q), label: `${e.title || e.id} · Soru ${q.n}` });
+    const strikeEx = (n, k) => { if (locked) return; const st = { ...(pr.struck || {}) }; const xs = new Set(st[n] || []); xs.has(k) ? xs.delete(k) : xs.add(k); st[n] = [...xs]; pr.struck = st; save(); draw(); };
     const trq = q.type === 'ceviri-tr-en', tro = q.type === 'ceviri-en-tr';
     const it = { q: q.q, info: { topic: q.topic || '', dtype: q.type || '' } };
     add(main,
       h('div.qhead', h('span.muted', `Soru ${q.n} · ${pr.cur + 1}/${qs.length}`),
         h('span.qtools', q.keySource === 'claude' ? h('span.chip.bad.small', 'cevap kesin değil') : null, h('span.chip', typeName(q.type)))),
-      h('div.qbar', h('button.chip.lesson-btn', { type: 'button', onclick: () => openFor(it) }, 'Ders')),
+      // Deneme sınav provası: ders yardımı yok (sonuç ekranında var)
+      locked ? h('div.qbar', h('button.chip.lesson-btn', { type: 'button', onclick: () => openFor(it) }, 'Ders')) : h('p.small.muted.elim-tip', 'Eleme: şıkkı sola kaydır ya da harfine uzun bas → üstü çizilir.'),
       g?.text ? h('div.stem.tap', tappable(g.text, src).el) : null,
       trq ? h('div.q', q.q) : h('div.q.tap', tappable(q.q, src).el),
       h('div.opts' + (locked ? '.locked' : ''), q.options.map((o, k) => h('button.opt' + (pr.answers[q.n] === k ? '.chosen' : '') + (locked && k === q.answer ? '.right.done' : '') + (locked && pr.answers[q.n] === k && k !== q.answer ? '.wrong.done' : ''), {
         type: 'button',
-        onclick: () => {
+        ...((pr.struck?.[q.n] || []).includes(k) ? { class: 'struck' } : {}),
+        onpointerdown: e => { const x0 = e.clientX, b = e.currentTarget; if (e.target.closest('.ol')) b._t = setTimeout(() => { b._lp = true; strikeEx(q.n, k); }, 450); b.onpointerup = ev => { clearTimeout(b._t); if (x0 - ev.clientX > 60) { b._lp = true; strikeEx(q.n, k); } }; b.onpointerleave = () => clearTimeout(b._t); },
+        oncontextmenu: e => e.preventDefault(),
+        onclick: e => {
+          if (e.currentTarget._lp) { e.currentTarget._lp = false; return; }
           if (locked) return;
           if (pr.answers[q.n] === k) delete pr.answers[q.n]; else pr.answers[q.n] = k;
           save(); draw(); drawGrid();

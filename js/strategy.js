@@ -214,3 +214,7 @@ export function vocabPlan(st, goal, frac, left, limit) {
 
 // Programdan kelime hedefi: Σ (haftalık yeni kelime × 7), 50'ye yuvarlı
 export const progVocab = prog => Math.round((prog?.weeks || []).reduce((a, w) => a + (+w.newWords || 0) * 7, 0) / 50) * 50 || 1000;
+
+// Sınav hızı (sn/soru): süre planından (180 dk / 80 soru, bölüme göre)
+export const SEC_Q = { bosluk: 66, cloze: 84, 'cumle-tamamlama': 120, 'ceviri-en-tr': 75, 'ceviri-tr-en': 75, 'paragraf-tamamlama': 150, ilgisiz: 120, paragraf: 240 };
+export const SPEED_WEEK = 5;

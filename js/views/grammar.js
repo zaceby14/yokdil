@@ -4,12 +4,13 @@ import { grammar, program, drills, passages } from '../data.js';
 import { h, dayKey, seeded, uid, toast, TOPICS, topicName, addDays, fmtDate } from '../util.js';
 import { week, weakTopics, dayRec, updateDay, tick } from '../plan.js';
 import { answer, openMistakes, mistakeToday, closedWeek, answerFor } from '../mistakes.js';
-import { keyOf, isType, matches, practicePick, mixPractice } from '../warm.js';
+import { keyOf, isType, matches, practicePick, mixPractice, typeOf } from '../warm.js';
 import { warmGate, inProgress } from './warmup.js';
 import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
 import { makeAdapter, tomorrowLine } from '../adapt.js';
 import { priorities } from '../priority.js';
+import { SEC_Q, SPEED_WEEK } from '../strategy.js';
 import { gItem, dItem, pItem, xItem, resolve } from '../qbank.js';
 import { getPack } from '../pack.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
@@ -112,9 +113,10 @@ async function daily(root) {
   if (!items.length) { box.append(emptyData()); return; }
   const sid = 'gunluk:' + dayKey();
   root.insertBefore(await whyCard(ids, qs), box);
+  const spd = await speedOpt();
   const go = () => runQuiz(box, items, {
     title: 'Günlük', extra: lessonLink, sid, name: 'Günlük gramer', source: 'Gramer', task: 'gramer', coach: true,
-    onAnswer: logAns, adapt: adapter,
+    onAnswer: logAns, adapt: adapter, speed: spd,
     onEnd: (res, el) => { tick('gramer'); const t = adapter && tomorrowLine(adapter.sum); if (t) el.querySelector('.endcard')?.append(h('p.small.tomorrow', t)); }
   });
   // Isınma: setteki zayıf konuların kural kartı (yarım oturuma dönerken gösterilmez)
@@ -173,11 +175,11 @@ export async function xPoolFor(k) {
 
 // Çıkmış sorudan serpiştirme: verilen konu/tiplerden, hiç görülmemiş (yoksa en eski görülen) n soru. Paket yoksa boş.
 const OSYM = /^(yokdil|yds)-/;
-export async function pickX(keys, n = 1, { exclude = new Set(), rnd = Math.random } = {}) {
+export async function pickX(keys, n = 1, { exclude = new Set(), rnd = Math.random, src = 'osym' } = {}) {
   const last = new Map(); for (const l of store.all('grammarLog')) last.set(l.q, Math.max(last.get(l.q) || 0, l.at || 1));
   const pool = [];
   // Yalnız ÖSYM çıkmışları (yayınevi soruları değil); önce YÖKDİL Fen, sonra YDS
-  for (const k of [...new Set(keys)].filter(Boolean)) for (const p of await xPoolFor(k)) if (!exclude.has(p.key) && OSYM.test(p.key)) pool.push(p);
+  for (const k of [...new Set(keys)].filter(Boolean)) for (const p of await xPoolFor(k)) if (!exclude.has(p.key) && (src === 'osym' ? OSYM.test(p.key) : !OSYM.test(p.key))) pool.push(p);
   const uniq = [...new Map(pool.map(p => [p.key, p])).values()];
   const rank = p => (/^yokdil/.test(p.key) ? 0 : 1);
   uniq.sort((a, b) => (last.has(a.key) - last.has(b.key)) || rank(a) - rank(b) || (last.get(a.key) || 0) - (last.get(b.key) || 0) || rnd() - 0.5);
@@ -188,6 +190,13 @@ export function sprinkle(items, xs) {
   const out = [...items];
   xs.forEach((x, j) => out.splice(Math.min(out.length, Math.round((j + 1) * out.length / (xs.length + 1)) + j), 0, x));
   return out;
+}
+
+// Hız çubuğu: 5. haftadan itibaren (deneme dışı pratik)
+export async function speedOpt() {
+  const w = await week();
+  if ((w.n || 0) < SPEED_WEEK) return null;
+  return it => SEC_Q[typeOf(it?.info || {})] || SEC_Q.bosluk;
 }
 
 const backP = () => h('a.btn.small', { href: '#/eksikler' }, '‹ Eksikler');
@@ -205,7 +214,8 @@ async function practice(root, k, kural) {
   const sid = 'pratik:' + k;
   const seenM = new Map(); for (const l of store.all('grammarLog')) seenM.set(l.q, l.correct);
   const adapter = makeAdapter(own.map(p => ({ ...p, k })), { seen: seenM, keyFn: () => k });
-  const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns, adapt: adapter,
+  const sp = await speedOpt();
+  const go = () => runQuiz(el, items, { title: topicName(k), extra: lessonLink, sid, name: topicName(k) + ' · 5 soru', source: 'Gramer', coach: true, onAnswer: logAns, adapt: adapter, speed: sp,
     onEnd: (res, e2) => { const t = tomorrowLine(adapter.sum); if (t) e2.querySelector('.endcard')?.append(h('p.small.tomorrow', t)); } });
   if (kural) warmGate(el, [k], go, { force: true }); else go();
 }

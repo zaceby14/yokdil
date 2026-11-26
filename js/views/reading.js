@@ -1,5 +1,6 @@
 // Okuma: hazır parçalar + kendi metinlerim; dokunulabilir kelimeler, öbek seçimi, süre, sorular
 import * as store from '../store.js';
+import { loadStars, starOf } from '../stars.js';
 import { passages } from '../data.js';
 import { h, uid, toast, topicName } from '../util.js';
 import { tappable } from '../tappable.js';
@@ -21,7 +22,8 @@ export const MAX_WPM = 400;
 export function readCounts({ words, secs, right = 0, total = 0 }) {
   if (!secs || !words) return false;
   const wpm = words / (secs / 60);
-  return wpm < MAX_WPM && (total ? right >= 1 : true);
+  // Soruları cevapladıysan: en az 1 doğru ya da ≥ 5 dk okuma (çaba sayılır)
+  return wpm < MAX_WPM && (total ? right >= 1 || secs >= 300 : true);
 }
 
 
@@ -182,7 +184,9 @@ function reader(root, doc) {
   const summary = h('div');
   async function showNew() {
     if (summary.childNodes.length) return;
-    const list = await tp.newCore();
+    // Yalnız sınavda çıkan (≥2★) kelimeler, en fazla 8: deste kolay kelimelerle dolmasın
+    const m = await loadStars().catch(() => null);
+    const list = (await tp.newCore()).filter(x => !m?.size || (starOf(x.entry.word, m) || 0) >= 2).sort((a, b) => (m ? (starOf(b.entry.word, m) || 0) - (starOf(a.entry.word, m) || 0) : 0)).slice(0, 8);
     summary.append(newWordsBox(list, doc, () => tp.markSaved()));
     summary.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
   }
@@ -212,10 +216,11 @@ function reader(root, doc) {
           },
           onAnswer: (it, ok) => answer(it.key, ok, G ? it.info : { kind: 'okuma', topic: doc.passage?.topic || '', dtype: 'okuma' }),
           task: 'okuma',
+          extraTop: it => evidBtn(it, body),
           onEnd: ({ right, total }, el) => {
             flush();
             if (readCounts({ words: nWords, secs, right, total })) tickRead();
-            else el.querySelector('.endcard')?.append(h('p.small.warn-t.shortread', 'Kısa okuma: görev sayılmadı (metni okuyup en az 1 doğru gerekir).'));
+            else el.querySelector('.endcard')?.append(h('p.small.warn-t.shortread', 'Kısa okuma: görev sayılmadı (en az 5 dk okuma ya da 1 doğru gerekir). Yanlışlar yarın hata tekrarında.'));
             const r = store.get('progress', rid);
             if (r) store.put('progress', { ...r, right, total });
             showNew();
@@ -263,6 +268,34 @@ export function newWordsBox(list, doc, after) {
   }, h('b', { lang: 'en' }, x.entry.word), tr ? h('span.small.nw-tr', tr) : null); });
   const selBtn = h('button.btn.grow', { onclick: () => on.size ? add([...on]) : toast('Önce kelimeye dokun') }, 'Seçilenleri ekle (0)');
   box.append(h('h3', `Kartında olmayan ${list.length} kelime`), h('p.small.muted.nw-hint', 'Anlamı yazmayanlar çok anlamlı: metinde kelimeye dokun, bağlamdaki anlamı gör.'), h('div.chips', chips),
-    h('div.row', h('button.btn.primary.grow', { onclick: () => add(list) }, 'Hepsini ekle'), selBtn));
+    h('div.row', selBtn));
   return box;
+}
+
+// Saf: doğru şıkka en çok benzeyen metin cümlesi (kanıt)
+const STOP = new Set('the a an of to in and or for on with by that this these those is are was were be been it its as at from which who than then their there they can may also not more most such into'.split(' '));
+export function evidence(text, option) {
+  const toks = x => (String(x).toLowerCase().match(/[a-z]{4,}/g) || []).filter(w => !STOP.has(w)).map(w => w.slice(0, 5));
+  const want = new Set(toks(option));
+  const sents = String(text || '').replace(/\s+/g, ' ').match(/[^.!?]+[.!?]+/g) || [];
+  let best = null, bs = 0;
+  for (const s of sents) { const n = toks(s).filter(w => want.has(w)).length; if (n > bs) { bs = n; best = s.trim(); } }
+  return bs >= 2 ? best : null;
+}
+// "Metinde göster": kanıt cümlesi + paragrafa kaydır, sarıyla vurgula
+function evidBtn(it, body) {
+  const opt = String((it.options || [])[it.answer] || '');
+  const text = body?.textContent || '';
+  const sent = evidence(text, opt + ' ' + String(it.q || '').replace(/-{3,}/g, ''));
+  if (!sent) return null;
+  const b = h('button.btn.small.evid-btn', { type: 'button' }, 'Metinde göster');
+  b.onclick = () => {
+    const key = sent.slice(0, 40);
+    const paras = [...body.querySelectorAll('p, .para, div')].filter(p => p.textContent.replace(/\s+/g, ' ').includes(key));
+    const p = paras.at(-1);
+    document.querySelectorAll('.evid').forEach(x => x.classList.remove('evid'));
+    if (p) { p.classList.add('evid'); p.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+    b.replaceWith(h('div.small.evid-q', h('b', 'Metindeki dayanak: '), h('span', { lang: 'en' }, sent)));
+  };
+  return b;
 }

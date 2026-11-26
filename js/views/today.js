@@ -15,9 +15,12 @@ import { startFocus, running, lens } from '../focus.js';
 import { getToken } from '../sync.js';
 import { priorities } from '../priority.js';
 import { estimate } from '../estimate.js';
+import { freeBtn } from './freeprac.js';
 import { normKey } from '../warm.js';
 
 const rr0busy = () => !!dayRec().busy;
+// Ek kartlar tek "Daha fazla" altında (yorgun akşamda seçim yükü az)
+const moreBox = xs => { const ys = xs.filter(Boolean); return ys.length ? h('details.today-more', h('summary', h('b', 'Daha fazla'), h('span.small.muted', ` (${ys.length})`)), ...ys) : null; };
 // Son 7 günde çalışılan gün sayısı (seri bir gün atlayınca sıfırlanır; bu sayı moral bozmaz)
 const wk7 = () => { const mk = new Set(store.all('mocks').map(m => m.date)); let n = 0; for (let j = 0; j < 7; j++) { const k = addDays(dayKey(), -j); if (activeDay(store.get('days', k), mk) || mk.has(k)) n++; } return n; };
 
@@ -127,6 +130,7 @@ export default async function render(root) {
       rr.busy ? h('p.small.muted', 'Kart tekrarı + 3 gramer. Seri bozulmaz.') : null,
       !rr.busy && dueInfo().comeback && !tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('div.banner.comeback', h('b', 'Hoş geldin!'), ` Birikmiş tekrarları günlere böldüm. Bugün yalnız kart + gramer yeter (~15 dk).`) : null,
       optT.length && tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('p.small.muted.mockday-note', 'Deneme günü: kart tekrarı + deneme yeter.') : null,
+      (() => { const f = mainT.find(t => !t.done); return f ? h('a.btn.primary.wide.big-btn.start-btn', { href: f.go }, h('span', h('b', 'Başla: ' + f.label), f.min ? h('span.small', ` · ~${f.min} dk`) : null)) : null; })(),
       h('ul.tasks', mainT.map(taskLi)),
       optT.length ? h('details.optional-tasks', h('summary', h('b', 'İsteğe bağlı'), h('span.small.muted', ` · ${optT.length} görev`)), h('ul.tasks', optT.map(taskLi))) : null,
       (rr.reviews || rr.answered || rr.focusMin) ? h('p.small.muted.daysum', `Bugün: ${rr.reviews || 0} kart · ${rr.correct || 0}/${rr.answered || 0} soru doğru · ${Math.round((rr.readSec || 0) / 60)} dk okuma${rr.focusMin ? ` · ${rr.focusMin} dk odak` : ''}`) : null,
@@ -134,6 +138,8 @@ export default async function render(root) {
         h('span.check.ghost', { 'aria-hidden': 'true' }, '!'),
         h('a.task', { href: '#/gramer/pratik/' + encodeURIComponent(t.topic) + '/kural' }, h('b', 'En çok puan getirecek: ' + topicName(t.topic)), h('span.small.muted', `son ${t.n} cevapta %${Math.round(t.value * 100)} · kural kartı + 5 soru`)),
         h('span.small.muted.tmin', '~5 dk'), h('span.chev', '›')))) : null,
+      mainT.length && mainT.every(t => t.done) && !rr.busy ? h('div.card.done-day', h('b', 'Bugün bitti ✓'), h('p.small', 'Yatmadan 1 dk: bugünkü yeni kelimelere bir göz at, sonra telefonu bırak. Uyku tekrar yapar.'), freeBtn()) : null,
+      moreBox([
       tour ? h('ul.tasks.extra', h('li' + (rr.tasks?.hafiza ? '.done' : ''),
         h('button.check', { 'aria-label': 'tamamlandı', onclick: () => { tick('hafiza', !rr.tasks?.hafiza); draw(); } }, rr.tasks?.hafiza ? '✓' : ''),
         h('a.task', { href: '#/kartlar/hafiza' }, h('b', 'Hafıza turu'), h('span.small.muted', `${tour} kelime · seçmeli`)),
@@ -151,6 +157,7 @@ export default async function render(root) {
       w.kisa && KISA[w.kisa.size] && !T.kisa ? h('a.card.link.kisa-plan', { href: '#/deneme' },
         h('b', w.kisa.title || `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · çıkmış değil, benzer sorular')) : null,
       h('a.card.link', { href: '#/eksikler' }, h('b', 'Eksiklerim'), h('span.small.muted', ' nerede zorlanıyorsun, ne yapmalısın')),
+      ]),
       h('div.small.muted.center.pad', `Sınav: ${fmtDate(w.prog.exam)} · Puan ≈ doğru × 1,25`)
     );
   };

@@ -9,7 +9,7 @@ import { dItem, gItem, pItem } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
 import { keyOf } from '../warm.js';
 import { warmGate, inProgress } from './warmup.js';
-import { pickX, sprinkle } from './grammar.js';
+import { pickX, sprinkle, speedOpt } from './grammar.js';
 
 // Tip → tüm öğe anahtarları
 async function bank() {
@@ -71,10 +71,12 @@ async function session(root, type, items, seen) {
   if (!pick.length) { el.append(emptyData()); return; }
   const sid = 'alistirma:' + type;
   // Aynı tipten çıkmış soru serpiştir (paket varsa; okuma parçası bölünmez)
-  const xs = type === 'paragraf' || inProgress(sid) ? [] : (await pickX([type], type === 'bosluk' ? 2 : 1)).map(p => p.make());
+  // + 1 kaynak sorusu (Remzi Hoca vb.): ayrıca açmana gerek kalmasın
+  const xs = type === 'paragraf' || inProgress(sid) ? [] : [...await pickX([type], type === 'bosluk' ? 2 : 1), ...await pickX([type], 1, { src: 'kaynak' })].map(p => p.make());
   const qitems = sprinkle(pick.map(i => i.make()), xs);
+  const sp = await speedOpt();
   const go = () => runQuiz(el, qitems, {
-    extra: lessonLink, sid, name: TYPES[type] || type, source: 'Alıştırma', coach: true,
+    speed: sp, extra: lessonLink, sid, name: TYPES[type] || type, source: 'Alıştırma', coach: true,
     onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m),
     onEnd: (_, box) => box.querySelector('.endnext')?.before(h('a.btn.wide', { href: '#/alistirma/' + type, onclick: () => setTimeout(() => dispatchEvent(new HashChangeEvent('hashchange'))) }, 'Aynı tipten devam'))
   });

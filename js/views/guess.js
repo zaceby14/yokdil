@@ -29,7 +29,9 @@ export function buildGuess(cand, exs, pool, rnd = Math.random) {
     for (const w of shuffle(list, rnd)) {
       if (pick.length >= 3) break;
       const t = short(w.tr), k = t.toLocaleLowerCase('tr-TR');
-      if (!t || used.has(k) || w.word === cand.word || [...used].some(u => u.includes(k) || k.includes(u))) continue;
+      // Anlam parçaları çakışan şık olmasın ("-e rağmen, -dığı halde" ile "-se de, -e rağmen")
+      const parts = x => String(x).split(/[,;/]/).map(y => y.trim()).filter(Boolean);
+      if (!t || used.has(k) || w.word === cand.word || [...used].some(u => u.includes(k) || k.includes(u) || parts(u).some(pu => parts(k).some(pk => pu === pk || (pu.length > 3 && (pu.includes(pk) || pk.includes(pu))))))) continue;
       used.add(k); pick.push(t);
     }
   };

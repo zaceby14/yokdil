@@ -1,13 +1,15 @@
 // Kartlar: SRS tekrarı, liste (ara/filtre/düzenle/sil), manuel ekleme
 import * as store from '../store.js';
-import { h, esc, uid, toast, noteParts } from '../util.js';
+import { h, esc, uid, toast, noteParts, dayKey } from '../util.js';
 import { dueCards, newQueue, cardFromWord, review, previewLabel, GRADES, GRADE_TR, stats } from '../srs.js';
 import { markKnown, unKnow, level, isGraduated } from '../vocab.js';
 import { swipe } from '../swipe.js';
 import scan from './scan.js';
 import gap, { gapPool, GAP_MIN } from './gap.js';
 import guess from './guess.js';
-import { tick } from '../plan.js';
+import newFlow from './newflow.js';
+import freePractice, { freeBtn } from './freeprac.js';
+import { tick, adaptNew } from '../plan.js';
 import { enrich, wordIndex } from '../data.js';
 import memory, { EX, counts as exCounts } from './memory.js';
 import { speak, canSpeak } from '../speak.js';
@@ -41,7 +43,9 @@ export default async function render(root, [mode, id]) {
   if (mode === 'bosluk') return gap(root, tabs(''));
   if (mode === 'tahmin') return guess(root, tabs(''));
   if (EX[mode]) return memory(root, mode, tabs(''));
-  if (mode === 'yeni') return session(root, 'yeni');
+  if (mode === 'yeni') return store.settings().newFlow === false ? session(root, 'yeni') : newFlow(root, tabs);
+  if (mode === 'eski-yeni') return session(root, 'yeni');
+  if (mode === 'serbest') return freePractice(root, tabs);
   if (mode === 'sec') return session(root, 'sec', String(id || '').split(',').filter(Boolean));
   return home(root);
 }
@@ -62,6 +66,8 @@ async function home(root) {
     h('div.row2',
       h('a.btn.wide.big-btn' + (due || !nq ? '.primary' : '') + (due ? '' : '.disabled'), { href: '#/kartlar/calis' }, h('span', h('b', due ? `Tekrar (${due})` : 'Tekrar yok'), h('br'), h('span.small', due ? `~${cardMin(due)} dk` : 'bugünlük bitti'))),
       h('a.btn.wide.big-btn' + (nq && !due ? '.primary' : '') + (nq ? '' : '.disabled'), { href: '#/kartlar/yeni' }, h('span', h('b', nq ? `Yeni (${nq})` : 'Yeni yok'), h('br'), h('span.small.muted', nq ? `~${cardMin(nq * NEW_VIEWS)} dk` : 'bugünkü sayı doldu')))),
+    freeBtn(!due && !nq),
+    (() => { const ad = adaptNew(store.all('cards'), dayKey()); return ad.rate != null ? h('p.small.center.muted.recall-rate', `Son 7 günün yenilerinden ertesi gün hatırlanan: %${Math.round(ad.rate * 100)} → günde ${ad.limit} yeni`) : null; })(),
     (() => { const n = store.all('cards').filter(c => needWrite(c)).length; return n ? h('p.small.center.write-count', `✍ ${n} kelime yazarak çalışılıyor (birkaç gündür hatırlamadıkların)`) : null; })(),
     h('p.small.muted.center.cstats', `Yeni ${st.new} · Öğreniliyor ${st.learning} · Oturmuş ${st.mature} · Öğrenildi ${st.grad} · Biliyorum ${st.known}`),
     h('div.row2',
@@ -122,6 +128,7 @@ async function session(root, kind = 'tekrar', ids = []) {
       root.append(h('div.card.center.endcard', h('div.big', seenIds.size), h('p', kind === 'yeni' ? 'yeni kelime çalışıldı' : kind === 'sec' ? 'seçili kelime çalışıldı' : 'kart tekrar edildi'),
         done > seenIds.size ? h('p.small.muted', `${done - seenIds.size} tekrar gösterim`) : null,
         again.length ? h('p.small.muted', `Zorlandıkların: ${[...new Set(again)].slice(0, 8).join(', ')}`) : null));
+      { const fb = freeBtn(); if (fb) root.append(fb); }
       const slot = h('div.endnext'); root.append(slot);
       nextTaskBtn(kind === 'yeni' ? 'yeni' : 'kart').then(b => slot.append(b));
       return;
@@ -136,23 +143,26 @@ async function session(root, kind = 'tekrar', ids = []) {
     setCtx({ type: 'kart', key: 'kart:' + card.id, label: 'Kart · ' + card.word });
     const wmode = !practice && needWrite(card);
     const rev = !wmode && reverseOn && card.state === 'review' && (card.reps || 0) % 2 === 1;
+    // Her tekrarda başka örnek cümle (cümle değil kelime ezberlensin); aralık ≥ 7 gün → cümlesiz, sınavdaki gibi hızlı tanıma
+    const sents = [card.ctx, ...(en?.ex || []).map(e => e?.en)].filter((x, i, a) => x && blank(x, card.word) && a.indexOf(x) === i);
+    const fs = (card.interval || 0) >= 7 && !rev ? '' : sents.length ? sents[(card.reps || 0) % sents.length] : '';
     const front = wmode ? writeFront(card, en, () => doReveal()) : h('div.flash',
       h('div.small.muted', `${queue.length + 1} kaldı · ${stateTr(card)}`),
       rev ? h('div.fword', card.tr || '?') : h('div.fword', { lang: 'en' }, card.word,
         canSpeak() ? h('button.icon-btn.say', { type: 'button', 'aria-label': 'dinle', onclick: e => { e.stopPropagation(); speak(card.word); } }, SPK()) : null),
       starRow(card.word),
-      (card.ctx || en?.ex?.[0]?.en) ? h('div.ctx', { lang: 'en', html: rev ? esc(card.ctx || en.ex[0].en).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(card.ctx || en.ex[0].en, card.word) }) : null
+      fs ? h('div.ctx', { lang: 'en', html: rev ? esc(fs).replace(new RegExp(esc(card.word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\w*', 'ig'), '____') : hl(fs, card.word) }) : null
     );
     const back = h('div.back.hidden',
       h('div.ftr', { lang: wmode || rev ? 'en' : null }, wmode || rev ? card.word : card.tr || '—'),
       card.pos || card.tags?.length ? h('div.chips.centerx', card.pos ? h('span.small.muted', card.pos + ' ') : null, (card.tags || []).filter(t => t !== 'fen').map(t => h('span.chip.small', t))) : null,
       card.syn?.length ? h('div', h('b', 'Eş: '), card.syn.join(', ')) : null,
       card.coll ? h('div', h('b', 'Kalıp: '), card.coll) : null,
-      extra(card, en),
+      (() => { const x = extra(card, en); return x ? h('details.back-more', h('summary.small', 'Diğer halleri ve örnekler ▸'), x) : null; })(),
       noteParts(card.note).own ? h('div.small', noteParts(card.note).own) : null,
       noteParts(card.note).auto ? h('div.small.muted.auto-note', 'ⓘ ' + noteParts(card.note).auto) : null,
       h('div.small.muted', [srcName(card.source), card.page ? 's. ' + card.page : ''].filter(Boolean).join(' · ')),
-      wmode ? h('div.notebook', '📓 Defterine: ', h('b', { lang: 'en' }, card.word), ' ile kendi cümleni yaz (işinden ya da tezinden bir örnek).') : null
+      wmode || nbDay(card) ? h('div.notebook', '📓 Defterine: ', h('b', { lang: 'en' }, card.word), ' ile kendi cümleni yaz (işinden ya da tezinden bir örnek).') : null
     );
     let graded = false;
     const grade = g => {
@@ -171,8 +181,11 @@ async function session(root, kind = 'tekrar', ids = []) {
       else if (g === 'hard' && wasLearning) queue.splice(Math.min(3, queue.length), 0, { card: next, practice: true });
       show();
     };
-    const grades = h('div.grades.hidden', (practice ? ['again', 'good'] : GRADES).map(g => h('button.g-' + g, { onclick: () => grade(g) },
-      h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'sıra değişmez' : 'yarın') : previewLabel(card, g)))));
+    // Öğreniliyor/merdivendeki kartta Zor/İyi/Kolay aynı sonucu veriyor → yalnız Bilemedim / Bildim
+    const two = !practice && (inLadder(card) || ['new', 'learning'].includes(card.state || 'new'));
+    const TWO_TR = { again: 'Bilemedim', good: 'Bildim' };
+    const grades = h('div.grades.hidden' + (two ? '.two' : ''), (practice || two ? ['again', 'good'] : GRADES).map(g => h('button.g-' + g, { onclick: () => grade(g) },
+      h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : two ? TWO_TR[g] : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'sıra değişmez' : 'yarın') : previewLabel(card, g)))));
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
     const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
@@ -194,6 +207,27 @@ async function session(root, kind = 'tekrar', ids = []) {
   return () => { removeEventListener('keydown', onKey); unsw?.(); };
 }
 
+// Defter cümlesi: tanıştıktan 2–4 gün sonraki tekrarda (ilk gün değil), günde en fazla 3 kelime
+export const NB_MAX = 3;
+function nbDay(card) {
+  if (!card.intro || card.nb) return false;
+  const d = (Date.parse(dayKey()) - Date.parse(card.intro)) / 864e5;
+  if (d < 2 || d > 4) return false;
+  const today = dayKey();
+  if (store.all('cards').filter(c => c.nb === today).length >= NB_MAX) return false;
+  store.put('cards', { ...card, nb: today }); card.nb = today;
+  return true;
+}
+
+// Çağrışım (isteğe bağlı): zorlanılan kelimeye kendi bağın (ör. deplete → "depo boşaldı")
+function mnemBox(card) {
+  const cur = store.get('cards', card.id) || card;
+  const inp = h('input.mnem-in', { type: 'text', placeholder: 'Çağrışım yaz (isteğe bağlı): deplete → depo boşaldı', value: cur.mnem || '', 'aria-label': 'Çağrışım' });
+  inp.onchange = () => { const c = store.get('cards', card.id) || card; store.put('cards', { ...c, mnem: inp.value.trim() }); card.mnem = inp.value.trim(); };
+  inp.onkeydown = e => e.stopPropagation();
+  return h('div.mnem-row', inp);
+}
+
 // Yazma yüzü: anlam + boşluklu cümle → kelimeyi yaz. Yanlışsa doğrusunu bir kez yazdırır, sonra kartı açar.
 function writeFront(card, en, done) {
   const sent = [card.ctx, card.ex, en?.core?.ex, ...(en?.ex || []).map(e => e.en)].map(x => blank(x, card.word)).find(Boolean);
@@ -207,7 +241,7 @@ function writeFront(card, en, done) {
     if (phase === 'ask') {
       if (!giveUp && typoOk(v, w)) { save(true); msg.className = 'write-msg ok'; msg.textContent = v.trim().toLowerCase() === w.toLowerCase() ? 'Doğru ✓' : `Doğru ✓ (yazımı: ${w})`; inp.disabled = true; btns.remove(); done(); return; }
       save(false); phase = 'copy';
-      msg.className = 'write-msg bad'; msg.innerHTML = ''; msg.append('Doğrusu: ', h('b', { lang: 'en' }, w), h('div.small', 'Akılda kalsın diye bir kez yaz.'));
+      msg.className = 'write-msg bad'; msg.innerHTML = ''; msg.append('Doğrusu: ', h('b', { lang: 'en' }, w), h('div.small', 'Akılda kalsın diye bir kez yaz.'), mnemBox(card));
       inp.value = ''; inp.focus(); giveBtn.remove();
     } else if (typoOk(v, w)) { inp.disabled = true; btns.remove(); msg.append(h('div.small.good-t', 'Tamam. Bu kelime birkaç gün daha yazılı gelecek.')); done(); }
     else { msg.querySelector('.small').textContent = 'Tam olarak yaz: ' + w; }
@@ -221,6 +255,7 @@ function writeFront(card, en, done) {
     h('span.chip.small.warn', 'Yazma · birkaç gündür hatırlamadın'),
     h('div.fword.tr', card.tr || '?'),
     sent ? h('div.ctx', { lang: 'en' }, sent) : null,
+    card.mnem ? h('div.small.mnem', '💡 Çağrışımın: ' + card.mnem) : null,
     h('div.small.muted', `İpucu: ${w[0]}${'_'.repeat(Math.max(0, w.length - 1)).split('').join(' ')} (${w.length} harf)`),
     inp, btns, msg);
 }

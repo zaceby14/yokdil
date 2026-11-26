@@ -9,7 +9,8 @@ import { dayKey, parseDay, addDays } from './util.js';
 import { nextReading } from './readpick.js';
 
 export const SEC_PER_CARD = 8;           // tekrar kartı ≈ 8 sn
-export const NEW_VIEWS = 2;              // yeni kart ≈ 2 gösterim
+export const NEW_VIEWS = 3;              // yeni kart: tanış + hatırla + pekiştir
+export const NEW_SEC = 40;               // yeni kelime akışında kelime başına ~40 sn
 export const cardMin = n => n ? Math.max(1, Math.ceil(n * SEC_PER_CARD / 60)) : 0;
 
 const LABEL = { kart: 'Kart tekrarı', yeni: 'Yeni kelime', gramer: 'Gramer', hata: 'Hata tekrarı', okuma: 'Okuma', deneme: 'Deneme', kisa: 'Kısa deneme' };
@@ -43,7 +44,7 @@ export async function todayTasks() {
   const rd = busy ? null : await nextReading().catch(() => null);
   const T = {
     kart: { sub: due ? `${due} tekrar` + (di.overflow ? ` · ${di.overflow} tanesi sonraki günlere yayıldı` : '') : 'Bekleyen yok', go: '#/kartlar/calis', min: cardMin(due) },
-    yeni: { sub: nq ? `${nq} yeni kart` : `bugünlük bitti (${rr.newDone || 0}/${nl})`, go: '#/kartlar/yeni', min: cardMin(nq * NEW_VIEWS) },
+    yeni: { sub: nq ? `${nq} yeni kart` : `bugünlük bitti (${rr.newDone || 0}/${nl})`, go: '#/kartlar/yeni', min: Math.ceil(nq * NEW_SEC / 60) },
     gramer: { sub: `${gN} soru`, go: '#/gramer/gunluk', min: gN },
     hata: { label: `Hata tekrarı (${hs.done}/${hs.total})`, sub: 'eski yanlışlar · tüm bölümler', go: '#/gramer/hata', min: Math.max(1, Math.ceil(hs.total * 0.75)) },
     okuma: rr.tasks?.okuma && rr.readTitle ? { sub: rr.readTitle + ' · okundu', go: '#/okuma', min: rd?.min || min.okuma || 20 }

@@ -771,3 +771,44 @@ body.qmode .explain:not(.hidden) { padding-bottom: 5.5em; }
 .wc-rule { margin-top: 6px; }
 .minirule .wc-list { font-size: .88rem; }
 .warm .actbar { position: sticky; bottom: calc(var(--tabh, 60px) + 6px); z-index: 5; }
+/* Yeni kelime akışı + serbest pratik */
+.nf-head { margin: 8px 0 10px; font-size: 1.05rem; }
+.nf-card { text-align: center; display: grid; gap: 8px; padding: 16px; }
+.nf-word { font-size: 1.8rem; font-weight: 700; }
+.nf-say { margin-left: 6px; vertical-align: middle; }
+.nf-tr { font-size: 1.3rem; font-weight: 600; color: var(--accent); }
+.nf-sent { font-size: 1.05rem; line-height: 1.5; }
+.nf-sent mark { background: color-mix(in srgb, #f59e0b 35%, transparent); padding: 0 2px; border-radius: 3px; }
+.nf-more { text-align: left; }
+.nf-grades { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+.nf-grades .btn { min-height: 52px; font-size: 1.05rem; }
+.nf-know { display: block; margin: 8px auto; }
+.nf-dunno { margin-top: 6px; }
+.nf-back.hidden, .nf-grades.hidden { display: none; }
+.free-btn { margin-top: 8px; }
+.recall-rate { margin-top: 4px; }
+.mnem-row { margin-top: 8px; }
+.mnem-in { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--line, #ccc); box-sizing: border-box; }
+.mnem { color: var(--accent); }
+/* v27: eleme, fark, hız, sade geri bildirim, Bugün başla */
+.opt.struck { opacity: .45; }
+.opt.struck .otext, .opt.struck > span:not(.ol) { text-decoration: line-through; }
+.elim-tip { margin: 2px 0 6px; }
+.elim-note { margin: 4px 0; font-weight: 600; }
+b.diffw { background: color-mix(in srgb, #f59e0b 30%, transparent); border-radius: 3px; padding: 0 1px; }
+.speedbar { height: 4px; background: var(--line, #e5e7eb); border-radius: 2px; overflow: hidden; margin: 2px 0 6px; }
+.speedbar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .5s linear; }
+.speedbar.over i { background: #f59e0b; }
+.speed-sum { margin-top: 6px; }
+.ex-more { margin-top: 8px; }
+.ex-more > summary { cursor: pointer; }
+.start-btn { margin: 6px 0 10px; }
+.today-more { margin: 10px 0; }
+.today-more > summary { padding: 10px 4px; cursor: pointer; }
+.today-more > .card, .today-more > ul { margin-top: 8px; }
+.done-day { border-left: 4px solid var(--good, #16a34a); }
+.free-wait { margin: 6px 0; }
+.evid { background: color-mix(in srgb, #f59e0b 22%, transparent); border-radius: 6px; transition: background .3s; }
+.evid-q { margin-top: 6px; padding: 6px 8px; border-left: 3px solid #f59e0b; }
+.grades.two { grid-template-columns: 1fr 1fr !important; }
+.back-more { margin-top: 6px; text-align: left; }

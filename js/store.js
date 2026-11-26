@@ -6,7 +6,7 @@ let state = {};
 const subs = new Set();
 let saveT = null;
 
-export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8, autoAdd: true, readHl: true, vocabGoal: null, targetScore: null, secClock: true, finalMode: true, readGoal: 120, starFirst: false, warmup: true };
+export const DEFAULT_SETTINGS = { theme: 'system', reverse: false, newLimit: null, grammarCount: 8, autoAdd: true, readHl: true, vocabGoal: null, targetScore: null, secClock: true, finalMode: true, readGoal: 120, starFirst: true, warmup: true, newFlow: true };
 
 export function load() {
   try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { state = {}; }

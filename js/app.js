@@ -120,7 +120,7 @@ async function main() {
   initStopwatch();
   keyboardWatch();
   route();
-  eveTip();
+  setTimeout(() => eveTip(), 25 * 60000); // uyku uyarısı açılışta değil, 25 dk çalışınca
   // Gizli soru paketi: günde en fazla bir kez (token varsa)
   dailyFetch().then(r => { if (r?.changed && current === 'cikmis') route(); }).catch(() => {});
   registerSW();

@@ -320,7 +320,7 @@ t('Göç: Hata kaynaklı, tekrar edilmemiş anlamsız/işlev/çekimli kartlar si
   // store.migrate: bir kez çalışır
   ST.load(); ST.resetAll();
   for (const c of cards) ST.put('cards', c);
-  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), ['v6-taktik-read', 'v6-autocards', 'v18-vocabgoal']);
+  assert.deepEqual(ST.migrate(MG.MIGRATIONS, { idx }), ['v6-taktik-read', 'v6-autocards', 'v18-vocabgoal', 'v26-starfirst']);
   assert.deepEqual(ST.all('cards').map(c => c.id).sort(), ['c', 'd', 'e', 'f']);
   assert.ok(ST.raw('cards', 'a').deleted);
   ST.put('cards', { id: 'h', word: 'because', tr: 'x', source: 'Hata', state: 'new' });
@@ -504,9 +504,9 @@ t('Son 14 gün: yeni kelime 0–5, sınav günü grubu, başvuru bandı', () => 
   assert.deepEqual(SG.applyState(ap, '2027-01-28', '2027-01-21'), { kind: 'late', days: 7 });
   assert.equal(SG.applyState(ap, '2027-01-28', '2027-01-29'), null); assert.equal(SG.applyState(ap, null, '2027-01-21'), null); assert.equal(SG.applyState([], null, '2027-01-13'), null);
   // görev listesi: son 14 günde okuma yok, deneme var
-  assert.deepEqual(PL.taskList(false, true), ['kart', 'hata', 'deneme', 'gramer', 'yeni']);
-  assert.deepEqual(PL.taskList(false), ['kart', 'yeni', 'gramer', 'hata', 'okuma']);
-  assert.deepEqual(PL.taskList(true, true), ['kart', 'gramer']);
+  assert.deepEqual(PL.taskList(false, true), ['gramer', 'kart', 'hata', 'deneme', 'yeni']);
+  assert.deepEqual(PL.taskList(false), ['gramer', 'kart', 'yeni', 'okuma', 'hata']);
+  assert.deepEqual(PL.taskList(true, true), ['gramer', 'kart']);
   assert.equal(PL.dayDone({ final: true, tasks: { kart: true, gramer: true }, mock: true }), true);
   assert.equal(PL.dayDone({ final: true, tasks: { kart: true, gramer: true } }), false);
 });
@@ -934,4 +934,15 @@ console.log(`\n${n} test geçti`);
   const ids2 = GP.pickDaily(qs, { cur: new Set(['baglac-zitlik']), n: 8, rnd: () => 0.5, lastDay, today: '2026-11-26' });
   if (ids2.filter(x => x[0] === 'z' && x !== 'z9').length > 0 && !ids2.includes('z9')) throw new Error('yakında çözülen tekrar ' + ids2);
   console.log('ok günlük sette konu sınırı + yakında çözülen gelmez');
+}
+
+{
+  const PL3 = await import('../js/plan.js');
+  const T = '2026-11-26';
+  const mk = (n, ok) => Array.from({ length: n }, (_, i) => ({ id: 'a' + i + ok, intro: '2026-11-24', firstRec: ok }));
+  if (PL3.adaptNew([], T).limit !== 12) throw new Error('başlangıç 12');
+  if (PL3.adaptNew([...mk(4, true), ...mk(6, false)], T).limit !== 9) throw new Error('düşük hatırlama → 9');
+  if (PL3.adaptNew(mk(10, true), T).limit !== 15) throw new Error('yüksek → 15');
+  const NF = await import('../js/views/newflow.js').catch(() => null);
+  console.log('ok uyarlamalı yeni kelime sayısı');
 }

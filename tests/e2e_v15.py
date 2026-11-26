@@ -30,6 +30,7 @@ with sync_playwright() as p:
         pg.on('pageerror', lambda e: errors.append(f'[{tag}] {e}'))
         pg.on('dialog', lambda d: d.accept())
         pg.goto(BASE + '#/bugun'); pg.wait_for_selector('.hero', timeout=15000); pg.wait_for_timeout(500)
+        pg.evaluate("import('./js/store.js').then(m => m.setSetting('newFlow', false))")
         return c, pg
 
     ctx, page = newpage('v15')
@@ -50,7 +51,7 @@ with sync_playwright() as p:
     go('bugun', 500)
     check(ev("getComputedStyle(document.querySelector('.brand b')).display") == 'none' and page.locator('.brand').inner_text().strip() == 'YÖKDİL', 'dar ekranda logo "YÖKDİL"')
     check(page.locator('#syncDot.hidden').count() == 1, 'anahtar yokken senkron göstergesi yok')
-    page.click('button.focus-start'); page.wait_for_timeout(400)
+    page.evaluate("document.querySelector('details.today-more')?.setAttribute('open', '')"); page.click('button.focus-start'); page.wait_for_timeout(400)
     hh = ev("document.querySelector('header.top').getBoundingClientRect().height")
     check(page.locator('#focusPill:not(.hidden)').count() == 1 and ev("getComputedStyle(document.querySelector('#focusPill .fp-l')).display") == 'none', 'odak sayacı küçük (yalnız süre)')
     check(hh <= 60 and ev("document.querySelector('header.top').scrollWidth <= 391"), f'başlık tek satır, taşmıyor ({hh}px)')
@@ -66,20 +67,12 @@ with sync_playwright() as p:
     check('Tekrar deneniyor' in page.locator('#toast').inner_text(), 'çipe dokun → yeniden dene')
     ev("localStorage.removeItem('yokdil.token')"); page.reload(); page.wait_for_timeout(600)
 
-    # 2) Yeni kartta Zor ≠ İyi
-    go('kartlar/yeni', 800)
+    # 2) Yeni/öğreniliyor kartında 2 düğme (Zor/İyi/Kolay aynı sonucu veriyordu)
+    go('kartlar/eski-yeni', 800)
     page.click('button:has-text("Göster")'); page.wait_for_timeout(200)
-    zh, iy = page.locator('.g-hard span').inner_text(), page.locator('.g-good span').inner_text()
-    check(zh == 'birazdan + 1 g' and iy == '1 g', f'yeni kartta Zor "{zh}" ≠ İyi "{iy}"')
-    shot('kart-zor-iyi')
-    w0 = page.locator('.fword').inner_text()
-    page.click('.g-hard'); page.wait_for_timeout(200)
-    again = False
-    for _ in range(5):
-        if page.locator('.flashcard .chip:has-text("bir kez daha")').count() and page.locator('.fword').inner_text() == w0: again = True; break
-        if page.locator('button:has-text("Göster")').count() == 0: break
-        page.click('button:has-text("Göster")'); page.wait_for_timeout(100); page.click('.g-good'); page.wait_for_timeout(150)
-    check(again, f'Zor → aynı oturumda bir kez daha ({w0})')
+    gb = [x.inner_text().split('\n')[0] for x in page.locator('.grades button').all()]
+    check(gb == ['Bilemedim', 'Bildim'], f'yeni kartta 2 düğme ({gb})')
+    shot('kart-iki-dugme')
 
     # 3) Ayarlar: Temel / Gelişmiş ▸
     go('ayarlar', 500)
@@ -230,7 +223,8 @@ with sync_playwright() as p:
             labs.append(page.locator('.qlabel').inner_text() if page.locator('.qlabel').count() else '')
             page.locator('.opt').nth(0).click(); page.wait_for_timeout(150)
             page.click('.actbar .btn.primary'); page.wait_for_timeout(200)
-        check(sum(1 for l in labs if l.startswith('Çıkmış')) == len(xk), f'çıkmış sorular etiketli ({[l for l in labs if l.startswith("Çıkmış")]})')
+        nos = sum(1 for k in xk if k.startswith(('yokdil', 'yds')))
+        check(sum(1 for l in labs if l.startswith('Çıkmış')) == nos and sum(1 for l in labs if l.startswith('Kaynağın')) == len(xk) - nos, f'çıkmış (ÖSYM) ve kaynak soruları ayrı etiketli ({[l for l in labs if l.startswith(("Çıkmış", "Kaynağın"))]})')
         tps = ev(f"import('./js/pack.js').then(m => m.getPack()).then(p => {json.dumps(xk)}.map(k => {{ const i = k.lastIndexOf(':'); const e = p.exams.find(x => x.id === k.slice(0, i)); return e.questions.find(q => String(q.n) === k.slice(i + 1)); }}).map(q => [q.topic, q.type]))")
         check(all(t[0] == 'baglac-zitlik' and t[1] != 'diyalog' for t in tps), f'çıkmışlar aynı konudan, diyalog yok ({tps})')
         ev("import('./js/store.js').then(m => m.setSetting('adapt', true))")

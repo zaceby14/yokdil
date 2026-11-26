@@ -146,7 +146,7 @@ export async function newQueue() {
 
 // Ayar açıksa (varsayılan kapalı) ve yıldız verisi varsa: çok çıkanlar önce
 export async function starFirst() {
-  if (!store.settings().starFirst) return null;
+  if (store.settings().starFirst === false) return null; // varsayılan açık: sınavda çok çıkanlar önce
   const m = await loadStars();
   return m.size ? m : null;
 }
@@ -182,12 +182,32 @@ export function writeResult(card, ok, today = dayKey()) {
   return { wr: wr.day === today && wr.ok > 0 ? wr : { ok: (wr.ok || 0) + 1, day: today } };
 }
 
+// Yeni kelime akışı (Tanış → Hatırla → Pekiştir) sonucu: hepsi doğru → yarın; yanlış var → 10 dk + merdiven.
+// "Tekrar" günü sayılmaz (yazma moduna düşmez).
+export function introduce(card, ok) {
+  const wasNew = (card.state || 'new') === 'new';
+  const next = { ...card, ...schedule({ ...card, state: 'new', ladder: null }, ok ? 'good' : 'again'), intro: card.intro || dayKey() };
+  if (next.ladder == null) delete next.ladder;
+  store.put('cards', next);
+  bumpDay('reviews');
+  if (wasNew) { const r = bumpDay('newDone'); newLimit().then(l => { if ((r.newDone || 0) >= l) tick('yeni'); }); }
+  return next;
+}
+// Pekiştir'de bilinemeyen: bugün 10 dk sonra tekrar, merdiven başı (Tekrar günü sayılmaz)
+export function softRelearn(card) {
+  const next = { ...card, state: 'learning', ladder: 0, interval: 0, due: Date.now() + 10 * MIN };
+  store.put('cards', next);
+  return next;
+}
+
 export function review(card, grade) {
   const wasNew = (card.state || 'new') === 'new';
   if (grade === 'again') card = { ...card, ...addAgainDay(card) };
   const sod0 = new Date(); sod0.setHours(0, 0, 0, 0);
   if (!wasNew && (card.lastReview || 0) < sod0.getTime()) bumpDay('dueDone'); // tavana sayılan ilk tekrar
   const next = { ...card, ...schedule(card, grade) };
+  // Tanışmadan sonraki ilk gerçek tekrar: hatırlandı mı? (uyarlamalı yeni kelime sayısı için)
+  if (next.intro && next.firstRec == null && dayKey() > next.intro) next.firstRec = grade !== 'again';
   delete next.pulled; delete next.check;
   if (next.ladder == null) delete next.ladder;
   store.put('cards', next);

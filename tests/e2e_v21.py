@@ -50,7 +50,7 @@ with sync_playwright() as p:
     pg.locator('.opt').nth((a + 1) % 5).click(); pg.wait_for_timeout(300)
     n0 = ev("import('./js/store.js').then(m => m.all('notes').length)")
     check(pg.locator('.nb-add').count() == 1, 'yanlışta "Kural notlarıma ekle" düğmesi')
-    pg.click('.nb-add'); pg.wait_for_timeout(300)
+    pg.evaluate("document.querySelector('details.ex-more')?.setAttribute('open', '')"); pg.click('.nb-add'); pg.wait_for_timeout(300)
     check(ev("import('./js/store.js').then(m => m.all('notes').length)") == n0 + 1 and 'Eklendi' in pg.inner_text('.explain'), 'not eklendi')
     pg.screenshot(path=f'{SH}/kural-notu.png', full_page=True)
     b.close()

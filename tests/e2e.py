@@ -41,6 +41,7 @@ with sync_playwright() as p:
     ctx.route(lambda u: not u.startswith(BASE), lambda r: r.abort())
     page = ctx.new_page(); attach(page, 'akis')
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(500)
+    page.evaluate("import('./js/store.js').then(m => m.setSetting('newFlow', false))")  # eski kart akışı testleri; yeni akış e2e_v27'de
     page.on('dialog', lambda d: d.accept())
     def st():
         page.wait_for_timeout(300)
@@ -65,7 +66,7 @@ with sync_playwright() as p:
     check(card is not None and card.get('source') == 'Ikigai' and card.get('page') == '42', 'manuel kart eklendi (kaynak+sayfa)')
 
     # Tekrar oturumu: tüm kartları "İyi" ile geç (ilk kart "Tekrar")
-    page.goto(BASE + '#/kartlar/yeni'); page.wait_for_timeout(400)
+    page.goto(BASE + '#/kartlar/eski-yeni'); page.wait_for_timeout(400)
     page.screenshot(path=f'{SHOTS}/akis-kart-on.png')
     first = True
     for i in range(60):
@@ -301,7 +302,7 @@ with sync_playwright() as p:
     page.screenshot(path=f'{SHOTS}/v3-bugun.png', full_page=True)
 
     # 1) "Biliyorum, gösterme"
-    page.goto(BASE + '#/kartlar/yeni'); page.wait_for_timeout(600)
+    page.goto(BASE + '#/kartlar/eski-yeni'); page.wait_for_timeout(600)
     left0 = page.locator('.flash .small.muted').first.inner_text().split(' ')[0]
     w0 = page.locator('.fword').inner_text()
     check(page.locator('button:has-text("Biliyorum, gösterme")').count() == 1, 'yeni kartta "Biliyorum, gösterme"')
@@ -389,7 +390,9 @@ with sync_playwright() as p:
     item = None
     for i in range(8):
         if page.locator('.opt').count() == 0: break
-        page.locator('.opt').nth(4 if i % 2 else 3).click(); page.wait_for_timeout(150)
+        kk = page.evaluate("import('./js/store.js').then(m => m.get('sessions', 'konu:kelime'))")
+        ans = page.evaluate(f"import('./js/qbank.js').then(q => q.resolve('{kk['keys'][kk['i']]}')).then(it => it.answer)") if kk else 0
+        page.locator('.opt').nth((ans + 1) % 5).click(); page.wait_for_timeout(150)
         if page.locator('.opt.wrong').count():
             item = True; break
         page.click('button:has-text("Sonraki"), button:has-text("Bitir")'); page.wait_for_timeout(100)
@@ -511,7 +514,8 @@ with sync_playwright() as p:
         page.goto(BASE + '#/kartlar/calis'); page.wait_for_timeout(700)
         check(page.locator('.fword').inner_text() == fw, f'forms kartı ilk sırada ({fw})')
         page.click('button:has-text("Göster")'); page.wait_for_timeout(300)
-        check(page.locator('.back .extra .exrow').count() >= 1 and 'örnek cümleler' in page.inner_text('.back').lower(), 'kart arkası: örnek cümleler (forms.json)')
+        page.evaluate("document.querySelector('.back details.back-more')?.setAttribute('open', '')")
+        check(page.locator('.back .extra .exrow').count() >= 1 and 'örnek cümleler' in page.inner_text('.back').lower(), 'kart arkası: örnek cümleler (forms.json, "Diğer halleri" altında)')
         check(page.locator('.back .extra .famrow').count() >= 1, 'kart arkası: diğer halleri')
         page.screenshot(path=f'{SHOTS}/kart-arka-ornek.png', full_page=True)
         page.goto(BASE + '#/okuma'); page.wait_for_timeout(300)
@@ -738,7 +742,8 @@ with sync_playwright() as p:
     txt = page.inner_text('main')
     check(page.locator('.opt').count() >= 3 or 'aile' in txt.lower(), 'kelime ailesi: soru ya da boş durum mesajı')
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(500)
-    check('Hafıza turu' in page.inner_text('main'), 'Bugün: Hafıza turu görevi')
+    page.evaluate("document.querySelector('details.today-more')?.setAttribute('open', '')"); page.wait_for_timeout(100)
+    check('Hafıza turu' in page.inner_text('main'), 'Bugün: Hafıza turu görevi (Daha fazla altında)')
     page.click('a[href="#/kartlar/hafiza"]'); page.wait_for_timeout(700)
     check(page.locator('.typein, .opt').count() >= 1, 'hafıza turu açıldı')
     page.screenshot(path=f'{SHOTS}/m-hafiza-turu.png')
@@ -758,7 +763,7 @@ with sync_playwright() as p:
 
     # 7) Odak oturumu → mola ekranı, dakikalar gün kaydına
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(400)
-    page.click('button.focus-start'); page.wait_for_timeout(400)
+    page.evaluate("document.querySelector('details.today-more')?.setAttribute('open', '')"); page.click('button.focus-start'); page.wait_for_timeout(400)
     check(page.locator('#focusPill:not(.hidden)').count() == 1 and 'Odak' in page.locator('#focusPill').text_content(), 'odak sayacı başladı')
     ev("(() => { const s = JSON.parse(localStorage.getItem('yokdil.focus')); s.startedAt -= 26 * 60000; s.endsAt -= 26 * 60000; localStorage.setItem('yokdil.focus', JSON.stringify(s)); })()")
     page.reload(); page.wait_for_timeout(1500)
@@ -797,7 +802,9 @@ with sync_playwright() as p:
     # Akşam ipucu (17:00 sonrası, günde bir) + masaüstü yan panel ve menü
     ctx, page = v4ctx({'width': 1280, 'height': 860}, False, 'v4-masaustu', hour=19)
     page.goto(BASE + '#/bugun'); page.wait_for_timeout(800)
-    check(page.locator('.evetip').count() == 1 and 'Uykun mu geldi' in page.inner_text('.evetip'), 'akşam ipucu gösterildi')
+    check(page.locator('.evetip').count() == 0, 'akşam ipucu açılışta çıkmıyor (görevleri kapatmasın; 25 dk sonra)')
+    page.evaluate("import('./js/focus.js').then(m => m.eveTip(true))"); page.wait_for_timeout(200)
+    check(page.locator('.evetip').count() == 1 and 'Uykun mu geldi' in page.inner_text('.evetip'), 'akşam ipucu (25 dk / mola) gösterildi')
     page.screenshot(path=f'{SHOTS}/d-bugun-aksam.png')
     page.reload(); page.wait_for_timeout(700)
     check(page.locator('.evetip').count() == 0, 'akşam ipucu günde bir kez')
@@ -1407,7 +1414,7 @@ with sync_playwright() as p:
     set_date('2027-02-20'); go('bugun', 600)
     keys = [page.locator('ul.tasks:not(.extra) li').nth(i).get_attribute('data-task') for i in range(page.locator('ul.tasks:not(.extra) li').count())]
     check(page.locator('.banner.final').count() == 1 and 'Son 8 gün' in page.inner_text('.banner.final') and 'en fazla 5' in page.inner_text('.banner.final'), f'Son 14 gün bandı ({page.inner_text(".banner.final") if page.locator(".banner.final").count() else None})')
-    check('deneme' in keys and 'okuma' not in keys and keys[0] == 'kart', f'Son 14 gün: görevler tekrar + hata + deneme ağırlıklı {keys}')
+    check('deneme' in keys and 'okuma' not in keys and keys[:2] == ['gramer', 'kart'], f'Son 14 gün: görevler gramer + tekrar + hata + deneme ağırlıklı {keys}')
     nq = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.length)")
     check(nq <= 5, f'Son 14 gün: yeni kelime 15 → en fazla 5 ({nq})')
     ed0 = [g for g in aids_m['examDay'] if g.get('items')]
@@ -1480,15 +1487,15 @@ with sync_playwright() as p:
     def go(r, t=500): page.goto(BASE + '#/' + r); page.wait_for_timeout(t)
     go('bugun', 800)
     # Seed kartlarını ele (yeni kuyrukta çekirdek liste görünsün), eski biçimli ayar kaydı (starFirst yok)
-    ev("""import('./js/store.js').then(m => { for (const c of m.all('cards')) m.put('cards', { ...c, state: 'known', knownAt: 1 }); m.put('settings', { id: 'main', theme: 'system', grammarCount: 8, newLimit: 30 }); })""")
+    ev("""import('./js/store.js').then(m => { for (const c of m.all('cards')) m.put('cards', { ...c, state: 'known', knownAt: 1 }); m.put('settings', { id: 'main', theme: 'system', grammarCount: 8, newLimit: 30, starFirst: false }); })""")
     page.wait_for_timeout(300)
     star = lambda w: STARS.get(w.lower())
     have = set(ev("import('./js/store.js').then(m => m.all('cards').map(c => (c.word || '').toLowerCase()))"))
     base = [w['word'] for _, w in sorted(enumerate(WORDS), key=lambda x: (-(x[1].get('freq') or 0), x[0])) if w['word'].lower() not in have]
     q_off = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.word ? x.word.word : '#' + x.card.word))")
-    check(q_off == base[:30], f'ayar kapalı (varsayılan): yeni kelime sırası değişmedi ({q_off[:4]})')
+    check(q_off == base[:30], f'ayar kapalı: yeni kelime sırası değişmedi ({q_off[:4]})')
     # Yeni oturum: ön yüzde yıldız, dokununca açıklama, kart açılmaz
-    go('kartlar/yeni', 600)
+    go('kartlar/eski-yeni', 600)
     w0 = page.locator('.flash .fword').inner_text().strip()
     st0 = page.locator('.flash .starrow .stars')
     check(st0.count() == 1 and int(st0.get_attribute('data-n')) == star(w0) and st0.locator('i.on').count() == star(w0), f'yeni kelime ön yüzünde yıldız: {w0} → {star(w0)}★')
@@ -1513,7 +1520,7 @@ with sync_playwright() as p:
     ev("import('./js/store.js').then(m => m.put('cards', { id: 'mine1', word: 'zzmyword', tr: 'benim', state: 'new', createdAt: Date.now(), mine: Date.now(), source: 'Okuma' }))"); page.wait_for_timeout(200)
     q2 = ev("import('./js/srs.js').then(m => m.newQueue()).then(q => q.map(x => x.word ? x.word.word : '#' + x.card.word))")
     check(q2[0] == '#zzmyword' and q2[1:] == on[:29], 'ayar açıkken de kendi eklediğin kelime en önde')
-    go('kartlar/yeni', 600)
+    go('kartlar/eski-yeni', 600)
     check(page.locator('.flash .fword').inner_text().strip() == 'zzmyword' and page.locator('.flash .stars').count() == 0, 'yıldızı olmayan (kendi) kelimede yıldız gösterilmiyor')
     page.click('button:has-text("Göster")'); page.click('.g-good'); page.wait_for_timeout(300)
     w1 = page.locator('.flash .fword').inner_text().strip()
@@ -1578,7 +1585,7 @@ with sync_playwright() as p:
     for r in ['kartlar/yeni', 'kartlar/liste', 'kartlar/tara', 'eksikler', 'ayarlar']:
         go(r, 600); n_st += page.locator('.stars, .starbar, .star5, .star45').count()
     check(n_st == 0 and page.locator('label.switch:has-text("çok çıkanları")').count() == 0, f'stars.json yok: yıldız / filtre / ayar görünmüyor ({n_st})')
-    go('kartlar/yeni', 600)
+    go('kartlar/eski-yeni', 600)
     check(page.locator('button:text-is("Göster")').count() == 1 and page.locator('.flash .fword').count() == 1, 'stars.json yok: yeni kelime oturumu yine çalışıyor')
     ctx.close()
 

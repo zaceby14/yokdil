@@ -30,7 +30,18 @@ export async function finalMode(today = dayKey()) {
 export async function baseNewLimit() {
   const s = store.settings();
   if (s.newLimit != null && s.newLimit !== '') return Number(s.newLimit);
-  return (await week()).newWords ?? 15;
+  const prog = (await week()).newWords ?? 15;
+  return Math.min(prog, adaptNew(store.all('cards'), dayKey()).limit);
+}
+// Uyarlamalı yeni kelime sayısı: son 7 günde tanışılan kelimelerin ertesi tekrarda hatırlanma oranına göre.
+// Başlangıç 12; oran < %70 → 9 (en az 8), > %85 → 15. Az veri (< 8) → 12.
+export const NEW_START = 12, NEW_MIN = 8, NEW_MAX = 15;
+export function adaptNew(cards, today) {
+  const from = addDays(today, -7);
+  const xs = (cards || []).filter(c => c.intro && c.intro >= from && c.firstRec != null);
+  if (xs.length < 8) return { limit: NEW_START, n: xs.length, rate: null };
+  const rate = xs.filter(c => c.firstRec).length / xs.length;
+  return { limit: rate < 0.7 ? Math.max(NEW_MIN, NEW_START - 3) : rate > 0.85 ? NEW_MAX : NEW_START, n: xs.length, rate };
 }
 export async function newLimit() {
   const base = await baseNewLimit();
@@ -59,7 +70,8 @@ export function tick(task, val = true, key = dayKey()) {
 
 // Görev anahtarları (Bugün sırası). 'hata' yalnız bugünkü hata seti doluysa görünür (tasks.js)
 // Son 14 gün: tekrar + hata + deneme ağırlıklı (okuma görevi yok; yeni kelime limit 0 ise gizlenir)
-export const taskList = (busy, final) => busy ? ['kart', 'gramer'] : final ? ['kart', 'hata', 'deneme', 'gramer', 'yeni'] : ['kart', 'yeni', 'gramer', 'hata', 'okuma'];
+// Sıra: aktif iş önce (uyutmaz): gramer → kart tekrarı → yeni kelime → okuma → hata
+export const taskList = (busy, final) => busy ? ['gramer', 'kart'] : final ? ['gramer', 'kart', 'hata', 'deneme', 'yeni'] : ['gramer', 'kart', 'yeni', 'okuma', 'hata'];
 
 export function dayDone(r) {
   if (!r) return false;

@@ -72,17 +72,19 @@ export function runQuiz(root, items, opts = {}) {
   start(items, null);
 
   function start(items, st) {
+    // Devam: pekiştirme / zor işaretleri geri gelsin (sayaç doğru kalsın)
+    if (st?.adapt) items = items.map((x, j) => st.adapt[j] ? { ...x, adapt: st.adapt[j] } : x);
     let i = st?.i || 0, right = st?.right || 0;
     const picks = { ...(st?.picks || {}) };
     const hints = { ...(st?.hints || {}) };
     // Oturum içi kural hatırlatması (opts.coach): aynı konudan 2. yanlış → sonraki sorunun üstünde tek seferlik kart
     const wrongN = {}, coached = new Set();
-    let coachKey = null;
+    const secs = [];
     const persist = () => {
       if (!sid) return;
       store.put('sessions', {
         id: sid, name: opts.name || opts.title || '', route: location.hash, i, right, picks, hints, total: items.length,
-        keys: items.map(x => x.key), inline: opts.inline ? items : null, at: Date.now(), done: false
+        keys: items.map(x => x.key), adapt: Object.fromEntries(items.map((x, j) => [j, x.adapt]).filter(([, a]) => a)), inline: opts.inline ? items : null, at: Date.now(), done: false
       });
     };
     if (!st) persist();
@@ -130,7 +132,9 @@ export function runQuiz(root, items, opts = {}) {
         if (it.anlam) exp.append(h('div.exrow2', h('span.exl', ['paragraf', 'ilgisiz', 'paragraf-tamamlama', 'okuma'].includes(it.info?.dtype) || it.info?.kind === 'okuma' ? 'Özet' : 'Cümle'), h('span', it.anlam)));
         if (ex) exp.append(h('div.exrow2', h('span.exl', `Doğru (${L[it.answer] || ''})`), h('span', ex)));
         if (mineWhy) exp.append(h('div.exrow2.mine', h('span.exl', `Senin seçimin (${L[k]})`), h('span', mineWhy)));
-        if (it.tip) exp.append(h('div.tip', (it.why ? 'Kalıp / taktik: ' : 'Taktik: ') + it.tip));
+        const tipEl = it.tip ? h('div.tip', (it.why ? 'Kalıp / taktik: ' : 'Taktik: ') + it.tip) : null;
+        if (tipEl) exp.append(tipEl);
+        const more = h('details.ex-more', h('summary.small', 'Daha ▸'));
     // Yanlışta: kuralı not defterine (site + kâğıt defter)
     const tpc = it.info?.topic;
     if (!ok && tpc && (it.tip || ex) && !opts.exam) {
@@ -140,16 +144,26 @@ export function runQuiz(root, items, opts = {}) {
         store.put('notes', { id: uid('n'), topic: tpc, text: it.tip || ex, ex: it.anlam ? `${String(it.q || '').replace(/-{3,}|_{3,}/, (it.options || [])[it.answer] || '----')} (${it.anlam})` : '', origin: 'user', createdAt: Date.now() });
         nb.replaceWith(h('span.small.good-t', '✓ Eklendi: Sorular › Gramer › Kural notlarım. Defterine de kendi örnek cümleni yaz.'));
       };
-      exp.append(h('div.nb-row', nb));
+      more.append(h('div.nb-row', nb));
     }
         hintBtn?.remove();
-        if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => r && exp.isConnected && exp.insertBefore(ruleBox(r), exp.querySelector('.tap-hint')));
+        // Tek kural kutusu: kişisel kural varsa "Kalıp" gizlenir
+        if (!ok) ruleFor(it.info?.topic, [it.options[it.answer], it.options[k]].map(String)).then(r => { if (!r || !exp.isConnected) return; tipEl?.remove(); exp.insertBefore(ruleBox(r), exp.querySelector('.ex-more')); });
+        // 2. yanlış aynı konudan: kural kartı burada, geri bildirimde (sonraki soruya değil)
+        if (!ok && !replay && opts.coach) { const ck = keyOf(it.info); if (ck) { wrongN[ck] = (wrongN[ck] || 0) + 1; if (wrongN[ck] >= 2 && !coached.has(ck)) { coached.add(ck); import('./views/warmup.js').then(m => m.miniCard(ck)).then(el => { if (el && exp.isConnected) exp.insertBefore(el, exp.querySelector('.ex-more')); }).catch(() => {}); } } }
+        // Eleme: kaç yanlış şıkkı doğru eledin
+        const struck = opts_.filter(b => b.classList.contains('struck'));
+        if (struck.length) { const goodX = struck.filter(b => b !== opts_[it.answer]).length; exp.insertBefore(h('div.small.elim-note' + (struck.includes(opts_[it.answer]) ? '.bad-t' : '.good-t'), struck.includes(opts_[it.answer]) ? `Dikkat: doğru şıkkı elemiştin.` : `${goodX} yanlış şıkkı doğru eledin ✓`), exp.querySelector('.exrow2')); }
         // Çeviri: blokların karşılıkları + kontrol maddeleri
         if (it.parts?.length) { partsBtn?.remove(); partsSlot.innerHTML = ''; const pb = it.autoParts ? null : partsBox(it, true); if (pb) exp.append(h('div.small.muted', 'Parça parça:'), pb); }
         // Yanlışta küçük "neden" çipleri (isteğe bağlı)
-        if (!ok && it.info?.kind && opts.reasons !== false) reasonList().then(rs => { const row = reasonChips(rs, it.key, { src: it.info.kind, dtype: it.info.dtype || '', topic: it.info.topic || '' }); if (row && exp.isConnected) exp.insertBefore(row, exp.querySelector('.tap-hint')); }).catch(() => {});
-        const x = opts.extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && exp.append(n));
-        exp.append(h('div.small.muted.tap-hint', 'Kelimeye dokun → karta ekle'));
+        if (!ok && it.info?.kind && opts.reasons !== false) reasonList().then(rs => { const row = reasonChips(rs, it.key, { src: it.info.kind, dtype: it.info.dtype || '', topic: it.info.topic || '' }); if (row && exp.isConnected) exp.insertBefore(row, exp.querySelector('.ex-more')); }).catch(() => {});
+        const x = opts.extra?.(it, ok); if (x) Promise.resolve(x).then(n => n && more.append(n));
+        more.append(h('div.small.muted', 'Kelimeye dokun → karta ekle'));
+        const xt = opts.extraTop?.(it, ok); if (xt) exp.append(xt);
+        exp.append(more, h('span.tap-hint.hidden'));
+        // Hız: bu soruda geçen süre
+        if (speed && !replay) { const sec = Math.round((Date.now() - t0) / 1000); secs.push(sec); speed.stop(); }
         next.classList.remove('hidden');
         if (!replay) {
           if (ok) right++;
@@ -158,20 +172,23 @@ export function runQuiz(root, items, opts = {}) {
           // Anlık uyum: pekiştirme / zorlaştırma (opts.adapt; denemelerde yok)
           if (opts.adapt && store.settings().adapt !== false) {
             const note = opts.adapt.after(items, i, ok);
-            if (note) exp.insertBefore(h('div.adapt-note', note), exp.querySelector('.tap-hint'));
+            if (note) exp.insertBefore(h('div.adapt-note', note), exp.querySelector('.ex-more'));
             next.textContent = i + 1 < items.length ? 'Sonraki' : 'Bitir';
             persist();
           }
-          if (!ok && opts.coach) { const ck = keyOf(it.info); if (ck) { wrongN[ck] = (wrongN[ck] || 0) + 1; if (wrongN[ck] >= 2 && !coached.has(ck)) { coached.add(ck); coachKey = ck; } } }
           if (!ok && opts.auto !== false) fromWrong(it, k).catch(e => console.warn(e));
           exp.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
         }
       };
       const optNode = o => trOpts(it) ? h('span.otext', o) : h('span.otext', tappable(String(o), { ...src, inline: true, tapOpens: false, ctx: octx }).el);
-      const opts_ = it.options.map((o, k) => h('button.opt', {
-        type: 'button',
-        onclick: () => { if (answered) return; reveal(k, false); }
-      }, h('span.ol', L[k]), optNode(o)));
+      const opts_ = it.options.map((o, k) => {
+        const b = h('button.opt', {
+          type: 'button',
+          onclick: () => { if (answered || b._lp) { b._lp = false; return; } reveal(k, false); }
+        }, h('span.ol', L[k]), optNode(o));
+        strikeable(b, () => answered);
+        return b;
+      });
       const stem = it.stemNode ? h('div.stem.tap', it.stemNode()) : it.stem ? h('div.stem.tap', tappable(it.stem, { ...src, ctx }).el) : null;
       // Cloze: sorulan boşluğu vurgula ve göster
       const bn = it.stem && String(it.q || '').match(/^\s*\((\d+)\)/)?.[1];
@@ -191,23 +208,29 @@ export function runQuiz(root, items, opts = {}) {
         hintBtn = h('button.chip.hint-btn.hidden', { type: 'button', onclick: async () => { const t = await hintFor(it); hints[i] = true; persist(); showHint(t); } }, 'İpucu');
         hintFor(it).then(t => { if (!t || !hintBtn) return; if (hints[i]) showHint(t); else hintBtn.classList.remove('hidden'); }).catch(() => {});
       }
+      const diffBtn = picks[i] == null && longSimilar(it.options) ? h('button.chip.diff-btn', { type: 'button', onclick: () => { markDiffs(opts_, it.options); diffBtn.remove(); } }, 'Farkları göster') : null;
+      // Hız çubuğu (5. haftadan; deneme dışında)
+      const t0 = Date.now();
+      const speed = picks[i] == null && opts.speed ? speedBar(opts.speed(it)) : null;
       add(root,
-        h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${i + 1}/${items.length}`),
+        h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${counter(items, i)}`),
           h('span.qtools', it.adapt ? h('span.chip.small.adapt-chip', it.adapt === 'zor' ? 'daha zor' : 'pekiştirme') : null, it.unverified ? h('span.chip.bad.small', 'cevap kesin değil') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
-        h('div.qbar', hintBtn, partsBtn,
+        speed?.el || null,
+        h('div.qbar', hintBtn, partsBtn, diffBtn,
           opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
         hintBox, stem, q, partsSlot,
         h('div.opts' + (it.tf ? '.tf' : ''), opts_), exp, h('div.actbar', next)
       );
       if (picks[i] != null) reveal(picks[i], true);
-      else if (coachKey) {
-        const ck = coachKey; coachKey = null;
-        import('./views/warmup.js').then(m => m.miniCard(ck)).then(el => { if (el && root.isConnected) root.querySelector('.qbar')?.after(el); }).catch(() => {});
-      }
+
       if (i === 0 || picks[i] == null) window.scrollTo(0, 0);
     };
     let ended = false;
-    const onEndOnce = () => { if (ended) return; ended = true; opts.onEnd?.({ right, total: items.length }, root); };
+    const onEndOnce = () => {
+      if (ended) return; ended = true;
+      if (secs.length >= 3 && opts.speed) { const avg = Math.round(secs.reduce((a, b) => a + b, 0) / secs.length); root.querySelector('.endcard')?.append(h('p.small.speed-sum', `Ortalama ${avg} sn/soru · sınav hızı ${opts.speed(items[0])} sn`)); }
+      opts.onEnd?.({ right, total: items.length }, root);
+    };
     show();
   }
 }
@@ -241,3 +264,52 @@ function endScreen(root, items, picks, right, opts) {
 // Yarım kalan oturumlar (Bugün ekranı için)
 export const openSessions = () => store.all('sessions').filter(s => !s.done && s.route && (s.i > 0 || Object.keys(s.picks || {}).length))
   .sort((a, b) => (b.at || 0) - (a.at || 0));
+
+// Sayaç: pekiştirme soruları ayrı sayılır ("3/8 · +2 pekiştirme")
+export function counter(items, i) {
+  const extra = items.filter(x => x.adapt === 'pekistir').length;
+  const before = items.slice(0, i + 1).filter(x => x.adapt !== 'pekistir').length;
+  return extra ? `${Math.max(1, before)}/${items.length - extra} · +${extra} pekiştirme` : `${i + 1}/${items.length}`;
+}
+// Şık eleme: harfe uzun bas ya da şıkkı sola kaydır → üstü çizili (cevap sayılmaz)
+function strikeable(b, locked) {
+  let t = null, x0 = 0;
+  const toggle = () => { if (locked()) return; b.classList.toggle('struck'); b._lp = true; navigator.vibrate?.(15); };
+  // Uzun basma yalnız şık harfinde (kelimeye uzun basma kelime panelini açar); kaydırma her yerde
+  b.addEventListener('pointerdown', e => { x0 = e.clientX; if (e.target.closest('.ol')) t = setTimeout(toggle, 450); });
+  b.addEventListener('pointerup', e => { clearTimeout(t); if (x0 - e.clientX > 60) toggle(); });
+  b.addEventListener('pointerleave', () => clearTimeout(t));
+  b.addEventListener('contextmenu', e => { e.preventDefault(); });
+}
+// Saf: uzun ve birbirine benzeyen şıklar mı (çeviri, cümle tamamlama)
+export function longSimilar(options) {
+  const os = (options || []).map(o => String(o));
+  if (os.length < 4 || os.reduce((a, o) => a + o.split(/\s+/).length, 0) / os.length < 7) return false;
+  const sets = os.map(o => new Set(o.toLowerCase().match(/[\p{L}']+/gu) || []));
+  const common = [...sets[0]].filter(w => sets.every(s => s.has(w))).length;
+  return common / Math.max(1, sets[0].size) >= 0.4;
+}
+// Saf: her şıkta, şıkların çoğunda olmayan kelimeler
+export function diffWords(options) {
+  const toks = options.map(o => String(o).match(/[\p{L}']+|[^\p{L}']+/gu) || []);
+  const sets = toks.map(t => new Set(t.map(x => x.toLowerCase())));
+  // Şıkların çoğunda olmayan (azınlıkta kalan) kelime = fark
+  const n = sets.length;
+  return toks.map(t => t.map(x => ({ x, d: /[\p{L}]/u.test(x) && sets.filter(s => s.has(x.toLowerCase())).length < n - 1 })));
+}
+function markDiffs(btns, options) {
+  diffWords(options).forEach((parts, k) => {
+    const span = btns[k]?.querySelector('.otext');
+    if (!span) return;
+    span.innerHTML = '';
+    for (const p of parts) span.append(p.d ? h('b.diffw', p.x) : document.createTextNode(p.x));
+  });
+}
+// Hız çubuğu: hedef saniyede dolar, aşınca turuncu (ceza yok)
+function speedBar(target) {
+  if (!target) return null;
+  const bar = h('i'), el = h('div.speedbar', { title: `Sınav hızı: ${target} sn/soru` }, bar);
+  const t0 = Date.now();
+  const iv = setInterval(() => { if (!el.isConnected) return clearInterval(iv); const r = (Date.now() - t0) / 1000 / target; bar.style.width = Math.min(100, r * 100) + '%'; el.classList.toggle('over', r > 1); }, 500);
+  return { el, stop: () => clearInterval(iv) };
+}
