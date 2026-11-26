@@ -1635,7 +1635,7 @@
         "options": [
           "the engineers will inspect the part next year",
           "the material is stronger in compression",
-          "the bolt had never been tightened",
+          "the part was made from a high-strength aluminium alloy",
           "fatigue cracks rarely start at corners",
           "the final fracture surface showed a line for each step of growth"
         ],
@@ -1646,7 +1646,7 @@
         "why": [
           "'will inspect' gelecek zaman; geçmişteki olayın sonucu değil.",
           "Basınç dayanımı çatlak büyümesiyle bağlantılı bir sonuç değil.",
-          "Cıvatanın sıkılmaması çatlağın yavaş büyümesinin sonucu değil.",
+          "Parçanın alaşımı, çatlağın yavaş büyümesinin sonucu değil; 'because' ile neden-sonuç kurulmaz.",
           "Genel bir bilgi; bu çatlağın sonucunu anlatmıyor.",
           ""
         ]
@@ -1667,7 +1667,7 @@
           "so it has become the cheapest fuel available on the market",
           "as long as it costs less than grey hydrogen",
           "even though renewable electricity has become far cheaper",
-          "which makes it the cheaper choice for most factories"
+          "which is why many countries plan to build new electrolysers"
         ],
         "answer": 3,
         "explain": "Hâlâ pahalı (olumsuz) ve yenilenebilir elektrik çok ucuzladı (olumlu); bu zıtlık. 'even though' bu ilişkiyi kuruyor.",
@@ -1678,7 +1678,7 @@
           "'en ucuz yakıt oldu' demek 'hâlâ pahalı' ile çelişir.",
           "'as long as' şart kurar; 'gri hidrojenden ucuz olduğu sürece daha pahalı' kendi içinde çelişir.",
           "",
-          "'which' ile gelen 'en ucuz seçenek yapar' ifadesi 'hâlâ daha pahalı' ile çelişir."
+          "'which is why' sonuç bağlar; 'hâlâ daha pahalı' olması yeni tesis kurmanın nedeni olamaz."
         ]
       }
     ],
@@ -1723,22 +1723,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "because they remain fully active all the time, even without water",
+          "so that their bodies can take in more water during dry periods",
           "so they die within hours once they are dry",
           "whereas active ones are killed far more easily",
           "unless their metabolism almost stops",
-          "although they never lose any water from their bodies when dry"
+          "as soon as they had been placed back in water"
         ],
         "answer": 2,
         "explain": "Kuru halde çok dayanıklılar; aktif olanlarsa çok daha kolay ölür. 'whereas' iki durumu karşılaştırıyor.",
         "tip": "Bir durumu karşıtıyla kıyasla = whereas.",
         "anlam": "Tardigradlar metabolizmalarının neredeyse durduğu kurumuş halde yıllarca hayatta kalabilir, …",
         "why": [
-          "'tam aktif kalırlar' kökteki 'metabolizmaları neredeyse durur' ile çelişir.",
+          "'so that' amaç bildirir; kuru halde hayatta kalmak su almak için yapılan bir şey değil, anlam kopuk.",
           "'kuruyunca saatler içinde ölürler' kökteki 'yıllarca hayatta kalır' ile çelişir.",
           "",
           "'unless' şartı, kökte olgu olarak verilen 'metabolizma neredeyse durur' bilgisini tersine çevirir.",
-          "'kuruyken hiç su kaybetmezler' kurumuş halle çelişir."
+          "Kök kurumuş halden söz ediyor; 'suya konur konmaz' bununla çelişir ve 'can survive' ile 'had been' zamanı uymaz."
         ]
       }
     ],
@@ -1783,18 +1783,18 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "scientists were unable to study the Moon",
+          "nobody had ever held a piece of the Moon",
           "researchers have compared Moon rocks with Earth rocks",
           "the Moon will form from a giant impact with a young planet",
           "the Moon had no iron core before the missions took place",
           "astronauts land on the Moon every year"
         ],
         "answer": 1,
-        "explain": "Burada 'Since' zaman bildiriyor (-den beri). '-den beri' bugüne uzanan zaman ister: have compared (karşılaştırıyorlar).",
+        "explain": "Burada 'Since' zaman bildiriyor (-den beri). '-den beri' bugüne uzanan zaman ister: have compared (karşılaştırıyorlar). 'çünkü' diye okunsa da yalnız B mantıklı kalır.",
         "tip": "Since + geçmiş olay → have + üçüncü hal.",
         "anlam": "Apollo astronotları kaya örnekleri getirdiğinden BERİ …",
         "why": [
-          "'Ay'ı inceleyemediler' hem zamana hem anlama uymuyor; örnekler incelemeyi sağladı.",
+          "'Since' (-den beri) ana cümlede 'have + üçüncü hal' ister; 'had held' uymaz. 'çünkü' diye okunsa da örnek getirilmişken 'kimse tutmamıştı' çelişir.",
           "",
           "'will form' gelecek; Ay çoktan oluştu, anlamsız.",
           "'had no iron core' geçmişin geçmişi; since ile uymaz.",
@@ -1844,7 +1844,7 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "although simulations allow fast and cheap training of robots",
-          "because real robots never break down during physical tests",
+          "after they have already been damaged in real-world tests",
           "so that they can try millions of times without harm",
           "unless they are too expensive to build and test in real life",
           "as if they had been designed entirely by other computers"
@@ -1855,7 +1855,7 @@
         "anlam": "Robotlar çoğu zaman önce simülasyonlarda eğitilir …",
         "why": [
           "'although' zıtlık kurar; simülasyonun hızlı olması zıtlık değil, neden.",
-          "'hiç bozulmaz' simülasyonda eğitmenin nedenini vermez; tersine simülasyona gerek bırakmaz.",
+          "Kökteki 'first' (önce) ile çelişir: önce simülasyon, sonra gerçek test; 'zarar gördükten sonra' sırayı ters kurar.",
           "",
           "'unless' koşulu anlamı bozar; pahalılık şart değil.",
           "'as if' benzetme yapar; anlamsız."
@@ -1873,9 +1873,9 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "therefore, it has no harmful effects on the environment at all",
+          "similarly, the process turns nitrogen from the air into ammonia",
           "for example, plants cannot use nitrogen from the atmosphere",
-          "as a result, it now needs almost no energy to operate",
+          "as a result, the world population had been falling for decades",
           "in other words, it was invented by two chemists in 1909",
           "however, it also uses a large part of global energy"
         ],
@@ -1884,9 +1884,9 @@
         "tip": "Olumlu iddia ; however, + yan etki.",
         "anlam": "Haber-Bosch süreci gıda üretimini büyük ölçüde artırdı; …",
         "why": [
-          "'hiç zararı yok' abartılı ve gıda artışının sonucu değil.",
+          "'similarly' benzer ikinci bir durum ister; burada sürecin tanımı veriliyor, benzerlik yok.",
           "Örnek değil; bitkilerin azotu kullanamaması önceki fikre örnek olmuyor.",
-          "'as a result' sonuç bağlar; gıda üretiminin artması 'enerji gerekmez' sonucunu doğurmaz.",
+          "'had been' geçmişin geçmişi, 'has increased' ile uymaz; nüfusun azalması gıda artışının sonucu da olamaz.",
           "'in other words' aynı fikri tekrar eder; icat tarihi tekrar değil.",
           ""
         ]
@@ -1936,7 +1936,7 @@
           "nevertheless, they may be ideal for stationary storage",
           "as a result, they are the best choice for long-range cars",
           "for instance, lithium-ion batteries store less energy than they do",
-          "in addition, they store more energy than lithium-ion cells",
+          "similarly, lithium-ion batteries are used in most electric cars",
           "that is, they are more expensive"
         ],
         "answer": 0,
@@ -1947,7 +1947,7 @@
           "",
           "Az enerji uzun menzile iyi değil; sonuç tersine çevrilmiş.",
           "'lityum-iyon onlardan az enerji depolar' ilk kısımla çelişir; 'for instance' de örnek vermiyor.",
-          "'daha fazla enerji depolar' ilk kısımla çelişir.",
+          "'similarly' benzer bir durum ister; lityum-iyon pillerin kullanımı sodyum-iyonun zayıf yönüne benzer değil, konu kopuk.",
           "'that is' aynı şeyi açıklar; pahalılık 'az enerji'nin açıklaması değil."
         ]
       }
@@ -1964,7 +1964,7 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "but it also harms roads and houses on frozen soil",
-          "and therefore it never affects roads or other infrastructure",
+          "and it has therefore been studied mostly in northern Siberia",
           "although it releases carbon dioxide and methane into the air",
           "so it is called a positive feedback by climate scientists",
           "but microbes remain inactive in cold and frozen soil"
@@ -1975,10 +1975,10 @@
         "anlam": "Eriyen donmuş toprak YALNIZCA sera gazı salmakla kalmaz, …",
         "why": [
           "",
-          "'and therefore' kalıbı tamamlamaz ve 'hiç etkilemez' anlamsız.",
+          "'Not only' kalıbı 'but (also)' ile tamamlanır; 'and therefore' kalıbı bozar.",
           "'although' kalıba uymaz ve aynı bilgiyi tekrar eder.",
           "'so' kalıbı tamamlamaz; 'but also' gerekir.",
-          "'but' var ama 'also' yok ve mikrop bilgisi ekleme değil."
+          "'Not only … but' ikinci bir etki ekler; 'mikroplar donmuş toprakta etkisiz kalır' eriyen toprağın ek etkisi değil, kökteki 'thawing' ile de çelişir."
         ]
       }
     ],
@@ -1993,22 +1993,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "so they already know the exact time of every earthquake",
+          "as soon as the first warning signals have reached them",
           "because warning systems give a minute's notice",
           "but they can estimate long-term risk on active faults",
           "and they can therefore warn people several days in advance",
-          "since they can already name the exact day of each earthquake"
+          "so that seismic stations are placed along each active fault"
         ],
         "answer": 2,
         "explain": "Tam zamanı bilemiyorlar (olumsuz) ama uzun vadeli riski tahmin edebiliyorlar (olumlu). 'but' zıtlığı kuruyor.",
         "tip": "cannot X → but can Y (sınır + kalan imkân).",
         "anlam": "Bilim insanları depremin tam ne zaman olacağını henüz tahmin edemiyor, …",
         "why": [
-          "'tam zamanı zaten biliyorlar' ana cümleyle çelişir.",
+          "'as soon as' zaman bağlar; 'uyarı gelir gelmez tahmin edemiyorlar' anlamsız, kökteki sınırlamayla bağ kurmaz.",
           "Bir dakikalık uyarı, tahmin edememenin nedeni değil.",
           "",
           "'günler önce uyarabilirler' ana cümleyle çelişir.",
-          "'zaten her depremin gününü söyleyebilirler' ana cümledeki 'cannot yet predict' ile çelişir."
+          "'so that' amaç bildirir; tahmin edememek bir amaç olamaz, istasyon kurmak da bunun amacı değil."
         ]
       }
     ],
@@ -2143,10 +2143,10 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "consequently, they predict extreme events better than any model",
+          "consequently, older models needed several hours on supercomputers",
           "they may, however, struggle with rare extreme events",
           "they therefore require huge supercomputers to run",
-          "for this reason, they solve all the physical equations exactly",
+          "in other words, they are trained on decades of past weather data",
           "likewise, they need many hours of computing time"
         ],
         "answer": 1,
@@ -2154,10 +2154,10 @@
         "tip": "Güçlü yön ; …, however, + zayıf yön.",
         "anlam": "Makine öğrenmeli hava modelleri hızlıdır; …",
         "why": [
-          "Hız, aşırı olayları daha iyi tahmin etmenin nedeni değil.",
+          "'consequently' sonuç bağlar; eski modellerin yavaşlığı yeni modellerin hızlı olmasının sonucu değil.",
           "",
           "Hızlı modeller dev bilgisayar gerektirmez; sonuç ters.",
-          "Hız, denklemleri tam çözmenin sonucu değil; abartı.",
+          "'in other words' aynı fikri başka sözle söyler; geçmiş veriyle eğitilmek 'hızlı' demenin yeniden ifadesi değil.",
           "'saatler sürer' hızlı olmalarıyla çelişir."
         ]
       }
@@ -2173,22 +2173,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "it never makes any mistakes in the genome of the cell",
+          "it can find its target sequence in the genome quickly",
           "the result still relies on the cell's repair process",
           "it had cut the wrong place in the DNA of the patient",
-          "so the result never depends on anything else",
-          "it is therefore completely safe for use in all patients"
+          "because the cell's repair process sometimes adds small errors",
+          "scientists use it to study the function of single genes"
         ],
         "answer": 1,
         "explain": "'Even if' (-se bile) bir sınırlama ister. B: sonuç yine de hücrenin onarım sürecine bağlı.",
         "tip": "Even if + olumlu → still + sınırlama.",
         "anlam": "Bir gen düzenleme aracı DNA'yı hassas kesse BİLE …",
         "why": [
-          "'hiç hata yapmaz' sınırlama değil; even if'e uymaz.",
+          "'Even if' bir sınırlama ister; 'hedefi hızlı bulur' yine olumlu, sınırlama değil.",
           "",
           "'had cut' zamanı uymuyor ve kesimin hassas olmasıyla çelişir.",
-          "'so' sonuç bağlar; 'even if' ise sınırlama ister. 'hiçbir şeye bağlı değil' sınırlama değildir.",
-          "'tamamen güvenli' sınırlama değil; even if'e uymaz."
+          "'Even if' cümlesinden sonra ana cümle gerekir; 'because' ile başlayan kısım ana cümle olamaz.",
+          "Kullanım alanı bilgisi; 'even if' sınırlama ister, burada sınırlama yok."
         ]
       }
     ],
@@ -2203,8 +2203,8 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "the planet never passes in front of its star",
-          "the light of the star never changes at all",
+          "astronomers have already photographed the planet directly",
+          "it had been discovered by another method years earlier",
           "the star it orbits will have no spots on its surface",
           "its orbit is aligned with our line of sight",
           "it orbits very far away from any star system"
@@ -2214,8 +2214,8 @@
         "tip": "only if = tek şart; kökteki tanımla uyumlu şıkkı seç.",
         "anlam": "Gezegen yıldızın önünden geçerken yıldız ışığındaki küçük düşüşü arayan geçiş yöntemi, bir gezegeni YALNIZCA … ise saptayabilir.",
         "why": [
-          "Kök gezegenin yıldızın önünden geçtiğini söylüyor; 'hiç geçmez' çelişir.",
-          "Kök yıldız ışığındaki küçük düşüşü arıyor; 'ışık hiç değişmez' çelişir.",
+          "Kök yöntemin yıldız ışığındaki düşüşü aradığını söylüyor; doğrudan fotoğraf bu yöntemin şartı olamaz.",
+          "'can detect' ile 'had been discovered' zamanı uymaz; başka yöntemle bulunmuş olmak da bu yöntemin şartı değil.",
           "'only if' şart bağlacından sonra 'will' kullanılmaz.",
           "",
           "Kök gezegenin kendi yıldızının önünden geçtiğini anlatıyor; 'hiçbir yıldıza yakın değil' çelişir."
@@ -2233,8 +2233,8 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "it needs no energy input to start the reaction",
-          "it never requires the fuel to be compressed at all",
+          "it uses powerful lasers to heat a small pellet of fuel",
+          "its lasers are never used to compress the fuel",
           "tokamaks rely on magnetic fields to hold the plasma",
           "the tiny fuel pellet is made of two hydrogen isotopes",
           "the first net energy gain was reported in late 2022"
@@ -2244,8 +2244,8 @@
         "tip": "While X does A, Y does B: ikinci kısımda başka özne ara.",
         "anlam": "Ataletsel hapsetme yakıtı sıkıştırmak için lazer KULLANIRKEN …",
         "why": [
-          "'it' yine aynı yönteme döner; 'While' iki farklı şeyi karşılaştırmalı, burada karşılaştırma yok.",
-          "'yakıt hiç sıkıştırılmaz' ilk kısımla çelişir.",
+          "'it' yine aynı yönteme döner; 'While' farklı bir şeyle karşılaştırma ister, burada yalnız tekrar var.",
+          "Kök lazerin yakıtı sıkıştırdığını söylüyor; 'lazerler yakıtı sıkıştırmak için hiç kullanılmaz' bununla çelişir.",
           "",
           "Yakıtın yapısı bilgisi karşılaştırma kurmuyor.",
           "Tarih bilgisi karşılaştırma kurmuyor."
@@ -2323,7 +2323,7 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "therefore, they accepted his theory at once without doubt",
+          "as a result, fossils became the main focus of their criticism",
           "similarly, they rejected the fossil evidence he presented",
           "rather, they objected to the mechanism he proposed",
           "for example, they discovered magnetic stripes on the seafloor",
@@ -2334,7 +2334,7 @@
         "tip": "did not X; rather, Y = X değil, Y yaptılar.",
         "anlam": "Wegener'in eleştirmenleri fosil kanıtına itiraz etmedi; …",
         "why": [
-          "Fosile itiraz etmemek kuramı hemen kabul etmek demek değil.",
+          "İlk kısım fosil kanıtına itiraz etmediklerini söylüyor; 'eleştirinin odağı fosiller oldu' bununla çelişir.",
           "'fosil kanıtını reddettiler' ilk kısımla çelişir.",
           "",
           "'for example' örnek ister; deniz tabanı şeritleri eleştirmenlerin tutumuna örnek değil, konu kopuk.",
@@ -2477,7 +2477,7 @@
           "whose chemical bonds are very weak and easy to break",
           "although they are found almost everywhere in the world",
           "which shows how widespread these chemicals have become",
-          "so they are rarely found in the environment or in water"
+          "so that their effects on health can be studied more easily"
         ],
         "answer": 3,
         "explain": "Virgülden sonra 'which' önceki bilginin tamamını niteliyor: bu da bu kimyasalların ne kadar yaygınlaştığını gösteriyor.",
@@ -2488,7 +2488,7 @@
           "'whose' en yakın isme, 'people' sözcüğüne döner; 'insanların kimyasal bağları zayıf' anlamsız.",
           "'although' zıtlık kurar; her yerde bulunması zıtlık değil.",
           "",
-          "'nadiren bulunur' ilk kısımla çelişir."
+          "'so that' amaç bildirir; kanda bulunmak bir amaç değil, anlam kopuk."
         ]
       }
     ],
@@ -2533,22 +2533,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "because they always check sources",
+          "after they have been corrected by their users",
           "even though they sound confident",
           "so that answers are reliable",
           "unless they are wrong",
-          "because they always know the truth"
+          "as long as their answers are written in clear language"
         ],
         "answer": 1,
         "explain": "Yanlış söylüyorlar ama emin görünüyorlar; bu zıtlık. 'even though they sound confident' doğru.",
         "tip": "Kötü sonuç + beklenmedik görünüm = even though.",
         "anlam": "Dil modelleri bazen yanlış ifadeler üretir …",
         "why": [
-          "Kaynak kontrol etmek yanlış üretmenin nedeni olamaz.",
+          "Kullanıcı düzeltmesinden sonra yanlış üretmek mantıksız; düzeltme yanlışı azaltır.",
           "",
           "Amaç güvenilir cevap olamaz; yanlış üretimle çelişir.",
           "'yanlışlarsa hariç' kendisiyle çelişen bir koşul.",
-          "Hep doğruyu bilmek yanlış üretmenin nedeni olamaz."
+          "'as long as' şart kurar; açık dil, yanlış üretmenin şartı olamaz."
         ]
       }
     ],
@@ -2804,7 +2804,7 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "like solar panels, which work only during the day",
-          "although they never stop working at any time",
+          "although they produce power around the clock",
           "because they stop working when night falls",
           "so that solar power becomes constant and stable",
           "unlike solar panels, which depend on sunlight"
@@ -2815,7 +2815,7 @@
         "anlam": "Jeotermal santraller gece gündüz enerji sağlayabilir, …",
         "why": [
           "'like' (gibi) benzetir; ama paneller gece çalışmaz, farklılar.",
-          "'although' zıtlık kurar; aynı bilgiyi tekrar ediyor.",
+          "'although' zıtlık kurar; 'günün her saati' kökteki 'gece gündüz' ile aynı bilgi, zıtlık yok.",
           "'gece olunca dururlar' ana cümledeki 'day and night' ile çelişir.",
           "'so that' amaç kurar; güneş enerjisini sabitlemek jeotermal santralin amacı değil, konu kopuk.",
           ""
@@ -2863,8 +2863,8 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "so that they are always passed on to grandchildren",
-          "although they are never erased during development",
+          "so that they are passed on to offspring more easily",
+          "although this happens soon after fertilisation",
           "because they are copied each time a cell divides",
           "which makes their transfer to later generations rare",
           "that proves inheritance over many generations is common"
@@ -2874,8 +2874,8 @@
         "tip": ", which makes … = bu da … yapar (sonuç).",
         "anlam": "Epigenetik işaretler erken embriyoda büyük ölçüde silinir, …",
         "why": [
-          "'hep torunlara geçer' silinmeyle çelişir.",
-          "'hiç silinmez' ana cümleyle çelişir.",
+          "'so that' amaç bildirir; silinmek aktarımı kolaylaştırmaz, ana cümleyle çelişir.",
+          "'although' zıtlık kurar; silinmenin zamanı zıt bir bilgi değil.",
           "Kopyalanmaları silinmenin nedeni değil.",
           "",
           "'that' virgülden sonra olmaz ve 'yaygın' anlamı ters."
@@ -2888,27 +2888,27 @@
   {
     "id": "d058",
     "type": "cumle-tamamlama",
-    "stem": "Industrial robots perform well on assembly lines ----.",
+    "stem": "Industrial robots, which repeat the same programmed movements, perform well on assembly lines ----.",
     "items": [
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "even though parts always arrive in the same position",
+          "even though each part arrives in the same position",
           "unless the parts arrive in exactly the same position",
           "provided that each part arrives in the same position",
           "so that the objects can vary greatly in shape and size",
           "because the environment around them keeps changing"
         ],
         "answer": 2,
-        "explain": "İyi çalışmanın şartı: her parça aynı konumda gelmeli. 'provided that' (şartıyla) doğru.",
+        "explain": "Robot hep aynı hareketi yapıyor; o halde iyi çalışmanın şartı her parçanın aynı konumda gelmesidir. 'provided that' (şartıyla) doğru.",
         "tip": "Şart = provided that / as long as.",
-        "anlam": "Endüstriyel robotlar montaj hatlarında iyi çalışır …",
+        "anlam": "Aynı programlı hareketleri tekrarlayan endüstriyel robotlar montaj hatlarında iyi çalışır …",
         "why": [
-          "'even though' zıtlık kurar; aynı konum zorluk değil, şart.",
-          "'unless' anlamı tersine çevirir.",
+          "'even though' zıtlık kurar; parçaların aynı konumda gelmesi iyi çalışmanın şartı, engeli değil.",
+          "'unless' anlamı ters çevirir: hep aynı hareketi yapan robot için 'parça aynı yerde gelmezse iyi çalışır' kökle çelişir.",
           "",
-          "Nesnelerin çok değişmesi robotu zorlar; amaç olamaz.",
-          "Değişen ortam iyi çalışmanın nedeni değil."
+          "Kök robotun hep aynı hareketi yaptığını söylüyor; nesnelerin çok değişmesi bununla çelişir, amaç olamaz.",
+          "Kök sabit, tekrarlanan hareketten söz ediyor; 'ortam sürekli değişir' iyi çalışmanın nedeni olamaz."
         ]
       }
     ],
@@ -2956,7 +2956,7 @@
           "after the shaking has ended in those cities",
           "unless the earthquake has already started",
           "although P-waves travel faster than S-waves",
-          "because S-waves always arrive before P-waves",
+          "so that the P-waves can travel even faster",
           "before the strongest shaking reaches them"
         ],
         "answer": 4,
@@ -2965,9 +2965,9 @@
         "anlam": "P dalgaları yıkıcı S dalgalarından hızlı gittiği için erken uyarı sistemleri uzak şehirleri uyarabilir …",
         "why": [
           "Sarsıntı bittikten sonra uyarı anlamsız.",
-          "'unless … started' anlamsız; deprem başlayınca uyarı verilir.",
+          "Kök dalgaların yola çıktığını, yani depremin başladığını anlatıyor; 'deprem başlamadıysa' şartı bununla çelişir.",
           "Kök P dalgasının hızını uyarının nedeni olarak veriyor; 'although' bunu zıtlık gibi bağlar, mantık bozulur.",
-          "Kök P dalgalarının daha hızlı olduğunu söylüyor; 'S önce gelir' çelişir.",
+          "'so that' amaç bildirir; uyarı sistemi dalgaları hızlandırmak için çalışmaz, anlam kopuk.",
           ""
         ]
       }
@@ -3045,7 +3045,7 @@
         "options": [
           "instead, it uses magnetic fields and radio waves",
           "therefore, it uses ionising radiation to produce its images",
-          "for example, it produces no images of the body at all",
+          "for example, it is widely used to image the brain",
           "otherwise, it would be faster than CT scanning",
           "similarly, MRI uses no ionising radiation"
         ],
@@ -3056,7 +3056,7 @@
         "why": [
           "",
           "'therefore' sonuç bağlar ama 'iyonlaştırıcı ışınım kullanır' ilk kısımla çelişir.",
-          "'for example' örnek ister; 'hiç görüntü üretmez' ilk kısmın örneği değil, konu kopuk.",
+          "'for example' ilk kısma örnek ister; beyin görüntülemesi 'ışınım kullanmaz' bilgisinin örneği değil.",
           "'otherwise' anlamsız bir koşul kuruyor.",
           "'similarly' başka bir şeyle benzerlik kurar; burada aynı bilgi aynı özne için tekrar ediliyor."
         ]
@@ -3075,8 +3075,8 @@
         "options": [
           "that even slight tension changes may break the strip",
           "because the strip is rolled at room temperature",
-          "which variations in tension are always small",
-          "although strip breaks never occur in these mills",
+          "which is why tension meters are fitted between the stands",
+          "although the strip is cooled with oil between the stands",
           "so as to reduce tension in the strip between stands"
         ],
         "answer": 0,
@@ -3086,7 +3086,7 @@
         "why": [
           "",
           "'because' kalıbı tamamlamaz.",
-          "'which' kalıbı tamamlamaz ve anlam bozuk.",
+          "'So high are …' kalıbı 'that' ile tamamlanır; 'which is why' kalıbı bozar.",
           "'So high are …' kalıbı 'that' ister; 'although' kalıbı tamamlamaz.",
           "'so as to' kalıbı tamamlamaz."
         ]
@@ -4004,8 +4004,8 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Steel is an alloy of iron and carbon that people have produced for thousands of years.",
-          "However, welding is now rarely used for joining parts in modern steel construction.",
-          "These inspections are therefore considered unnecessary for most ordinary steel structures.",
+          "Welding robots are now widely used in car factories to join thin steel sheets.",
+          "These inspections are usually carried out by specially trained technicians.",
           "Tiny flaws like pores or lack of fusion can remain hidden inside the weld.",
           "Aluminium, by contrast, is much lighter than steel and is often joined with rivets."
         ],
@@ -4015,8 +4015,8 @@
         "anlam": "Önce: kaynak en yaygın birleştirme yöntemidir ama kaynak yerleri en zayıf noktalardır. Sonra: 'Ayrıca' hızlı ısınma-soğuma kalıntı gerilme yaratır; tekrarlı yükte çatlak başlar; bu yüzden kaynaklar ultrason/röntgenle denetlenir.",
         "why": [
           "Çeliğin tanımı; kaynağın zayıflık nedeni değil.",
-          "Kaynağın az kullanıldığı fikri, kaynak denetimiyle biten akışa uymaz.",
-          "'These inspections' henüz anılmadı ve 'gereksiz' son cümleyle çelişir.",
+          "Robotla kaynak başka bir konu; 'In addition' ile sürecek ilk zayıflık nedenini vermiyor.",
+          "'These inspections' henüz anılmadı; denetim ancak son cümlede geçiyor.",
           "",
           "Alüminyum başka bir konu; kaynak zayıflığını anlatmıyor."
         ]
@@ -4034,7 +4034,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Petrol cars were first invented and sold in Germany in the late nineteenth century.",
-          "As a result, they are completely free of any impact on the environment or climate.",
+          "Many electric cars can now travel more than 400 kilometres on one charge.",
           "Many drivers enjoy the quiet and smooth ride that electric cars offer in cities.",
           "How clean they really are, however, depends on the source of their electricity.",
           "Charging stations are usually located near shopping centres and on motorways."
@@ -4045,7 +4045,7 @@
         "anlam": "Önce: devletler elektrikli arabayı teşvik ediyor; bu arabalar sürüşte egzoz salmıyor. Sonra: elektrik kömürden geliyorsa toplam salım benzinliden az düşük; yenilenebilir enerjinin çok olduğu ülkelerde avantaj büyük.",
         "why": [
           "Benzinli arabanın tarihi; akışla ilgisi yok.",
-          "'Hiç etkisi yok' sonraki kömür bilgisiyle çelişir.",
+          "Menzil bilgisi, sonraki 'elektrik kömürden geliyorsa' cümlesine bağlanmıyor; elektriğin kaynağı fikrini açmıyor.",
           "Sessiz sürüş konuyu salımdan uzaklaştırır.",
           "",
           "Şarj istasyonlarının yeri salım konusuyla bağlanmaz."
@@ -4094,8 +4094,8 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Insects have six legs and three body segments, and most of them can fly.",
-          "Plants therefore stop growing completely whenever insects are present nearby.",
-          "As a result, toxic plants are always much larger than plants without any toxins.",
+          "Some of these chemicals are also used by people as medicines or spices.",
+          "Insects that feed on these plants often store the toxins in their own bodies.",
           "Many species thus make large amounts of toxins only once they are attacked.",
           "Some flowers attract bees and butterflies with bright colours and sweet nectar."
         ],
@@ -4105,8 +4105,8 @@
         "anlam": "Önce: bitkiler kaçamaz, böceklere karşı zehirli kimyasal üretir ama bu enerji ister. Sonra: yaprak zarar görünce savunma maddesi üretimi saatler içinde başlar; tehlike geçince yavaşlar; bitki korunma ile maliyeti dengeler.",
         "why": [
           "Böcek anatomisi; bitki savunmasıyla ilgisi yok.",
-          "'Büyümeyi tamamen durdurur' aşırı ve sonraki cümleye bağlanmıyor.",
-          "'Zehirli bitkiler hep daha büyük' maliyet fikriyle çelişir.",
+          "İnsanların kullanımı başka yöne gidiyor; sonraki 'yaprak zarar görünce üretim başlar' cümlesine bağlanmıyor.",
+          "Böceklerin zehri depolaması maliyet sorununu çözmüyor; sonraki üretim sinyali cümlesine bağlanmıyor.",
           "",
           "Çiçek ve arı başka konu."
         ]
@@ -4125,7 +4125,7 @@
         "options": [
           "Rural areas, in contrast, are covered with more asphalt and concrete than cities.",
           "Moreover, with few plants around, less water evaporates to cool the air.",
-          "Therefore, cities are always colder than the countryside during the night.",
+          "Snow, by contrast, reflects most sunlight and keeps surfaces cool in winter.",
           "Many people move from villages to large cities in order to find better jobs.",
           "These trees grow faster in cold climates than in warm and humid regions."
         ],
@@ -4136,7 +4136,7 @@
         "why": [
           "Paragraf şehrin koyu yüzeyler yüzünden daha sıcak olduğunu söylüyor; 'kırsalda daha çok asfalt var' bu ana fikirle çelişir.",
           "",
-          "'Şehirler gece daha soğuk' ilk cümleyle çelişir.",
+          "Kar başka bir konu; 'In addition' ile sürecek ikinci ısınma nedenini vermiyor.",
           "Göç konusu ısı adasını açıklamıyor.",
           "'These trees' henüz anılmadı."
         ]
@@ -4156,7 +4156,7 @@
           "Having almost no atmosphere, it cannot hold on to the heat it receives.",
           "Mercury was named after the Roman messenger god because it moves so fast.",
           "Venus is the brightest planet in the night sky and is often seen at dawn.",
-          "Therefore, Mercury is the hottest of all the planets in the solar system.",
+          "Its year lasts only 88 Earth days, the shortest in the solar system.",
           "Many spacecraft have visited Mars to study its surface and its thin air."
         ],
         "answer": 0,
@@ -4167,7 +4167,7 @@
           "",
           "Adın kökeni sıcaklık sorusuna cevap vermiyor.",
           "Venüs'ün parlaklığı ısı konusuna bağlanmıyor.",
-          "'Merkür en sıcak' fikri 'yet it is not the hottest' cümlesiyle çelişir.",
+          "Yıl süresi, Merkür'ün neden en sıcak olmadığını açıklamıyor; Venüs'ün atmosferiyle karşıtlık kurmuyor.",
           "Mars konuyla ilgisiz."
         ]
       }
@@ -4185,7 +4185,7 @@
         "options": [
           "Earthquakes are measured with sensitive instruments called seismometers.",
           "Many mountain roads have been built across steep slopes in the last century.",
-          "Landslides, however, almost never occur after periods of heavy rain.",
+          "Earthquakes can loosen large blocks of rock within a few seconds.",
           "Volcanoes are often found near plate boundaries where the crust is thin.",
           "Rain is especially risky, since water makes the soil heavier and weaker."
         ],
@@ -4196,7 +4196,7 @@
         "why": [
           "Sismometre bilgisi sonraki su anlatımına bağlanmıyor.",
           "Dağ yolları konusu suya geçişi sağlamıyor.",
-          "'Yağmurdan sonra neredeyse hiç olmaz' önceki 'heavy rain' ile tetiklenir bilgisiyle çelişir.",
+          "Deprem başka bir tetikleyici; sonraki 'yamaç suya doyunca' cümlesi yağmura geçiş ister.",
           "Volkanlar konuyla ilgisiz.",
           ""
         ]
@@ -4215,7 +4215,7 @@
         "options": [
           "They do not, however, perform equally well for every group of people.",
           "Many smartphones can now be unlocked with a fingerprint instead of a face.",
-          "Therefore, they never make any mistakes when identifying people's faces.",
+          "Some airports now use them instead of passport checks at the gate.",
           "The first digital camera was built by an engineer at Kodak in 1975.",
           "These critics have developed better cameras for use by the police."
         ],
@@ -4226,7 +4226,7 @@
         "why": [
           "",
           "Parmak izi başka bir yöntem; akışa uymaz.",
-          "'Hiç hata yapmaz' sonraki cümleyle çelişir.",
+          "Yeni bir kullanım daha anlatıyor; sonraki 'kadınlarda daha çok hata' bulgusuna geçiş kurmuyor.",
           "Kodak kamerası tarihçe; konuya bağlanmıyor.",
           "'These critics' henüz anılmadı; eleştirmenler sonraki cümlede ilk kez geçiyor."
         ]
@@ -4244,7 +4244,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Blood is pumped by the heart through a network of arteries and veins.",
-          "Low blood pressure is always far more dangerous than high blood pressure.",
+          "It is usually measured with an inflatable cuff placed around the upper arm.",
           "Most patients feel severe pain as soon as their blood pressure starts to rise.",
           "Measurements should therefore be avoided by people with heart problems.",
           "High blood pressure rarely causes symptoms but sharply raises the risk of stroke."
@@ -4255,7 +4255,7 @@
         "anlam": "Önce: kan basıncı nedir; kalp-damar sağlığının önemli göstergesidir. Sonra: 'Bu yüzden' ona 'sessiz katil' denir; düzenli ölçüm önerilir; az tuz, spor ve sigarayı bırakmak yardımcı olur.",
         "why": [
           "Kalbin kan pompalaması 'sessiz katil' adını açıklamaz.",
-          "Düşük tansiyon konusu sonraki 'For this reason… silent killer' cümlesine neden olmuyor.",
+          "Ölçüm yöntemi, sonraki 'bu yüzden sessiz katil denir' cümlesinin nedenini vermiyor.",
           "'Şiddetli ağrı hisseder' sessiz olmasıyla çelişir.",
           "'Ölçüm yapılmamalı' sonraki 'Doctors recommend regular measurements' cümlesiyle çelişir.",
           ""
@@ -4306,8 +4306,8 @@
           "Iron is the fourth most common element in the Earth's crust.",
           "The presence of salt speeds this process up considerably.",
           "Oxygen makes up about 21 percent of the air that we breathe.",
-          "Cars should therefore never be driven on roads during winter.",
-          "Rust, however, protects iron completely from further corrosion."
+          "Car bodies are therefore often coated with zinc before they are painted.",
+          "Aluminium, by contrast, forms a thin oxide layer that protects it."
         ],
         "answer": 1,
         "explain": "'This is why … salt' öncesinde tuzla ilgili bir neden ister. B: tuzun varlığı bu süreci çok hızlandırır.",
@@ -4317,8 +4317,8 @@
           "Demirin yerkabuğundaki oranı tuzla bağlanmıyor.",
           "",
           "Havadaki oksijen oranı tuz bilgisini vermiyor.",
-          "'Kışın hiç araba sürülmemeli' aşırı ve neden değil.",
-          "'Pas tamamen korur' sonraki 'tuzlu bölgelerde arabalar daha hızlı paslanır' akışıyla çelişir."
+          "Sonraki 'This is why … salt' tuzla ilgili bir neden ister; çinko kaplama bunu vermiyor.",
+          "Alüminyum başka bir metal; tuzun etkisine geçişi kurmuyor."
         ]
       }
     ],
@@ -4335,9 +4335,9 @@
         "options": [
           "Titanium was named after the Titans, the giants of Greek mythology.",
           "Their wider use, however, is held back by their high price.",
-          "As a result, titanium has become the cheapest structural metal today.",
-          "Medical implants must always be sterilised carefully before surgery.",
-          "These methods have already made titanium almost free to produce."
+          "Titanium is also used to make white pigments for paints and paper.",
+          "Medical implants must be sterilised carefully before surgery.",
+          "These alloys are often used in aircraft engines and hip implants."
         ],
         "answer": 1,
         "explain": "Övgüden sonra sorun gelmeli. B: 'Ancak yüksek fiyatları yaygın kullanımı engelliyor'; sonraki cümle pahalılığın nedenini veriyor.",
@@ -4346,9 +4346,9 @@
         "why": [
           "Adın kökeni akışa bağlanmıyor.",
           "",
-          "'En ucuz metal' sonraki zor üretimle çelişir.",
-          "İmplant sterilizasyonu başka konu.",
-          "'Neredeyse bedava' sonraki 'can cost many times more' ve 'cheaper production routes' ile çelişir."
+          "Başka bir kullanım alanı; sonraki zor üretim ve yüksek maliyet cümlelerinin açtığı sorunu söylemiyor.",
+          "Ameliyat öncesi işlem konuyu koparıyor; sonraki maliyet cümlelerine bağlanmıyor.",
+          "Övgüyü sürdürüyor; sonraki 'As a result … many times more' cümlesinin istediği fiyat sorununu açmıyor."
         ]
       }
     ],
@@ -4363,22 +4363,22 @@
       {
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
-          "Therefore, every country in the world has decided to build new plants.",
+          "Many reactors built in the 1970s are now reaching the end of their working lives.",
           "Coal plants, in contrast, emit no carbon dioxide while they operate.",
           "Uranium is a heavy metal found in small amounts in many rocks.",
           "Even so, nuclear power is still the subject of much public debate.",
-          "These accidents never had any effect on public opinion about energy."
+          "These accidents led to the closure of several plants in Germany."
         ],
         "answer": 3,
         "explain": "Olumludan kaygılara geçiş gerekiyor. D: 'Yine de nükleer enerji hâlâ çok tartışılıyor'; sonraki 'the most serious concerns' buna bağlanıyor.",
         "tip": "Sonra 'concerns' geliyorsa, boşluk tartışmayı açan cümledir.",
         "anlam": "Önce: ülkeler hem salımı azaltmak hem elektrik ihtiyacını karşılamak istiyor; nükleer santral çalışırken karbondioksit salmaz. Sonra: en ciddi kaygılar kazalar ve atık depolama; maliyet ve süre de projeleri yavaşlattı; destekçiler yeni reaktörlerin güvenli olduğunu söylüyor.",
         "why": [
-          "'Her ülke yeni santral kurmaya karar verdi' sonraki kaygılarla çelişir.",
+          "Eski reaktörler başka bir konu; sonraki 'the most serious concerns' tartışmayı açan cümle ister.",
           "'in contrast' zıtlık ister; 'CO2 salmaz' nükleerle aynı özelliği söylüyor. Sonraki 'concerns' cümlesine de bağlanmıyor.",
           "Uranyum bilgisi tartışmaya geçişi sağlamıyor.",
           "",
-          "'These accidents' henüz anılmadı ve 'etkisi olmadı' akışa ters."
+          "'These accidents' henüz anılmadı; kazalar sonraki cümlede geçiyor."
         ]
       }
     ],
@@ -4396,7 +4396,7 @@
           "Ordinary bulbs have been replaced by LEDs in many homes and offices.",
           "Lasers were first invented in the years after the Second World War.",
           "Their light has a single wavelength and is coherent, so its peaks line up.",
-          "However, laser light cannot be focused as easily as ordinary light.",
+          "However, lasers can damage the eyes if they are used carelessly.",
           "Eye surgery is a common operation among older people in many countries."
         ],
         "answer": 2,
@@ -4407,7 +4407,7 @@
           "LED'ler ampul konusunu sürdürür, lazeri değil.",
           "İcat tarihi farkı açıklamıyor.",
           "",
-          "'Kolay odaklanmaz' sonraki cümleyle çelişir.",
+          "Göz tehlikesi başka yöne gidiyor; sonraki 'all the waves are in step' özelliğini tanıtmıyor.",
           "Göz ameliyatının yaygınlığı akışı bozar."
         ]
       }
@@ -4426,7 +4426,7 @@
           "Some animals, such as horses, are able to sleep while standing up.",
           "Research shows that many vital processes happen while we are asleep.",
           "Coffee is one of the most popular drinks in the world, especially at work.",
-          "Therefore, people should try to sleep less than six hours every night.",
+          "Many people, however, sleep less on weekdays than at weekends.",
           "Dreams usually occur in the early evening, before deep sleep begins."
         ],
         "answer": 1,
@@ -4437,7 +4437,7 @@
           "Ayakta uyuyan atlar örnek verilecek genel fikri sunmuyor.",
           "",
           "Kahve konusu akışa bağlanmıyor.",
-          "'Altı saatten az uyuyun' uykunun önemiyle çelişir.",
+          "Uyku alışkanlığı; sonraki 'for example' cümlesi uykuda olan bir sürecin genel kuralını ister.",
           "Sonraki 'During deep sleep, for example…' cümlesi 'uykuda hayati süreçler olur' gibi genel bir fikre örnek; rüya zamanı bu genel fikri vermiyor."
         ]
       }
@@ -4455,7 +4455,7 @@
         "options": [
           "Lakes in North America were formed by glaciers at the end of the ice age.",
           "Without natural predators, some multiply fast and do serious harm.",
-          "Most introduced species are completely harmless and even beneficial.",
+          "Many of them are attractive plants sold in garden centres.",
           "Ships are the cheapest way to transport large amounts of goods overseas.",
           "These pipes are made of steel and must be replaced every few years."
         ],
@@ -4466,7 +4466,7 @@
         "why": [
           "Göllerin oluşumu konuya bağlanmıyor.",
           "",
-          "'Tamamen zararsız' sonraki zarar örneğiyle çelişir.",
+          "Bahçe bitkisi bilgisi zarar fikrini vermiyor; sonraki zebra midyesi örneği zararı anlatıyor.",
           "Gemi taşımacılığının ucuzluğu akışa uymaz.",
           "'These pipes' henüz anılmadı."
         ]
@@ -4484,7 +4484,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Light travels at about 300,000 kilometres per second in empty space.",
-          "Therefore, astronomers have completely stopped trying to study them.",
+          "The nearest known black hole lies about 1,500 light years from the Earth.",
           "However, they can be detected indirectly by their effect on nearby matter.",
           "Stars like the Sun will eventually collapse and become black holes.",
           "These X-rays are harmless to astronauts working on the space station."
@@ -4495,7 +4495,7 @@
         "anlam": "Önce: kara delikte çekim çok güçlü; ışık bile kaçamadığı için doğrudan görülemez. Sonra: düşen gaz ısınıp X-ışını yayar; yıldızların hareketinden kütle hesaplanır; 2019'da gölgesinin ilk görüntüsü alındı.",
         "why": [
           "Işık hızı bilgisi geçişi sağlamıyor.",
-          "'Çalışmayı bıraktılar' sonraki çalışmalarla çelişir.",
+          "Uzaklık bilgisi; 'görülemezler' ile sonraki dolaylı gözlem yöntemleri arasında köprü kurmuyor.",
           "",
           "Sonraki cümleler kara deliğin dolaylı olarak nasıl saptandığını anlatıyor; yıldızların geleceği bu akışa bağlanmıyor.",
           "X-ışınlarının zararsızlığı akışa uymaz."
@@ -4515,9 +4515,9 @@
         "options": [
           "Their properties differ because their atoms are arranged differently.",
           "Diamonds are mined mainly in Africa, Russia and parts of Australia.",
-          "Graphite is therefore harder than diamond and is used in cutting tools.",
+          "Both can be burned in oxygen to produce carbon dioxide.",
           "Pencils containing graphite were first made in the sixteenth century.",
-          "These sheets are found only in diamonds and never in other minerals."
+          "These sheets were first separated into single layers in 2004."
         ],
         "answer": 0,
         "explain": "Aynı element ama farklı yapı: boşluk bu farkı tanıtmalı. A: atomları farklı dizildiği için özellikleri farklıdır.",
@@ -4526,9 +4526,9 @@
         "why": [
           "",
           "Madencilik yeri yapı farkına bağlanmıyor.",
-          "Paragrafın son cümlesi elmasın en sert, grafitin yumuşak olduğunu söylüyor; bu şık onunla çelişir.",
+          "Yine bir benzerlik veriyor; sonraki cümleler aradaki FARKI ve atom dizilişini anlatıyor.",
           "Kurşun kalem tarihi akışa uymaz.",
-          "'These sheets' öncesinde tabakadan söz edilmiyor; ayrıca metin tabakaları grafite bağlıyor, şık bununla çelişir."
+          "'These sheets' henüz anılmadı; tabakalar sonraki cümlelerde tanıtılıyor."
         ]
       }
     ],
@@ -4576,7 +4576,7 @@
           "They achieve this by showing the body a harmless piece or form of the germ.",
           "Many vaccines are injected into the muscle of the upper arm by a nurse.",
           "The first hospitals were built in ancient times in Egypt and Greece.",
-          "However, vaccinated people always become seriously ill after infection.",
+          "However, some people cannot be vaccinated because of illness or age.",
           "These hospitals are very expensive to build and difficult to run."
         ],
         "answer": 0,
@@ -4587,7 +4587,7 @@
           "",
           "Aşının koldan yapılması eğitme yolunu açıklamıyor.",
           "Hastane tarihi konuyla ilgisiz.",
-          "'Aşılılar hep ağır hastalanır' sonraki 'much less likely to become seriously ill' ile çelişir.",
+          "Aşı olamayanlar son cümlenin konusu; sonraki 'gerçek mikrop girince bağışıklık hızlı yanıt verir' cümlesine bağlanmıyor.",
           "'These hospitals' konuya bağlanmıyor."
         ]
       }
@@ -4604,8 +4604,8 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Panama is a small country located in Central America.",
-          "However, it made most sea voyages considerably longer.",
-          "The canal was dug entirely by hand in a single year.",
+          "Its locks raise ships about 26 metres above sea level.",
+          "The idea of a canal there had been discussed since the sixteenth century.",
           "It cut thousands of kilometres from many sea journeys.",
           "Many tourists visit Central America during the cold northern winter."
         ],
@@ -4615,8 +4615,8 @@
         "anlam": "Önce: eskiden Amerika'nın iki kıyısı arası yolculuk uzun ve tehlikeliydi; 1914'te Panama Kanalı açıldı. Sonra: gemiler artık Güney Amerika'nın ucunu dolaşmıyor; yapımı zordu; bugün binlerce gemi geçiyor.",
         "why": [
           "Panama'nın yeri etkiyi anlatmıyor.",
-          "'Yolculukları uzattı' sonraki cümleyle çelişir.",
-          "Kazı yöntemi kanalın yolculuğa etkisini anlatmıyor; sonraki 'Ships no longer had to sail around…' cümlesine bağlanmıyor.",
+          "Kanalın yapısı; sonraki 'artık güney ucunu dolaşmak gerekmedi' cümlesinin istediği yolu kısaltma etkisini vermiyor.",
+          "Fikrin tarihçesi; kanalın gemilere etkisini anlatan akışa bağlanmıyor.",
           "",
           "Turizm konusu akışı bozar."
         ]
@@ -4634,10 +4634,10 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Temperature is usually measured in degrees Celsius or in kelvin.",
-          "However, temperature has no effect at all on the motion of molecules.",
+          "Catalysts can also speed up a reaction without being used up.",
           "This is because heating makes the molecules move faster on average.",
           "Some reactions release heat, while others absorb it from outside.",
-          "These bonds are so strong that they can never be broken by heat."
+          "These collisions are recorded with special cameras in modern laboratories."
         ],
         "answer": 2,
         "explain": "Boşluk 'neden?' sorusuna ilk cevabı vermeli. C: 'Bunun nedeni ısınmanın molekülleri ortalamada hızlandırmasıdır'; sonraki 'faster molecules' buna bağlanıyor.",
@@ -4645,10 +4645,10 @@
         "anlam": "Önce: kimyacılar tepkime hızını kontrol etmek ister; çoğu tepkime sıcaklık artınca hızlanır. Sonra: hızlı moleküller daha sık ve daha enerjili çarpışır; her on derecede hız yaklaşık iki katına çıkar; soğutma tersini yapar.",
         "why": [
           "Sıcaklık birimleri nedeni açıklamıyor.",
-          "'Hiç etkisi yok' önceki 'speed up as temperature rises' cümlesiyle çelişir.",
+          "Katalizör başka bir yöntem; sonraki 'faster molecules' ısınma ile molekül hızı bağını ister.",
           "",
           "Isı alan-veren tepkimeler akışa bağlanmıyor.",
-          "'Hiç kopmaz' sonraki cümleyle çelişir."
+          "'These collisions' henüz anılmadı; çarpışmalar sonraki cümlede geçiyor."
         ]
       }
     ],
@@ -4664,9 +4664,9 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Silver is more expensive than gold and is therefore rarely used in industry.",
-          "Copper, however, conducts electricity very poorly compared with iron.",
+          "Copper is mined mainly in Chile, Peru and parts of Africa.",
           "Electrical wiring was invented about ten thousand years ago in Asia.",
-          "These pipes are made of plastic because it does not corrode at all.",
+          "These pipes are joined with soldering, which uses a metal that melts easily.",
           "Being soft, it was easily hammered into tools and jewellery long ago."
         ],
         "answer": 4,
@@ -4675,9 +4675,9 @@
         "anlam": "Önce: bakır insanlık tarihinde çok önemli; yaklaşık on bin yıldır kullanılıyor. Sonra: 'Bugün' elektrik kablosunda vazgeçilmez; korozyona dayanıklı olduğu için su borusunda; bakteri öldürdüğü için hastanede deneniyor.",
         "why": [
           "Gümüşün fiyatı bakırın tarihine bağlanmıyor.",
-          "'Elektriği kötü iletir' sonraki cümleyle çelişir.",
-          "Bu cümle bakırın eski kullanımını anlatmıyor; sonraki 'Today, it is essential in electrical wiring' ile tekrar ve zaman çelişkisi yaratıyor.",
-          "'These pipes' henüz anılmadı.",
+          "Madencilik bilgisi; sonraki 'Today' bir geçmiş kullanımın önce anlatılmasını ister.",
+          "Cümle bakırdan değil kablodan söz ediyor; ardından gelen 'Today, it …' bakıra dönemez, zincir kopar.",
+          "'These pipes' henüz anılmadı; borular sonraki cümlede geçiyor.",
           ""
         ]
       }
@@ -4696,8 +4696,8 @@
           "Wind farms are often built offshore, where the wind is stronger.",
           "Solar panels work best in cloudy weather and during the dark winter months.",
           "Tides follow the pull of the Moon and Sun, whose motions are well known.",
-          "Tides are completely random and cannot be forecast with any accuracy.",
-          "These sites are very common along almost every coast in the world."
+          "Tidal plants are usually built in narrow bays and river mouths.",
+          "These sites are often protected because many birds feed there."
         ],
         "answer": 2,
         "explain": "Boşluk neden tahmin edilebilir olduğunu açıklamalı. C: gelgitler hareketi iyi bilinen Ay ve Güneş'in çekimini izler.",
@@ -4707,8 +4707,8 @@
           "Rüzgâr çiftlikleri gelgiti açıklamıyor.",
           "Güneş paneli konusu gelgitin öngörülebilirliğini açıklamıyor; sonraki 'therefore calculate the output' cümlesine bağlanmıyor.",
           "",
-          "'Tamamen rastgele' önceki 'highly predictable' ifadesiyle çelişir.",
-          "'Çok yaygın' sonraki 'suitable sites ... are rare' bilgisiyle çelişir."
+          "Santral yeri, tahmin edilebilir olmanın nedenini vermiyor; sonraki 'therefore … years in advance' buna bağlanmıyor.",
+          "'These sites' henüz anılmadı; uygun yerler sonraki cümlede geçiyor."
         ]
       }
     ],
@@ -4725,9 +4725,9 @@
         "options": [
           "Ice is often used to keep food and drinks fresh and cold.",
           "Fish can breathe air for long periods when lakes are frozen.",
-          "Lakes therefore freeze from the bottom up during cold winters.",
+          "Lakes in cold regions may stay frozen for several months each year.",
           "Unlike most solids, ice is less dense than its liquid.",
-          "These fish live only in warm water near the surface of lakes."
+          "These molecules are made of one oxygen and two hydrogen atoms."
         ],
         "answer": 3,
         "explain": "Boşluk olağandışılığı açmalı. D: çoğu katının aksine buz, sıvısından daha az yoğundur; sonraki 'This happens because' bunun nedenini veriyor.",
@@ -4736,9 +4736,9 @@
         "why": [
           "Buzla yiyecek saklama akışa uymaz.",
           "Sonraki cümle 'This happens because water molecules form…' diye donmayı açıklıyor; balıkların hava soluması bu 'This'e uymaz.",
-          "'Dipten donar' sonraki 'lakes freeze from the top down' ile çelişir.",
+          "Göllerin donma süresi; sonraki 'This happens because' açıklanacak olguyu (buz daha hafif) ister.",
           "",
-          "'These fish' henüz anılmadı."
+          "'These molecules' henüz anılmadı; ayrıca sonraki 'This happens because' bir olgu ister, tanım değil."
         ]
       }
     ],
@@ -4754,9 +4754,9 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Bacteria were first observed under a microscope in the seventeenth century.",
-          "However, bacteria never share their genes with members of other species.",
+          "Some bacteria divide as often as every twenty minutes.",
           "Most bacteria are harmful to humans and cause serious infectious diseases.",
-          "This disease affects only animals and has never been found in humans.",
+          "This disease spreads most easily in crowded hospitals.",
           "For example, they can pass small DNA rings called plasmids between cells."
         ],
         "answer": 4,
@@ -4765,9 +4765,9 @@
         "anlam": "Önce: antibiyotikler hayat kurtardı; genler normalde ebeveynden yavruya geçer, bakteriler ise akraba olmayan komşularla da gen değiştirir. Sonra: 'Bu süreç' yatay gen aktarımıdır; direnç geni türler arasında hızla yayılır.",
         "why": [
           "Mikroskop tarihi akışa bağlanmıyor.",
-          "'Başka türle hiç paylaşmaz' önceki 'unrelated neighbours' ile çelişir.",
+          "Bölünme hızı; sonraki 'This process, known as horizontal gene transfer' komşular arası gen aktarımının bir örneğini ister.",
           "Zararlı bakteri bilgisi gen aktarımını açıklamıyor.",
-          "'This disease' anılmadı; akışa uymaz.",
+          "'This disease' bir hastalığa gönderme yapar ama metinde hastalık anılmadı.",
           ""
         ]
       }
@@ -4786,7 +4786,7 @@
           "Trees draw water from the soil and give it off through their leaves.",
           "Forests are home to many species of birds, insects and mammals.",
           "Paper is made from wood that is cut in large forests every year.",
-          "Therefore, forests reduce the amount of moisture in the air above them.",
+          "Forests also slow down the wind and protect the soil from erosion.",
           "These birds migrate south every winter to find food and warmth."
         ],
         "answer": 0,
@@ -4797,7 +4797,7 @@
           "",
           "Ormandaki hayvanlar neme bağlanmıyor.",
           "Kâğıt üretimi akışa uymaz.",
-          "'Nemi azaltır' sonraki cümleyle çelişir.",
+          "Rüzgâr ve erozyon başka yön; sonraki 'This moisture' öncesinde neme dair bilgi ister.",
           "'These birds' akışa uymaz."
         ]
       }
@@ -4816,7 +4816,7 @@
           "The station was built with the help of several different countries.",
           "Astronauts on board must exercise for about two hours every day.",
           "So it passes from daylight into darkness many times a day.",
-          "However, it orbits the Earth only once a month at a great height.",
+          "It is large enough to be seen from the ground without a telescope.",
           "These countries all use the same time zone for their space work."
         ],
         "answer": 2,
@@ -4827,7 +4827,7 @@
           "Ülkelerin katkısı akışa bağlanmıyor.",
           "Egzersiz bilgisi konuyu koparır.",
           "",
-          "'Ayda bir kez' önceki 'once every ninety minutes' bilgisiyle çelişir.",
+          "Görünürlük bilgisi; 90 dakikalık tur ile günde 16 gün doğumu arasında köprü kurmuyor.",
           "'These countries' akışa uymaz."
         ]
       }
@@ -4845,8 +4845,8 @@
         "options": [
           "The old, cold crust there carries seismic waves well, so shaking spreads widely.",
           "Most volcanoes are located at plate boundaries rather than in plate interiors.",
-          "Plate boundaries are always found in the middle of the oceans, far from land.",
-          "Therefore, these earthquakes never cause any damage to buildings or people.",
+          "Plate boundaries are marked by long chains of volcanoes and deep trenches.",
+          "Therefore, scientists study them with seismometers placed in deep boreholes.",
           "These boundaries are moving apart by a few centimetres every year."
         ],
         "answer": 0,
@@ -4856,8 +4856,8 @@
         "why": [
           "",
           "Volkanların yeri yıkıcılığı açıklamaz.",
-          "Plaka sınırlarının yeri, plaka ortasındaki depremlerin neden yıkıcı olduğunu açıklamıyor; sonraki 'In addition' ekine bağlanmıyor.",
-          "'Hiç zarar vermez' önceki 'surprisingly destructive' ile çelişir.",
+          "Sınırlara geri dönüyor; levha içi depremlerin neden yıkıcı olduğunu açıklamıyor.",
+          "İnceleme yöntemi; sonraki 'In addition' yıkıcılığın ikinci nedenini eklediği için boşluk birinci nedeni vermeli.",
           "Sınırların açılması plaka ortasını anlatmaz."
         ]
       }
@@ -4874,7 +4874,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Vacuum cleaners were first invented in the early twentieth century in Britain.",
-          "However, they cannot detect any obstacles such as walls or furniture.",
+          "However, they are still more expensive than ordinary vacuum cleaners.",
           "Sensors help them notice walls, furniture and stairs so they do not crash.",
           "Many people prefer soft carpets to wooden floors in their bedrooms.",
           "These stations are very heavy and must be fixed to the floor."
@@ -4885,7 +4885,7 @@
         "anlam": "Önce: ev robotları eskiden bilimkurguydu; bugün robot süpürgeler yaygın. Sonra: 'Bazı modeller AYRICA' ev haritası çıkarır, şarja döner; yeniler telefondan yönetilir; köşeleri temizlemekte hâlâ zorlanırlar.",
         "why": [
           "Süpürgenin icat tarihi özellik değil.",
-          "'Engelleri algılayamaz' sonraki akıllı özelliklerle uyuşmaz.",
+          "Fiyat sorunu; sonraki 'Some models also' aynı türden bir özellik ekliyor, boşluk ilk özelliği vermeli.",
           "",
           "Halı tercihi konuyla ilgisiz.",
           "'These stations' henüz anılmadı."
@@ -8310,7 +8310,7 @@
         "options": [
           "the temperature of the sand had decided the sex of the young",
           "coastal development poses a direct threat to their breeding",
-          "but most hatchlings never survive to reach adulthood",
+          "they can stay under water for several hours without breathing",
           "they spend most of their lives far out in the open ocean",
           "which makes the open sea a safe place for them to feed"
         ],
@@ -8322,7 +8322,7 @@
         "why": [
           "'had decided' geçmişin geçmişi; zaman uymuyor.",
           "",
-          "'Since … but' birlikte kullanılmaz.",
+          "Su altında uzun kalabilmek, kumsala yumurtlamanın sonucu değil; 'Since' (çünkü) ile neden-sonuç kurulmaz.",
           "Açık denizde yaşamak kumsala yumurtlamanın sonucu değil.",
           "'which' tam ana cümle kurmaz."
         ]
@@ -8371,22 +8371,22 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "although the straw keeps the soil cool and moist",
-          "in order that the soil dried out more quickly",
+          "unless the straw keeps the soil cool and moist",
           "so that less water is lost through evaporation",
-          "so that more water had been lost through evaporation",
-          "because of less water evaporates from the soil"
+          "while the soil was being ploughed last spring",
+          "in case the straw has been blown away by the wind"
         ],
         "answer": 2,
         "explain": "Örtmenin amacı buharlaşmayla daha az su kaybetmektir. 'so that less water is lost' amaç ve zaman doğru (C).",
         "tip": "so that + geniş zaman (amaç) = -sın diye.",
-        "hint": "Saman örtmenin amacı ne? Şıklarda yapıyı da kontrol et: of + cümle olur mu?",
+        "hint": "Saman örtmenin amacı ne? Bağlacın kurduğu ilişkiye ve zamana bak.",
         "anlam": "Kurak bölgelerdeki çiftçiler toprağı çoğu zaman samanla örter …",
         "why": [
           "'although' zıtlık kurar; saman toprağı nemli tutar, zıtlık değil.",
-          "'dried out more quickly' amacı tersine çeviriyor ve zaman uymuyor.",
+          "'unless' (-mezse) şart kurar; 'saman toprağı nemli tutmazsa örterler' anlamsız.",
           "",
-          "'more water' ve 'had been lost' hem anlam hem zaman hatası.",
-          "'because of' sonrasında tam cümle olmaz."
+          "'often cover' her zaman yapılan bir iş; 'geçen bahar' ve geçmiş zaman buna uymaz.",
+          "'in case' (diye, ihtimaline karşı) önlem bildirir; samanın uçması samanla örtmenin gerekçesi olamaz."
         ]
       }
     ],
@@ -8401,22 +8401,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "therefore, they rarely need to warm up in the morning",
-          "so that they bask in the sun before they start hunting",
+          "for example, their scales are made of a hard protein",
+          "otherwise, they would bask in the sun before hunting",
           "therefore, they bask in the sun before they start hunting",
-          "therefore, basking in the sun before they start hunting",
+          "therefore, they had basked in the sun before they started hunting",
           "however, they bask in the sun before they start hunting"
         ],
         "answer": 2,
         "explain": "Isı üretemedikleri için güneşlenmek zorundalar. '; therefore, they bask …' sonuç ve tam cümle doğru (C).",
         "tip": "; therefore, + özne + fiil (tam cümle).",
-        "hint": "Bağlaç anlamını seçtikten sonra şıkta çekimli fiil var mı, bak.",
+        "hint": "İlk yarı bir neden veriyor: hangi bağlaç sonuç kurar? Sonra zamana bak.",
         "anlam": "Kertenkeleler kendi vücut ısılarını üretemez; …",
         "why": [
-          "'nadiren ısınması gerekir' sonucu ters çeviriyor.",
-          "Noktalı virgülden sonra 'so that' ile cümle başlamaz.",
+          "'for example' ilk kısma örnek ister; pulların yapısı ısı üretememenin örneği değil.",
+          "'otherwise' (aksi halde) ters koşul kurar; 'ısı üretebilselerdi güneşlenirlerdi' mantığı ters.",
           "",
-          "'basking' çekimli fiil değil; cümle yüklemsiz.",
+          "Kök genel bir gerçek (geniş zaman); 'had basked' geçmişin geçmişi buna uymaz.",
           "'however' zıtlık kurar; güneşlenme sonuç."
         ]
       }
@@ -8434,7 +8434,7 @@
         "options": [
           "although the cooler air helps them avoid overheating",
           "whereas the cooler air helps them avoid overheating",
-          "because of the cooler air helps them avoid overheating",
+          "unless the cooler air helps them avoid overheating",
           "because the cooler air would have helped them avoid overheating",
           "because the cooler air helps them avoid overheating"
         ],
@@ -8446,7 +8446,7 @@
         "why": [
           "'although' zıtlık kurar; serin hava nedendir.",
           "'whereas' karşılaştırma yapar; burada karşılaştırma yok.",
-          "'because of' sonrasında tam cümle olmaz.",
+          "'unless' (-mezse) şart kurar; 'serin hava yardım etmezse gece göç ederler' anlamsız.",
           "'would have helped' geçmiş hayal; genel gerçeğe uymaz.",
           ""
         ]
@@ -8464,8 +8464,8 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "pests that feed on a single crop can build up in the soil",
-          "if pests build up in the soil year after year",
-          "the soil will stay rich in nutrients for many years to come",
+          "pests that feed on a single crop were controlled in the past",
+          "the soil will stay rich in nutrients thanks to crop rotation",
           "soil-borne diseases would have been much less common",
           "they plant different crops on the same field each year"
         ],
@@ -8476,8 +8476,8 @@
         "anlam": "Çiftçiler ürün nöbeti (münavebe) YAPMAZSA …",
         "why": [
           "",
-          "'if' ile başlayan kısım ana cümle olamaz.",
-          "'toprak zengin kalır' münavebe yapmamanın sonucu değil.",
+          "Gerçek koşul (Unless + geniş zaman) sonuçta gelecek ya da geniş zaman ister; düz geçmiş uymaz.",
+          "Koşul 'ürün nöbeti yapılmazsa' diyor; 'ürün nöbeti sayesinde' bununla çelişir.",
           "'would have been' geçmiş hayal; gerçek koşula uymaz.",
           "Münavebenin tanımı; koşulla çelişir."
         ]
@@ -8494,7 +8494,7 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "provided that they will be kept dry and cold",
+          "although they are kept dry and cold",
           "even if they had been kept dry and cold",
           "provided that they are kept dry and cold",
           "unless they are kept dry and cold",
@@ -8503,10 +8503,10 @@
         "answer": 2,
         "explain": "Şart: kuru ve soğuk tutulmaları. 'provided that they are kept' şart ve zaman doğru (C).",
         "tip": "provided that / if + geniş zaman (will yok).",
-        "hint": "Koşul bağlacından sonra hangi zaman gelir? Kök sıcak ve nem için ne diyor?",
+        "hint": "Kök sıcak ve nem için ne diyor? Bağlacın anlamı buna uymalı.",
         "anlam": "Sıcak ve nem onlara zarar verdiği için tohumlar on yıllarca saklanabilir …",
         "why": [
-          "'provided that' sonrasında 'will' kullanılmaz.",
+          "'although' zıtlık kurar; kök sıcak ve nemin zarar verdiğini söylüyor, kuru-soğuk tutmak saklamanın şartı.",
           "'had been kept' zamanı ve 'even if' anlamı uymuyor.",
           "",
           "'unless' anlamı ters çevirir: 'kuru ve soğuk tutulmazsa saklanır' olur; kök sıcak ve nemin zarar verdiğini söylüyor.",
@@ -8525,9 +8525,9 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "which is why it weakens over land",
+          "the storm had already lost most of its energy",
           "it will quickly weaken and break apart",
-          "but it loses energy over cold land",
+          "its winds were measured by aircraft last year",
           "it can continue to gain strength",
           "it had already reached the coast"
         ],
@@ -8537,9 +8537,9 @@
         "hint": "Kök sıcak su için ne diyor? Sonucun yönü buna uymalı.",
         "anlam": "Kasırgalar enerjisini sıcak okyanus suyundan alır. Bir kasırga sıcak su üzerinde kaldığı SÜRECE …",
         "why": [
-          "'which' tam ana cümle kurmaz.",
+          "Kök sıcak suyun enerji verdiğini söylüyor; 'enerjisini çoktan kaybetmişti' çelişir ve 'had lost' zamanı uymaz.",
           "Kök sıcak suyun kasırgaya enerji verdiğini söylüyor; 'hızla zayıflar' bununla çelişir.",
-          "'but' bağlaçla başlayan kısım ana cümle olamaz.",
+          "'As long as' gelecek ya da geniş zaman ister; 'geçen yıl' ve düz geçmiş uymaz, konu da kopuk.",
           "",
           "'had reached' zamanı uymuyor."
         ]
@@ -8556,8 +8556,8 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "when it begins to grow quickly on a diet of small fish",
-          "it had never returned to the river in which it hatched",
+          "it began to grow quickly on a diet of small fish",
+          "it left the river after spending a year in fresh water",
           "the river in which it hatched becomes its main feeding ground",
           "it will be hatched in a gravel bed far up the river",
           "it may feed there for years before returning to its home river"
@@ -8568,8 +8568,8 @@
         "hint": "Somonun yaşam sırasını düşün: okyanusa vardıktan SONRA ne olur?",
         "anlam": "Genç bir somon okyanusa ULAŞINCA …",
         "why": [
-          "'when' ile başlayan kısım ana cümle olamaz.",
-          "'had never returned' zamanı ve anlamı yanlış.",
+          "'Once it reaches' geniş zaman; ana cümlede düz geçmiş 'began' uymaz.",
+          "Nehirden ayrılmak okyanusa ulaşmadan önce olur; sıra ters ve düz geçmiş uymaz.",
           "'Once it reaches the ocean' okyanusa geçişi anlatır; ana beslenme yerinin nehir olması bu zaman bağıyla çelişir.",
           "Yumurtadan çıkma okyanustan önce olur; sıra ters.",
           ""
@@ -8587,7 +8587,7 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "because the rains had finally returned to the region",
+          "farmers sell their cattle whenever prices rise",
           "nearly half of the region's cattle will have been sold by their owners",
           "farmers have been selling their cattle for many months",
           "nearly half of the region's cattle had been sold or had died",
@@ -8599,7 +8599,7 @@
         "hint": "'ended' geçmiş zaman: ondan ÖNCE tamamlanan iş hangi zamanla anlatılır?",
         "anlam": "Kuraklık sona erdiğinde …",
         "why": [
-          "'because' ile başlayan kısım ana cümle olamaz.",
+          "'By the time + düz geçmiş' ana cümlede 'had + üçüncü hal' ister; geniş zaman uymaz, konu da kopuk.",
           "'will have been' geleceğe ait; düz geçmiş ile uymaz.",
           "'have been selling' 'have/has + üçüncü hal' yapısı; geçmiş noktaya uymaz.",
           "",
@@ -8619,20 +8619,20 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "since rising temperatures signal that food will soon be available",
-          "until rising temperatures will signal that food is available",
-          "unless rising temperatures had signalled that food was available",
+          "after rising temperatures signal that food will soon be available",
+          "as rising temperatures had signalled that food was available",
           "until rising temperatures signal that food will soon be available",
           "even though falling temperatures signal that food will be scarce"
         ],
         "answer": 3,
         "explain": "Uyku, sıcaklık artıp yiyecek sinyali verene kadar sürer. 'until … signal' (geniş zaman) doğru (D).",
         "tip": "until / when / before + geniş zaman (will yok).",
-        "hint": "Yumurtalar NE ZAMANA kadar bekler? Zaman bağlacından sonra will olur mu?",
+        "hint": "Yumurtalar NE ZAMANA kadar bekler? Bağlacın anlamına ve zamana bak.",
         "anlam": "Birçok böceğin yumurtası kış boyunca uykuda kalır …",
         "why": [
           "'since' neden kurar; sıcaklık uykunun nedeni değil, bitişi.",
-          "'until' sonrasında 'will' kullanılmaz.",
-          "'had signalled' zamanı uymuyor.",
+          "'through the winter' ile çelişir: sıcaklık arttıktan SONRA uykuda kalmak mantıksız.",
+          "'remain' geniş zaman; 'had signalled' geçmişin geçmişi uymaz ve sıcaklık artışı kış uykusunun nedeni olamaz.",
           "",
           "'düşen sıcaklık, kıt yiyecek' kışın uykuda kalmakla aynı yönde; 'even though' zıtlık ister."
         ]
@@ -8651,7 +8651,7 @@
         "options": [
           "it will have given a sharp alarm call to the others",
           "it continues to feed calmly out in the open grass",
-          "so it gives a sharp alarm call to warn the others",
+          "the other squirrels were feeding calmly in the grass",
           "the hawk gives a sharp alarm call to warn the squirrels",
           "it gives a sharp alarm call to warn others"
         ],
@@ -8662,8 +8662,8 @@
         "anlam": "Bir yer sincabı şahini görür görmez …",
         "why": [
           "'will have given' zamanı uymuyor.",
-          "'sakince beslenir' anlamsız.",
-          "'As soon as … so' birlikte kullanılmaz.",
+          "'As soon as … spots a hawk' ani bir tepki ister; 'sakince beslenmeye devam eder' tepki değil, bağ kurmaz.",
+          "'As soon as … spots' geniş zaman; düz geçmiş 'were feeding' uymaz, alarm da verilmiyor.",
           "Özne karışmış: şahin alarm veriyor.",
           ""
         ]
@@ -8681,20 +8681,20 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "than the leaves of the vines have begun to turn brown",
-          "then the leaves of the vines began to turn brown",
-          "when the leaves of the vines began to turn brown",
+          "than the leaves of the vines will turn brown",
+          "than the summer heat returned to the valley",
           "than the leaves of the vines began to turn brown",
           "than the leaves of the vines would turn green again"
         ],
         "answer": 3,
         "explain": "'No sooner had … than' sabit kalıptır ve ikinci kısım düz geçmiş ister: than … began (D).",
         "tip": "No sooner had … üçüncü hal than … düz geçmiş.",
-        "hint": "'No sooner' hangi kelimeyle eşleşir? Sonra fiil zamanına bak.",
+        "hint": "Bütün şıklar 'than' ile başlıyor: fiil zamanına ve anlama bak.",
         "anlam": "İlk don gelir gelmez …",
         "why": [
           "'than' doğru ama 'have begun' zamanı uymuyor.",
-          "'then' kalıba uymaz; 'than' olmalı.",
-          "'when' kalıba uymaz; 'than' olmalı.",
+          "'No sooner had …' geçmiş bir olay anlatır; 'will turn' gelecek zaman uymaz.",
+          "İlk don geldiği anda yaz sıcağı dönmez; zaman doğru ama anlam kökle çelişir.",
           "",
           "'No sooner had … than' kalıbı düz geçmiş ister; 'would turn' uymaz."
         ]
@@ -8712,22 +8712,22 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "which other ants follow to reach a food source",
-          "which other ants follow them to reach a food source",
-          "whose other ants follow to reach a food source",
-          "what other ants follow to reach a food source",
-          "that other ants follow to reach a food source"
+          "which helps them to see the ground in the dark",
+          "whereas other ants follow them to reach a food source",
+          "unless other ants follow them to reach a food source",
+          "so that the food had been carried back to the nest"
         ],
         "answer": 0,
-        "explain": "', which' izleri niteliyor ve 'follow'un nesnesi oluyor. Nesne zaten 'which' olduğu için 'them' eklenmez (A).",
-        "tip": "which nesne ise sonra tekrar it/them gelmez.",
-        "hint": "Boşluktan önce virgül var: hangi ilgi zamiri virgülden sonra gelemez?",
+        "explain": "', which' önceki ismi (izleri) niteler ve 'follow'un nesnesi olur: diğer karıncaların yiyeceğe ulaşmak için izlediği izler (A).",
+        "tip": ", which + cümle: önceki ismi niteler (… -dığı).",
+        "hint": "Boşluk izleri anlatmalı: bağlacın kurduğu ilişkiye ve zamana bak.",
         "anlam": "Karıncalar yere kimyasal izler bırakır, …",
         "why": [
           "",
-          "'them' fazla; nesne zaten 'which'.",
-          "'whose' sahiplik bildirir; anlam bozuk.",
-          "'what' bir isme bağlanmaz.",
-          "'that' virgülden sonra kullanılmaz."
+          "'which' izlere döner; izlerin görmeye yardım etmesi kökle bağ kurmaz, konu kopuk.",
+          "'whereas' karşılaştırma kurar; iz bırakmak ile izi izlemek zıt değil, birbirini tamamlar.",
+          "'unless' (-mezse) şart kurar; 'diğerleri izlemezse iz bırakırlar' anlamsız.",
+          "'leave' geniş zaman; 'had been carried' geçmişin geçmişi 'so that' amacına uymaz."
         ]
       }
     ],
@@ -8743,22 +8743,22 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "whose caterpillars feed only on milkweed",
-          "whose caterpillars are fed on milkweed by them",
-          "which caterpillars feed only on milkweed",
-          "whose feed only on milkweed as caterpillars",
-          "that their caterpillars feed only on milkweed"
+          "which spend the whole winter in northern Canada",
+          "although their caterpillars feed only on milkweed",
+          "unless their caterpillars feed only on milkweed",
+          "which will hatch from their eggs next spring"
         ],
         "answer": 0,
         "explain": "'whose caterpillars' (tırtılları) sahiplik bildirir ve tam cümle kurar: tırtılları yalnızca süt otuyla beslenir (A).",
         "tip": "whose + isim = -nin …'si (sahiplik).",
-        "hint": "Boşluk, kelebeklerin 'kendi' bir parçasından söz ediyor: sahiplik zamiri hangisi?",
+        "hint": "Ara cümle yalnız kelebekleri tanıtmalı: ana cümleyle çelişen ya da yanlış bağlaçlı şıkkı ele.",
         "anlam": "Kral kelebekleri, …, kışı geçirmek için Meksika'ya 4.000 km'ye kadar yol alır.",
         "why": [
           "",
-          "'are fed … by them' edilgen ve anlamsız.",
-          "'which caterpillars' sahiplik vermez; 'whose' gerekir.",
-          "'whose' sonrasında isim yok.",
-          "'that their' yanlış; 'whose' olmalı ve virgüllerle 'that' olmaz."
+          "Ana cümle kışı Meksika'da geçirdiklerini söylüyor; 'bütün kışı Kanada'da geçirir' çelişir.",
+          "'although' zıtlık kurar; tırtılların beslenmesi uzun yolculukla zıt bir bilgi değil.",
+          "'unless' (-mezse) şart kurar; bu şart yolculukla bağ kurmaz, anlam bozuk.",
+          "'will hatch' gelecek; şimdi yolculuk yapan kelebekler gelecek bahar yumurtadan çıkamaz."
         ]
       }
     ],
@@ -8768,27 +8768,27 @@
   {
     "id": "d208",
     "type": "cumle-tamamlama",
-    "stem": "Field studies have shown ----.",
+    "stem": "Field studies have shown ----: elephants answer the calls of their relatives but ignore those of strangers.",
     "items": [
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "elephants that recognising the voices of family members",
-          "what elephants can recognise the voices of family members",
-          "that elephants recognising the voices of family members",
-          "which elephants can recognise the voices of family members",
+          "that elephants respond to strangers faster than to relatives",
+          "that young elephants learn to walk within hours of birth",
+          "how far elephants travel during the long dry season",
+          "whether elephants had been fed by park rangers",
           "that elephants can recognise the voices of family members"
         ],
         "answer": 4,
-        "explain": "'show' sonrasında 'that + tam cümle' gelir: filler aile üyelerinin sesini tanıyabilir (E).",
-        "tip": "show / find / suggest + that + özne + fiil.",
-        "hint": "Şıklardaki cümle tam mı eksik mi? Çekimli fiil var mı?",
-        "anlam": "Saha çalışmaları …'ı göstermiştir.",
+        "explain": "İki nokta üst üsteden sonraki kısım kanıt veriyor: filler akrabalarına yanıt verip yabancıları görmezden geliyor. Bu, aile üyelerinin sesini tanıdıklarını gösterir (E).",
+        "tip": "show / find + that + tam cümle; kanıt hangi sonucu destekliyorsa onu seç.",
+        "hint": "Sonraki kısım ne gösteriyor? Akraba ile yabancı ayrımı hangi yeteneği kanıtlar?",
+        "anlam": "Saha çalışmaları …'ı göstermiştir: filler akrabalarının çağrısına yanıt verir ama yabancılarınkini görmezden gelir.",
         "why": [
-          "Sıra bozuk ve 'recognising' çekimli değil.",
-          "'what' tam cümleyle 'gösterdi' nesnesi olmaz.",
-          "'recognising' çekimli fiil değil; yüklem yok.",
-          "'which' burada isim cümlesi kurmaz.",
+          "İkinci kısım yabancıların çağrısının görmezden gelindiğini söylüyor; 'yabancılara daha hızlı yanıt' çelişir.",
+          "Yürümeyi öğrenmek, iki nokta üst üsteden sonraki çağrı-tanıma kanıtına bağlanmaz.",
+          "Göç mesafesi, akrabaların sesine yanıt verme kanıtıyla ilgisiz.",
+          "Bakıcıların beslemesi kanıtla ilgisiz; 'had been' zamanı da 'have shown' ile uymaz.",
           ""
         ]
       }
@@ -8799,28 +8799,28 @@
   {
     "id": "d209",
     "type": "cumle-tamamlama",
-    "stem": "Photosynthesis is the process ----.",
+    "stem": "Photosynthesis, which turns sunlight, water and carbon dioxide into sugar in green leaves, is the process ----.",
     "items": [
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "by which plants convert light energy into chemical energy",
           "in which light energy converts plants into chemical energy",
-          "which plants convert light energy into chemical energy",
-          "by that plants convert light energy into chemical energy",
-          "where plants converting light energy into chemical energy"
+          "which plants use to take up water through their roots",
+          "by which animals break down sugar to release energy",
+          "in which sugar is broken down to release heat"
         ],
         "answer": 0,
-        "explain": "'the process by which' = -dığı süreç (o süreçle). Bitkiler ışık enerjisini kimyasal enerjiye çevirir (A).",
+        "explain": "Kök süreci anlatıyor: güneş ışığı yaprakta şekere dönüşüyor. 'the process by which' (-dığı süreç) + bitkiler ışık enerjisini kimyasal enerjiye çevirir (A).",
         "tip": "process + by which / in which + tam cümle.",
-        "hint": "Süreç fiilin nesnesi mi, yoksa 'yolu/aracı' mı? Edat gerekir mi?",
-        "anlam": "Fotosentez, …'dığı süreçtir.",
+        "hint": "Kökteki tanım ne diyor: kim, nerede, ne yapıyor? Özne ve yön buna uymalı.",
+        "anlam": "Güneş ışığını, suyu ve karbondioksiti yeşil yapraklarda şekere dönüştüren fotosentez, …'dığı süreçtir.",
         "why": [
           "",
           "Özne-nesne ters: ışık bitkileri dönüştürüyor.",
-          "'which' sonrasında cümle tam; edat gerekir.",
-          "Edattan sonra 'that' kullanılmaz.",
-          "'converting' çekimli fiil değil."
+          "Kök olayın yeşil yapraklarda ve güneş ışığıyla olduğunu söylüyor; köklerle su almak bununla uyuşmaz.",
+          "Kök bitkilerden (yeşil yapraklar) ve şeker yapımından söz ediyor; hayvanların şeker parçalaması ters süreç.",
+          "Kök şekerin YAPILDIĞINI söylüyor; 'şeker parçalanır' çelişir."
         ]
       }
     ],
@@ -8837,21 +8837,21 @@
         "options": [
           "Because the summer was unusually dry",
           "Although the summer was unusually dry",
-          "Although the rainfall was ideal throughout the season",
-          "Despite of the unusually dry summer",
-          "Despite the summer was unusually dry"
+          "Unless the summer was unusually dry",
+          "Despite the ideal rainfall throughout the season",
+          "As soon as the summer becomes unusually dry"
         ],
         "answer": 1,
         "explain": "Kuru yaz (olumsuz) ama yüksek verim (olumlu): zıtlık. 'Although + cümle' doğru (B).",
-        "tip": "Although + cümle; Despite + isim.",
-        "hint": "Boşluk virgülden önce: bağlaç + cümle gerek. Hangi bağlaç cümle alır?",
+        "tip": "Olumsuz koşul + olumlu sonuç = Although (zıtlık).",
+        "hint": "Kuru yaz ile yüksek verim aynı yönde mi ters mi? Zamana da bak.",
         "anlam": "…, yeni buğday çeşidi denemede yüksek verim verdi.",
         "why": [
           "'Because' neden kurar; kuraklık yüksek verimin nedeni değil.",
           "",
-          "İdeal yağış ile yüksek verim aynı yönde; zıtlık yok.",
-          "'Despite of' yanlış; 'despite' tek başına kullanılır.",
-          "'Despite' sonrasında tam cümle gelmez."
+          "'Unless' (-mezse) şart kurar; geçmişte olmuş bir denemeye 'kuru olmasaydı' şartı uymaz, anlam bozuk.",
+          "'Despite' zıtlık kurar; ideal yağış ile yüksek verim aynı yönde.",
+          "'becomes' geniş zaman; ana cümledeki düz geçmiş 'produced' ile uymaz."
         ]
       }
     ],
@@ -8869,8 +8869,8 @@
           "the hive can be several kilometres away from the honeybees",
           "honeybees can fly up to several kilometres from the hive",
           "flowers attract honeybees with bright colours and scent",
-          "it is common for the hive to be left completely unguarded",
-          "honeybees, which fly up to several kilometres from the hive"
+          "it is common for the hive to be left unguarded",
+          "honeybees store the honey in wax cells inside the hive"
         ],
         "answer": 1,
         "explain": "'While searching' gizli özne ister; arayanlar arılar. B: bal arıları kovandan birkaç km uzağa uçabilir.",
@@ -8881,8 +8881,8 @@
           "Özne 'hive' olunca kovan yiyecek arıyor olur.",
           "",
           "Özne 'flowers' olunca çiçekler yiyecek arıyor olur.",
-          "Özne 'it' olunca kim aradığı belirsiz.",
-          "'which' yüzünden ana cümlenin yüklemi yok."
+          "Gizli özne 'it' olunca yiyeceği kimin aradığı belirsiz; 'searching' arılara bağlanmaz.",
+          "Yiyecek ararken kovanın dışındadırlar; kovanın içinde bal depolamak aynı anda olamaz."
         ]
       }
     ],
@@ -8901,7 +8901,7 @@
           "whereas grasshoppers usually rub a leg against a wing",
           "whereas male crickets also rub their wings to attract females",
           "so that grasshoppers usually rub a leg against a wing",
-          "whereas grasshoppers usually rubbing a leg against a wing"
+          "because grasshoppers usually rub a leg against a wing"
         ],
         "answer": 1,
         "explain": "'whereas' başka bir canlıyla karşılaştırır: çekirgeler genelde bacağını kanadına sürter (B).",
@@ -8913,7 +8913,7 @@
           "",
           "Aynı özne ve 'also'; karşılaştırma yok.",
           "'so that' amaç kurar; anlamsız.",
-          "'rubbing' çekimli fiil değil."
+          "'because' neden kurar; çekirgelerin yöntemi cırcır böceklerinin yönteminin nedeni değil."
         ]
       }
     ],
@@ -8929,20 +8929,20 @@
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
           "because the pressure at its surface is ninety times that on Earth",
-          "so that the pressure at its surface is ninety times that on Earth",
-          "which the pressure at its surface is ninety times that on Earth",
+          "that the pressure at its surface will be measured by future probes",
+          "that its clouds had been photographed by a probe in 1975",
           "that the pressure at its surface is about ninety times that on Earth",
           "that the pressure at its surface is lower than that on Earth"
         ],
         "answer": 3,
         "explain": "'so + sıfat + that' kalıbı: o kadar yoğun ki yüzeydeki basınç Dünya'nın yaklaşık 90 katı (D).",
         "tip": "so + sıfat + that = o kadar … ki.",
-        "hint": "'so dense' kalıbı hangi kelimeyle tamamlanır? Sonra anlamı kontrol et.",
+        "hint": "'so dense' kalıbı 'that' ister; 'that' sonrası yoğunluğun sonucu olmalı: hangisi?",
         "anlam": "Venüs'ün atmosferi o kadar yoğundur ki …",
         "why": [
           "'because' kalıbı tamamlamaz.",
-          "'so that' amaç bildirir; kalıp 'so dense that'.",
-          "'which' kalıbı tamamlamaz.",
+          "'so dense that' yoğunluğun sonucunu ister; gelecekte ölçülecek olmak bir sonuç değil, zaman da uymaz.",
+          "Fotoğraflanmak yoğunluğun sonucu değil; 'is' ile 'had been' zamanı da uymaz.",
           "",
           "'so dense that' yoğunluğun büyüklüğünü vurgulayan bir sonuç ister; 'Dünya'dan düşük' bu vurguyla çelişir."
         ]
@@ -8959,23 +8959,23 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "as a result of far less water wasted than with sprinklers",
+          "otherwise, far less water would be wasted than with sprinklers",
           "as a result, far more water is wasted than with sprinklers",
           "nevertheless, far less water is wasted than with sprinklers",
           "as a result, far less water is wasted than with sprinklers",
-          "because far less water is wasted than with sprinklers"
+          "in other words, sprinklers deliver water directly to the roots"
         ],
         "answer": 3,
         "explain": "Suyun doğrudan köke gitmesinin sonucu daha az su israfıdır. '; as a result, far less water is wasted' (D).",
         "tip": "; as a result, + tam cümle (sonuç).",
-        "hint": "Köke doğrudan su vermek israfı artırır mı azaltır mı? Sonra bağlacın yapısına bak.",
+        "hint": "Köke doğrudan su vermek israfı artırır mı azaltır mı? Sonra bağlacın anlamına bak.",
         "anlam": "Damla sulama suyu doğrudan köklere verir; …",
         "why": [
-          "'as a result of' sonrasında isim gerekir; yapı bozuk.",
+          "'otherwise' (aksi halde) ters koşul kurar; 'köklere doğrudan vermeseydi daha az su harcanırdı' mantığı ters.",
           "'far more' sonucu ters çeviriyor.",
           "'nevertheless' zıtlık kurar; sonuç aynı yönde.",
           "",
-          "'because' sonuç değil neden kurar; mantık ters."
+          "'in other words' aynı fikri tekrar eder; ama özne değişmiş: köke doğrudan veren damla sulama, yağmurlama değil."
         ]
       }
     ],
@@ -8993,7 +8993,7 @@
           "most residents have left the low-lying areas",
           "most residents leave the low-lying areas",
           "most residents will have left the low-lying areas",
-          "most residents will be leaving the area yesterday",
+          "most residents were leaving the area at that time",
           "most residents had already left all of the low-lying areas"
         ],
         "answer": 2,
@@ -9005,7 +9005,7 @@
           "'have/has + üçüncü hal' yapısı gelecek noktaya bağlanmaz.",
           "Geniş zaman 'tomorrow' ile 'by the time' kalıbına uymaz.",
           "",
-          "'yesterday' ile gelecek zaman çelişiyor.",
+          "'tomorrow' gelecekte bir noktadır; düz geçmiş 'were leaving' uymaz.",
           "Geçmişin geçmişi (had + üçüncü hal) geçmiş noktaya aittir."
         ]
       }
@@ -9021,22 +9021,22 @@
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "Although computer models have improved greatly, but",
-          "Despite computer models have improved greatly",
-          "Because computer models have improved greatly",
-          "However computer models have improved greatly",
+          "As long as computer models keep improving",
+          "Thanks to the great improvements in computer models",
+          "If computer models improved greatly",
+          "Just as computer models have improved greatly",
           "Although computer models have improved greatly"
         ],
         "answer": 4,
         "explain": "Modeller çok gelişti (olumlu) ama tahmin hâlâ kısa (olumsuz): zıtlık. 'Although + cümle' doğru (E).",
-        "tip": "Although X, Y (but yok).",
-        "hint": "İki yarı aynı yönde mi ters mi? Şıkta fazladan bağlaç var mı?",
+        "tip": "Olumlu gelişme + olumsuz sonuç = Although (zıtlık).",
+        "hint": "İki yarı aynı yönde mi ters mi? Bağlacın kurduğu ilişkiyi seç.",
         "anlam": "…, hava tahminleri yalnızca yaklaşık bir hafta güvenilir kalıyor.",
         "why": [
-          "'Although … but' birlikte kullanılmaz.",
-          "'Despite' sonrasında tam cümle gelmez.",
-          "'Because' neden kurar; gelişim kısa tahminin nedeni değil.",
-          "'However' bu yapıda 'ne kadar … olursa' anlamı verir ve sıfat ister.",
+          "'As long as' şart kurar; 'modeller geliştikçe yalnız bir hafta güvenilir' anlamsız, zıtlık yok.",
+          "'Thanks to' olumlu neden bildirir; gelişme, tahminin kısa kalmasının nedeni değil.",
+          "'If + düz geçmiş' hayali koşul kurar ve 'would' ister; ana cümledeki 'remain' uymaz.",
+          "'Just as' (tıpkı … gibi) benzerlik kurar; iki kısım benzer değil, zıt.",
           ""
         ]
       }
@@ -9047,28 +9047,28 @@
   {
     "id": "d217",
     "type": "cumle-tamamlama",
-    "stem": "Researchers studied a district in Kenya ----.",
+    "stem": "Researchers studied a district in Kenya ----, and they found that elephants turn back when they hear the bees.",
     "items": [
       {
         "q": "Cümleyi en uygun şekilde tamamlayan ifadeyi seçin.",
         "options": [
-          "which farmers use beehive fences to keep elephants away from crops",
-          "in where farmers use beehive fences to keep elephants away",
+          "where farmers grow rice in large flooded fields",
+          "when farmers will start keeping bees next year",
           "where farmers use beehive fences to keep elephants away from crops",
           "where beehive fences are used by elephants to keep farmers away",
-          "where farmers using beehive fences to keep elephants away from crops"
+          "although farmers use beehive fences to keep elephants away"
         ],
         "answer": 2,
-        "explain": "Boşluktan sonra tam cümle var; yer bildiren isme 'where' bağlanır. C: çiftçilerin filleri uzak tutmak için arı kovanı çiti kullandığı bölge.",
+        "explain": "Yer bildiren isme (district) 'where' + tam cümle bağlanır. İkinci kısım arı sesini anlatıyor; C: çiftçilerin filleri uzak tutmak için arı kovanı çiti kullandığı bölge.",
         "tip": "Yer + tam cümle = where / in which.",
-        "hint": "Boşluktan sonraki cümle tam mı? Tamsa yer için hangi zamir?",
-        "anlam": "Araştırmacılar Kenya'da bir bölgeyi inceledi …",
+        "hint": "Sonraki kısım arı ve fil diyor: bölgede kim neyi kullanıyor?",
+        "anlam": "Araştırmacılar Kenya'da …'ı inceledi ve fillerin arıları duyunca geri döndüğünü buldu.",
         "why": [
-          "'which' sonrası cümle tam; 'where' gerekir.",
-          "'in where' yanlış; 'where' ya da 'in which' olmalı.",
+          "Pirinç tarlası, ikinci kısımdaki arı ve fil bulgusuna bağlanmaz.",
+          "'studied' geçmiş; 'will start … next year' zamanı uymaz.",
           "",
           "Roller ters: filler çiftçileri uzak tutuyor.",
-          "'using' çekimli fiil değil."
+          "'although' zıtlık kurar; bölgeyi incelemek ile arı çiti kullanmak zıt değil."
         ]
       }
     ],
@@ -10510,7 +10510,7 @@
       {
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
-          "As a result, the brood can easily survive temperatures far below 35 °C.",
+          "As a result, honey is stored in the upper part of the comb.",
           "When it is cold, they huddle together and shiver their muscles to make heat.",
           "This water is carried back to the hive in the stomachs of special workers.",
           "Bees also collect nectar from flowers and turn it into honey for the cold winter.",
@@ -10522,7 +10522,7 @@
         "hint": "Boşluktan sonraki 'by contrast' neyin tersini anlatıyor?",
         "anlam": "Önce: arılar büyük koloniler hâlinde yaşar; yavruları yaklaşık 35 °C'de tutmalıdır. Sonra: 'Buna karşılık sıcak günlerde' su serpip kanat çırparak serinletirler; koloni sıcakkanlı tek canlı gibi davranır.",
         "why": [
-          "'çok düşük sıcaklıkta kolayca yaşar' 35 °C şartıyla çelişir.",
+          "Bal depolama sıcaklık konusunu koparır; sonraki 'On hot days, by contrast' soğukta ne yaptıklarını ister.",
           "",
           "'This water' henüz anılmadı.",
           "Bal yapımı sıcaklık konusunu koparır.",
@@ -10541,7 +10541,7 @@
       {
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
-          "However, most farmers now prefer to grow the same crop every single year.",
+          "However, some crops grow well only in warm and wet climates.",
           "Legumes such as beans and peas are rich in both protein and dietary fibre.",
           "As a result, the soil gradually loses much of its nitrogen and fertility.",
           "The practice offers several benefits over planting one crop every year.",
@@ -10553,7 +10553,7 @@
         "hint": "Sonraki iki cümle örnek veriyor: neyin örneği?",
         "anlam": "Önce: aynı ürünü her yıl ekmek toprağı yorar; ekim nöbeti aynı tarlada sırayla farklı ürün ekmektir. Sonra: 'örneğin' tek ürüne özel zararlılar çoğalamaz; baklagiller azotu geri verir; organik tarımın temelidir.",
         "why": [
-          "'çiftçiler aynı ürünü tercih ediyor' yararlara geçişi sağlamaz.",
+          "İklim bilgisi; sonraki 'for instance' cümleleri rotasyonun yararlarını örnekliyor.",
           "Baklagillerin besin değeri akışa uymaz.",
           "'azot kaybı' sonraki 'restores nitrogen' (azotu geri verir) ile çelişir.",
           "",
@@ -10575,8 +10575,8 @@
           "Coastal towns are popular holiday destinations in many parts of the world.",
           "Winds that blow down from the mountains are usually dry and quite warm.",
           "Sea breezes arise because land and water heat up at different rates.",
-          "This is why the land is always much warmer than the sea, even at night.",
-          "At night, however, the sea heats up far more quickly than the land does."
+          "This is why coastal towns are popular with tourists in summer.",
+          "Mountain winds, by contrast, blow downhill during the night."
         ],
         "answer": 2,
         "explain": "İlk cümle konuyu açmalı. C: deniz meltemi, kara ve suyun farklı hızda ısınmasından doğar; sonraki cümleler bunu açıklıyor.",
@@ -10587,8 +10587,8 @@
           "Tatil yeri bilgisi konu cümlesi olamaz.",
           "Dağ rüzgârları başka bir konu.",
           "",
-          "'This is why' başta olamaz, öncesinde neden yok; 'gece bile' de metindeki 'gece süreç tersine döner' bilgisiyle çelişir.",
-          "Paragraf 'however' ile başlayamaz; zıtlık kurulacak önceki cümle yok. Metin geceyi 'kara daha hızlı soğur' diye anlatıyor, şık bununla da çelişir."
+          "Paragraf başında 'This' bir şeye gönderme yapamaz; önce anılan bir şey yok.",
+          "Paragraf başında 'by contrast' karşılaştıracak bir şey bulamaz; konu da dağ rüzgârı."
         ]
       }
     ],
@@ -10606,7 +10606,7 @@
           "On reaching the coast, the young eels move up into rivers and lakes.",
           "Eel populations have fallen sharply in recent decades because of dams.",
           "The adults then return to the Sargasso Sea, where they had been born.",
-          "However, eels are unable to survive in fresh water for long periods.",
+          "Many of them are caught by fishermen before they reach the coast.",
           "Salmon, by contrast, hatch in rivers and grow up in the open sea instead."
         ],
         "answer": 0,
@@ -10618,7 +10618,7 @@
           "",
           "Barajlar ve nüfus düşüşü yaşam döngüsünü koparır.",
           "Dönüş zaten sonraki cümlede anlatılıyor; sıra karışır.",
-          "'Tatlı suda yaşayamaz' sonraki 'yıllarca tatlı su' ile çelişir.",
+          "Avlanma bilgisi; sürüklenme ile sonraki 'tatlı suda yıllar' arasındaki adımı (nehre giriş) vermiyor.",
           "Somon başka bir tür; akışı koparır."
         ]
       }
@@ -10635,10 +10635,10 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Tornadoes are most common in the central United States during spring.",
-          "As a result, most tornadoes now cause little damage to any buildings.",
+          "Most of them form over open farmland rather than over cities.",
           "This rotation is caused by winds that change direction with height.",
           "Although they are still hard to predict, many can now be spotted early.",
-          "Unfortunately, there is still no reliable way to warn people before they strike."
+          "Most tornadoes last only a few minutes before they break up."
         ],
         "answer": 3,
         "explain": "Sonraki cümleler erken tespiti örnekliyor. D: tahmin hâlâ zor ama birçoğu artık erken fark edilebiliyor.",
@@ -10647,10 +10647,10 @@
         "anlam": "Önce: hortumlar çok şiddetli, dönen hava sütunları. Sonra: 'örneğin' Doppler radarı hortum yere inmeden dönmeyi saptar; insanlar ortalama on dakikadan fazla önceden uyarılır; sığınağa gitmeye yeter.",
         "why": [
           "Mevsim bilgisi radara geçişi sağlamaz.",
-          "'az hasar verir' akışa uymaz; konu uyarı.",
+          "Oluştuğu yer, sonraki 'Doppler radar, for instance' örneğinin genel fikri (erken tespit) değil.",
           "Dönmenin nedeni erken tespite bağlanmıyor.",
           "",
-          "'uyarı yolu yok' sonraki cümlelerle çelişir."
+          "Süre bilgisi; sonraki radar örneği erken fark etme fikrini ister."
         ]
       }
     ],
@@ -10697,22 +10697,22 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "These electronic noses are already used in most hospitals today.",
-          "However, their sense of smell is much weaker than that of humans.",
+          "However, most pet dogs sleep for more than twelve hours a day.",
           "Dogs were first domesticated from grey wolves many thousands of years ago.",
           "Some illnesses change the chemical make-up of a person's breath or sweat.",
-          "As a result, dogs are now rarely used in any kind of medical research."
+          "Dogs can also be trained to find people buried under snow."
         ],
         "answer": 3,
         "explain": "Boşluk 'neden koklayarak bulunabilir?' sorusunu açmalı. D: bazı hastalıklar nefesin ya da terin kimyasını değiştirir.",
         "tip": "Yetenek → neden mümkün → kanıt.",
-        "hint": "Köpek neyin kokusunu alıyor olabilir? Sonra sonraki cümleyle çelişen şıkları ele.",
+        "hint": "Köpek neyin kokusunu alıyor olabilir? Sonraki çalışma örneğine bağlanan şıkkı seç.",
         "anlam": "Önce: köpeğin burnunda insandan çok daha fazla koku algılayıcısı var; hastalık koklamaya eğitilebilir. Sonra: bir çalışmada köpekler kanser örneklerini %90'dan fazla doğrulukla buldu; elektronik burun yapılmaya çalışılıyor.",
         "why": [
           "'These electronic noses' henüz anılmadı.",
-          "'koku duyusu insandan zayıf' ilk cümledeki 300 milyon / 6 milyon karşılaştırmasıyla çelişir.",
+          "Uyku süresi konuyu koparıyor; hastalığın koku ile nasıl bulunduğunu açıklamıyor.",
           "Evcilleşme tarihi akışa uymaz.",
           "",
-          "'nadiren kullanılır' sonraki çalışmayla çelişir."
+          "Kar altında arama başka bir görev; sonraki kanser çalışmasına bağlanmıyor."
         ]
       }
     ],
@@ -10728,7 +10728,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Large eruptions send sulphur gases high up, where they form tiny droplets.",
-          "As a result, global temperatures usually rise after a large eruption.",
+          "As a result, ash can stop air traffic over whole continents for days.",
           "Most volcanoes are located along the edges of the tectonic plates.",
           "These clouds of ash usually fall back to the ground within a few days.",
           "Lava flows rarely travel faster than a person can walk on flat ground."
@@ -10740,7 +10740,7 @@
         "anlam": "Önce: çoğu patlama yereldir ama çok büyükleri tüm gezegenin iklimini etkiler. Sonra: 'Bu küçük damlacıklar' güneş ışığını geri yansıtır; 1991 Pinatubo sonrası sıcaklık düştü; bazı bilim insanları bunu bilerek taklit etmeyi önerdi.",
         "why": [
           "",
-          "'sıcaklıklar artar' sonraki Pinatubo cümlesindeki düşüşle çelişir.",
+          "Uçuş bilgisi iklim etkisini açmıyor; sonraki 'These tiny droplets' damlacıkları tanıtan cümle ister.",
           "Volkanların yeri damlacıkları tanıtmaz.",
           "'These clouds of ash' öncesinde kül bulutu anılmadı; sonraki 'These tiny droplets' cümlesi de damlacıktan söz eden bir cümle ister.",
           "Lav hızı iklimle ilgisiz."
@@ -10758,11 +10758,11 @@
       {
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
-          "However, they are unable to use any objects to reach their food.",
+          "However, many farmers still regard them as pests in their fields.",
           "Such tools are also made by several species of fish and insects.",
           "In the wild, some species shape twigs into simple tools to reach insects.",
           "Crows usually live in large family groups that defend a shared territory.",
-          "Great apes, by contrast, have never been observed using any tools."
+          "Great apes, by contrast, live mainly in the forests of Africa and Asia."
         ],
         "answer": 2,
         "explain": "'even' (hatta) daha basit bir örneğin önce geldiğini gösterir. C: doğada bazı türler dalları basit alete çevirir.",
@@ -10770,11 +10770,11 @@
         "hint": "'even' bir artış bildirir: laboratuvar örneğinden önce hangi basit örnek gelir?",
         "anlam": "Önce: kuşların zekâsı küçümsenirdi; bugün kargalar en zeki hayvanlardan sayılıyor. Sonra: laboratuvarda tel bükerek kanca bile yaptılar; bu davranış insana ve büyük maymunlara özgü sanılırdı; insan yüzlerini de tanırlar.",
         "why": [
-          "'hiç nesne kullanamaz' sonraki cümleyle çelişir.",
+          "Çiftçilerin görüşü zekâ konusunu koparıyor; sonraki 'even' daha basit bir alet örneğini ister.",
           "'Such tools' henüz anılmadı; balık ve böcekler kargalar konusunu koparır.",
           "",
           "Aile grupları alet kullanımına bağlanmıyor.",
-          "'Büyük maymunlar hiç alet kullanmadı' sonraki 'unique to humans and great apes' cümlesiyle çelişir."
+          "Yaşam yeri bilgisi; kargaların alet kullanımına bağlanmıyor."
         ]
       }
     ],
@@ -10790,7 +10790,7 @@
         "q": "Boşluğa getirilebilecek en uygun cümleyi seçin.",
         "options": [
           "Bacteria in the soil also help many crop plants obtain nitrogen from the air.",
-          "However, rice paddies release almost no methane into the air at all.",
+          "However, methane stays in the air for a much shorter time than carbon dioxide.",
           "These feed additives are already given to most cattle worldwide.",
           "Much of it comes from cattle, which release the gas as they digest grass.",
           "Methane traps heat far more effectively than carbon dioxide does."
@@ -10802,7 +10802,7 @@
         "anlam": "Önce: metan güçlü bir sera gazı; salınan metanın büyük kısmı tarımdan gelir. Sonra: 'Pirinç tarlaları DA başka önemli bir kaynak'; bilim insanları yem katkısı ve tarlayı kurutmayı deniyor.",
         "why": [
           "Azot bağlayan bakteri metanla ilgili değil.",
-          "'çeltik neredeyse hiç metan salmaz' sonraki cümleyle çelişir.",
+          "Ömür bilgisi; sonraki 'another important source' ilk kaynağın önce anılmasını ister.",
           "'These feed additives' henüz anılmadı.",
           "",
           "Metanın etkisi kaynak saymıyor; sonraki 'Rice paddies are another important source' cümlesi öncesinde bir kaynak ister."

@@ -9,6 +9,7 @@ import { dItem, gItem, pItem } from '../qbank.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
 import { keyOf } from '../warm.js';
 import { warmGate, inProgress } from './warmup.js';
+import { pickX, sprinkle } from './grammar.js';
 
 // Tip → tüm öğe anahtarları
 async function bank() {
@@ -47,7 +48,7 @@ export default async function render(root, [type]) {
   );
 }
 
-function session(root, type, items, seen) {
+async function session(root, type, items, seen) {
   let pick;
   if (type === 'paragraf') {
     // Bir parça: henüz çözülmemiş ilk parça
@@ -68,7 +69,10 @@ function session(root, type, items, seen) {
   const el = h('div');
   root.append(h('a.btn.small', { href: '#/alistirma' }, '‹ Alıştırma'), h('h2', TYPES[type] || type), el);
   if (!pick.length) { el.append(emptyData()); return; }
-  const qitems = pick.map(i => i.make()), sid = 'alistirma:' + type;
+  const sid = 'alistirma:' + type;
+  // Aynı tipten çıkmış soru serpiştir (paket varsa; okuma parçası bölünmez)
+  const xs = type === 'paragraf' || inProgress(sid) ? [] : (await pickX([type], type === 'bosluk' ? 2 : 1)).map(p => p.make());
+  const qitems = sprinkle(pick.map(i => i.make()), xs);
   const go = () => runQuiz(el, qitems, {
     extra: lessonLink, sid, name: TYPES[type] || type, source: 'Alıştırma', coach: true,
     onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m),

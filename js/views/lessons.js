@@ -10,6 +10,8 @@ import { lItem, lessonTopic } from '../qbank.js';
 import { emptyData } from './hub.js';
 import { lessonBlocks, openLesson } from '../side.js';
 import { setCtx } from '../ctx.js';
+import { pickX } from './grammar.js';
+import { inProgress } from './warmup.js';
 import { toolsStrip, toolView } from './aids.js';
 import { LESSON_GROUPS, lessonGroup } from '../strategy.js';
 
@@ -63,9 +65,11 @@ function lesson(root, l) {
   const qbox = h('div');
   setCtx({ type: 'ders', key: 'ders:' + l.id, label: 'Ders · ' + l.title });
   const sid = 'ders:' + l.id;
-  const startTest = btn => {
+  const startTest = async btn => {
     btn?.remove();
-    runQuiz(qbox, l.checks.map((_, i) => lItem(l, i)), {
+    // Sonda bu konudan 2 çıkmış soru (paket varsa): sınavda nasıl sorulduğunu gör
+    const xs = inProgress(sid) ? [] : (await pickX([lessonTopic(l)], 2)).map(p => p.make());
+    runQuiz(qbox, [...l.checks.map((_, i) => lItem(l, i)), ...xs], {
       sid, name: 'Ders testi · ' + l.title, source: 'Ders',
       onAnswer: (it, ok, k, m) => answer(it.key, ok, it.info, m),
       onEnd: () => read(), noNext: true

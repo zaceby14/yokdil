@@ -9,6 +9,7 @@ import { warmGate, inProgress } from './warmup.js';
 import { topicLevels, pickDaily, levelOrder } from '../gplan.js';
 import { runQuiz } from '../quiz.js';
 import { makeAdapter, tomorrowLine } from '../adapt.js';
+import { priorities } from '../priority.js';
 import { gItem, dItem, pItem, xItem, resolve } from '../qbank.js';
 import { getPack } from '../pack.js';
 import { soruTabs, lessonLink, emptyData } from './hub.js';
@@ -88,6 +89,16 @@ async function daily(root) {
     // 6 boşluk + 2 tip sorusu (tipler araya dağılır)
     items = items.slice(0, Math.max(1, items.length - tItems.length));
     tItems.forEach((t, j) => items.splice(Math.min(items.length, 3 + j * 3), 0, t));
+    // Haftanın konusundan 1 çıkmış soru (gün boyu sabit)
+    let xk = r.xset;
+    if (!Array.isArray(xk)) {
+      const w = await week();
+      const pri = priorities({ logs: store.all('grammarLog'), mistakes: store.all('mistakes') }).slice(0, 2).map(p => p.k);
+      xk = (await pickX([...(w.grammar || []), ...pri], 1, { rnd: seeded(dayKey() + 'x') })).map(p => p.key);
+      updateDay({ xset: xk });
+    }
+    const xItems = (await Promise.all(xk.map(k => resolve(k)))).filter(Boolean).map(it => ({ ...it, label: 'Çıkmış · ' + it.label, cikmis: true }));
+    if (xItems.length) { items = items.slice(0, Math.max(1, items.length - xItems.length)); items = sprinkle(items, xItems); }
   }
   // Anlık uyum havuzu: gramer + alıştırma maddeleri
   const lvOf = new Map(gq.map(q => [q.id, q.level || 1]));
@@ -155,8 +166,27 @@ export async function xPoolFor(k) {
   for (const e of pack?.exams || []) for (const q of e.questions || []) {
     if (!q || q.type === 'diyalog' || !Array.isArray(q.options)) continue;
     if (isType(k) ? q.type !== k : q.topic !== k) continue;
-    out.push({ key: `${e.id}:${q.n}`, level: 2, x: true, make: () => { const it = xItem(e, q); return { ...it, label: 'Çıkmış · ' + it.label, cikmis: true }; } });
+    out.push({ key: `${e.id}:${q.n}`, level: 2, x: true, make: () => { const it = xItem(e, q); const os = /^(yokdil|yds)-/.test(e.id); return { ...it, label: (os ? 'Çıkmış · ' : 'Kaynağın · ') + it.label, cikmis: os }; } });
   }
+  return out;
+}
+
+// Çıkmış sorudan serpiştirme: verilen konu/tiplerden, hiç görülmemiş (yoksa en eski görülen) n soru. Paket yoksa boş.
+const OSYM = /^(yokdil|yds)-/;
+export async function pickX(keys, n = 1, { exclude = new Set(), rnd = Math.random } = {}) {
+  const last = new Map(); for (const l of store.all('grammarLog')) last.set(l.q, Math.max(last.get(l.q) || 0, l.at || 1));
+  const pool = [];
+  // Yalnız ÖSYM çıkmışları (yayınevi soruları değil); önce YÖKDİL Fen, sonra YDS
+  for (const k of [...new Set(keys)].filter(Boolean)) for (const p of await xPoolFor(k)) if (!exclude.has(p.key) && OSYM.test(p.key)) pool.push(p);
+  const uniq = [...new Map(pool.map(p => [p.key, p])).values()];
+  const rank = p => (/^yokdil/.test(p.key) ? 0 : 1);
+  uniq.sort((a, b) => (last.has(a.key) - last.has(b.key)) || rank(a) - rank(b) || (last.get(a.key) || 0) - (last.get(b.key) || 0) || rnd() - 0.5);
+  return uniq.slice(0, n);
+}
+// Saf: çıkmış soruları listeye serpiştir (eşit aralıkla, ilk soru özgün kalır)
+export function sprinkle(items, xs) {
+  const out = [...items];
+  xs.forEach((x, j) => out.splice(Math.min(out.length, Math.round((j + 1) * out.length / (xs.length + 1)) + j), 0, x));
   return out;
 }
 
@@ -227,7 +257,8 @@ async function byTopic(root, topic) {
   if (!qs.length) { el.append((await grammar()).length ? h('p.muted', 'Bu konuda soru yok') : emptyData()); return; }
   const seenOk = new Set(store.all('grammarLog').filter(l => l.correct).map(l => l.q));
   const order = levelOrder(qs.filter(q => !seenOk.has(q.id))).concat(levelOrder(qs.filter(q => seenOk.has(q.id))));
-  runQuiz(el, order.slice(0, 8).map(gItem), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', coach: true, onAnswer: logAns });
+  const xs = inProgress('konu:' + topic) ? [] : (await pickX([topic], 2)).map(p => p.make());
+  runQuiz(el, sprinkle(order.slice(0, 8 - xs.length).map(gItem), xs), { extra: lessonLink, sid: 'konu:' + topic, name: topicName(topic), source: 'Gramer', coach: true, onAnswer: logAns });
 }
 
 async function home(root) {

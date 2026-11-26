@@ -862,6 +862,7 @@ with sync_playwright() as p:
 
     # A1) Soru ekranlarında Sonraki/Kontrol her zaman tıklanabilir
     def answer_first():
+        if page.locator('.warm-go').count(): page.click('.warm-go'); page.wait_for_timeout(300)  # ısınma kartı varsa geç
         page.locator('.opt').nth(0).click(); page.wait_for_timeout(250)
     for r in ['gramer/gunluk', 'alistirma/cloze', 'alistirma/cumle-tamamlama', 'alistirma/paragraf', 'alistirma/ceviri-en-tr', 'cikmis/tip/cloze', 'cikmis/tip/paragraf', 'okuma/p/p001']:
         page.goto(BASE + '#/' + r); page.wait_for_timeout(700)
