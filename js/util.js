@@ -80,21 +80,24 @@ export function seeded(str) {
   return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
 }
 
-// Kart çevirme: DOM değişikliği (fn) hemen yapılır; görsel olarak kart Y ekseninde döner.
-// View Transitions varsa eski yüz 0→90°, yeni yüz -90°→0° (gerçek 3B çevirme); yoksa yeni yüz yarım dönüşle gelir.
-// Hareket azaltma açıksa yalnız değişiklik.
+// Kart çevirme (gerçek 3B): kart 0→90° döner, kenardan görünmezken yüz değişir (fn), sonra -90°→0° gelir.
+// Toplam 300 ms; kart hep dokunulabilir. Hareket azaltma açıksa yalnız değişiklik.
 export function flip(el, fn) {
-  const de = document.documentElement;
-  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return fn();
-  if (!document.startViewTransition || de.dataset.nav || de.dataset.vt) {
-    fn(); el.classList.remove('flip-in'); void el.offsetWidth; el.classList.add('flip-in');
-    return;
-  }
-  el.style.viewTransitionName = 'flipcard'; de.dataset.vt = 'flip';
-  const done = () => { el.style.viewTransitionName = ''; delete de.dataset.vt; };
-  const vt = document.startViewTransition(fn);
-  vt.ready.catch(() => {}); vt.updateCallbackDone.catch(() => {});
-  vt.finished.catch(() => {}).then(done);
+  if (!el || !el.isConnected || matchMedia('(prefers-reduced-motion: reduce)').matches) return fn();
+  // Animasyon sonu olayıyla ilerler (sekme arka plandaysa ya da olay gelmezse yedek zamanlayıcı)
+  const after = (name, ms, cb) => {
+    let done = false;
+    const go = () => { if (done) return; done = true; el.removeEventListener('animationend', on); cb(); };
+    const on = e => { if (e.target === el && e.animationName === name) go(); };
+    el.addEventListener('animationend', on); setTimeout(go, ms);
+  };
+  el.classList.remove('flip-in'); el.classList.add('flip-out');
+  after('flip-out', 700, () => {
+    el.classList.remove('flip-out');
+    fn();
+    el.classList.add('flip-in');
+    after('flip-in', 700, () => el.classList.remove('flip-in'));
+  });
 }
 
 // opts.bottom: ekranın altında (başlığı kapatmasın; ör. deneme sonucu)
