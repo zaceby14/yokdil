@@ -56,7 +56,33 @@ function setActive(name) {
   document.querySelectorAll('[data-r]').forEach(a => a.classList.toggle('active', a.dataset.r === (TAB[name] || name)));
 }
 
-async function route() {
+// Sayfa geçişi: View Transitions varsa içerik yöne göre kayar (üst/alt çubuk sabit); yoksa hafif giriş.
+// Hareket azaltma açıksa geçiş yok. İlk açılış ve senkron yenilemesi geçişsiz.
+const ORDER = ['bugun', 'okuma', 'kartlar', 'sorular', 'dersler', 'eksikler', 'notlar', 'ayarlar'];
+let lastHash = location.hash, navTok = 0;
+const parts = hs => (hs.replace(/^#\/?/, '') || 'bugun').split('/');
+function navDir(prev, next) {
+  const a = parts(prev), b = parts(next);
+  if (a[0] === b[0]) return b.length > a.length ? 'fwd' : b.length < a.length ? 'back' : '';
+  const i = ORDER.indexOf(TAB[a[0]] || a[0]), j = ORDER.indexOf(TAB[b[0]] || b[0]);
+  return i < 0 || j < 0 ? '' : j > i ? 'fwd' : 'back';
+}
+function navigate() {
+  const prev = lastHash, next = location.hash;
+  lastHash = next;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return route();
+  if (!document.startViewTransition) return route(true);
+  const tok = ++navTok, de = document.documentElement;
+  const dir = navDir(prev, next);
+  if (dir) de.dataset.nav = dir; else delete de.dataset.nav;
+  const vt = document.startViewTransition(() => route());
+  const quiet = () => {};
+  vt.ready.catch(quiet); vt.updateCallbackDone.catch(quiet);
+  vt.finished.catch(quiet).then(() => { if (tok === navTok) delete de.dataset.nav; });
+}
+
+async function route(anim) {
   const [name, ...rest] = (location.hash.replace(/^#\/?/, '') || 'bugun').split('/');
   const r = routes[name] ? name : 'bugun';
   if (!routes[name] && location.hash !== '#/bugun') { history.replaceState(null, '', '#/bugun'); }
@@ -67,7 +93,7 @@ async function route() {
   document.body.dataset.route = [r, ...rest].join('-');
   setActive(r);
   view.innerHTML = '';
-  const root = h('div.page');
+  const root = h('div.page' + (anim === true ? '.enter' : ''));
   // null/false çocukları atla, dizileri düzleştir
   root.append = (...k) => Element.prototype.append.apply(root, k.flat(Infinity).filter(x => x != null && x !== false));
   view.append(root);
@@ -114,7 +140,7 @@ async function main() {
     const deep = (location.hash.split('/').length > 2);
     if (['bugun', 'eksikler', 'ayarlar', 'kartlar', 'okuma', 'dersler', 'notlar'].includes(current) && !deep) route();
   });
-  addEventListener('hashchange', route);
+  addEventListener('hashchange', navigate);
   initNotes();
   initFocus();
   initStopwatch();
