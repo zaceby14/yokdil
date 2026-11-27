@@ -39,6 +39,20 @@ function goalLine() {
   return h('a.goalline.small', { href: '#/eksikler' }, `Son tam deneme ${Math.round(g.score)} · hedef ${g.goal} · `, h('b', g.q ? `fark ${g.q} soru` : 'hedefte'));
 }
 
+// Başla kartı: sıradaki görev + günün ilerleme halkası (yapılan / toplam)
+const RING_R = 21, RING_C = 2 * Math.PI * RING_R;
+function startCard(mainT) {
+  const f = mainT.find(t => !t.done);
+  if (!f) return null;
+  const n = mainT.length, d = mainT.filter(t => t.done).length;
+  const ring = h('span.start-ring', { 'aria-label': `${d}/${n} görev bitti`, role: 'img',
+    html: `<svg viewBox="0 0 50 50" aria-hidden="true"><circle class="rt" cx="25" cy="25" r="${RING_R}"/><circle class="rv" cx="25" cy="25" r="${RING_R}" style="--c:${RING_C.toFixed(1)};--o:${(RING_C * (1 - d / n)).toFixed(1)}"/></svg>` },
+    h('span.start-n', `${d}/${n}`));
+  return h('a.btn.primary.wide.big-btn.start-btn', { href: f.go }, ring,
+    h('span.start-txt', h('b', 'Başla: ' + f.label), h('span.start-sub', [f.sub, f.min ? `~${f.min} dk` : ''].filter(Boolean).join(' · '))),
+    h('span.start-go', { 'aria-hidden': 'true', html: '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' }));
+}
+
 export default async function render(root) {
   const today = dayKey();
   const w = await week();
@@ -90,14 +104,14 @@ export default async function render(root) {
     };
     root.innerHTML = '';
     root.append(
-      h('div.hero',
+      h('div.hero.today-head',
         h('div', h('div.big', left > 0 ? left : 0), h('div.small', 'gün kaldı')),
         h('div.hero-r',
           h('div', w.beforeStart ? `Başlangıç: ${fmtDate(w.prog.start)}` : `Hafta ${w.n}/${(w.prog.weeks || []).length || w.n} · ${w.phase}`),
           w.goal ? h('div.small.muted', w.goal) : null,
-          h('div.streak', 'Son 7 gün: ', h('b', wk7()), '/7 gün çalıştın', h('span.small.muted', ` · seri ${st.n}`), st.jokerNow ? h('span.small.muted.joker', ' · joker kullanıldı (dün)') : null))
+          h('div.streak', 'Son 7 gün: ', h('b', wk7()), '/7 gün çalıştın', h('span.small.muted', ` · seri ${st.n}`), st.jokerNow ? h('span.small.muted.joker', ' · joker kullanıldı (dün)') : null)),
+        goalLine()
       ),
-      goalLine(),
       !getToken() ? h('a.banner', { href: '#/ayarlar' }, 'Çıkmış sorular + senkron için GitHub anahtarını gir → Ayarlar') : null,
       phaseNew ? h('div.banner.phase', `Yeni faz: ${w.phase} · günde ${w.newWords ?? '-'} yeni kelime`) : null,
       ap ? h('a.banner.apply.' + ap.kind, { href: 'https://ais.osym.gov.tr', target: '_blank', rel: 'noopener' }, h('b', apText), h('span.small', ' · ÖSYM AİS ↗')) : null,
@@ -121,16 +135,16 @@ export default async function render(root) {
         return h('a.banner.resume.exam-resume', { href: '#/cikmis/sinav/' + encodeURIComponent(p.examId) + (p.half ? '/yarim' : '') }, `Yarım kaldı: ${e?.title || p.examId}${p.half ? ' (ilk 40)' : ''} · ${n} cevap → Devam`);
       }),
       ...open.map(o => h('a.banner.resume', { href: o.route }, `Yarım kaldı: ${o.name || 'Oturum'} · ${Math.min((o.i || 0) + 1, o.total || 1)}/${o.total || '?'} → Devam`)),
-      h('div.row.between',
+      startCard(mainT),
+      h('div.row.between.today-bar',
         h('h2', 'Bugün', totalMin ? h('span.small.muted', ` · ${totalMin} dk`) : null),
-        h('button.btn' + (rr.busy ? '.primary' : ''), {
+        h('button.btn.small.busy-btn' + (rr.busy ? '.primary' : ''), { 'aria-pressed': String(!!rr.busy),
           onclick: () => { updateDay({ busy: !rr.busy }); draw(); }
         }, rr.busy ? 'Yoğun gün: açık' : 'Yoğun gün')
       ),
       rr.busy ? h('p.small.muted', 'Kart tekrarı + 3 gramer. Seri bozulmaz.') : null,
       !rr.busy && dueInfo().comeback && !tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('div.banner.comeback', h('b', 'Hoş geldin!'), ` Birikmiş tekrarları günlere böldüm. Bugün yalnız kart + gramer yeter (~15 dk).`) : null,
       optT.length && tasks.some(t => t.key === 'deneme' || t.key === 'kisa') ? h('p.small.muted.mockday-note', 'Deneme günü: kart tekrarı + deneme yeter.') : null,
-      (() => { const f = mainT.find(t => !t.done); return f ? h('a.btn.primary.wide.big-btn.start-btn', { href: f.go }, h('span', h('b', 'Başla: ' + f.label), f.min ? h('span.small', ` · ~${f.min} dk`) : null)) : null; })(),
       h('ul.tasks', mainT.map(taskLi)),
       optT.length ? h('details.optional-tasks', h('summary', h('b', 'İsteğe bağlı'), h('span.small.muted', ` · ${optT.length} görev`)), h('ul.tasks', optT.map(taskLi))) : null,
       (rr.reviews || rr.answered || rr.focusMin) ? h('p.small.muted.daysum', `Bugün: ${rr.reviews || 0} kart · ${rr.correct || 0}/${rr.answered || 0} soru doğru · ${Math.round((rr.readSec || 0) / 60)} dk okuma${rr.focusMin ? ` · ${rr.focusMin} dk odak` : ''}`) : null,

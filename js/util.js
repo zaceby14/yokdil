@@ -80,6 +80,23 @@ export function seeded(str) {
   return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; };
 }
 
+// Kart çevirme: DOM değişikliği (fn) hemen yapılır; görsel olarak kart Y ekseninde döner.
+// View Transitions varsa eski yüz 0→90°, yeni yüz -90°→0° (gerçek 3B çevirme); yoksa yeni yüz yarım dönüşle gelir.
+// Hareket azaltma açıksa yalnız değişiklik.
+export function flip(el, fn) {
+  const de = document.documentElement;
+  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return fn();
+  if (!document.startViewTransition || de.dataset.nav || de.dataset.vt) {
+    fn(); el.classList.remove('flip-in'); void el.offsetWidth; el.classList.add('flip-in');
+    return;
+  }
+  el.style.viewTransitionName = 'flipcard'; de.dataset.vt = 'flip';
+  const done = () => { el.style.viewTransitionName = ''; delete de.dataset.vt; };
+  const vt = document.startViewTransition(fn);
+  vt.ready.catch(() => {}); vt.updateCallbackDone.catch(() => {});
+  vt.finished.catch(() => {}).then(done);
+}
+
 // opts.bottom: ekranın altında (başlığı kapatmasın; ör. deneme sonucu)
 export function toast(msg, opts = {}) {
   let t = document.getElementById('toast');

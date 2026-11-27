@@ -52,9 +52,41 @@ async function seed() {
   });
 }
 
+// Üst çubuk başlığı: ekranın adı (Bugün'de tarih — "Bugün" görev listesinin başlığında)
+const TITLE = { okuma: 'Okuma', kartlar: 'Kartlar', gramer: 'Sorular', alistirma: 'Sorular', cikmis: 'Sorular', deneme: 'Sorular', dersler: 'Dersler', eksikler: 'Eksikler', ayarlar: 'Ayarlar', notlar: 'Notlar' };
+function setTitle(name) {
+  const t = document.getElementById('topTitle');
+  if (!t) return;
+  const txt = TITLE[name] || new Date().toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' });
+  t.textContent = txt; document.title = (TITLE[name] || 'Bugün') + ' · YÖKDİL Fen';
+}
+
+// Alt gezinme: etkin sekmenin hapı bir sekmeden ötekine kayar (yalnız transform)
+function moveInd(still) {
+  const nav = document.querySelector('nav.tabs'), ind = nav?.querySelector('.tab-ind');
+  if (!ind) return;
+  const a = nav.querySelector('a.active');
+  const svg = a && a.offsetParent ? a.querySelector('svg') : null;
+  if (!svg) { ind.classList.remove('on'); return; }
+  const nr = nav.getBoundingClientRect(), r = svg.getBoundingClientRect();
+  nav.classList.toggle('ind-still', !!still || !ind.classList.contains('on'));
+  ind.style.width = r.width + 'px'; ind.style.height = r.height + 'px';
+  ind.style.setProperty('--x', (r.left - nr.left) + 'px'); ind.style.setProperty('--y', (r.top - nr.top) + 'px');
+  nav.classList.add('ind-on'); ind.classList.add('on');
+  if (nav.classList.contains('ind-still')) requestAnimationFrame(() => requestAnimationFrame(() => nav.classList.remove('ind-still')));
+}
+addEventListener('resize', () => moveInd(true));
+
 function setActive(name) {
   document.querySelectorAll('[data-r]').forEach(a => a.classList.toggle('active', a.dataset.r === (TAB[name] || name)));
+  setTitle(name);
+  moveInd();
 }
+
+// Üst çubuk: sayfa kayınca ince alt çizgi belirir
+const topBar = document.querySelector('header.top');
+const onScroll = () => topBar?.classList.toggle('scrolled', scrollY > 4);
+addEventListener('scroll', onScroll, { passive: true });
 
 // Sayfa geçişi: View Transitions varsa içerik yöne göre kayar (üst/alt çubuk sabit); yoksa hafif giriş.
 // Hareket azaltma açıksa geçiş yok. İlk açılış ve senkron yenilemesi geçişsiz.
@@ -93,11 +125,13 @@ async function route(anim) {
   document.body.dataset.route = [r, ...rest].join('-');
   setActive(r);
   view.innerHTML = '';
-  const root = h('div.page' + (anim === true ? '.enter' : ''));
+  const root = h('div.page' + (anim === 'sync' ? '' : '.fresh') + (anim === true ? '.enter' : ''));
+  // Liste öğeleri yalnız ilk açılışta hafifçe sırayla belirir (yenilemede değil)
+  setTimeout(() => root.classList.remove('fresh'), 450);
   // null/false çocukları atla, dizileri düzleştir
   root.append = (...k) => Element.prototype.append.apply(root, k.flat(Infinity).filter(x => x != null && x !== false));
   view.append(root);
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 0); onScroll();
   try { cleanup = (await routes[r](root, rest.map(decodeURIComponent))) || null; }
   catch (e) { console.error(e); root.append(h('div.card', h('b', 'Hata: '), String(e.message || e))); }
 }
@@ -138,7 +172,7 @@ async function main() {
     try { dedupeCards(store); } catch {}
     // oturum ekranlarını bozma; liste/özet ekranlarını yenile
     const deep = (location.hash.split('/').length > 2);
-    if (['bugun', 'eksikler', 'ayarlar', 'kartlar', 'okuma', 'dersler', 'notlar'].includes(current) && !deep) route();
+    if (['bugun', 'eksikler', 'ayarlar', 'kartlar', 'okuma', 'dersler', 'notlar'].includes(current) && !deep) route('sync');
   });
   addEventListener('hashchange', navigate);
   initNotes();

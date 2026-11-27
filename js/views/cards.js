@@ -1,6 +1,6 @@
 // Kartlar: SRS tekrarı, liste (ara/filtre/düzenle/sil), manuel ekleme
 import * as store from '../store.js';
-import { h, esc, uid, toast, noteParts, dayKey } from '../util.js';
+import { h, esc, uid, toast, noteParts, dayKey, flip } from '../util.js';
 import { dueCards, newQueue, cardFromWord, review, previewLabel, GRADES, GRADE_TR, stats } from '../srs.js';
 import { markKnown, unKnow, level, isGraduated } from '../vocab.js';
 import { swipe } from '../swipe.js';
@@ -188,7 +188,7 @@ async function session(root, kind = 'tekrar', ids = []) {
       h('b', practice && g === 'good' ? (sel ? 'Biliyorum' : 'Tamam') : two ? TWO_TR[g] : GRADE_TR[g]), h('span', practice && g === 'good' ? (sel ? 'sıra değişmez' : 'yarın') : previewLabel(card, g)))));
     const isNew = (card.state || 'new') === 'new' && !card.reps;
     let open = false;
-    const doReveal = () => { if (open) return; open = true; back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); };
+    const doReveal = () => { if (open) return; open = true; flip(box, () => { back.classList.remove('hidden'); grades.classList.remove('hidden'); reveal.remove(); knowBtn?.remove(); hint.classList.remove('hidden'); }); };
     const reveal = wmode ? h('span') : h('button.btn.primary.wide.big-btn', { onclick: doReveal }, 'Göster');
     const knowBtn = isNew && !wmode ? h('button.btn.wide.know', { onclick: () => knowIt(card) }, 'Biliyorum, gösterme') : null;
     const hint = h('p.small.muted.center.hidden', '← Tekrar · kaydır · İyi →');

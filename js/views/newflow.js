@@ -1,7 +1,7 @@
 // Yeni kelime akışı: Tanış (önce tahmin) → Hatırla (karışık, Bildim/Bilemedim) → Pekiştir (sonda, başka cümlede).
 // Dayanak: geri çağırma (Karpicke & Roediger 2008), ilk gün tekrarlı hatırlama (Nakata 2017), başarısız tahmin (Kornell vd. 2009).
 import * as store from '../store.js';
-import { h, toast, shuffle } from '../util.js';
+import { h, toast, shuffle, flip } from '../util.js';
 import { newQueue, cardFromWord, introduce, softRelearn } from '../srs.js';
 import { markKnown } from '../vocab.js';
 import { enrich, words, wordIndex } from '../data.js';
@@ -52,9 +52,19 @@ export default async function newFlow(root, tabs) {
   for (let i = 0; i < all.length; i += GROUP) groups.push(all.slice(i, i + GROUP));
   const res = {}; // id → { hFail, pFail }
   let gi = 0;
+  // Adım göstergesi: Tanış → Hatırla → Pekiştir (geçilen adım işaretli, şimdiki vurgulu)
+  const STEPS = ['Tanış', 'Hatırla', 'Pekiştir'];
+  const stepper = title => {
+    const cur = STEPS.indexOf(title);
+    if (cur < 0) return null;
+    return h('ol.nf-steps', { 'aria-label': 'Adımlar' }, STEPS.map((t, k) => h('li' + (k < cur ? '.past' : k === cur ? '.now' : ''), k === cur ? { 'aria-current': 'step' } : null, h('span.nf-dot', k < cur ? '✓' : String(k + 1)), h('span.nf-step-t', t))));
+  };
+  let lastTitle = '';
   const frame = (title, sub, ...body) => {
     root.innerHTML = '';
-    root.append(tabs(''), h('div.nf-head', h('b', title), h('span.small.muted', ' ' + sub)), ...body);
+    const moved = lastTitle && lastTitle !== title; lastTitle = title;
+    const st = stepper(title); if (st && moved) st.classList.add('moved');
+    root.append(tabs(''), ...(st ? [st] : []), h('div.nf-head', h('b', title), h('span.small.muted', ' ' + sub)), ...body);
     window.scrollTo(0, 0);
   };
   const sentFor = (x, n) => x.sents.length ? x.sents[n % x.sents.length] : null;
@@ -117,7 +127,7 @@ export default async function newFlow(root, tabs) {
       const btns = h('div.row.nf-grades.hidden',
         h('button.btn.nf-no', { type: 'button', onclick: () => { (res[x.id] ||= {}).hFail = true; q = redo(q, x, shows); step(); } }, 'Bilemedim'),
         h('button.btn.primary.nf-yes', { type: 'button', onclick: () => step() }, 'Bildim'));
-      const showBtn = h('button.btn.primary.wide.big-btn.nf-show', { type: 'button', onclick: () => { back.classList.remove('hidden'); btns.classList.remove('hidden'); showBtn.remove(); } }, 'Göster');
+      const showBtn = h('button.btn.primary.wide.big-btn.nf-show', { type: 'button', onclick: () => flip(root.querySelector('.nf-card'), () => { back.classList.remove('hidden'); btns.classList.remove('hidden'); showBtn.remove(); }) }, 'Göster');
       frame('Hatırla', `grup ${gi + 1}/${groups.length} · ${q.length + 1} kaldı`,
         h('div.card.nf-card', h('div.nf-word', { lang: 'en' }, x.card.word), s ? h('div.nf-sent', { lang: 'en', html: markHtml(s.en, x.card.word) }) : null, h('p.small.muted', 'Anlamı neydi? Önce aklından söyle.'), back),
         h('div.actbar', showBtn, btns));
@@ -139,7 +149,7 @@ export default async function newFlow(root, tabs) {
       const btns = h('div.row.nf-grades.hidden',
         h('button.btn.nf-no', { type: 'button', onclick: () => { (res[x.id] ||= {}).pFail = true; if (shows[x.id] === 1) { x.card = softRelearn(x.card); q.push(x); } step(); } }, 'Bilemedim'),
         h('button.btn.primary.nf-yes', { type: 'button', onclick: () => step() }, 'Bildim'));
-      const showBtn = h('button.btn.primary.wide.big-btn.nf-show', { type: 'button', onclick: () => { back.classList.remove('hidden'); btns.classList.remove('hidden'); showBtn.remove(); } }, 'Göster');
+      const showBtn = h('button.btn.primary.wide.big-btn.nf-show', { type: 'button', onclick: () => flip(root.querySelector('.nf-card'), () => { back.classList.remove('hidden'); btns.classList.remove('hidden'); showBtn.remove(); }) }, 'Göster');
       frame('Pekiştir', `${q.length + 1} kaldı · son bir kez`,
         h('div.card.nf-card', h('div.nf-word', { lang: 'en' }, x.card.word), s ? h('div.nf-sent', { lang: 'en', html: markHtml(s.en, x.card.word) }) : null, back),
         h('div.actbar', showBtn, btns));

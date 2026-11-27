@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>YÖKDİL Fen</title>
   <meta name="description" content="YÖKDİL Fen Bilimleri çalışma uygulaması">
-  <meta name="theme-color" content="#f2f4f3">
+  <meta name="theme-color" content="#f5f6f8">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -13,7 +13,10 @@
 </head>
 <body>
   <header class="top">
-    <a href="#/bugun" class="brand">YÖKDİL<b> Fen</b></a>
+    <div class="top-l">
+      <a href="#/bugun" class="brand">YÖKDİL<b> Fen</b></a>
+      <h1 id="topTitle" class="top-title" aria-live="polite">Bugün</h1>
+    </div>
     <div class="top-actions">
       <button id="focusPill" class="focus-pill hidden" type="button" aria-label="Odak oturumu"></button>
       <button id="noteTop" class="icon-btn note-top" type="button" aria-label="Not al"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg><span class="btn-label">Not</span></button>
@@ -27,8 +30,16 @@
       </a>
     </div>
   </header>
-  <main id="view" class="view"><p class="muted center pad">Yükleniyor…</p></main>
+  <main id="view" class="view">
+    <div class="skel-page" aria-busy="true" aria-label="Yükleniyor">
+      <div class="skel skel-head"></div>
+      <div class="skel skel-start"></div>
+      <div class="skel skel-line"></div>
+      <div class="skel skel-list"></div>
+    </div>
+  </main>
   <nav class="tabs">
+    <span class="tab-ind" aria-hidden="true"></span>
     <a href="#/bugun" data-r="bugun"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Bugün</span></a>
     <a href="#/okuma" data-r="okuma"><svg viewBox="0 0 24 24"><path d="M2 5c4-1 7 0 10 2 3-2 6-3 10-2v14c-4-1-7 0-10 2-3-2-6-3-10-2z"/><path d="M12 7v14"/></svg><span>Okuma</span></a>
     <a href="#/kartlar" data-r="kartlar"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v10"/></svg><span>Kartlar</span></a>

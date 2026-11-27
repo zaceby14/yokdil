@@ -123,7 +123,8 @@ export function runQuiz(root, items, opts = {}) {
         const ok = k === it.answer;
         opts_.forEach((b, j) => { b.classList.add('done'); if (j === it.answer) b.classList.add('right'); });
         if (!ok) opts_[k].classList.add('wrong');
-        exp.classList.remove('hidden');
+        exp.classList.remove('hidden', 'is-right', 'is-wrong');
+        exp.classList.add(ok ? 'is-right' : 'is-wrong');
         exp.innerHTML = '';
         const ex = realExplain(it.explain);
         const L = 'ABCDE';
@@ -215,6 +216,7 @@ export function runQuiz(root, items, opts = {}) {
       add(root,
         h('div.qhead', h('span.muted', `${opts.title ? opts.title + ' · ' : ''}${counter(items, i)}`),
           h('span.qtools', it.adapt ? h('span.chip.small.adapt-chip', it.adapt === 'zor' ? 'daha zor' : 'pekiştirme') : null, it.unverified ? h('span.chip.bad.small', 'cevap kesin değil') : null, it.label ? h('span.chip.qlabel', it.label) : null)),
+        qprog(items, i),
         speed?.el || null,
         h('div.qbar', hintBtn, partsBtn, diffBtn,
           opts.noLesson ? null : h('button.chip.lesson-btn', { type: 'button', title: 'Dersi yanda aç', onclick: () => openFor(it) }, 'Ders')),
@@ -266,6 +268,14 @@ export const openSessions = () => store.all('sessions').filter(s => !s.done && s
   .sort((a, b) => (b.at || 0) - (a.at || 0));
 
 // Sayaç: pekiştirme soruları ayrı sayılır ("3/8 · +2 pekiştirme")
+// İnce ilerleme çubuğu: önceki sorudan bu soruya doğru dolar (yalnız transform)
+function qprog(items, i) {
+  const n = items.filter(x => x.adapt !== 'pekistir').length || items.length;
+  const pos = Math.max(1, items.slice(0, i + 1).filter(x => x.adapt !== 'pekistir').length);
+  const p = Math.min(1, pos / n), p0 = Math.min(1, Math.max(0, (pos - 1) / n));
+  return h('div.qprog', { role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': n, 'aria-valuenow': pos, 'aria-label': 'İlerleme' }, h('i', { style: `--p:${p};--p0:${p0}` }));
+}
+
 export function counter(items, i) {
   const extra = items.filter(x => x.adapt === 'pekistir').length;
   const before = items.slice(0, i + 1).filter(x => x.adapt !== 'pekistir').length;
