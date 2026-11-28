@@ -1311,3 +1311,5 @@ details > summary { transition: color var(--t-fast) ease; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+/* Eleme hareketi: yatay kaydırmayı tarayıcı değil uygulama alsın; uzun basmada metin seçimi/menü çıkmasın */
+.opts .opt { touch-action: pan-y; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }

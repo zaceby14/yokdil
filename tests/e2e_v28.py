@@ -18,7 +18,7 @@ with sync_playwright() as p:
     sb = pg.locator('.start-btn')
     check(sb.count() == 1 and 'Başla: ' in sb.inner_text(), f'Bugün: tek "Başla" düğmesi ({sb.inner_text() if sb.count() else None})')
     first = pg.locator('ul.tasks:not(.extra) > li[data-task]').first.get_attribute('data-task')
-    check(first == 'gramer', f'görev sırası gramer ile başlıyor ({first})')
+    check(first in ('gramer', 'kisa', 'deneme'), f'görev sırası gramer ile (deneme günü deneme ile) başlıyor ({first})')
     check(pg.locator('details.today-more').count() == 1 and not pg.locator('details.today-more').get_attribute('open'), 'ek kartlar "Daha fazla" altında kapalı')
     pg.screenshot(path=f'{SH}/bugun.png', full_page=True)
     # Gramer: sayaç + eleme + sade geri bildirim

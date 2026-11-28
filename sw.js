@@ -1,5 +1,5 @@
 // Service worker: uygulama kabuğu önbellekte, data/ ağ öncelikli
-const VER = 'yokdil-v30';
+const VER = 'yokdil-v31';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'js/app.js', 'js/util.js', 'js/merge.js', 'js/store.js', 'js/data.js', 'js/plan.js', 'js/srs.js', 'js/mistakes.js',

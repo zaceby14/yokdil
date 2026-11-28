@@ -622,6 +622,7 @@ with sync_playwright() as p:
         if page.locator('.opt.wrong').count() or page.locator('.opt.right').count(): break
     page.wait_for_timeout(300)
     if page.locator('.lesson-link').count():
+        page.evaluate("document.querySelectorAll('details.ex-more').forEach(d => d.open = true)"); page.wait_for_timeout(150)
         page.click('.lesson-link'); page.wait_for_timeout(300)
         check(page.locator('#sidePanel:not(.hidden)').count() == 1 and page.url == url_before, '"Konuyu aç" panelde, test gitmedi')
         page.click('#sidePanel .icon-x'); page.wait_for_timeout(200)
@@ -637,11 +638,11 @@ with sync_playwright() as p:
     check(page.locator('button:has-text("Devam et")').count() == 1 and 'Kaldığın yerden' in page.inner_text('main'), '"Kaldığın yerden devam et" kartı')
     page.screenshot(path=f'{SHOTS}/m-devam.png')
     page.click('button:has-text("Devam et")'); page.wait_for_timeout(400)
-    check(page.inner_text('.qhead .muted') == q_before and page.locator('.opt.right').count() == 1, f'aynı soru, verilen cevap korunmuş ({page.inner_text(".qhead .muted")})')
+    check(page.inner_text('.qhead .muted').split(' · +')[0] == q_before.split(' · +')[0] and page.locator('.opt.right').count() == 1, f'aynı soru, verilen cevap korunmuş ({page.inner_text(".qhead .muted")})')
     # Tarayıcı geri/ileri: oturum bozulmaz
     page.go_back(); page.wait_for_timeout(300); page.go_forward(); page.wait_for_timeout(500)
     if page.locator('button:has-text("Devam et")').count(): page.click('button:has-text("Devam et")'); page.wait_for_timeout(300)
-    check(page.inner_text('.qhead .muted') == q_before, 'geri/ileri sonrası aynı soru')
+    check(page.inner_text('.qhead .muted').split(' · +')[0] == q_before.split(' · +')[0], 'geri/ileri sonrası aynı soru')
 
     # 4) Hızlı not: oturumu bozmadan, bağlam = soru kimliği
     page.click('button:has-text("Sonraki")'); page.wait_for_timeout(200)

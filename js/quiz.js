@@ -1,7 +1,7 @@
 // Çoktan seçmeli soru oturumu (gramer, alıştırma, hata kutusu, okuma, ders, çıkmış, kelime oyunları)
 // - Oturum ilerlemesi 'sessions' koleksiyonuna yazılır (sid): sayfadan çıkıp dönünce "Kaldığın yerden devam et".
 // - Soru kökündeki kelimeye dokun = kelime paneli; şık satırına dokun = seç; şıktaki kelimeye UZUN bas = kelime paneli.
-import { h, uid, add, realExplain, topicName, exEl } from './util.js';
+import { h, elimGesture, uid, add, realExplain, topicName, exEl } from './util.js';
 import * as store from './store.js';
 import { fromWrong, fillContext } from './autocard.js';
 import { tappable } from './tappable.js';
@@ -282,15 +282,7 @@ export function counter(items, i) {
   return extra ? `${Math.max(1, before)}/${items.length - extra} · +${extra} pekiştirme` : `${i + 1}/${items.length}`;
 }
 // Şık eleme: harfe uzun bas ya da şıkkı sola kaydır → üstü çizili (cevap sayılmaz)
-function strikeable(b, locked) {
-  let t = null, x0 = 0;
-  const toggle = () => { if (locked()) return; b.classList.toggle('struck'); b._lp = true; navigator.vibrate?.(15); };
-  // Uzun basma yalnız şık harfinde (kelimeye uzun basma kelime panelini açar); kaydırma her yerde
-  b.addEventListener('pointerdown', e => { x0 = e.clientX; if (e.target.closest('.ol')) t = setTimeout(toggle, 450); });
-  b.addEventListener('pointerup', e => { clearTimeout(t); if (x0 - e.clientX > 60) toggle(); });
-  b.addEventListener('pointerleave', () => clearTimeout(t));
-  b.addEventListener('contextmenu', e => { e.preventDefault(); });
-}
+function strikeable(b, locked) { elimGesture(b, () => b.classList.toggle('struck'), locked); }
 // Saf: uzun ve birbirine benzeyen şıklar mı (çeviri, cümle tamamlama)
 export function longSimilar(options) {
   const os = (options || []).map(o => String(o));

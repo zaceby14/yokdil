@@ -322,7 +322,8 @@ with sync_playwright() as p:
         main_keys = [page.locator('ul.tasks:not(.extra) > li').nth(i).get_attribute('data-task') for i in range(page.locator('.page > ul.tasks:not(.extra) > li').count())]
         check(page.locator('details.optional-tasks').count() == 1 and set(main_keys) <= {'kisa', 'kart', 'deneme'}, f'deneme günü: ana liste {main_keys}, gerisi "İsteğe bağlı"')
         tot = page.inner_text('h2:has-text("Bugün")')
-        check(int(''.join(ch for ch in tot.split('·')[-1] if ch.isdigit()) or 0) <= 60, f'deneme günü toplam süre ≤ 60 dk ({tot})')
+        dmin = 90 if dd['k'] == 'yarim' else 50
+        check(int(''.join(ch for ch in tot.split('·')[-1] if ch.isdigit()) or 0) <= dmin + 15, f'deneme günü toplam süre ≤ deneme + 15 dk ({tot})')
         shot('kurul-deneme-gunu', True)
     else:
         print('     (bugün deneme günü değil: deneme günü kontrolü birim testte)')

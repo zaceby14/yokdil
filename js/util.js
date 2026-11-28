@@ -213,3 +213,24 @@ export function exEl(ex, cls = 'div.small') {
   if (i < 0) return h(cls, { lang: 'en' }, ex);
   return h(cls + '.ex-pair', h('span', { lang: 'en' }, String(ex).slice(0, i).trim()), ' ', h('span.small.muted.ex-tr', { lang: 'tr' }, '→ ' + String(ex).slice(i + 1).trim()));
 }
+
+// Şık eleme hareketi: sola kaydır ya da uzun bas (≈0,5 sn) → onStrike. Telefonda dokunma olaylarıyla,
+// masaüstünde fareyle. Dikey kaydırma (sayfayı kaydırma) eleme sayılmaz. Hareket olduysa ardından gelen tıklama yutulur.
+export function elimGesture(el, onStrike, locked = () => false) {
+  let t = null, x0 = 0, y0 = 0, moved = false;
+  const fire = () => { if (locked()) return; el._lp = true; setTimeout(() => { el._lp = false; }, 700); onStrike(); navigator.vibrate?.(15); };
+  const start = (x, y) => { x0 = x; y0 = y; moved = false; clearTimeout(t); t = setTimeout(() => { if (!moved) fire(); }, 500); };
+  const move = (x, y) => {
+    const dx = x - x0, dy = y - y0;
+    if (Math.abs(dx) > 8 || Math.abs(dy) > 8) { moved = true; clearTimeout(t); }
+    if (dx < -50 && Math.abs(dy) < 35 && !el._sw) { el._sw = true; fire(); }
+  };
+  const end = () => { clearTimeout(t); el._sw = false; };
+  el.addEventListener('touchstart', e => { const p = e.touches[0]; start(p.clientX, p.clientY); }, { passive: true });
+  el.addEventListener('touchmove', e => { const p = e.touches[0]; move(p.clientX, p.clientY); }, { passive: true });
+  el.addEventListener('touchend', end); el.addEventListener('touchcancel', end);
+  el.addEventListener('mousedown', e => start(e.clientX, e.clientY));
+  el.addEventListener('mousemove', e => { if (e.buttons & 1) move(e.clientX, e.clientY); });
+  el.addEventListener('mouseup', end); el.addEventListener('mouseleave', end);
+  el.addEventListener('contextmenu', e => e.preventDefault());
+}

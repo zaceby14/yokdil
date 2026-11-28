@@ -1,6 +1,6 @@
 // Çıkmış sorular: paket cihazda (IndexedDB), senkrona yalnızca cevaplar/sonuçlar girer
 import * as store from '../store.js';
-import { h, add, uid, dayKey, toast, shuffle, typeName, TYPES, TYPE_LESSON, realExplain } from '../util.js';
+import { h, add, uid, dayKey, toast, shuffle, typeName, TYPES, TYPE_LESSON, realExplain, elimGesture } from '../util.js';
 import { getPack, savePack, clearPack, exam as getExam, groupOf } from '../pack.js';
 import { answer } from '../mistakes.js';
 import { fromWrong } from '../autocard.js';
@@ -293,8 +293,6 @@ function examMode(root, e, startSec) {
       h('div.opts' + (locked ? '.locked' : ''), q.options.map((o, k) => h('button.opt' + (pr.answers[q.n] === k ? '.chosen' : '') + (locked && k === q.answer ? '.right.done' : '') + (locked && pr.answers[q.n] === k && k !== q.answer ? '.wrong.done' : ''), {
         type: 'button',
         ...((pr.struck?.[q.n] || []).includes(k) ? { class: 'struck' } : {}),
-        onpointerdown: e => { const x0 = e.clientX, b = e.currentTarget; if (e.target.closest('.ol')) b._t = setTimeout(() => { b._lp = true; strikeEx(q.n, k); }, 450); b.onpointerup = ev => { clearTimeout(b._t); if (x0 - ev.clientX > 60) { b._lp = true; strikeEx(q.n, k); } }; b.onpointerleave = () => clearTimeout(b._t); },
-        oncontextmenu: e => e.preventDefault(),
         onclick: e => {
           if (e.currentTarget._lp) { e.currentTarget._lp = false; return; }
           if (locked) return;
@@ -310,6 +308,7 @@ function examMode(root, e, startSec) {
           : pr.cur >= qs.length - 1 && half ? h('button.btn.primary.main-act', { onclick: () => finish(false) }, 'Bitir ›')
           : h('button.btn.main-act', { disabled: pr.cur >= qs.length - 1, onclick: () => { pr.cur++; save(); draw(); drawGrid(); } }, 'Sonraki ›'))
     );
+    main.querySelectorAll('.opts .opt').forEach((b, k) => elimGesture(b, () => strikeEx(q.n, k), () => locked));
     drawStrip(); drawClock();
     window.scrollTo(0, 0);
   }
