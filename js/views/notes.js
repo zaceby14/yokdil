@@ -50,7 +50,7 @@ function item(n, redraw) {
     if (lines?.length) {
       picker.append(h('div.small', `${lines.length} satır "kelime - anlam" biçiminde:`),
         h('div.chips', lines.map(l => h('span.chip', h('b', { lang: 'en' }, l.word), ' ', l.tr))),
-        h('button.btn.primary.wide', { onclick: async e => { e.currentTarget.disabled = true; const k = await addWords(lines, n); toast(k ? `+${k} kart eklendi` : 'Hepsi zaten kartta'); picker.innerHTML = ''; } }, `Hepsini karta ekle (${lines.length})`));
+        h('button.btn.primary.wide', { onclick: async e => { e.currentTarget.disabled = true; const k = await addWords(lines, n); toast(k ? `+${k} kart eklendi · Yeni kelime'de ilk sırada` : 'Hepsi zaten kartta'); picker.innerHTML = ''; } }, `Hepsini karta ekle (${lines.length})`));
       return;
     }
     const ws = noteWords(n.text);
@@ -60,7 +60,7 @@ function item(n, redraw) {
       if (!on.size) return toast('Önce kelimeye dokun');
       e.currentTarget.disabled = true;
       const k = await addWords([...on].map(w => ({ word: w })), n);
-      toast(k ? `+${k} kart eklendi` : 'Zaten kartta'); picker.innerHTML = '';
+      toast(k ? `+${k} kart eklendi · Yeni kelime'de ilk sırada` : 'Zaten kartta'); picker.innerHTML = '';
     } }, 'Seçilenleri karta ekle (0)');
     picker.append(h('div.small.muted', 'Kelimeye dokun, sonra ekle:'),
       h('div.chips', ws.map(w => h('button.chip.pick', { lang: 'en', onclick: e => {

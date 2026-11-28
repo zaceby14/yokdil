@@ -31,7 +31,7 @@ export async function toolsStrip() {
   const on = TOOLS.filter(([, , ok]) => { try { return ok(a); } catch { return false; } });
   if (!on.length) return null;
   on.sort((x, y) => STRIP.indexOf(x[0]) - STRIP.indexOf(y[0]));
-  return h('section.tools', h('div.small.muted', 'Araçlar', on.length > 3 ? ' · kaydır →' : ''),
+  return h('section.tools', h('div.small.muted', 'Araçlar', on.length > 3 ? h('span.swipe-hint', ' · kaydır →') : ''),
     h('div.toolstrip', { tabindex: '0', role: 'group', 'aria-label': 'Araçlar' }, on.map(([k, l]) => h('a.tool', { href: '#/dersler/arac/' + k }, l))));
 }
 

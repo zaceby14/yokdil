@@ -27,6 +27,12 @@ export function kisaToday(w, today = dayKey()) {
   return (k.day in WD ? WD[k.day] : 0) === wd ? (k.size || 'mini') : null;
 }
 
+// Bu haftanın kısa denemesi (aynı boyut) hafta içinde erken yapıldıysa görev tamam sayılır
+export function kisaDoneThisWeek(w, size, today = dayKey()) {
+  const from = w?.dates?.[0] || addDays(today, -6);
+  return store.all('mocks').some(m => m && m.kind === 'kisa' && m.size === size && (m.date || '') >= from && (m.date || '') <= today);
+}
+
 export async function todayTasks() {
   const w = await week();
   const r = dayRec();
@@ -72,7 +78,7 @@ export async function todayTasks() {
   if (fm) T.analiz = { label: 'Deneme analizi (3 adım)', sub: 'nedenler 10 dk · en zayıf 2 bölümden 10\'ar soru · bir süre hedefi', go: '#/cikmis/sonuc/' + encodeURIComponent(fm.examId), min: 30 };
   const keys = [...(fm ? ['analiz'] : []), ...taskList(busy, fin.on), ...(xm ? ['deneme'] : []), ...(kz ? ['kisa'] : [])].filter(k => k !== 'hata' || hs.total).filter(k => !(fin.on && k === 'yeni' && !nl));
   return orderMockDay(keys, mockDay).map(k => ({
-    key: k, label: T[k].label || LABEL[k], sub: T[k].sub, go: T[k].go, min: T[k].min, note: T[k].note || '', done: !!r3.tasks?.[k] || (k === 'deneme' && !!r3.mock),
+    key: k, label: T[k].label || LABEL[k], sub: T[k].sub, go: T[k].go, min: T[k].min, note: T[k].note || '', done: !!r3.tasks?.[k] || (k === 'deneme' && !!r3.mock) || (k === 'kisa' && kisaDoneThisWeek(w, kz)),
     optional: k !== 'analiz' && ((mockDay && !MOCK_DAY_MAIN.includes(k)) || (back && !['kart', 'gramer'].includes(k)))
   }));
 }

@@ -71,7 +71,7 @@ export default async function render(root) {
     const mainT = tasks.filter(t => !t.optional), optT = tasks.filter(t => t.optional);
     const st = streakInfo();
     // Yarım kalan deneme (çıkmış)
-    const exOpen = store.all('progress').filter(p => p.id?.startsWith('exam:') && p.startedAt && !p.done).sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0)).slice(0, 1);
+    const exOpen = store.all('progress').filter(p => p.id?.startsWith('exam:') && p.startedAt && !p.done && (p.kisa || Object.keys(p.answers || {}).length)).sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0)).slice(0, 1);
     const pack = exOpen.length ? await getPack().catch(() => null) : null;
     const apply = w.prog.apply || [];
     const ap = applyState(apply, w.prog.lateApply, today);
