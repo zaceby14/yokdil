@@ -9,7 +9,7 @@ import { tourCards } from '../memory.js';
 import { todayTasks, mockHref, mockNote } from '../tasks.js';
 import { KISA } from '../kisa.js';
 import { aids } from '../data.js';
-import { applyState, examDayFor, ruleTasks, lastFullMock } from '../strategy.js';
+import { applyState, examDayFor, ruleTasks, lastFullMock, HALF_MIN } from '../strategy.js';
 import { getPack } from '../pack.js';
 import { startFocus, running, lens } from '../focus.js';
 import { getToken } from '../sync.js';
@@ -166,7 +166,7 @@ export default async function render(root) {
         h('div.row', h('a.btn.small', { href: '#/deneme/yeni/okuma' }, 'Okuma: 5 parça · 60 dk'), h('a.btn.small', { href: '#/deneme/yeni/ceviri' }, 'Çeviri: 12 soru · 15 dk'))) : null,
       w.phase !== 'Temel' && !rr.busy ? h('a.card.link', { href: '#/alistirma' }, h('b', 'Soru tipi alıştırması'), h('span.small.muted', ' ' + ((w.drills || []).map(typeName).join(' · ') || 'karışık'))) : null,
       w.mock && !T.deneme ? h('a.card.link.mock-plan', { href: mockHref(w.mock) },
-        h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · 90 dk)`),
+        h('b', w.mock.kind === 'tam' ? 'Bu hafta tam deneme (180 dk)' : `Bu hafta yarım deneme (${w.mock.n || 40} soru · ${HALF_MIN} dk)`),
         h('span.small.muted', ' ' + [w.mock.day, w.mock.title].filter(Boolean).join(' · ')), mockNote(w.mock) ? h('div.small.task-note', mockNote(w.mock)) : null) : null,
       w.kisa && KISA[w.kisa.size] && !T.kisa ? h('a.card.link.kisa-plan', { href: '#/deneme' },
         h('b', w.kisa.title || `Bu hafta kısa deneme (${KISA[w.kisa.size].n} soru · ${KISA[w.kisa.size].min} dk)`), h('span.small.muted', ' ' + (w.kisa.day || 'Paz') + ' · çıkmış değil, benzer sorular')) : null,

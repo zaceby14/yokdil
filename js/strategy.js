@@ -157,8 +157,8 @@ export function coreSeen(words, cards) {
   return { seen: n, total: (words || []).length };
 }
 
-// Yarım deneme: ilk 40 soru / 90 dk
-export const HALF_N = 40, HALF_MIN = 90;
+// Yarım deneme: ilk 40 soru (20 boşluk 22 dk + 10 cloze 14 dk + 10 tamamlama 20 dk + 10 dk kontrol) ≈ 65 dk
+export const HALF_N = 40, HALF_MIN = 65;
 
 // Dersler listesi grupları
 export const LESSON_GROUPS = [['baglac', 'Bağlaçlar'], ['edat', 'Edatlar'], ['zaman', 'Zaman'], ['yapi', 'Cümle yapıları'], ['kelime', 'Kelime'], ['taktik', 'Soru tipi taktikleri'], ['strateji', 'Strateji']];

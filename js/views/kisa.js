@@ -2,7 +2,7 @@
 import * as store from '../store.js';
 import { h, uid, fmtDate, dayKey, optText } from '../util.js';
 import { grammar, drills, passages } from '../data.js';
-import { KISA, KISA_SIZES, poolsOf, buildKisa, lastSeenOf, recentUnits, privPool, privMc, PRIV_MC } from '../kisa.js';
+import { KISA, KISA_SIZES, poolsOf, buildKisa, lastSeenOf, recentUnits, privPool, privMc, PRIV_MC, secMinutes } from '../kisa.js';
 import { getPack } from '../pack.js';
 import { rItem } from '../qbank.js';
 import { SEC_ORDER } from '../strategy.js';
@@ -18,9 +18,10 @@ export const openKisa = size => store.all('progress').filter(p => p.id?.startsWi
 export const kisaName = size => `Kısa deneme · ${KISA[size]?.label || 'Mini'} (${KISA[size]?.n || 20} soru)`;
 const SHORT = { bosluk: 'boşluk', cloze: 'cloze', tamamlama: 'cümle tamamlama', 'en-tr': 'çeviri', 'tr-en': 'çeviri', paragraf: 'paragraf', ilgisiz: 'ilgisiz', okuma: 'okuma' };
 export function breakdown(size) {
-  const m = {};
-  for (const s of KISA[size].plan) { const k = SHORT[s.sec]; m[k] = (m[k] || 0) + s.units * s.w; }
-  return Object.entries(m).map(([k, n]) => `${n} ${k}`).join(' · ');
+  const m = {}, t = {}, sm = secMinutes(size);
+  for (const s of KISA[size].plan) { const k = SHORT[s.sec]; m[k] = (m[k] || 0) + s.units * s.w; t[k] = (t[k] || 0) + (sm[s.sec] || 0) / (KISA[size].plan.filter(x => x.sec === s.sec).length); }
+  const c = KISA[size], rest = c.prova ? '' : ` · kontrol ~${Math.max(1, Math.round(c.min - Object.values(t).reduce((a, b) => a + b, 0)))} dk`;
+  return Object.entries(m).map(([k, n]) => `${n} ${k} ~${Math.max(1, Math.round(t[k]))} dk`).join(' · ') + rest;
 }
 
 async function content() {

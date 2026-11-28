@@ -38,7 +38,7 @@ export const isOsym = e => e.kind !== 'yayinevi';
 const showDialog = () => !!store.settings().showDialog;
 const visibleQs = e => (e.questions || []).filter(q => showDialog() || q.type !== 'diyalog').sort((a, b) => a.n - b.n);
 
-// Yarım deneme: ilk 40 soru / 90 dk; ilerleme ayrı kayıtta (exam:<id>~yarim)
+// Yarım deneme: ilk 40 soru / 65 dk; ilerleme ayrı kayıtta (exam:<id>~yarim)
 const HALF = 'yarim';
 const ALL = 'hepsi'; // sonuçtaki "Yanlışlarımı çöz": tüm bölümlerin yanlış/boşları
 const pidOf = (e, half) => 'exam:' + e.id + (half ? '~' + HALF : '');

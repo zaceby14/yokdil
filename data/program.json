@@ -241,7 +241,7 @@
     "ceviri-tr-en"
    ],
    "goal": "Bağlaç MASTER: ekleme, örnek, zaman, koşul grupları; cümle tamamlama yapı kuralları.",
-   "weekend": "Cmt: 11 cümle tamamlama (süreli) · Paz: kısa deneme (40 soru · 90 dk)",
+   "weekend": "Cmt: 11 cümle tamamlama (süreli) · Paz: kısa deneme (40 soru · 95 dk)",
    "min": {
     "kart": 15,
     "okuma": 15
@@ -275,7 +275,7 @@
     "ceviri-tr-en"
    ],
    "goal": "Ving / to V, ikili bağlaçlar (either/or, not only/but also); çeviride ana yapı.",
-   "weekend": "Cmt: 12 çeviri sorusu · Paz: kısa deneme (40 soru · 90 dk)",
+   "weekend": "Cmt: 12 çeviri sorusu · Paz: kısa deneme (40 soru · 95 dk)",
    "min": {
     "kart": 15,
     "okuma": 15
@@ -565,7 +565,7 @@
  "mockPlan": {
   "tam": 5,
   "yarim": 2,
-  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 2 yarım çıkmış (40 soru) hafta 6, 9 · tanı denemesi hafta 2 (YÖKDİL Fen biçiminde, okuma dahil) · 2022–2025 kısa setler son iki hafta · kısa deneme (özgün): Pazar, hafta 1, 3–5 mini (20 soru · 45 dk), 7–8 yarım (40 soru · 90 dk); son 14 günde hafta içi mini",
+  "note": "5 tam ÖSYM YÖKDİL Fen (2019–2021) hafta 10–14 · 2 yarım çıkmış (40 soru) hafta 6, 9 · tanı denemesi hafta 2 (YÖKDİL Fen biçiminde, okuma dahil) · 2022–2025 kısa setler son iki hafta · kısa deneme (özgün): Pazar, hafta 1, 3–5 mini (22 soru · 45 dk), 7–8 yarım (40 soru · 95 dk); son 14 günde hafta içi mini",
   "kisa": {
    "mini": [
     1,

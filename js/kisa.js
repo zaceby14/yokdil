@@ -4,20 +4,32 @@ import { SECTION_OF } from './strategy.js';
 
 // Bölüm planı: units = birim sayısı, w = birim başına soru (cloze metni 5, okuma parçası 3)
 export const KISA = {
-  mini: { n: 22, min: 50, label: 'Mini', plan: [
+  mini: { n: 22, label: 'Mini', plan: [
     { sec: 'bosluk', pool: 'g', units: 5, w: 1, dbl: 1 }, { sec: 'cloze', pool: 'cloze', units: 1, w: 5 },
     { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 3, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 2, w: 1 },
     { sec: 'tr-en', pool: 'ceviri-tr-en', units: 2, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 1, w: 1 },
     { sec: 'ilgisiz', pool: 'ilgisiz', units: 1, w: 1 }, { sec: 'okuma', pool: 'p', units: 1, w: 3 }] },
-  yarim: { n: 40, min: 90, label: 'Yarım', plan: [
+  yarim: { n: 40, label: 'Yarım', plan: [
     { sec: 'bosluk', pool: 'g', units: 10, w: 1, dbl: 2 }, { sec: 'cloze', pool: 'cloze', units: 1, w: 5 },
     { sec: 'tamamlama', pool: 'cumle-tamamlama', units: 6, w: 1 }, { sec: 'en-tr', pool: 'ceviri-en-tr', units: 3, w: 1 },
     { sec: 'tr-en', pool: 'ceviri-tr-en', units: 3, w: 1 }, { sec: 'paragraf', pool: 'paragraf-tamamlama', units: 2, w: 1 },
     { sec: 'ilgisiz', pool: 'ilgisiz', units: 2, w: 1 }, { sec: 'okuma', pool: 'p', units: 3, w: 3 }] }
 };
 // Bölüm provası (son haftalar): yalnız okuma 5 parça / 60 dk · yalnız çeviri 12 soru / 15 dk
-KISA.okuma = { n: 15, min: 60, label: 'Okuma provası', plan: [{ sec: 'okuma', pool: 'p', units: 5, w: 3 }] };
-KISA.ceviri = { n: 12, min: 15, label: 'Çeviri provası', plan: [{ sec: 'en-tr', pool: 'ceviri-en-tr', units: 6, w: 1 }, { sec: 'tr-en', pool: 'ceviri-tr-en', units: 6, w: 1 }] };
+KISA.okuma = { n: 15, prova: 1, label: 'Okuma provası', plan: [{ sec: 'okuma', pool: 'p', units: 5, w: 3 }] };
+KISA.ceviri = { n: 12, prova: 1, label: 'Çeviri provası', plan: [{ sec: 'en-tr', pool: 'ceviri-en-tr', units: 6, w: 1 }, { sec: 'tr-en', pool: 'ceviri-tr-en', units: 6, w: 1 }] };
+// Bölüm başı dakika / soru — gerçek sınav zaman planından (aids.json timePlan: 180 dk)
+export const SEC_MIN = { bosluk: 22 / 20, cloze: 14 / 10, tamamlama: 22 / 11, 'en-tr': 15 / 12, 'tr-en': 15 / 12, paragraf: 15 / 6, ilgisiz: 12 / 6, okuma: 60 / 15 };
+export const KONTROL = 20 / 80; // 20 dk kontrol payı, soru başı (bölüm provasında yok)
+export function secMinutes(size) {
+  const m = {};
+  for (const s of KISA[size].plan) m[s.sec] = (m[s.sec] || 0) + s.units * s.w * SEC_MIN[s.sec];
+  return m;
+}
+for (const k of Object.keys(KISA)) {
+  const c = KISA[k], base = Object.values(secMinutes(k)).reduce((a, b) => a + b, 0);
+  c.min = Math.round((base + (c.prova ? 0 : c.n * KONTROL)) / 5) * 5;
+}
 export const KISA_SIZES = ['mini', 'yarim', 'okuma', 'ceviri'];
 export const kisaTitle = size => `Kısa deneme (${KISA[size]?.n || 20} soru · ${KISA[size]?.min || 45} dk)`;
 export const MIX = [0.3, 0.45, 0.25]; // seviye 1/2/3

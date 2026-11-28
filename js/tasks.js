@@ -7,6 +7,7 @@ import { mistakeToday } from './mistakes.js';
 import { kisaTitle, KISA } from './kisa.js';
 import { dayKey, parseDay, addDays } from './util.js';
 import { nextReading } from './readpick.js';
+import { HALF_MIN } from './strategy.js';
 
 export const SEC_PER_CARD = 8;           // tekrar kartı ≈ 8 sn
 export const NEW_VIEWS = 3;              // yeni kart: tanış + hatırla + pekiştir
@@ -59,7 +60,7 @@ export async function todayTasks() {
   const r3 = dayRec();
   // Deneme günü (programdaki çıkmış deneme ya da kısa deneme bugün): ana liste kart tekrarı + deneme; gerisi isteğe bağlı
   const xm = !busy && !fin.on && w.mock && w.mock.day in WD && WD[w.mock.day] === wdN ? w.mock : null;
-  if (xm) Object.assign(T.deneme, { label: xm.kind === 'tam' ? 'Tam deneme (180 dk)' : `Yarım deneme (${xm.n || 40} soru · 90 dk)`, sub: xm.title || 'çıkmış sınav', go: mockHref(xm), min: xm.kind === 'tam' ? 180 : 90, note: mockNote(xm) });
+  if (xm) Object.assign(T.deneme, { label: xm.kind === 'tam' ? 'Tam deneme (180 dk)' : `Yarım deneme (${xm.n || 40} soru · ${HALF_MIN} dk)`, sub: xm.title || 'çıkmış sınav', go: mockHref(xm), min: xm.kind === 'tam' ? 180 : HALF_MIN, note: mockNote(xm) });
   const mockDay = !!(kz || xm);
   // Deneme günü: kartın ilk 10 dk'sı yeter
   if (mockDay && T.kart.min > 10) Object.assign(T.kart, { min: 10, sub: T.kart.sub + ' · deneme günü: 10 dk yeter' });
@@ -87,7 +88,7 @@ export function orderMockDay(keys, mockDay) {
 export const TANI_NOTE = 'Seviyeni görmek için; sonuç önemli değil.';
 export const mockNote = m => m?.note || (/^tanı/i.test(m?.title || '') ? TANI_NOTE : '');
 
-// Programdaki deneme bağlantısı (yarım → ilk 40 soru / 90 dk)
+// Programdaki deneme bağlantısı (yarım → ilk 40 soru / 65 dk)
 export const mockHref = m => !m?.exam ? '#/cikmis' : '#/cikmis/sinav/' + encodeURIComponent(m.exam) + (m.kind === 'tam' ? '' : '/yarim');
 
 // Sıradaki görev düğmesi (bitiş ekranları için); yoksa Bugün
